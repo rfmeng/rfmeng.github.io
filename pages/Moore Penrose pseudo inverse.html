@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>CFA - Economics</title>
+      <title>Moore Penrose pseudo inverse</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,150 +266,64 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h1>Economics</h1>
-<h2>Microeconomics</h2>
-<h3>DEMAND ANALYSIS</h3>
-<p>law of demand: price increases, buyers buy less; because of substitution effect and income effect (real income increases)<br>
-defmand function: <span class="mathjax-exps">$Q_x^d=f(P_x,I,P_y)$</span><br>
-inverse demand function: <span class="mathjax-exps">$P_x=8.92-0.156Q_x^d$</span><br>
-demand curve: graph of inverse demand function<br>
-own-price elasticity of demand: <span class="mathjax-exps">$E_{P_x}^d=\frac{\%\Delta Q_x^d}{\%\Delta P_x}=\frac{\Delta Q_x^d}{\Delta P_x}\frac{P_x}{Q_x^d}$</span><br>
-elastic: <span class="mathjax-exps">$|E_{P_x}^d|&gt;1$</span>; inelastic: <span class="mathjax-exps">$|E_{P_x}|^d&lt; 1$</span>; unitary elastic: <span class="mathjax-exps">$|E_{P_x}^d|=1$</span><br>
-perfectly elastic: individual seller under perfectly competitive market<br>
-predictive of elasticity of demand: substitutability, portion of the budget spent on the good, the amount of time to respond to the price change, whether the good is necessary or optional<br>
-for seller: increase price under inelasiticity could decrease demand and save total production cost<br>
-income elasticity of demand: <span class="mathjax-exps">$E_{I}^d=\frac{\%\Delta Q_x^d}{\%\Delta I}$</span><br>
-normal good: <span class="mathjax-exps">$E_{I}^d&gt;0$</span>; inferior food: <span class="mathjax-exps">$E_{I}^d&lt; 0$</span><br>
-cross-price elasticity of demand: <span class="mathjax-exps">$E_{y}^d=\frac{\%\Delta Q_x^d}{\%\Delta P_y}$</span><br>
-substitutes: <span class="mathjax-exps">$E_{y}^d&gt;0$</span>; complements: <span class="mathjax-exps">$E_{y}^d&lt; 0$</span><br>
-substitute effect is true for both normal and inferior good<br>
-Giffen good (inferior good and income effect overwhelms substitute effect): prices increases and demand increases; Veblen good (not inferior good): e.g. luxury good<br>
-an method to decompose income effect and substitute effect: Consumer can pay an amount of money to have the privilege to buy good at a lower price, we adjust this privilege price until the consumer is indifferent (same level of utility), and see whether the good demand is increased</p>
-<h3>SUPPLY ANALYSIS</h3>
-<p>law of diminishing marginal returns (marginal product decreases with additional input units)<br>
-<span class="mathjax-exps">$TC=wL+rK$</span>, <span class="mathjax-exps">$L$</span> and <span class="mathjax-exps">$K$</span> are laboring and capital hours (firm seen as renting machines, because of the opportunity cost)<br>
-cost function: <span class="mathjax-exps">$C=f(Q)$</span>, production cost for given amount of output<br>
-total product, average product, marginal product<br>
-economic profit = total revenue (TR) - economic costs<br>
-accounting profit = total revenue (TR) - accounting cost<br>
-marginal cost consists of short-run marginal cost (SMC) and long-run marginal cost (LMC), <span class="mathjax-exps">$SWC =\frac{w}{MP_L}$</span><br>
-average (on units of output) variable cost (AVC) = <span class="mathjax-exps">$\frac{w}{AP_L}$</span><br>
-total cost (TC) = total fixed cost (TFC) + total variable cost (TVC)<br>
-quasi-fixed cost (fixed inside of some range), part of TFC</p>
-<p>A firm is said to break even if its TR is equal to its TC.<br>
-Economic costs are the sum of total accounting costs and implicit opportunity costs.<br>
-A firm whose revenue is equal to its economic costs is covering the opportunity cost of all of its factors of production, including capital. Economists would say that such a firm is earning normal profit, but not positive economic profit. It is earning a rate of return on capital just equal to the rate of return that an investor could expect to earn in an equivalently risky alternative investment (opportunity cost).<br>
-In the long run, the best a firm can do is to break even because of other entrants.<br>
-<img src="image/CFA-Economics-supply%20analysis-equilibrium.png" width="80%"><br>
-<img src="image/CFA-economics-supply%20analysis-shutdown.png" width="100%"><br>
-In the example of TC, opportunity of the asset is reflected in the MVC (return of asset) and TC (could have sold the machine)?</p>
-<p>LRAC curve is an envelope curve of SATC curve:<br>
-<img src="image/CFA-Economics-supply analysis-lrac.png" width="100%"><br>
-The minimum point on the LRAC curve is referred to as the minimum efficient scale. The minimum efficient scale is the optimal firm size under perfect competition over the long run.</p>
-<h3>MARKET STRUCTURES ANALYSIS</h3>
-<p>perfect competition, monopolistic competition (cola, cosmetics), oligopoly, and monopoly<br>
-five factors determine market structure:</p>
+      <h2>Definition</h2>
+<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
+(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
+<h2>Properties</h2>
+<h3>Existence and uniqueness</h3>
+<h4>Existence</h4>
+<h5>Proof</h5>
+<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
+<h4>Uniqueness</h4><h4>
+</h4><h5>Proof</h5>
+<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
+</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
+Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
+<h3>Linear equations</h3>
+<h4>Theorem 1</h4> 
+A solution to $Ax=b$ exists if and only if $AA^gb=b$.
+<h5>Proof</h5>
+The if part is easy to show.
+To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
+<h4>Theorem 2</h4>
+The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
+<h5>Proof</h5>
+<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
+Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
+<h3>Ordinary least squares (OLS)</h3>
+<h4>Theorem 1</h4> 
+$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
+<h5>Proof</h5>
+Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
+$$\begin{aligned}
+&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
+=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
+=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
+=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
+=&amp;0
+\end{aligned}$$
+Then we have 
+$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
+&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
+and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
+$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
+<h4>Theorem 2</h4> 
+$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
+<h5>Proof</h5>
+$$\begin{aligned}
+&amp;{}(A^gb)^T(I-A^gA)w\\
+=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
+=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
+=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
+=&amp;0
+\end{aligned}$$
+Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
+<h2>References</h2>
 <ul>
-<li>The number and relative size of firms supplying the product;</li>
-<li>The degree of product differentiation;</li>
-<li>The power of the seller over pricing decisions;</li>
-<li>The relative strength of the barriers to market entry and exit;</li>
-<li>The degree of non-price competition.</li>
-</ul>
-<p><span class="mathjax-exps">$&#x3B5;_P = &#x2013;\frac{\%\Delta Q_x^d}{\%\Delta P_x}$</span><br>
-Consumer surplus is defined as the difference between the value that a consumer places on the units purchased and the amount of money that was required to pay for them. Demand curve can therefore be considered a marginal value curve</p>
-<h4>OLIGOPOLY</h4>
-There are three basic pricing strategies: pricing interdependence (price war), the Cournot assumption, and the Nash equilibrium
-pricing interdependence: DD is the demand curve when all participants make the same move, dd is the demand curve when only one participant make that move, which explains the price stability, but not the initial price:
-<img src="image/cfa-economics-market structure-kinked curve.jpg" width="100%">
-In long run, market share is temporary.
-<h4>COURNOT</h4>
-In the Cournot assumption, each firm determines its profit-maximizing production level by assuming that the other firms&#x2019; output will not change
-<h4>NASH EQUILIBRIUM</h4>
-<p>formal price collusion is called cartel, 6 factors:</p>
-<ul>
-<li>The number and size distribution of sellers</li>
-<li>The similarity of the products</li>
-<li>Cost structure</li>
-<li>Order size and frequency</li>
-<li>The strength and severity of retaliation</li>
-<li>The degree of external competition</li>
-</ul>
-<h4>STACKELBERG MODEL</h4>
-the leader firm chooses its output first and then the follower firm chooses after observing the leader&#x2019;s output
-<h3>MONOPOLY</h3>
-<p>factors: patent/copyright, control over critical resources, government-controlled authorization (because of the significant entry cost), brand loyalty and Network effects (result from synergies related to increasing market penetration)<br>
-*besides quantity and price, monopolist can also adjust the quality</p>
-<h3>PRICE DISCRIMINATION</h3>
-<p>first degree: perfect<br>
-second degree: quantity-based<br>
-third degree: customer-based</p>
-<h3>IDENTIFICATION OF MARKET STRUCTURE</h3>
-<p>econometric: regression<br>
-concentration ratio<br>
-Herfindahl&#x2013;Hirschman index (HHI): square of the market share</p>
-<h2>Macroeconomics</h2>
-<h3>AGGREGATE OUTPUT AND INCOME</h3>
-<h4>GDP</h4>
-<p>aggregate output = aggregate income = aggregate expenditure (the total amount spent on the goods and services produced)<br>
-in the (domestic) economy during the period<br>
-for simplicity, it is standard in macroeconomics to attribute all income to the household sector, because government is non-profit<br>
-Gross domestic product (GDP) measures:</p>
-<ul>
-<li>the market value of all final goods and services produced within the economy during a given period (output definition) or, equivalently,</li>
-<li>the aggregate income earned by all households, all companies, and the government within the economy during a given period (income definition).</li>
-</ul>
-<p>GDP criterion:</p>
-<ul>
-<li>All goods and services included in the calculation of GDP must be produced during the measurement period, excluding unemployment compensation and appreciation of asset</li>
-<li>those whose value can be determined by being sold in the market, excluding gardening and commuting (*two examples, government service, at cost and owner-occupied housing (easy to calculate, compared to self gardening), are included in GDP)</li>
-<li>Only the market value of final goods and services is included in GDP, excluding intermediate good</li>
-</ul>
-<p>Nominal <span class="mathjax-exps">$\text{GDP}_t=P_tQ_t$</span>; real <span class="mathjax-exps">$\text{GDP}_t=P_BQ_t$</span>, <span class="mathjax-exps">$P_B$</span> is price in the base years<br>
-GDP deflator=Nominal GDP/Real GDP*100<br>
-<span class="mathjax-exps">$\begin{aligned}\text{GDP}&amp;=C+I+G+(X&#x2212;M)\\ &amp;=(C+G_C)+(I+G_I)+(X&#x2212;M)\end{aligned}$</span><br>
-A trade deficit must be funded by a capital inflow.</p>
-<h4>GDI</h4>
-<p>GDP = Gross domestic income (GDI) = Net domestic income + Consumption of fixed capital (CFC) + Statistical discrepancy<br>
-<span class="mathjax-exps">$\begin{aligned} \text{GDP} &amp;= \text{Consumer spending on goods and services}\\ &amp;+\text{Business gross fixed investment}\\ &amp;+\text{Change in inventories}\\ &amp;+\text{Government spending on goods and services}\\ &amp;+\text{Government gross fixed investment}\\ &amp;+\text{Exports Imports}\\ &amp;+\text{Statistical discrepancy}\end{aligned}$</span><br>
-<span class="mathjax-exps">$\begin{aligned} \text{GDI}&amp;= \text{Compensation of employees}\\ &amp;+\text{Gross operating surplus}\\ &amp;+\text{Gross mixed income(farm, nonfarm, rent)}\\ &amp;+\text{Taxes less subsidies on production}\\ &amp;+\text{Taxes less subsidies on products and imports}\end{aligned}$</span><br>
-Personal income (household primary income) = Compensation of employees + Net mixed income + Net property income</p>
-<h4>Relationship among Saving, Investment, the Fiscal Balance and the Trade Balance</h4>
-<p><span class="mathjax-exps">$Y+F-S_B-R=C+S_H$</span>, where <span class="mathjax-exps">$Y$</span> is GDP, <span class="mathjax-exps">$F$</span> is transfer payment, <span class="mathjax-exps">$R$</span> is tax, <span class="mathjax-exps">$S_B$</span> is business saving<br>
-<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$Y=C+S+T=C+(S_H+S_B)+(R-F)$</span><br>
-<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$S=I+(G-T)+(X-M)$</span><br>
-<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$(G-T)=(S-I)-(X-M)$</span><br>
-<span class="mathjax-exps">$C=C(Y-S_B-T)\approx C(Y-T)$</span><br>
-marginal propensity to consume, marginal propensity to save<br>
-average propensity to consume (APC), C/Y, is a good proxy for MPC<br>
-<span class="mathjax-exps">$I = I(r, Y)$</span>, decreasing in real interest rate <span class="mathjax-exps">$r$</span> and increasing in GDP<br>
-<span class="mathjax-exps">$G-T=\overline{G}-t(Y)$</span>, where <span class="mathjax-exps">$G$</span> is an exogenous policy and to some extent, <span class="mathjax-exps">$T$</span> depends on economic need</p>
-<h3>AGGREGATE DEMAND AND AGGREGATE SUPPLY</h3>
-<h4>AGGREGATE DEMAND</h4>
-<p>aggregate demand curve slopes downward because of:</p>
-<ul>
-<li>wealth effect</li>
-<li>interest rate effect: higher interest rate decreases investment demand and affect consumption (mainly large purchases)</li>
-<li>real exchange rate effect: internation good as substitutes; price increases, interest rate increas and then domestic currency appreciates</li>
-</ul>
-<p>price as dependent variable in this model, moves along the aggregate demand curve</p>
-<h4>AGGREGATE SUPPLY</h4>
-<p>The &#x201C;long run&#x201D; here is long enough that wages, prices, and expectations can adjust but not long enough that physical capital is a variable input. So <span class="mathjax-exps">$Y=F(\overline{K},\overline{L})=\overline{Y}$</span><br>
-<img src="image/cfa-economics-marcro-aggregate supply.png" width="100%"><br>
-Shift in AD curve:</p>
-<ul>
-<li>Household Wealth: higher equity price makes it easier for household to achieve its wealth accumlation goals and increase consumption</li>
-<li>Consumer and Business Expectations</li>
-<li>Capacity Utilization: higher capacity, more investment and AD curve shifts to right</li>
-<li>Fiscal policy</li>
-<li>monetary policy: more money, lower interest rate, household will purchase durable good, credit limit will be raised and credit standard will be loosened</li>
-<li>exchange rate</li>
-<li>Growth in the Global Economy</li>
-</ul>
-<p>higer consumption implies higher equity price</p>
-<p>Shift in AS curve:</p>
-<ul>
-<li>Change in Nominal Wages: nominal wage increases, SRAS shifts to left, LRAS does not change</li>
+<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
+<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
+<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
 </ul>
 
       </div>
