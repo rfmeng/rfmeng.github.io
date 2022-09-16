@@ -160,10 +160,30 @@ Shift in AD curve:
 
 higer consumption implies higher equity price
 <!-- 149 -->
-Shift in AS curve:
+Shift in SRAS curve:
 * Change in Nominal Wages: nominal wage increases, SRAS shifts to left, LRAS does not change
+* Change in Input Prices
+* Change in Expectations about Future Prices
+* Change in Business Taxes and Subsidies
+* Change in the Exchange Rate: domestic currency appreciates, material from other countries cheaper
 
-
+Shift in LRAS curve:
+* supply of labor and quality of labor forces (human capital),
+* supply of natural resources,
+* supply of physical capital, and
+* productivity and technology.
+<h4>Equilibrium GDP and Prices</h4>
+<!--  -->
+4 types of macroeconomic equilibrium:
+* long-run equilibrium
+* short-run recessionary gap
+<img src="images/cfa-economics-macro-recessionary gap.png" width="100%"/>
+under this situation, invest less in cyclical companies (automobile and chemical) and more in defensive companies (food and pharmeceutical), 
+* short-run inflationary gap
+<img src="images/cfa-economics-macro-inflationary gap.png" width="100%"/>
+* short-run stagflation
+<img src="images/cfa-economics-macro-stagflation.png" width="100%"/>
+<!-- 171 -->
 
 
 
