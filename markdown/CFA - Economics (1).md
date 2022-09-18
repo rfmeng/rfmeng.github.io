@@ -1,4 +1,4 @@
-<h1>Economics</h1>
+<h1>Economics (1)</h1>
 <h2>Microeconomics</h2>
 <h3>DEMAND ANALYSIS</h3>
 <!--  -->
@@ -42,6 +42,8 @@ In the example of TC, opportunity of the asset is reflected in the MVC (return o
 LRAC curve is an envelope curve of SATC curve:
 <img src="images/CFA-Economics-supply analysis-lrac.png" width="100%"/>
 The minimum point on the LRAC curve is referred to as the minimum efficient scale. The minimum efficient scale is the optimal firm size under perfect competition over the long run.
+
+
 <h3>MARKET STRUCTURES ANALYSIS</h3>
 <!--  -->
 perfect competition, monopolistic competition (cola, cosmetics), oligopoly, and monopoly
@@ -72,6 +74,8 @@ formal price collusion is called cartel, 6 factors:
 * The degree of external competition
 <h4>STACKELBERG MODEL</h4>
 the leader firm chooses its output first and then the follower firm chooses after observing the leader’s output
+
+
 <h3>MONOPOLY</h3>
 <!--  -->
 factors: patent/copyright, control over critical resources, government-controlled authorization (because of the significant entry cost), brand loyalty and Network effects (result from synergies related to increasing market penetration)
@@ -86,6 +90,11 @@ third degree: customer-based
 econometric: regression
 concentration ratio
 Herfindahl–Hirschman index (HHI): square of the market share
+
+
+
+
+
 <h2>Macroeconomics</h2>
 <h3>AGGREGATE OUTPUT AND INCOME</h3>
 <h4>GDP</h4>
@@ -184,6 +193,114 @@ under this situation, invest less in cyclical companies (automobile and chemical
 * short-run stagflation
 <img src="images/cfa-economics-macro-stagflation.png" width="100%"/>
 <!-- 171 -->
+<h4>ECONOMIC GROWTH AND SUSTAINABILITY</h4>
+<!-- 199 -->
+**sustainable rate of economic growth** : the rate of increase in the economy’s productive capacity or potential GDP (LRAS).
+<h5>Solow's model</h5>
+<!--  -->
+production function: $Y=AF(L,K)$, where $A$ is total factor productivity and could not be directly observed, but instead eastimated; it is a redisual effect.
+assumption:
+* $tAF(L,K)=AF(tL,tK)$
+* diminishing marginal productivity for any input solely
+* no externalities for input
+
+there should be a convergence of incomes between developed and developing countires over time.
+Growth in potential GDP = Growth in TFP + $W_L$ (Growth in labor) + $W_C$ (Growth in capital)
+Growth in per capita potential GDP = Growth in TFP +
+$W_C$ (Growth in capital-to-laborratio)
+<img src="images/cfa-economics-macro-economic growth.png" width="100%"/>
+$A$ concludes: human capital (quality of labor), technology, natural resources, public infrastructure, pollution, economic environment (legal and political)
+$Y/L=AF(1,K/L)$, where $Y/L$ = Labor productivity = Real GDP/Aggregate hours
+Potential GDP = Aggregate hours worked × Labor productivity $\Rightarrow$ Potential growth rate = Long-term growth rate of aggregate hours worked +
+Long-term labor productivity growth rate
+
+
+<h3>BUSINESS CYCLES</h3>
+<!-- 199 -->
+business cycles rely mainly on business enterprises—therefore, not agrarian societies or centrally planned economies.
+Types of cycles:
+* classical cycle: peak and trough
+* growth cycle (which CFA use)
+* growth rate cycle
+  <img src="images/cfa-economics-macro-cycle.png" width="100%"/>
+
+Four phases: recovery, expansion, slow down and contraction
+equity market is a leading indicator of the economy
+recession: Real GDP has two consecutive quarters of negative growth
+<h4>CREDIT CYCLES</h4>
+<!--  -->
+business cycles can be amplified because of finance cycle
+monetary and fiscal policy traditionally concentrate on reducing the volatility of business cycles
+<h4>DIFFERENT PERSEPCTIVES</h4>
+<!--  -->
+Firm:
+* Employment
+* capital spending: first light equipment, then heavy equipment
+* Inventory
+
+household:
+* consumpytion: durable good > service > non-durable, in cyclical order
+* income: durables move with disposable income, while service tracks permanant income (excludes sudden loss and gain)
+
+Housing sector: late buying (like equity)
+External trade sector
+<h4>THEORETICAL CONSIDERATION</h4>
+<!--  -->
+Neoclassical Economics, (RBC (real business cycle)):
+* monetary and fiscal policy has lags/delays, amplifying the cycle
+* invisible hand results from the utility maximization
+* provide better information for market participants to allow price and production to adjust in time
+
+The Austrian School:
+* stress monetary policy
+* markets are flexible and prices are easy to adjust, supply curve (even short run) is actually steep
+* policy maker should not intervene
+
+Monetarism:
+* money supply needs to grow at a moderate rate
+* business cycle results from exogenous shock and   government intervention, policy should be clear to decrease uncertainty for market participants
+
+Keynesianism:
+* government should intervene more on fiscal policy, because confidence might be low
+* nominal wage is sticky and supply curve is flat
+* in the long run, we are all dead 
+
+Minsky moment: When he looks down and sees that he is walking on thin air, he panics and falls to the bottom of the canyon
+<h4>INDICATOR</h4>
+<img src="images/cfa-economics-macro-indicator.png" width="100%"/>
+<h4>UNEMPLOYMENT</h4>
+<!--  -->
+Labor force = employed + unemployed (who are seeking jobs), unemployed consists of long-term unemployed and frictionally unemployed
+unemployment rate = unemployed/labor force
+participation rate = labor force/working age
+underemployed
+discouraged worker: those who stopped looking for a job
+<h4>INFLATION</h4>
+<!--  -->
+deflation, hyperinflation and disinflation (slowdown inflation)
+hyperinfaltion has a vicious circle like machanism (price increases, people are eager to change money into real good)
+price index: fisher index = sqrt of (Laspeyres index (old basket) and Paasche index (new basket))
+Laspeyres index's biases: substitution bias, quality bias and new product bias
+CPI (consumer price index) and PPI (producer price index)
+headline inflation (all goods) and core inflation (except food and energy), core inflation is to exclude the effect of short term changes
+cost push (wage) inflation and demand pull inflation
+non-accelerating inflation rate of unemployment (NAIRU) (effective index before unemployment reaches low levels)
+unit labor cost (ULC) = output per hour per worker/total labor compensation per hour per worker
+
+
+
+
+
+
+<h1>Economics (2)</h1>
+<!-- 269 -->
+<h2>Monetary and fiscal policy</h2>
+<h3>MONETARY POLICY</h3>
+<!--  -->
+
+
+
+
 
 
 
