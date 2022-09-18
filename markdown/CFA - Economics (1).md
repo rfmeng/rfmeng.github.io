@@ -35,12 +35,12 @@ A firm is said to break even if its TR is equal to its TC.
 Economic costs are the sum of total accounting costs and implicit opportunity costs.
 A firm whose revenue is equal to its economic costs is covering the opportunity cost of all of its factors of production, including capital. Economists would say that such a firm is earning normal profit, but not positive economic profit. It is earning a rate of return on capital just equal to the rate of return that an investor could expect to earn in an equivalently risky alternative investment (opportunity cost).
 In the long run, the best a firm can do is to break even because of other entrants.
-<img src="/images/CFA-Economics-supply%20analysis-equilibrium.png" width="80%"/>
-<img src="/images/CFA-economics-supply%20analysis-shutdown.png" width="100%"/>
+<img src="images/CFA-Economics-supply%20analysis-equilibrium.png" width="80%"/>
+<img src="images/CFA-economics-supply%20analysis-shutdown.png" width="100%"/>
 In the example of TC, opportunity of the asset is reflected in the MVC (return of asset) and TC (could have sold the machine)?
 <!--  -->
 LRAC curve is an envelope curve of SATC curve:
-<img src="/images/CFA-Economics-supply analysis-lrac.png" width="100%"/>
+<img src="images/CFA-Economics-supply analysis-lrac.png" width="100%"/>
 The minimum point on the LRAC curve is referred to as the minimum efficient scale. The minimum efficient scale is the optimal firm size under perfect competition over the long run.
 
 
@@ -59,7 +59,7 @@ Consumer surplus is defined as the difference between the value that a consumer 
 <h4>OLIGOPOLY</h4>
 There are three basic pricing strategies: pricing interdependence (price war), the Cournot assumption, and the Nash equilibrium
 pricing interdependence: DD is the demand curve when all participants make the same move, dd is the demand curve when only one participant make that move, which explains the price stability, but not the initial price:
-<img src="/images/cfa-economics-market structure-kinked curve.jpg" width="100%"/>
+<img src="images/cfa-economics-market structure-kinked curve.jpg" width="100%"/>
 In long run, market share is temporary.
 <h4>COURNOT</h4>
 In the Cournot assumption, each firm determines its profit-maximizing production level by assuming that the other firms’ output will not change
@@ -157,7 +157,7 @@ price as dependent variable in this model, moves along the aggregate demand curv
 <h4>AGGREGATE SUPPLY</h4>
 <!--  -->
 The “long run” here is long enough that wages, prices, and expectations can adjust but not long enough that physical capital is a variable input. So $Y=F(\overline{K},\overline{L})=\overline{Y}$
-<img src="/images/cfa-economics-marcro-aggregate supply.png" width="100%"/>
+<img src="images/cfa-economics-marcro-aggregate supply.png" width="100%"/>
 Shift in AD curve:
 * Household Wealth: higher equity price makes it easier for household to achieve its wealth accumlation goals and increase consumption
 * Consumer and Business Expectations
@@ -186,12 +186,12 @@ Shift in LRAS curve:
 4 types of macroeconomic equilibrium:
 * long-run equilibrium
 * short-run recessionary gap
-<img src="/images/cfa-economics-macro-recessionary gap.png" width="100%"/>
+<img src="images/cfa-economics-macro-recessionary gap.png" width="100%"/>
 under this situation, invest less in cyclical companies (automobile and chemical) and more in defensive companies (food and pharmeceutical), 
 * short-run inflationary gap
-<img src="/images/cfa-economics-macro-inflationary gap.png" width="100%"/>
+<img src="images/cfa-economics-macro-inflationary gap.png" width="100%"/>
 * short-run stagflation
-<img src="/images/cfa-economics-macro-stagflation.png" width="100%"/>
+<img src="images/cfa-economics-macro-stagflation.png" width="100%"/>
 <!-- 171 -->
 <h4>ECONOMIC GROWTH AND SUSTAINABILITY</h4>
 <!-- 199 -->
@@ -208,7 +208,7 @@ there should be a convergence of incomes between developed and developing counti
 Growth in potential GDP = Growth in TFP + $W_L$ (Growth in labor) + $W_C$ (Growth in capital)
 Growth in per capita potential GDP = Growth in TFP +
 $W_C$ (Growth in capital-to-laborratio)
-<img src="/images/cfa-economics-macro-economic growth.png" width="100%"/>
+<img src="images/cfa-economics-macro-economic growth.png" width="100%"/>
 $A$ concludes: human capital (quality of labor), technology, natural resources, public infrastructure, pollution, economic environment (legal and political)
 $Y/L=AF(1,K/L)$, where $Y/L$ = Labor productivity = Real GDP/Aggregate hours
 Potential GDP = Aggregate hours worked × Labor productivity $\Rightarrow$ Potential growth rate = Long-term growth rate of aggregate hours worked +
@@ -222,7 +222,7 @@ Types of cycles:
 * classical cycle: peak and trough
 * growth cycle (which CFA use)
 * growth rate cycle
-  <img src="/images/cfa-economics-macro-cycle.png" width="100%"/>
+  <img src="images/cfa-economics-macro-cycle.png" width="100%"/>
 
 Four phases: recovery, expansion, slow down and contraction
 equity market is a leading indicator of the economy
@@ -267,7 +267,7 @@ Keynesianism:
 
 Minsky moment: When he looks down and sees that he is walking on thin air, he panics and falls to the bottom of the canyon
 <h4>INDICATOR</h4>
-<img src="/images/cfa-economics-macro-indicator.png" width="100%"/>
+<img src="images/cfa-economics-macro-indicator.png" width="100%"/>
 <h4>UNEMPLOYMENT</h4>
 <!--  -->
 Labor force = employed + unemployed (who are seeking jobs), unemployed consists of long-term unemployed and frictionally unemployed
