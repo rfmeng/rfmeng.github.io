@@ -35,7 +35,7 @@ A firm is said to break even if its TR is equal to its TC.
 Economic costs are the sum of total accounting costs and implicit opportunity costs.
 A firm whose revenue is equal to its economic costs is covering the opportunity cost of all of its factors of production, including capital. Economists would say that such a firm is earning normal profit, but not positive economic profit. It is earning a rate of return on capital just equal to the rate of return that an investor could expect to earn in an equivalently risky alternative investment (opportunity cost).
 In the long run, the best a firm can do is to break even because of other entrants.
-<img src="/images/CFA-Economics-supply%20analysis-equilibrium.png" width="80%"/>
+<img src="\images\CFA-Economics-supply%20analysis-equilibrium.png" width="80%"/>
 <img src="/images/CFA-economics-supply%20analysis-shutdown.png" width="100%"/>
 In the example of TC, opportunity of the asset is reflected in the MVC (return of asset) and TC (could have sold the machine)?
 <!--  -->
@@ -287,19 +287,6 @@ headline inflation (all goods) and core inflation (except food and energy), core
 cost push (wage) inflation and demand pull inflation
 non-accelerating inflation rate of unemployment (NAIRU) (effective index before unemployment reaches low levels)
 unit labor cost (ULC) = output per hour per worker/total labor compensation per hour per worker
-
-
-
-
-
-
-<h1>Economics (2)</h1>
-<!-- 269 -->
-<h2>Monetary and fiscal policy</h2>
-<h3>MONETARY POLICY</h3>
-<!--  -->
-
-
 
 
 
