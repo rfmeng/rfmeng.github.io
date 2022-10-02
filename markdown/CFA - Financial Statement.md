@@ -240,7 +240,7 @@ expensed cost include:
 <h5>GOODWILL</h5>
 <!--  -->
 purchase price's excess amount higher than identifiable assets net of liabilities
-accounting goodwill arising from acquisitions is capitalized, not amortised but tested for impairment annually
+accounting goodwill arising from acquisitions is capitalized, not amortised but tested for impairment annually (impairment loss against income)
 Any gain from a bargain purchase is recognized in profit and loss
 analysts often adjust the companies’ financial statements by removing the impact of goodwill
 
