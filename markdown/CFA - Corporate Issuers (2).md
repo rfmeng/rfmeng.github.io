@@ -102,7 +102,7 @@ business risk = sales risk + operating risk, where
 
 <h4>OPERATING LEVERAGE</h4>
 <!--  -->
-degree of operating leverage (DOL): $\text{DOL}=\frac{\text{% change in operating income}}{\text{% change in units sold}}=\frac{Q(P-V)}{Q(P-V)-F}$
+degree of operating leverage (DOL): $\text{DOL}=\frac{\text{percent change in operating income}}{\text{percent change in units sold}}=\frac{Q(P-V)}{Q(P-V)-F}$
 contribution margin: revenue - variable costs
 high DOL industry: software and pharmaceutical; low DOL industry: retailer
 for company having multiple product, estimate it with regression (operating earning on revenue)
@@ -110,10 +110,10 @@ for company having multiple product, estimate it with regression (operating earn
 <h4>FINANCIAL LEVERAGE</h4>
 <!--  -->
 financial risk: risk associated with how a company finances its operations
-degree of financial leverage (DFL): $\text{DFL}=\frac{\text{% change in net income}}{\text{% change in operating income}}\frac{Q(P-V)-F}{Q(P-V)-F-C}$
+degree of financial leverage (DFL): $\text{DFL}=\frac{\text{percent change in net income}}{\text{percent change in operating income}}=\frac{Q(P-V)-F}{Q(P-V)-F-C}$
 
 <h4>TOTAL LEVERAGE</h4>
-degree of total leverage (DTL): $\text{DTL}=\frac{\text{% change in net income}}{\text{% change in units sold}}=DOL\times DFL$
+degree of total leverage (DTL): $\text{DTL}=\frac{\text{percent change in net income}}{\text{percent change in units sold}}=DOL\times DFL$
 
 <h4>BREAKEVEN POINTS AND OPERATING BREAKEVEN POINTS</h4>
 <!--  -->
