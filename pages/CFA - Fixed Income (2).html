@@ -1,0 +1,392 @@
+<!DOCTYPE html><html><head>
+      <title>CFA - Fixed Income (2)</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="\lib\mathjax\MathJax.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1>Fixed Income (2)</h1>
+<h3>Understanding Fixed-Income Risk and Return</h3>
+<h4>INTRODUCTION AND OVERVIEW OF A FIXED-INCOME SECURITY</h4>
+<p>horizon yield: the annualized holding-period<br>
+rate of return, calculated use the realized reinvestment future value and the current price<br>
+capital gain or loss: the bond&#x2019;s carrying value and selling price<br>
+interest risk consists of coupon reinvestment risk and market price risk (selling price)</p>
+<h4>MACAULAY AND MODIFIED DURATION</h4>
+<p>Macaulay duration is weighted average of time to receive payments, where weight are the shares of the full price:<br>
+<img src="/images/CFA-fixed income-income risk-macaulay duration.png" width="100%"></p>
+<p>30/360 convention: <span class="mathjax-exps">$DayCountFactor=\frac{360(Y_2-Y_1)+30(M_2-M_1)+(D_2-D_1)}{360}$</span><br>
+<span class="mathjax-exps">$MacDur=\frac{1+r}{r}-\frac{1+r+N(c-r)}{c[(1+r)^N-1]+r}-\frac{t}{T}$</span>, this is duartion in terms of periods, to be anuallized<br>
+Modified duration: <span class="mathjax-exps">$ModDur=\frac{MacDur}{1+r}$</span>, where <span class="mathjax-exps">$r$</span> is the yield-to-maturity per period<br>
+<span class="mathjax-exps">$\%\Delta PV^{Full}\approx-AnnModDur\times\Delta AnnYield$</span></p>
+<h4>APPROXIMATE MODIFIED AND MACAULAY DURATION</h4>
+<p><span class="mathjax-exps">$ApproxModDur=-\frac{PV_+-PV_-}{2PV_0\Delta Yield }$</span>, where  price when the yield-to-maturity is reduced is denoted <span class="mathjax-exps">$PV_-$</span><br>
+<span class="mathjax-exps">$ApproxMacDur=(1+r)ApproxModDur$</span>, where <span class="mathjax-exps">$r$</span> is the yield per period.</p>
+<h4>EFFECTIVE AND KEY RATE DURATION</h4>
+<p>effective duration: <span class="mathjax-exps">$EffDur=-\frac{PV_+-PV_-}{2PV_0\Delta Curve }$</span>, where <span class="mathjax-exps">$\Delta Curve$</span> denotes a parallel shift in the benchmark yield curve<br>
+effective duration is useful for bond that contains an embedded call option, because callable bond does not have a well-defined internal rate of interest<br>
+key rate duration (partial duration): <span class="mathjax-exps">$KeyRateDur^k=-\frac{\Delta PV}{PV\Delta r^k}$</span>, where <span class="mathjax-exps">$r^k$</span> stands for the <span class="mathjax-exps">$k$</span>th key rate<br>
+<span class="mathjax-exps">$\sum KeyRateDur=EffDur$</span> (understand this like partial derivative)</p>
+<h4>PROPERTIES OF BOND DURATION</h4>
+<p>duration change with time (t):<br>
+<img src="/images/CFA-fixed income-income risk-duraiton change from time.png" width="100%"></p>
+<p>duration change with time to maturity (T):<br>
+<img src="/images/CFA-fixed income-income risk-duraiton change from time to maturity.png" width="100%"></p>
+<p>callable bond:<br>
+<img src="/images/CFA-fixed income-income risk-callable price.png" width="100%"></p>
+<p>putable bond:<br>
+<img src="/images/CFA-fixed income-income risk-putable price.png" width="100%"></p>
+<h4>DURATION OF A BOND PORTFOLIO</h4>
+<p>two way to calculate duration of bond portfolio:</p>
+<ul>
+<li>definition method, see the portfolio as a single bond</li>
+<li>weighted average of the individual bond durationsthat comprise the portfolio</li>
+</ul>
+<h4>MONEY DURATION AND THE PRICE VALUE OF A BASIS POINT</h4>
+<p>money duration (dollar duration): <span class="mathjax-exps">$MoneyDur = AnnModDur &#xD7; PV^{Full}$</span><br>
+<span class="mathjax-exps">$\Delta PVFull \approx &#x2013;MoneyDur &#xD7; \Delta Yield$</span><br>
+price value of a basis point (or PVBP, PV01, DV01): <span class="mathjax-exps">$PVBP=-\frac{PV_{+1bp}-PV_{-1bp}}{2}$</span></p>
+<h4>BOND CONVEXITY</h4>
+<p><span class="mathjax-exps">$\%\Delta PV^{Full}\approx-AnnModDur\Delta Yield+\frac{1}{2}AnnCon(\Delta Yield)^2$</span><br>
+<span class="mathjax-exps">$ApprxCon=\frac{PV_++PV_--2PV_0}{PV_0(\Delta Yield)^2}$</span><br>
+to annualize convexity, it should be divided by the periodicity squared<br>
+<span class="mathjax-exps">$\Delta PV^{Full}\approx-MoneyDur\Delta Yield+\frac{1}{2}MoneyCon(\Delta Yield)^2$</span><br>
+<span class="mathjax-exps">$MoneyCon=AnnCon\times MarketValue$</span><br>
+longer time-to-maturity, a lower coupon rate, and a lower yield-to-maturity lead to greater convexity<br>
+effective convexity: <span class="mathjax-exps">$EffCon=\frac{PV_++PV_--2PV_0}{PV_0(\Delta Curve)^2}$</span></p>
+<h4>INVESTMENT HORIZON, MACAULAY DURATION AND INTEREST RATE RISK</h4>
+<p>term structure of yield volatility: the volatility of bond yields-to-maturity and times-to-maturity<br>
+<em>Macaulay duration indicates the investment horizon for which coupon reinvestment risk and market price risk offset each other</em><br>
+duration gap: difference between the Macaulay duration of a bond and the investment horizon<br>
+<img src="/images/CFA-fixed income-investment horizon.png" width="100%"><br>
+When the investment horizon is greater than the Macaulay duration, the risk is to lower interst rate</p>
+<h4>CREDIT AND LIQUIDITY RISK</h4>
+<p>benchmark yield change: inflation and real rate<br>
+spread change: credit and liquidity (selling and buying of the bond)</p>
+<h4>EMPIRICAL DURATION</h4>
+<p>empirical duration: statistical model</p>
+<h3>Fundamentals of Credit Analysis</h3>
+<h4>CREDIT RISK</h4>
+<p>credit risk: default risk and loss severity<br>
+In general, the less debt an issuer has outstanding, the less frequently its debt trades.</p>
+<h4>CAPITAL STRUCTURE, SENIORITY RANKING, AND RECOVERY RATES</h4>
+<p>priority of claims: first lien loan, second lien loan, senior unsecured, senior subordinated and then junior subordinated<br>
+Priority of claims: Not always absolute, because of the negotiation between creditors</p>
+<h4>RATING AGENCIES, CREDIT RATINGS, AND THEIR ROLE IN THE DEBT MARKETS</h4>
+<p>notching: the higher the senior unsecured rating, the smaller the notching adjustment (for recovery rate)</p>
+<img src="/images/CFA-fixed income-bond rating.png" size="100%">
+<h4>TRADITIONAL CREDIT ANALYSIS: CORPORATE DEBT SECURITIES</h4>
+<p>equity analysts focus more on income and cash flow statements; whereas credit analysts focus more on the balance sheet and cash flow statements</p>
+<h5>The Four Cs of Credit Analysis: A Useful Framework</h5>
+<h6>Capacity</h6>
+<p>capacity refers to he ability of the borrower to make its debt payments on time<br>
+capacity includes industry analysis and company analysis</p>
+<ul>
+<li>Porter&apos;s five force model</li>
+<li>Industry fundamentals</li>
+<li>Company fundamentals</li>
+<li>ratios analysis</li>
+</ul>
+<h6>Colleteral</h6>
+<h6>Covenant</h6>
+<h6>Character</h6>
+Character refers to the quality of managemen
+<h4>CREDIT RISK VS. RETURN: YIELDS AND SPREADS</h4>
+<h5>Spread</h5>
+<p>Credit cycle: As the credit cycle improves, credit spreads will narrow</p>
+<h4>HIGH-YIELD, SOVEREIGN, AND NON-SOVEREIGN CREDIT ANALYSIS</h4>
+<h5>HIGH-YIELD DEBT</h5>
+<p>sources of liquidity:</p>
+<ol>
+<li>Cash on the balance sheet</li>
+<li>Working capital</li>
+<li>Operating cash flow</li>
+<li>Bank credit facilities</li>
+<li>Equity issuance</li>
+<li>Asset sales</li>
+</ol>
+<p>The parent&#x2019;s reliance on cash flow from its subsidiaries implies a lower recovery rating in default<br>
+covenant:</p>
+<ul>
+<li>change of control put: in the event of an acquisition, bondholders have the right to require the issuer to buy back their debt</li>
+</ul>
+<h5>SOVEREIGN DEBT</h5>
+<p>two key issues: ability to pay and willingness to pay</p>
+<h5>Non-Sovereign Government Debt</h5>
+<p>General obligation (GO) bonds: unsecured bond, supported by the taxing authority<br>
+revenue bonds: related to a specific project</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
