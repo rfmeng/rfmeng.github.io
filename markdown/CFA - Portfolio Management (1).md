@@ -5,15 +5,6 @@
 diversification ratio: portfolio std / weighted average return of individual security
 
 
-
-<h3>Fintech in Investment Management</h3>
-<h4>DISTRIBUTED LEDGER TECHNOLOGY, AND PERMISSIONED AND PERMISSIONLESS NETWORKS</h4>
-<!--  -->
-pension: defined contribution or defined benefit
-closed-end fund: no new investment and no redemption
-load fund: annual fee (no-load fund has only annual fee) and redemption fee
-separately managed account (SMA): asset belongs to individual or institution
-
 <h3>Portfolio Risk and Return: Part I</h3>
 <h4>MONEY-WEIGHTED RETURN OR INTERNAL RATE OF RETURN</h4>
 <!--  -->
