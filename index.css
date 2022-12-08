@@ -160,6 +160,11 @@ header.header {
   background: var(--menu-item-bg-color);
 }
 
+
+/*.menu-item .far {
+  margin-right: 4px;
+}*/
+
 .sidebar {
   margin-top: 12px;
   position: -webkit-sticky;
@@ -275,6 +280,47 @@ header.header {
 .post-block {
   padding: 40px;
 }
+
+.posts-expand .post-header {
+  font-size: 1.125em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.posts-expand .post-title {
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: normal;
+  margin: initial;
+  overflow-wrap: break-word;
+}
+
+
+.posts-expand .post-meta-container {
+  color: #999;
+  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 0.75em;
+  margin-top: 3px;
+}
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.posts-expand .post-meta-container time {
+  border-bottom: 1px dashed #999;
+}
+
+:not(.post-meta-break) + .post-meta-item::before {
+  content: '|';
+  margin: 0 0.5em;
+}
+
+.post-meta .post-meta-item span a {
+  border-bottom: 1px solid #999;
+}
+
 
 
 
