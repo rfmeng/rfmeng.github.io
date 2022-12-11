@@ -103,7 +103,7 @@
 		      </header>
 					<div class="mume markdown-preview post-body" for="html-export">
 <p><ndtag category="VIX Construction" createdate="2022-12-11" editdate="2022-12-11" tag="VIX"></ndtag></p>
-<h3 id="#nav1">1993-2003</h3>
+<h3 id="nav1">1993-2003</h3>
 Use eight options to produce the index.
 Denote the strike prices below and above the current index level ($S$) as $X_l$ and $X_u$ respectively. The implied volatilities used to create the VIX index are as follows:
 <p class="wrapper" style="text-align:center;">
@@ -117,7 +117,7 @@ Denote the strike prices below and above the current index level ($S$) as $X_l$ 
 <div class="mathjax-exps">$$V I X_{\text {old }}=\sigma_1\left(\frac{N_{t_2}-22}{N_{t_2}-N_{t_1}}\right)+\sigma_2\left(\frac{22-N_{t_2}}{N_{t_2}-N_{t_1}}\right)$$</div><br/>
 where <span class="mathjax-exps">$N_{t_1}$</span> and <span class="mathjax-exps">$N_{t_2}$</span> are the number of trading days to maturity of the two contracts.</li>
 </ol>
-<h3 id="#nav2">2003-2014</h3>
+<h3 id="nav2">2003-2014</h3>
 <p>The generalized formula used in the VIX Index calculation is:<br/>
 </p><div class="mathjax-exps">$$\sigma^2=\frac{2}{T} \sum_i \frac{\Delta K_i}{K_i^2} e^{R T} Q\left(K_i\right)-\frac{1}{T}\left[\frac{F}{K_0}-1\right]^2$$</div><br/>
 where<p></p>
@@ -129,13 +129,13 @@ where<p></p>
 <li><span class="mathjax-exps">$\Delta K_i=\frac{K_{i+1}-K_{i-1}}{2}$</span></li>
 <li><span class="mathjax-exps">$Q(K_i)$</span> is the midpoint of the bid-ask spread for each option with strike <span class="mathjax-exps">$K_i$</span></li>
 </ul>
-<h3 id="#nav3">2014-now</h3>
+<h3 id="nav3">2014-now</h3>
 The VIX is a 30-day expectation of volatility given by a weighted portfolio of out-of-the-money European options on the S&amp;P 500:
 $$
 VIX=\sqrt{\frac{2 e^{r \tau}}{\tau}\left(\int_0^F \frac{P(K)}{K^2} d K+\int_F^{\infty} \frac{C(K)}{K^2} d K\right)}
 $$
 where ${\tau }$ is the number of average days in a month (30 days), $r$ is the risk-free rate, $F$ is the 30-day forward price on the S&amp;P 500, and $P(K)$ and $C(K)$ are prices for puts and calls with strike $K$ and 30 days to maturity.
-<h3 id="#nav4">Reference</h3>
+<h3 id="nav4">Reference</h3>
 <p><a href="https://quant.stackexchange.com/questions/25157/how-was-the-old-vix-calculated">https://quant.stackexchange.com/questions/25157/how-was-the-old-vix-calculated</a><br/>
 <a href="http://chesnes.com/docs/fed_docs/Hao_NewVix.pdf">http://chesnes.com/docs/fed_docs/Hao_NewVix.pdf</a><br/>
 <a href="https://web.archive.org/web/20091231021416/https://www.cboe.com/micro/vix/vixwhite.pdf">https://web.archive.org/web/20091231021416/https://www.cboe.com/micro/vix/vixwhite.pdf</a><br/>

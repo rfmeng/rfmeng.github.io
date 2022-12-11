@@ -103,11 +103,11 @@
 		      </header>
 					<div class="mume markdown-preview post-body" for="html-export">
 <p><ndtag category="Proof" createdate="2022-12-11" editdate="2022-12-11" tag="Linear-Algebra"></ndtag></p>
-<h3 id="#nav1">Definition</h3>
+<h3 id="nav1">Definition</h3>
 <p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br/>
 (i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3 id="#nav2">Properties</h3>
-<h4 id="#nav2.1">Existence and uniqueness</h4>
+<h3 id="nav2">Properties</h3>
+<h4 id="nav2.1">Existence and uniqueness</h4>
 <h5>Existence</h5>
 <h6>Proof</h6>
 <p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
@@ -116,7 +116,7 @@
 <p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br/>
 </p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br/>
 Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4 id="#nav2.2">Linear equations</h4>
+<h4 id="nav2.2">Linear equations</h4>
 <h5>Theorem 1</h5> 
 A solution to $Ax=b$ exists if and only if $AA^gb=b$.
 <h6>Proof</h6>
@@ -127,7 +127,7 @@ The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ var
 <h6>Proof</h6>
 <p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br/>
 Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4 id="#nav2.3">Ordinary least squares (OLS)</h4>
+<h4 id="nav2.3">Ordinary least squares (OLS)</h4>
 <h5>Theorem 1</h5> 
 $\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
 <h6>Proof</h6>
@@ -155,7 +155,7 @@ $$\begin{aligned}
 =&amp;0
 \end{aligned}$$
 Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3 id="#nav3">References</h3>
+<h3 id="nav3">References</h3>
 <ul>
 <li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore–Penrose_inverse</a></li>
