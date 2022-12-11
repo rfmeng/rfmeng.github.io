@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Financial Statement (3)(4)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,66 +266,251 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Financial-Statement-Analysis" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Inventories</h3>
+<p>raw materials,work in progress, and finished goods, report separately or in total amount</p>
+<h4>Cost</h4>
+<p>all cost<br>
+trade discounts or rebates reduce the price paid<br>
+direct labor, variable overhead cost are also cost, the expense will be recognized only when inventory are sold<br>
+recognized as expense in the same period:</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>abnormal costs incurred as a result of waste</li>
+<li>storage cost(unless required by production process)</li>
+<li>administrative cost<br>
+transportation cost for raw material need not be separated for abnormal waste</li>
 </ul>
+<h4>Valuation methods</h4>
+<p>When items are sold, the carrying amount of inventory is recognised as an expense<br>
+Specific Identification (&#x4E2A;&#x522B;&#x8BA1;&#x4EF7;&#x6CD5;): such as precious gemstones</p>
+<h4>Periodic versus perpetual inventory systems</h4>
+&#x5B9A;&#x671F;&#x76D8;&#x5B58;&#x5236;, &#x6C38;&#x7EED;&#x76D8;&#x5B58;&#x5236;
+<h4>Lifo reserve</h4>
+<p>US GAAP requires LIFO reserve, which is the FIFO inventory value less the LIFO inventory value<br>
+<span class="mathjax-exps">$L_1-L_0+C_L=F_1-F_0+C_F$</span></p>
+<h4>Lifo liquidations</h4>
+<p>in periods rising inventory cost, if the inventory units declines, there will be a LIFO liquidation where an unsustainable higher profit occurs<br>
+gross profit due to LIFO liquidation could be determined by:  number of units liquidated * the difference between the replacement cost of the units liquidated and their historical purchase cost</p>
+<h4>Method changes</h4>
+GAAP: when changing to LIFO, no retrospective adjustment, the carrying amount becomes the initial LIFO layer
+<h4>Adjustments</h4>
+<p>IFRS:</p>
+<ul>
+<li>lower of cost and Net realisable value</li>
+<li>the loss (reduction in value) recognised as an expense on income statement, in cost of sales or reported separately*</li>
+<li>the reversal of write-down is recongnized as reduction in cost of sales</li>
+</ul>
+<p>GAAP:</p>
+<ul>
+<li>lower of cost and market value (current replacement cost, which should be higher than net realisable value - normal profit margin, lower than net realisable value)</li>
+<li>prohibit the reversal of write-down</li>
+</ul>
+<p>for agricultrual/forest/mineral products, NRV or mark-to-market are used, changes are recognized p&amp;l<br>
+FIFO methods are more likely to incur inventory write-downs than LIFO</p>
+<p>inventory obsolete allowance, reported on balance sheet immediately below asset account to show net reported value:</p>
+<blockquote>
+<p>Dr: expense<br>
+Cr: inventory write down allowance</p>
+</blockquote>
+<h4>Evaluation of inventory management: disclosures &amp; ratios</h4>
+US GAAP requires to report the liquidation of LIFO inventory
+raw material and work-in-progress reflected firm&apos;s expectation toward future demand
+<h3>Long-lived assets</h3>
+<p>long-lived assets, typically over a year, include tangible, intangible and financial assets</p>
+<h4>Acquisition of property, plant and equipment</h4>
+<p>land and intangible assets with indefinite useful lives<br>
+initial carrying amount: cost, typically similar to fair value<br>
+in assets exchange: fair value, if not appliable, then carrying amount of the asset given up<br>
+cost recognition: all the expenditures necessary to get the asset ready for its intended use<br>
+when constructing an asset, borrow cost is capitalized; under IFRS but not GAAP, investing income of the money could decrease cost<br>
+capitalized interest is investing cash flow, expensed interest subject to accounting standard<br>
+under capitalization, depreciation is investment outflow; under expense, it is operating outflow</p>
+<h4>Acquisition of intangible assets</h4>
+<ul>
+<li>purchased in situations other than business combinations</li>
+<li>developed internally<br>
+IFRS: development expenditures could be capitalized<br>
+GAAP: all expenditure should be expensed except for software developments, similar to IFRS</li>
+<li>acquired in business combinations:<br>
+goodwill = purchase price - fair value</li>
+</ul>
+<p>goodwill is not identifiable intangible asset (see before)</p>
+<h4>Capitalisation of interest costs</h4>
+<p>the ture interest coverage ratio should be calculated by gross interest</p>
+<h4>Capitalisation of interest and internal development costs</h4>
+<h4>Depreciation of long-lived assets</h4>
+<p>IFRS permits revaluation model (fair value), but GAAP not<br>
+three methods:</p>
+<ul>
+<li>straight-line method</li>
+<li>accelerated method: use carrying amount to calculate depreciation, but not lower than estimated residual value</li>
+<li>units-of-production method</li>
+</ul>
+<p>In U.S., depreciation method for financial reporting and tax may be different, which draw defered tax<br>
+IFRS require a component method of depreciation<br>
+all methods should have the same residual value when useful life ends</p>
+<h4>Amortisation </h4>
+for intangible assets
+<h4>Revaluation model</h4>
+<p>carrying amounts are the fair values at the date of revaluation less any subsequent accumulated depreciation or amortisation<br>
+revaluation model may be used for intangible assets but only if an active market exists<br>
+revaluation surplus account to hold the excess value, transfered directly to retained earnings, appear in other comprehensive income</p>
+<h4>Impairment of assets</h4>
+<p>IFRS permits impairment reversal, but GAAP not<br>
+impairment:</p>
+<ul>
+<li>IFRS: recoverable amount = the higher of its fair value less costs to sell and its value in use; impairment = carrying amount - recoverable amount</li>
+<li>GAAP: carrying amount is not recoverable when it exceeds undiscounted expected future cash flow; impairment = carrying amount - fair value</li>
+</ul>
+<p>Intangibles with Indefinite Lives: fair value<br>
+Long-Lived Assets Held for Sale: fair value less costs to sell<br>
+Reversals of Impairments of Long-Lived Assets:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IFRS</th>
+<th>GAAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>held for use</td>
+<td>permitted</td>
+<td>not permiteed</td>
+</tr>
+<tr>
+<td>held for sale</td>
+<td>permitted</td>
+<td>permiteed</td>
+</tr>
+</tbody>
+</table>
+<p>asset impairment is an entry on income statement</p>
+<h4>Derecognition</h4>
+sale
+disposal other than sale: carrying amount - fair value of assets given up
+spin-off (&#x8BA9;&#x4EA7;&#x6613;&#x80A1;)
+<h4>Presentation and disclosure requirements</h4>
+???
+<h4>Using disclosures in analysis</h4>
+<p>Estimated total useful life = historical cost / annual depreciation expense</p>
+<h4>Investment property</h4>
+<p>Investment property: held for rental or asset appreciation<br>
+IFRS permits cost model and fair value model where fair value model is different from revaluation model, reflecting all profit and loss in income statement<br>
+from owner-occupied to investment property: treated like a revaluation; from inventory to investment property: like fair value<br>
+if use fair value model, it should be kept even if market is not active any longer</p>
+<h3>Income taxes???</h3>
+<p>accounting profit (income before taxes or pretax income)</p>
+<h4>Current and deferred tax assets and liabilities</h4>
+tax expense = income tax payable + change in defered tax liability
+<h4>Changes in income tax rates</h4>
+<h3>Non-current (long-term) liabilities</h3>
+<p>bond: maturity longer than 10 years; note maturity between 2 years and 10 years; bill: maturity shorter than 2 years</p>
+<h4>Accounting for bond issuance</h4>
+<p>market rate of interest: discounting rate for bond price<br>
+effective interest rate: market rate at the time of issuance<br>
+bonds payable: sale proceeds<br>
+IFRS treat issuance costs as bonds payable while GAAP treats it as an asset (defered charge)</p>
+<h4>Accounting for bond amortisation, interest expense, and interest payments</h4>
+<p>IFRS requires effective rate method; GAAP prefers it<br>
+straight line method: the discount is evenly amortised<br>
+amortisation is non-cash and added back to net profit when preparing operating cash flow</p>
+<h4>Accounting for bonds at fair value</h4>
+<p>fair value model enters profit and loss<br>
+fair value disclosures are required<br>
+the portion of the change in value attributable to changes in their credit risk is reported in other comprehensive income</p>
+<h4>Derecognition of debt</h4>
+gain or loss on the extinguishment of debt is on the income statement
+<h4>Debt covenants</h4>
+<h4>Leases</h4>
+<p>for a contract to be a lease:</p>
+<ul>
+<li>a specific asset</li>
+<li>customer (lessee) to obtain largely benefits</li>
+<li>customer to direct how to use</li>
+</ul>
+<p>A lease that resembles a purchase is classified as a finance lease; All other leases are operating leases<br>
+a lease is financial lease if any of the conditions below is satisfied:</p>
+<ul>
+<li>transfer of ownership</li>
+<li>lessee has option to buy and it will do so</li>
+<li>lease term is for a major part of the asset&apos;s useful life</li>
+<li>present value of total payments higher than that of the asset</li>
+<li>underlying asset has no alternative use for lessor</li>
+</ul>
+<p>If its term is 12 months or less (IFRS and US GAAP) or it is for a &#x201C;low-value asset,&#x201D; up to $5,000 in sales price (IFRS only), then the lessee can elect to simply expense the lease payments on a straight-line basis</p>
+<h5>Lessee accounting - ifrs</h5>
+<p>At lease inception, a lease payable liability and &quot;right of use&quot; ROU asset<br>
+lease liability is reported like a bond<br>
+ROU is reported on a straight-line basis<br>
+principal repayment is financing cash flow</p>
+<h5>Lessee accounting - gaap</h5>
+<p>Financing lease is same as IFRS<br>
+Operating lease: ROU is reported similar to lease liability<br>
+the entire lease payment is operating cash flow</p>
+<h5>Lessor accounting</h5>
+<p>finance lease: lease receivable and interest revenue (total cash receipt is reported as operating cash flow)<br>
+operating lease: treated like operating activity</p>
+<h4>Pensions and other post-employment benefits</h4>
+<p>defined contribution pension plans: defined amount payment</p>
+<p>included in salary or cost of sale</p>
+<h5>IFRS</h5>
+<p>employee&apos;s service cost and net interest expense or income are recognized as profit and loss<br>
+remeasurements is recognized in other comprehensive income, not amortised:</p>
+<ul>
+<li>acturial gain and loss (mortality rate)</li>
+<li>actual return on plan assets - corresponding interest expense</li>
+</ul>
+<h5>GAAP</h5>
+<p>profit and loss: service cost, interest expense and expected return<br>
+other comprehensive income: past service cost and remeasurements</p>
+<h3>Financial reporting quality</h3>
+<p>financial report quality and earnings (result) quality</p>
+<h4>Biased accounting choices</h4>
+<p>aggressive, conservative and understatement of earning volatility<br>
+non-GAAP financail meassure disclosure: equal prominence and reconciliation</p>
+<h4>Differentiate between conservative and aggressive accounting</h4>
+<h5>Conservatism in accounting standards</h5>
+<p>Examples:</p>
+<ul>
+<li>research cost: expensed under both IFRS and GAAP</li>
+<li>litigation loss: recognized when probable</li>
+<li>insurance recoverable: not recognized until insurance company acknowledges</li>
+</ul>
+<p>Critical Accounting Estimates should be disclosed in MDA (management discuss and analysis) against potential report bias</p>
+<h4>Detection of financial reporting quality issues: introduction &amp; presentation choices</h4>
+<p>The SEC prohibits the exclusion of charges or liabilities requiring cash settlement from any non-GAAP liquidity measures, other than EBIT and EBITDA<br>
+The SEC views the period within two years of either before or after the reporting date for considering whether a charge or gain is recurring<br>
+motivation, opportunity and rationality</p>
+<h4>Affect earnings and balance sheets</h4>
+<ul>
+<li>free on board (FOB) shipping point and free on board destination</li>
+<li>inventory valuation method</li>
+<li>allowance for uncollectible accounts</li>
+<li>valuation allowance for defered tax asset</li>
+<li>depreciation method</li>
+<li>capitalization or expense</li>
+</ul>
+<h4>Affect cash flow statment</h4>
+<ul>
+<li>delay payment of account payable</li>
+<li>misclassify operating uses of cash into either the investing or financing sections</li>
+</ul>
+<h3>Financial reporting quality</h3>
+<h4>Application: assessing credit risk</h4>
+<p>focus more on cash flow rather accual income</p>
+<h4>Screening for potential equity investments</h4>
+<p>reduce a set of potential investments to a smaller set having certain desired characteristics<br>
+growth investors, value investors and market-oriented investors<br>
+back-testing limitations:</p>
+<ul>
+<li>survivorship bias</li>
+<li>look-ahead bias: financial data updated for restatements</li>
+<li>data-snooping bias: solved by data split into test and train</li>
+</ul>
+<h4>Adjustments related to property, plant and equipment</h4>
+capex: capital expenditure
 
       </div>
       

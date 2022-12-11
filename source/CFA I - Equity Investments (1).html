@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Equity Investments (1)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,65 +266,153 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Equity-Investments" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Market organization and structure</h3>
+<h4>The functions of the financial system</h4>
+<p>Determining equilibrium rate is one of the most important functions of the financial system.<br>
+allocationally efficient: allocate capital to those uses that are most productive</p>
+<h4>Assets and contracts</h4>
+<p>classification:</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>securities: debt, equity and pool investment vehichle (ETF)</li>
+<li>currencies</li>
+<li>contracts</li>
+<li>commodities: precious metals, energy products, industrial metals, and agricultural products</li>
+<li>real assets</li>
+</ul>
+<p>money market: debt instruments maturing in one year or less; capital markets: other instruments<br>
+traditional investment markets: publicly traded debts and equities and shares in pooled investment vehicles; alternative investment markets: all other investments, such as hedge fund</p>
+<h4>Securities</h4>
+<p>stock warrant (right to buy a security) is equity security<br>
+pooled investments: mutual fund (shares), trust (units), hedge fund (limited partnership interests) and depositories(depositary receipt)<br>
+Many ETFs permit only in-kind deposits and redemptions<br>
+closed-end fund: not allow redemption</p>
+<h4>Currencies, commodities, and real assets</h4>
+real assets are attractive because of tax benefits and low correlation with other investments
+<h4>Contracts</h4>
+<p>forward: counterparty risk and liquidity<br>
+futures: initial margin and maintainance margin, margin call to add margin to initial margin<br>
+option holder and option writer<br>
+CDS (Credit default swaps): payment of principal when company defaults on its bond</p>
+<h4>Financial intermediaries</h4>
+<p>broker: fill order for client<br>
+Alternative trading systems (ATSs), also known as electronic communications networks (ECNs) or multilateral trading facilities (MTFs): dark pool<br>
+dealer: fill order by trading with client<br>
+Almost all investment banks have large dealing operations</p>
+<h4>Securitizers, depository institutions and insurance companies</h4>
+special purpose vehicle (SPV) or alternatively a special purpose entity (SPE) for securitization when facing bankruptcy
+<h4>Positions and short positions</h4>
+<p>short sell: margin and leave sell proceeds as deposit<br>
+short rebate rates: short rates the short seller receives for the short proceeds as deposit</p>
+<h4>Leveraged positions</h4>
+<p>margin loan: the borrowed portion of money to buy security<br>
+call money rate: margin loan rate</p>
+<h4>Orders and execution instructions</h4>
+<table>
+<thead>
+<tr>
+<th>instructions</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Execution instructions</td>
+<td>how to fill the order</td>
+</tr>
+<tr>
+<td>validity instructions</td>
+<td>when the order may be filled</td>
+</tr>
+<tr>
+<td>clearing instructions</td>
+<td>how to arrange the final settlement of the trade</td>
+</tr>
+</tbody>
+</table>
+<p>market order<br>
+limit order<br>
+marketable limit orders: limit order with high price<br>
+standing limit orders: orders waiting to be traded<br>
+behind the market: buy order with price below best bid<br>
+all-or-nothing order<br>
+hidden order and iceberg order: only show a specific sizes</p>
+<h4>Validity instructions and clearing instructions</h4>
+<p>day order: effective during that day<br>
+Immediate or cancel orders: revoked if cannot be filled in part or in whole<br>
+Good-on-close orders: filled at the close of trading<br>
+stop order</p>
+<h4>Primary security markets</h4>
+<p>book building: IPO preparation process<br>
+underwritten offering (&#x627F;&#x9500;&#x53D1;&#x884C;): bank will buy securities that not sold; best effort offering: investment bank act only as a broker<br>
+IPO price tends to be low because issuer does not want a unsubscribed IPO<br>
+private placement: sell securities directly to a small group of qualified investors<br>
+shelf registration: sell new issues of seasoned securities directly to the public on a piecemeal basis</p>
+<h4>Secondary security market and contract market structures</h4>
+<p>call market: price auctions; continuous trading market</p>
+<h5>Quote-driven markets</h5>
+price quoted by dealer
+<h5>Order-driven markets</h5>
+<p>Call markets use uniform pricing rule while continuous trading market use discriminatory pricing rule<br>
+derivative pricing rule: price derived from other markets</p>
+<h5>Brokered markets</h5>
+real estate property, fine art masterpiece
+<h4>Well-functioning financial systems</h4>
+<p>operationally efficient: low trading cost<br>
+informationally efficient: the prices reflect all available fundamental information</p>
+<h3>Market organization and structure</h3>
+<h4>Index construction</h4>
+<p><span class="mathjax-exps">$V_{PRI}=\frac{1}{D}\sum n_iP_i$</span><br>
+<span class="mathjax-exps">$PR_I=\sum{w_iPR_i}$</span><br>
+<span class="mathjax-exps">$TR_I=\sum{w_iTR_i}=\sum{w_i\frac{P_{1i}-P_{0i}+Inc_i}{P_{0i}}}$</span><br>
+<span class="mathjax-exps">$V_{PRIT} = V_{PRI0}\prod_{t=1}^{T}{(1+PR_{It})}$</span><br>
+<span class="mathjax-exps">$V_{TRIT} = V_{TRI0}\prod_{t=1}^{T}{(1+PR_{It})}$</span><br>
+Weighting: price weighting, Equal Weighting (need rebalancing), Market-Capitalization Weighting (float-adjusted market-capitalization weighting) and fundamental weighting: value tilt, which means ratios of book value to market value that are higher than its arket-capitalization-weighted counterpart</p>
+<h4>Equity indexes</h4>
+<p>broad market index<br>
+multi-market index<br>
+sector index<br>
+style index: small/large cap index, value/growth index,</p>
+<h4>Fixed-income indexes</h4>
+<h4>Indexes for alternative investments</h4>
+<p>commodity index: future price rather than commodity price<br>
+real estate: appraisal indexes, repeat sales indexes, and real estate investment trust (REIT) indexes</p>
+<h3>Market efficiency</h3>
+<p>Active returns: returns earned by strategies taking advantage of market ineffciency</p>
+<h4>The concept of market efficiency</h4>
+<p>passive investment: broad market portfolio</p>
+<h4>Factors affecting market efficiency including trading costs</h4>
+<p>the number of the market participants<br>
+Information Availability and fair access to information<br>
+Limits to Trading: such as short selling limitation<br>
+Transaction Costs and Information-Acquisition Costs</p>
+<h4>Forms of market efficiency</h4>
+<p>Weak form: past market data<br>
+semi-strong form: public information<br>
+strong form: private information</p>
+<h4>Market pricing anomalies - time series and cross-sectional</h4>
+<p>Time-Series Anomalies:</p>
+<ul>
+<li>calendar anomaly: higher January return, day-of-the-week</li>
+<li>Momentum</li>
+<li>Overreaction Anomalies: people overreact to news, buing loser stock and selling winner stock will gain abnormal return</li>
+</ul>
+<p>Cross-Sectional Anomalies:</p>
+<ul>
+<li>size effect: small cap companies have higher return</li>
+<li>value effect: low P/B ratio companies have higher return</li>
+</ul>
+<h4>Other anomalies, implications of market pricing anomalies</h4>
+<p>Closed-End Investment Fund Discounts<br>
+Earnings Surprise: adjustment is still happening after news is published</p>
+<h4>Behavioral finance</h4>
+<p>Pricing model usually assumes the market is rational, rather than that every individual is rational<br>
+behavior includes:</p>
+<ul>
+<li>loss aversion: the extent of disliking loss exceeds that of liking gains</li>
+<li>herding</li>
+<li>Overconfidence</li>
+<li>Information Cascades</li>
 </ul>
 
       </div>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA I - Derivatives - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband"></div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text">Derivative markets and instruments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Derivatives: introduction, definitions, and uses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">The structure of derivative markets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Types of derivatives: introduction, forward contracts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Types of derivatives: futures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Types of derivatives: swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">Contingent claims: options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.7"><span class="nav-number">1.7.</span> <span class="nav-text">Contingent claims: credit derivatives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.8"><span class="nav-number">1.8.</span> <span class="nav-text">Types of derivatives: asset-backed securities and hybrids</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.9"><span class="nav-number">1.9.</span> <span class="nav-text">Derivatives underlyings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.10"><span class="nav-number">1.10.</span> <span class="nav-text">The purposes and benefits of derivatives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.11"><span class="nav-number">1.11.</span> <span class="nav-text">Criticisms and misuses of derivatives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.12"><span class="nav-number">1.12.</span> <span class="nav-text">Elementary principles of derivative pricing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text">Basics of derivative pricing and valuation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Basic derivative concepts, pricing the underlying</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">The principle of arbitrage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Pricing and valuation of forward contracts: pricing vs. valuation; expiration; initiation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Pricing and valuation of forward contracts: between initiation and expiration; forward rate agreements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Pricing and valuation of futures contracts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">Pricing and valuation of swap contracts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.7"><span class="nav-number">2.7.</span> <span class="nav-text">Pricing and valuation of options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.8"><span class="nav-number">2.8.</span> <span class="nav-text">Lower limits for prices of european options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.9"><span class="nav-number">2.9.</span> <span class="nav-text">Put-call parity, put-call-forward parity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.10"><span class="nav-number">2.10.</span> <span class="nav-text">Binomial valuation of options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.11"><span class="nav-number">2.11.</span> <span class="nav-text">American option pricing</span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA I - Derivatives
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2022-12-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA I</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA I" createdate="2022-12-11" editdate="2022-12-11" tag="Derivatives"></ndtag></p>
+<h3 id="#nav1">Derivative markets and instruments</h3>
+<h4 id="#nav1.1">Derivatives: introduction, definitions, and uses</h4>
+<p>DEFINITION: A derivative is a financial instrument that derives its performance from the performance of an underlying asset.<br/>
+two classes:</p>
+<ul>
+<li>forward commitments: forward contracts, futures contracts, and swaps</li>
+<li>contingent claims</li>
+</ul>
+<h4 id="#nav1.2">The structure of derivative markets</h4>
+<p>Exchange-Traded Derivatives Markets: clearing (verify execution of transaction) and settlement<br/>
+Over-the-Counter Derivatives Markets<br/>
+OTC market is less liquid</p>
+<h4 id="#nav1.3">Types of derivatives: introduction, forward contracts</h4>
+<h4 id="#nav1.4">Types of derivatives: futures</h4>
+<p>mark to market (or daily settlement)<br/>
+intial margin<br/>
+margin call if the margin account lower than maintainance margin<br/>
+some future contracts contain price limits<br/>
+delivery: use last day's settlement price as delivery price, but the longer should settle the gain or loss in his margin account first</p>
+<h4 id="#nav1.5">Types of derivatives: swaps</h4>
+<h4 id="#nav1.6">Contingent claims: options</h4>
+<p>option premium: price of option<br/>
+for call option, it is called in the money is <span class="mathjax-exps">$S_t&gt;K$</span></p>
+<h4 id="#nav1.7">Contingent claims: credit derivatives</h4>
+<p>total return swap: swap between total return of a bond/loan and fixed/floating interest<br/>
+credit spread option: a call option in which the underlying is the credit spread<br/>
+credit-linked note (CLN): the buyer of the credit-linked receives less principal if default happens, the protection buyer issues CLN<br/>
+credit default swap (CDS): CDS buyer pays a series of payment and receives compensation for credit losses</p>
+<h4 id="#nav1.8">Types of derivatives: asset-backed securities and hybrids</h4>
+convertible bond, callable bond etc.
+<h4 id="#nav1.9">Derivatives underlyings</h4>
+other: weather, electricity and disaster
+<h4 id="#nav1.10">The purposes and benefits of derivatives</h4>
+<p>Risk Allocation, Transfer, and Management<br/>
+Information Discovery, such as future price and implied volatility<br/>
+Operational Advantages: lower transaction cost than underlying, greater liquidity than underlying; and short selling is easy<br/>
+Market Efficiency</p>
+<h4 id="#nav1.11">Criticisms and misuses of derivatives</h4>
+<p>Speculation and Gambling<br/>
+Destabilization and Systemic Risk</p>
+<h4 id="#nav1.12">Elementary principles of derivative pricing</h4>
+<p>storage and arbitrage<br/>
+arbitrage opportunity exists if relative price changes:</p>
+<p class="wrapper" style="text-align:center;">
+<img align="center" max-width="100%" src="/images/CFA I/CFA I-derivative-arbitrage opportunity.png" width="450px"/></p>
+<h3 id="#nav2">Basics of derivative pricing and valuation</h3>
+<h4 id="#nav2.1">Basic derivative concepts, pricing the underlying</h4>
+<p>convenience yield (include dividend) net of storage cost<br/>
+cost reduce the current price and the convenience yield increase the current price<br/>
+cost of carry: cost - benefit<br/>
+<span class="mathjax-exps">$S_0=\frac{ES_T}{(1+r+\lambda)^T}-\theta+\gamma$</span>, where <span class="mathjax-exps">$\theta$</span> is cost and <span class="mathjax-exps">$\gamma$</span> is benefit</p>
+<h4 id="#nav2.2">The principle of arbitrage</h4>
+<h4 id="#nav2.3">Pricing and valuation of forward contracts: pricing vs. valuation; expiration; initiation</h4>
+<p><span class="mathjax-exps">$F_0(T)=(S_0-\gamma+\theta)(1+r)^T$</span></p>
+<h4 id="#nav2.4">Pricing and valuation of forward contracts: between initiation and expiration; forward rate agreements</h4>
+<p><span class="mathjax-exps">$V_t(T)=S_t-(\gamma-\theta)(1+r)^T-F_0(T)(1+r)^{-(T-t)}$</span></p>
+<h5>Forward rate agreements</h5>
+FRA: fixed rate for floating rate, one time
+<p class="wrapper" style="text-align:center;">
+<img align="center" max-width="100%" src="/images/CFA I/CFA I-derivative-FRA.png" width="450px"/></p>
+<h4 id="#nav2.5">Pricing and valuation of futures contracts</h4>
+<p>if futures prices and interest rates are uncorrelated, forwards and futures prices will be the same</p>
+<h4 id="#nav2.6">Pricing and valuation of swap contracts</h4>
+a series of forward contract priced at swap price
+<h4 id="#nav2.7">Pricing and valuation of options</h4>
+<p>time value: the difference between the market price of the option and its intrinsic value<br/>
+time value decay: price converges to intrinsic value</p>
+<h4 id="#nav2.8">Lower limits for prices of european options</h4>
+<p>minimum value of option:</p>
+<ul>
+<li><span class="mathjax-exps">$c_0\geq max(0,S_0-X/(1+r)^T)$</span></li>
+<li><span class="mathjax-exps">$p_0\geq max(0,X/(1+r)^T-S_0)$</span></li>
+</ul>
+<h4 id="#nav2.9">Put-call parity, put-call-forward parity</h4>
+<p>put call parity: <span class="mathjax-exps">$S_0+p_0$</span> = <span class="mathjax-exps">$c_0+X/(1+r)^T$</span>, which corresponds to protective put and ficuciary call<br/>
+put-call-forward parity: <span class="mathjax-exps">$F_0/(1+r)^T+p_0$</span> = <span class="mathjax-exps">$c_0+X/(1+r)^T$</span></p>
+<h4 id="#nav2.10">Binomial valuation of options</h4>
+<h4 id="#nav2.11">American option pricing</h4>
+<p>minimum value of option:</p>
+<ul>
+<li><span class="mathjax-exps">$C_0\geq max(0,S_0-X/(1+r)^T)$</span></li>
+<li><span class="mathjax-exps">$P_0\geq max(0,X-S_0)$</span></li>
+</ul>
+<p>American call early exercise: right before ex-dividend drop</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Derivatives</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="" rel="prev">
+                  < @@begin-previous article-end@@
+                </a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="" rel="next">
+                  @@begin-next article-end@@ >
+                </a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    </div>
+  </footer>
+</body>
+</html>

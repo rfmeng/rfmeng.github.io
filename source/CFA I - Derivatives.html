@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Derivatives</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,66 +266,91 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Derivatives" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Derivative markets and instruments</h3>
+<h4>Derivatives: introduction, definitions, and uses</h4>
+<p>DEFINITION: A derivative is a financial instrument that derives its performance from the performance of an underlying asset.<br>
+two classes:</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>forward commitments: forward contracts, futures contracts, and swaps</li>
+<li>contingent claims</li>
 </ul>
+<h4>The structure of derivative markets</h4>
+<p>Exchange-Traded Derivatives Markets: clearing (verify execution of transaction) and settlement<br>
+Over-the-Counter Derivatives Markets<br>
+OTC market is less liquid</p>
+<h4>Types of derivatives: introduction, forward contracts</h4>
+<h4>Types of derivatives: futures</h4>
+<p>mark to market (or daily settlement)<br>
+intial margin<br>
+margin call if the margin account lower than maintainance margin<br>
+some future contracts contain price limits<br>
+delivery: use last day&apos;s settlement price as delivery price, but the longer should settle the gain or loss in his margin account first</p>
+<h4>Types of derivatives: swaps</h4>
+<h4>Contingent claims: options</h4>
+<p>option premium: price of option<br>
+for call option, it is called in the money is <span class="mathjax-exps">$S_t&gt;K$</span></p>
+<h4>Contingent claims: credit derivatives</h4>
+<p>total return swap: swap between total return of a bond/loan and fixed/floating interest<br>
+credit spread option: a call option in which the underlying is the credit spread<br>
+credit-linked note (CLN): the buyer of the credit-linked receives less principal if default happens, the protection buyer issues CLN<br>
+credit default swap (CDS): CDS buyer pays a series of payment and receives compensation for credit losses</p>
+<h4>Types of derivatives: asset-backed securities and hybrids</h4>
+convertible bond, callable bond etc.
+<h4>Derivatives underlyings</h4>
+other: weather, electricity and disaster
+<h4>The purposes and benefits of derivatives</h4>
+<p>Risk Allocation, Transfer, and Management<br>
+Information Discovery, such as future price and implied volatility<br>
+Operational Advantages: lower transaction cost than underlying, greater liquidity than underlying; and short selling is easy<br>
+Market Efficiency</p>
+<h4>Criticisms and misuses of derivatives</h4>
+<p>Speculation and Gambling<br>
+Destabilization and Systemic Risk</p>
+<h4>Elementary principles of derivative pricing</h4>
+<p>storage and arbitrage<br>
+arbitrage opportunity exists if relative price changes:</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-derivative-arbitrage opportunity.png" width="450px" max-width="100%" align="center"></p>
+<h3>Basics of derivative pricing and valuation</h3>
+<h4>Basic derivative concepts, pricing the underlying</h4>
+<p>convenience yield (include dividend) net of storage cost<br>
+cost reduce the current price and the convenience yield increase the current price<br>
+cost of carry: cost - benefit<br>
+<span class="mathjax-exps">$S_0=\frac{ES_T}{(1+r+\lambda)^T}-\theta+\gamma$</span>, where <span class="mathjax-exps">$\theta$</span> is cost and <span class="mathjax-exps">$\gamma$</span> is benefit</p>
+<h4>The principle of arbitrage</h4>
+<h4>Pricing and valuation of forward contracts: pricing vs. valuation; expiration; initiation</h4>
+<p><span class="mathjax-exps">$F_0(T)=(S_0-\gamma+\theta)(1+r)^T$</span></p>
+<h4>Pricing and valuation of forward contracts: between initiation and expiration; forward rate agreements</h4>
+<p><span class="mathjax-exps">$V_t(T)=S_t-(\gamma-\theta)(1+r)^T-F_0(T)(1+r)^{-(T-t)}$</span></p>
+<h5>Forward rate agreements</h5>
+FRA: fixed rate for floating rate, one time
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-derivative-FRA.png" width="450px" max-width="100%" align="center"></p>
+<h4>Pricing and valuation of futures contracts</h4>
+<p>if futures prices and interest rates are uncorrelated, forwards and futures prices will be the same</p>
+<h4>Pricing and valuation of swap contracts</h4>
+a series of forward contract priced at swap price
+<h4>Pricing and valuation of options</h4>
+<p>time value: the difference between the market price of the option and its intrinsic value<br>
+time value decay: price converges to intrinsic value</p>
+<h4>Lower limits for prices of european options</h4>
+<p>minimum value of option:</p>
+<ul>
+<li><span class="mathjax-exps">$c_0\geq max(0,S_0-X/(1+r)^T)$</span></li>
+<li><span class="mathjax-exps">$p_0\geq max(0,X/(1+r)^T-S_0)$</span></li>
+</ul>
+<h4>Put-call parity, put-call-forward parity</h4>
+<p>put call parity: <span class="mathjax-exps">$S_0+p_0$</span> = <span class="mathjax-exps">$c_0+X/(1+r)^T$</span>, which corresponds to protective put and ficuciary call<br>
+put-call-forward parity: <span class="mathjax-exps">$F_0/(1+r)^T+p_0$</span> = <span class="mathjax-exps">$c_0+X/(1+r)^T$</span></p>
+<h4>Binomial valuation of options</h4>
+<h4>American option pricing</h4>
+<p>minimum value of option:</p>
+<ul>
+<li><span class="mathjax-exps">$C_0\geq max(0,S_0-X/(1+r)^T)$</span></li>
+<li><span class="mathjax-exps">$P_0\geq max(0,X-S_0)$</span></li>
+</ul>
+<p>American call early exercise: right before ex-dividend drop</p>
 
       </div>
       

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Corporate Issuers (2)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,66 +266,90 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Corporate-Issuers" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Cost of capital</h3>
+<!-- 6 -->
+cost of capital comes from required rate of return and is marginal cost
+WACC (weighted average cost of capital) or MCC (marginal cost of capital)
+WACC should be calculated using target capital structure:
+$\text{WACC}= w_dr_d(1-t)+w_pr_p+w_er_e$
+<h4>Costs of the various sources of capital</h4>
+<h5>Debt</h5>
+<p>YTM (yield to maturity) is IRR, YTM devided by 2 to calculate semiannual discount rate<br>
+to estimate before-tax cost, use YTM approach and debt-rating approach<br>
+fixed-rate perpetual preferred stock</p>
+<h5>Prefered stock</h5>
+<p>fixed-rate perpetual preferred stock: noncallable with fixed dividend rate, <span class="mathjax-exps">$P_p=D_p/r_p$</span></p>
+<h5>Common equity</h5>
+<p>CAPM (capital asset pricing model): <span class="mathjax-exps">$\mathbb{E}R_i=R_f+\beta_i(\mathbb{E}R_M-R_f)$</span>, where <span class="mathjax-exps">$\mathbb{E}R_M-R_f$</span> is market risk premium (or equity risk premium)<br>
+multifactor model: <span class="mathjax-exps">$\mathbb{E}R_i=R_f+\sum_j\beta_{i,j}(\text{factor risk premium})_j$</span><br>
+to estimate market risk premium, use historical data or survey approach<br>
+Bond Yield plus Risk Premium Approach: <span class="mathjax-exps">$r_e=r_d+\text{risk premium}$</span></p>
+<h4>Estimating beta</h4>
+<h5>Public companies</h5>
+<p>use regression and then adjust it as Adjusted beta = (2/3)(Unadjusted beta) + (1/3)(1.0), because beta tends to regress toward 1.0</p>
+<h5>Thinly traded and nonpublic companies</h5>
+<p>estimate asset (unlevered) beta from peer company (or comparable company), then calculate the equity beta: <span class="mathjax-exps">$\beta_a=\frac{E}{E+(1-t)D}\beta_e+\frac{(1-t)D}{E+(1-t)D}\beta_d$</span><br>
+understanding asset beta in this way: investing in asset will generate return <span class="mathjax-exps">$R_a$</span>, see it as a asset allocation with return <span class="mathjax-exps">$R_d$</span> and <span class="mathjax-exps">$R_e$</span>, to exclude effect of tax, it is equivalent to adjust the weight</p>
+<h4>Flotation costs</h4>
+<p>flotation cost for equity (5%) is higher than that of debt (1%)<br>
+incorporate the flotation costs into the cost of capital, the cost of external equity is <span class="mathjax-exps">$r_e=\frac{D_1}{P_0-F}+g=\frac{D_1}{P_0(1-f)}+g$</span><br>
+another method is calculation for specific project</p>
+<h4>Methods in use</h4>
+<p>mostly use CAPM</p>
+<h3>Capital structure</h3>
+<h4>Capital structure and company life cycle</h4>
+<!-- 6 -->
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-corporate issuer-capital structure-life cycle.png" width="450px" max-width="100%" align="center"></p>
+<p>Capital Intensive Businesses with Marketable Assets use high levels of leverage regardless of their development stage, such as real estate, utilities, shipping and airlines<br>
+for industry with business cycle, it is harder to find debt financing</p>
+<h4>Modigliani&#x2013;miller propositions</h4>
+<p>assumptions: homogeneous expectation, perfect capital market, risk-free rate, no agency costs and independent decisions</p>
+<h5>MM proposition i without taxes</h5>
+The market value of a company is not affected by the capital structure of the company.
+<h5>MM proposition ii without taxes</h5>
+$r_e=r_0+(r_0-r_d)\frac{D}{E}$
+<h5>MM proposition i with corporate taxes</h5>
+$V_L=V_U+tD$
+<h5>MM proposition ii with corporate taxes</h5>
+$r_e=r_0+(r_0-r_d)(1-t)\frac{D}{E}$
+<h4>Optimal and target capital structure</h4>
+<p><span class="mathjax-exps">$V_L = V_U + tD &#x2212; PV(\text{Costs of financial distress})$</span><br>
+optimal capital structure: a point where firm value is maximized<br>
+The optimal capital structure minimizes WACC: firm value is PV of free cash flow discounted by WACC</p>
+<h4>Factors affecting capital structure decisions</h4>
+firm tend to issue stock when stock overvalued
+<h4>Agency costs</h4>
+the more financially leveraged a company, the less freedom for managers to either take on more debt or unwisely spend cash
+<h4>Stakeholder interests</h4>
+<p>customer and supplier tend to be conservative</p>
+<h3>Measures of leverage</h3>
+Leverage is the use of fixed costs in a company&#x2019;s cost structure
+<h4>Leverage</h4>
+more fixed costs relative to variable costs, more risk
+<h4>Business risk</h4>
+<p>business risk = sales risk + operating risk, where</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>business risk: risk associated with operating earnings</li>
+<li>sales risk: price and quantity of goods</li>
+<li>operating risk: the use of fixed cost in operations, greater fixed cost, greater risk</li>
 </ul>
+<h4>Operating leverage</h4>
+<p>degree of operating leverage (DOL): <span class="mathjax-exps">$\text{DOL}=\frac{\text{percent change in operating income}}{\text{percent change in units sold}}=\frac{Q(P-V)}{Q(P-V)-F}$</span><br>
+contribution margin: revenue - variable costs<br>
+high DOL industry: software and pharmaceutical; low DOL industry: retailer<br>
+for company having multiple product, estimate it with regression (operating earning on revenue)</p>
+<h4>Financial leverage</h4>
+<p>financial risk: risk associated with how a company finances its operations<br>
+degree of financial leverage (DFL): <span class="mathjax-exps">$\text{DFL}=\frac{\text{percent change in net income}}{\text{percent change in operating income}}=\frac{Q(P-V)-F}{Q(P-V)-F-C}$</span></p>
+<h4>Total leverage</h4>
+degree of total leverage (DTL): $\text{DTL}=\frac{\text{percent change in net income}}{\text{percent change in units sold}}=DOL\times DFL$
+<h4>Breakeven points and operating breakeven points</h4>
+<p><span class="mathjax-exps">$Q_\text{BE}=\frac{F+C}{P-V}$</span>, higher risk, higher breakeven point, higher revenue<br>
+<span class="mathjax-exps">$Q_\text{OBE}=\frac{F}{P-V}$</span></p>
+<h4>The risks of creditors and owners</h4>
+bankruptcy: reorgnization and liquidation
 
       </div>
       

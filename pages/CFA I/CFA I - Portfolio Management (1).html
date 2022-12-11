@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA I - Portfolio Management (1) - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband"></div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text">Portfolio management: an overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Portfolio perspective: diversification and risk reduction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text">Portfolio risk and return: part I</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Money-weighted return or internal rate of return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Time-weighted rate of return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Annualized return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Historical return and risk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Utility theory and indifference curves</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">Application of utility theory to portfolio selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.7"><span class="nav-number">2.7.</span> <span class="nav-text">Portfolio of many risky assets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.8"><span class="nav-number">2.8.</span> <span class="nav-text">Efficient frontier: investment opportunity set & minimum variance portfolios</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text">Portfolio risk and return: part II</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Capital market theory: risk-free and risky assets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Capital market theory: the capital market line</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Capital market theory: CML - leveraged portfolios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Systematic and nonsystematic risk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.5"><span class="nav-number">3.5.</span> <span class="nav-text">Return generating models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.6"><span class="nav-number">3.6.</span> <span class="nav-text">Calculation and interpretation of beta</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.7"><span class="nav-number">3.7.</span> <span class="nav-text">Capital asset pricing model: assumptions and the security market line</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.8"><span class="nav-number">3.8.</span> <span class="nav-text">Beyond CAPM: limitations and extensions of capm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.9"><span class="nav-number">3.9.</span> <span class="nav-text">Portfolio performance appraisal measures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.10"><span class="nav-number">3.10.</span> <span class="nav-text">Applications of the CAPM in portfolio construction</span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA I - Portfolio Management (1)
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2022-12-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA I</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA I" createdate="2022-12-11" editdate="2022-12-11" tag="Portfolio-Management"></ndtag></p>
+<h3 id="#nav1">Portfolio management: an overview</h3>
+<h4 id="#nav1.1">Portfolio perspective: diversification and risk reduction</h4>
+diversification ratio: portfolio std / weighted average return of individual security
+<h3 id="#nav2">Portfolio risk and return: part I</h3>
+<h4 id="#nav2.1">Money-weighted return or internal rate of return</h4>
+<p>money-weighted return: similar to IRR</p>
+<h4 id="#nav2.2">Time-weighted rate of return</h4>
+<h4 id="#nav2.3">Annualized return</h4>
+365 days, 52 weeks, 5 trading days a week
+<h4 id="#nav2.4">Historical return and risk</h4>
+<p><span class="mathjax-exps">$1+E(R)=(1 +r_F)×[1+E(π)]×[1+E(R_P)]$</span>, where <span class="mathjax-exps">$\pi$</span> is inflation, <span class="mathjax-exps">$R$</span> is nominal rate, <span class="mathjax-exps">$R_P$</span> is risk premium<br/>
+real risk premium: real risky return - real interest rate<br/>
+normal distribution: 68% (1 std), 95% (2 std), 99% (3 std)<br/>
+skewness: skew to the right (positively skewed) <span class="mathjax-exps">$E[(\frac{X-\mu}{\sigma})^3]$</span><br/>
+kurtosis <span class="mathjax-exps">$E[(\frac{X-\mu}{\sigma})^4]$</span>, normal is 3, fat tail distribution has higher kurtosis</p>
+<h4 id="#nav2.5">Utility theory and indifference curves</h4>
+<p><span class="mathjax-exps">$U=E(r)-\frac{1}{2}A\sigma^2$</span></p>
+<h4 id="#nav2.6">Application of utility theory to portfolio selection</h4>
+<p>capital allocation line (CAL): <span class="mathjax-exps">$E(R_p)=R_f+\frac{E(R_i)-R_f}{\sigma_i}\sigma_p$</span>, then maximize utility</p>
+<h4 id="#nav2.7">Portfolio of many risky assets</h4>
+<p><span class="mathjax-exps">$\sigma_p=\sqrt{\frac{\sigma^2}{N}+\frac{N-1}{N}\rho\sigma^2}$</span></p>
+<h4 id="#nav2.8">Efficient frontier: investment opportunity set &amp; minimum variance portfolios</h4>
+<p>Markowitz efficient frontier<br/>
+two-fund separation theorem: all investors will hold a combination of a risk-free asset and an optimal portfolio</p>
+<h3 id="#nav3">Portfolio risk and return: part II</h3>
+<h4 id="#nav3.1">Capital market theory: risk-free and risky assets</h4>
+homogeneity of expectations to guarantee existence of unique optimal portfolio
+<h4 id="#nav3.2">Capital market theory: the capital market line</h4>
+<p>CML is CAL when risky asset is market portfolio<br/>
+<span class="mathjax-exps">$E(R_p)=R_f+\frac{E(R_m)-R_f}{\sigma_m}\sigma_p$</span></p>
+<h4 id="#nav3.3">Capital market theory: CML - leveraged portfolios</h4>
+<p>borrowing with higher rate <span class="mathjax-exps">$R_b&gt;R_f$</span></p>
+<h4 id="#nav3.4">Systematic and nonsystematic risk</h4>
+<p>only systematic risk is priced with an expected return</p>
+<h4 id="#nav3.5">Return generating models</h4>
+<p><span class="mathjax-exps">$E(R_i)-R_f=\beta_{i1}(E(R_m)-R_f)+\sum_{j=2}^k\beta_{ij}E(F_j)$</span>, where <span class="mathjax-exps">$F_j$</span> is factor<br/>
+<span class="mathjax-exps">$R_i-R_F=\beta_i(R_m-R_f)+e_i$</span>, and <span class="mathjax-exps">$\sigma_i^2=\beta^2\sigma_m^2+\sigma_e^2$</span> (Total variance = Systematic variance + Nonsystematic variance)<br/>
+market model: <span class="mathjax-exps">$R_i=\alpha_i+\beta_iR_m+e_i$</span></p>
+<h4 id="#nav3.6">Calculation and interpretation of beta</h4>
+<p>CAPM: <span class="mathjax-exps">$\beta_i=\frac{Cov(R_i,R_m)}{Var(R_m)}$</span></p>
+<h4 id="#nav3.7">Capital asset pricing model: assumptions and the security market line</h4>
+<h5>Assumptions of the CAPM</h5>
+<ul>
+<li>Investors are risk-averse, utility-maximizing, rational individuals</li>
+<li>Markets are frictionless, including no transaction costs and no taxes</li>
+<li>Investors plan for the same single holding period</li>
+<li>Investors have homogeneous expectations or beliefs</li>
+<li>All investments are infinitely divisible</li>
+<li>Investors are price takers</li>
+</ul>
+<h5>The security market line</h5>
+<p>portfolio's beta: weighted average</p>
+<h4 id="#nav3.8">Beyond CAPM: limitations and extensions of capm</h4>
+<h5>APT (arbitrage pricing theory)</h5>
+<p><span class="mathjax-exps">$E(R_p)=R_f+\sum_i\beta_{p,i}\lambda_i$</span></p>
+<h5>Four-factor model</h5>
+<p><span class="mathjax-exps">$E(R_i)=\alpha_i+\beta_{MKT}{MKT}+\beta_{SMB}{SMB}+\beta_{HML}{HML}+\beta_{UMD}{UMD}$</span><br/>
+where</p>
+<ul>
+<li><span class="mathjax-exps">$SMB$</span> is the difference in returns between small-capitalization stocks and large-capitalization stocks</li>
+<li><span class="mathjax-exps">$HML$</span> the difference in returns between high-book-to-market stocks and low-book-to-market stocks</li>
+<li><span class="mathjax-exps">$UMD$</span> is the difference in returns of the prior year’s winners and losers</li>
+</ul>
+<h4 id="#nav3.9">Portfolio performance appraisal measures</h4>
+<p>Sharpe Ratio<br/>
+Treynor ratio: <span class="mathjax-exps">$TR=\frac{E(R_p)-R_f}{\beta_p}$</span><br/>
+Risk-Adjusted Performance (RAP, <span class="mathjax-exps">$M^2$</span>): <span class="mathjax-exps">$M^2=SR\sigma_m+R_f$</span>, where <span class="mathjax-exps">$SR$</span> is Sharpe ratio<br/>
+Jensen's Alpha: <span class="mathjax-exps">$α_p = R_p – (R_f + β_p[E(R_m)– R_f])$</span></p>
+<h4 id="#nav3.10">Applications of the CAPM in portfolio construction</h4>
+Security Characteristic Line: similar to Jensen's Alpha
+
+      </div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Portfolio Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="" rel="prev">
+                  < @@begin-previous article-end@@
+                </a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="" rel="next">
+                  @@begin-next article-end@@ >
+                </a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    </div>
+  </footer>
+</body>
+</html>

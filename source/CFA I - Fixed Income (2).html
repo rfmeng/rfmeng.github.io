@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Fixed Income (2)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,66 +266,123 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Fixed-Income" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Understanding fixed-income risk and return</h3>
+<h4>Introduction and overview of a fixed-income security</h4>
+<p>horizon yield: the annualized holding-period<br>
+rate of return, calculated use the realized reinvestment future value and the current price<br>
+capital gain or loss: the bond&#x2019;s carrying value and selling price<br>
+interest risk consists of coupon reinvestment risk and market price risk (selling price)</p>
+<h4>Macaulay and modified duration</h4>
+<p>Macaulay duration is weighted average of time to receive payments, where weight are the shares of the full price:</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-income risk-macaulay duration.png" width="450px" max-width="100%" align="center"></p>
+30/360 convention: $DayCountFactor=\frac{360(Y_2-Y_1)+30(M_2-M_1)+(D_2-D_1)}{360}$
+$MacDur=\frac{1+r}{r}-\frac{1+r+N(c-r)}{c[(1+r)^N-1]+r}-\frac{t}{T}$, this is duartion in terms of periods, to be anuallized
+Modified duration: $ModDur=\frac{MacDur}{1+r}$, where $r$ is the yield-to-maturity per period
+$\%\Delta PV^{Full}\approx-AnnModDur\times\Delta AnnYield$
+<h4>Approximate modified and Macaulay duration</h4>
+<p><span class="mathjax-exps">$ApproxModDur=-\frac{PV_+-PV_-}{2PV_0\Delta Yield }$</span>, where  price when the yield-to-maturity is reduced is denoted <span class="mathjax-exps">$PV_-$</span><br>
+<span class="mathjax-exps">$ApproxMacDur=(1+r)ApproxModDur$</span>, where <span class="mathjax-exps">$r$</span> is the yield per period.</p>
+<h4>Effective and key rate duration</h4>
+<p>effective duration: <span class="mathjax-exps">$EffDur=-\frac{PV_+-PV_-}{2PV_0\Delta Curve }$</span>, where <span class="mathjax-exps">$\Delta Curve$</span> denotes a parallel shift in the benchmark yield curve<br>
+effective duration is useful for bond that contains an embedded call option, because callable bond does not have a well-defined internal rate of interest<br>
+key rate duration (partial duration): <span class="mathjax-exps">$KeyRateDur^k=-\frac{\Delta PV}{PV\Delta r^k}$</span>, where <span class="mathjax-exps">$r^k$</span> stands for the <span class="mathjax-exps">$k$</span>th key rate<br>
+<span class="mathjax-exps">$\sum KeyRateDur=EffDur$</span> (understand this like partial derivative)</p>
+<h4>Properties of bond duration</h4>
+<p>duration change with time (t):</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-income risk-duraiton change from time.png" width="450px" max-width="100%" align="center"></p>
+<p>duration change with time to maturity (T):</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-income risk-duraiton change from time to maturity.png" width="450px" max-width="100%" align="center"></p>
+<p>callable bond:</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-income risk-callable price.png" width="450px" max-width="100%" align="center"></p>
+<p>putable bond:</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-income risk-putable price.png" width="450px" max-width="100%" align="center"></p>
+<h4>Duration of a bond portfolio</h4>
+<p>two way to calculate duration of bond portfolio:</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>definition method, see the portfolio as a single bond</li>
+<li>weighted average of the individual bond durationsthat comprise the portfolio</li>
 </ul>
+<h4>Money duration and the price value of a basis point</h4>
+<p>money duration (dollar duration): <span class="mathjax-exps">$MoneyDur = AnnModDur &#xD7; PV^{Full}$</span><br>
+<span class="mathjax-exps">$\Delta PVFull \approx &#x2013;MoneyDur &#xD7; \Delta Yield$</span><br>
+price value of a basis point (or PVBP, PV01, DV01): <span class="mathjax-exps">$PVBP=-\frac{PV_{+1bp}-PV_{-1bp}}{2}$</span></p>
+<h4>Bond convexity</h4>
+<p><span class="mathjax-exps">$\%\Delta PV^{Full}\approx-AnnModDur\Delta Yield+\frac{1}{2}AnnCon(\Delta Yield)^2$</span><br>
+<span class="mathjax-exps">$ApprxCon=\frac{PV_++PV_--2PV_0}{PV_0(\Delta Yield)^2}$</span><br>
+to annualize convexity, it should be divided by the periodicity squared<br>
+<span class="mathjax-exps">$\Delta PV^{Full}\approx-MoneyDur\Delta Yield+\frac{1}{2}MoneyCon(\Delta Yield)^2$</span><br>
+<span class="mathjax-exps">$MoneyCon=AnnCon\times MarketValue$</span><br>
+longer time-to-maturity, a lower coupon rate, and a lower yield-to-maturity lead to greater convexity<br>
+effective convexity: <span class="mathjax-exps">$EffCon=\frac{PV_++PV_--2PV_0}{PV_0(\Delta Curve)^2}$</span></p>
+<h4>Investment horizon, Macaulay duration and interest rate risk</h4>
+<p>term structure of yield volatility: the volatility of bond yields-to-maturity and times-to-maturity<br>
+<em>Macaulay duration indicates the investment horizon for which coupon reinvestment risk and market price risk offset each other</em><br>
+duration gap: difference between the Macaulay duration of a bond and the investment horizon</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-investment horizon.png" width="450px" max-width="100%" align="center"></p>
+<p>When the investment horizon is greater than the Macaulay duration, the risk is to lower interst rate</p>
+<h4>Credit and liquidity risk</h4>
+<p>benchmark yield change: inflation and real rate<br>
+spread change: credit and liquidity (selling and buying of the bond)</p>
+<h4>Empirical duration</h4>
+<p>empirical duration: statistical model</p>
+<h3>Fundamentals of credit analysis</h3>
+<h4>Credit risk</h4>
+<p>credit risk: default risk and loss severity<br>
+In general, the less debt an issuer has outstanding, the less frequently its debt trades.</p>
+<h4>Capital structure, seniority ranking, and recovery rates</h4>
+<p>priority of claims: first lien loan, second lien loan, senior unsecured, senior subordinated and then junior subordinated<br>
+Priority of claims: Not always absolute, because of the negotiation between creditors</p>
+<h4>Rating agencies, credit ratings, and their role in the debt markets</h4>
+<p>notching: the higher the senior unsecured rating, the smaller the notching adjustment (for recovery rate)</p>
+<p class="wrapper" style="text-align:center;">
+<img src="images/CFA I/CFA I-fixed income-bond rating.png" width="450px" max-width="100%" align="center"></p>
+<h4>Traditional credit analysis: corporate debt securities</h4>
+<p>equity analysts focus more on income and cash flow statements; whereas credit analysts focus more on the balance sheet and cash flow statements</p>
+<h5>The four Cs of credit analysis: a useful framework</h5>
+<h6>Capacity</h6>
+<p>capacity refers to he ability of the borrower to make its debt payments on time<br>
+capacity includes industry analysis and company analysis</p>
+<ul>
+<li>Porter&apos;s five force model</li>
+<li>Industry fundamentals</li>
+<li>Company fundamentals</li>
+<li>ratios analysis</li>
+</ul>
+<h6>Colleteral</h6>
+<h6>Covenant</h6>
+<h6>Character</h6>
+Character refers to the quality of managemen
+<h4>Credit risk vs. return: yields and spreads</h4>
+<h5>Spread</h5>
+<p>Credit cycle: As the credit cycle improves, credit spreads will narrow</p>
+<h4>High-yield, sovereign, and non-sovereign credit analysis</h4>
+<h5>High-yield debt</h5>
+<p>sources of liquidity:</p>
+<ol>
+<li>Cash on the balance sheet</li>
+<li>Working capital</li>
+<li>Operating cash flow</li>
+<li>Bank credit facilities</li>
+<li>Equity issuance</li>
+<li>Asset sales</li>
+</ol>
+<p>The parent&#x2019;s reliance on cash flow from its subsidiaries implies a lower recovery rating in default<br>
+covenant:</p>
+<ul>
+<li>change of control put: in the event of an acquisition, bondholders have the right to require the issuer to buy back their debt</li>
+</ul>
+<h5>Sovereign debt</h5>
+<p>two key issues: ability to pay and willingness to pay</p>
+<h5>Non-sovereign government debt</h5>
+<p>General obligation (GO) bonds: unsecured bond, supported by the taxing authority<br>
+revenue bonds: related to a specific project</p>
 
       </div>
       

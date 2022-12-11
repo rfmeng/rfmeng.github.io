@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA I - Quantitative Methods - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband"></div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text">Time value of money</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text">Organizing, Visualizing, and Describing Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Data visualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Measures of central tendency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Quantiles (or fractiles)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Measures of dispersion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Downside deviation and coefficient of variation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">Shape of the distributions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.7"><span class="nav-number">2.7.</span> <span class="nav-text">Correlation between two variables</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text">Probabiltiy concepts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text">Common probability distributions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Safety-first rules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Lognormal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Student’s t-, chi-square, and F-distributions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">Monte Carlo simulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.5"><span class="nav-number">4.5.</span> <span class="nav-text">Sampling and estimation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text">Hypothesis testing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Multiple tests and interpreting significance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">ND matters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Parametric vs. nonparametric tests</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">Tests concerning correlation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text">Introduction to linear regression</span></a></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA I - Quantitative Methods
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2022-12-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA I</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA I" createdate="2022-12-11" editdate="2022-12-11" tag=""></ndtag></p>
+<h3 id="#nav1">Time value of money</h3>
+<p>interest rate can be thought of as rate of return, discount rate and opportunity cost<br/>
+r = Real risk-free interest rate + Inflation premium + Default risk premium + Liquidity premium + Maturity premium<br/>
+nominal risk-free interest rate = Real risk-free interest rate + Inflation premium (90 day US Treasure Bill)<br/>
+stated annual interest rate and quoted interest rate, like "a particular CD pays 8 percent compounded monthly"<br/>
+effective annual rate</p>
+<ul>
+<li>annuity: finite set of level cash flows
+<ul>
+<li>ordinary annuity: first cash flow occurs at t=1</li>
+<li>annuity due: first cash flow occurs at t=0</li>
+</ul>
+</li>
+<li>perpetuity</li>
+</ul>
+<h3 id="#nav2">Organizing, Visualizing, and Describing Data</h3>
+numerical versus categorical data
+<p>cross-sectional vs. time-series vs. panel data;<br/>
+structured(financial statement, ) vs. unstructured data.</p>
+<table>
+<thead>
+<tr>
+<th>numerical</th>
+<th>categorical</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>continuous</li><li>discrete</li></ul></td>
+<td><ul><li>nominal(number cannot rank)</li><li>ordinalnumber cannot be arithmetically operated</li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>variable, also called field, attribute or feature<br/>
+contingency table -&gt; confusion matrix<br/>
+chi-square test of independence</p>
+<h4 id="#nav2.1">Data visualization</h4>
+<p>frequency polygon (plt.plot)<br/>
+bar chart for category data while histogram for numerical data<br/>
+bar chart are ordered by frequency in descending order and the chart includes a line displaying cumulative relative frequency, then it is called a Pareto Chart<br/>
+group bar chart (or clustered bar chart), stacked bar chart<br/>
+tree map<br/>
+word cloud(or tag cloud)<br/>
+line chart for normal data while, frequency polygon for frequency<br/>
+bubble line chart<br/>
+scatter plot matrix<br/>
+heat map ("colored contigency table")</p>
+<h4 id="#nav2.2">Measures of central tendency</h4>
+<p>a 5% <strong>trimmed mean</strong> discards the lowest 2.5% and the highest 2.5% of values<br/>
+95% <strong>winsorized mean</strong> sets the bottom 2.5% of values equal to the value at or below which 2.5% of all the values lie (as will be seen shortly, this is called the “2.5th percentile” value)<br/>
+unimodal, bimodal and trimodal. When all the values in a dataset are different, the distribution has no mode because no value occurs more frequently than any other value.<br/>
+modal interval: bin with the highest frequency<br/>
+harmonic mean is average price under periodic investment of a fixed amount of money, this is called cost averaging</p>
+<h4 id="#nav2.3">Quantiles (or fractiles)</h4>
+<p>Given a set of observations, the yth percentile is the value at or below which y% of observations lie.<br/>
+<strong>quartile, quintile, decile, percentile</strong><br/>
+<strong>interquartile range</strong> (IQR) = Q3-Q1<br/>
+percentile <span class="mathjax-exps">$L_y=(n+1)\frac{y}{100}$</span>, then use linear interpolation to determine <span class="mathjax-exps">$P_y$</span><br/>
+Box and whisker plot</p>
+<h4 id="#nav2.4">Measures of dispersion</h4>
+<p>range: maximum - minimum<br/>
+mean absolute deviation<br/>
+sample variance<br/>
+<span class="mathjax-exps">$X_G\approx \overline{X}-\frac{s^2}{2}$</span>, where <span class="mathjax-exps">$X_G$</span> is geometric mean and <span class="mathjax-exps">$s$</span> is standard deviation</p>
+<h4 id="#nav2.5">Downside deviation and coefficient of variation</h4>
+target semideviation (or target downside deviation)
+$s_{Target}=\sqrt{\sum_{X_i\leq B}^n\frac{(X_i-B)^2}{n-1}}$
+CV, coefficient variation, $CV=\frac{s}{\overline{X}}$
+<h4 id="#nav2.6">Shape of the distributions</h4>
+<p>A distribution that is not symmetrical is skewed.A return distribution with positive skew has frequent small losses and a few extreme gains. A return distribution with negative skew has frequent small gains and a few extreme losses.<br/>
+sample skewness: <span class="mathjax-exps">$Skewness\approx\frac{1}{n}\frac{\sum(X_i-\overline{X})^3}{s^3}$</span><br/>
+positively(right) skewed: mean&gt;median, longer right tail<br/>
+Kurtosis</p>
+<ul><li>leptokurtic (or fat-tailed)</li>
+<li>platykurtic (or thin-tailed)</li>
+<li>mesokurtic </li></ul>
+A normal distribution has kurtosis
+of 3
+sample excelss kurtosis: $K_E\approx\frac{1}{n}\frac{\sum(X_i-\overline{X})^4}{s^4}-3$
+<h4 id="#nav2.7">Correlation between two variables</h4>
+<p>sample correlation: <span class="mathjax-exps">$s_{XY}=\frac{\sum{(X_i-\overline{X})(Y_i-\overline{Y})}}{n-1}$</span><br/>
+spurious correlation: chance relationships, mixed with two variable with a third variable, two variables relating to a third variable</p>
+<h3 id="#nav3">Probabiltiy concepts</h3>
+<p>odds: <span class="mathjax-exps">$p/(1-p)$</span><br/>
+*conditional variance: <span class="mathjax-exps">$Var(X|Y)=E(X^2|Y)-E(X|Y)^2$</span></p>
+<h3 id="#nav4">Common probability distributions</h3>
+<p>Central limit theorem<br/>
+Modern portofolio theory</p>
+<h4 id="#nav4.1">Safety-first rules</h4>
+<p>To avoid shortfall risk (minimize <span class="mathjax-exps">$P(R_P&lt; R_L)$</span>), is to max safety-first ratio <span class="mathjax-exps">$SFRatio=\frac{E(R_P)-R_L}{\sigma_P}$</span>. So the highest Sharpe ratio is the portfolio with the lowest probabiltiy to lose to risk free rate.</p>
+<h4 id="#nav4.2">Lognormal</h4>
+<p><span class="mathjax-exps">$ln(S_T/S_0)=\sum{ln(S_i+1)/ln(S_i)}$</span>, approximately normal by central limit theorem</p>
+<h4 id="#nav4.3">Student’s t-, chi-square, and F-distributions</h4>
+<p><span class="mathjax-exps">$s^2=\frac{\sum{(X_i-\overline{X})^2}}{n-1}$</span>, <span class="mathjax-exps">$t=\frac{\overline{X}-\mu}{s/\sqrt{n}}$</span> follows t-distribution with mean 0 and degree of freedom <span class="mathjax-exps">$n-1$</span></p>
+<h4 id="#nav4.4">Monte Carlo simulation</h4>
+<h4 id="#nav4.5">Sampling and estimation</h4>
+<h3 id="#nav5">Hypothesis testing</h3>
+<p>In hypothesis testing, we test to see whether a sample statistic is likely to come from a population with the hypothesized value of the population parameter.<br/>
+statistical inference: estimation and hypothesis testing<br/>
+Null hypothesis <span class="mathjax-exps">$H_0$</span> and alternative hypothesis <span class="mathjax-exps">$H_a$</span>, the null hypothesis is what we want to reject in favor of the alternative hypothesis<br/>
+<b>test statistics and their distributions(p364)</b></p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th><span class="mathjax-exps">$H_0$</span> true</th>
+<th><span class="mathjax-exps">$H_0$</span> false</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fail to reject</td>
+<td>correct True negative</td>
+<td>Type II errorFalse negative</td>
+</tr>
+<tr>
+<td>reject</td>
+<td>Type I error False positive</td>
+<td>correctTrue positive</td>
+</tr>
+</tbody>
+</table>
+<p>level of significance (probability of type I error) <span class="mathjax-exps">$\alpha$</span> and confidence level <span class="mathjax-exps">$1-\alpha$</span>; power of the test <span class="mathjax-exps">$1-\beta$</span> and probability of type II error <span class="mathjax-exps">$\beta$</span><br/>
+<span class="mathjax-exps">$p$</span>-value is the smallest level of significance at which the null hypothesis can be rejected.<br/>
+The <span class="mathjax-exps">$p$</span>-value for the true null hypothesis are generally uniformly distributed between 0% and 100%</p>
+<h4 id="#nav5.1">Multiple tests and interpreting significance</h4>
+<p>False discovery rate(FDR)=<span class="mathjax-exps">$\frac{FP}{TP+FP}$</span><br/>
+mulitple testing problem: run a test many times, there tend to be rejecting results<br/>
+False discovery approach: find the highest <span class="mathjax-exps">$k$</span> such that <span class="mathjax-exps">$p(k)\leq \alpha\frac{\text{rank of i}}{\text{Number of tests}}$</span><br/>
+if the power of the test is low or the sample size is small, we should becautious because there is a good chance of a false positive.</p>
+<h4 id="#nav5.2">ND matters</h4>
+<p>t distribution has fatter tails, as <span class="mathjax-exps">$n\rightarrow\infty$</span>, t distribution approaches the standard normal distribution<br/>
+Test of the mean of the differences (paired comparisons test), (two population are dependent)<br/>
+In contrast to t-test, chi-square test and F-test is sensitive to violations of its assumptions. If the sample is not random or if it does not come from a normally distributed population, inferences based on a chi-square test are likely to be faulty.</p>
+<h4 id="#nav5.3">Parametric vs. nonparametric tests</h4>
+<p>Parametric (concerned with parameter and a definite set of assumptions)<br/>
+nonparametric procedures in four situations:</p>
+<ul>
+<li>when the data we use do not meet distributional assumptions</li>
+<li>when there are outliers</li>
+<li>when the data are given in ranks or use an ordinal scale</li>
+<li>when the hypotheses we are addressing do not concern a parameter (a sample is random or not, a sample comes from a distribution or not)</li>
+</ul>
+<h4 id="#nav5.4">Tests concerning correlation</h4>
+<p>Pearson correlation (bivariate correlation)<br/>
+As the sample sizes increase as ever-larger datasets are examined, the null hypothesis is almost always rejected and other tools of data analysis must be applied<br/>
+Spearman rank correlation coefficient(Spearman's rho Lecture 15): <span class="mathjax-exps">$r_s=1-\frac{6\sum d_i^2}{n(n^2-1)}$</span><br/>
+frequency table, contigency table or two-way table</p>
+<h3 id="#nav6">Introduction to linear regression</h3>
+<p>sum of squares total (SST,variation of <span class="mathjax-exps">$Y$</span>): <span class="mathjax-exps">$\sum(Y_i-\overline{Y})^2$</span><br/>
+<span class="mathjax-exps">$Y_i=X_ib+\varepsilon_i$</span>, error <span class="mathjax-exps">$\varepsilon$</span> represents the difference between the observed <span class="mathjax-exps">$Y$</span> and the expected value<br/>
+residual <span class="mathjax-exps">$e_i=Y_i-\widehat{Y}_i$</span><br/>
+minimize sum of squares error (SSE)<br/>
+For simple linear regression (SLR, one independent variable), <span class="mathjax-exps">$\widehat{b}_1=\frac{Cov(X,Y)}{Var(X)}$</span>, <span class="mathjax-exps">$\widehat{b}_0=\overline{Y}-\widehat{b}_1\overline{X}$</span><br/>
+cross-sectional and time-series regression<br/>
+SST=SSR+SSE<br/>
+coefficient of determination: <span class="mathjax-exps">$R^2=\frac{SSR}{SST}=\frac{\sum(\widehat{Y}_i-\overline{Y})^2}{\sum(Y_i-\overline{Y})^2}=r^2$</span></p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="" rel="prev">
+                  < @@begin-previous article-end@@
+                </a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="" rel="next">
+                  @@begin-next article-end@@ >
+                </a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    </div>
+  </footer>
+</body>
+</html>

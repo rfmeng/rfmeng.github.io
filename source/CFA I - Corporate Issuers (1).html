@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Moore Penrose pseudo inverse</title>
+      <title>CFA I - Corporate Issuers (1)</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -266,65 +266,171 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <p><ndtag category="Proof" tag="Linear-Algebra" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
-<h3>Definition</h3>
-<p>A matrix <span class="mathjax-exps">$A^g$</span> is pseudo inverse of <span class="mathjax-exps">$A$</span> if:<br>
-(i) <span class="mathjax-exps">$AA^gA=A$</span>, (ii) <span class="mathjax-exps">$A^gAA^g=A^g$</span>, (iii) <span class="mathjax-exps">$(AA^g)^*=AA^g$</span> and (iv) <span class="mathjax-exps">$(A^gA)^*=A^gA$</span></p>
-<h3>Properties</h3>
-<h4>Existence and uniqueness</h4>
-<h5>Existence</h5>
-<h6>Proof</h6>
-<p>Let <span class="mathjax-exps">$A=U\Sigma V^*$</span> be an SVD, then <span class="mathjax-exps">$A^g=V\Sigma^gU^*$</span> will be the pseudoinverse, where <span class="mathjax-exps">$\Sigma^g$</span> takes the reciprocal of <span class="mathjax-exps">$\Sigma$</span>.</p>
-<h5>Uniqueness</h5><h5>
-</h5><h6>Proof</h6>
-<p>Suppose <span class="mathjax-exps">$A$</span> has two pseudoinverses <span class="mathjax-exps">$B$</span> and <span class="mathjax-exps">$C$</span>, then <span class="mathjax-exps">$AB=AC$</span>, because<br>
-</p><div class="mathjax-exps">$$\begin{aligned}AB&amp;=ACAB=(AC)^*(AB)^*=C^*(ABA)^*\\ &amp;=C^*A^*=(AC)^*=AC\end{aligned}$$</div><br>
-Similarly, we have <span class="mathjax-exps">$BA=CA$</span>, then <span class="mathjax-exps">$B=BAB=BAC=CAC=C$</span>.<p></p>
-<h4>Linear equations</h4>
-<h5>Theorem 1</h5> 
-A solution to $Ax=b$ exists if and only if $AA^gb=b$.
-<h6>Proof</h6>
-The if part is easy to show.
-To show the only if part, if a solution $z$ exists, then we have $Az=b$. Therefore $Az=AA^g(Az)=AA^gb$.
-<h5>Theorem 2</h5>
-The complete set of solutions to $Ax=b$ is give by $z=A^gb+(I-A^gA)w$ as $w$ varies all possible values.
-<h6>Proof</h6>
-<p>It is easy to show <span class="mathjax-exps">$z$</span> is a solution.If we show <span class="mathjax-exps">$(I-A^gA)w$</span> gives every vector in kernel space of <span class="mathjax-exps">$A$</span>, we will have all solutions.<br>
-Suppose <span class="mathjax-exps">$k$</span> is a vector in the kernel space of <span class="mathjax-exps">$A$</span>, we have <span class="mathjax-exps">$(I-A^gA)k=(k-A^gAk)=k$</span>, so every vector in the kernel space of <span class="mathjax-exps">$A$</span> can be written in the form <span class="mathjax-exps">$(I-A^gA)w$</span>.</p>
-<h4>Ordinary least squares (OLS)</h4>
-<h5>Theorem 1</h5> 
-$\| Ax-b\|$ is a minimum if and only if $x=A^gb+(I-A^gA)w$ for arbitrary $w\in \mathbb{R}^n$
-<h6>Proof</h6>
-Observe that $Ax-b=(Ax-AA^gb)-(I-AA^g)b$, then we show $(Ax-AA^gb)$ and $(I-AA^g)b$ are orthogonal:
-$$\begin{aligned}
-&amp;{}(Ax-AA^gb)^T(I-AA^g)b\\
-=&amp;(AA^g(Ax-b))^T(I-AA^g)b\qquad\mbox{(i)} \\
-=&amp;(Ax-b)^TAA^g(I-AA^g)b\qquad\mbox{(iii)}\\
-=&amp;(Ax-b)^TA(A^g-A^gAA^g)b\qquad\mbox{(ii)}\\
-=&amp;0
-\end{aligned}$$
-Then we have 
-$$\begin{aligned}\|Ax-b\|^2&amp;=\|Ax-AA^gb\|^2+\|(I-AA^g)b\|^2\\
-&amp;\geq\|(I-AA^g)b\|^2\end{aligned}$$
-and the lower bound is attained if and only if $Ax=AA^gb$, according to linear equation property&apos;s theorem 2, this occurs for 
-$$x=A^g(AA^g)b+(I-A^gA)w=A^gb+(I-A^gA)w$$
-<h5>Theorem 2</h5> 
-$x=A^gb$ is the unique vector of smallest euclidean norm minimizing $\|Ax-b\|$.
-<h6>Proof</h6>
-$$\begin{aligned}
-&amp;{}(A^gb)^T(I-A^gA)w\\
-=&amp;(A^gAA^gb)^T(I-A^gA)w\qquad\mbox{(ii)} \\
-=&amp;(A^gb)^TA^gA(I-A^gA)w\qquad\mbox{(iv)}\\
-=&amp;(A^gb)^TA^g(A-A^gA)w\qquad\mbox{(i)}\\
-=&amp;0
-\end{aligned}$$
-Then we have $\|x\|^2\geq \|A^gb\|^2+\|(I-A^gA)w\|^2\geq \|A^gb\|^2$.
-<h3>References</h3>
+      <p><ndtag category="CFA I" tag="Corporate-Issuers" createdate="2022-12-11" editdate="2022-12-11"></ndtag></p>
+<h3>Introduction to corporate governance and other esg considerations</h3>
+<h4>Introduction and overview of corporate governance</h4>
+<p>Shareholder theory: most important responsibility of a company&#x2019;s managers is to maximize shareholder returns<br>
+Stakeholder theory: broaden focus to customers, suppliers, employees and others who have an interest in the company<br>
+Principles of Corporate Governance from Organisation for Economic Co-Operation and Development (OECD) serves as a framework</p>
+<h4>Stakeholder groups</h4>
+<p>stakeholder groups:</p>
 <ul>
-<li><a href="https://www.isical.ac.in/~arnabc/isivm2/pseudo.html">https://www.isical.ac.in/~arnabc/isivm2/pseudo.html</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Moore%E2%80%93Penrose_inverse">https://en.wikipedia.org/wiki/Moore&#x2013;Penrose_inverse</a></li>
-<li><a href="https://doi.org/10.2307/3617665">https://doi.org/10.2307/3617665</a></li>
-<li><a href="https://doi.org/10.2307/3617890">https://doi.org/10.2307/3617890</a></li>
+<li>shareholders: controlling shareholders and non-controlling shareholders (minority shareholders)</li>
+<li>creditors</li>
+<li>Managers and Employees</li>
+<li>Board of Directors</li>
+<li>customers and suppliers</li>
+<li>governments/regulators</li>
+</ul>
+<h4>Principal&#x2013;agent and other relationships in corporate governance</h4>
+<ul>
+<li>Shareholder and Manager/Director Relationships: shareholder more risk tolerated</li>
+<li>Controlling and Minority Shareholder Relationships</li>
+<li>Manager and Board Relationships</li>
+<li>Shareholder versus Creditor Interests</li>
+</ul>
+<h4>Stakeholder management</h4>
+<p>Mechanisms of Stakeholder Management&#xFF1A;</p>
+<ul>
+<li>general meeting (AGM):<br>
+Extraordinary general meetings: merger and acquisition, sale of siginificant asset, amendent to bylaw</li>
+<li>shareholder &#x2192; board of director &#x2192; top management of the company</li>
+<li>The Audit Function</li>
+<li>Reporting and Transparency</li>
+<li>Policies on Related-Party Transactions: voted excluding the director holding the interest</li>
+<li>Remuneration Policies</li>
+<li>say on pay (&#x85AA;&#x916C;&#x8BDD;&#x8BED;&#x6743;)</li>
+</ul>
+<h4>Mitigate associated stakeholder risks</h4>
+<p>indentrue (bond contract): usually have covenants and collateral<br>
+risk from violation employee&apos;s right: labor law, supervisory board, works council</p>
+<h4>Company boards and committees</h4>
+<p>one-tier hierarchy: non-executive directors are not employees<br>
+independent director (specifict non-executive director): not having material relationship with company<br>
+two-tier hierarchy: supervisory board, management board<br>
+CEO and the chairperson may be the different persons<br>
+staggered boards: a method which elects a portion of board member a year<br>
+responsibility: duty of care and duty of loyalty<br>
+committee:</p>
+<ul>
+<li>audit committee</li>
+<li>governance committee</li>
+<li>remuneration or compensation committee: including evaluating performance of managers</li>
+<li>nomination committee</li>
+<li>risk committee</li>
+<li>investment committee</li>
+</ul>
+<h4>Factors affecting corporate governance and stakeholder management</h4>
+<p>market factors: shareholder engagement (AGM), Shareholder activism (lawsuit, hedge fund), competition and takeover<br>
+non-market factors: legal environment, media and corporate governance industry (which provides governance ratings and proxy advice)</p>
+<h4>Risks and benefits of corporate governance and stakeholder management</h4>
+<p>Risks of Poor Governance and Stakeholder Management:</p>
+<ul>
+<li>Weak Control Systems</li>
+<li>Ineffective Decision Making</li>
+<li>Legal, Regulatory, and Reputational Risks</li>
+<li>Default and Bankruptcy Risks</li>
+</ul>
+<p>Benefits of Effective Governance and Stakeholder Management</p>
+<h4>Factors relevant to corporate governance and stakeholder management analysis</h4>
+<ul>
+<li>Economic Ownership and Voting Control: dual-class structures (A/B share, B share has more voting right)</li>
+<li>Board of Directors</li>
+<li>Remuneration and Company Performance</li>
+<li>Investors in the Company</li>
+<li>Strength of Shareholders&#x2019; Rights</li>
+<li>Managing Long-Term Risks</li>
+</ul>
+<h4>ESG considerations</h4>
+<h5>Terminology</h5>
+<p>responsible investing includes:</p>
+<ul>
+<li>ESG integration</li>
+<li>socially responsible investing: not invest tabacco and controversial weapon</li>
+<li>thematic investing</li>
+<li>impact investing: to generate positive impact</li>
+</ul>
+<h5>Investment approach</h5>
+<p>value-based investment approach: to mitigate risk and identify opportunity<br>
+values-based: express moral belief<br>
+a continuum of investment approaches:</p>
+<ul>
+<li>negative screening</li>
+<li>postivie screening: relative best-in-class</li>
+<li>ESG integration: consideration of material ESG factors</li>
+<li>thematic investing</li>
+<li>engagement/active ownership</li>
+<li>impact investing</li>
+</ul>
+<h5>ESG growth</h5>
+universal investors: long-term investing in gloablly diversified portfolios
+<h3>Uses of capital</h3>
+<h4>The capital allocation process</h4>
+<p>type of capital projects, roughly ranked by risk:</p>
+<ul>
+<li>Replacement Projects</li>
+<li>Expansion Projects</li>
+<li>New Products and Services</li>
+<li>Regulatory, Safety, and Environmental Projects</li>
+<li>Other</li>
+</ul>
+<p>terminology:</p>
+<ul>
+<li>required rate of return (opportunity cost of funds, cost of capital or hurdle rate)</li>
+<li>Cannibalization: an investment takes customers and sales away from another part of the company</li>
+<li>Conventional cash flows: outflow first then a series of inflow</li>
+<li>nonconventional cash flows</li>
+</ul>
+<p>actual senerios:</p>
+<ul>
+<li>Independent projects versus mutually exclusive projects: must choose one among several projects</li>
+<li>Project sequencing</li>
+<li>Unlimited funds versus capital rationing: a fixed amount of funds to invest</li>
+</ul>
+<h4>Investment decision criteria</h4>
+<p>net present value and internal rate of return<br>
+NPV is always preferred over IRR: calculation implies investing at IRR for a long term and didn&apos;t indicate investment size, for example, see mutually exclusive projects A and B, A: invest 100 and gain 200, B invest 10000 and gain 12000<br>
+return on invested capital (ROIC): net profit/average invested capital<br>
+if ROIC higher than COC (cost of capital), NPV is positive<br>
+Inflation reduces the value of depreciation tax savings to the company and thus increases real tax</p>
+<h4>Real options</h4>
+<p>timing option: like delay investment one year<br>
+sizing option: abandonment option and growth/expansion option<br>
+flexibility option: price-setting option and production-flexibility option<br>
+fundamental option: the whole investment is an option</p>
+<h4>Common capital allocation pitfalls</h4>
+<p>common mistakes include:</p>
+<ul>
+<li>not incorporating competitor</li>
+<li>pet project</li>
+<li>Not using the appropriate risk-adjusted<br>
+discount rate</li>
+</ul>
+<h3>Sources of capital</h3>
+<p>short-term fund: working capital management<br>
+long-term fund: capital structure</p>
+<h4>Corporate financing options</h4>
+<p>internal financing: operating cash flow, working capital, marketable security<br>
+Financial Intermediaries: Uncommitted lines of credit, committed lines of credit, Revolving credit agreements, factoring arrangement (sell accounts receivable), Secured (&quot;asset-based&quot;) loan and web-based lenders<br>
+capital markets: commercial paper (&#x5546;&#x7968;), debt and equity<br>
+other: such as leasing<br>
+financing consideration includes:</p>
+<ul>
+<li>term structure</li>
+<li>Flotation Costs</li>
+</ul>
+<p>the terms &quot;2/10, net 30&quot; indicate that a 2% discount is available if the account is paid within 10 days; otherwise, the full amount is due by the 30th day</p>
+<h4>Liquidity</h4>
+<p>Primary Sources of Liquidity: cash etc. and cash management<br>
+Secondary Sources of Liquidity (might affect company&apos;s operation): negotiating contracts, liquidating assets, bankrupt<br>
+drag on liquidity: receipts lag<br>
+pull on liquidity: disbursement paid too quickly</p>
+<h4>Evaluating short-term financing choices</h4>
+<p>major objectives of a short-term borrowing strategy:</p>
+<ul>
+<li>low cost</li>
+<li>sufficient capacity</li>
+<li>sufficient source</li>
 </ul>
 
       </div>
