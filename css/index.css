@@ -575,7 +575,7 @@ background-color: #787878;
   background: var(--body-bg-color);
 }
 
-.post-body a.category {
+.markdown-preview a.category {
   border-bottom: 1px solid #999;
   color: var(--link-color);
   cursor: pointer;
@@ -583,7 +583,7 @@ background-color: #787878;
   text-decoration: none;
   overflow-wrap: break-word;
 }
-.post-body a.category:hover {
+.markdown-preview a.category:hover {
   border-bottom-color: var(--link-hover-color);
   color: var(--link-hover-color);
 }
