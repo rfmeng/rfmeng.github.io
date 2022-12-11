@@ -1,0 +1,870 @@
+<!DOCTYPE html><html><head>
+      <title>CFA - Financial Statement</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="\lib\mathjax\MathJax.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      <script type="text/javascript" src="\lib\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1>Financial Statement Analysis (1)</h1>
+<h3>INTRODUCTION</h3>
+<p>liquidity: to meet short-term obligations; solvency:the ability to meet long-term obligations<br>
+price-to-earnings ratio (P/E)<br>
+additional information might include:</p>
+<ul>
+<li>a letter from the chairman of the company</li>
+<li>a report from management discussing the results (might not be audited)</li>
+<li>an external auditor&#x2019;s report providing assurances</li>
+<li>a governance report describing the structure of the company&#x2019;s board of directors</li>
+<li>corporate responsibility report</li>
+</ul>
+<p>Assets = Liabilities + Owners&#x2019; equity (partners&#x2019; capital or shareholders&#x2019; equity or shareholders&#x2019; funds)<br>
+Revenue + Other income &#x2013; Expenses = Income &#x2013; Expenses = Net income (net earnings, net profit, and profit or loss)<br>
+When a parent company owns more than 50 percent of the voting shares of a subsidiary company, it is presumed to control the subsidiary and thus presents consolidated financial statements.<br>
+diluted shares (stock options or convertible bonds)<br>
+audit opinion: unqualified audit opinion (clean or unmodified opinion), qualified audit opinion, adverse audit opinion and disclaimer of opinion<br>
+a classical top-down approach: macroeconomics, industry and then specific company</p>
+<h3>Financial Reporting Standards</h3>
+<h4>ACCOUNTING STANDARDS BOARDS</h4>
+<p>standard-setting bodies set the standards and regulatory authorities recognise and enforce the standards<br>
+International Accounting Standards Board: International Financial Reporting Standards (IFRS)<br>
+Financial Accounting Standards Board: Generally Accepted Accounting Principle</p>
+<h4>REGULATORY AUTHORITIES</h4>
+<p>the International Organization of Securities Commissions (IOSCO), 3 core responsibilities:</p>
+<ul>
+<li>protecting investors</li>
+<li>reducing systemic risk</li>
+<li>ensuring that markets are fair, efficient, and transparent</li>
+</ul>
+<p>Sarbanes&#x2013;Oxley Act: auditor independence, financial reports responsibility, management report<br>
+Security and Exchange Commission (SEC)</p>
+<h4>IFRS FRAMEWORK</h4>
+<p>CONCEPTUAL FRAMWORK&apos;s qualitative characteristics:</p>
+<table>
+<thead>
+<tr>
+<th>fundamental</th>
+<th>enhancing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>relevance(Materiality) <br>faithful representation</td>
+<td>comparability<br> verifiability<br>Timeliness<br>understandability</td>
+</tr>
+</tbody>
+</table>
+<h4>THE ELEMENTS OF FINANCIAL STATEMENTS</h4>
+<p>two assumptions: accrual accounting and going concern<br>
+MEAUSREMENTS:</p>
+<ul>
+<li>historical cost</li>
+<li>amortised cost</li>
+<li>current cost (to obtain)</li>
+<li>realizable value/settlement value (to settle, which means minus expenses)</li>
+<li>present value</li>
+<li>fair value</li>
+</ul>
+<h4>REQUIREMENTS</h4>
+<p>financial statements:</p>
+<ul>
+<li>balance sheet (statement of financial position or statement of financial condition)</li>
+<li>statement of comprehensive income (also called statement of operations or profit and loss (P&amp;L) statement), a single statement of comprehensive income or combination of an income statement and a statement of comprehensive income that begins with profit or loss from the income statement</li>
+<li>statement of cash flow</li>
+<li>a statement of changes in equity</li>
+<li>notes about significant accounting policies and explanatory notes</li>
+</ul>
+<h1>Financial Statement Analysis (2)</h1>
+<h3>Income Statements</h3>
+<h4>COMPONENTS AND FORMAT</h4>
+<p>revenue (sales, or turnover): ordinary activity<br>
+net revenue: net of things like discounts, excise tax<br>
+gains (secondary and peripheral) and losses<br>
+net income (bottom line)<br>
+net income = (i) revenue - expenses in the ordinary activities of the business, + (ii) other income - other expenses, + (iii) gains minus losses.<br>
+expenses grouping by nature or grouping by function<br>
+multi-step format has gross profit; single-step format<br>
+operating profit (operating income, sometimes same as EBIT): deduct operating expenses (like selling, administrative and R&amp;D), before tax and interest (except for financial company where interest is operating expense)</p>
+<h4>REVENUE RECOGNITION</h4>
+<p>IFRS&apos;s income = revenue + gain<br>
+unearned revenue: receive cash in advance<br>
+5 steps to recoginze revenue:</p>
+<ol>
+<li>Identify the contract(s) with a customer</li>
+<li>Identify the separate or distinct performance obligations in the contract</li>
+<li>Determine the transaction price</li>
+<li>Allocate the transaction price to the performance obligations in the contract</li>
+<li>Recognize revenue when (or as) the entity satisfies a performance obligation</li>
+</ol>
+<p>EXAMPLE:</p>
+<ul>
+<li>commercial building concludes various goods and service, but the item cannot be treated seperately because the promise is the building</li>
+<li>Input method to measure the percentage of completion</li>
+<li>variable consideration ($200000 more if completed within 2 years), could only be recognized with confidence</li>
+</ul>
+<p>incremental costs of obtaining a contract and certain costs incurred to fulfill a contract must be capitalized under the new standards (i.e., reported as an asset on the balance sheet rather than as an expense on the income statement)</p>
+<h4>EXPENSE RECOGNITION</h4>
+<p>matching principle: match the revenue and the cost<br>
+period cost: administrative expenses recognized when payment incurs; depreciation is allocated with time<br>
+FIFO, LIFO (IFRS does not allow) and weighted average cost</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>IFRS</th>
+<th>GAAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FIFO</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td style="text-align:center">LIFO</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td style="text-align:center">weighted average cost</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h5>DOUBTFUL ACCOUNTS, WARRANTIES</h5>
+<p>DOUBTFUL ACCOUNTS (customer defaulted), WARRANTIES: direct write-off method not allowed, must estimate</p>
+<h5>DEPRECIATION AND AMORTIZATION</h5>
+<p>long-lived assets: tangible and intangible (patent)<br>
+long-lived assets whose costs are not allocated over time: land and intangible assets with  indefinite useful lives</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IFRS</th>
+<th>GAAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cost model</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>revaluation model</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>straight-line method<br>
+accelerated method: diminishing balance method (more conservative), net book value (not minus residual value) * straight line ratio * 2 (or 1.5)</p>
+<p>A policy that results in recognition of expenses later rather than sooner is considered less  conservative</p>
+<h4>DISCONTINUED OPERATIONS AND UNUSUAL OR INFREQUENT ITEMS</h4>
+<p>to be reported separately<br>
+Discontinued Operations: a plan to dispose its component operation<br>
+Unusual or infrequent items: restructuring charges or gain and loss from selling assets</p>
+<h4>CHANGES IN ACCOUNTING POLICY</h4>
+<p>full retrospective (adjust previous financial statement); modified retrospective: adjust opening balances<br>
+changes in accounting estimates (such as the useful life of a depreciable asset), adjust current and future periods<br>
+correction of an error for a prior period: restating the financial statements</p>
+<h4>NON-OPERATING ITEMS</h4>
+<p>investing or financing activities<br>
+Specifically, under IFRS, interest and dividends received can be shown either as operating or as investing on the statement of cash flows, while under US GAAP interest and dividends received are shown as operating cash flows. Under IFRS, interest and dividends paid can be shown either as operating or as financing on the statement of cash flows, while under US GAAP, interest paid is shown as operating and dividends paid are shown as financin</p>
+<h4>EARNINGS PER SHARE (EPS)</h4>
+<p>capital = debt + equity<br>
+Ordinary shares (common stock or common share), paid last in liquidation and benefit most when the company does well.<br>
+complex capital structure: issue of financial instruments potentially convertible to common stock<br>
+basic EPS (common stock) and diluted EPS<br>
+both basic and diluted EPS as well as amounts for continuing operations are required to report<br>
+basic EPS = <span class="mathjax-exps">$\frac{\text{Net income - Preferred dividends}}{\text{Weighted average number of shares outstanding}}$</span><br>
+stock (share) dividend or a stock split, the EPS calculation reflects the change retroactively to the beginning of the period<br>
+dilutive financial instruments:</p>
+<ul>
+<li>convertible preferred: if-converted method<br>
+diluted EPS = <span class="mathjax-exps">$\frac{\text{Net income}}{\text{Weighted average number of shares outstanding + new common shares}}$</span></li>
+<li>convertible debt<br>
+diluted EPS = <span class="mathjax-exps">$\frac{\text{Net income + after-tax interest - prefered dividends}}{\text{Weighted average number of shares outstanding + new common shares}}$</span>, because first minus interest expense then calculate tax</li>
+<li>employee stock options: the treasury stock method (proceeds from exercise to repurchase)</li>
+</ul>
+<p>antidilutive: diluted EPS higher than basic EPS, antidilutive securities are not included in the calculation of diluted EPS</p>
+<h4>COMMON-SIZE ANALYSIS</h4>
+<p>state each line item as a percentage of revenue, and compare this ratio<br>
+compare taxes with pretax income</p>
+<h4>RATIOS</h4>
+<p>net profit margin (profit margin/return on sales): Net income/Revenue<br>
+gross profit margin: Gross profit/Revenue, where gross profit = revenue - cost of goods<br>
+operating profit margin<br>
+pretax margin</p>
+<h4>COMPREHENSIVE INCOME</h4>
+<p>comprehensive income = net income + other comprehensive income<br>
+equity change = net income + OCI - dividend<br>
+4 types:</p>
+<ul>
+<li>Foreign currency translation adjustments: subsidiaries&apos; balance sheet</li>
+<li>Unrealized gains or losses on derivatives contracts accounted for as hedges</li>
+<li>Unrealized holding gains and losses on a certain category of investment securities</li>
+<li>Certain costs of a company&#x2019;s defined benefit post-retirement plans that are not recognized in the current period</li>
+</ul>
+<p>Income statement typically includes trading or holding asset<br>
+OCI includes available-for-sale asset (neither holding nor trading)<br>
+held-to-maturity debt securities reported at amortized cost, no unrealized gains or losses are reported</p>
+<h3>Balance Sheets</h3>
+<h4>CURRENT AND NON-CURRENT CLASSIFICATION</h4>
+<p>current/noncurrent asset (classified balance sheet) and liquidity-based presentation<br>
+current asset: expected to be sold, used up, or otherwise realized in cash within one year or one operating cycle of the business, whichever is greater<br>
+non-current asset (long-term, long-lived assets)<br>
+business cycle: from acquiring inventory to collect sale cash; from acquiring raw material to covert those into cash<br>
+current liability (or):</p>
+<ul>
+<li>expected to be settled in the entity&#x2019;s normal operating cycle</li>
+<li>held primarily for the purpose of being traded</li>
+<li>due to be settled within one year after the balance sheet date</li>
+<li>does not have an unconditional right to defer settlement of the liability for at least one year after the balance sheet date</li>
+</ul>
+<p>working capital = current asset - current liability</p>
+<h4>CURRENT ASSETS</h4>
+<h5>CASH AND CASH EQUIVALENTS, MARKETABLE SECURITIES AND TRADE RECEIVABLES</h5>
+<p>Cash and Cash Equivalents are financial assets<br>
+Financial assets are reported at amortised cost or fair value<br>
+trade receivable (account receivable) is also financial asset, reported at net realizable value, approximation for fair value<br>
+allowance for doubtful accounts is called a contra account</p>
+<h5>INVENTORIES AND OTHER CURRENT ASSETS</h5>
+<p>Inventories are measured at the lower of cost and net realizable value<br>
+*under GAAP, when using LIFO or retail inventory method, the lower of cost or market value (replacement cost which less than NRV and more than NRV less a normal profit margin)<br>
+Subsequent reversal of an inventory write-down is allowed under IFRS, but not under GAAP<br>
+OTHER CURRENT ASSETS: a typical item is prepaid expense,</p>
+<h4>CURRENT LIABILITIES</h4>
+<p>Trade credit is a source of financing<br>
+Accrued expenses (accrued expenses payable, accrued liabilities, or other non-financial liabilities): recognized as expense but not paid, such as tax payable, interest payable<br>
+Deferred income (deferred revenue or unearned revenue): receive payment in advance of good delivery</p>
+<h4>NON-CURRENT ASSETS</h4>
+<h5>PROPERTY, PLANT AND EQUIPMENT AND INVESTMENT PROPERTY</h5>
+<p>Property, plant, and equipment (PPE)<br>
+Land is not depreciated<br>
+Impairment occurs when recoverable amount is less than its carrying amount:</p>
+<ul>
+<li>Recoverable amount: The higher of an asset&#x2019;s fair value less cost to sell, and its value in use</li>
+<li>Value in use: The present value of the future cash flows expected to be derived from the asset</li>
+</ul>
+<p>Reversals of impairment losses are permitted under IFRS but not under US GAAP<br>
+revaluation model: the reported is the fair value at the date of revaluation less subsequent depreciation<br>
+under the fair value model, investment property&apos;s gain or loss arising from change in fair value of investment property is recognized in profit and loss</p>
+<h5>INTANGIBLE ASSETS</h5>
+<p>cost model or revaluation model<br>
+Intangible assets are identifiable non-monetary assets without physical substance<br>
+identifiable asset: can be acquired singly (can be separated from the entity) or is the result of specific contractual or legal rights or privilege<br>
+accounting goodwill is not a separately identifiable asset<br>
+The revaluation model can only be selected when there is an active market for an intangible asset.<br>
+assets (like management skill, good reputation) may be recognised as goodwill if a company is acquired, but are not recognised until an acquisition occurs<br>
+internally created identifiable intangibles are expensed rather than reported on the balance sheet, under IFRS, research phase cost should be expensed and development phase cost may be capitalized; under GAAP, most cost should be expensed<br>
+expensed cost include:</p>
+<ul>
+<li>internally generated brands, mastheads, publishing titles, customer lists</li>
+<li>start-up costs</li>
+<li>training costs</li>
+<li>administrative and other general overhead costs</li>
+<li>advertising and promotion</li>
+<li>relocation and reorganization expenses</li>
+<li>redundancy and other termination costs</li>
+</ul>
+<h5>GOODWILL</h5>
+<p>purchase price&apos;s excess amount higher than identifiable assets net of liabilities<br>
+accounting goodwill arising from acquisitions is capitalized, not amortised but tested for impairment annually (impairment loss against income)<br>
+Any gain from a bargain purchase is recognized in profit and loss<br>
+analysts often adjust the companies&#x2019; financial statements by removing the impact of goodwill</p>
+<h5>FINANCIAL ASSETS</h5>
+<p>fair value or amortised cost method<br>
+amortised cost method: initially recognized amount, minus principal repayments, plus or minus amortisation of discount or premium, and minus reduction for impairment<br>
+held-to-maturity asset is reported at amortised cost<br>
+<img src="/images/CFA-financial statement-balance sheet-financial assets.png" width="100%"></p>
+<h5>DEFERRED TAX ASSETS</h5>
+<h4>NON-CURRENT LIABILITIES</h4>
+<h5>Long-term Financial Liabilities</h5>
+<h5>Deferred Tax Liabilities</h5>
+<h4>EQUITY</h4>
+<p>components:</p>
+<ul>
+<li>Capital contributed by owners (common stock, issued capital)</li>
+<li>Preferred shares: preferred shares with mandatory redemption at a fixed amount at a future date are classified as financial liability</li>
+<li>Treasury shares: non-voting and no dividend, reissue does not recognize gain or loss</li>
+<li>Retained earnings</li>
+<li>Accumulated other comprehensive income (or other reserves)</li>
+<li>Noncontrolling interest: minority shareholders in the subsidiary companies that have been consolidated by the parent (controlling) company</li>
+</ul>
+<h4>STATEMENT OF CHANGES IN EQUITY</h4>
+<p>information required:</p>
+<ul>
+<li>total comprehensive income</li>
+<li>the effects of any accounting changes</li>
+<li>capital transactions with owners and distributions to owners</li>
+<li>reconciliation of the carrying amounts of each component of equity</li>
+</ul>
+<h4>COMMON SIZE ANALYSIS</h4>
+<p>as a percentage of total assets</p>
+<h4>RATIOS</h4>
+<table>
+<thead>
+<tr>
+<th>Liquidity Ratios</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>current</td>
+<td>Current assets / Current liabilities</td>
+</tr>
+<tr>
+<td>Quick (acid test)</td>
+<td>(Cash + Marketable securities + Receivables) / Current liabilities</td>
+</tr>
+<tr>
+<td>Cash</td>
+<td>(Cash + Marketable securities) / Current liabilities</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Solvency Ratios</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Long-term debt-to-equity</td>
+<td>Total long-term debt / Total equity</td>
+</tr>
+<tr>
+<td>Debt-to-equity</td>
+<td>Total debt / Total equity</td>
+</tr>
+<tr>
+<td>Total debt</td>
+<td>Total debt / Total assets</td>
+</tr>
+<tr>
+<td>Financial leverage</td>
+<td>Total assets / Total equity</td>
+</tr>
+</tbody>
+</table>
+<p>for diversified companies operating in different industries, look ratio for different operating segments</p>
+<h3>Cash Flow Statements</h3>
+<h4>CLASSIFICATION OF CASH FLOWS AND NON-CASH ACTIVITIES</h4>
+<ul>
+<li>Operating activities: including dealing securities and trading securities</li>
+<li>Investing activities</li>
+<li>Financing activities:<br>
+IFRS: operating leases are treated similarly to finance leases, interest is financing or operating, principal is financing</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IFRS</th>
+<th>GAAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interest paid</td>
+<td>operating or financing</td>
+<td>operating</td>
+</tr>
+<tr>
+<td>interest received</td>
+<td>operating or investing</td>
+<td>operating</td>
+</tr>
+<tr>
+<td>dividend paid</td>
+<td>operating or financing</td>
+<td>financing</td>
+</tr>
+<tr>
+<td>dividend received</td>
+<td>operating or investing</td>
+<td>operating</td>
+</tr>
+</tbody>
+</table>
+<p>non-cash transaction: such as exchange asset, stock for dividend, convertible bond</p>
+<h4>DIFFERENCE</h4>
+<img src="/images/CFA-financial statement-cash flow-difference.png" width="100%">
+<h4>DIRECT AND INDIRECT METHODS FOR OPERATING</h4>
+<p>indirect method: a reconciliation of net profit to net cash flow from operating activities<br>
+GAAP encourage direct method but require companies a reconciliation between net income and cash flow (which is equivalent to the indirect method)<br>
+US GAAP mandate disclosure of cash for interest and income taxes under indirect method</p>
+<h4>LINKAGES OF CASH FLOW STATEMENT WITH THE INCOME STATEMENT AND BALANCE SHEET</h4>
+<p>accounts receivable&apos;s change = revenue - cash collected from customers</p>
+<h4>THE DIRECT METHOD FOR OPERATING ACTIVITIES</h4>
+<ul>
+<li>Cash Received from Customers</li>
+<li>Cash Paid to Suppliers:<br>
+purchase from supplier = cost of good sold + change of inventory</li>
+<li>Cash Paid to Employees</li>
+<li>Cash Paid for Other Operating Expenses<br>
+Other operating expenses = (cash paid - change of prepaid expense) + change of other accrued liability</li>
+<li>Cash Paid for Interest</li>
+<li>Cash Paid for Income Taxes<br>
+Cash flows from taxes must be separately disclosed under IFRS and GAAP</li>
+</ul>
+<h4>INVESTING ACTIVITIES</h4>
+<img src="/images/CFA-financial statement-cash flow-investing activity.png" width="100%">
+<h4>FINANCING ACTIVITIES</h4>
+<ul>
+<li>Long-Term Debt and Common Stock</li>
+<li>Dividends: change of retained earning = net income - dividend</li>
+</ul>
+<h4>OVERALL STATEMENT OF CASH FLOWS UNDER THE INDIRECT METHOD</h4>
+<p>To perform this reconciliation, net income is adjusted for:</p>
+<ul>
+<li>non-operating activities</li>
+<li>non-cash expenses</li>
+<li>changes in operating working capital items</li>
+</ul>
+<h4>FROM INDIRECT TO DIRECT</h4>
+<h4>SOURCES AND USES OF CASH</h4>
+<ul>
+<li>major sources and uses of cash flow<br>
+whether operating cash flow is positive and sufficient to cover capital expenditures</li>
+<li>primary determinants of operating cash flow<br>
+higher or lower than net income</li>
+<li>primary determinants of investing cash flow</li>
+<li>primary determinants of financing cash flow</li>
+</ul>
+<h4>COMMON SIZE ANALYSIS</h4>
+<p>denominator: total cash inflow/outflow or net revenue</p>
+<h4>FREE CASH FLOW TO FIRM AND FREE CASH FLOW TO EQUITY</h4>
+<p>free cash flow: the excess of operating cash flow over capital expenditures<br>
+FCFF = NI + NCC + Int(1 &#x2013; Tax rate) &#x2013; FCInv &#x2013; WCInv<br>
+FCFF = CFO + Int(1 &#x2013; Tax rate) &#x2013; FCInv<br>
+FCFE = CFO &#x2013; FCInv + Net borrowing</p>
+<h4>RATIO</h4>
+???
+<h3>Financial Analysis Techniques</h3>
+<p>for return on assets (ROA), average asset would be better than beginning and ending (for company with growing assets)<br>
+return on equity (ROE) is net income divided by average shareholder&apos;s equity<br>
+Trailing 12 months (TTM) (past 12 months) or most recent quarter (MRQ)</p>
+<h4>COMMON SIZE BALANCE SHEETS AND INCOME STATEMENTS</h4>
+<p>time series analysis: horizontal common-size balance sheets<br>
+vertical common-size income statement: each column is divided by the same entry</p>
+<h4>ACTIVITY RATIOS</h4>
+<p>asset utilization ratios or operating efficiency ratios<br>
+<img src="/images/CFA-financial statement-technique-activity ratios.png" width="100%"></p>
+<ul>
+<li>inventory turn over: how many times per year the entire inventory was theoretically turned over, or sold<br>
+may imply effective inventory management or inadequate inventory</li>
+<li>DOH: the company kept on hand about 30 days&#x2019; worth of inventory, on average, during the period</li>
+<li>DSO: the elapsed time between a sale and cash collection</li>
+<li>payable turnover<br>
+If liquidity ratios indicate that the company has sufficient cash and other short-term assets to pay obligations and yet the days payable ratio is relatively high, the analyst would favor the lenient supplier credit and collection policies as an explanation.</li>
+<li>fixed asset turnover<br>
+A low ratio can indicate inefficiency or new business not operating at full capacity<br>
+this ratio could change dramaticly because fix asset does not follow smooth pattern</li>
+</ul>
+<h4>LIQUIDITY RATIOS</h4>
+<img src="/images/CFA-financial statement-technique-liquidity ratios.png" width="100%">
+<p>Contingent liability, such as letters of credit or financial guarantees</p>
+<ul>
+<li>defensive interval ratio: all expenditure on income statement excluding noncash and tax<br>
+how long a company can pay its daily cash expenditures using only its existing liquid assets, without additional cash flow<br>
+coming in</li>
+<li>cash conversion cycle: the length of time funds are tied up in working capital, from cash paid to cash received<br>
+must finance its inventory and accounts receivable for a longer period of time</li>
+</ul>
+<h4>SOLVENCY RATIOS</h4>
+<p>Leverage is a magnifying effect that results from the use of fixed costs<br>
+operating leverage results from the use of non-current assets with fixed costs;financial leverage results from the use of long-term debt with fixed costs<br>
+<img src="/images/CFA-financial statement-technique-solvency ratios.png
+" width="100%"></p>
+<ul>
+<li>Debt-to-EBITDA Ratio: how many years it would take to repay total debt based on EBIT</li>
+<li>Interest Coverage: the number of times a company&#x2019;s EBIT could cover its interest payments</li>
+</ul>
+<h4>PROFITBILITY RATIOS</h4>
+<p><img src="/images/CFA-financial statement-technique-profitbility ratios.png
+" width="100%"></p>
+<ul>
+<li>ROA: net income/total assets<br>
+net income is the return to equity holders, whereas assets are financed by both equity holders and creditors</li>
+</ul>
+<h4>DUPONT ANALYSIS: THE DECOMPOSITION OF ROE</h4>
+<div class="mermaid">graph LR
+A(Return on Equity&lt;br&gt;net income/equity) --&gt; B(Return on Assets &lt;br&gt;net income/assets)
+A--&gt;C(Leverage &lt;br&gt;assets/equity)
+B--&gt;D(Net Profit Margin&lt;br&gt;net income/revenue)
+B--&gt;E(Asset Turnover&lt;br&gt;revenue/assets)
+D--&gt;F(Tax Burden&lt;br&gt;net income/EBT)
+D--&gt;G(Interest Burden&lt;br&gt;EBT/EBIT)
+D--&gt;H(EBIT Margin&lt;br&gt;EBIT/revenue)
+</div><h4>EQUITY ANALYSIS AND VALUATION RATIOS</h4>
+<table>
+<thead>
+<tr>
+<th>Valuation Ratios</th>
+<th>Numerator</th>
+<th>Denominator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P/E &#x5E02;&#x76C8;&#x7387;</td>
+<td>share price</td>
+<td>earnings per share</td>
+</tr>
+<tr>
+<td>P/CF &#x5E02;&#x73B0;&#x7387;</td>
+<td>share price</td>
+<td>cash flow per share</td>
+</tr>
+<tr>
+<td>P/S &#x5E02;&#x9500;&#x7387;</td>
+<td>share price</td>
+<td>sales per share</td>
+</tr>
+<tr>
+<td>P/B &#x5E02;&#x51C0;&#x7387;</td>
+<td>share price</td>
+<td>book value per share</td>
+</tr>
+</tbody>
+</table>
+<p>PE ratio: more susceptible to manipulation than are cash flows, therefore use P/CF</p>
+<p>Per-Share Quantities:</p>
+<ul>
+<li>EPS<br>
+affected by share number, although sometimes number means nothing</li>
+<li>Dilute EPS</li>
+<li>Cash flow per share = Cash flow from operations / all share</li>
+<li>EBITDA per share = EBITDA / all share</li>
+<li>Dividends per share = Common dividends declared / ordinary share</li>
+</ul>
+<p>Dividend-Related Quantities:</p>
+<ul>
+<li>Dividend payout ratio = common share dividends / common share net income</li>
+<li>Retention rate (<span class="mathjax-exps">$b$</span>) = 1 - Dividend payout ratio</li>
+<li>Sustainable growth rate = <span class="mathjax-exps">$b$</span> &#xD7; ROE</li>
+</ul>
+<h4>INDUSTRY-SPECIFIC FINANCIAL RATIOS</h4>
+<p>business risk ratio:<br>
+Coefficient of variation of operating income/net income/revenue: std/mean<br>
+???</p>
+<h4>RESEARCH ON FINANCIAL RATIOS IN CREDIT AND EQUITY ANALYSIS</h4>
+<h4>CREDIT ANALYSIS</h4>
+<p>credit scoring, credit rating<br>
+???</p>
+<h4>BUSINESS AND GEOGRAPHIC SEGMENTS</h4>
+<p>the segment constitutes 10 percent or more of the combined operating segments&#x2019; revenue, assets, or profit should disclosed separately, additional reportable segments should be identified until 75% revenue is reached, other segments are in &quot;all other segments&quot; category</p>
+
+      </div>
+      
+      
+    
+    
+    <script>
+// config mermaid init call
+// http://knsv.github.io/mermaid/#configuration
+//
+// You can edit the 'MERMAID_CONFIG' variable below.
+MERMAID_CONFIG = {
+  startOnLoad: false
+}
+
+if (window['MERMAID_CONFIG']) {
+  window['MERMAID_CONFIG'].startOnLoad = false
+  window['MERMAID_CONFIG'].cloneCssStyles = false
+  window['MERMAID_CONFIG'].theme = "default"
+}
+mermaid.initialize(window['MERMAID_CONFIG'] || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidechanged', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+} else {
+  mermaid.init(null, document.getElementsByClassName('mermaid'))
+}
+</script>
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -25,6 +25,8 @@
   color-scheme: light;
 }
 
+
+/* below for article, full css file is generated on this page */
 a {
   /*border-bottom: 1px solid #999;*/
   color: var(--link-color);
@@ -232,7 +234,7 @@ header.header {
 }
 
 .searchButton[name='go'] {
-  background: no-repeat center / 1.23076923em url(images/icon/search.svg);
+  background: no-repeat center / 1.23076923em url(/icon/search.svg);
   opacity: 0.67;
 }
 
@@ -507,3 +509,65 @@ background-color: #787878;
 .footer-inner {
   -moz-user-select:none;
 }
+
+
+/* below for main page */
+
+
+.site-overview-wrap {
+  margin-right: 4px;
+  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif
+}
+.site-overview-item:not(:first-child) {
+  margin-top: 10px;
+}
+.site-author-image {
+  /*border: 1px solid #eee;*/
+  max-width: 160px;
+  padding: 10px 2px 2px 2px;
+}
+
+.site-author-name {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 0;
+}
+
+.site-description {
+  color: #999;
+  font-size: 0.8125em;
+  margin-top: 0;
+  font-family: sans-serif;
+}
+
+.links-of-author a {
+  font-size: 0.8125em;
+}
+
+.links-of-author {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.links-of-author-item {
+  margin: 5px 0 0;
+  width: 50%;
+}
+.links-of-author-item a {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.links-of-author-item a {
+  border-bottom: 0;
+  border-radius: 1px;
+  display: block;
+}
+.links-of-author-item a:hover {
+  background: var(--body-bg-color);
+}
+

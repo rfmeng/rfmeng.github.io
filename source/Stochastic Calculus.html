@@ -1,0 +1,388 @@
+<!DOCTYPE html><html><head>
+      <title>Stochastic Calculus</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+        </script>
+        <script type="text/javascript" async src="\lib\mathjax\MathJax.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="chapter-1">Chapter 1</h2>
+
+<p><span class="mathjax-exps">$\rightarrow$</span> sample space <span class="mathjax-exps">$\Omega$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\sigma$</span>-algebra and probability function <span class="mathjax-exps">$\mathbb{P}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> X is random variable if <span class="mathjax-exps">$\{X\in B\}=\{w\in \Omega \mid X(w)\in B\}\in \mathcal{F}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> distribution measure: <span class="mathjax-exps">$\mu_X$</span> with <span class="mathjax-exps">$\mu_X(B)=P\{X\in B\}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> density function: <span class="mathjax-exps">$f(x)\geq 0$</span> s.t. <span class="mathjax-exps">$\mu_X[a,b]=\int_a^bf(x)dx$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Lebesgue sum: <span class="mathjax-exps">$LS_\Pi^-(X)=\sum_{k=1}^{\infty}y_k\mathbb{P}(A_k)$</span> with <span class="mathjax-exps">$A_k=\{w\mid y_k\leq X(w)\leq y_{k+1}\}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Lebesgue integral: <span class="mathjax-exps">$\int_\Omega X(w)d\mathbb{P}(w)$</span> or <span class="mathjax-exps">$\int_\Omega Xd\mathbb{P}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> integrable: <span class="mathjax-exps">$\int_\Omega|X|d\mathbb{P}&lt;\infty$</span> (linearity to be proved)<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}X=\int_\Omega X(w)d\mathbb{P}(w)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span>Jensen&apos;s inequality: if <span class="mathjax-exps">$\varphi$</span> convex, <span class="mathjax-exps">$\varphi(\mathbb{E}X)\leq \mathbb{E}\varphi(X)$</span> (to be proved)<br>
+<span class="mathjax-exps">$\rightarrow$</span> Legesgue measure, Lebesgue integral <span class="mathjax-exps">$\int_\mathbb{R}f(x)d\mathcal{L}(x)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Riemann integral <span class="mathjax-exps">$\int_a^bf(x)dx$</span> defined <span class="mathjax-exps">$\Leftrightarrow$</span> set of points not continuous has Lebesgue measure 0; <span class="mathjax-exps">$\int_a^bf(x)dx$</span> defined <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$f$</span> is Borel measurable and the Riemann and Lebesgue integrals agree<br>
+<span class="mathjax-exps">$\rightarrow$</span> Monotone convergence<br>
+<span class="mathjax-exps">$\rightarrow$</span> Dominated convergence<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}g(X)=\int_\mathbb{R}g(x)d\mu_X(x)$</span> standard machine<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}g(X)=\int_{-\infty}^\infty g(x)f(x)dx$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$Z\geq0$</span> and <span class="mathjax-exps">$\mathbb{E}Z=1$</span>, <span class="mathjax-exps">$\widetilde{\mathbb{P}}(A)=\int_A Z(w)d\mathbb{P}(w)$</span> is a probability measure, <span class="mathjax-exps">$\widetilde{\mathbb{E}}X=\mathbb{E}[XZ]$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\widetilde{P}$</span> and <span class="mathjax-exps">$P$</span> on <span class="mathjax-exps">$(\Omega,\mathcal{F})$</span> are equaivalent if they agree which sets in <span class="mathjax-exps">$\mathcal{F}$</span> have probability zero<br>
+<span class="mathjax-exps">$\rightarrow$</span> with <span class="mathjax-exps">$\widetilde{\mathbb{P}}(A)=\int_A Z(w)d\mathbb{P}(w)$</span> and <span class="mathjax-exps">$Z$</span> almost surely positive, <span class="mathjax-exps">$Z$</span> is called the Radon-Nikodym derivative of <span class="mathjax-exps">$\widetilde{\mathbb{P}}$</span> with respect to <span class="mathjax-exps">$\mathbb{P}$</span>, <span class="mathjax-exps">$Z=\frac{d\widetilde{\mathbb{P}}}{d\mathbb{P}}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> to let <span class="mathjax-exps">$Y=X+\theta$</span> is standard normal, we can scaling pdf<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{P}$</span> and <span class="mathjax-exps">$\widetilde{\mathbb{P}}$</span> are equivalent, there exists almost surely positive <span class="mathjax-exps">$Z$</span> with <span class="mathjax-exps">$\mathbb{E}Z=1$</span> and <span class="mathjax-exps">$\widetilde{\mathbb{P}}(A)=\int_A Z(w)d\mathbb{P}(w)$</span> (to be proved)</p>
+<h2 class="mume-header" id="chapter-2">Chapter 2</h2>
+
+<p><span class="mathjax-exps">$\rightarrow$</span> on <span class="mathjax-exps">$\Omega$</span>, filtration <span class="mathjax-exps">$\mathcal{F}(s)\subset\mathcal{F}(t)$</span> for <span class="mathjax-exps">$0\leq s\leq t\leq T$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\sigma$</span>-algebra generated by X: <span class="mathjax-exps">$\sigma(X)=\{\{X\in B\}\mid B\in \mathcal{B}\}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X$</span> is <span class="mathjax-exps">$\mathcal{G}$</span>-measurable if <span class="mathjax-exps">$\sigma(X)\subset\mathcal{G}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X$</span> and <span class="mathjax-exps">$Y$</span> <span class="mathjax-exps">$\mathcal{G}$</span>-measurable, <span class="mathjax-exps">$f(x,y)$</span> Borel-measurable, then <span class="mathjax-exps">$f(X,Y)$</span> is <span class="mathjax-exps">$\mathcal{G}$</span>-measurable<br>
+<span class="mathjax-exps">$\rightarrow$</span> adapted stochastic process: nonempty sample space <span class="mathjax-exps">$\Omega$</span> with filtration <span class="mathjax-exps">$\mathcal{F}(t)$</span>, <span class="mathjax-exps">$0\leq t\leq T$</span>; <span class="mathjax-exps">$X(t)$</span> a collection of random varibles and <span class="mathjax-exps">$X(t)$</span> is <span class="mathjax-exps">$\mathcal{F}(t)$</span>-measurable<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathcal{F}$</span> and <span class="mathjax-exps">$\mathcal{G}$</span> are independent if <span class="mathjax-exps">$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$</span> for <span class="mathjax-exps">$A\in \mathcal{F}$</span> and <span class="mathjax-exps">$B\in \mathcal{G}$</span>; <span class="mathjax-exps">$X$</span> and <span class="mathjax-exps">$Y$</span> are independent; <span class="mathjax-exps">$X$</span> and <span class="mathjax-exps">$\mathcal{G}$</span> are independent<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathcal{G}_1,\mathcal{G}_2,...,\mathcal{G}_n$</span> are independent; <span class="mathjax-exps">$\mathcal{G}_1,\mathcal{G}_2,...$</span> are independent<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$f$</span>, <span class="mathjax-exps">$g$</span> measuable, <span class="mathjax-exps">$X$</span>, <span class="mathjax-exps">$Y$</span> independent, then <span class="mathjax-exps">$f(X)$</span> and <span class="mathjax-exps">$g(Y)$</span> are independent<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mu_{X,Y}(C)=\mathbb{P}\{(X,Y)\in C\}$</span> is a probability measure on <span class="mathjax-exps">$\mathbb{R}^2$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$F_{X,Y}(a,b)$</span>, <span class="mathjax-exps">$f_{X,Y}(x,y)$</span>, then we have <span class="mathjax-exps">$\mu_X$</span>, <span class="mathjax-exps">$\mu_Y$</span>, <span class="mathjax-exps">$F_{X}$</span>, <span class="mathjax-exps">$F_Y$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}h(X,Y)=\int_{\mathbb{R}_2}h(x,y)d\mu_{X,Y}(x,y)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X$</span> and <span class="mathjax-exps">$Y$</span> independent <span class="mathjax-exps">$\Leftrightarrow$</span> <span class="mathjax-exps">$\mu_{X,Y}(A\times B)=\mu_{X}(A)\mu_{Y}(B)$</span> <span class="mathjax-exps">$\Leftrightarrow$</span> <span class="mathjax-exps">$F_{X,Y}(a,b)=F_X(a)F_Y(b)$</span> <span class="mathjax-exps">$\Leftrightarrow$</span> <span class="mathjax-exps">$\mathbb{E}e^{uX+vY}=\mathbb{E}e^{uX}\mathbb{E}e^{vY}$</span> <span class="mathjax-exps">$\Leftrightarrow$</span> <span class="mathjax-exps">$f_{X,Y}(x,y)=f_X(x)f_Y(y)$</span> <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[XY]=\mathbb{E}X\mathbb{E}Y$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\text{Var}(X)$</span>, <span class="mathjax-exps">$\text{Cov}(X,Y)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> multidimensional normal distribution<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[X|\mathcal{G}]$</span>: <span class="mathjax-exps">$\mathcal{G}$</span>-measurable and <span class="mathjax-exps">$\int_A\mathbb{E}[X|\mathcal{G}](w)d\mathbb{P}(w)=\int_AX(w)d\mathbb{P}(w)$</span> for <span class="mathjax-exps">$A\in\mathcal{G}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[X|W]$</span> if <span class="mathjax-exps">$\mathcal{G}=\sigma(W)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[c_1X+c_2Y|\mathcal{G}]=c_1\mathbb{E}[X|\mathcal{G}]+c_2\mathbb{E}[Y|\mathcal{G}]$</span>; <span class="mathjax-exps">$X$</span> <span class="mathjax-exps">$\mathcal{G}$</span>-measurable <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$E[XY|\mathcal{G}]=X\mathbb{E}[Y|\mathcal{G}]$</span>; <span class="mathjax-exps">$\mathcal{H}\subset \mathcal{G}$</span> <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[\mathbb{E}[X|\mathcal{G}]|\mathcal{H}]=\mathbb{E}[X|\mathcal{H}]$</span>; <span class="mathjax-exps">$X$</span> independent of <span class="mathjax-exps">$\mathcal{G}$</span> <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[X|\mathcal{G}]=\mathbb{E}X$</span>; <span class="mathjax-exps">$\varphi$</span> convex, <span class="mathjax-exps">$\mathbb{E}[\varphi(X)|\mathcal{G}]\geq \varphi(\mathbb{E}[X|G])$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X_i$</span> <span class="mathjax-exps">$\mathcal{G}$</span>-measurable and <span class="mathjax-exps">$Y_i$</span> independent of <span class="mathjax-exps">$\mathcal{G}$</span>, define <span class="mathjax-exps">$g(x_1,...,x_K)=\mathbb{E}f(x_1,...,x_K,Y_1,...,Y_L)$</span> <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$\mathbb{E}[f(X_1,...,X_K,Y_1,...,Y_L)|\mathcal{G}]=g(X_1,...,X_K)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$(\Omega,\mathcal{F},\mathbb{P})$</span>, <span class="mathjax-exps">$\sigma(M(t))\subset\mathcal{F}(t)\subset\mathcal{F}$</span>, martingale is <span class="mathjax-exps">$\mathbb{E}[M(t)|\mathcal{F}(s)]=M(s)$</span> for <span class="mathjax-exps">$0\leq s\leq t\leq T$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Markov process: for all <span class="mathjax-exps">$0\leq s\leq t\leq T$</span> and any nonnegative Borel measurable funciton<span class="mathjax-exps">$f$</span>, there is Borel measurable <span class="mathjax-exps">$g$</span>, s.t. <span class="mathjax-exps">$\mathbb{E}[f(X(t))|\mathcal{F}(s)]=g(X(s))$</span></p>
+<h2 class="mume-header" id="c3-brownian-motion">C3 Brownian Motion</h2>
+
+<p><span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X_j=1,-1$</span> <span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$M_k=\sum_{j=1}^kX_j$</span> <span class="mathjax-exps">$\rightarrow$</span> quadratic variation <span class="mathjax-exps">$[M,M]_k=\sum_{j=1}^k(M_j-M_{j-1})^2$</span> <span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$W^{(n)(t)}=\frac{1}{\sqrt{n}}M_{nt}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> central limit: distribution of <span class="mathjax-exps">$W^{(n)}(t)$</span> converges to <span class="mathjax-exps">$\mathcal{N}(0,t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Brownian motion: for each <span class="mathjax-exps">$w\in\Omega$</span>, there is continuous <span class="mathjax-exps">$W(t)$</span> which have independent increments distributed normally<br>
+<span class="mathjax-exps">$\rightarrow$</span> filtration for Brownian motion: <span class="mathjax-exps">$W(u)-W(t)$</span>, <span class="mathjax-exps">$u&gt;t$</span>, is independent of <span class="mathjax-exps">$\mathcal{F}(t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> first order variation <span class="mathjax-exps">$FV_T(f)=\int_0^T|f^\prime(t)|dt=\lim\limits_{\|\Pi\|\rightarrow0}\sum_{j=0}^{n-1}|f(t_{j+1})-f(t_j))|$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> quadratic variation <span class="mathjax-exps">$[f,f](T)=\lim\limits_{\|\Pi\|\rightarrow0}\sum_{j=0}^{n-1}[f(t_{j+1})-f(t_j)]^2$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$f$</span> with continuous derivative has 0 quadratic variation<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$[W,W](T)=T$</span> almost surely for Brownian motion<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$dW(t)dW(t)=dt$</span>, <span class="mathjax-exps">$dW(t)dt=0$</span>, <span class="mathjax-exps">$dtdt=0$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> brownian motion is Markov chain<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$Z(t)=exp\{\sigma W(t)-\frac{1}{2}\sigma^2t\}$</span> is martingale<br>
+<span class="mathjax-exps">$\rightarrow$</span> martingale stoped at stop time is martingale</p>
+<h2 class="mume-header" id="c4-stocastic-calculus">C4 Stocastic Calculus</h2>
+
+<p><span class="mathjax-exps">$\rightarrow$</span> simple integrand, <span class="mathjax-exps">$\varDelta(t)$</span> adapted, <span class="mathjax-exps">$I(t)=\int_0^T\varDelta(t)dW(t)=\\ \sum_{j=0}^{k-1}\varDelta(t_j)[W(t_{j+1})-W(t_j)]+\varDelta(t_k)[W(t)-W(t_k)]$</span> <span class="mathjax-exps">$\mathbb{E}I(t)=0$</span>, <span class="mathjax-exps">$Var(I(t))=\mathbb{E}I^2(t)=\mathbb{E}\int_0^t\varDelta^2(u)du$</span>, <span class="mathjax-exps">$[I,I](t)=\int_0^t\varDelta^2(u)du$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$I(t)=I(0)+\int_0^t\varDelta(u)dW(u)$</span> <span class="mathjax-exps">$\Leftrightarrow$</span> <span class="mathjax-exps">$dI(t)=\varDelta(t)dW(t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Ito&apos;s integral condition <span class="mathjax-exps">$\mathbb{E} \int_0^T\varDelta^2(t)dt&lt;\infty$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\lim\limits_{n\rightarrow\infty}\mathbb{E}\int_0^T|\varDelta_n(t)-\varDelta(t)|^2dt=0$</span> <span class="mathjax-exps">$\Rightarrow$</span><br>
+define <span class="mathjax-exps">$\int_0^t\varDelta(u)dW(u)=\lim\limits_{n\rightarrow\infty}\int_0^t\varDelta_n(u)dW(u)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$I(t)$</span> is conitnuous, <span class="mathjax-exps">$\mathcal{F}(t)$</span>-measurable and martingale<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$df(t,W(t))=f_tdt+f_WdW(t)+\frac{1}{2}f_{WW}dt$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> when <span class="mathjax-exps">$\varDelta(t)$</span> and <span class="mathjax-exps">$\varTheta(t)$</span> adapted Ito&apos;s process:<br>
+<span class="mathjax-exps">$X(t)=X(0)+\int_0^t\varDelta(u)dW(u)+\int_0^t\varTheta(u)du$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$[X,X](t)=\int_0^t\varDelta^2(u)du$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$X$</span> Ito process, <span class="mathjax-exps">$\varGamma$</span> adapted,<br>
+<span class="mathjax-exps">$\int_0^t\varGamma(u)dX(u)=\int_0^t\varGamma(u)\varDelta(u)dW(u)+\int_0^t\varGamma(u)\varTheta(u)du$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$df(t,X(t))=(f_t+f_x\varTheta+f_{xx}\varDelta^2)dt+f_x\varDelta dX(t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> let <span class="mathjax-exps">$\varDelta(s)$</span> be a deterministic function, <span class="mathjax-exps">$I(t)=\int_0^t\varDelta(s)dW(s)$</span> is normal with mean 0 and variance <span class="mathjax-exps">$\int_0^t\varDelta^2(s)ds$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> BSM equation<br>
+<span class="mathjax-exps">$\rightarrow$</span> multiple Brownian motions <span class="mathjax-exps">$W(t)=(W_1(t),...,W_d(t))$</span>: <span class="mathjax-exps">$W_i$</span> Brownian motion, <span class="mathjax-exps">$W_i$</span> and <span class="mathjax-exps">$W_j$</span> independent, <span class="mathjax-exps">$W(u)-W(t)$</span> independent of <span class="mathjax-exps">$\mathcal{F}(t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$dW_i(t)dW_j(t)=0$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$dX(t)=\varTheta_1(t)dt+\sigma_{11}(t)dW_1(t)+\sigma_{12}(t)dW_2(t)$</span>,<br>
+<span class="mathjax-exps">$dY(t)=\varTheta_2(t)dt+\sigma_{21}(t)dW_1(t)+\sigma_{22}(t)dW_2(t)$</span>,<br>
+<span class="mathjax-exps">$dX(t)dX(t)=(\sigma_{11}^2(t)+\sigma_{12}^2(t))dt$</span>, <span class="mathjax-exps">$dX(t)dY(t)=(\sigma_{11}(t)\sigma_{21}(t)+\sigma_{12}(t)\sigma_{22}(t))dt$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$df(t,X,Y)=f_tdt+f_xdX+f_ydY+\frac{1}{2}f_{xx}dXdX+f_{xy}dXdY+\frac{1}{2}f_{yy}dYdY$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$d(XY)=XdY+YdX+dXdY$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$M(t)$</span> martingale with continuous path, <span class="mathjax-exps">$[M,M](t)=t$</span> <span class="mathjax-exps">$\Rightarrow$</span> <span class="mathjax-exps">$M(t)$</span> is Brownian motion<br>
+<span class="mathjax-exps">$\rightarrow$</span> two dimensional Levy theorem<br>
+<span class="mathjax-exps">$\rightarrow$</span> Gaussian process: <span class="mathjax-exps">$X(t_1)$</span>,..., <span class="mathjax-exps">$X(t_n)$</span> jointly normal<br>
+<span class="mathjax-exps">$\rightarrow$</span> Brownian bridge from 0 to 0: <span class="mathjax-exps">$X(t)=W(t)-\frac{t}{T}W(T)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> Brownian bridge from a to b: <span class="mathjax-exps">$X^{a\rightarrow b}(t)=a+(b-a)t/T+X(t)$</span></p>
+<h2 class="mume-header" id="c5-risk-neutral-pricing">C5 Risk-Neutral Pricing</h2>
+
+<p><span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$(\Omega,\mathcal{F},\mathbb{P})$</span> with almost surely positive <span class="mathjax-exps">$Z$</span> and <span class="mathjax-exps">$\mathbb{E}Z=1$</span>, Radon-Niksodym derivative process: <span class="mathjax-exps">$Z(t)=\mathbb{E}[Z|\mathcal{F}(t)]$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$Z(t)$</span> is a martingale<br>
+<span class="mathjax-exps">$\rightarrow$</span> let <span class="mathjax-exps">$Y$</span> be <span class="mathjax-exps">$\mathcal{F}(t)$</span>-measurable, <span class="mathjax-exps">$\widetilde{\mathbb{E}}Y=\mathbb{E}[YZ(t)]$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$0\leq s\leq t \leq T$</span>, <span class="mathjax-exps">$Y$</span> <span class="mathjax-exps">$\mathcal{F}(t)$</span>-measurable, <span class="mathjax-exps">$\widetilde{\mathbb{E}}[Y|\mathcal{F}(s)]=\frac{1}{Z(s)}\mathbb{E}[YZ(t)|\mathcal{F}(s)]$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$W(t)$</span> Brownian motion, <span class="mathjax-exps">$(\Omega,\mathcal{F},\mathbb{P})$</span>, <span class="mathjax-exps">$\mathcal{F}(t)$</span>, adapted process <span class="mathjax-exps">$\varTheta(t)$</span>, <span class="mathjax-exps">$Z(t)=\text{exp}\{-\int_0^t\varTheta(u)dW(u)-\frac{1}{2}\int_0^t\varTheta^2(u)du\}$</span>, <span class="mathjax-exps">$\widetilde{W}(t)=W(t)+\int_0^t\varTheta(u)du$</span>, with <span class="mathjax-exps">$\mathbb{E}\int_0^T\varTheta^2(u)Z^2(u)du&lt;\infty$</span>, <span class="mathjax-exps">$Z=Z(T)$</span>, then <span class="mathjax-exps">$\mathbb{E}Z=1$</span> and <span class="mathjax-exps">$\widetilde{W}(t)$</span> is Brownian motion under <span class="mathjax-exps">$\widetilde{\mathbb{P}}$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> BSM formula<br>
+<span class="mathjax-exps">$\rightarrow$</span> martingale representation theorem: <span class="mathjax-exps">$W(t)$</span>, <span class="mathjax-exps">$(\Omega,\mathcal{F},\mathbb{P})$</span>, <span class="mathjax-exps">$\mathcal{F}(t)$</span>, martingale <span class="mathjax-exps">$M(t)$</span> with respect to <span class="mathjax-exps">$\mathcal{F}(t)$</span>, there is an adapted <span class="mathjax-exps">$\varGamma(u)$</span> such that <span class="mathjax-exps">$dM(t)=\varGamma(t)dW(t)$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> multiple dimensions Girsanov<br>
+<span class="mathjax-exps">$\rightarrow$</span> multiple dimensions martingale representation<br>
+<span class="mathjax-exps">$\rightarrow$</span> risk neutral measure: equivalent and <span class="mathjax-exps">$D(t)S_i(t)$</span> is martingale<br>
+<span class="mathjax-exps">$\rightarrow$</span> portfolio <span class="mathjax-exps">$X(t)$</span>, arbitrage: <span class="mathjax-exps">$X(0)=0$</span>, <span class="mathjax-exps">$\mathbb{P}\{X(T)\geq 0\}=1$</span> and <span class="mathjax-exps">$\mathbb{P}\{X(T)&gt;0\}&gt;0$</span><br>
+<span class="mathjax-exps">$\rightarrow$</span> first fundamental theorem of asset pricing: risk neutral measure exists <span class="mathjax-exps">$\Rightarrow$</span> no arbitrage<br>
+<span class="mathjax-exps">$\rightarrow$</span> a market model is complete if every derivative security can be hedged<br>
+<span class="mathjax-exps">$\rightarrow$</span> second fundamental theorem of asset pricing: model complete <span class="mathjax-exps">$\Leftrightarrow$</span> risk-neutral measure unique<br>
+<span class="mathjax-exps">$\rightarrow$</span> note: understanding of the system here: existence and unique risk-neutral measure ensures that any asset (V(T) depends on S_i and FT measurable can be hedged(duplicated) and is a martingale), then its price can be determined by the expectations<br>
+<span class="mathjax-exps">$\rightarrow$</span> <span class="mathjax-exps">$\text{For}_S(t,T)=\frac{S(t)}{B(t,T)}$</span></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
