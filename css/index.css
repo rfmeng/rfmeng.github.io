@@ -597,9 +597,8 @@ background-color: #787878;
 }
 
 @media (max-width: 991px) {
-
   .headband {
-    position: sticky;
+    /*position: sticky;*/
     top:0;
     z-index: 997;
     height: 100%;
