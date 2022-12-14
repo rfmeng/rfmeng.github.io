@@ -603,27 +603,94 @@ background-color: #787878;
     top:0;
     z-index: 997;
     height: 100%;
-    background-color: var(--body-bg-color);
-    /*transition: all 0.2s ease-in-out;*/
+    width: 100%;
+    background-color: rgb(234,235,239);
     border-bottom: 1px solid #ccc;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
   }
   .headband-title {
     display: block;
-  }
-  .headband-search-box {
-    display: block;
+    padding: 0 10px;
   }
   .headband-site-title {
+    color: #000;
     font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
     font-size: 1.375em;
     font-weight: normal;
     line-height: 1.5;
     margin: 0;
   }
+  .headband-search-box {
+    padding: 7.2px 10px;
+    display: block;
+    width: calc(100% - 170px);
+  }
 
-  
+  .headband-search-box-inner {
+    width: 85%;
+    /*margin-right: -50px;*/
+    padding-left: 0.5em;
+    background-color: rgb(255,255,255);
+    border: 1px solid #ccc;
+  }
+  .headband-search-box-input {
+    margin: 0px;
+    border: 1px solid grey;
+    width: 85%;
+    background-color: rgb(255,255,255);
+    color: #000000;
+    width: 85%;
+    height: 2em;
+    line-height: 2em;
+    box-sizing: border-box;
+    border: 0px solid #a2a9b1;
+    border-radius: 0px;
+    font-family: inherit;
+    font-size: 0.8125em;
+    direction: ltr;
+    padding: 1px 0 0 0;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    z-index: 0;
+  }
+  .headband-search-box-input::-webkit-search-decoration,
+  .headband-search-box-input::-webkit-search-cancel-button,
+  .headband-search-box-input::-webkit-search-results-button,
+  .headband-search-box-input::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
+  .headband-search-box-input:focus {
+      outline: none;
+  }
+
+  .headband-searchButton {
+    /*position: absolute;*/
+    top: 1px;
+    bottom: 1px;
+    right: 1px;
+    min-width: 28px;
+    /*width: 2.15384615em;*/
+    width: 28px;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font-size: 0.8125em;
+    direction: ltr;
+    text-indent: -999999px;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .headband-searchButton[name='go'] {
+    /*background: no-repeat center / 1.23076923em url(/icon/search.svg);*/
+    background: no-repeat center / 1.23076923em url(/icon/search.svg);
+    margin-right: 0 px;
+    opacity: 0.67;
+  }
 
 
   .header {
@@ -649,10 +716,4 @@ background-color: #787878;
   }
 
 }
-
-
-
-
-
-
 
