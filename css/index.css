@@ -589,7 +589,43 @@ background-color: #787878;
 }
 
 /* for safari */
+.headband-title {
+  display: none;
+}
+.headband-search-box {
+  display: none;
+}
+
 @media (max-width: 991px) {
+
+  .headband {
+    position: sticky;
+    top:0;
+    z-index: 997;
+    height: 100%;
+    background-color: var(--body-bg-color);
+    /*transition: all 0.2s ease-in-out;*/
+    border-bottom: 1px solid #ccc;
+    display: flex;
+
+  }
+  .headband-title {
+    display: block;
+  }
+  .headband-search-box {
+    display: block;
+  }
+  .headband-site-title {
+    font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-size: 1.375em;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  
+
+
   .header {
     display: none;
   }
@@ -603,10 +639,15 @@ background-color: #787878;
   }
   .main-inner .post-block {
     padding: 40px 15px;
+ 
+  }
+  .footer {
+    padding: 10px;
   }
   .footer .footer-inner {
     padding-left: 0;
   }
+
 }
 
 
