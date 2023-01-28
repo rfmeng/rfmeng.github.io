@@ -22,7 +22,20 @@
 	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
 </head>
 <body itemscope class="use-motion">
-	<div class="headband"></div>
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+		<div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
 	<main class="main">
 		<header class="header" style="opacity: 1; top: 0px;">
 			<div class="header-inner">
@@ -93,13 +106,13 @@
 						        <i class="far fa-calendar"></i>
 						      </span>
 						      <span class="post-meta-item-text">Modified</span>
-						      <time title="" itemprop="dateCreated datePublished" datetime="">$$begin-edit time-end$$</time>
+						      <time title="" itemprop="dateCreated datePublished" datetime="">2022-12-11</time>
 						    </span>
 							</div>
 		        </div>
 		      </header>
 					<div class="mume markdown-preview post-body" for="html-export">
-						$$begin-category content-end$$
+						<h3>CFA I</h3><ul><li><a class="category" href="./pages/CFA I/CFA I - Alternative Investments.html">CFA I - Alternative Investments</a></li><li><a class="category" href="./pages/CFA I/CFA I - Corporate Issuers (1).html">CFA I - Corporate Issuers (1)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Corporate Issuers (2).html">CFA I - Corporate Issuers (2)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Derivatives.html">CFA I - Derivatives</a></li><li><a class="category" href="./pages/CFA I/CFA I - Economics (1) - Macro.html">CFA I - Economics (1) - Macro</a></li><li><a class="category" href="./pages/CFA I/CFA I - Economics (1) - Micro.html">CFA I - Economics (1) - Micro</a></li><li><a class="category" href="./pages/CFA I/CFA I - Economics (2).html">CFA I - Economics (2)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Equity Investments (1).html">CFA I - Equity Investments (1)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Equity Investments (2).html">CFA I - Equity Investments (2)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Ethical and Professional Standards.html">CFA I - Ethical and Professional Standards</a></li><li><a class="category" href="./pages/CFA I/CFA I - Financial Statement (1)(2).html">CFA I - Financial Statement (1)(2)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Financial Statement (3)(4).html">CFA I - Financial Statement (3)(4)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Fixed Income (1).html">CFA I - Fixed Income (1)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Fixed Income (2).html">CFA I - Fixed Income (2)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Portfolio Management (1).html">CFA I - Portfolio Management (1)</a></li><li><a class="category" href="./pages/CFA I/CFA I - Quantitative Methods.html">CFA I - Quantitative Methods</a></li></ul><h3>Proof</h3><ul><li><a class="category" href="./pages/Proof/Moore Penrose pseudo inverse.html">Moore Penrose pseudo inverse</a></li></ul><h3>VIX Construction</h3><ul><li><a class="category" href="./pages/VIX Construction/VIX Construction.html">VIX Construction</a></li></ul>
 	      	</div>
 				</article>
 			</div>
@@ -117,5 +130,41 @@
 			</div>
     </div>
   </footer>
+
+
+  <!-- algolia search -->
+  <script src="search temp/algoliasearch.js"></script>
+  <script src="search temp/jquery.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+  </script>
 </body>
 </html>

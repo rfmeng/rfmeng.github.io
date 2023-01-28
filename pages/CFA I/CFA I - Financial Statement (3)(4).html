@@ -389,7 +389,42 @@ capex: capital expenditure
 			  </span>
 			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
 			</div>
-    </div>
-  </footer>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
 </body>
 </html>

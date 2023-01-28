@@ -450,6 +450,16 @@ background-color: #787878;
   border-bottom: 1px solid #eee;
 }
 
+.post-body a.algolia-searched {
+  color: var(--text-color);
+
+}
+
+.post-body a.algolia-searched:hover {
+  border-bottom-color: var(--link-hover-color);
+  color: #fc6423;
+}
+
 .post-footer {
   display: flex;
   flex-direction: column;
