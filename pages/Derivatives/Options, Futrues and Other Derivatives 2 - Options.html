@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Options, Futrues and Other Derivatives 2 - Options - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Mechanics of Option Markets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Terminology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Commissions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Properties of Stock Options</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Bounds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Put-Call Parity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Put-Call Parity and Capital Sturcture</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Trading Strategies Involving Options</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Principal-Protected Notes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Option and Underlying</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Spreads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Combinations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Binomial Trees</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Wiener Process and Ito Lemma</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Black-Scholes-Merton Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Employee Stock Option</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Accounting Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Valuation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text"> Dilution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.4"><span class="nav-number">7.4.</span> <span class="nav-text">Backdating Scandals</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Options on Stock Indices and Currencies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Currency Options</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Futures Options</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Nature of Futures Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">Reasons for the Popularity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">Put-Call Parity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.4"><span class="nav-number">9.4.</span> <span class="nav-text">Valuation Using Binomial Trees</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.5"><span class="nav-number">9.5.</span> <span class="nav-text">Drift of a Futures Price when Risk-Neutral</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.6"><span class="nav-number">9.6.</span> <span class="nav-text">Black's Model for Valuing Futures Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.7"><span class="nav-number">9.7.</span> <span class="nav-text">American Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.8"><span class="nav-number">9.8.</span> <span class="nav-text">Futures-Style Options</span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          Options, Futrues and Other Derivatives 2 - Options
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2022-01-30</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2022-12-13" editdate="2022-01-30" tag="OFD Notes"></ndtag></p>
+<h3 class="mume-header" id="nav1"><!-- C10 --> Mechanics of Option Markets</h3>
+<h4 class="mume-header" id="nav1.1">Terminology</h4>
+<p>total value = intrinsic value + time value<br/>
+open interest: total long (or short) order over the market</p>
+<h4 class="mume-header" id="nav1.2">Commissions</h4>
+<p>commissions of the underlying might lead to a preference of selling the option rather than exercise them</p>
+<h3 class="mume-header" id="nav2"><!-- C11 --> Properties of Stock Options</h3>
+<h4 class="mume-header" id="nav2.1">Bounds</h4>
+<p><span class="mathjax-exps">$c\leq S_0$</span> and <span class="mathjax-exps">$C\leq S_0$</span>, because a call provides a right to buy a stock<br/>
+similarly, <span class="mathjax-exps">$P\leq K$</span> and <span class="mathjax-exps">$p\leq Ke^{-rT}$</span><br/>
+<span class="mathjax-exps">$c\geq \max(S_0-Ke^{-rT},0)$</span> and <span class="mathjax-exps">$p\geq \max(Ke^{-rT}-S_0,0)$</span> for non-dividend-paying stock<br/>
+<span class="mathjax-exps">$C=c$</span></p>
+<h4 class="mume-header" id="nav2.2">Put-Call Parity</h4>
+<p><span class="mathjax-exps">$S_0-K\leq C-P\leq S_0-Ke^{-rT}$</span><br/>
+<span class="mathjax-exps">$P\geq K-S_0$</span>, by "Americanness"</p>
+<h4 class="mume-header" id="nav2.3">Put-Call Parity and Capital Sturcture</h4>
+<p>a company fund by equity and debt, suppose at <span class="mathjax-exps">$T$</span>, a principal <span class="mathjax-exps">$K$</span> should be paid to debtholder, then the payoff at <span class="mathjax-exps">$T$</span> should be <span class="mathjax-exps">$\max(A_T-K,0)$</span> for shareholder. Value for equity is then <span class="mathjax-exps">$c$</span>, value for debtholder is then <span class="mathjax-exps">$Ke^{-rT}-p$</span>, this should sum to the total asset. Thus we have <span class="mathjax-exps">$A_0 = c+Ke^{-rT}-p$</span></p>
+<h3 class="mume-header" id="nav3"><!-- C12 --> Trading Strategies Involving Options</h3>
+<h4 class="mume-header" id="nav3.1">Principal-Protected Notes</h4>
+<p>an option and a zero-coupon bond</p>
+<h4 class="mume-header" id="nav3.2">Option and Underlying</h4>
+<p>covered call and protective put</p>
+<h4 class="mume-header" id="nav3.3">Spreads</h4>
+<p>Multiple Options of Same Type<br/>
+bull/bear spread: buy one and sell one<br/>
+box spread: bull call spread and bear put spread, fixed payoff <span class="mathjax-exps">$K_2-K_1$</span><br/>
+butterfly spread<br/>
+calendar spread: two options with different maturities</p>
+<h4 class="mume-header" id="nav3.4">Combinations</h4>
+<p>combination of options of different types<br/>
+straddle<br/>
+strip: one call and two puts, same strike<br/>
+strap: two calls and one put, same strike<br/>
+strangle: like straddle</p>
+<h3 class="mume-header" id="nav4"><!-- C13 --> Binomial Trees</h3>
+<p>risk neutral probability: <span class="mathjax-exps">$p=\frac{e^{r\Delta t}-d}{u-d}$</span><br/>
+to match volatility: <span class="mathjax-exps">$p(u-1)^2+(1-p)(d-1)^2-[p(u-1)+(1-p)(d-1)]^2=\sigma^2\Delta t$</span><br/>
+then a solution is <span class="mathjax-exps">$u=e^{r\Delta t}$</span> and <span class="mathjax-exps">$d=e^{-r\Delta t}$</span></p>
+<h3 class="mume-header" id="nav5"><!-- C14 --> Wiener Process and Ito Lemma</h3>
+<h3 class="mume-header" id="nav6"><!-- C15 --> Black-Scholes-Merton Model</h3>
+<h3 class="mume-header" id="nav7"><!-- C16 --> Employee Stock Option</h3>
+<h4 class="mume-header" id="nav7.1">Accounting Issues</h4>
+<p>Accounting standards have now changed to require the expensing of all stock-based compensation at its fair value on the income statement<br/>
+could use varable strike price, such as change with S&amp;P 500</p>
+<h4 class="mume-header" id="nav7.2">Valuation</h4>
+<p>"Quick and Dirty": estimate expected life and use BSM<br/>
+Binomial Tree Approach: estimate leaving rate and probability of exercise<br/>
+Exercise Multiple Approach<br/>
+market-based approach: auction or so</p>
+<h4 class="mume-header" id="nav7.3"><!-- actually C15 --> Dilution</h4>
+<p>annoucement of grant of employee option will lead to stock price's decrease<br/>
+stock price after decrease is used in the valuation of the option<br/>
+the payoff to an option holder if the option is exercised is <span class="mathjax-exps">$\frac{NS_T+MK}{N+M}-K$</span></p>
+<h4 class="mume-header" id="nav7.4">Backdating Scandals</h4>
+<p>make the grant date of employee option earlier for lower strike price</p>
+<h3 class="mume-header" id="nav8"><!-- C17 --> Options on Stock Indices and Currencies</h3>
+<p>call options on high-interest currencies and put options on low-interest currencies are the most likely to be exercised prior to maturity</p>
+<h4 class="mume-header" id="nav8.1">Currency Options</h4>
+<p>range forward: long postion of a <span class="mathjax-exps">$K_2$</span> call and short postion of a <span class="mathjax-exps">$K_1$</span> put where <span class="mathjax-exps">$K_2&gt;K_1$</span></p>
+<h3 class="mume-header" id="nav9"><!-- C18 --> Futures Options</h3>
+<h4 class="mume-header" id="nav9.1">Nature of Futures Options</h4>
+<p>If a call futures option is exercised, the holder acquires a long position in the underlying futures contract plus a cash amount equal to the most recent settlement futures price minus the strike price. The long position could be closed immediately, this is effective to <span class="mathjax-exps">$\max(F-K,0)$</span>.</p>
+<h4 class="mume-header" id="nav9.2">Reasons for the Popularity</h4>
+<ul>
+<li>futures market is more liquid (commodity or treasury bond), the price could be know immediately</li>
+<li>lower transaction cost</li>
+<li>exercise is settled in cash, no requirement of capital</li>
+<li>traded side by side, more efficient</li>
+</ul>
+<h4 class="mume-header" id="nav9.3">Put-Call Parity</h4>
+<p><span class="mathjax-exps">$c+Ke^{-rT}=p+F_0e^{-rT}$</span><br/>
+a European put and cash of <span class="mathjax-exps">$F_0e^{-rT}$</span> and long position in futures</p>
+<h4 class="mume-header" id="nav9.4">Valuation Using Binomial Trees</h4>
+<p>risk neutral probability <span class="mathjax-exps">$p=\frac{1-d}{u-d}$</span>, resulting from the fact that futures' daily settlement</p>
+<h4 class="mume-header" id="nav9.5">Drift of a Futures Price when Risk-Neutral</h4>
+<p>because the price to enter a futures contract is 0, the expected payoff must also be 0<br/>
+the assumption in stochastic way is <span class="mathjax-exps">$dF=\sigma Fd\tilde{B_t}$</span></p>
+<h4 class="mume-header" id="nav9.6">Black's Model for Valuing Futures Options</h4>
+<p>Consider an asset <span class="mathjax-exps">$Y_t=F_te^{-r(T-t)}$</span>, <span class="mathjax-exps">$dY=rYdt+\sigma Yd\tilde{B_t}$</span>, futures option and option with <span class="mathjax-exps">$Y$</span> being underlying are equivalent then we can just price the latter</p>
+<h4 class="mume-header" id="nav9.7">American Options</h4>
+<p>relationship between values of American futures options and American spot options are to be determined, depending on contango or backwardation</p>
+<h4 class="mume-header" id="nav9.8">Futures-Style Options</h4>
+<p>futures contracts on the payoff from an option<br/>
+it is never optimal to exercise an American futures-style options on a futures contract early</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># OFD</a><a href="" rel="tag"># Notes</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Options, Futrues and Other Derivatives 1 - Common Derivatives.html" rel="prev">< Options, Futrues and Other Derivatives 1 - Common Derivatives</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Options, Futrues and Other Derivatives 1 Common Derivatives - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Mechanics of Futures Markets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Hedging Strategies Using Futures</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Interest Rates</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Forward Rate Agreements</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Determination of Forward and Futures prices</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Interest Rate Futures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Day Count and Quotation Conventions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Treasury Bond Futures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Eurodollar Futures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.4"><span class="nav-number">6.4.</span> <span class="nav-text">Duration-Based Hedging Strategies Using Futures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.5"><span class="nav-number">6.5.</span> <span class="nav-text">Hedging Portfolios of Assets and Liabilities</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Swaps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Mechanics of Interest Rate Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Confirmation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text">Comparative-Advantage Argument</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.4"><span class="nav-number">7.4.</span> <span class="nav-text">Nature of Swap Rates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.5"><span class="nav-number">7.5.</span> <span class="nav-text">Valuation of Interest Rate Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.6"><span class="nav-number">7.6.</span> <span class="nav-text">Term Structure Effects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.7"><span class="nav-number">7.7.</span> <span class="nav-text">Fixed-for-Fixed Currency Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.8"><span class="nav-number">7.8.</span> <span class="nav-text">Other Currency Swaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.9"><span class="nav-number">7.9.</span> <span class="nav-text">Credit Risk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.10"><span class="nav-number">7.10.</span> <span class="nav-text">Other Types of Swaps</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Securitization and the Credit Crisis of 2007</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> OIS Discounting, Credit Issues, and Funding Costs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">The Risk-Free Rate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">OIS Rate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">Valuing Swaps and FRAS with OIS Discounting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.4"><span class="nav-number">9.4.</span> <span class="nav-text">OIS vs. LIBOR: Which Is Correct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.5"><span class="nav-number">9.5.</span> <span class="nav-text">Credit Risk: CVA and DVA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.6"><span class="nav-number">9.6.</span> <span class="nav-text">Funding Costs</span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          Options, Futrues and Other Derivatives 1 Common Derivatives
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2022-01-30</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2022-12-13" editdate="2022-01-30" tag="OFD Notes"></ndtag></p>
+<h3 class="mume-header" id="nav1"><!-- C1 --> Introduction</h3>
+<h3 class="mume-header" id="nav2"><!-- C2 --> Mechanics of Futures Markets</h3>
+<h3 class="mume-header" id="nav3"><!-- C3 --> Hedging Strategies Using Futures</h3>
+<h3 class="mume-header" id="nav4"><!-- C4 --> Interest Rates</h3>
+<h4 class="mume-header" id="nav4.1">Forward Rate Agreements</h4>
+<p>Two parties agreed on <span class="mathjax-exps">$T_0$</span> that on <span class="mathjax-exps">$T_2$</span>, a floating interest on <span class="mathjax-exps">$T_1$</span> LIBOR and a fixed interest <span class="mathjax-exps">$R_K$</span> are exchanged, where <span class="mathjax-exps">$R_K=R_F$</span> to make the agreement value 0. On <span class="mathjax-exps">$T_2$</span>, the party pays <span class="mathjax-exps">$LR_K(T_2-T_1)$</span> receives <span class="mathjax-exps">$LR_M(T_2-T_1)$</span>.<br/>
+The reason when <span class="mathjax-exps">$R_K=R_F$</span>, FRA has value 0 is that all cash flow could be replicated as follows.</p>
+<table>
+<thead>
+<tr>
+<th>activity</th>
+<th><span class="mathjax-exps">$T_0$</span></th>
+<th><span class="mathjax-exps">$T_1$</span></th>
+<th><span class="mathjax-exps">$T_2$</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>borrow <span class="mathjax-exps">$Le^{-R_1T_1}$</span> at <span class="mathjax-exps">$T_0$</span></td>
+<td><span class="mathjax-exps">$-Le^{-R_1T_1}$</span></td>
+<td><span class="mathjax-exps">$L$</span></td>
+<td></td>
+</tr>
+<tr>
+<td>invest <span class="mathjax-exps">$L$</span> at <span class="mathjax-exps">$R_M$</span> until <span class="mathjax-exps">$T_2$</span></td>
+<td></td>
+<td><span class="mathjax-exps">$-L$</span></td>
+<td><span class="mathjax-exps">$L+LR_M(T_2-T_1)$</span></td>
+</tr>
+<tr>
+<td>borrow some money until <span class="mathjax-exps">$T_2$</span></td>
+<td><span class="mathjax-exps">$L[1+R_F(T_2-T_1)]e^{-R_2T_2}$</span></td>
+<td></td>
+<td><span class="mathjax-exps">$-L-LR_F(T_2-T_1)$</span></td>
+</tr>
+</tbody>
+</table>
+<p>Note that <span class="mathjax-exps">$e^{R_1T_1}[1+R_F(T_2-T_1)]=e^{R_2T_2}$</span>, the three activities have 0 value in total and 0 cashflow at <span class="mathjax-exps">$T_0$</span> and <span class="mathjax-exps">$T_1$</span>, only one cashflow <span class="mathjax-exps">$L(R_M-R_F)(T_2-T_1)$</span> at <span class="mathjax-exps">$T_2$</span>. Thus the FRA should be value 0.</p>
+<h3 class="mume-header" id="nav5"><!-- C5 --> Determination of Forward and Futures prices</h3>
+<h3 class="mume-header" id="nav6"><!-- C6 --> Interest Rate Futures</h3>
+<p>Interest rate futures prices increase when bond prices increase</p>
+<h4 class="mume-header" id="nav6.1">Day Count and Quotation Conventions</h4>
+<p>actual/actual, 30/360 and actual/360<br/>
+US treasury bill quoted with discount rate: <span class="mathjax-exps">$P=\frac{360}{n}(100-Y)$</span>, where <span class="mathjax-exps">$P$</span> is quoted price and <span class="mathjax-exps">$Y$</span> is cash price<br/>
+clean price and dirty price</p>
+<h4 class="mume-header" id="nav6.2">Treasury Bond Futures</h4>
+<p>any government bond that has between 15 and 25 years maturity can be deliverd<br/>
+conversion factor for a bond: quoted price per dollar of principal under 6% with semiannual compounding<br/>
+delivery price:<br/>
+<span class="mathjax-exps">$\text{most recent settlement price}\times\text{conversion factor}-\text{accrued interest}$</span><br/>
+theoretical future price is difficult to determine because of cheapest-to-deliver choice</p>
+<h4 class="mume-header" id="nav6.3">Eurodollar Futures</h4>
+<p>futures on the interest that will be paid on <span class="mathjax-exps">$\$$</span>1 million for a future 3-month period<br/>
+Eurodollar interest rate is essentially the same as LIBOR<br/>
+maturity ranges from 3 months to 10 years<br/>
+The contract is designed so that a one-basis-point move in quote corresponds to  <span class="mathjax-exps">$\$$</span>25 gain or loss per contract, because 1 bp change in the future corresponds to change in the underlying (3-month LIBOR):</p><div class="mathjax-exps">$$1000000\times0.0001\times0.0025=25$$</div><br/>
+final settlement price is <span class="mathjax-exps">$100-R$</span>, where <span class="mathjax-exps">$R$</span> is 3-month LIBOR<br/>
+contract price is then <span class="mathjax-exps">$10000[100-0.25(100-Q)]$</span>, where <span class="mathjax-exps">$Q$</span> is the quote (settlement price)<br/>
+Eurodollar futures higher than FRA forward rate because of daily settlement and different payment date, both making forward rate lower<br/>
+one convexity adjustment is <span class="mathjax-exps">$\text{forward rate}=\text{futures rate}-\frac{1}{2}\sigma^2T_1T_2$</span><br/>
+where <span class="mathjax-exps">$\sigma$</span> is standard deviation of 1-year interest rate, all in continuous compounding<br/>
+with Eurodollar forward rate, we could extend LIBOR spot rate into longer terms<p></p>
+<h4 class="mume-header" id="nav6.4">Duration-Based Hedging Strategies Using Futures</h4>
+<p>hedge ratio calculated by the duration at the maturity</p>
+<h4 class="mume-header" id="nav6.5">Hedging Portfolios of Assets and Liabilities</h4>
+<p>hedge duration</p>
+<h3 class="mume-header" id="nav7"><!-- C7 --> Swaps</h3>
+<h4 class="mume-header" id="nav7.1">Mechanics of Interest Rate Swaps</h4>
+<p>for interest rate swap, on each payment date, LIBOR at the begining of that payment period is used instead of spot rate on that date<br/>
+"Plain vanilla" LIBOR-for-fixed swaps on<br/>
+US interest rates are usually structured so that the financial institution earns about 3 or 4 basis points (0.03% or 0.04%) on a pair of offsetting transactions (which is bid-ask spread for market maker)<br/>
+swap rate: midpoint of bid-ask spread<br/>
+"assume" a swap where fixed rate equals to current swap rate has 0 value</p>
+<h4 class="mume-header" id="nav7.2">Confirmation</h4>
+<p>legal agreement underlying a swap, draft facilitated by International Swaps and Derivatives Association (ISDA)</p>
+<h4 class="mume-header" id="nav7.3">Comparative-Advantage Argument</h4>
+<h5 class="mume-header" id="criticism">Criticism</h5>
+<p>floating rate is 6-month based and leaves an opportunity to change the spread every 6 months, there is a term mismatch, namely, rollover risk<br/>
+the spreads between rates offered to different parties are a reflection of default probability</p>
+<h4 class="mume-header" id="nav7.4">Nature of Swap Rates</h4>
+<p>LIBOR is the rate of interest at which AA-rated banks borrow for periods up to 12 months from other banks<br/>
+a 5-year swap rate is equivalent to continuously lend money to AA borrower, therefore less than 5-year AA borrowing rate (AA rating might not maintain throughout the whole 5 years)<br/>
+LIBOR is only for maturities out to 12 months, use Eurodollar futures? to produce LIBOR out to 2 years, use swap rate to generate LIBOR/swap zero curve further</p>
+<h4 class="mume-header" id="nav7.5">Valuation of Interest Rate Swaps</h4>
+<p>use LIBOR/swap rates to discount<br/>
+value as <span class="mathjax-exps">$V_{swap}=B_{fl}-B_{fix}$</span> or value as a series of FRAs</p>
+<h4 class="mume-header" id="nav7.6">Term Structure Effects</h4>
+<p>a swap is value 0 at inception, the value of each individual might not</p>
+<h4 class="mume-header" id="nav7.7">Fixed-for-Fixed Currency Swaps</h4>
+<p>exchange principal and interest payments at two fixed rate in two currencies, the principal exchange happens at the beginning and at the end of the life of the swap<br/>
+a practical fixed-for-fixed currency swap should not leave foreign currency risk for particpants<br/>
+value as two bonds or value as a series of forward contracts</p>
+<h4 class="mume-header" id="nav7.8">Other Currency Swaps</h4>
+<p>fixed-for-floating currency swap: fixed-for-fixed currency swap + interest rate swap<br/>
+foating-for-floating currency swap: fixed-for-fixed currency swap + 2 interest rate swap</p>
+<h4 class="mume-header" id="nav7.9">Credit Risk</h4>
+<p>swap has RELU-like exposure for financial institutes<br/>
+CCP needs intial margin and variation margin<br/>
+credit default swap is to pay the CDS spread to protect principal of bond of reference entity</p>
+<h4 class="mume-header" id="nav7.10">Other Types of Swaps</h4>
+<p>Variations on the Standard Interest Rate Swap: commercial paper rate is used instead of LIBOR<br/>
+Equity Swaps: total return on index and interest<br/>
+options: embedded option or option on swap (swaption)<br/>
+Commodity Swaps, Volatility Swaps, and Other Exotic Instruments</p>
+<h3 class="mume-header" id="nav8"><!-- C8 --> Securitization and the Credit Crisis of 2007</h3>
+<h3 class="mume-header" id="nav9"><!-- C9 --> OIS Discounting, Credit Issues, and Funding Costs</h3>
+<p>before credit crisis of 2007, LIBOR/swap rates are proxies for risk-free rate</p>
+<h4 class="mume-header" id="nav9.1">The Risk-Free Rate</h4>
+<p>derivatives market does not use treasury rates as risk-Free rates, because they are artificially low<br/>
+after credit crisis, banks use OIS rate for collateralized transactions and LIBOR or other higher rate for non-collateralized transactions</p>
+<h4 class="mume-header" id="nav9.2">OIS Rate</h4>
+<p>overnight index swap<br/>
+fed funds rate: overnight unsecured borrowing rate of interest between financial institutions, supervised by the central bank<br/>
+effective federal funds rate: weighted average of the rates in brokered transactions (with weights proportional to transaction size)<br/>
+OIS: a swap where a fixed rate for a period (e.g., 1 month or 3 months) is exchanged for the geometric average of the overnight rates during the period<br/>
+3-month LIBOR-OIS spread: generate because of default risk during the 3 months<br/>
+any hint of an imminent credit problem is likely to lead to a financial institution being excluded from the overnight market<br/>
+construct OIS zero curve when OIS rates are used for discounting<br/>
+OIS usually shorter than 5 years, regard LIBOR-OIS spread as stable for longer term</p>
+<h4 class="mume-header" id="nav9.3">Valuing Swaps and FRAS with OIS Discounting</h4>
+<p>value FRA assuming that forward rate is realized, discounting by OIS rate</p>
+<h4 class="mume-header" id="nav9.4">OIS vs. LIBOR: Which Is Correct</h4>
+<p>use LIBOR for uncollaterized transaction because of funding cost<br/>
+use OIC for uncollaterized transaction because when risk-free portfolio is set up we should use risk-free rate</p>
+<h4 class="mume-header" id="nav9.5">Credit Risk: CVA and DVA</h4>
+<p>discount rate is not used as a way of allowing for credit risk when a derivative is valued<br/>
+CVA (credit value adjustment): expected loss from counterparty's default<br/>
+DVA (debit value adjustment): expected gain from its own default<br/>
+CRA (collateral rate adjustment): interest paid on colleteral<br/>
+true value is <span class="mathjax-exps">$f_{nd}-CVA+DVA-CRA$</span></p>
+<h4 class="mume-header" id="nav9.6">Funding Costs</h4>
+<p>if a company uses its average funding cost (e.g. 7%) as a hurdle rate for all projects, low-risk project (e.g. 6% with risk-free rate 5%) will tend to seem unattractive and high-risk projects will tend to seem attractive<br/>
+controversial FVA (funding value adjustment): adjustment if bank's average funding cost were used as "risk-free" discount rate<br/>
+(ND: should use marginal funding cost rather than average funding cost)</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># OFD</a><a href="" rel="tag"># Notes</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA I/CFA I - Quantitative Methods.html" rel="prev">< CFA I - Quantitative Methods</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Options, Futrues and Other Derivatives 2 - Options.html" rel="next">Options, Futrues and Other Derivatives 2 - Options ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
