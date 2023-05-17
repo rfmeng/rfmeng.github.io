@@ -89,7 +89,7 @@ Commodity Swaps, Volatility Swaps, and Other Exotic Instruments
 ### <!-- C9 --> OIS Discounting, Credit Issues, and Funding Costs 
 before credit crisis of 2007, LIBOR/swap rates are proxies for risk-free rate
 #### The Risk-Free Rate
-derivatives market does not use treasury rates as risk-Free rates, because they are artificially low
+derivatives market does not use treasury rates as risk-Free rates, because they are artificially low (regulatory requirement, lower support capital and lower tax)
 after credit crisis, banks use OIS rate for collateralized transactions and LIBOR or other higher rate for non-collateralized transactions
 #### OIS Rate
 overnight index swap
