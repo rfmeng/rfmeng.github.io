@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>期货及衍生品基础 - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> 期货及衍生品概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> 期货市场组织结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> 期货合约与期货交易制度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">期货合约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">期货市场基本制度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">期货交易流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> 套期保值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">套期保值的概念与原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">套期保值的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">基差和套期保值效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">套期保值的业务拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> 投机与套利</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">期货投机交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">期货套利交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">期货套利的基本策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">期货价差套利指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> 利率期货</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">利率期货及其价格影响因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">国债期货及其应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> 外汇期货</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">外汇与汇率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">外汇期货及其应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> 股指期货</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">股票与股票价格指数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">个股期货与股指期货</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.3"><span class="nav-number">8.3.</span> <span class="nav-text">股指期货套期保值交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.4"><span class="nav-number">8.4.</span> <span class="nav-text">股指期货投机与套利交易</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> 期权</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">期权与期权交易</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">期权价格及影响因素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">期权交易策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.4"><span class="nav-number">9.4.</span> <span class="nav-text">奇异期权</span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          期货及衍生品基础
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2023-05-07</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="mume markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2023-05-07" editdate="2023-05-07" tag="期货从业"></ndtag></p>
+<h3 class="mume-header" id="nav1"><!-- C1 --> 期货及衍生品概述</h3>
+<h3 class="mume-header" id="nav2"><!-- C2 --> 期货市场组织结构</h3>
+<h3 class="mume-header" id="nav3"><!-- C3 --> 期货合约与期货交易制度</h3>
+<h4 class="mume-header" id="nav3.1">期货合约</h4>
+<p>交易所选择上市期货合约标的需考虑的因素：价格波动幅度大且频繁<br/>
+期货交割方式：实物交割、现金交割（股指期货、短期利率期货）</p>
+<h4 class="mume-header" id="nav3.2">期货市场基本制度</h4>
+<h5 class="mume-header" id="%E4%BF%9D%E8%AF%81%E9%87%91%E5%88%B6%E5%BA%A6">保证金制度</h5>
+<p>我国特点（在以下情况提升保证金率）：</p>
+<ul>
+<li>交割月份越近</li>
+<li>合约持仓量越大</li>
+<li>价格异动</li>
+</ul>
+<h5 class="mume-header" id="%E5%BD%93%E6%97%A5%E6%97%A0%E8%B4%9F%E5%80%BA%E7%BB%93%E7%AE%97%E5%88%B6%E5%BA%A6">当日无负债结算制度</h5>
+<p>风险控制在一个交易日之内</p>
+<h5 class="mume-header" id="%E6%B6%A8%E8%B7%8C%E5%81%9C%E6%9D%BF%E5%88%B6%E5%BA%A6">涨跌停板制度</h5>
+<p>上一日结算价为基准<br/>
+平仓优先（当日开仓不适用），时间优先<br/>
+价格上限向下取整，价格下限向上取整<br/>
+调整涨跌停：</p>
+<ul>
+<li>连续涨跌停</li>
+<li>国家法定长假</li>
+<li>交易所认为市场风险明显变化</li>
+</ul>
+<p>强制减仓：单边市下，未成交平仓单与持仓盈利客户自动撮合成交</p>
+<h5 class="mume-header" id="%E6%8C%81%E4%BB%93%E9%99%90%E9%A2%9D%E5%8F%8A%E5%A4%A7%E6%88%B7%E6%8A%A5%E5%91%8A%E5%88%B6%E5%BA%A6">持仓限额及大户报告制度</h5>
+<p>持仓限额仅限制投机头寸<br/>
+中国金融期货交易所不限制套利持仓</p>
+<h5 class="mume-header" id="%E5%BC%BA%E8%A1%8C%E5%B9%B3%E4%BB%93">强行平仓</h5>
+<p>保证金不足或违反持仓限额</p>
+<h5 class="mume-header" id="%E4%BF%A1%E6%81%AF%E6%8A%AB%E9%9C%B2%E5%88%B6%E5%BA%A6">信息披露制度</h5>
+<p>保存20年</p>
+<h4 class="mume-header" id="nav3.3">期货交易流程</h4>
+<h5 class="mume-header" id="%E5%BC%80%E6%88%B7">开户</h5>
+<p>交易编码由监控中心办理，4位会员号+8位客户号</p>
+<h5 class="mume-header" id="%E4%B8%8B%E5%8D%95">下单</h5>
+<p>止损指令：触发条件转市价，通常用于平仓<br/>
+触价指令：触发条件转市价，通常用于开仓<br/>
+停止限价：触发条件转限价</p>
+<h5 class="mume-header" id="%E7%AB%9E%E4%BB%B7">竞价</h5>
+<p>公开喊价：连续竞价和一节一价<br/>
+计算机撮合竞价：买入价、卖出价、前一成交价的居中价格</p>
+<h5 class="mume-header" id="%E7%BB%93%E7%AE%97">结算</h5>
+<p>结算准备金和交易保证金<br/>
+结算价：成交量的加权平均价<br/>
+盈亏情况=买入量*（结算价-成交价）<br/>
+当日结算准备金余额=上一日结算准备金余额+上一日交易保证金-当日交易保证金+当日盈亏+入金-出金-手续费<br/>
+风险度=保证金占用/客户权益，客户权益=结算准备金+保证金</p>
+<h5 class="mume-header" id="%E4%BA%A4%E5%89%B2">交割</h5>
+<p>滚动交割：交割月的第一个交易日到最后交易日的前一交易日<br/>
+集中交割：交割月最后交易日过后一次性交割</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">交易所</th>
+<th style="text-align:center">交割方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">上期所</td>
+<td style="text-align:center">集中交割</td>
+</tr>
+<tr>
+<td style="text-align:center">郑商所</td>
+<td style="text-align:center">滚动交割与集中交割结合</td>
+</tr>
+<tr>
+<td style="text-align:center">大商所</td>
+<td style="text-align:center">集中交割、滚动交割与集中交割结合</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="%E6%9C%9F%E8%BD%AC%E7%8E%B0">期转现</h5>
+<p>双方商定价格，可以以非标准仓单进行交换，交易所代为平仓</p>
+<h3 class="mume-header" id="nav4"><!-- C4 --> 套期保值</h3>
+<h4 class="mume-header" id="nav4.1">套期保值的概念与原理</h4>
+<p>现货头寸与期货头寸相反<br/>
+实际成交价格：期末价+期货盈亏</p>
+<h5 class="mume-header" id="%E5%8E%9F%E7%90%86">原理</h5>
+<p>期货与现货价格变动趋势趋同</p>
+<h4 class="mume-header" id="nav4.2">套期保值的种类</h4>
+<p>套期保值交易结果是总体盈亏</p>
+<h4 class="mume-header" id="nav4.3">基差和套期保值效果</h4>
+<p>基差：现货价格-期货价格<br/>
+正向市场：基差为负<br/>
+基差变大，成为“走强”</p>
+<h5 class="mume-header" id="%E8%A7%84%E9%81%BF%E5%9F%BA%E5%B7%AE%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F">规避基差的操作方式</h5>
+<h6 class="mume-header" id="%E7%82%B9%E4%BB%B7%E4%BA%A4%E6%98%93">点价交易</h6>
+<p>以期货价格为基准协商升贴水确定现货交易价格<br/>
+买方叫价交易：确定交易时间的权利属于买方</p>
+<h4 class="mume-header" id="nav4.4">套期保值的业务拓展</h4>
+<h5 class="mume-header" id="%E5%90%88%E4%BD%9C%E5%A5%97%E4%BF%9D">合作套保</h5>
+<p>与风险管理子公司合作，风子可提供套保咨询和套保外包两种服务</p>
+<h5 class="mume-header" id="%E5%9F%BA%E5%B7%AE%E8%B4%B8%E6%98%93">基差贸易</h5>
+<h5 class="mume-header" id="%E4%BF%9D%E9%99%A9%E6%9C%9F%E8%B4%A7">保险+期货</h5>
+<p>农户或企业不熟悉套期保值，对保险更为熟悉，因此向保险公司买保险转移风险，保险公司再向期货公司买卖场外期权转移风险。三种模式：</p>
+<ul>
+<li>价格保护型：对冲农户面临的价格变动风向</li>
+<li>收入保障型：农户自身的产量风险</li>
+<li>双向：农户与农业企业分别向保险公司买价格保险</li>
+</ul>
+<h3 class="mume-header" id="nav5"><!-- C5 --> 投机与套利</h3>
+<h4 class="mume-header" id="nav5.1">期货投机交易</h4>
+<h5 class="mume-header" id="%E6%9C%9F%E8%B4%A7%E6%8A%95%E6%9C%BA%E7%9A%84%E4%BD%9C%E7%94%A8">期货投机的作用</h5>
+<p>价格发现、承担风险、提升流动性、减小波动</p>
+<h5 class="mume-header" id="%E6%9C%9F%E8%B4%A7%E6%8A%95%E6%9C%BA%E4%BA%A4%E6%98%93%E7%9A%84%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">期货投机交易的常见操作方法</h5>
+<p>金字塔式增仓：价格朝着有利方向移动，增仓逐次减少<br/>
+资金和风险管理：</p>
+<h4 class="mume-header" id="nav5.2">期货套利交易</h4>
+<p>有助于将扭曲的市场价格恢复到正常水平，同时提供了流动性<br/>
+期货价差计算：开仓时的高价合约-低价合约</p>
+<h4 class="mume-header" id="nav5.3">期货套利的基本策略</h4>
+<h5 class="mume-header" id="%E8%B7%A8%E6%9C%9F%E5%A5%97%E5%88%A9">跨期套利</h5>
+<p>牛市套利：买近卖远<br/>
+熊市套利：卖近买远<br/>
+蝶式套利：买入近月，买入远月，卖出中间月份（牛市套利+熊市套利）</p>
+<h5 class="mume-header" id="%E8%B7%A8%E5%93%81%E7%A7%8D%E5%A5%97%E5%88%A9">跨品种套利</h5>
+<p>大豆提油套利：买大豆，卖豆油</p>
+<h5 class="mume-header" id="%E8%B7%A8%E5%B8%82%E5%9C%BA%E5%A5%97%E5%88%A9">跨市场套利</h5>
+<h4 class="mume-header" id="nav5.4">期货价差套利指令</h4>
+<h5 class="mume-header" id="%E6%9C%9F%E8%B4%A7%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93">期货量化交易</h5>
+<p>被动型策略：追踪指数投资<br/>
+主动性策略：传统主观分析、现代量化交易</p>
+<h3 class="mume-header" id="nav6"><!-- C6 --> 利率期货</h3>
+<h4 class="mume-header" id="nav6.1">利率期货及其价格影响因素</h4>
+<p>合约标的：利率和债券类产品</p>
+<h5 class="mume-header" id="%E5%88%86%E7%B1%BB">分类</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">利率期货分类</th>
+<th style="text-align:center">期限</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">标的</th>
+<th style="text-align:center">交割方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">短期</td>
+<td style="text-align:center">不超过1年</td>
+<td style="text-align:center">货币市场</td>
+<td style="text-align:center">短期利率和存单</td>
+<td style="text-align:center">现金交割</td>
+</tr>
+<tr>
+<td style="text-align:center">中长期</td>
+<td style="text-align:center">超过1年</td>
+<td style="text-align:center">资本市场</td>
+<td style="text-align:center">国债</td>
+<td style="text-align:center">实物交割</td>
+</tr>
+</tbody>
+</table>
+<h5 class="mume-header" id="%E5%88%A9%E7%8E%87%E6%9C%9F%E8%B4%A7%E7%9A%84%E6%8A%A5%E4%BB%B7%E4%B8%8E%E4%BA%A4%E5%89%B2">利率期货的报价与交割</h5>
+<h6 class="mume-header" id="%E6%AC%A7%E6%B4%B2%E7%BE%8E%E5%85%83%E6%9C%9F%E8%B4%A7">欧洲美元期货</h6>
+<p>标的为100万大额存单欧洲美元的LIBOR报价<br/>
+如，报价为99.805，则3个月美元LIBOR为100 - 99.805，0.195%（年化利率）<br/>
+报价变动0.01，称价格变动1个点（bp），如LIBOR由0.19%变为0.20%，意味着合约价值变动25美元<br/>
+合约价格最小变动幅度为1/2个点，近交割月期货合约的最小变动幅度为1/4个点</p>
+<h6 class="mume-header" id="3%E4%B8%AA%E6%9C%88%E6%AC%A7%E5%85%83%E9%93%B6%E8%A1%8C%E5%90%8C%E4%B8%9A%E6%8B%86%E6%94%BE%E5%88%A9%E7%8E%87%E6%9C%9F%E8%B4%A7">3个月欧元银行同业拆放利率期货</h6>
+<p>2500欧元存单</p>
+<h6 class="mume-header" id="%E4%B8%AD%E9%95%BF%E6%9C%9F%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E7%9A%84%E6%8A%A5%E4%BB%B7%E4%B8%8E%E4%BA%A4%E5%89%B2">中长期国债期货的报价与交割</h6>
+<p>全价 = 净价 + 应计利息，see <a href="pages\CFA I\CFA I - Fixed Income (1).html">CFA I - Fixed Income (1)</a><br/>
+交易所报价报净价，成交价格为全价</p>
+<blockquote>
+<p>全价为自然价格，即该合约收益的现值，交易所认为这个价格不能反映合约的真实收益<br/>
+可交割标的为一篮子期货，由卖方选择</p>
+</blockquote>
+<h6 class="mume-header" id="%E7%BE%8E%E5%9B%BD%E4%B8%AD%E9%95%BF%E6%9C%9F%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7">美国中长期国债期货</h6>
+<p>比如118’ 222（或118——222）<br/>
+118部分变动1称为变动1点，对应1000美元<br/>
+22部分采用32进制<br/>
+2部分采用4进制，为1/32的四分之几，有0、2、5、7<br/>
+标的为10万美元面值合约，报的是百分比，因此乘数是1000</p>
+<h5 class="mume-header" id="%E5%88%A9%E7%8E%87%E6%9C%9F%E8%B4%A7%E4%BB%B7%E6%A0%BC%E5%BD%B1%E5%93%8D%E5%9B%A0%E7%B4%A0">利率期货价格影响因素</h5>
+<p>利率上升，利率期货价格下跌<br/>
+扩张性的财政政策刺激总需求，资金需求增加，利率上升<br/>
+通胀率上升，市场利率也上升</p>
+<h4 class="mume-header" id="nav6.2">国债期货及其应用</h4>
+<p>可交割合约仅限制发行期限和剩余期限</p>
+<h5 class="mume-header" id="%E5%9B%BD%E5%80%BA%E6%9C%9F%E8%B4%A7%E5%9F%BA%E7%A1%80">国债期货基础</h5>
+<h6 class="mume-header" id="%E8%BD%AC%E6%8D%A2%E5%9B%A0%E5%AD%90">转换因子</h6>
+<p>面值1元的可交割国债的现值</p>
+<h6 class="mume-header" id="%E5%8F%91%E7%A5%A8%E4%BB%B7%E6%A0%BC%E5%9B%BD%E5%80%BA%E4%BA%A4%E5%89%B2%E5%85%A8%E4%BB%B7">发票价格（国债交割全价）</h6>
+<p>发票价格=国债期货交割结算价（净价）*转换因子+应计利息</p>
+<h6 class="mume-header" id="%E9%9A%90%E5%90%AB%E5%9B%9E%E8%B4%AD%E5%88%A9%E7%8E%87">隐含回购利率</h6>
+<p>隐含回购利率最高的就是最便宜的可交割债券</p>
+<h3 class="mume-header" id="nav7"><!-- C7 --> 外汇期货</h3>
+<h4 class="mume-header" id="nav7.1">外汇与汇率</h4>
+<p>自由兑换外汇、有限自由兑换外汇、记账外汇</p>
+<h5 class="mume-header" id="%E6%A0%87%E4%BB%B7">标价</h5>
+<h6 class="mume-header" id="%E6%A0%87%E4%BB%B7%E6%96%B9%E6%B3%95">标价方法</h6>
+<p>直接标价法：用本币表示外币的价格，如1美元兑6.8元人民币。大部分外汇都用直接标价法<br/>
+间接标价法：英镑、欧元、澳元<br/>
+美元标价法</p>
+<h6 class="mume-header" id="%E6%A0%87%E4%BB%B7%E6%83%AF%E4%BE%8B">标价惯例</h6>
+<p>小数点四位<br/>
+1个点，即1bp（日元除外，日元是变动1个百分点）<br/>
+点值是外汇变动1个点对应的货币价值发生的变化</p>
+<h5 class="mume-header" id="%E5%8F%98%E5%8A%A8%E5%9B%A0%E7%B4%A0">变动因素</h5>
+<p>收支顺差（出口&gt;进口），外汇供给&gt;外汇需求，本币升值<br/>
+物价上涨幅度较大的国家，本币贬值<br/>
+利率升高，本币升值</p>
+<h5 class="mume-header" id="%E9%A3%8E%E9%99%A9">风险</h5>
+<p>交易风险：对外的业务中，由汇率变动产生的风险<br/>
+会计风险：功能货币（经济业务中使用的货币）转换成记账货币产生的损失<br/>
+经营风险：汇率变动对企业生产销售（如销售量下降）业务产生的影响</p>
+<h4 class="mume-header" id="nav7.2">外汇期货及其应用</h4>
+<h5 class="mume-header" id="%E4%BA%A4%E5%89%B2%E6%96%B9%E5%BC%8F">交割方式</h5>
+<p>大部分为实物交割</p>
+<h5 class="mume-header" id="%E5%A4%96%E6%B1%87%E6%9C%9F%E8%B4%A7%E5%9C%A8%E8%B5%84%E4%BA%A7%E7%BB%84%E5%90%88%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">外汇期货在资产组合中的应用</h5>
+<p>另类投资，与股权、债券等相关性较低，用于降低系统性风险</p>
+<h5 class="mume-header" id="%E5%A4%96%E6%B1%87%E4%BF%9D%E8%AF%81%E9%87%91%E4%BA%A4%E6%98%93">外汇保证金交易</h5>
+<p>与商品期货类似，现金结算，实际上是即期外汇的保证金化交易<br/>
+场外市场交易，做市商制度，交易商允许非整数手数</p>
+<h5 class="mume-header" id="%E5%A5%97%E6%B1%87%E4%BA%A4%E6%98%93">套汇交易</h5>
+<p>三角套汇交易</p>
+<h3 class="mume-header" id="nav8"><!-- C8 --> 股指期货</h3>
+<h4 class="mume-header" id="nav8.1">股票与股票价格指数</h4>
+<h5 class="mume-header" id="%E8%82%A1%E7%A5%A8%E6%8C%87%E6%95%B0">股票指数</h5>
+<p>一般采用加权平均法作为股票指数（如沪深300）</p>
+<h4 class="mume-header" id="nav8.2">个股期货与股指期货</h4>
+<p>合约规模不确定，随着股指点数变化而变化</p>
+<h5 class="mume-header" id="%E5%9B%BD%E5%86%85%E4%B8%BB%E8%A6%81%E7%9A%84%E8%82%A1%E6%8C%87%E6%9C%9F%E8%B4%A7%E5%93%81%E7%A7%8D">国内主要的股指期货品种</h5>
+<table style="text-align:center;">
+<tbody><tr>
+<td>标的</td>
+<td>中证500</td>
+<td>沪深300</td>
+<td>上证50</td>
+</tr>
+<tr>
+<td>交易代码</td>
+<td>IC</td>
+<td>IF</td>
+<td>IH</td>
+</tr>
+<tr>
+<td>乘数</td>
+<td>每点200元</td>
+<td>每点300元</td>
+<td>每点300元</td>
+</tr>
+<tr>
+<td>最小变动价位</td>
+<td colspan="3">0.2点</td>
+</tr>
+<tr>
+<td>合约月份</td>
+<td colspan="3">当月、下月及随后两个季月</td>
+</tr>
+<tr>
+<td>交易时间</td>
+<td colspan="2">上午9:30-11:30<br/>下午13:00-15:30</td>
+<td>上午9:15-11:30<br/>下午13:00-15:15</td>
+</tr>
+<tr>
+<td>每日价格最大波动限制</td>
+<td colspan="3">上一交易日结算价的+-10%</td>
+</tr>
+<tr>
+<td>最低保证金</td>
+<td colspan="3">合约价值的8%</td>
+</tr>
+<tr>
+<td>最后交易日</td>
+<td colspan="3">合约到期月份的第三个周五，遇国家法定节假日顺延</td>
+</tr>
+</tbody></table>
+<h6 class="mume-header" id="%E6%8A%95%E8%B5%84%E8%80%85%E9%80%82%E5%BD%93%E6%80%A7%E5%88%B6%E5%BA%A6">投资者适当性制度</h6>
+<p>保证金账户余额50万元，80分基础测试，10个交易日、20笔股指期货仿真交易记录，三年内10笔商品期货成交记录<br/>
+一般法人净资产不得低于100万元</p>
+<h4 class="mume-header" id="nav8.3">股指期货套期保值交易</h4>
+<p>利用<span class="mathjax-exps">$\beta$</span>计算套期保值比例：期货合约头寸与被套保的资产头寸比例</p>
+<h4 class="mume-header" id="nav8.4">股指期货投机与套利交易</h4>
+<h5 class="mume-header" id="%E8%82%A1%E6%8C%87%E6%9C%9F%E8%B4%A7%E6%9C%9F%E7%8E%B0%E5%A5%97%E5%88%A9">股指期货期现套利</h5>
+<p>远期合约的理论价值（Fair Price）：FP = 市价 + 成本 - 收益</p>
+<h6 class="mume-header" id="%E6%97%A0%E5%A5%97%E5%88%A9%E5%8C%BA%E9%97%B4">无套利区间</h6>
+<p>股指期货理论价格 +- TC<br/>
+交易成本（TC）包括：利率差、买卖价差、手续费</p>
+<h6 class="mume-header" id="%E6%A8%A1%E6%8B%9F%E8%AF%AF%E5%B7%AE">模拟误差</h6>
+<p>成分股太多，不能完全复制<br/>
+最小交易单位的限制</p>
+<h5 class="mume-header" id="%E8%B7%A8%E6%9C%9F%E5%A5%97%E5%88%A9-1">跨期套利</h5>
+<p>理论价差：<span class="mathjax-exps">$F(t_2)-F(t_1)=S_0(r-d)(t_2-t_1)/365$</span></p>
+<h3 class="mume-header" id="nav9"><!-- C9 --> 期权</h3>
+<h4 class="mume-header" id="nav9.1">期权与期权交易</h4>
+<p>期权了结方式：平仓、行权、放弃行权</p>
+<h4 class="mume-header" id="nav9.2">期权价格及影响因素</h4>
+<p>期权价格上限：<span class="mathjax-exps">$S_0$</span>，权利金不能比直接买标的高<br/>
+期权价格下限：<span class="mathjax-exps">$\max\{S_0-Ke^{-rT},0\}$</span><br/>
+美式call价格下限：<span class="mathjax-exps">$\max\{S_0-Ke^{-rT},0\}$</span><br/>
+美式put价格下限：<span class="mathjax-exps">$\max\{K-S_0,0\}$</span>（取更紧的界）</p>
+<h4 class="mume-header" id="nav9.3">期权交易策略</h4>
+<h4 class="mume-header" id="nav9.4">奇异期权</h4>
+<p>期权（4）</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># 期货从业</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Options, Futrues and Other Derivatives 2 - Options.html" rel="prev">< Options, Futrues and Other Derivatives 2 - Options</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/期货法律法规与职业道德.html" rel="next">期货法律法规与职业道德 ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
