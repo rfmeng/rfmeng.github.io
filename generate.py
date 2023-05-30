@@ -49,6 +49,7 @@ def article_generate(soup,templatehtml):
         for i in soup.find('div',class_='markdown-preview').descendants:
             if i.name=='h3' or i.name=='h4':
                 i['id'] = idl[x]
+                i.string = idl[x][3:] +'. '+ i.text
                 x+=1
         return result
     navhtml = nav(soup)
