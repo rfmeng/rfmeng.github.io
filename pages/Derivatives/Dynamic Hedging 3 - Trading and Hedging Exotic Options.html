@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Hedging 3 - Trading and Hedging Exotic Options - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Binary Options: European Style </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">European Binary Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Pricing with the Skew </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Conclusion: Statistical Trading versus Dynamic Hedging </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Case Study in Binary Packages - Contingent Premium Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Case Study: The Betspreads </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Binary Options: American Style </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">American Single Binary Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">American Double Binary Options </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Barrier Options (I) </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Barrier Options (Regular) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Barrier Options (II) </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Reverse Barrier Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Double Barrier Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Reading a Risk Management Report </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Compound, Choosers, and Higher Order Options </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Vega Convexity: the Costs of Dynamic Hedging </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Chooser Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">A Few Application of the Higher Order Options </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Multiasset Options </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Choice Between Assets: Rainbow Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Linear Combinations </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Minor Exotics: Lookback and Asian Options </span></a></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          Dynamic Hedging 3 - Trading and Hedging Exotic Options
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-09-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2022-12-13" editdate="2024-09-11" tag="Hedging"></ndtag></p>
+<h3 id="nav1">1.  Binary Options: European Style </h3>
+<h4 id="nav1.1">1.1. European Binary Options </h4>
+<p>Also called digital derivatives, bet options and gap calls.<br/>
+Long gamma when OTM and short gamma when ITM.<br/>
+Risk reversal: vega and gamma risk flip across one point.</p>
+<h5 id="hedging-with-a-vanilla">Hedging with a Vanilla </h5>
+<p>spread</p>
+<h5 id="definition-of-the-bet-forward-and-spot-bets">Definition of the Bet: Forward and Spot Bets </h5>
+<p>Whether payment of preimum happens at inception or expiration.</p>
+<h4 id="nav1.2">1.2. Pricing with the Skew </h4>
+<p>With skew, pricing binary option with spread seams much more expensive. Does this mean market hold the expectation the probability of exercise still be the price?</p>
+<h5 id="a-formal-pricing-on-the-skew">A Formal Pricing on the Skew </h5>
+<p>The price of digital option must be determined with volatility skew shape.<br/>
+</p><div class="mathjax-exps">$$\text{Binary call}=\frac{\partial C(K,\sigma(K))}{\partial K}=\frac{\partial C}{\partial K}+\frac{\partial C}{\partial \sigma}\frac{\partial \sigma}{\partial K}$$</div><p></p>
+<h5 id="the-skew-paradox">The Skew Paradox </h5>
+<p>As <span class="mathjax-exps">$\sigma$</span> increases, the price of atm bet decreases and delta increases. The skew by increasing the potential payoff on the left integral needs to be compensated with a shift of the mean to the right to prevent short sellers get higher expected return.</p>
+<h5 id="difference-between-the-binary-and-the-delta-the-delta-paradox-revisited">Difference between the Binary and the Delta: The Delta Paradox Revisited </h5>
+<p>Delta will increase because of fat tail</p>
+<h6 id="two-currency-paradox">Two-Currency Paradox </h6>
+<p>For currency, the price of a bet <span class="mathjax-exps">$N(d_2)$</span> for one party is delta <span class="mathjax-exps">$N(-d_1)$</span> for the opposite party.<br/>
+See more in <a href="https://zhuanlan.zhihu.com/p/680794451">关于希格尔悖论的例子</a>.</p>
+<h5 id="first-hedging-consequences">First Hedging Consequences </h5>
+<p>The best replication for a digital is a wide risk reversal and shrink the difference between strikes as time progresses.<br/>
+When the bet option is away from expiration, the real risks are the skew. When near expiration, the risks transfer to the pin.</p>
+<h5 id="the-delta-is-a-dirac-delta">The Delta is a Dirac Delta </h5>
+<p>See <a href="https://zhuanlan.zhihu.com/p/345809392">https://zhuanlan.zhihu.com/p/345809392</a>.</p>
+<h5 id="gamma-for-a-bet">Gamma for a Bet </h5>
+<p>DgammaDspot for vanilla</p>
+<h4 id="nav1.3">1.3. Conclusion: Statistical Trading versus Dynamic Hedging </h4>
+<p>Extremely difficult to hedge a bet with an option that has a continuous payoff.<br/>
+It will be easy if overhedging delta at the barrier, at cost of worsening it away from barrier.<br/>
+When dollar variance is low and there is a high number of strikes, traders could do in statistical mode and believes in law of large number by subjective valuation.<br/>
+When variance is high and strikes are few, one should do replication mode with dynamic hedging by risk-neutral valuation.</p>
+<h4 id="nav1.4">1.4. Case Study in Binary Packages - Contingent Premium Options </h4>
+<p>Vanilla options where the option buyer pays the price only when ITM.</p>
+<h5 id="recommend-use-potential-devaluations">Recommend Use: Potential Devaluations </h5>
+<p>The structure works well for fat tails and authorized market barrier.</p>
+<h4 id="nav1.5">1.5. Case Study: The Betspreads </h4>
+<p>condor (a butterfly with 4 strikes)</p>
+<h5 id="advanced-case-study-multiasset-bets">Advanced Case Study: Multiasset Bets </h5>
+<p>Rainbow call spread</p>
+<h3 id="nav2">2.  Binary Options: American Style </h3>
+<h4 id="nav2.1">2.1. American Single Binary Options </h4>
+<p>Howard Savery's rule of thumb is that American digital will be roughly twice the European. Because ATM American digital is worth 1 and an European is worth 0.5. This relationship will contaminate to lower prices.</p>
+<h5 id="american-binary-is-a-bet-on-time">American Binary is a Bet on Time </h5>
+<p>(? why with no drift) With no drift, the American binary remains long vega.<br/>
+(?) When the delta hedge against the option incurs a negative carry (forward price is higher), the American binary longs gamma everwhere.<br/>
+(?) With positive carry, American binary is like risk reversal on the same asset without drift.</p>
+<h5 id="hedging-an-american-binary-fooled-by-the-greeks">Hedging an American Binary: Fooled by the Greeks </h5>
+<p>The gap delta caused slippage.</p>
+<h5 id="the-ravages-of-time">The Ravages of Time </h5>
+<p>The hedge position should be unwinded upon knockout: for longing binary call, one should buy the delta back when price goes higher than barrier.<br/>
+High theta problem.</p>
+<h5 id="understanding-the-vega-convexity">Understanding the Vega Convexity </h5>
+<p>Vega of American binary is concave. Hedge vega with vanilla will cause short position of fourth moment.<br/>
+(?) From a trader's experience, the worst moment to be short is fourth because of lack of compensation.</p>
+<ul>
+<li>(-) No potential profit but only potential loss.</li>
+</ul>
+<p>Risks include:</p>
+<ul>
+<li>Duration risk</li>
+<li>Gap risk: unwind slippage of hedge position</li>
+<li>Vega risk: after knock out</li>
+<li>Vega concavity: better hedge with positive fourth moment</li>
+</ul>
+<h5 id="trading-methods">Trading Methods </h5>
+<p>(?) American binary options are truly options on time rather than options on the asset.<br/>
+They can only be hedgable with instruments that are similarly options on time.<br/>
+It is best to divorce a barrier book from a vanilla position.</p>
+<h5 id="case-study-at-settlement-american-binary-options">Case Study: At-Settlement American Binary Options </h5>
+<p>More difficult to trade, creating a short gamma area around the barrier.</p>
+<h5 id="other-greeks">Other Greeks </h5>
+<p>Less significant.</p>
+<h4 id="nav2.2">2.2. American Double Binary Options </h4>
+<p>Ameircan double bet is bet with a lower strike and a higher strike.<br/>
+American double bets trade at a very narrow discount of the bet value.<br/>
+A double bet trading at 80% of face value implies, (no drift and no interest rates), that it has about 20% of the nominal time to live.</p>
+<h5 id="vega-of-the-double-binary">Vega of the Double Binary </h5>
+<p>Even much more concavity than the single barrier.<br/>
+Above an iv 20% (3 month) the bet reaches a price close to 100%.</p>
+<h5 id="other-applications-of-american-barriers">Other Applications of American Barriers </h5>
+<h6 id="amortizing-interest-rate-securities">Amortizing Interest Rate Securities </h6>
+<p>Maturity, coupon or principal could vary according to whether predefined rate was reached in the market.</p>
+<h6 id="credit-risk">Credit Risk </h6>
+<p>Regard government note as a bet on not default, the price of the bet is total paper minus some recovery value.</p>
+<h3 id="nav3">3.  Barrier Options (I) </h3>
+<h4 id="nav3.1">3.1. Barrier Options (Regular) </h4>
+<p>Reguar barrier options are defined as trigger happened only when OTM.</p>
+<h5 id="knock-out-options">Knock-Out Options </h5>
+<p>Sometimes size of hedge position large enough to impact the market could create profit.</p>
+<h6 id="customer-demand-for-knock-out-options">Customer Demand for Knock-Out Options </h6>
+<ul>
+<li>Fund managers hold a large stock exposure, who would sell it themselves at the barrier level and seek protection for sell-off.</li>
+<li>Chartists that believe a trend with a stop-loss point.</li>
+</ul>
+<h6 id="discontinuity-at-the-barrier">Discontinuity at the Barrier </h6>
+<p>Delta of barrier option OTM is higher to compensate the same ITM payoff with cheaper price.<br/>
+The unwinding slippage cost should be considered (as American bet).</p>
+<h5 id="knock-in-options">Knock-In Options </h5>
+<h6 id="customer-demand-for-knock-in-options">Customer Demand for Knock-In Options </h6>
+<p>Mean-reversion market opinions.<br/>
+Long the barrier means the operator would benefit from the hitting of the triger. (short knock-out or long knock-in)</p>
+<h5 id="effects-of-volatility">Effects of Volatility </h5>
+<p>Knock-in has convex vega while knock-out has concave vega, because volatility brings the barrier closer in a nonlinear way.</p>
+<h5 id="adding-the-drift-complexity-of-the-forward-line">Adding the Drift: Complexity of the Forward Line </h5>
+<p>(?) A regular knock-out will never have a delta higher than one if the forward line is flat. In an upward sloping forward curve, the delta of the calls can be higher than one.<br/>
+Delta higher than one will lead to negative gamma somewhere.</p>
+<ul>
+<li>(-) The higher than one delta might come from the fact that spot goes higher, forward price goes more higher, which drive the probability of knock-out down near the barrier. Away from the barrier, this effect will fade.<br/>
+When price is 1 unit higher, the payoff at expiration of vanilla are 1 higher in the ITM zone. By contamination principle, the price should be higher, but the increase less than 1.</li>
+</ul>
+<p>(?) When maturity is long relative to distance between strike and barrier, the price of knock-out is like the payoff of European one on expiration.</p>
+<ul>
+<li>(-) Not like, the payoff might have a difference. Only the shape is similar.</li>
+</ul>
+<h5 id="risk-reversals">Risk Reversals </h5>
+<p>(?) Vega could be hedged with risk reversals (to eliminate volga): vega increases in one direction and fades in the other.</p>
+<ul>
+<li>(-) For risk reversals with strikes not symmetric, the more ATM leg will have more constant vega, and the more OTM leg will have a more convex vega (with regard to volatility). And more close leg will dominate to maintain a slightly positive vega. This makes the whole profile similar to vega of barrier options.</li>
+</ul>
+<h5 id="putcall-symmetry-and-the-hedging-of-barrier-options">Put/Call Symmetry and the Hedging of Barrier Options </h5>
+<h6 id="option-symmetry">Option Symmetry </h6>
+<p>A call with strike <span class="mathjax-exps">$K_1$</span> and a put with strike <span class="mathjax-exps">$K_2$</span> under same volatility, if <span class="mathjax-exps">$K_1K_2=F^2$</span>, <span class="mathjax-exps">$\sqrt{K_1}$</span> units of put and <span class="mathjax-exps">$\sqrt{K_2}$</span> units of call will have exact vega and gamma.</p>
+<p>A knock-out call could be replicated as that long OTM call and short OTM put whose strike is symmetrical to call at the barrier. Then when the underly reaches barrier, the combination should be worth 0, under the assmption of no skew.<br/>
+The risk reversal is nothing but some form of risk reversal.<br/>
+The barrier call should be cheaper when there is a downside skew.<br/>
+A knock-in call could be replicated as long put, and at barrier execute the price 0 risk reversal to switch to a call.</p>
+<h6 id="benefits-of-the-method">Benefits of the Method </h6>
+<ol>
+<li>Pricing the skew</li>
+<li>Pricing the volatility curve<br/>
+It means taking term structure (volatility ladder) into account, because two legs react to different periods.</li>
+<li>Hedging: hedge gamma</li>
+</ol>
+<h6 id="pitfalls-of-the-method">Pitfalls of the Method </h6>
+<ol>
+<li>It needs stable skew</li>
+<li>It needs a flat and constant forward curve. (Symmetrical strike responds to it.)</li>
+</ol>
+<p>(?) There might not be a real duration susceptible of hedging the skew owing to the instability of the stopping time.</p>
+<ul>
+<li>(-) It refers to two different duration legs.</li>
+</ul>
+<p>The forward curve needs to be flat, otherwise it might not hedge exactly. (Because of <span class="mathjax-exps">$(\frac{B}{S})^{2\lambda}$</span> in barrier option price.)</p>
+<h6 id="gammas-of-structures-compared-with-that-of-the-risk-reversal">Gammas of Structures Compared with That of the Risk Reversal </h6>
+<p>Under high interest rate, the barrier option presents negative gamma above barrier.</p>
+<h6 id="skew-implies-instability">Skew Implies Instability </h6>
+<p>(? iv to deduce underly distribution, what is third moment, third to what?) The existence of a skew is accompanied by a noticeable shifting of the third moment and a strong fifth moment.</p>
+<h5 id="barrier-decomposition-under-skew-environments">Barrier Decomposition under Skew Environments </h5>
+<p>Long skew means having the vega increase in the rally, benefiting from a positive third moment.<br/>
+(?) Positive skew means put has higher iv.<br/>
+To price barrier options under skew (to use which vol), use risk reversal decomposition.<br/>
+Under skew, risk reversal replication only works for today, because the combination has nonzero theta.<br/>
+(?) The T decomposition formula is: Barrier with skew = Barrier without skew + EV the residual of the replicating portfolio/conditional on hitting time</p>
+<h5 id="the-reflection-principle">The Reflection Principle </h5>
+<p>Under this perspective, the barrier symmetry comes from path reflection.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Price</th>
+<th style="text-align:right">Intrinsic</th>
+<th style="text-align:right">Path1</th>
+<th style="text-align:right">Path2</th>
+<th style="text-align:right">Net</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">102.97</td>
+<td style="text-align:right">2.97</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:center">101.98</td>
+<td style="text-align:right">1.98</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">100.99</td>
+<td style="text-align:right">0.99</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td style="text-align:center">100.00</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">99.01</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:center">98.02</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">97.03</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">96.04</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">95.05</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<p>With binomial tree, knock-out option could be priced with the original path deducted by the common path. (By relection principle, the paths that overlapped by two initial price are the path that touched the barrier.)<br/>
+Without skew and drift, a regular knock-out option is equal to vanilla minus the same vanilla priced at <span class="mathjax-exps">$\frac{B^2}{S}$</span> adjusted by <span class="mathjax-exps">$\frac{S}{B}$</span>.<br/>
+Call with strike priced with a 96.04 spot will be equal in price to the 96.04 put priced with 100 spot.</p>
+<h5 id="girsanov">Girsanov </h5>
+<p>(?) how to adjust binary tree to relect distribution</p>
+<h5 id="effect-of-time-on-knock-out-options">Effect of Time on Knock-Out Options </h5>
+<p>Regular ATM knock-out has similar theta to ATM vanilla, while knock-in has a relatively linear theta.</p>
+<h5 id="first-exit-time-and-its-risk-neutral-expectation">First Exit Time and Its Risk-Neutral Expectation </h5>
+<p>(?) The barrier option should be priced with the volatility corresponding to the expected first exit time.</p>
+<ul>
+<li>(-) It is not like vanilla, from which the volatility surface is generated. Therefore, it is reasonble to interpolating on the spot iv surface for vanilla. However, under framework of local vol, only few paths of underlying involved use of forward volatility near the expiration, more weight should be put on volatility of shorter term.</li>
+</ul>
+<p>(?) It is recommended to hedge at a shorter maturity than the nominal one.</p>
+<ul>
+<li>(-) See single volatility fudge.</li>
+</ul>
+<h5 id="issues-in-pricing-barrier-options">Issues in Pricing Barrier Options </h5>
+<h6 id="the-single-volatility-fudge">The Single Volatility Fudge </h6>
+<p>(?) For a regular knock-out call, the major leg (call) needs to be priced with the nominal maturity, while the second leg (put) needs to be priced with the first exit time.</p>
+<ul>
+<li>(-) Better to match vega. Vega is highest at strike, a vanilla interpolated at shorter term could replicate the barrier component best.</li>
+</ul>
+<p>The hedges in forward assets that correspond to an option position need to be scattered to match the distribution of first exit time.</p>
+<h6 id="a-more-accurated-method-the-dupire-derman-kani-technique">A More Accurated Method: The Dupire-Derman-Kani Technique </h6>
+<p>It is computer intensive.<br/>
+(? what is exact implementation in the paper p358)</p>
+<h5 id="additional-pricing-complexity-the-variance-ratios">Additional Pricing Complexity: The Variance Ratios </h5>
+<p>(? why) In a mean-reverting market, the barrier component of a barrier option is overpriced. Because it is more likely to be knocked out when there is high level of intraday negative auto-correlation.</p>
+<ul>
+<li>(-) Intuitively, a rally will provide 50% probability to not to knock out under trend, but not in the mean-reverting market.</li>
+</ul>
+<p>(? to be verfied in China futures market) From author's experience, every market exhibits mean reversion within a one-day framework.<br/>
+(? seems to be typo) If close-to-close volatility is lower than the Parkinson number, the barrier component is underpriced by the regular method.</p>
+<h3 id="nav4">4.  Barrier Options (II) </h3>
+<h4 id="nav4.1">4.1. Reverse Barrier Options </h4>
+<h5 id="reverse-knock-out-options">Reverse Knock-Out Options </h5>
+<p>Reverse knockouts generally have negative gamma.<br/>
+Reverse barrier options have high intrinsic value and little time value, they are more like a bet when close to barrier.</p>
+<h5 id="case-study-the-knock-out-box">Case Study: The Knock-Out Box </h5>
+<p>It is cheap, but lack enough profit zone.</p>
+<h5 id="hedging-reverse-knock-outs-a-graphical-case-study">Hedging Reverse Knock-Outs: A Graphical Case Study </h5>
+<p>The trader sells $100 million of one-year 5.60 dollar-put FRF call for $800k, with a KO feature at 4.85, where implied vol is 0.104, with <span class="mathjax-exps">$r=0.07$</span> and <span class="mathjax-exps">$q=0.06$</span>.<br/>
+When option has one day left, the delta could be 20 around the barrier.<br/>
+Vega and gamma are difficult to hedge because the direction of these two greeks change with time and underly price.<br/>
+As a trader the author prefers a dangerous trade left roughly unhedged than accurately mishedged.</p>
+<h4 id="nav4.2">4.2. Double Barrier Options </h4>
+<p>The first exit time is so short, and the way to study them is to examine American double bets.</p>
+<h5 id="alternative-barrier-options">Alternative Barrier Options </h5>
+<p>A SCUD (second currency underlying) is an option on one asset in one currency with barrier struck on the exchange rate.<br/>
+A dollar-based fund is long Japanese stocks would like to buy stock put which terminates if the currency appreciates. When the option is terminated, it could make profit.<br/>
+The correlation between assets makes the alter native barrier resemble a regular one. Independence makes the barrier become a bet on the other option.</p>
+<h5 id="the-exploding-option">The Exploding Option </h5>
+<p>Reverse knock-out with a rebate equal to the exploding payoff.</p>
+<h5 id="capped-indexed-option">Capped Indexed Option </h5>
+<p>Reverse knock-out with a rebate equal to the difference between strike and outstrike, and it terminates at the close price rather than terminates anytime like exploding options.</p>
+<h6 id="the-legality-of-the-triggering">The Legality of the Triggering </h6>
+<p>For underlying asset traded OTC, it could be difficult to confirm the real time price. The best solution (suggested by the author) is to turn to a third party  setting order to see if completed.</p>
+<h6 id="barriers-and-price-manipulation">Barriers and Price Manipulation </h6>
+<p>In illiquid market, the party longing the barrier could try to hit the barrier with small size transaction to gain profit. (like the case for a cash-settled options)</p>
+<h4 id="nav4.3">4.3. Reading a Risk Management Report </h4>
+<p>(? two country paradox) The currency in which the P/L is computed should be in the numeraier currency and delta should be expressed in countercurrency.</p>
+<ul>
+<li>(-) compute pnl cash and raw delta (not delta cash)</li>
+</ul>
+<h5 id="gap-risk">Gap Risk </h5>
+<p>The report should show senerio where barrier is touched and the stop-loss is executed.<br/>
+The gap risk (gap between barrier and the executed price of stop-loss order) should be considered.<br/>
+The stop-loss order should not be set before the barrier, which will create short gamma position.</p>
+<h5 id="gaps-and-gap-reports">Gaps and Gap Reports </h5>
+<p>A mined market is one that has many gapdelta orders and will therefore experience a high level "whipping" and mean reverting volatility around these prices. The opposite is called a cleared market.</p>
+<h3 id="nav5">5.  Compound, Choosers, and Higher Order Options </h3>
+<p>Compound options are extremely sensitive to higher derivatives with respect to spot, particularly vvol. This makes a constant volatility type model dangerous to use.<br/>
+No known formula to price compound options using stochastic volatility.<br/>
+Second-order option <span class="mathjax-exps">$(\Phi_1,K_1,\Phi_2,K_2,t_1,t_2)$</span> is an option with the right to buy a European option for a predetermined price, where <span class="mathjax-exps">$\Phi$</span> denotes the call/put type.</p>
+<h4 id="nav5.1">5.1. Vega Convexity: the Costs of Dynamic Hedging </h4>
+<p>Second-order option has convex vega (with respect to volatility).</p>
+<h5 id="uses-of-compound-options-hedging-barrier-vega">Uses of Compound Options: Hedging Barrier Vega </h5>
+<p>barrier options present extreme vega concavity as a package.</p>
+<h4 id="nav5.2">5.2. Chooser Options </h4>
+<p>Options that could turn into either a put or a call at some predetermined time.<br/>
+The simple chooser has one strike, the "gutspin" chooser allows choice for two strikes.<br/>
+The price is between maximum of call and put, and straddle.<br/>
+Chooser resembles a rainbow option because trader has to pick one of two assets. A put and a call are two negatively correlated assets.<br/>
+A chooser show more convex vega than vanilla.</p>
+<h4 id="nav5.3">5.3. A Few Application of the Higher Order Options </h4>
+<p>Caption, floortions: options on caps and floors</p>
+<h3 id="nav6">6.  Multiasset Options </h3>
+<p>Multiasset structures include:</p>
+<ul>
+<li>Choice: options involving a choice between instruments: best of, worst of, rainbow options.</li>
+<li>Linear combinations: underly is baskets or spreads</li>
+<li>Product or quotients: underly is product between two instruments, the underly is still lognormal. Easy to price, hard to hedge.</li>
+</ul>
+<h4 id="nav6.1">6.1. Choice Between Assets: Rainbow Options </h4>
+<p><span class="mathjax-exps">$\text{Rainbow}(\Phi_1,K_1,...,\Phi_n,K_n,t)$</span>, provides maximum of payoff among different options.</p>
+<h5 id="correlation-vega">Correlation Vega </h5>
+<p>A matrix corresponds to change in price which results from a change in correlation.<br/>
+The method could be pushed further for covariance.</p>
+<h5 id="correlated-and-uncorrelated-greeks">Correlated and Uncorrelated Greeks </h5>
+<p>(? why B moves accordingly) Partial delta: sensitivity of the structure to changes in the price of asset A assuming B moves according to its correlation to A.<br/>
+(?) Outperformance Option: payoff of the form minimum or maximum among assets</p>
+<h4 id="nav6.2">6.2. Linear Combinations </h4>
+<p>An option on a linear combination of assets. Asian options can be included in it.</p>
+<h5 id="basket-options">Basket Options </h5>
+<p>Options on a weighted sum of two or more assets.</p>
+<h5 id="lognormality">Lognormality </h5>
+<h3 id="nav7">7.  Minor Exotics: Lookback and Asian Options </h3>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Hedging</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Dynamic Hedging 2 - Measuring Option Risks.html" rel="prev">< Dynamic Hedging 2 - Measuring Option Risks</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Options, Futrues and Other Derivatives 1 - Common Derivatives.html" rel="next">Options, Futrues and Other Derivatives 1 - Common Derivatives ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

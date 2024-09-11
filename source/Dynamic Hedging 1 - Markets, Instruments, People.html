@@ -1,0 +1,347 @@
+<!DOCTYPE html><html><head>
+      <title>Dynamic Hedging 1 - Markets, Instruments, People</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="Derivatives" editdate="2024-09-11" createdate="2022-12-13" tag="Hedging"></ndtag></p>
+<h3 id="--c1-p23---introduction-to-the-instruments"><!-- C1 p23 --> Introduction to the Instruments </h3>
+<h4 id="derivatives">Derivatives </h4>
+<p>A derivative is a security whose price ultimately depends on that of another asset.<br>
+A nonlinear derivative is that it presents a nonzero second order derivative with repect to some parameter.<br>
+(? to be prove) Non linear derivatives has gamma and gamma needs to be accompanied by time decay.</p>
+<ul>
+<li>(-) an informal proof comes from contamination principle, the profit of the derivative is simlilar to the notion of heat transfer.</li>
+</ul>
+<p>General assets include:</p>
+<ul>
+<li>(Mostly) linear synthetic securities
+<ul>
+<li>Baskets: weighted average of securiteis</li>
+<li>Spreads: difference between securities</li>
+</ul>
+</li>
+<li>Time dependent noncontingent derivatives
+<ul>
+<li>Linear or Quasi-linear: swaps, currency, fowards, FRA, eurodollars</li>
+<li>Nonlinear: squared or cubed forward payoffs</li>
+</ul>
+</li>
+<li>Nonlinear contingent claims
+<ul>
+<li>Options categories</li>
+</ul>
+</li>
+</ul>
+<h4 id="synthetic-securities">Synthetic Securities </h4>
+<p>A synthetic security is a linear combination of primary instruments in the markets.<br>
+But there are geometric average index (e.g. U.S. dollar index) and they present convexity.</p>
+<h4 id="time-dependent-linear-derivatives">Time Dependent Linear Derivatives </h4>
+<p>(? foward foward) floating rate agreements and Eurodollars could be forward-forwards</p>
+<h4 id="noncontingent-time-dependent-nonlinear-derivatives">Noncontingent Time-Dependent Nonlinear Derivatives </h4>
+<p>LIBOR-square (payoff will be <span class="mathjax-exps">$(S-K)^2$</span> for one party and the negative for the other) or LIBOR-cube</p>
+<h4 id="options-and-other-contingent-claims">Options and Other Contingent Claims </h4>
+<h5 id="simple-options">Simple Options </h5>
+<p>A put on Mark/Dollar (the right to sell Marks and buy dollars) is a call on Dollar/Mark.<br>
+A put on yields is a call on bonds.<br>
+(?) A call on SP500 is put on cash indexed fund managers, because their PnL is computed in SP500 units.<br>
+Intrinsic value of European option should be difference between strike and corresponding foward. Because the option is not exercised before expiration, the only price that matters is the term market price of the asset (for delivery on the expiration of the option).</p>
+<h6 id="nd-note">ND Note </h6>
+<p>Risk management companies which are subsidiary corportion of futures company (RMSC) trade forwards on futures and options on futures.<br>
+Because of margin system, the interest rate should be close to 0.<br>
+To make it 0 drift under risk neutral measure, yield should be the same to interest rate.<br>
+A reasonable interest rate which is more practical for futures might be funding cost times the maintainance margin rate. This fully presents the funding cost of futures.<br>
+Yet the difference will be small.<br>
+The price of European call <span class="mathjax-exps">$(S,K,T,\sigma,r,q)=(100,100,1/12,0.3,0.03,0.03)$</span> is 3.445 and of <span class="mathjax-exps">$(S,K,T,\sigma,r,q)=(100,100,1/12,0.3,0.01,0.01)=3.451$</span>.<br>
+<span class="mathjax-exps">$Europeancall(100,100,1,0.3,0.03,0.03)=11.571$</span> and <span class="mathjax-exps">$Europeancall(100,100,1,0.3,0.01,0.01)=11.805$</span>.</p>
+<h4 id="hard-and-soft-optionality">Hard and Soft Optionality </h4>
+<p>hard: an explicit strike price<br>
+soft: built-in convexity but no real strike price<br>
+(? expample) Soft optionality presents generally milder gamma and other Greeks but will present some stable features across time.</p>
+<h4 id="basic-rules-of-options-equivalence">Basic Rules of Options Equivalence </h4>
+<p>(? described in C13) "Pin Risks" cause put-call parity not to hold for listed options.<br>
+Traders should use forward delta, but most risk management systems disclose cash delta as does the Black-Scholes-Merton formula.<br>
+Put call parity <span class="mathjax-exps">$p+Se^{-qt}=c+Ke^{-rt}$</span>. In cash delta sense, put + <span class="mathjax-exps">$e^{-qt}$</span> = call. In forward delta sense, put + 1 = call. Because the price of a existent forward contract is <span class="mathjax-exps">$e^{-rt}(Se^{(r-q)t}-K) = Se^{-qt}-Ke^{-rt}$</span>.<br>
+A forward delta for a European option is the equivalent cash position with the same delivery date as the underlying asset.</p>
+<h4 id="american-options-early-exercise-and-other-headaches">American Options, Early Exercise and Other Headaches </h4>
+<p>See <a href="https://quant.stackexchange.com/questions/33121/soft-american-options">Soft American Options </a>.<br>
+If one has American option (in the money) and does not exercise, he would have <span class="mathjax-exps">$\max(S_T-K,0)$</span> at expiration. Or he can exercise, borrowing <span class="mathjax-exps">$K$</span> at <span class="mathjax-exps">$r$</span>, long the underly and long a put (whose price should be close to 0). Then he will have <span class="mathjax-exps">$\max(K-S_T,0)-Ke^{rt}+e^{qt}S_T$</span> at maturity. The payoff at the second case is <span class="mathjax-exps">$\max(S_T-K,0)+(e^{qt}-1)S_T-(e^{rt}-1)K$</span>. We just need to find whether the extra part <span class="mathjax-exps">$(e^{qt}-1)S_T-(e^{rt}-1)K\approx qtS_T-rtK=rt(S_T-K)+(q-r)tS_T$</span> is positive.</p>
+<h5 id="soft-rule">Soft Rule </h5>
+<p>Under soft cases, <span class="mathjax-exps">$q\approx r$</span>. The second part would be close to 0. We just need to find whether time value of option is greater or time value of money between time of consideration and expiration.<br>
+<span class="mathjax-exps">$Europeancall(100,80,3/12,0.157,0.06,0.06)=19.707$</span><br>
+<span class="mathjax-exps">$Europeancall(100,80,3/12,0.157,0.06,0)=21.193$</span><br>
+<span class="mathjax-exps">$Europeanput(100,80,3/12,0.157,0.06,0.06)=0.005$</span><br>
+<span class="mathjax-exps">$Europeanput(100,80,3/12,0.157,0.06,0)=0.002$</span><br>
+The funding cost of time value would be <span class="mathjax-exps">$20*0.06*3/12=0.3$</span>, when <span class="mathjax-exps">$q=0.06$</span>, the option should be exercised. Even if <span class="mathjax-exps">$q=0$</span>, the option should still be exercised or selled to market.<br>
+What we do test here is whether the time value is negative.<br>
+This kind of American option is called pseudo-European option.</p>
+<h6 id="nd-note-1">ND Note </h6>
+<p>RMSC trades pseudo-European options.</p>
+<h5 id="hard-rule">Hard Rule </h5>
+<p>Or difficult rule. Under this case we should compare two rates.<br>
+When the underlying is currency with 20% interest. Early exercise would have additional benefits because we gain funding cost of the intrinsic value <span class="mathjax-exps">$rt(S_T-K)$</span> and interest from underly <span class="mathjax-exps">$(q-r)tS_T$</span> at the same time.<br>
+The payoff for put considering early exercise would be <span class="mathjax-exps">$\max(S_T-K,0)-e^{qt}S_T+e^{rt}K$</span>, the second part is equivalent to <span class="mathjax-exps">$rt(K-S_T)-(q-r)tS_T$</span>. It will never be early exercised then.<br>
+<span class="mathjax-exps">$Europeancall(100,120,3/12,0.157,0.06,0.20)=0.007$</span><br>
+<span class="mathjax-exps">$Europeanput(100,120,3/12,0.157,0.06,0.20)=23.098$</span></p>
+<h6 id="nd-note-2">ND note </h6>
+<p>The market always tends to flow to simplicity.</p>
+<h5 id="a-brief-warning-about-early-exercise-tests">A Brief Warning About Early Exercise Tests </h5>
+<p>An additional refinement should be the use of a volatility term structure by retesting with the highest possible volatility between time 0 and maturity. (It might be the case that exercise in the future will be optimal decision.)<br>
+When dealing with large-size position, dealers upon exercise become short OTM options, better to test liquidity for such strike before.</p>
+<h5 id="consequence-smile-calendars">Consequence: Smile-Calendars </h5>
+<p>Put-call parity might not hold for American options, because of expected life. The exercisable one would be priced with short period volatility.<br>
+(?) When 3-month options trade at 15.7%, an exercisable 80 call would be priced at 1-day volatility (say 13%) while 80 put would trade at 20% (skewness).</p>
+<ul>
+<li>(-) It might be that American option's price is at least intrinsic value, and compared to exercise "truly", traders will sell it and gain more profit, driving down the price.</li>
+</ul>
+<p>Hard American options are more valuable than European options, because they harbor a compound option on interest rates or volatility. The difference increases with higher volatility of volatility or volatility of interest rates.</p>
+<h5 id="american-options-nobody-ever-exercises">American Options Nobody Ever Exercises </h5>
+<p>Options on futures where there is a marks-to-market daily. (Also like RMSC.)</p>
+<h4 id="forwards-futures-and-forward-forwards">Forwards, Futures and Forward-Forwards </h4>
+<p>To hedge one unit of forward, use <span class="mathjax-exps">$h=e^{-rt}$</span> units of futures. The price of a future contract with strike <span class="mathjax-exps">$K$</span> is <span class="mathjax-exps">$Se^{(r-q)t}-K$</span>, compared to <span class="mathjax-exps">$Se^{-qt}-Ke^{-rt}$</span> for forward.</p>
+<h5 id="credit">Credit </h5>
+<p>Each party's credit line will reduce in a swap trade loop in OTC markets, which will not happen on a standardized exchange.</p>
+<h5 id="marks-to-market-differences">Marks-to-Market Differences </h5>
+<p>Forwards' curve has fewer points than futures'.<br>
+An arbitrageur might never reflect the accurate liquidating value of his position from resultant PnL because of different settlement time point.</p>
+<h5 id="correlation-between-the-future-and-the-financing">Correlation between the Future and the Financing </h5>
+<p>When there is positive correlation between financing rate <span class="mathjax-exps">$r$</span> and future contract <span class="mathjax-exps">$F$</span>, the future will be convex and trade above the forward.</p>
+<h5 id="forward-forward">Forward-Forward </h5>
+<p>Exchange an asset at one period against the reverse trade at a later period.<br>
+<span class="mathjax-exps">$FF(t_1,t_2)=F(t_2)/F(t_1)$</span><br>
+It is a form of forward rate agreement. Party A lend money to party B on one future date and the reverse happend on a longer future date.</p>
+<h4 id="core-risk-management-distinction-between-primary-and-secondary-risks">Core Risk Management: Distinction between Primary and Secondary Risks </h4>
+<ul>
+<li>For an equity derivative portfolio, interest risk is secondary risk through possible effect on time structure.</li>
+<li>For a fixed income derivative book, the whole interest rate curve is primary risk.</li>
+<li>For a currency book, both interest rates are part of primary risk if volatility of interest rate is high.</li>
+</ul>
+<h4 id="applying-the-framework-to-swaps">Applying the Framework to Swaps </h4>
+<p>(? why swap) Swap is multiasset insturment composed of correlated segments. Framework on multiasset options and correlation matrices would work.<br>
+For index-amortizing swaps, use of American digital options would perform.</p>
+<h3 id="--c2-p52---the-generalized-option"><!-- C2 p52 --> The Generalized Option </h3>
+<p>For risk management purposes, 6 dimensions of analysis are crucial.</p>
+<h4 id="homogeneity-of-the-structure">Homogeneity of the Structure </h4>
+<p>A time-homogeneous structure refers to a payoff structure does not contractually change through time.<br>
+Defered strike option: strike is not determined until strike setting time, it will appear no delta and no gamma (but shadow gamma) but will have some vega.<br>
+Nonhomogeneous structure includes window option, a barrier option whose barriers are lifted after a certain period.</p>
+<h4 id="type-of-payoff-continuous-and-discontinuous">Type of Payoff: Continuous and Discontinuous </h4>
+<p>Digital (discontinous) and ramp (continuous)</p>
+<h4 id="barriers">Barriers </h4>
+<h4 id="dimension-of-the-structure-and-the-number-of-the-assets">Dimension of the Structure and the Number of the Assets </h4>
+<p>1 + the number of variables affecting its value (one is for time)<br>
+American currency option is sensitive on interest rates and the curve, it is of higher dimension.<br>
+Multiasset structure by construction: such as using USD-DEM and AUD-USD to hedge DEM-AUD cross option.</p>
+<h4 id="order-of-the-options">Order of the Options </h4>
+<p>Higher order options: option on option<br>
+Higher order greeks are unstable</p>
+<h4 id="path-dependence">Path Dependence </h4>
+<p>soft-path-dependent: lookback option, barrier option<br>
+hard-path-dependent: Asian option</p>
+<h3 id="--c3-p62---c3-market-making-and-market-using"><!-- C3 p62 --> C3. Market Making and Market Using </h3>
+<ul>
+<li>local: floor market maker</li>
+<li>paper: end customers</li>
+<li>arbs: arbitrageurs</li>
+</ul>
+<h4 id="booker-runners-versus-price-takers">Booker Runners versus Price Takers </h4>
+<p>book runner also called market maker</p>
+<h4 id="commoditized-and-nonstandard-products">Commoditized and Nonstandard Products </h4>
+<h5 id="trading-risk-in-commoditized-products">Trading Risk in Commoditized Products </h5>
+<p>Cash products: almost not liquidity risk</p>
+<h4 id="proprietary-departments">Proprietary Departments </h4>
+<p>Banks saw the success of their hedge fund customers, had an overspill of back-office capability and start proprietary departments<br>
+But because of different utility function (risk apetite), their performance did not match expectations: under the need of diversification, PnL from traders offest each other, drawing the value of the bonus option down.</p>
+<h4 id="tacit-rules-in-market-making">Tacit Rules in Market Making </h4>
+<p>For the more established and liquid markets, traders have the (implicit) obligation to quote big order to other dealer. They face the same big order problem.<br>
+Very liquid products have highly developed rulse, dow to how long a person can wait before the quote becomes invalidated. It is not acceptable to come back to the same dealer after "passing", to quote too much without trading, or to pass on a "choice" market, when the bid and the offer are the same.</p>
+<h4 id="market-making-and-the-price-for-immediacy">Market Making and the Price for Immediacy </h4>
+<h4 id="market-making-and-autocorrelation-of-price-changes">Market Making and Autocorrelation of Price Changes </h4>
+<p>Most studies report an autocorrelation for frequent price changes, but 4-minute price change is the minimum time lag to show autocorrelation.<br>
+4-minute volatility is lower than bid-ask spread, so only market maker can capture the advantage.<br>
+(?) Only market maker could benefit from a submartingale and in a limited way.</p>
+<h4 id="market-making-and-the-illusion-of-profitability">Market Making and the Illusion of Profitability </h4>
+<p>Traders find a fair value and mark the derivative up, then recognize most of the difference as a profit, neglecting the subsequent hedging cost (which is significant especially when the liquidity is poor).</p>
+<h4 id="adverse-selection-signaling-and-the-risk-management">Adverse Selection, Signaling, and the Risk Management </h4>
+<p>Counterparty might have extrainformation<br>
+market maker lose money chronically during shock but produce profit in normal conditions, like shorting volatility.</p>
+<h4 id="value-trading-versus-the-greater-fool-theory">Value Trading versus the Greater Fool Theory </h4>
+<p>like 左侧交易 vs 右侧交易</p>
+<h4 id="monkeys-on-a-typewritter">Monkeys on a Typewritter </h4>
+<h5 id="the-statistical-value-of-track-records">The Statistical value of Track Records </h5>
+<p>the "winning probability" is counterintuitively high, increase the number of trades and make the bets smaller to see the true result</p>
+<h5 id="more-modern-methods-of-monitoring-traders">More Modern Methods of Monitoring Traders </h5>
+<p>It is based on trading frequency and trend. Traders who frequently rebalances his book would capture the true distribution.</p>
+<h5 id="the-arcsine-law-of-the-pnl">The ArcSine Law of the PnL </h5>
+<p>A stop-loss will not change the expectation of a trader. It will present frequent small losses and infrequent large gains.</p>
+<h5 id="risk-management-rules">Risk Management Rules </h5>
+<ol>
+<li>When judging a nonmarket-marking trader, a large share of his profitability is attributable to luck.</li>
+<li>The ratio of luck to skills decreases with the transaction frequency.</li>
+<li>In general, traders become extremely arrogant and difficult to manage when they are very profitable. A trading manager must be able to face wrongly profitable traders without being influenced by their PnL.</li>
+</ol>
+<h3 id="--c4-p82---c4-liquidity-and-liquidity-holes"><!-- C4 p82 --> C4. Liquidity and Liquidity Holes </h3>
+<h4 id="liquidity">Liquidity </h4>
+<p>Slippage is variation between average execution price and initial middle point of bid and ask. This should be practitioner's measurement for liquidity.</p>
+<h4 id="liquidity-hole">Liquidity Hole </h4>
+<p>Temporary event where lower prices bring accelerated supply and higher prices accelerated demand.</p>
+<h4 id="liquidity-and-risk-management">Liquidity and Risk Management </h4>
+<h4 id="stop-orders-and-the-path-of-illiquidity">Stop Orders and the Path of Illiquidity </h4>
+<p>Large sell might not be able to find the counterparty because of their suspicion of information they do not have.<br>
+There exists liquidity vacuum to trigger stop order.</p>
+<h4 id="barrier-options-and-the-liquidity-vacuum">Barrier Options and the Liquidity Vacuum </h4>
+<p>The holder of short postion of a knock-out call has the incentive to unwind the delta to trigger the knockout event.</p>
+<h4 id="one-way-liquidity-traps">One-Way Liquidity Traps </h4>
+<p>Easy in, hard out.</p>
+<h4 id="holes-black-scholes-and-the-ills-of-memory">Holes, Black-Scholes, and the Ills of Memory </h4>
+<p>price's memorylessness is not true because of the stop-loss order or barrier option, which results in predictable market movement<br>
+even the most liquid markets display acute weakness at the most liquid of times</p>
+<h4 id="limits-and-market-failures">Limits and Market Failures </h4>
+<p>Circuit breakers in the SP500 stop the market for five minutes if it opens within a certain range. It appears to be a successful experiment, providing a psychological buffer for traders.</p>
+<h4 id="reverse-slippage">Reverse Slippage </h4>
+<p>(?) large order in an illiquid market cannot always win money by fooling stop loss order, they might lose as well</p>
+<h4 id="liquidity-and-triple-witching-hour">Liquidity and Triple Witching Hour </h4>
+<p>Manipulate stock close price with liquid hole to satisfy a close price order.</p>
+<h4 id="portfolio-insurance">Portfolio Insurance </h4>
+<p>?</p>
+<h4 id="liquidity-and-option-pricing">Liquidity and Option Pricing </h4>
+<p>adjust volatility according to transaction cost<br>
+(?) augmented volatility<br>
+When long gamma, use limit orders; when short gamma, use stop orders.<br>
+Long gamma position could earn bid ask spread by setting limit orders.<br>
+Implicit bid-offer spread is wider than the visible bid-offer spread, corresponding to the adjustment facing a large order.</p>
+<h3 id="--c5-p94---arbitrage-and-the-arbitrageurs"><!-- C5 p94 --> Arbitrage and the Arbitrageurs </h3>
+<h4 id="a-traders-definition">A Trader's Definition </h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Degree</th>
+<th style="text-align:center">Definition</th>
+<th style="text-align:center">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">First order</td>
+<td style="text-align:center">mechanical stability</td>
+<td style="text-align:center">currency triangular arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Second order</td>
+<td style="text-align:center">different instruments, same underlying</td>
+<td style="text-align:center">cash-future arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Second order</td>
+<td style="text-align:center">different underlying, same instruments</td>
+<td style="text-align:center">bond arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Third order</td>
+<td style="text-align:center">behavioral stablility</td>
+<td style="text-align:center">bond against swaps</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mechanical-versus-behavioral-stability">Mechanical versus Behavioral Stability </h4>
+<p>Behavioral stability exists when one has to marshal historical records to establish the a posteriori link between two instruments</p>
+<h4 id="the-deterministic-relationships">The Deterministic Relationships </h4>
+<p>Behavioral relationships are not deterministic, but one can observe correlation:</p>
+<ul>
+<li>Hedging a bond exposure with a swap</li>
+<li>Using all value-at-risk numbers as exposure presents the same uncertainty</li>
+</ul>
+<h4 id="passive-arbitrage">Passive Arbitrage </h4>
+<p>Arbitrage when operators carry one leg of the spread: investor with a security can replace it with future.</p>
+<h4 id="an-absorbing-barrier-called-the-squeeze">An Absorbing Barrier Called the "Squeeze" </h4>
+<p>A combined position of long stock and short future has potential liquidity hole when stock goes up generating paper profit and having to pay in cash for futures losses.</p>
+<h6 id="nd-note-3">ND Note </h6>
+<p>Risk management company faces the similar situation where PnL from hedge position of futures occurs immediately while PnL from options are more paperlike.</p>
+<h4 id="duration-of-the-arbitrage">Duration of the Arbitrage </h4>
+<p>Weighted average time to expiration of the absolute amounts in a book.<br>
+Predilection for the short-term profits might distort the trading decision.</p>
+<h4 id="arbitrage-and-the-accounting-systems">Arbitrage and the Accounting Systems </h4>
+<p>It is often easier to arbitrage one's accounting system than the market.</p>
+<ul>
+<li>Correlation-related option will be booked different value on different shops</li>
+<li>Money market traders could arbitrage the credit rating of the empolyer. Namely, borrow money at low cost and lend it to low credit counterparty and book the profit.</li>
+<li>Traders in some houses do not pay interest on the realized losses and earn interest on the unrealized profits (profits from option will be discounted and profits from futures are not).</li>
+<li>Most profits on complex options show immediately on booking, which may underestimate the hedge cost.</li>
+</ul>
+<h4 id="other-nonmarket-forms-of-arbitrage">Other Nonmarket Forms of Arbitrage </h4>
+<ul>
+<li>credit arbitrage</li>
+<li>tax arbitrage: some countries impose dividend withholding tax, which could be avoided with swap</li>
+<li>legal arbitrage: buy option to short currency if law does not permit short selling.</li>
+</ul>
+<h4 id="arbitrage-and-the-variance-of-returns">Arbitrage and the Variance of Returns </h4>
+<p>Average arbitrageur bear higher variance of return because of carring larger amounts to realize same level profit.<br>
+"Inefficiencies in the market will last longer than traders can remain solvent"</p>
+<h3 id="--c6-p102---volatility-and-correlation"><!-- C6 p102 --> Volatility and Correlation </h3>
+<p>Implied correlation (calculated from option price)<br>
+why arithmetic Brownian motion works: negative prices cound not be ruled out under some situations<br>
+mixed process usually witnessed: arithmetic in short term and geometric in the long run</p>
+<h4 id="introducing-filtering">Introducing Filtering </h4>
+<p>A simplified version of the Kalman filter (or for generalized weighted sample variance):<br>
+<span class="mathjax-exps">$\bar{x}=\frac{\sum w_ix_i}{\sum w_i}$</span> and <span class="mathjax-exps">$s^2=\frac{\sum w_i(x_i-\bar{x})^2}{\sum w_i}$</span>, the corresponded unbiased sample variance is <span class="mathjax-exps">$\frac{\sum w_i}{(\sum w_i)^2-\sum w_i^2}\frac{\sum w_i(x_i-\bar{x})^2}{\sum w_i}$</span><br>
+Kalman filter: use <span class="mathjax-exps">$\lambda^t$</span> as weight</p>
+<h6 id="nd-note-4">ND Note </h6>
+<p>In practice, this volatility is very similar to Garch(1,1), where <span class="mathjax-exps">$\beta$</span> usually dominates to affect the volatility.</p>
+<h4 id="there-is-no-such-thing-as-constant-volatility-and-correlation">There Is No Such Thing as Constant Volatility and Correlation </h4>
+<p>Many count Saturday and Sundays as quarter day in the winter and less in the summer.<br>
+Some even take the effect of specific transaction time in the day into account.</p>
+<h4 id="parkinson-number-and-the-variance-ratio-method">Parkinson Number and the Variance Ratio Method </h4>
+<p>Parkinson volatility (<span class="mathjax-exps">$\sigma = \sqrt{\frac{1}{N}\sum{\frac{1}{4\ln 2}\ln\frac{S_H}{S_L}}}$</span>):</p>
+<ul>
+<li>high and low prices are easy to be affected by manipulation</li>
+<li>for some illiquid market (OTC), high and low only reveal to several traders involved in the trade</li>
+<li>if market has discontinuities, it underestimates the real volatility</li>
+</ul>
+<p>With market discontinuity, use Garman-Klass volatility (<span class="mathjax-exps">$\sigma = \sqrt{\frac{1}{N}\sum{(\frac{1}{2}\ln^2 \frac{S_H}{S_L}-(2\ln 2-1)\ln^2\frac{S_t}{S_{t-1}})}}$</span>).<br>
+Implied volatility contains information that is not available in past prices (events). Sudden announcement of a meeting will pull up IV but freeze RV because market will be numb to any information before meeting.<br>
+Parkinson volatility gives meaningful information for:</p>
+<ul>
+<li>high and low are important for continuous barrier option</li>
+<li>if Parkinson volatility is higher, better adjust delta more frequently</li>
+<li>? market maker edge is strongest when Parkinson volatility is higher, otherwise better to follow trend</li>
+</ul>
+<h4 id="variance-ratio-method">Variance Ratio Method </h4>
+<p>It means variance scaled with sampling frequency. If volatility on a more frequently sampling basis is lower, there tends to be a trend; otherwise, there tends to be mean-reversion.<br>
+The instantaneous volatility (tick changes, required by BSM framework for replication of option) could be twice the daily measured one.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

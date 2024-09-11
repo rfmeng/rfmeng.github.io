@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Hedging 1 - Markets, Instruments, People - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Introduction to the Instruments </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Derivatives </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Synthetic Securities </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Time Dependent Linear Derivatives </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Noncontingent Time-Dependent Nonlinear Derivatives </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Options and Other Contingent Claims </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">Hard and Soft Optionality </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.7"><span class="nav-number">1.7.</span> <span class="nav-text">Basic Rules of Options Equivalence </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.8"><span class="nav-number">1.8.</span> <span class="nav-text">American Options, Early Exercise and Other Headaches </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.9"><span class="nav-number">1.9.</span> <span class="nav-text">Forwards, Futures and Forward-Forwards </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.10"><span class="nav-number">1.10.</span> <span class="nav-text">Core Risk Management: Distinction between Primary and Secondary Risks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.11"><span class="nav-number">1.11.</span> <span class="nav-text">Applying the Framework to Swaps </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> The Generalized Option </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Homogeneity of the Structure </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Type of Payoff: Continuous and Discontinuous </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Barriers </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Dimension of the Structure and the Number of the Assets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Order of the Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">Path Dependence </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> C3. Market Making and Market Using </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Booker Runners versus Price Takers </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Commoditized and Nonstandard Products </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Proprietary Departments </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Tacit Rules in Market Making </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.5"><span class="nav-number">3.5.</span> <span class="nav-text">Market Making and the Price for Immediacy </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.6"><span class="nav-number">3.6.</span> <span class="nav-text">Market Making and Autocorrelation of Price Changes </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.7"><span class="nav-number">3.7.</span> <span class="nav-text">Market Making and the Illusion of Profitability </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.8"><span class="nav-number">3.8.</span> <span class="nav-text">Adverse Selection, Signaling, and the Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.9"><span class="nav-number">3.9.</span> <span class="nav-text">Value Trading versus the Greater Fool Theory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.10"><span class="nav-number">3.10.</span> <span class="nav-text">Monkeys on a Typewritter </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> C4. Liquidity and Liquidity Holes </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Liquidity </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Liquidity Hole </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Liquidity and Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">Stop Orders and the Path of Illiquidity </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.5"><span class="nav-number">4.5.</span> <span class="nav-text">Barrier Options and the Liquidity Vacuum </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.6"><span class="nav-number">4.6.</span> <span class="nav-text">One-Way Liquidity Traps </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.7"><span class="nav-number">4.7.</span> <span class="nav-text">Holes, Black-Scholes, and the Ills of Memory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.8"><span class="nav-number">4.8.</span> <span class="nav-text">Limits and Market Failures </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.9"><span class="nav-number">4.9.</span> <span class="nav-text">Reverse Slippage </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.10"><span class="nav-number">4.10.</span> <span class="nav-text">Liquidity and Triple Witching Hour </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.11"><span class="nav-number">4.11.</span> <span class="nav-text">Portfolio Insurance </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.12"><span class="nav-number">4.12.</span> <span class="nav-text">Liquidity and Option Pricing </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Arbitrage and the Arbitrageurs </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">A Trader's Definition </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Mechanical versus Behavioral Stability </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">The Deterministic Relationships </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">Passive Arbitrage </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.5"><span class="nav-number">5.5.</span> <span class="nav-text">An Absorbing Barrier Called the "Squeeze" </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.6"><span class="nav-number">5.6.</span> <span class="nav-text">Duration of the Arbitrage </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.7"><span class="nav-number">5.7.</span> <span class="nav-text">Arbitrage and the Accounting Systems </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.8"><span class="nav-number">5.8.</span> <span class="nav-text">Other Nonmarket Forms of Arbitrage </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.9"><span class="nav-number">5.9.</span> <span class="nav-text">Arbitrage and the Variance of Returns </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Volatility and Correlation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Introducing Filtering </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">There Is No Such Thing as Constant Volatility and Correlation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Parkinson Number and the Variance Ratio Method </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.4"><span class="nav-number">6.4.</span> <span class="nav-text">Variance Ratio Method </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          Dynamic Hedging 1 - Markets, Instruments, People
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-09-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2022-12-13" editdate="2024-09-11" tag="Hedging"></ndtag></p>
+<h3 id="nav1">1.  Introduction to the Instruments </h3>
+<h4 id="nav1.1">1.1. Derivatives </h4>
+<p>A derivative is a security whose price ultimately depends on that of another asset.<br/>
+A nonlinear derivative is that it presents a nonzero second order derivative with repect to some parameter.<br/>
+(? to be prove) Non linear derivatives has gamma and gamma needs to be accompanied by time decay.</p>
+<ul>
+<li>(-) an informal proof comes from contamination principle, the profit of the derivative is simlilar to the notion of heat transfer.</li>
+</ul>
+<p>General assets include:</p>
+<ul>
+<li>(Mostly) linear synthetic securities
+<ul>
+<li>Baskets: weighted average of securiteis</li>
+<li>Spreads: difference between securities</li>
+</ul>
+</li>
+<li>Time dependent noncontingent derivatives
+<ul>
+<li>Linear or Quasi-linear: swaps, currency, fowards, FRA, eurodollars</li>
+<li>Nonlinear: squared or cubed forward payoffs</li>
+</ul>
+</li>
+<li>Nonlinear contingent claims
+<ul>
+<li>Options categories</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.2">1.2. Synthetic Securities </h4>
+<p>A synthetic security is a linear combination of primary instruments in the markets.<br/>
+But there are geometric average index (e.g. U.S. dollar index) and they present convexity.</p>
+<h4 id="nav1.3">1.3. Time Dependent Linear Derivatives </h4>
+<p>(? foward foward) floating rate agreements and Eurodollars could be forward-forwards</p>
+<h4 id="nav1.4">1.4. Noncontingent Time-Dependent Nonlinear Derivatives </h4>
+<p>LIBOR-square (payoff will be <span class="mathjax-exps">$(S-K)^2$</span> for one party and the negative for the other) or LIBOR-cube</p>
+<h4 id="nav1.5">1.5. Options and Other Contingent Claims </h4>
+<h5 id="simple-options">Simple Options </h5>
+<p>A put on Mark/Dollar (the right to sell Marks and buy dollars) is a call on Dollar/Mark.<br/>
+A put on yields is a call on bonds.<br/>
+(?) A call on SP500 is put on cash indexed fund managers, because their PnL is computed in SP500 units.<br/>
+Intrinsic value of European option should be difference between strike and corresponding foward. Because the option is not exercised before expiration, the only price that matters is the term market price of the asset (for delivery on the expiration of the option).</p>
+<h6 id="nd-note">ND Note </h6>
+<p>Risk management companies which are subsidiary corportion of futures company (RMSC) trade forwards on futures and options on futures.<br/>
+Because of margin system, the interest rate should be close to 0.<br/>
+To make it 0 drift under risk neutral measure, yield should be the same to interest rate.<br/>
+A reasonable interest rate which is more practical for futures might be funding cost times the maintainance margin rate. This fully presents the funding cost of futures.<br/>
+Yet the difference will be small.<br/>
+The price of European call <span class="mathjax-exps">$(S,K,T,\sigma,r,q)=(100,100,1/12,0.3,0.03,0.03)$</span> is 3.445 and of <span class="mathjax-exps">$(S,K,T,\sigma,r,q)=(100,100,1/12,0.3,0.01,0.01)=3.451$</span>.<br/>
+<span class="mathjax-exps">$Europeancall(100,100,1,0.3,0.03,0.03)=11.571$</span> and <span class="mathjax-exps">$Europeancall(100,100,1,0.3,0.01,0.01)=11.805$</span>.</p>
+<h4 id="nav1.6">1.6. Hard and Soft Optionality </h4>
+<p>hard: an explicit strike price<br/>
+soft: built-in convexity but no real strike price<br/>
+(? expample) Soft optionality presents generally milder gamma and other Greeks but will present some stable features across time.</p>
+<h4 id="nav1.7">1.7. Basic Rules of Options Equivalence </h4>
+<p>(? described in C13) "Pin Risks" cause put-call parity not to hold for listed options.<br/>
+Traders should use forward delta, but most risk management systems disclose cash delta as does the Black-Scholes-Merton formula.<br/>
+Put call parity <span class="mathjax-exps">$p+Se^{-qt}=c+Ke^{-rt}$</span>. In cash delta sense, put + <span class="mathjax-exps">$e^{-qt}$</span> = call. In forward delta sense, put + 1 = call. Because the price of a existent forward contract is <span class="mathjax-exps">$e^{-rt}(Se^{(r-q)t}-K) = Se^{-qt}-Ke^{-rt}$</span>.<br/>
+A forward delta for a European option is the equivalent cash position with the same delivery date as the underlying asset.</p>
+<h4 id="nav1.8">1.8. American Options, Early Exercise and Other Headaches </h4>
+<p>See <a href="https://quant.stackexchange.com/questions/33121/soft-american-options">Soft American Options </a>.<br/>
+If one has American option (in the money) and does not exercise, he would have <span class="mathjax-exps">$\max(S_T-K,0)$</span> at expiration. Or he can exercise, borrowing <span class="mathjax-exps">$K$</span> at <span class="mathjax-exps">$r$</span>, long the underly and long a put (whose price should be close to 0). Then he will have <span class="mathjax-exps">$\max(K-S_T,0)-Ke^{rt}+e^{qt}S_T$</span> at maturity. The payoff at the second case is <span class="mathjax-exps">$\max(S_T-K,0)+(e^{qt}-1)S_T-(e^{rt}-1)K$</span>. We just need to find whether the extra part <span class="mathjax-exps">$(e^{qt}-1)S_T-(e^{rt}-1)K\approx qtS_T-rtK=rt(S_T-K)+(q-r)tS_T$</span> is positive.</p>
+<h5 id="soft-rule">Soft Rule </h5>
+<p>Under soft cases, <span class="mathjax-exps">$q\approx r$</span>. The second part would be close to 0. We just need to find whether time value of option is greater or time value of money between time of consideration and expiration.<br/>
+<span class="mathjax-exps">$Europeancall(100,80,3/12,0.157,0.06,0.06)=19.707$</span><br/>
+<span class="mathjax-exps">$Europeancall(100,80,3/12,0.157,0.06,0)=21.193$</span><br/>
+<span class="mathjax-exps">$Europeanput(100,80,3/12,0.157,0.06,0.06)=0.005$</span><br/>
+<span class="mathjax-exps">$Europeanput(100,80,3/12,0.157,0.06,0)=0.002$</span><br/>
+The funding cost of time value would be <span class="mathjax-exps">$20*0.06*3/12=0.3$</span>, when <span class="mathjax-exps">$q=0.06$</span>, the option should be exercised. Even if <span class="mathjax-exps">$q=0$</span>, the option should still be exercised or selled to market.<br/>
+What we do test here is whether the time value is negative.<br/>
+This kind of American option is called pseudo-European option.</p>
+<h6 id="nd-note-1">ND Note </h6>
+<p>RMSC trades pseudo-European options.</p>
+<h5 id="hard-rule">Hard Rule </h5>
+<p>Or difficult rule. Under this case we should compare two rates.<br/>
+When the underlying is currency with 20% interest. Early exercise would have additional benefits because we gain funding cost of the intrinsic value <span class="mathjax-exps">$rt(S_T-K)$</span> and interest from underly <span class="mathjax-exps">$(q-r)tS_T$</span> at the same time.<br/>
+The payoff for put considering early exercise would be <span class="mathjax-exps">$\max(S_T-K,0)-e^{qt}S_T+e^{rt}K$</span>, the second part is equivalent to <span class="mathjax-exps">$rt(K-S_T)-(q-r)tS_T$</span>. It will never be early exercised then.<br/>
+<span class="mathjax-exps">$Europeancall(100,120,3/12,0.157,0.06,0.20)=0.007$</span><br/>
+<span class="mathjax-exps">$Europeanput(100,120,3/12,0.157,0.06,0.20)=23.098$</span></p>
+<h6 id="nd-note-2">ND note </h6>
+<p>The market always tends to flow to simplicity.</p>
+<h5 id="a-brief-warning-about-early-exercise-tests">A Brief Warning About Early Exercise Tests </h5>
+<p>An additional refinement should be the use of a volatility term structure by retesting with the highest possible volatility between time 0 and maturity. (It might be the case that exercise in the future will be optimal decision.)<br/>
+When dealing with large-size position, dealers upon exercise become short OTM options, better to test liquidity for such strike before.</p>
+<h5 id="consequence-smile-calendars">Consequence: Smile-Calendars </h5>
+<p>Put-call parity might not hold for American options, because of expected life. The exercisable one would be priced with short period volatility.<br/>
+(?) When 3-month options trade at 15.7%, an exercisable 80 call would be priced at 1-day volatility (say 13%) while 80 put would trade at 20% (skewness).</p>
+<ul>
+<li>(-) It might be that American option's price is at least intrinsic value, and compared to exercise "truly", traders will sell it and gain more profit, driving down the price.</li>
+</ul>
+<p>Hard American options are more valuable than European options, because they harbor a compound option on interest rates or volatility. The difference increases with higher volatility of volatility or volatility of interest rates.</p>
+<h5 id="american-options-nobody-ever-exercises">American Options Nobody Ever Exercises </h5>
+<p>Options on futures where there is a marks-to-market daily. (Also like RMSC.)</p>
+<h4 id="nav1.9">1.9. Forwards, Futures and Forward-Forwards </h4>
+<p>To hedge one unit of forward, use <span class="mathjax-exps">$h=e^{-rt}$</span> units of futures. The price of a future contract with strike <span class="mathjax-exps">$K$</span> is <span class="mathjax-exps">$Se^{(r-q)t}-K$</span>, compared to <span class="mathjax-exps">$Se^{-qt}-Ke^{-rt}$</span> for forward.</p>
+<h5 id="credit">Credit </h5>
+<p>Each party's credit line will reduce in a swap trade loop in OTC markets, which will not happen on a standardized exchange.</p>
+<h5 id="marks-to-market-differences">Marks-to-Market Differences </h5>
+<p>Forwards' curve has fewer points than futures'.<br/>
+An arbitrageur might never reflect the accurate liquidating value of his position from resultant PnL because of different settlement time point.</p>
+<h5 id="correlation-between-the-future-and-the-financing">Correlation between the Future and the Financing </h5>
+<p>When there is positive correlation between financing rate <span class="mathjax-exps">$r$</span> and future contract <span class="mathjax-exps">$F$</span>, the future will be convex and trade above the forward.</p>
+<h5 id="forward-forward">Forward-Forward </h5>
+<p>Exchange an asset at one period against the reverse trade at a later period.<br/>
+<span class="mathjax-exps">$FF(t_1,t_2)=F(t_2)/F(t_1)$</span><br/>
+It is a form of forward rate agreement. Party A lend money to party B on one future date and the reverse happend on a longer future date.</p>
+<h4 id="nav1.10">1.10. Core Risk Management: Distinction between Primary and Secondary Risks </h4>
+<ul>
+<li>For an equity derivative portfolio, interest risk is secondary risk through possible effect on time structure.</li>
+<li>For a fixed income derivative book, the whole interest rate curve is primary risk.</li>
+<li>For a currency book, both interest rates are part of primary risk if volatility of interest rate is high.</li>
+</ul>
+<h4 id="nav1.11">1.11. Applying the Framework to Swaps </h4>
+<p>(? why swap) Swap is multiasset insturment composed of correlated segments. Framework on multiasset options and correlation matrices would work.<br/>
+For index-amortizing swaps, use of American digital options would perform.</p>
+<h3 id="nav2">2.  The Generalized Option </h3>
+<p>For risk management purposes, 6 dimensions of analysis are crucial.</p>
+<h4 id="nav2.1">2.1. Homogeneity of the Structure </h4>
+<p>A time-homogeneous structure refers to a payoff structure does not contractually change through time.<br/>
+Defered strike option: strike is not determined until strike setting time, it will appear no delta and no gamma (but shadow gamma) but will have some vega.<br/>
+Nonhomogeneous structure includes window option, a barrier option whose barriers are lifted after a certain period.</p>
+<h4 id="nav2.2">2.2. Type of Payoff: Continuous and Discontinuous </h4>
+<p>Digital (discontinous) and ramp (continuous)</p>
+<h4 id="nav2.3">2.3. Barriers </h4>
+<h4 id="nav2.4">2.4. Dimension of the Structure and the Number of the Assets </h4>
+<p>1 + the number of variables affecting its value (one is for time)<br/>
+American currency option is sensitive on interest rates and the curve, it is of higher dimension.<br/>
+Multiasset structure by construction: such as using USD-DEM and AUD-USD to hedge DEM-AUD cross option.</p>
+<h4 id="nav2.5">2.5. Order of the Options </h4>
+<p>Higher order options: option on option<br/>
+Higher order greeks are unstable</p>
+<h4 id="nav2.6">2.6. Path Dependence </h4>
+<p>soft-path-dependent: lookback option, barrier option<br/>
+hard-path-dependent: Asian option</p>
+<h3 id="nav3">3.  C3. Market Making and Market Using </h3>
+<ul>
+<li>local: floor market maker</li>
+<li>paper: end customers</li>
+<li>arbs: arbitrageurs</li>
+</ul>
+<h4 id="nav3.1">3.1. Booker Runners versus Price Takers </h4>
+<p>book runner also called market maker</p>
+<h4 id="nav3.2">3.2. Commoditized and Nonstandard Products </h4>
+<h5 id="trading-risk-in-commoditized-products">Trading Risk in Commoditized Products </h5>
+<p>Cash products: almost not liquidity risk</p>
+<h4 id="nav3.3">3.3. Proprietary Departments </h4>
+<p>Banks saw the success of their hedge fund customers, had an overspill of back-office capability and start proprietary departments<br/>
+But because of different utility function (risk apetite), their performance did not match expectations: under the need of diversification, PnL from traders offest each other, drawing the value of the bonus option down.</p>
+<h4 id="nav3.4">3.4. Tacit Rules in Market Making </h4>
+<p>For the more established and liquid markets, traders have the (implicit) obligation to quote big order to other dealer. They face the same big order problem.<br/>
+Very liquid products have highly developed rulse, dow to how long a person can wait before the quote becomes invalidated. It is not acceptable to come back to the same dealer after "passing", to quote too much without trading, or to pass on a "choice" market, when the bid and the offer are the same.</p>
+<h4 id="nav3.5">3.5. Market Making and the Price for Immediacy </h4>
+<h4 id="nav3.6">3.6. Market Making and Autocorrelation of Price Changes </h4>
+<p>Most studies report an autocorrelation for frequent price changes, but 4-minute price change is the minimum time lag to show autocorrelation.<br/>
+4-minute volatility is lower than bid-ask spread, so only market maker can capture the advantage.<br/>
+(?) Only market maker could benefit from a submartingale and in a limited way.</p>
+<h4 id="nav3.7">3.7. Market Making and the Illusion of Profitability </h4>
+<p>Traders find a fair value and mark the derivative up, then recognize most of the difference as a profit, neglecting the subsequent hedging cost (which is significant especially when the liquidity is poor).</p>
+<h4 id="nav3.8">3.8. Adverse Selection, Signaling, and the Risk Management </h4>
+<p>Counterparty might have extrainformation<br/>
+market maker lose money chronically during shock but produce profit in normal conditions, like shorting volatility.</p>
+<h4 id="nav3.9">3.9. Value Trading versus the Greater Fool Theory </h4>
+<p>like 左侧交易 vs 右侧交易</p>
+<h4 id="nav3.10">3.10. Monkeys on a Typewritter </h4>
+<h5 id="the-statistical-value-of-track-records">The Statistical value of Track Records </h5>
+<p>the "winning probability" is counterintuitively high, increase the number of trades and make the bets smaller to see the true result</p>
+<h5 id="more-modern-methods-of-monitoring-traders">More Modern Methods of Monitoring Traders </h5>
+<p>It is based on trading frequency and trend. Traders who frequently rebalances his book would capture the true distribution.</p>
+<h5 id="the-arcsine-law-of-the-pnl">The ArcSine Law of the PnL </h5>
+<p>A stop-loss will not change the expectation of a trader. It will present frequent small losses and infrequent large gains.</p>
+<h5 id="risk-management-rules">Risk Management Rules </h5>
+<ol>
+<li>When judging a nonmarket-marking trader, a large share of his profitability is attributable to luck.</li>
+<li>The ratio of luck to skills decreases with the transaction frequency.</li>
+<li>In general, traders become extremely arrogant and difficult to manage when they are very profitable. A trading manager must be able to face wrongly profitable traders without being influenced by their PnL.</li>
+</ol>
+<h3 id="nav4">4.  C4. Liquidity and Liquidity Holes </h3>
+<h4 id="nav4.1">4.1. Liquidity </h4>
+<p>Slippage is variation between average execution price and initial middle point of bid and ask. This should be practitioner's measurement for liquidity.</p>
+<h4 id="nav4.2">4.2. Liquidity Hole </h4>
+<p>Temporary event where lower prices bring accelerated supply and higher prices accelerated demand.</p>
+<h4 id="nav4.3">4.3. Liquidity and Risk Management </h4>
+<h4 id="nav4.4">4.4. Stop Orders and the Path of Illiquidity </h4>
+<p>Large sell might not be able to find the counterparty because of their suspicion of information they do not have.<br/>
+There exists liquidity vacuum to trigger stop order.</p>
+<h4 id="nav4.5">4.5. Barrier Options and the Liquidity Vacuum </h4>
+<p>The holder of short postion of a knock-out call has the incentive to unwind the delta to trigger the knockout event.</p>
+<h4 id="nav4.6">4.6. One-Way Liquidity Traps </h4>
+<p>Easy in, hard out.</p>
+<h4 id="nav4.7">4.7. Holes, Black-Scholes, and the Ills of Memory </h4>
+<p>price's memorylessness is not true because of the stop-loss order or barrier option, which results in predictable market movement<br/>
+even the most liquid markets display acute weakness at the most liquid of times</p>
+<h4 id="nav4.8">4.8. Limits and Market Failures </h4>
+<p>Circuit breakers in the SP500 stop the market for five minutes if it opens within a certain range. It appears to be a successful experiment, providing a psychological buffer for traders.</p>
+<h4 id="nav4.9">4.9. Reverse Slippage </h4>
+<p>(?) large order in an illiquid market cannot always win money by fooling stop loss order, they might lose as well</p>
+<h4 id="nav4.10">4.10. Liquidity and Triple Witching Hour </h4>
+<p>Manipulate stock close price with liquid hole to satisfy a close price order.</p>
+<h4 id="nav4.11">4.11. Portfolio Insurance </h4>
+<p>?</p>
+<h4 id="nav4.12">4.12. Liquidity and Option Pricing </h4>
+<p>adjust volatility according to transaction cost<br/>
+(?) augmented volatility<br/>
+When long gamma, use limit orders; when short gamma, use stop orders.<br/>
+Long gamma position could earn bid ask spread by setting limit orders.<br/>
+Implicit bid-offer spread is wider than the visible bid-offer spread, corresponding to the adjustment facing a large order.</p>
+<h3 id="nav5">5.  Arbitrage and the Arbitrageurs </h3>
+<h4 id="nav5.1">5.1. A Trader's Definition </h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Degree</th>
+<th style="text-align:center">Definition</th>
+<th style="text-align:center">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">First order</td>
+<td style="text-align:center">mechanical stability</td>
+<td style="text-align:center">currency triangular arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Second order</td>
+<td style="text-align:center">different instruments, same underlying</td>
+<td style="text-align:center">cash-future arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Second order</td>
+<td style="text-align:center">different underlying, same instruments</td>
+<td style="text-align:center">bond arbitrage</td>
+</tr>
+<tr>
+<td style="text-align:center">Third order</td>
+<td style="text-align:center">behavioral stablility</td>
+<td style="text-align:center">bond against swaps</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav5.2">5.2. Mechanical versus Behavioral Stability </h4>
+<p>Behavioral stability exists when one has to marshal historical records to establish the a posteriori link between two instruments</p>
+<h4 id="nav5.3">5.3. The Deterministic Relationships </h4>
+<p>Behavioral relationships are not deterministic, but one can observe correlation:</p>
+<ul>
+<li>Hedging a bond exposure with a swap</li>
+<li>Using all value-at-risk numbers as exposure presents the same uncertainty</li>
+</ul>
+<h4 id="nav5.4">5.4. Passive Arbitrage </h4>
+<p>Arbitrage when operators carry one leg of the spread: investor with a security can replace it with future.</p>
+<h4 id="nav5.5">5.5. An Absorbing Barrier Called the "Squeeze" </h4>
+<p>A combined position of long stock and short future has potential liquidity hole when stock goes up generating paper profit and having to pay in cash for futures losses.</p>
+<h6 id="nd-note-3">ND Note </h6>
+<p>Risk management company faces the similar situation where PnL from hedge position of futures occurs immediately while PnL from options are more paperlike.</p>
+<h4 id="nav5.6">5.6. Duration of the Arbitrage </h4>
+<p>Weighted average time to expiration of the absolute amounts in a book.<br/>
+Predilection for the short-term profits might distort the trading decision.</p>
+<h4 id="nav5.7">5.7. Arbitrage and the Accounting Systems </h4>
+<p>It is often easier to arbitrage one's accounting system than the market.</p>
+<ul>
+<li>Correlation-related option will be booked different value on different shops</li>
+<li>Money market traders could arbitrage the credit rating of the empolyer. Namely, borrow money at low cost and lend it to low credit counterparty and book the profit.</li>
+<li>Traders in some houses do not pay interest on the realized losses and earn interest on the unrealized profits (profits from option will be discounted and profits from futures are not).</li>
+<li>Most profits on complex options show immediately on booking, which may underestimate the hedge cost.</li>
+</ul>
+<h4 id="nav5.8">5.8. Other Nonmarket Forms of Arbitrage </h4>
+<ul>
+<li>credit arbitrage</li>
+<li>tax arbitrage: some countries impose dividend withholding tax, which could be avoided with swap</li>
+<li>legal arbitrage: buy option to short currency if law does not permit short selling.</li>
+</ul>
+<h4 id="nav5.9">5.9. Arbitrage and the Variance of Returns </h4>
+<p>Average arbitrageur bear higher variance of return because of carring larger amounts to realize same level profit.<br/>
+"Inefficiencies in the market will last longer than traders can remain solvent"</p>
+<h3 id="nav6">6.  Volatility and Correlation </h3>
+<p>Implied correlation (calculated from option price)<br/>
+why arithmetic Brownian motion works: negative prices cound not be ruled out under some situations<br/>
+mixed process usually witnessed: arithmetic in short term and geometric in the long run</p>
+<h4 id="nav6.1">6.1. Introducing Filtering </h4>
+<p>A simplified version of the Kalman filter (or for generalized weighted sample variance):<br/>
+<span class="mathjax-exps">$\bar{x}=\frac{\sum w_ix_i}{\sum w_i}$</span> and <span class="mathjax-exps">$s^2=\frac{\sum w_i(x_i-\bar{x})^2}{\sum w_i}$</span>, the corresponded unbiased sample variance is <span class="mathjax-exps">$\frac{\sum w_i}{(\sum w_i)^2-\sum w_i^2}\frac{\sum w_i(x_i-\bar{x})^2}{\sum w_i}$</span><br/>
+Kalman filter: use <span class="mathjax-exps">$\lambda^t$</span> as weight</p>
+<h6 id="nd-note-4">ND Note </h6>
+<p>In practice, this volatility is very similar to Garch(1,1), where <span class="mathjax-exps">$\beta$</span> usually dominates to affect the volatility.</p>
+<h4 id="nav6.2">6.2. There Is No Such Thing as Constant Volatility and Correlation </h4>
+<p>Many count Saturday and Sundays as quarter day in the winter and less in the summer.<br/>
+Some even take the effect of specific transaction time in the day into account.</p>
+<h4 id="nav6.3">6.3. Parkinson Number and the Variance Ratio Method </h4>
+<p>Parkinson volatility (<span class="mathjax-exps">$\sigma = \sqrt{\frac{1}{N}\sum{\frac{1}{4\ln 2}\ln\frac{S_H}{S_L}}}$</span>):</p>
+<ul>
+<li>high and low prices are easy to be affected by manipulation</li>
+<li>for some illiquid market (OTC), high and low only reveal to several traders involved in the trade</li>
+<li>if market has discontinuities, it underestimates the real volatility</li>
+</ul>
+<p>With market discontinuity, use Garman-Klass volatility (<span class="mathjax-exps">$\sigma = \sqrt{\frac{1}{N}\sum{(\frac{1}{2}\ln^2 \frac{S_H}{S_L}-(2\ln 2-1)\ln^2\frac{S_t}{S_{t-1}})}}$</span>).<br/>
+Implied volatility contains information that is not available in past prices (events). Sudden announcement of a meeting will pull up IV but freeze RV because market will be numb to any information before meeting.<br/>
+Parkinson volatility gives meaningful information for:</p>
+<ul>
+<li>high and low are important for continuous barrier option</li>
+<li>if Parkinson volatility is higher, better adjust delta more frequently</li>
+<li>? market maker edge is strongest when Parkinson volatility is higher, otherwise better to follow trend</li>
+</ul>
+<h4 id="nav6.4">6.4. Variance Ratio Method </h4>
+<p>It means variance scaled with sampling frequency. If volatility on a more frequently sampling basis is lower, there tends to be a trend; otherwise, there tends to be mean-reversion.<br/>
+The instantaneous volatility (tick changes, required by BSM framework for replication of option) could be twice the daily measured one.</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Hedging</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA I/CFA I - Quantitative Methods.html" rel="prev">< CFA I - Quantitative Methods</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Dynamic Hedging 2 - Measuring Option Risks.html" rel="next">Dynamic Hedging 2 - Measuring Option Risks ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

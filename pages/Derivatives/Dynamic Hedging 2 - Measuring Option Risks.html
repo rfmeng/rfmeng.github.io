@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Hedging 2 - Measuring Option Risks - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Adaping BSM: The Delta </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">The Continuous Time Delta is Not Always A Hedge Ratio </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Delta as a Measure for Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Confusion: Delta by the Cash or by the Forward </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Delta for Linear Instruments </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Delta and the Barrier Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">Delta and the Bucketing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.7"><span class="nav-number">1.7.</span> <span class="nav-text">Delta, Volatility, and Extreme Volatility </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Gamma and Shadow Gamma </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Simple Gamma </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Gamma Imperfections for a Book </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Correction for the Gamma of the Back Month </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Shadow Gamma </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Shadow Gamma and the Skew </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">GARCH Gamma </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.7"><span class="nav-number">2.7.</span> <span class="nav-text">Advanced Shadow Gamma </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Vega and the Volatility Surface </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Vega and Modified Vega </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Forward Implied Volatilities </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">The Method of Squares for Risk Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Theta and Minor Greeks </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Theta and the Modified Theta </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Minor Greeks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Table of Greeks </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> The Greeks and Their Behavior </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">The Bleed: Gamma and Delta Bleed (Holding Volatility Constant) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">DdeltaDvol (Stability Ratio) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Moments of an Option Position </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">Ignoring Higher Greeks: The Lock Delta </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Fungibility, Convergence, and Stacking </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Fungibility </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Convergence </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Stacking Techniques </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Some Wrinkles of Option Markets </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Expiration Pin Risks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Sticky Strikes </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text">Market Barriers </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.4"><span class="nav-number">7.4.</span> <span class="nav-text">What Flat Means </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Bucketing and Topography </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Static Straight Bucketing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">Topography </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Beware the Distribution </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">The Tails </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">The Skew and Biased Assets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">More Advanced Put-Call Parity Rules </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> Options Trading Concepts </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Initiation to Volatility Trading: Vega versus Gamma </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.2"><span class="nav-number">10.2.</span> <span class="nav-text">Soft versus Hard Deltas </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.3"><span class="nav-number">10.3.</span> <span class="nav-text">Volatility Betting </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.4"><span class="nav-number">10.4.</span> <span class="nav-text">Case Study: Path Dependence of a Regular Option </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.5"><span class="nav-number">10.5.</span> <span class="nav-text">Simple Case Study: The "Worst Case" Scenario </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          Dynamic Hedging 2 - Measuring Option Risks
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-09-11</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">Derivatives</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="Derivatives" createdate="2022-12-13" editdate="2024-09-11" tag="Hedging"></ndtag></p>
+<p>Real world and Black-Scholes-Mertion assumptions</p>
+<h3 id="nav1">1.  Adaping BSM: The Delta </h3>
+<p>Risk management rule: continuous time models should be used for pricing and getting a benchmark fair value, not to hedge.</p>
+<h4 id="nav1.1">1.1. The Continuous Time Delta is Not Always A Hedge Ratio </h4>
+<p>(Continuous time) delta is sometimes nothing meaningful, e.g., for barrier option, the real time delta might explode but the whole risk (maximum loss) is totally reasonable.<br/>
+Some trader trick the delta of a barrier by changing the expiration date.<br/>
+Modified delta <span class="mathjax-exps">$Delta=\frac{1}{2}(\frac{\Delta c}{\Delta S^-}+\frac{\Delta c}{\Delta S^+})$</span></p>
+<h4 id="nav1.2">1.2. Delta as a Measure for Risk </h4>
+<p>Not complete to show the whole view of risk. (long call and short put have the same delta)</p>
+<h4 id="nav1.3">1.3. Confusion: Delta by the Cash or by the Forward </h4>
+<p>Forward delta: option's sensitivity to the PV of a foward contract<br/>
+Cash delta: option's sensitivity to the underlying spot price.<br/>
+When dealing with options on futures (where we also have the spot underlying to trade), we need discount it with cash-future growth rate.</p>
+<h4 id="nav1.4">1.4. Delta for Linear Instruments </h4>
+<h5 id="delta-for-a-forward">Delta For A Forward </h5>
+<p>Forward price: <span class="mathjax-exps">$F=e^{(r-r_f)t}S$</span><br/>
+price of a long forward contract with price <span class="mathjax-exps">$K$</span>: <span class="mathjax-exps">$f=(F-K)e^{-rt}$</span><br/>
+delta of a forward contract should be <span class="mathjax-exps">$e^{-r_ft}$</span><br/>
+delta of a futures contract should be <span class="mathjax-exps">$e^{(r-r_f)t}$</span> because it settles daily and does not need discounting<br/>
+For linear derivative, delta is stable<br/>
+? delta for foreign currency forwards</p>
+<h4 id="nav1.5">1.5. Delta and the Barrier Options </h4>
+<p>Do not use real time delta, but discrete delta.</p>
+<h4 id="nav1.6">1.6. Delta and the Bucketing </h4>
+<p>A bucket is the bundling of the exposures by groups of neighboring maturities to show basis risk.</p>
+<h5 id="delta-in-the-value-at-risk">Delta in the Value at Risk </h5>
+<p>Equivalent position = face value*delta*expected move + 0.5*gamma*(expected move)^2<br/>
+This calculation ignores higher greeks, the best method to view the risk is through repricing at different movements.</p>
+<h4 id="nav1.7">1.7. Delta, Volatility, and Extreme Volatility </h4>
+<p>With <span class="mathjax-exps">$d\ln S=\sigma dB_t$</span>, it must have a <span class="mathjax-exps">$-\frac{1}{2}\sigma^2$</span> drift to make <span class="mathjax-exps">$S_t$</span> remain martingale.<br/>
+A call on a bond can also be viewed as a put on yield. Yet both yields and prices cannot be lognormal and have a fat right tail at times of high volatility.<br/>
+Traders often mix bond futures (priced on a lognormal price) and bonds priced on a lognormal yield. This can carry serious consequences for a large book at high volatility.<br/>
+The probability of being ITM using on part of a pair as a numeraire is delta for the counterparty.</p>
+<h3 id="nav2">2.  Gamma and Shadow Gamma </h3>
+<h4 id="nav2.1">2.1. Simple Gamma </h4>
+<p>A range needs to be associated with every gamma measurement because gamma changed sharply across underly price and time.</p>
+<h4 id="nav2.2">2.2. Gamma Imperfections for a Book </h4>
+<p>A practically sound way is to calculate discrete gamma for up and down respectively.<br/>
+Risk reversal: up-gamma and down-gamma have different sign for some increments</p>
+<h4 id="nav2.3">2.3. Correction for the Gamma of the Back Month </h4>
+<p>For options on futures, if the underlyings have the different maturities, there should be two adjustment:</p>
+<ol>
+<li>with contango or backwardation, one unit contract will have different size of delta cash.</li>
+<li>gamma should be adjusted considering relative volatility. If the back month had 12% more volatility than front (move by 1.12 points against move by 1 point), the backmonth gamma should be adjusted by 1.12.</li>
+</ol>
+<p>? what is the difference of between the adjustment above and mark different iv for different maturity?</p>
+<h4 id="nav2.4">2.4. Shadow Gamma </h4>
+<p>Given the volatility predicted (i.e. deterministic) under different underlying moves, calculate delta and gamma.</p>
+<h4 id="nav2.5">2.5. Shadow Gamma and the Skew </h4>
+<p>skew gamma is also called asymmetrical shadow gamma.</p>
+<h4 id="nav2.6">2.6. GARCH Gamma </h4>
+<p>use GARCH to predict volatility and calculate shadow gamma then.</p>
+<h4 id="nav2.7">2.7. Advanced Shadow Gamma </h4>
+<p>For options on futures or forwards, consider both expected volatility and interest (or carry) rate moves.<br/>
+A currency dropdown might company with higher interest rate, driving foward price lower.</p>
+<h3 id="nav3">3.  Vega and the Volatility Surface </h3>
+<h4 id="nav3.1">3.1. Vega and Modified Vega </h4>
+<p>Most vegas decrease with time, except lookback and reverse kkock-out.<br/>
+Vega of ATM options stays the same when volatility rises but the vega of the options away from the money rises. Because <span class="mathjax-exps">$\mathcal{V} \approx 0$</span> when <span class="mathjax-exps">$d_1=0$</span>, this is close for ATM options.</p>
+<h5 id="vega-and-the-gamma">Vega and the Gamma </h5>
+<p>Vega profit should be integral of the gamma profits.</p>
+<h5 id="the-modified-vega">The Modified Vega </h5>
+<p>Vega of different maturities should not be compared, net or added. It is assumed that one Brownian motion affects the volatility for one maturity and that the rest of them follow in some known proportion.<br/>
+Modified vega = <span class="mathjax-exps">$\sum w_iV_i$</span>, with <span class="mathjax-exps">$V_i$</span> the vega for different maturities and <span class="mathjax-exps">$F_i$</span> the volatility weight.<br/>
+The convention is to use a volatility factor pillared around the 3-month. All options would be compared with that maturity in their sensitivity.</p>
+<h5 id="how-to-compute-the-simple-weigtings">How to Compute the Simple Weigtings </h5>
+<h6 id="theoretical-weighting">"Theoretical" Weighting </h6>
+<p>? use <span class="mathjax-exps">$\frac{1}{\sqrt{t}}$</span> as the weight compared to 3-month.</p>
+<h6 id="empirical-weighting">Empirical Weighting </h6>
+<p>ratio should be <span class="mathjax-exps">$\frac{\text{sum of absolute changes in one period}}{\text{sum of absolute changes in the other period}}$</span>.</p>
+<h4 id="nav3.2">3.2. Forward Implied Volatilities </h4>
+<p>Forward implied volatility is imperative for path-dependent or defered-start options.<br/>
+? Eurodollar options are not fungible assets, vega analysis could distort the risk.</p>
+<h5 id="bucket-vega">Bucket Vega </h5>
+<p>(? to be proved) Vanilla options present a linear sensitivity in time buckets, but path-dependent options are not. Barrier knock out options could long vega in one bucket and short vega in the adjacent one.<br/>
+(-? not formal) Gamma has distribution, the odds of being at the stongest point are slim. Gamma is more even at the begining. Expectation of gamma profit does not vary with the period.</p>
+<ul>
+<li>(-) An proof might be like this:<br/>
+Suppose over maturity <span class="mathjax-exps">$T$</span>, the volatility maintains level <span class="mathjax-exps">$\sigma$</span>, among which there is period <span class="mathjax-exps">$t$</span>, whose forward volatility changes to <span class="mathjax-exps">$\sigma +\Delta \sigma$</span>.<br/>
+The total variance is then <span class="mathjax-exps">$\sigma^2T+\Delta \sigma ^2t+2\sigma\Delta \sigma t$</span>, this is roughly equivalent to long term valtility <span class="mathjax-exps">$\sigma$</span> changes to <span class="mathjax-exps">$\sigma+\frac{t}{T}\Delta\sigma$</span>, corresponding to total variance <span class="mathjax-exps">$\sigma^2T+\Delta\sigma ^2\frac{t^2}{T}+2\sigma\Delta \sigma t$</span>, if considering <span class="mathjax-exps">$\Delta\sigma ^2\frac{t^2}{T}\ll2\sigma\Delta \sigma t$</span> (<span class="mathjax-exps">$\frac{t}{T}&lt;1$</span> and <span class="mathjax-exps">$\Delta\sigma&lt;\sigma$</span>).<br/>
+Then price change of the option <span class="mathjax-exps">$\mathcal{V}\frac{t}{T}\Delta\sigma = \frac{t}{T}\mathcal{V}\Delta\sigma$</span>, where we just divide vega in proportion of time.</li>
+</ul>
+<h5 id="multifactor-vega">Multifactor Vega </h5>
+<p>It does not apply for value-at-risk system, because it is for short-term hedging rather than worst-case scenario. This could be considered a second-degree value-at-risk method since, the principal instrument is the expectation of the second moment.<br/>
+Calculate correlation matrix<br/>
+? pnl calculation</p>
+<h5 id="volatility-surface">Volatility Surface </h5>
+<p>Calendar spread is called horizontal and strike spread is called vertical, and the mixture is called diagonal.<br/>
+Dupire's local volatility is the volatility between two points <span class="mathjax-exps">$(S,t)$</span> and <span class="mathjax-exps">$(S+dS, t+dt)$</span>, it is forward instantaneous volatility.<br/>
+(? p164) The American feature is weak.<br/>
+It gives an example of fitting the surface volatility on <span class="mathjax-exps">$(\sqrt{x},\frac{1}{\sqrt{x}},y,y^2,y^3,y^4,y^5)$</span>.<br/>
+The pitfall of building the volatility surface as a function of (delta, maturity) is having to determine the delta as delta is a function of volatility.</p>
+<h4 id="nav3.3">3.3. The Method of Squares for Risk Management </h4>
+<p>Cutting the position into squares of strike and maturity and then apply multifactor vega analysis.<br/>
+This is required in skewed market.</p>
+<h3 id="nav4">4.  Theta and Minor Greeks </h3>
+<p>Expected price tomorrow of a call value is the same as today's.</p>
+<h4 id="nav4.1">4.1. Theta and the Modified Theta </h4>
+<h5 id="modifying-the-theta">Modifying the Theta </h5>
+<p>Modified theta: price difference of option under different volatilities.</p>
+<h5 id="theta-interest-carry-and-self-financing-strategies">Theta, Interest Carry, and Self-Financing Strategies </h5>
+<p>If interest rates are 20%, theta will be lower by 20% of the total premium (option will be cheaper and have lower theta because of the present-value-effect), but the carry costs of holding the option will offset these savings.<br/>
+When calculating theta, traders should eliminate the interest cost of holding the premium.</p>
+<ul>
+<li>(-) Suppose <span class="mathjax-exps">$r=q=0$</span>, price of a call will be <span class="mathjax-exps">$SN(d_1)-KN(d_2)$</span>, which has theta <span class="mathjax-exps">$\Theta$</span>. When <span class="mathjax-exps">$r=q&gt;0$</span>, price will be <span class="mathjax-exps">$e^{-rt}(SN(d_1)-KN(d_2))$</span> and theta will consists of two parts <span class="mathjax-exps">$e^{-rt}\Theta$</span> and <span class="mathjax-exps">$-rU$</span>. However, <span class="mathjax-exps">$rU$</span> should be added back because a long position will have to finance for the premium and a short postion will have interest income.</li>
+</ul>
+<h5 id="shadow-theta">Shadow Theta </h5>
+<p>Combine theta with volatility prediction. If price stays the same for several days, it is convincible that volatility will drop.</p>
+<h4 id="nav4.2">4.2. Minor Greeks </h4>
+<h5 id="rho-modified-rho">Rho, Modified Rho </h5>
+<p>To interpolation on yield curve:</p>
+<ol>
+<li>eliminate jaggedness (cubic spline)</li>
+<li>adapt to the market</li>
+</ol>
+<p>Rho assumes a parallel shift in the curve.</p>
+<ul>
+<li>rhop: risks associated with the financing of the premium of the option (risk corresponds to <span class="mathjax-exps">$e^{-rt}$</span> outermost in the price formula)</li>
+<li>rho1: <span class="mathjax-exps">$\frac{\partial U}{\partial r}$</span>, therefore inlcuding rhop</li>
+<li>rho2: <span class="mathjax-exps">$\frac{\partial U}{\partial q}$</span></li>
+</ul>
+<p>? how to calculate modified rho</p>
+<h5 id="omega-option-duration">Omega (Option Duration) </h5>
+<p>Omega is expected life of a soft path-dependent option, like first exit time for barrier option or American binary option.<br/>
+The rule of premature exercise depends on volatility and carry.<br/>
+We could use local volatility binomial tree to make these tests.<br/>
+(?) stochastic parameter tree<br/>
+Rho fudge: <span class="mathjax-exps">$\Omega=\text{Nominal duration}\times\frac{\text{rho2 of American option}}{\text{rho2 of European option}}$</span></p>
+<ul>
+<li>(-) This could be partly explained by that rho2 contains <span class="mathjax-exps">$T$</span>.</li>
+</ul>
+<p>(?) The trader also can compute rho2 from the delta by assuming that the delta is a zero-coupon bond of the nominal maturity provided.</p>
+<ul>
+<li>(-) <span class="mathjax-exps">$\text{rho2}=-Se^{-qT}N(d_1)T$</span>,</li>
+</ul>
+<h5 id="alpha">Alpha </h5>
+<p>alpha = theta/gamma, better to use shadow gamma and shadow theta<br/>
+When ignoring <span class="mathjax-exps">$r$</span>, BSM differential equation gives <span class="mathjax-exps">$\Theta+\frac{1}{2}\Gamma\sigma^2S^2=0$</span>, therefore <span class="mathjax-exps">$\alpha = -\frac{1}{2}\sigma^2S^2$</span>, irrelevant to maturity.<br/>
+(?) Eliminating the interest carry from the equation, allows the trader to get a pure theta.<br/>
+Calendar spread might have different alpha because of volatilitt's term structure.</p>
+<h4 id="nav4.3">4.3. Table of Greeks </h4>
+<p>gamma and theta for different volatility could be approximately calculated fractionally with a base value.</p>
+<h5 id="stealth-and-health">Stealth and Health </h5>
+<p>For barrier options, stealth is percentage difference (for large move better use <span class="mathjax-exps">$\log{K/B}$</span>) between strike and barrier, health is percentage between spot and barrier.<br/>
+Stealth could indicate how much the option resembles a vanilla.<br/>
+It should be noticed when health drops below 1 standard deviation.</p>
+<h5 id="convexity-modified-convexity">Convexity, Modified Convexity </h5>
+<p>Convexity needs to be associated with volatility of the parameter concerned.<br/>
+At very high volatility, all options become concave with respect to volatility because option is capped at the price of the underlying asset.<br/>
+At very high volatility, an asset becomes a call on it self because it can rise infinitely but only go down in a limited way.</p>
+<h5 id="modified-interest-rate-convexity">Modified Interest Rate Convexity </h5>
+<p>(? exactly how) Convexity of a 2-year bond could hardly be compared with that of a 10-year bond since two rates exhibit different volatilities. Use modified convexity to rectify this.</p>
+<h5 id="the-double-bubble">The "Double Bubble" </h5>
+<p>Short Eurodollar provides two kinds of convexity: long zero coupon bonds and benefit from negative correlation between (Eurodollar price and interest rate).<br/>
+(? mathematical way to price correlation convexity)</p>
+<h3 id="nav5">5.  The Greeks and Their Behavior </h3>
+<p>Time and volatility exerts the same effect on the option, because <span class="mathjax-exps">$\sigma$</span> and <span class="mathjax-exps">$t$</span> show at the same place in pricing formula. Time exerts its own effect through <span class="mathjax-exps">$r$</span> and <span class="mathjax-exps">$d$</span>, which generally do not carry any undue significance.</p>
+<h4 id="nav5.1">5.1. The Bleed: Gamma and Delta Bleed (Holding Volatility Constant) </h4>
+<p>Bleed: change in delta and gamma with the passage of time.<br/>
+Gamma is said to increase with time, but for OTM option being pushed further, out-of-the-moneyness would cause some gamma loss. The results are therefore mixed.<br/>
+pit trader: traders in exchange<br/>
+It is reasonable to explore how gamma bleed behave with repect to spot, and this is the 4th derivative.</p>
+<h5 id="bleed-with-changes-in-volatility">Bleed with Changes in Volatility </h5>
+<p>similar to time bleed, because variance has equal effect as time to maturity.</p>
+<h5 id="going-into-the-expiration-of-a-vanilla-option">Going into the Expiration of a Vanilla Option </h5>
+<p>On expiration, it does not mean that delta should be adjusted in a binary form. Smoothing is the golden rule.</p>
+<h6 id="why-hedge-fully-at-strike-does-not-work">Why Hedge Fully at Strike Does Not Work? </h6>
+<ol>
+<li>It is hard to hedging the entire face value at one tick.</li>
+<li>The costs of replicating an option by hedging the entire face value at the strike or by continuously rebalancing the delta are expected to be the same. The option price can also be derived through strike hedging strategy.</li>
+<li>The frequency of rebalancing does not affect the fair value of the option.</li>
+</ol>
+<h4 id="nav5.2">5.2. DdeltaDvol (Stability Ratio) </h4>
+<p><span class="mathjax-exps">$\text{DdeltaDvol}=\frac{\partial \Delta}{\partial \sigma}=\frac{\partial \mathcal{V}}{\partial S}$</span><br/>
+(? path-dependent portfolio testing)<br/>
+(-) When portfolio contain calendar spreads, volatility change will not have the same margin effect as time elapse.</p>
+<h5 id="test-1-of-stability">Test 1 of Stability </h5>
+<p>Positive DdeltaDvol: delta increases with volatility increase, which means the book is net short options below the money and net long above the money.</p>
+<h5 id="test-2-of-stability-the-asymptotic-vega-test">Test 2 of Stability: The Asymptotic Vega Test </h5>
+<p>Test 1 under higher volatility, this is for stress testing as it gives way OTM options undue importance.</p>
+<h4 id="nav5.3">5.3. Moments of an Option Position </h4>
+<ul>
+<li>Third moment: delta of gamma, called skew.</li>
+<li>Fourth moment: gamma of gamma, called tail.</li>
+</ul>
+<p>Odd moments are indicators of symmetry while even moments are indicators of convexity.<br/>
+Higher order moments are for compound options. An installment option (a fifth-order compound option) requires at least analysis for 9 moments for hedging stability.<br/>
+Positions neutral in lower moments might have increasing exposure in higher moments, which is difficult to trade.</p>
+<h4 id="nav5.4">5.4. Ignoring Higher Greeks: The Lock Delta </h4>
+<p>Delta (upside asymptotic and downside asymptotic) when <span class="mathjax-exps">$S=0$</span> and <span class="mathjax-exps">$S=\infty$</span>, this is important because at these boundaries, options behave like linear assets and sensitivity to volatility will be nil.<br/>
+OTC dealers use regular parametric scenario analysis for their portfolio, therefore do not have watchdog protection from nonstatistical risks (large range move).</p>
+<h6 id="nd-note">ND Note </h6>
+<p>LME and CME contracts have daily price limits.</p>
+<h3 id="nav6">6.  Fungibility, Convergence, and Stacking </h3>
+<h4 id="nav6.1">6.1. Fungibility </h4>
+<p>Fungibility refers to the degree of specificity required for the satisfaction of the deliverability obiligation.<br/>
+Fungibility reflects the feasibility of risk-neutral replication of a derivative security.<br/>
+The market for the more fungible one will be larger and more liquid.<br/>
+The opening interest should not exceed the deliverable commodities, otherwise the long party has the incentive to force the delivery.</p>
+<h5 id="ranking-of-fungibility">Ranking of Fungibility </h5>
+<p>An extremely fungible commodity is a currency that a bank can create electronically and wire anywhere in the world.<br/>
+The other extreme is a physical commodity that needs to be delivered at one specific location.<br/>
+The commodity can escape all rules when it comes to a perishable or live animal, because it is hard to extend its life.</p>
+<h5 id="fungibility-and-the-term-structure-of-prices-the-cash-and-carry-line">Fungibility and the Term Structure of Prices: The Cash-and-Carry Line </h5>
+<p>One can always buy the asset and bear carrying cost (financial and physical storage) if the asset does not go through deterioration and sell it in the future. Therefore, there exists an upper boundary in forward curve called maximum contango.<br/>
+(?) Eurodollar is not fungible because the contracts do not overlap.</p>
+<h5 id="fungibility-and-option-arbitrage">Fungibility and Option Arbitrage </h5>
+<p>When asset is of low fungibility, components of calendar should be treated separately, because it does not have a perfectly arbitrageable forward curve.<br/>
+(?) The stability of second derivatives will be higher than first ones. If the deltas of the 9-month does not properly hedge that of the 3-month, the gamma hedges will be more stable.</p>
+<h5 id="changes-in-the-rules-of-the-game">Changes in the Rules of the Game </h5>
+<p>Sometimes the central banks create a wedge between the domestic and offshore markests (change the rules) for currency.</p>
+<h4 id="nav6.2">6.2. Convergence </h4>
+<ul>
+<li>First-order convergence: short a future contract</li>
+<li>Second-order convergence: spread</li>
+<li>Butterfly convergence: future contract butterfly</li>
+</ul>
+<h5 id="mapping-convergence">Mapping Convergence </h5>
+<h6 id="fixed-income-instrument">Fixed-Income Instrument </h6>
+<p>Dollar convergence is equivalent to carry plus drop on the curve in basis points.<br/>
+The drop on the curve should be computed by repricing the bond on the zero-curve with one day shorter to go.</p>
+<h6 id="eurodollar-future">Eurodollar Future </h6>
+<p>Interpolating between contracts and repricing in a similar way.</p>
+<h5 id="convergence-and-convexity">Convergence and Convexity </h5>
+<p>Theta due to convexity should be excluded: securities of the Government National Mortgage Association (GNMAs) need to be priced on a an option-adjusted basis.</p>
+<h5 id="volatility-and-convergence">Volatility and Convergence </h5>
+<p>The carry is often compensation for the holding risks.</p>
+<h5 id="convergence-and-biased-assets">Convergence and Biased Assets </h5>
+<h4 id="nav6.3">6.3. Stacking Techniques </h4>
+<p>Stacking is a short-term hedging technique minimizing execution of a multiple leg hedge by concentrating on a few liquid instruments.<br/>
+One can do correlation matrix analysis minimizing total variance for a multiple contracts position.</p>
+<h3 id="nav7">7.  Some Wrinkles of Option Markets </h3>
+<h4 id="nav7.1">7.1. Expiration Pin Risks </h4>
+<p>Expiration variance for options position.<br/>
+It exists because there are usually lags between the close of an option market and the decision on whether assign, which kind of prolongs the life of option.<br/>
+If news is in favor of a direction, the holding party might exercise an OTM option.<br/>
+Quarterly option on future: same expiration corresponds to future; the other is called serial option on future.</p>
+<h4 id="nav7.2">7.2. Sticky Strikes </h4>
+<p>The option long position holder's hedge will cause the strike an absorbing state for the underly, until some fresh power pushes it away.</p>
+<h4 id="nav7.3">7.3. Market Barriers </h4>
+<p>Market barrier:</p>
+<ul>
+<li>currency band where central banks limit the market from trading through some level</li>
+<li>a floor price of an agricultural commodity</li>
+<li>market limits (when reached cause the exchange to shut) is a weaker form of market barrier</li>
+</ul>
+<p>Fair game (martingale) need volatility decreases when it is near the barrier.<br/>
+The market barrier for currency spot will not limit the price of forward, which means the interest rate will change at the mean time. (interest rate volatility rise)</p>
+<h4 id="nav7.4">7.4. What Flat Means </h4>
+<p>A flat position is a position that does not present any market risk.</p>
+<h3 id="nav8">8.  Bucketing and Topography </h3>
+<h4 id="nav8.1">8.1. Static Straight Bucketing </h4>
+<p>Divide exposure into its nominal expiration.<br/>
+Some knock in options and defered strike options' exposure start at a future point, and some barrier are calendar spread. The straight bucketing can be misleading.</p>
+<h5 id="the-forward-or-forward-forward-bucket">The Forward or "Forward-Forward" Bucket </h5>
+<p>Move the concerned parameter in a cell to leave the others constant to calculate exposure.<br/>
+(? gamma) For European option, each bucket should share the equal portion of gamma and vega.</p>
+<h4 id="nav8.2">8.2. Topography </h4>
+<h5 id="strike-topography-or-static-topography">Strike Topography (or Static Topography) </h5>
+<p>Divide net positions into time-strike two-dimensional space.<br/>
+(? how is this related to delta space) Scale the strike as volatility, the 101 with 1 day maturity and 115.7 with 1 year maturity should be put in the same column.</p>
+<h5 id="dynamic-topography-local-volatility-exposure">Dynamic Topography (Local Volatility Exposure) </h5>
+<p>Senerio analysis, greeks at different levels for different time passed.<br/>
+This analysis could not show the effect of barrier option, because it is path-dependent and could knock out.</p>
+<h5 id="barrier-payoff-topography">Barrier Payoff Topography </h5>
+<p>worst case senerio loss<br/>
+(?) payoff topograhpy</p>
+<h3 id="nav9">9.  Beware the Distribution </h3>
+<h4 id="nav9.1">9.1. The Tails </h4>
+<p>Adverse select forms the volatility smile.</p>
+<h5 id="random-volatility">Random Volatility </h5>
+<p>In the old days, traders attribute the inflated prices to the lottery effect, which means investors were ready to buy lottery ignoring of real value.<br/>
+The prime reason for higher price of OTM options is vvol.<br/>
+The reason that random volatility results in fat tails is that conditional on price get OTM strike, it is more probable that volatility is higher.<br/>
+It is difficult to establish a dependence between asset price and volatility:</p>
+<ol>
+<li>Return and volatility might be nonlinearly correlated. SP500 futures' volatility drop after a small rally but increases after a larger one.</li>
+<li>Volatility correlates to the range of underlying prices.</li>
+</ol>
+<p>Hybrid lognormal brings extra kurtosis (from mgf).</p>
+<h5 id="histograms-from-the-markets">Histograms from the Markets </h5>
+<p>Traders betting against the fat tails typically make bets against the peak, tring to make profits when nothing happens rather than during extreme moves.<br/>
+Pareto-Levy distribution</p>
+<h4 id="nav9.2">9.2. The Skew and Biased Assets </h4>
+<p>The density skew cannot reflect correlation between price and volatility.<br/>
+(? this effect might be already relfected in price) The author is extremely suspicious of differentiating price with respect to strike to get the distribution, because it ignores the path dependency that arises from changes in volatility.<br/>
+The value of the skew for a dynamic hedger resides more in the behavior of implied volatility along the path leading to a terminal value than in the probability of the asset ending up on such terminal value.</p>
+<h5 id="biased-assets">Biased Assets </h5>
+<p>Assets that volatility increases in sell-off.<br/>
+Two poles of extreme regime for biased assets:</p>
+<ul>
+<li>Notice the skew dynamics</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Characteristic</th>
+<th style="text-align:center">Type 1 Regime</th>
+<th style="text-align:center">Type 2 Regime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Market condition</td>
+<td style="text-align:center">A severe break in a  market following a  protracted rally (or a  quiet period)</td>
+<td style="text-align:center">A normal condition  where the market offers  high returns through  high "carry" or positive  "trend"</td>
+</tr>
+<tr>
+<td style="text-align:center">Historical volatility</td>
+<td style="text-align:center">Increases</td>
+<td style="text-align:center">Generally low</td>
+</tr>
+<tr>
+<td style="text-align:center">Implied volatility</td>
+<td style="text-align:center">Increases markedly, often overshoots historical</td>
+<td style="text-align:center">Low, generally close to  historical. Out-of-the-money calls trade  usually lower than  recent historical</td>
+</tr>
+<tr>
+<td style="text-align:center">Skew</td>
+<td style="text-align:center">Flatter skew but higher  volatility</td>
+<td style="text-align:center">High skew at lower  volatility generally from  call selling. The lower  the volatility, the higher  the skew.</td>
+</tr>
+<tr>
+<td style="text-align:center">Serial correlation</td>
+<td style="text-align:center">Often negative  autocorrelation,  "whipping" markets</td>
+<td style="text-align:center">Positive autocorrelation,  a slow, "quiet trend"</td>
+</tr>
+<tr>
+<td style="text-align:center">Correlation with other  assets</td>
+<td style="text-align:center">Total breakdown of  correlations. Low  correlations increase. High correlations  decrease</td>
+<td style="text-align:center">Medium, stable correlation with similar  assets</td>
+</tr>
+</tbody>
+</table>
+<h5 id="nonparallel-accounting">Nonparallel Accounting </h5>
+<p>Stocks and government bonds have no consciously short party, because price going up does not draw unhappiness to the majority.</p>
+<h5 id="value-linked-to-price">Value Linked to Price </h5>
+<p>For company and government, higher stock/asset price lowers volatility, making it less risky.</p>
+<h5 id="reverse-assets">Reverse Assets </h5>
+<p>Gold, and to a lesser extent the Swiss franc, the German mark, and the yen, often behave exactly as the opposite of a regular asset as capital flights.</p>
+<h5 id="volatility-regimes">Volatility Regimes </h5>
+<p>The high volatility for a short time followed by a low volatility for a long period shows a fat tail.<br/>
+It is likely that after first move down in regime Type 1, slow rally and fast sell-off are more probable to happen.</p>
+<h5 id="correlation-between-interest-rates-and-carry">Correlation between Interest Rates and Carry </h5>
+<p>Usually strong for biased assets.</p>
+<h4 id="nav9.3">9.3. More Advanced Put-Call Parity Rules </h4>
+<ul>
+<li>Barrier products: knock-out + knock-in = vanilla</li>
+<li>American binary options: knock-out rebate</li>
+<li>Rainbow options (multi assets): no put-call parity</li>
+<li>Compound options: put-call parity holds on higher order</li>
+</ul>
+<h3 id="nav10">10.  Options Trading Concepts </h3>
+<p>Static replication includeds, semiexact option equivalence, like inexact barrier hedge<br/>
+For static hedge, one could construct a binomial tree and optimize for some objection function like weighted quadratic difference of payoff and greeks one each node.<br/>
+Greeks to match on every state:</p>
+<ul>
+<li>delta</li>
+<li>modified gamma</li>
+<li>modified vega</li>
+<li>theta</li>
+<li>modified rho</li>
+<li>bleed</li>
+<li>correlation delta (if any)</li>
+</ul>
+<p>The need of dynamic hedging is from the exact match greeks are expensive.<br/>
+spreading: buying options and selling different options at the same time</p>
+<h4 id="nav10.1">10.1. Initiation to Volatility Trading: Vega versus Gamma </h4>
+<p>Calendar spread</p>
+<h5 id="-basic-forms-of-option-strategies">(?) Basic Forms of Option Strategies </h5>
+<p>Simple trades with simple products:</p>
+<ul>
+<li>Straddles, strangles, butterflies, volatility bets.</li>
+</ul>
+<p>Complex trades with simple products:</p>
+<ul>
+<li>Long leptokurtosis (fourth moment bet).</li>
+<li>Playing the volatility term structure.</li>
+<li>Calendar/diagonal spreading.</li>
+<li>Long vega convexity.</li>
+<li>Long the Eurodollar "dampening" effect.</li>
+<li>Distribulional arbitrage: skew trading.</li>
+</ul>
+<p>Simple trades with complex products:</p>
+<ul>
+<li>Playing the variance ratio with barrier options.</li>
+<li>Bets and the reflecting barriers.</li>
+</ul>
+<p>Complex trades with complex products:</p>
+<ul>
+<li>Distributional arbitrage through contingent premium options.</li>
+<li>Playing the second order convergence with barriers: arbitraging the slope of the curve</li>
+<li>Playing the reverse knock-out convexity against ramp options.</li>
+<li>Arbitraging higher moments of the distribution with a combination ofbet and compound options.</li>
+</ul>
+<h4 id="nav10.2">10.2. Soft versus Hard Deltas </h4>
+<p>Soft delta: hedge with option, with delta asymptotically vanished.<br/>
+Hard delta: hedge with underly</p>
+<h6 id="nd-note-1">ND Note </h6>
+<p>For example, currenty price is 100. We long at 100 and short at 112. Gamma is square at 106.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Asset</th>
+<th style="text-align:right">100</th>
+<th style="text-align:right">102</th>
+<th style="text-align:right">104</th>
+<th style="text-align:right">106</th>
+<th style="text-align:right">108</th>
+<th style="text-align:right">110</th>
+<th style="text-align:right">112</th>
+<th style="text-align:right">114</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Delta</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">17</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">12</td>
+<td style="text-align:right">-10</td>
+<td style="text-align:right">-50</td>
+</tr>
+<tr>
+<td style="text-align:left">Gamma</td>
+<td style="text-align:right">long</td>
+<td style="text-align:right">long</td>
+<td style="text-align:right">long</td>
+<td style="text-align:right">square</td>
+<td style="text-align:right">short</td>
+<td style="text-align:right">short</td>
+<td style="text-align:right">very short</td>
+<td style="text-align:right">very short</td>
+</tr>
+</tbody>
+</table>
+<p>When it comes to 16, we have long delta.</p>
+<ul>
+<li>Selling underly will make it worse at 114 with more negative delta.</li>
+<li>Doing nothing ignures gamma profit.</li>
+<li>If sell put at 100 and buy put at 106, this will mildly rebalance gamma and lock the gamma profit at the same time.</li>
+</ul>
+<h4 id="nav10.3">10.3. Volatility Betting </h4>
+<h5 id="first-order">First-Order </h5>
+<p>Long option everywhere and dynamicly neutralize delta</p>
+<h5 id="-second-order">(?) Second-Order </h5>
+<p>Options with different strikes and maturities.</p>
+<h5 id="third-order">Third-Order </h5>
+<p>Correlation between volatility and asset price (bet vanna).</p>
+<h5 id="fourth-order">Fourth-Order </h5>
+<p>vvol, through buying otm options or calendars and short atm, benefiting from fat tails.</p>
+<h4 id="nav10.4">10.4. Case Study: Path Dependence of a Regular Option </h4>
+<p>Path dependence has large effect on total PnL.<br/>
+This effect could be reduced by higher hedge frequency, which yields higher cost.<br/>
+Also, the life of a trader is too short for adequate time diversification.<br/>
+Traders have some form of absorbing barrier in their PnL, like maximum loss, which will spell more negative runs.</p>
+<h4 id="nav10.5">10.5. Simple Case Study: The "Worst Case" Scenario </h4>
+<p>Dynamic hedger will lose more than option premium with delta hedging. Like hold an OTM call and sell futures but price never reaches strike.</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Hedging</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Dynamic Hedging 1 - Markets, Instruments, People.html" rel="prev">< Dynamic Hedging 1 - Markets, Instruments, People</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Dynamic Hedging 3 - Trading and Hedging Exotic Options.html" rel="next">Dynamic Hedging 3 - Trading and Hedging Exotic Options ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

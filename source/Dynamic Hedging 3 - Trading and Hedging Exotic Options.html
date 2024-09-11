@@ -1,0 +1,384 @@
+<!DOCTYPE html><html><head>
+      <title>Dynamic Hedging 3 - Trading and Hedging Exotic Options</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="Derivatives" editdate="2024-09-11" createdate="2022-12-13" tag="Hedging"></ndtag></p>
+<h3 id="--c17-p286---binary-options-european-style"><!-- C17 p286 --> Binary Options: European Style </h3>
+<h4 id="european-binary-options">European Binary Options </h4>
+<p>Also called digital derivatives, bet options and gap calls.<br>
+Long gamma when OTM and short gamma when ITM.<br>
+Risk reversal: vega and gamma risk flip across one point.</p>
+<h5 id="hedging-with-a-vanilla">Hedging with a Vanilla </h5>
+<p>spread</p>
+<h5 id="definition-of-the-bet-forward-and-spot-bets">Definition of the Bet: Forward and Spot Bets </h5>
+<p>Whether payment of preimum happens at inception or expiration.</p>
+<h4 id="pricing-with-the-skew">Pricing with the Skew </h4>
+<p>With skew, pricing binary option with spread seams much more expensive. Does this mean market hold the expectation the probability of exercise still be the price?</p>
+<h5 id="a-formal-pricing-on-the-skew">A Formal Pricing on the Skew </h5>
+<p>The price of digital option must be determined with volatility skew shape.<br>
+</p><div class="mathjax-exps">$$\text{Binary call}=\frac{\partial C(K,\sigma(K))}{\partial K}=\frac{\partial C}{\partial K}+\frac{\partial C}{\partial \sigma}\frac{\partial \sigma}{\partial K}$$</div><p></p>
+<h5 id="the-skew-paradox">The Skew Paradox </h5>
+<p>As <span class="mathjax-exps">$\sigma$</span> increases, the price of atm bet decreases and delta increases. The skew by increasing the potential payoff on the left integral needs to be compensated with a shift of the mean to the right to prevent short sellers get higher expected return.</p>
+<h5 id="difference-between-the-binary-and-the-delta-the-delta-paradox-revisited">Difference between the Binary and the Delta: The Delta Paradox Revisited </h5>
+<p>Delta will increase because of fat tail</p>
+<h6 id="two-currency-paradox">Two-Currency Paradox </h6>
+<p>For currency, the price of a bet <span class="mathjax-exps">$N(d_2)$</span> for one party is delta <span class="mathjax-exps">$N(-d_1)$</span> for the opposite party.<br>
+See more in <a href="https://zhuanlan.zhihu.com/p/680794451">关于希格尔悖论的例子</a>.</p>
+<h5 id="first-hedging-consequences">First Hedging Consequences </h5>
+<p>The best replication for a digital is a wide risk reversal and shrink the difference between strikes as time progresses.<br>
+When the bet option is away from expiration, the real risks are the skew. When near expiration, the risks transfer to the pin.</p>
+<h5 id="the-delta-is-a-dirac-delta">The Delta is a Dirac Delta </h5>
+<p>See <a href="https://zhuanlan.zhihu.com/p/345809392">https://zhuanlan.zhihu.com/p/345809392</a>.</p>
+<h5 id="gamma-for-a-bet">Gamma for a Bet </h5>
+<p>DgammaDspot for vanilla</p>
+<h4 id="conclusion-statistical-trading-versus-dynamic-hedging">Conclusion: Statistical Trading versus Dynamic Hedging </h4>
+<p>Extremely difficult to hedge a bet with an option that has a continuous payoff.<br>
+It will be easy if overhedging delta at the barrier, at cost of worsening it away from barrier.<br>
+When dollar variance is low and there is a high number of strikes, traders could do in statistical mode and believes in law of large number by subjective valuation.<br>
+When variance is high and strikes are few, one should do replication mode with dynamic hedging by risk-neutral valuation.</p>
+<h4 id="case-study-in-binary-packages---contingent-premium-options">Case Study in Binary Packages - Contingent Premium Options </h4>
+<p>Vanilla options where the option buyer pays the price only when ITM.</p>
+<h5 id="recommend-use-potential-devaluations">Recommend Use: Potential Devaluations </h5>
+<p>The structure works well for fat tails and authorized market barrier.</p>
+<h4 id="case-study-the-betspreads">Case Study: The Betspreads </h4>
+<p>condor (a butterfly with 4 strikes)</p>
+<h5 id="advanced-case-study-multiasset-bets">Advanced Case Study: Multiasset Bets </h5>
+<p>Rainbow call spread</p>
+<h3 id="--c18-p308---binary-options-american-style"><!-- C18 p308 --> Binary Options: American Style </h3>
+<h4 id="american-single-binary-options">American Single Binary Options </h4>
+<p>Howard Savery's rule of thumb is that American digital will be roughly twice the European. Because ATM American digital is worth 1 and an European is worth 0.5. This relationship will contaminate to lower prices.</p>
+<h5 id="american-binary-is-a-bet-on-time">American Binary is a Bet on Time </h5>
+<p>(? why with no drift) With no drift, the American binary remains long vega.<br>
+(?) When the delta hedge against the option incurs a negative carry (forward price is higher), the American binary longs gamma everwhere.<br>
+(?) With positive carry, American binary is like risk reversal on the same asset without drift.</p>
+<h5 id="hedging-an-american-binary-fooled-by-the-greeks">Hedging an American Binary: Fooled by the Greeks </h5>
+<p>The gap delta caused slippage.</p>
+<h5 id="the-ravages-of-time">The Ravages of Time </h5>
+<p>The hedge position should be unwinded upon knockout: for longing binary call, one should buy the delta back when price goes higher than barrier.<br>
+High theta problem.</p>
+<h5 id="understanding-the-vega-convexity">Understanding the Vega Convexity </h5>
+<p>Vega of American binary is concave. Hedge vega with vanilla will cause short position of fourth moment.<br>
+(?) From a trader's experience, the worst moment to be short is fourth because of lack of compensation.</p>
+<ul>
+<li>(-) No potential profit but only potential loss.</li>
+</ul>
+<p>Risks include:</p>
+<ul>
+<li>Duration risk</li>
+<li>Gap risk: unwind slippage of hedge position</li>
+<li>Vega risk: after knock out</li>
+<li>Vega concavity: better hedge with positive fourth moment</li>
+</ul>
+<h5 id="trading-methods">Trading Methods </h5>
+<p>(?) American binary options are truly options on time rather than options on the asset.<br>
+They can only be hedgable with instruments that are similarly options on time.<br>
+It is best to divorce a barrier book from a vanilla position.</p>
+<h5 id="case-study-at-settlement-american-binary-options">Case Study: At-Settlement American Binary Options </h5>
+<p>More difficult to trade, creating a short gamma area around the barrier.</p>
+<h5 id="other-greeks">Other Greeks </h5>
+<p>Less significant.</p>
+<h4 id="american-double-binary-options">American Double Binary Options </h4>
+<p>Ameircan double bet is bet with a lower strike and a higher strike.<br>
+American double bets trade at a very narrow discount of the bet value.<br>
+A double bet trading at 80% of face value implies, (no drift and no interest rates), that it has about 20% of the nominal time to live.</p>
+<h5 id="vega-of-the-double-binary">Vega of the Double Binary </h5>
+<p>Even much more concavity than the single barrier.<br>
+Above an iv 20% (3 month) the bet reaches a price close to 100%.</p>
+<h5 id="other-applications-of-american-barriers">Other Applications of American Barriers </h5>
+<h6 id="amortizing-interest-rate-securities">Amortizing Interest Rate Securities </h6>
+<p>Maturity, coupon or principal could vary according to whether predefined rate was reached in the market.</p>
+<h6 id="credit-risk">Credit Risk </h6>
+<p>Regard government note as a bet on not default, the price of the bet is total paper minus some recovery value.</p>
+<h3 id="--c19-p325---barrier-options-i"><!-- C19 p325 --> Barrier Options (I) </h3>
+<h4 id="barrier-options-regular">Barrier Options (Regular) </h4>
+<p>Reguar barrier options are defined as trigger happened only when OTM.</p>
+<h5 id="knock-out-options">Knock-Out Options </h5>
+<p>Sometimes size of hedge position large enough to impact the market could create profit.</p>
+<h6 id="customer-demand-for-knock-out-options">Customer Demand for Knock-Out Options </h6>
+<ul>
+<li>Fund managers hold a large stock exposure, who would sell it themselves at the barrier level and seek protection for sell-off.</li>
+<li>Chartists that believe a trend with a stop-loss point.</li>
+</ul>
+<h6 id="discontinuity-at-the-barrier">Discontinuity at the Barrier </h6>
+<p>Delta of barrier option OTM is higher to compensate the same ITM payoff with cheaper price.<br>
+The unwinding slippage cost should be considered (as American bet).</p>
+<h5 id="knock-in-options">Knock-In Options </h5>
+<h6 id="customer-demand-for-knock-in-options">Customer Demand for Knock-In Options </h6>
+<p>Mean-reversion market opinions.<br>
+Long the barrier means the operator would benefit from the hitting of the triger. (short knock-out or long knock-in)</p>
+<h5 id="effects-of-volatility">Effects of Volatility </h5>
+<p>Knock-in has convex vega while knock-out has concave vega, because volatility brings the barrier closer in a nonlinear way.</p>
+<h5 id="adding-the-drift-complexity-of-the-forward-line">Adding the Drift: Complexity of the Forward Line </h5>
+<p>(?) A regular knock-out will never have a delta higher than one if the forward line is flat. In an upward sloping forward curve, the delta of the calls can be higher than one.<br>
+Delta higher than one will lead to negative gamma somewhere.</p>
+<ul>
+<li>(-) The higher than one delta might come from the fact that spot goes higher, forward price goes more higher, which drive the probability of knock-out down near the barrier. Away from the barrier, this effect will fade.<br>
+When price is 1 unit higher, the payoff at expiration of vanilla are 1 higher in the ITM zone. By contamination principle, the price should be higher, but the increase less than 1.</li>
+</ul>
+<p>(?) When maturity is long relative to distance between strike and barrier, the price of knock-out is like the payoff of European one on expiration.</p>
+<ul>
+<li>(-) Not like, the payoff might have a difference. Only the shape is similar.</li>
+</ul>
+<h5 id="risk-reversals">Risk Reversals </h5>
+<p>(?) Vega could be hedged with risk reversals (to eliminate volga): vega increases in one direction and fades in the other.</p>
+<ul>
+<li>(-) For risk reversals with strikes not symmetric, the more ATM leg will have more constant vega, and the more OTM leg will have a more convex vega (with regard to volatility). And more close leg will dominate to maintain a slightly positive vega. This makes the whole profile similar to vega of barrier options.</li>
+</ul>
+<h5 id="putcall-symmetry-and-the-hedging-of-barrier-options">Put/Call Symmetry and the Hedging of Barrier Options </h5>
+<h6 id="option-symmetry">Option Symmetry </h6>
+<p>A call with strike <span class="mathjax-exps">$K_1$</span> and a put with strike <span class="mathjax-exps">$K_2$</span> under same volatility, if <span class="mathjax-exps">$K_1K_2=F^2$</span>, <span class="mathjax-exps">$\sqrt{K_1}$</span> units of put and <span class="mathjax-exps">$\sqrt{K_2}$</span> units of call will have exact vega and gamma.</p>
+<p>A knock-out call could be replicated as that long OTM call and short OTM put whose strike is symmetrical to call at the barrier. Then when the underly reaches barrier, the combination should be worth 0, under the assmption of no skew.<br>
+The risk reversal is nothing but some form of risk reversal.<br>
+The barrier call should be cheaper when there is a downside skew.<br>
+A knock-in call could be replicated as long put, and at barrier execute the price 0 risk reversal to switch to a call.</p>
+<h6 id="benefits-of-the-method">Benefits of the Method </h6>
+<ol>
+<li>Pricing the skew</li>
+<li>Pricing the volatility curve<br>
+It means taking term structure (volatility ladder) into account, because two legs react to different periods.</li>
+<li>Hedging: hedge gamma</li>
+</ol>
+<h6 id="pitfalls-of-the-method">Pitfalls of the Method </h6>
+<ol>
+<li>It needs stable skew</li>
+<li>It needs a flat and constant forward curve. (Symmetrical strike responds to it.)</li>
+</ol>
+<p>(?) There might not be a real duration susceptible of hedging the skew owing to the instability of the stopping time.</p>
+<ul>
+<li>(-) It refers to two different duration legs.</li>
+</ul>
+<p>The forward curve needs to be flat, otherwise it might not hedge exactly. (Because of <span class="mathjax-exps">$(\frac{B}{S})^{2\lambda}$</span> in barrier option price.)</p>
+<h6 id="gammas-of-structures-compared-with-that-of-the-risk-reversal">Gammas of Structures Compared with That of the Risk Reversal </h6>
+<p>Under high interest rate, the barrier option presents negative gamma above barrier.</p>
+<h6 id="skew-implies-instability">Skew Implies Instability </h6>
+<p>(? iv to deduce underly distribution, what is third moment, third to what?) The existence of a skew is accompanied by a noticeable shifting of the third moment and a strong fifth moment.</p>
+<h5 id="barrier-decomposition-under-skew-environments">Barrier Decomposition under Skew Environments </h5>
+<p>Long skew means having the vega increase in the rally, benefiting from a positive third moment.<br>
+(?) Positive skew means put has higher iv.<br>
+To price barrier options under skew (to use which vol), use risk reversal decomposition.<br>
+Under skew, risk reversal replication only works for today, because the combination has nonzero theta.<br>
+(?) The T decomposition formula is: Barrier with skew = Barrier without skew + EV the residual of the replicating portfolio/conditional on hitting time</p>
+<h5 id="the-reflection-principle">The Reflection Principle </h5>
+<p>Under this perspective, the barrier symmetry comes from path reflection.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Price</th>
+<th style="text-align:right">Intrinsic</th>
+<th style="text-align:right">Path1</th>
+<th style="text-align:right">Path2</th>
+<th style="text-align:right">Net</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">102.97</td>
+<td style="text-align:right">2.97</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:center">101.98</td>
+<td style="text-align:right">1.98</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">100.99</td>
+<td style="text-align:right">0.99</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">2</td>
+</tr>
+<tr>
+<td style="text-align:center">100.00</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">99.01</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:center">98.02</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">97.03</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">96.04</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td style="text-align:center">95.05</td>
+<td style="text-align:right">0.00</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">1</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<p>With binomial tree, knock-out option could be priced with the original path deducted by the common path. (By relection principle, the paths that overlapped by two initial price are the path that touched the barrier.)<br>
+Without skew and drift, a regular knock-out option is equal to vanilla minus the same vanilla priced at <span class="mathjax-exps">$\frac{B^2}{S}$</span> adjusted by <span class="mathjax-exps">$\frac{S}{B}$</span>.<br>
+Call with strike priced with a 96.04 spot will be equal in price to the 96.04 put priced with 100 spot.</p>
+<h5 id="girsanov">Girsanov </h5>
+<p>(?) how to adjust binary tree to relect distribution</p>
+<h5 id="effect-of-time-on-knock-out-options">Effect of Time on Knock-Out Options </h5>
+<p>Regular ATM knock-out has similar theta to ATM vanilla, while knock-in has a relatively linear theta.</p>
+<h5 id="first-exit-time-and-its-risk-neutral-expectation">First Exit Time and Its Risk-Neutral Expectation </h5>
+<p>(?) The barrier option should be priced with the volatility corresponding to the expected first exit time.</p>
+<ul>
+<li>(-) It is not like vanilla, from which the volatility surface is generated. Therefore, it is reasonble to interpolating on the spot iv surface for vanilla. However, under framework of local vol, only few paths of underlying involved use of forward volatility near the expiration, more weight should be put on volatility of shorter term.</li>
+</ul>
+<p>(?) It is recommended to hedge at a shorter maturity than the nominal one.</p>
+<ul>
+<li>(-) See single volatility fudge.</li>
+</ul>
+<h5 id="issues-in-pricing-barrier-options">Issues in Pricing Barrier Options </h5>
+<h6 id="the-single-volatility-fudge">The Single Volatility Fudge </h6>
+<p>(?) For a regular knock-out call, the major leg (call) needs to be priced with the nominal maturity, while the second leg (put) needs to be priced with the first exit time.</p>
+<ul>
+<li>(-) Better to match vega. Vega is highest at strike, a vanilla interpolated at shorter term could replicate the barrier component best.</li>
+</ul>
+<p>The hedges in forward assets that correspond to an option position need to be scattered to match the distribution of first exit time.</p>
+<h6 id="a-more-accurated-method-the-dupire-derman-kani-technique">A More Accurated Method: The Dupire-Derman-Kani Technique </h6>
+<p>It is computer intensive.<br>
+(? what is exact implementation in the paper p358)</p>
+<h5 id="additional-pricing-complexity-the-variance-ratios">Additional Pricing Complexity: The Variance Ratios </h5>
+<p>(? why) In a mean-reverting market, the barrier component of a barrier option is overpriced. Because it is more likely to be knocked out when there is high level of intraday negative auto-correlation.</p>
+<ul>
+<li>(-) Intuitively, a rally will provide 50% probability to not to knock out under trend, but not in the mean-reverting market.</li>
+</ul>
+<p>(? to be verfied in China futures market) From author's experience, every market exhibits mean reversion within a one-day framework.<br>
+(? seems to be typo) If close-to-close volatility is lower than the Parkinson number, the barrier component is underpriced by the regular method.</p>
+<h3 id="--c20-p360---barrier-options-ii"><!-- C20 p360 --> Barrier Options (II) </h3>
+<h4 id="reverse-barrier-options">Reverse Barrier Options </h4>
+<h5 id="reverse-knock-out-options">Reverse Knock-Out Options </h5>
+<p>Reverse knockouts generally have negative gamma.<br>
+Reverse barrier options have high intrinsic value and little time value, they are more like a bet when close to barrier.</p>
+<h5 id="case-study-the-knock-out-box">Case Study: The Knock-Out Box </h5>
+<p>It is cheap, but lack enough profit zone.</p>
+<h5 id="hedging-reverse-knock-outs-a-graphical-case-study">Hedging Reverse Knock-Outs: A Graphical Case Study </h5>
+<p>The trader sells $100 million of one-year 5.60 dollar-put FRF call for $800k, with a KO feature at 4.85, where implied vol is 0.104, with <span class="mathjax-exps">$r=0.07$</span> and <span class="mathjax-exps">$q=0.06$</span>.<br>
+When option has one day left, the delta could be 20 around the barrier.<br>
+Vega and gamma are difficult to hedge because the direction of these two greeks change with time and underly price.<br>
+As a trader the author prefers a dangerous trade left roughly unhedged than accurately mishedged.</p>
+<h4 id="double-barrier-options">Double Barrier Options </h4>
+<p>The first exit time is so short, and the way to study them is to examine American double bets.</p>
+<h5 id="alternative-barrier-options">Alternative Barrier Options </h5>
+<p>A SCUD (second currency underlying) is an option on one asset in one currency with barrier struck on the exchange rate.<br>
+A dollar-based fund is long Japanese stocks would like to buy stock put which terminates if the currency appreciates. When the option is terminated, it could make profit.<br>
+The correlation between assets makes the alter native barrier resemble a regular one. Independence makes the barrier become a bet on the other option.</p>
+<h5 id="the-exploding-option">The Exploding Option </h5>
+<p>Reverse knock-out with a rebate equal to the exploding payoff.</p>
+<h5 id="capped-indexed-option">Capped Indexed Option </h5>
+<p>Reverse knock-out with a rebate equal to the difference between strike and outstrike, and it terminates at the close price rather than terminates anytime like exploding options.</p>
+<h6 id="the-legality-of-the-triggering">The Legality of the Triggering </h6>
+<p>For underlying asset traded OTC, it could be difficult to confirm the real time price. The best solution (suggested by the author) is to turn to a third party  setting order to see if completed.</p>
+<h6 id="barriers-and-price-manipulation">Barriers and Price Manipulation </h6>
+<p>In illiquid market, the party longing the barrier could try to hit the barrier with small size transaction to gain profit. (like the case for a cash-settled options)</p>
+<h4 id="reading-a-risk-management-report">Reading a Risk Management Report </h4>
+<p>(? two country paradox) The currency in which the P/L is computed should be in the numeraier currency and delta should be expressed in countercurrency.</p>
+<ul>
+<li>(-) compute pnl cash and raw delta (not delta cash)</li>
+</ul>
+<h5 id="gap-risk">Gap Risk </h5>
+<p>The report should show senerio where barrier is touched and the stop-loss is executed.<br>
+The gap risk (gap between barrier and the executed price of stop-loss order) should be considered.<br>
+The stop-loss order should not be set before the barrier, which will create short gamma position.</p>
+<h5 id="gaps-and-gap-reports">Gaps and Gap Reports </h5>
+<p>A mined market is one that has many gapdelta orders and will therefore experience a high level "whipping" and mean reverting volatility around these prices. The opposite is called a cleared market.</p>
+<h3 id="--c21-p389---compound-choosers-and-higher-order-options"><!-- C21 p389 --> Compound, Choosers, and Higher Order Options </h3>
+<p>Compound options are extremely sensitive to higher derivatives with respect to spot, particularly vvol. This makes a constant volatility type model dangerous to use.<br>
+No known formula to price compound options using stochastic volatility.<br>
+Second-order option <span class="mathjax-exps">$(\Phi_1,K_1,\Phi_2,K_2,t_1,t_2)$</span> is an option with the right to buy a European option for a predetermined price, where <span class="mathjax-exps">$\Phi$</span> denotes the call/put type.</p>
+<h4 id="vega-convexity-the-costs-of-dynamic-hedging">Vega Convexity: the Costs of Dynamic Hedging </h4>
+<p>Second-order option has convex vega (with respect to volatility).</p>
+<h5 id="uses-of-compound-options-hedging-barrier-vega">Uses of Compound Options: Hedging Barrier Vega </h5>
+<p>barrier options present extreme vega concavity as a package.</p>
+<h4 id="chooser-options">Chooser Options </h4>
+<p>Options that could turn into either a put or a call at some predetermined time.<br>
+The simple chooser has one strike, the "gutspin" chooser allows choice for two strikes.<br>
+The price is between maximum of call and put, and straddle.<br>
+Chooser resembles a rainbow option because trader has to pick one of two assets. A put and a call are two negatively correlated assets.<br>
+A chooser show more convex vega than vanilla.</p>
+<h4 id="a-few-application-of-the-higher-order-options">A Few Application of the Higher Order Options </h4>
+<p>Caption, floortions: options on caps and floors</p>
+<h3 id="--c22-p396---multiasset-options"><!-- C22 p396 --> Multiasset Options </h3>
+<p>Multiasset structures include:</p>
+<ul>
+<li>Choice: options involving a choice between instruments: best of, worst of, rainbow options.</li>
+<li>Linear combinations: underly is baskets or spreads</li>
+<li>Product or quotients: underly is product between two instruments, the underly is still lognormal. Easy to price, hard to hedge.</li>
+</ul>
+<h4 id="choice-between-assets-rainbow-options">Choice Between Assets: Rainbow Options </h4>
+<p><span class="mathjax-exps">$\text{Rainbow}(\Phi_1,K_1,...,\Phi_n,K_n,t)$</span>, provides maximum of payoff among different options.</p>
+<h5 id="correlation-vega">Correlation Vega </h5>
+<p>A matrix corresponds to change in price which results from a change in correlation.<br>
+The method could be pushed further for covariance.</p>
+<h5 id="correlated-and-uncorrelated-greeks">Correlated and Uncorrelated Greeks </h5>
+<p>(? why B moves accordingly) Partial delta: sensitivity of the structure to changes in the price of asset A assuming B moves according to its correlation to A.<br>
+(?) Outperformance Option: payoff of the form minimum or maximum among assets</p>
+<h4 id="linear-combinations">Linear Combinations </h4>
+<p>An option on a linear combination of assets. Asian options can be included in it.</p>
+<h5 id="basket-options">Basket Options </h5>
+<p>Options on a weighted sum of two or more assets.</p>
+<h5 id="lognormality">Lognormality </h5>
+<h3 id="--c23-p416---minor-exotics-lookback-and-asian-options"><!-- C23 p416 --> Minor Exotics: Lookback and Asian Options </h3>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
