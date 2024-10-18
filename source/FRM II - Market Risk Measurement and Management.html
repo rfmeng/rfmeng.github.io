@@ -1,0 +1,378 @@
+<!DOCTYPE html><html><head>
+      <title>FRM II - Market Risk Measurement and Management</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="FRM II" editdate="2024-10-10" createdate="2024-10-10" tag="Risk-Management"></ndtag></p>
+<h3 id="--c1-p13---estimating-market-risk-measures"><!-- C1 p13 --> Estimating Market Risk Measures </h3>
+<h4 id="data">Data </h4>
+<p>Geometric return data: <span class="mathjax-exps">$R_t=\ln \frac{P_t+D_t}{P_{t-1}}=\ln(1+r_t)$</span></p>
+<h4 id="estimating-historical-simulation-var">Estimating Historical Simulation VaR </h4>
+<h4 id="estimating-parametric-var">Estimating Parametric VaR </h4>
+<ol>
+<li>Normal VaR<br>
+PnL or arithmetic return is normal.<br>
+<span class="mathjax-exps">$VaR = |\mu-z_\alpha\sigma|$</span>, where inside the absolute value sign it is usually a negative number</li>
+<li><span class="mathjax-exps">$P_t=e^{R_t}P_{t-1}$</span> where <span class="mathjax-exps">$R_t$</span>, called geometric return, follows normal. This implies <span class="mathjax-exps">$P_t$</span> and VaR follow lognormal.<br>
+<span class="mathjax-exps">$VaR(\alpha)=(1-e^{\mu_R-z_\alpha\sigma_R})P_{t-1}$</span></li>
+</ol>
+<h4 id="estimating-coherent-risk-measures">Estimating Coherent Risk Measures </h4>
+<p>Expected shortfall (ES) is a coherent measure and is subadditive.<br>
+Calculation: average of tail VaR of different percentile.</p>
+<h4 id="estimating-the-standard-errors-of-risk-measure-estimators">Estimating the Standard Errors of Risk Measure Estimators </h4>
+<p>confidence interval</p>
+<h3 id="--c2-p29---non-parametric-approaches"><!-- C2 p29 --> Non-Parametric Approaches </h3>
+<h4 id="estimation-of-historical-simulation-var-and-es">Estimation of Historical Simulation VaR and ES </h4>
+<h5 id="basic-historical-simulation">Basic Historical Simulation </h5>
+<p>equal weight</p>
+<h5 id="bootstrap-historical-simulation">Bootstrap Historical Simulation </h5>
+<p>resample with replacement, get multiple samples, calculate multiple VaR and take average</p>
+<h5 id="non-parametric-density-estimation">Non-parametric Density Estimation </h5>
+<p>Basic historical simulation only estimates discrete VaR value, 95.1% VaR is not available with 100 PnL observations.<br>
+Draw lines through mid-points on the edges of the bars of histogram to gain empirical pdf.</p>
+<h4 id="weighted-historical-simulation">Weighted Historical Simulation </h4>
+<h5 id="shortfall-of-traditional-simulation">Shortfall of Traditional Simulation </h5>
+<p>equal-weight structure makes risk estimates unresponsive to major events: rare large loss in the tail could not be reflected into VaR.<br>
+ghost effects: a VaR that unduely highly because of small cluster of high loss observations and the measured VaR will continue to be high until n days.</p>
+<h5 id="age-weighted">Age-Weighted </h5>
+<p>exponential weighted<br>
+it gives us the option of letting our sample size grow over time.</p>
+<h5 id="volatility-weighted">Volatility-Weighted </h5>
+<p><span class="mathjax-exps">$r_{t,i}^*=\frac{\sigma_{T,i}}{\sigma_{t,i}}r_{t,i}$</span>, where <span class="mathjax-exps">$r_{t,i}$</span> is actual return for asset <span class="mathjax-exps">$i$</span> on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{t,i}$</span> is volatility forecast on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{T,i}$</span> is current forecast of volatility.</p>
+<h5 id="correlation-weighted">Correlation-Weighted </h5>
+<p>historic returns multiplied by revised correlation matrix (equivalently variance-covariance matrix)<br>
+(variance-covariance matrix <span class="mathjax-exps">$\Sigma=A^TA$</span>, <span class="mathjax-exps">$R^*=A_TA_t^{-1}R$</span>)</p>
+<h5 id="filtered-historical-simulation">Filtered Historical Simulation </h5>
+<p>using GARCH to adjust return and then bootstrap</p>
+<h3 id="--c3-p50---parametric-approaches-extreme-value"><!-- C3 p50 --> Parametric Approaches: Extreme Value </h3>
+<h4 id="generalized-extreme-value-theory">Generalized Extreme Value Theory </h4>
+<p>Generalized extreme-value (GEV) distribution<br>
+If tail shape <span class="mathjax-exps">$\xi&gt;0$</span>, GEV becomes the Frechet distribution, tail is heavy, similar with Levy, t and Pareto distribution.<br>
+If tail shape <span class="mathjax-exps">$\xi=0$</span>, GEV becomes the Gumbel distribution, tail is light, similar with normal and lognormal.<br>
+If tail shape <span class="mathjax-exps">$\xi&lt;0$</span>, GEV becomes the Weibull distribution, lighter tail.</p>
+<h6 id="which-one-to-choose">Which One to Choose </h6>
+<p>Choose Gumbel if tail index is insignificant and Frechet otherwise.<br>
+A safer option is always to choose the Frechet.</p>
+<h4 id="peaks-over-threshold-pot">Peaks-Over-Threshold (POT) </h4>
+<p>Deals with the application of EVT to the distribution of excess losses over a high threshold.<br>
+<span class="mathjax-exps">$F_u(x)=P\{X\leq X+u|X&gt;u\}=\frac{F(x+u)-F(u)}{1-F(u)}$</span></p>
+<h5 id="generalized-pareto-distribution">Generalized Pareto Distribution </h5>
+<p>two parameters: a positive scale parameter <span class="mathjax-exps">$\beta$</span> and a tail index parameter <span class="mathjax-exps">$\xi$</span>.</p>
+<h5 id="estimation">Estimation </h5>
+<p>VaR and ES:</p>
+<ul>
+<li><span class="mathjax-exps">$u$</span> threshold in percentage term</li>
+<li><span class="mathjax-exps">$N_u$</span> is the number of observations exceeding threshold</li>
+<li><span class="mathjax-exps">$n$</span> is the total observations</li>
+</ul>
+<h4 id="multivariate-evt">Multivariate EVT </h4>
+<p>curse of dimensionality: as the dimensionality rises, Multivariate EV events rapidly become much rarer.</p>
+<h3 id="--c4-p61---backtesting-var"><!-- C4 p61 --> Backtesting VaR </h3>
+<p>(? whether to remember statistic critical value)</p>
+<h4 id="setup-for-backtesting">Setup for Backtesting </h4>
+<h4 id="model-backtesting-with-exceptions">Model Backtesting with Exceptions </h4>
+<h5 id="model-verification-based-on-failure-rates">Model Verification Based on Failure Rates </h5>
+<p>A test can be applied verify the model when <span class="mathjax-exps">$T$</span> is large<br>
+<span class="mathjax-exps">$H_0$</span>: the model is correctly calibrated.<br>
+Test statistic <span class="mathjax-exps">$z=\frac{x-pT}{\sqrt{p(1-p)T}}$</span> which follows standard normal, where <span class="mathjax-exps">$x$</span> is the number of exceptions.<br>
+The test should two-sided because <span class="mathjax-exps">$x$</span> could be too small and too large.</p>
+<h5 id="unconditional-coverage-model">Unconditional Coverage Model </h5>
+<p>The exceptions should be evenly spread over time, the model ignores conditioning.<br>
+(ignore formula) log-likelihood ratio, <span class="mathjax-exps">$LR_{uc}=-2\ln(1-p)^{T-N}p^N+2\ln(1-\frac{N}{T})^{T-N}(\frac{N}{T})^N$</span>, which follows Chi-square with one degree of freedom.</p>
+<ol>
+<li>nonrejection region <span class="mathjax-exps">$\frac{N}{T}$</span> should shirnk with more data obtained</li>
+<li>for small value of <span class="mathjax-exps">$p$</span>, it becomes increasing difficult to confirm deviations, resulting in systematically overestimates risk.</li>
+</ol>
+<h5 id="conditional-coverage-model">Conditional Coverage Model </h5>
+<p>observed exceptions could cluster or bunch.<br>
+<span class="mathjax-exps">$LR_{cc}=LR_{uc}+LR_{ind}$</span><br>
+If <span class="mathjax-exps">$LR_{ind}$</span> exceeds critical value, independence assumption should be adjected and conditional model should be used.</p>
+<h5 id="type-i-and-type-ii-error">Type I and Type II Error </h5>
+<p>Type I error: correct model is rejected<br>
+Type II error: incorrect model is not rejected<br>
+<span class="mathjax-exps">$P(\text{Type I error})=\alpha$</span>, power of test: <span class="mathjax-exps">$1 - P(\text{Type II error})$</span></p>
+<h4 id="basel-rules">Basel Rules </h4>
+<p>Backtesting is necessary to allow internal VaR(99%) models for capital management.<br>
+up to 4 exceptions are acceptable (current version is 99% VaR for 250 trading days, 2.5 theoretically), there is progressively increasing multiplicative factor. (<span class="mathjax-exps">$k$</span> is for capital requirement)</p>
+<h5 id="when-to-apply-penalty">When to apply penalty </h5>
+<ol>
+<li>Basic integrity of the model: the penalty should apply.</li>
+<li>Model accuracy could be improved: the penalty should apply.</li>
+<li>intraday trading: the penalty should be considered.</li>
+<li>bad luck: no guidance, except it is expected to occur at least sometime.</li>
+</ol>
+<h3 id="--c5-p71---var-mapping"><!-- C5 p71 --> VaR Mapping </h3>
+<h4 id="basis-of-var-mapping">Basis of VaR Mapping </h4>
+<p>the current values of the portfolio positions are replaced by exposures on the risk factors.<br>
+Two kinds of mapping:</p>
+<ul>
+<li>exact allocation: like derivatives</li>
+<li>estimation: a stock is replaced by stock index by regression</li>
+</ul>
+<h4 id="methods-of-var-mapping">Methods of VaR Mapping </h4>
+<h5 id="fixed-income-portfolio">Fixed Income portfolio </h5>
+<p>factor: zero-coupon bonds<br>
+par value bond: intial price equal to par value</p>
+<h6 id="principal-mapping">Principal Mapping </h6>
+<p>one risk factor is chosen that corresponds to the average portfolio maturity.<br>
+overstates the true risk, because it ignores intervening coupon payments (shorter maturity, smaller VaR ratio)</p>
+<h6 id="duration-mapping">Duration Mapping </h6>
+<p>one risk factor is chosen that corresponds to the average portfolio duration.</p>
+<h6 id="cash-flow-mapping">Cash-Flow Mapping </h6>
+<p>Undiversified VaR: sum of VaR of PV of all cash flows, assuming perfect correlation<br>
+Diversified VaR: (if <span class="mathjax-exps">$\mu=0$</span>) <span class="mathjax-exps">$VaR_p=\sqrt{VaR_1^2+VaR_2^2+2\rho VaR_1VaR_2}$</span></p>
+<h6 id="benchmarking">Benchmarking </h6>
+<p>duration mapping<br>
+tracking error VaR: VaR of the deviation between portfolio and benchmark</p>
+<h5 id="linear-derivative">Linear Derivative </h5>
+<h6 id="forward">Forward </h6>
+<p>long foreign currency forward = long foreign currency spot + long foreign bill + short U.S. bill<br>
+when calculating dollar PV, use spot exchange rate</p>
+<h6 id="fra">FRA </h6>
+<h6 id="interest-rate-swap">Interest-Rate Swap </h6>
+<p>floating and fixed rate swap</p>
+<h5 id="nonlinear-derivative">Nonlinear Derivative </h5>
+<p>call = long asset - short bill (from BS formula)</p>
+<h3 id="--c7-p117---correlation-basics-definitions-applications-and-terminology"><!-- C7 p117 --> Correlation Basics: Definitions, Applications and Terminology </h3>
+<h4 id="financial-correlation-risk">Financial Correlation Risk </h4>
+<p>CDS: pay fixed CDS spread and obtain principal in case of default<br>
+correlation risk occurs when long Spain bond and buy CDS from another bank, the worst case is they both default.</p>
+<h4 id="correlation-in-trading">Correlation in Trading </h4>
+<ol>
+<li>value of multi-asset option is very sensitive to correlation</li>
+<li>quanto option: options that allow domestic investor to exchange his option payoff in a foreign currency back into home currency at a fixed exchange rate.<br>
+the more positive the correlation, the lower the price for the quanto option call</li>
+<li>correlation swap</li>
+<li>another way of buying correlation is buy call on index and sell call on individual stocks</li>
+</ol>
+<h4 id="correlation-in-risk-management">Correlation in Risk Management </h4>
+<ol>
+<li>Market Risk</li>
+<li>Credit Risk: default correlation within sectors higher than between sectors<br>
+Investment grade bond default probability increases with maturity, bond in distress shows the opposite. If the company survives the problematic period, default rate will decrease.</li>
+<li>Systemic risk: systemic risk and correlation risk are highly correlated.</li>
+<li>Concentration risk</li>
+</ol>
+<h4 id="correlation-in-the-financial-crisis">Correlation in the Financial Crisis </h4>
+<p>CDO: collateralized debt obligations<br>
+equity tranches value increases as correlation increases, but default probability increases and finally decreases in value.<br>
+correlations between the tranches increased.</p>
+<h3 id="--c8-p137---empirical-properties-of-correlation"><!-- C8 p137 --> Empirical Properties of Correlation </h3>
+<h4 id="correlation-and-correlation-volatility">Correlation and Correlation Volatility </h4>
+<p>correlation among stocks is highest during recession.<br>
+correlation volatility is highest in normal economic states<br>
+positive relationship between correlation level and correlation volatility</p>
+<h4 id="mean-reversion">Mean Reversion </h4>
+<p>mean reversion is presented if there is negative relationship between <span class="mathjax-exps">$S_t-S_{t-1}$</span> and <span class="mathjax-exps">$S_{t-1}$</span><br>
+<span class="mathjax-exps">$S_t-S_{t-1}=a(\mu_S-S_{t-1})\Delta t+\sigma_S\varepsilon\sqrt{\Delta t}$</span>, where <span class="mathjax-exps">$0\leq a\leq 1$</span> is mean reversion rate.<br>
+get <span class="mathjax-exps">$a$</span> through regression <span class="mathjax-exps">$S_t-S_{t-1}$</span> on <span class="mathjax-exps">$S_{t-1}$</span></p>
+<h4 id="autocorrelation">Autocorrelation </h4>
+<p><span class="mathjax-exps">$AC(\rho_t,\rho_{t-1})=\frac{Cov(\rho_t,\rho_{t-1})}{\sigma_t,\sigma_{t-1}}$</span><br>
+AR(1) model: <span class="mathjax-exps">$S_t=a\mu_S+(1-a)S_{t-1}$</span>, therefore <span class="mathjax-exps">$1-a = AC$</span> because of correlation is stationary</p>
+<p>autocorrelation is highest under 2-day lag</p>
+<h4 id="best-fit-distributions-for-correlations">Best-fit Distributions for Correlations </h4>
+<p>Equity: Jonhnson special bounded distribution<br>
+Bond: GEV and then normal<br>
+default probability: Jonhnson special bounded distribution</p>
+<h3 id="--c9-p145---financial-correlation-modeling"><!-- C9 p145 --> Financial Correlation Modeling </h3>
+<h4 id="copula-functions">Copula functions </h4>
+<p>A copula is a distribution function with standard uniform marginal distributions.<br>
+Sklar theorem: given marginal distribution <span class="mathjax-exps">$F$</span> and <span class="mathjax-exps">$G$</span>, joint distribution <span class="mathjax-exps">$H$</span> and copula <span class="mathjax-exps">$C$</span> are one-to-one, <span class="mathjax-exps">$C(u,v)=H(F^{-1}(u),G^{-1}(v))$</span>.</p>
+<h5 id="gaussian-copula">Gaussian Copula </h5>
+<p><span class="mathjax-exps">$C_G(u_1,u_2)=M(F_1^{-1}(u_1),F_2^{-1}(u_2);\rho)$</span>, where <span class="mathjax-exps">$M$</span> is CDF of standard normal.</p>
+<h6 id="cdo-valuation">CDO Valuation </h6>
+<p>cumulative default probabilities <span class="mathjax-exps">$Q$</span> for entity <span class="mathjax-exps">$i$</span> at a fixed time <span class="mathjax-exps">$t$</span>.<br>
+The Gaussian default time copula <span class="mathjax-exps">$C_{GD}=M(N^{-1}(Q_1(t)),N^{-1}(Q_2(t));\rho)$</span></p>
+<h3 id="--c11-p167---the-science-of-term-structure-models"><!-- C11 p167 --> The Science of Term Structure Models </h3>
+<h4 id="binomial-interest-rate-tree">Binomial Interest Rate Tree </h4>
+<p>adjust up probability and down probability such that the current value match the market price.</p>
+<h5 id="arbitrage-free-valuation-of-derivatives">Arbitrage-Free Valuation of Derivatives </h5>
+<p>The law of one price: same good same price</p>
+<h5 id="risk-neutral-pricing">Risk-Neutral Pricing </h5>
+<p>the difference between true probability and risk neutral probability is described in terms of drift in interest rates</p>
+<h4 id="issues-with-interest-rate-tree-model">Issues with Interest Rate Tree Model </h4>
+<h5 id="recombineing-tree-vs-non-recombining-tree">Recombineing Tree vs. Non-Recombining Tree </h5>
+<p>Non-recombining tree has 4 nodes at state 2, which supports state-dependent volatility.</p>
+<h5 id="option-adjusted-spread">Option-Adjusted Spread </h5>
+<p>the spread such that the market price of a security equals its model price when discounted values are computed at risk-neutral rates plus that spread.<br>
+adding 10 basis points to the discount rates (between every state)</p>
+<h5 id="appropriateness-of-bsm-model">Appropriateness of BSM Model </h5>
+<p>BSM does not apply to bond options</p>
+<ol>
+<li>bond price is not random, it must converge to its face value at maturity, so does volatility.</li>
+<li>BSM assumes interest rate is constant</li>
+</ol>
+<h3 id="--c12-p179---the-evolution-of-short-rates-and-the-shape-of-the-term-structure"><!-- C12 p179 --> The Evolution of Short Rates and the Shape of the Term Structure </h3>
+<h4 id="expectations">Expectations </h4>
+<p>determines level of interest rate</p>
+<h4 id="volatility">Volatility </h4>
+<p>determines downward-sloping shape of interest rate curve, resulting from the effect of convexity on the spot rate.<br>
+<span class="mathjax-exps">$E[\frac{1}{1+r}]&gt;\frac{1}{E[1+r]}$</span>, yield is reduced by convexity.</p>
+<h4 id="risk-premium">Risk Premium </h4>
+<p>determines upward-sloping shape of interest rate curve.<br>
+In short term, the risk premium effect dominates and the term structure is mildly upward-sloping.</p>
+<h3 id="--c13-p187---the-art-of-term-structure-models-drift"><!-- C13 p187 --> The Art of Term Structure Models: Drift </h3>
+<h4 id="no-drift">No Drift </h4>
+<p><span class="mathjax-exps">$dr=\sigma dw=\sigma \varepsilon \sqrt{dt}$</span><br>
+Interest Rate Tree: <span class="mathjax-exps">$u=r+\sigma\sqrt{dt}$</span>, <span class="mathjax-exps">$d=r-\sigma\sqrt{dt}$</span><br>
+Limitations: flat interest rate term strucutre and flat volatility term structure</p>
+<h4 id="constant-drift">Constant Drift </h4>
+<p>risk neutral drift is combination of expectation and risk premium<br>
+<span class="mathjax-exps">$dr=\lambda dt + \sigma dw=\lambda dt + \sigma \varepsilon \sqrt{dt}$</span><br>
+assumes parallel shift of term structure curve if interest rate changes</p>
+<h4 id="ho-lee-model-time-dependent-drift">Ho-Lee Model: Time-Dependent Drift </h4>
+<p><span class="mathjax-exps">$dr=\lambda_t dt + \sigma dw=\lambda_t dt + \sigma \varepsilon \sqrt{dt}$</span><br>
+Ho-Lee model is arbitrage-free model, the <span class="mathjax-exps">$\lambda_t$</span> is used to match the market prices.<br>
+Quote the prices of securities that are not actively traded based on the prices of more liquid securities.</p>
+<h5 id="issues">Issues </h5>
+<p>It assumes market prices are fair, but security prices may be distorted due to non interest rate factors.<br>
+For the purpose of value securities relative to one another, equilibrium models should be used.</p>
+<h4 id="vasicek-model-mean-reverting-drift">Vasicek Model: Mean-Reverting Drift </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma dw$</span></p>
+<h5 id="interest-rate-tree">Interest Rate Tree </h5>
+<p>The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability and interest rate with two equations (mean and std).</p>
+<h5 id="half-time">Half Time </h5>
+<p>Expectation of the rate after <span class="mathjax-exps">$T$</span> years: <span class="mathjax-exps">$r_0e^{-kT}+\theta(1-e^{-kT})$</span><br>
+The time it takes the factor to progress half the distance toward its goal: <span class="mathjax-exps">$\tau=\frac{\ln 2}{k}$</span></p>
+<h5 id="effectiveness">Effectiveness </h5>
+<p>The standard deviation increases with horizon more slowly. The total variance will increase, but the annualized volatility will decrease.<br>
+It supports nonparallel shift.</p>
+<h3 id="--c14-p199---the-art-of-term-structure-models-volatility-and-distribution"><!-- C14 p199 --> The Art of Term Structure Models: Volatility and Distribution </h3>
+<h4 id="time-dependent-volatility">Time-Dependent Volatility </h4>
+<p><span class="mathjax-exps">$dr=\lambda(t)dt+\sigma(t)e^{-at}dw$</span>, where <span class="mathjax-exps">$a$</span> is decay rate.</p>
+<h5 id="compared-to-vasicek-model">Compared to Vasicek Model </h5>
+<p>total variance resembles the impact of mean reversion.<br>
+It is parallel shift model while Vasicek implies nonparallel shift.<br>
+To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek.</p>
+<h4 id="cox-ingersoll-ross-model">Cox-Ingersoll-Ross Model </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma\sqrt{r}dw$</span>, where <span class="mathjax-exps">$\sigma$</span> is yield volatility and <span class="mathjax-exps">$\sigma\sqrt{r}$</span> is annualized basis-point volatility.<br>
+Interest rates are bounded by 0.</p>
+<h4 id="the-courtadon-model">The Courtadon Model </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma rdw$</span></p>
+<h4 id="lognormal-model">Lognormal Model </h4>
+<p><span class="mathjax-exps">$dr=ardt+\sigma rdw$</span></p>
+<h4 id="lognormal-model-with-deterministic-drift">Lognormal Model with Deterministic Drift </h4>
+<p><span class="mathjax-exps">$dr=a(t)rdt+\sigma rdw$</span></p>
+<h4 id="lognormal-model-with-mean-reversion-black-karasinski-model">Lognormal Model with Mean Reversion: Black-Karasinski Model </h4>
+<p><span class="mathjax-exps">$dr=k(t)(\ln\widetilde{\theta}(t)-\ln r)+\sigma(t) rdw$</span></p>
+<h3 id="--c6-p85---messages-from-the-academic-literature-on-risk-management-for-the-trading-book"><!-- C6 p85 --> Messages from the Academic Literature on Risk Management for the Trading Book </h3>
+<h4 id="lessons-on-var-implementation">Lessons on VaR Implementation </h4>
+<h5 id="time-horizon">Time Horizon </h5>
+<p>Market Risk Amendment sets horizon to be 10 days and allows to use square-root of time scaling of one-day VaR.<br>
+Appropriate time horizons should be set for different products.<br>
+Square-root will overestimate VaR if underlying exhibits GARCH(1,1) and underestimate VaR if the process has jumps.</p>
+<h5 id="time-varying-volatility">Time Varying Volatility </h5>
+<p>Volatility forecastability decays quickly with time horizon, so capturing time-varying volatility may not be as important when VaR horizon is long.</p>
+<h5 id="var-backtesting">VaR Backtesting </h5>
+<p>Actual backtesting: use historical data to estimate portfolio return, this is less informative when composition of the portfolio is changed.<br>
+Hypothetical backtesting: use historical data to estimate mean and std of component, and then estimate the portfolio distribution.<br>
+Banks backtest 1-day VaR, but 1-day VaR does not necessarily imply 10-day VaR.</p>
+<h5 id="integrating-liquidity-into-var-models">Integrating Liquidity into VaR Models </h5>
+<p>Exogenous liquidity: the transaction cost for trades of average size<br>
+Endogenous liquidity: the volume of trade is large enough such that the bid ask spread cannot be taken as given, but is affected by the trades themselves.<br>
+only exogenous liquidity risk is integrated into VaR: <span class="mathjax-exps">$\text{cost of liquidity}=\text{position value}\times\frac{\mu+q_{99\%}\sigma}{2}$</span><br>
+to integrate endogenous liquidity, estimate average transaction price of optimal liquidation strategy</p>
+<h4 id="risk-measurement-for-the-trading-book">Risk Measurement for the Trading Book </h4>
+<p>coherent risk measure: subadditivity, positive homogeneity, monotonicity, transition property<br>
+backtesting ES is more complicated</p>
+<h5 id="spectral-risk-measures">Spectral Risk Measures </h5>
+<p>Customized average of the whole distribution.<br>
+Larger loss, larger weight.</p>
+<h5 id="risk-aggregation">Risk Aggregation </h5>
+<p>compartmentalized approach: the sum of risks measured separately (market, operations, credit), assume <span class="mathjax-exps">$\rho=1$</span><br>
+unified approach: <span class="mathjax-exps">$\rho&lt;1$</span></p>
+<p>Top-down approach: portfolio divided to market, credit and operational, assume <span class="mathjax-exps">$\rho=1$</span><br>
+bottom-up: risk factors, <span class="mathjax-exps">$\rho&lt;1$</span></p>
+<h4 id="balance-sheet-management">Balance Sheet Management </h4>
+<p>leverage is procyclical</p>
+<h3 id="--c16-p215---fundamental-review-of-the-trading-book"><!-- C16 p215 --> Fundamental Review of the Trading Book </h3>
+<p>FRTB: a consultative document issued by Basel Committee</p>
+<h4 id="background">Background </h4>
+<p>trading book: market risk capital<br>
+banking book: credit risk capital<br>
+this has in the past given rise to regulatory arbitrage.</p>
+<h5 id="amendment">Amendment </h5>
+<p>Market risk in Basel I is 10-day 99%<br>
+FRTB requires stressed 97.5% ES<br>
+For normal distributions, the two values are similar.</p>
+<h4 id="liquidity-horizions">Liquidity Horizions </h4>
+<p>Basel I: 10-day<br>
+Basel II.5: 10, 20, 40, 60, 120</p>
+<h4 id="market-risk-capital-charge">Market Risk Capital Charge </h4>
+<p>Basel III: standardized approach and internal model approach</p>
+<h5 id="standardized-approach">Standardized Approach </h5>
+<h6 id="risk-sensitivity-approach">Risk Sensitivity Approach </h6>
+<ol>
+<li>7 risks classes corresponding to trading desks: general interest rate, foreign exchange, commodity, equity, three categories of credit spread risk</li>
+<li>Within each risk class, delta risk charge, vega risk charge and curvature risk charge are calculated.</li>
+</ol>
+<h6 id="default-risk-charge">Default Risk Charge </h6>
+<ol>
+<li>credit spread risk is handled using risk sensitivity approach.</li>
+<li>default risk (jump-to-default) is handled by a separate default risk charge.<br>
+exposure * LGD * default risk weight</li>
+</ol>
+<h6 id="residual-risk-add-on">Residual Risk Add-on </h6>
+<p>such as exotic options<br>
+calculation: notional amount * risk weight</p>
+<h5 id="internal-models-approach">Internal Models Approach </h5>
+<p>Historical simulation approcah to estimate stressed ES with 97.5% confidence.</p>
+<h6 id="credit-risk">Credit Risk </h6>
+<ol>
+<li>credit spread risk: handled in a similar way to other market risk</li>
+<li>jump-to-default risk: in banking book based on 1-year 99.9% VaR.</li>
+</ol>
+<h6 id="backtesting">Backtesting </h6>
+<p>FRTB does not backtest stressed ES, it is not possible to backtest stressed measure.<br>
+1-day 12 months of data<br>
+99% and 97.5% are to be used, 12 exceptions for 99% or 30 exceptions for 97.5%.</p>
+<h4 id="securitization">Securitization </h4>
+<p>Under FRTB, the standardized approach must be used for securitizations.</p>
+<h3 id="--c10-p151---empirical-approaches-to-risk-metrics-and-hedging"><!-- C10 p151 --> Empirical Approaches to Risk Metrics and Hedging </h3>
+<h4 id="dv01-neutral-hedge">DV01-Neutral Hedge </h4>
+<p>DV01: change of bond price in currency when its yield changes by 1 basis point.<br>
+The changes in yields among components may not be one for one.</p>
+<h4 id="single-variable-regression-based-hedging">Single-Variable Regression-Based Hedging </h4>
+<p><span class="mathjax-exps">$\Delta r^{\text{portfolio}}=\alpha+\beta r^{\text{hedge instrument}}$</span><br>
+Hedge coefficient: <span class="mathjax-exps">$\beta$</span></p>
+<h4 id="two-variable-regression-based-hedging">Two-Variable Regression-Based Hedging </h4>
+<h4 id="level-regression-vs-change-regression">Level Regression vs. Change Regression </h4>
+<h4 id="principal-components-analysis">Principal Components Analysis </h4>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

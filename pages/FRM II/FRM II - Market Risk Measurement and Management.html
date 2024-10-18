@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Market Risk Measurement and Management - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Estimating Market Risk Measures </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Data </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Estimating Historical Simulation VaR </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Estimating Parametric VaR </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Estimating Coherent Risk Measures </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Estimating the Standard Errors of Risk Measure Estimators </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Non-Parametric Approaches </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Estimation of Historical Simulation VaR and ES </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Weighted Historical Simulation </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Parametric Approaches: Extreme Value </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Generalized Extreme Value Theory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Peaks-Over-Threshold (POT) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Multivariate EVT </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Backtesting VaR </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Setup for Backtesting </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Model Backtesting with Exceptions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Basel Rules </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> VaR Mapping </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Basis of VaR Mapping </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Methods of VaR Mapping </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Correlation Basics: Definitions, Applications and Terminology </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Financial Correlation Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Correlation in Trading </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Correlation in Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.4"><span class="nav-number">6.4.</span> <span class="nav-text">Correlation in the Financial Crisis </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Empirical Properties of Correlation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Correlation and Correlation Volatility </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Mean Reversion </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text">Autocorrelation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.4"><span class="nav-number">7.4.</span> <span class="nav-text">Best-fit Distributions for Correlations </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Financial Correlation Modeling </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Copula functions </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> The Science of Term Structure Models </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Binomial Interest Rate Tree </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">Issues with Interest Rate Tree Model </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> The Evolution of Short Rates and the Shape of the Term Structure </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Expectations </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.2"><span class="nav-number">10.2.</span> <span class="nav-text">Volatility </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.3"><span class="nav-number">10.3.</span> <span class="nav-text">Risk Premium </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav11"><span class="nav-number">11.</span> <span class="nav-text"> The Art of Term Structure Models: Drift </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.1"><span class="nav-number">11.1.</span> <span class="nav-text">No Drift </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.2"><span class="nav-number">11.2.</span> <span class="nav-text">Constant Drift </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.3"><span class="nav-number">11.3.</span> <span class="nav-text">Ho-Lee Model: Time-Dependent Drift </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.4"><span class="nav-number">11.4.</span> <span class="nav-text">Vasicek Model: Mean-Reverting Drift </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav12"><span class="nav-number">12.</span> <span class="nav-text"> The Art of Term Structure Models: Volatility and Distribution </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.1"><span class="nav-number">12.1.</span> <span class="nav-text">Time-Dependent Volatility </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.2"><span class="nav-number">12.2.</span> <span class="nav-text">Cox-Ingersoll-Ross Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.3"><span class="nav-number">12.3.</span> <span class="nav-text">The Courtadon Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.4"><span class="nav-number">12.4.</span> <span class="nav-text">Lognormal Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.5"><span class="nav-number">12.5.</span> <span class="nav-text">Lognormal Model with Deterministic Drift </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.6"><span class="nav-number">12.6.</span> <span class="nav-text">Lognormal Model with Mean Reversion: Black-Karasinski Model </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav13"><span class="nav-number">13.</span> <span class="nav-text"> Messages from the Academic Literature on Risk Management for the Trading Book </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.1"><span class="nav-number">13.1.</span> <span class="nav-text">Lessons on VaR Implementation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.2"><span class="nav-number">13.2.</span> <span class="nav-text">Risk Measurement for the Trading Book </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.3"><span class="nav-number">13.3.</span> <span class="nav-text">Balance Sheet Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav14"><span class="nav-number">14.</span> <span class="nav-text"> Fundamental Review of the Trading Book </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.1"><span class="nav-number">14.1.</span> <span class="nav-text">Background </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.2"><span class="nav-number">14.2.</span> <span class="nav-text">Liquidity Horizions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.3"><span class="nav-number">14.3.</span> <span class="nav-text">Market Risk Capital Charge </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.4"><span class="nav-number">14.4.</span> <span class="nav-text">Securitization </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav15"><span class="nav-number">15.</span> <span class="nav-text"> Empirical Approaches to Risk Metrics and Hedging </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.1"><span class="nav-number">15.1.</span> <span class="nav-text">DV01-Neutral Hedge </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.2"><span class="nav-number">15.2.</span> <span class="nav-text">Single-Variable Regression-Based Hedging </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.3"><span class="nav-number">15.3.</span> <span class="nav-text">Two-Variable Regression-Based Hedging </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.4"><span class="nav-number">15.4.</span> <span class="nav-text">Level Regression vs. Change Regression </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.5"><span class="nav-number">15.5.</span> <span class="nav-text">Principal Components Analysis </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Market Risk Measurement and Management
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-10-10</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-10-10" editdate="2024-10-10" tag="Risk-Management"></ndtag></p>
+<h3 id="nav1">1.  Estimating Market Risk Measures </h3>
+<h4 id="nav1.1">1.1. Data </h4>
+<p>Geometric return data: <span class="mathjax-exps">$R_t=\ln \frac{P_t+D_t}{P_{t-1}}=\ln(1+r_t)$</span></p>
+<h4 id="nav1.2">1.2. Estimating Historical Simulation VaR </h4>
+<h4 id="nav1.3">1.3. Estimating Parametric VaR </h4>
+<ol>
+<li>Normal VaR<br/>
+PnL or arithmetic return is normal.<br/>
+<span class="mathjax-exps">$VaR = |\mu-z_\alpha\sigma|$</span>, where inside the absolute value sign it is usually a negative number</li>
+<li><span class="mathjax-exps">$P_t=e^{R_t}P_{t-1}$</span> where <span class="mathjax-exps">$R_t$</span>, called geometric return, follows normal. This implies <span class="mathjax-exps">$P_t$</span> and VaR follow lognormal.<br/>
+<span class="mathjax-exps">$VaR(\alpha)=(1-e^{\mu_R-z_\alpha\sigma_R})P_{t-1}$</span></li>
+</ol>
+<h4 id="nav1.4">1.4. Estimating Coherent Risk Measures </h4>
+<p>Expected shortfall (ES) is a coherent measure and is subadditive.<br/>
+Calculation: average of tail VaR of different percentile.</p>
+<h4 id="nav1.5">1.5. Estimating the Standard Errors of Risk Measure Estimators </h4>
+<p>confidence interval</p>
+<h3 id="nav2">2.  Non-Parametric Approaches </h3>
+<h4 id="nav2.1">2.1. Estimation of Historical Simulation VaR and ES </h4>
+<h5 id="basic-historical-simulation">Basic Historical Simulation </h5>
+<p>equal weight</p>
+<h5 id="bootstrap-historical-simulation">Bootstrap Historical Simulation </h5>
+<p>resample with replacement, get multiple samples, calculate multiple VaR and take average</p>
+<h5 id="non-parametric-density-estimation">Non-parametric Density Estimation </h5>
+<p>Basic historical simulation only estimates discrete VaR value, 95.1% VaR is not available with 100 PnL observations.<br/>
+Draw lines through mid-points on the edges of the bars of histogram to gain empirical pdf.</p>
+<h4 id="nav2.2">2.2. Weighted Historical Simulation </h4>
+<h5 id="shortfall-of-traditional-simulation">Shortfall of Traditional Simulation </h5>
+<p>equal-weight structure makes risk estimates unresponsive to major events: rare large loss in the tail could not be reflected into VaR.<br/>
+ghost effects: a VaR that unduely highly because of small cluster of high loss observations and the measured VaR will continue to be high until n days.</p>
+<h5 id="age-weighted">Age-Weighted </h5>
+<p>exponential weighted<br/>
+it gives us the option of letting our sample size grow over time.</p>
+<h5 id="volatility-weighted">Volatility-Weighted </h5>
+<p><span class="mathjax-exps">$r_{t,i}^*=\frac{\sigma_{T,i}}{\sigma_{t,i}}r_{t,i}$</span>, where <span class="mathjax-exps">$r_{t,i}$</span> is actual return for asset <span class="mathjax-exps">$i$</span> on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{t,i}$</span> is volatility forecast on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{T,i}$</span> is current forecast of volatility.</p>
+<h5 id="correlation-weighted">Correlation-Weighted </h5>
+<p>historic returns multiplied by revised correlation matrix (equivalently variance-covariance matrix)<br/>
+(variance-covariance matrix <span class="mathjax-exps">$\Sigma=A^TA$</span>, <span class="mathjax-exps">$R^*=A_TA_t^{-1}R$</span>)</p>
+<h5 id="filtered-historical-simulation">Filtered Historical Simulation </h5>
+<p>using GARCH to adjust return and then bootstrap</p>
+<h3 id="nav3">3.  Parametric Approaches: Extreme Value </h3>
+<h4 id="nav3.1">3.1. Generalized Extreme Value Theory </h4>
+<p>Generalized extreme-value (GEV) distribution<br/>
+If tail shape <span class="mathjax-exps">$\xi&gt;0$</span>, GEV becomes the Frechet distribution, tail is heavy, similar with Levy, t and Pareto distribution.<br/>
+If tail shape <span class="mathjax-exps">$\xi=0$</span>, GEV becomes the Gumbel distribution, tail is light, similar with normal and lognormal.<br/>
+If tail shape <span class="mathjax-exps">$\xi&lt;0$</span>, GEV becomes the Weibull distribution, lighter tail.</p>
+<h6 id="which-one-to-choose">Which One to Choose </h6>
+<p>Choose Gumbel if tail index is insignificant and Frechet otherwise.<br/>
+A safer option is always to choose the Frechet.</p>
+<h4 id="nav3.2">3.2. Peaks-Over-Threshold (POT) </h4>
+<p>Deals with the application of EVT to the distribution of excess losses over a high threshold.<br/>
+<span class="mathjax-exps">$F_u(x)=P\{X\leq X+u|X&gt;u\}=\frac{F(x+u)-F(u)}{1-F(u)}$</span></p>
+<h5 id="generalized-pareto-distribution">Generalized Pareto Distribution </h5>
+<p>two parameters: a positive scale parameter <span class="mathjax-exps">$\beta$</span> and a tail index parameter <span class="mathjax-exps">$\xi$</span>.</p>
+<h5 id="estimation">Estimation </h5>
+<p>VaR and ES:</p>
+<ul>
+<li><span class="mathjax-exps">$u$</span> threshold in percentage term</li>
+<li><span class="mathjax-exps">$N_u$</span> is the number of observations exceeding threshold</li>
+<li><span class="mathjax-exps">$n$</span> is the total observations</li>
+</ul>
+<h4 id="nav3.3">3.3. Multivariate EVT </h4>
+<p>curse of dimensionality: as the dimensionality rises, Multivariate EV events rapidly become much rarer.</p>
+<h3 id="nav4">4.  Backtesting VaR </h3>
+<p>(? whether to remember statistic critical value)</p>
+<h4 id="nav4.1">4.1. Setup for Backtesting </h4>
+<h4 id="nav4.2">4.2. Model Backtesting with Exceptions </h4>
+<h5 id="model-verification-based-on-failure-rates">Model Verification Based on Failure Rates </h5>
+<p>A test can be applied verify the model when <span class="mathjax-exps">$T$</span> is large<br/>
+<span class="mathjax-exps">$H_0$</span>: the model is correctly calibrated.<br/>
+Test statistic <span class="mathjax-exps">$z=\frac{x-pT}{\sqrt{p(1-p)T}}$</span> which follows standard normal, where <span class="mathjax-exps">$x$</span> is the number of exceptions.<br/>
+The test should two-sided because <span class="mathjax-exps">$x$</span> could be too small and too large.</p>
+<h5 id="unconditional-coverage-model">Unconditional Coverage Model </h5>
+<p>The exceptions should be evenly spread over time, the model ignores conditioning.<br/>
+(ignore formula) log-likelihood ratio, <span class="mathjax-exps">$LR_{uc}=-2\ln(1-p)^{T-N}p^N+2\ln(1-\frac{N}{T})^{T-N}(\frac{N}{T})^N$</span>, which follows Chi-square with one degree of freedom.</p>
+<ol>
+<li>nonrejection region <span class="mathjax-exps">$\frac{N}{T}$</span> should shirnk with more data obtained</li>
+<li>for small value of <span class="mathjax-exps">$p$</span>, it becomes increasing difficult to confirm deviations, resulting in systematically overestimates risk.</li>
+</ol>
+<h5 id="conditional-coverage-model">Conditional Coverage Model </h5>
+<p>observed exceptions could cluster or bunch.<br/>
+<span class="mathjax-exps">$LR_{cc}=LR_{uc}+LR_{ind}$</span><br/>
+If <span class="mathjax-exps">$LR_{ind}$</span> exceeds critical value, independence assumption should be adjected and conditional model should be used.</p>
+<h5 id="type-i-and-type-ii-error">Type I and Type II Error </h5>
+<p>Type I error: correct model is rejected<br/>
+Type II error: incorrect model is not rejected<br/>
+<span class="mathjax-exps">$P(\text{Type I error})=\alpha$</span>, power of test: <span class="mathjax-exps">$1 - P(\text{Type II error})$</span></p>
+<h4 id="nav4.3">4.3. Basel Rules </h4>
+<p>Backtesting is necessary to allow internal VaR(99%) models for capital management.<br/>
+up to 4 exceptions are acceptable (current version is 99% VaR for 250 trading days, 2.5 theoretically), there is progressively increasing multiplicative factor. (<span class="mathjax-exps">$k$</span> is for capital requirement)</p>
+<h5 id="when-to-apply-penalty">When to apply penalty </h5>
+<ol>
+<li>Basic integrity of the model: the penalty should apply.</li>
+<li>Model accuracy could be improved: the penalty should apply.</li>
+<li>intraday trading: the penalty should be considered.</li>
+<li>bad luck: no guidance, except it is expected to occur at least sometime.</li>
+</ol>
+<h3 id="nav5">5.  VaR Mapping </h3>
+<h4 id="nav5.1">5.1. Basis of VaR Mapping </h4>
+<p>the current values of the portfolio positions are replaced by exposures on the risk factors.<br/>
+Two kinds of mapping:</p>
+<ul>
+<li>exact allocation: like derivatives</li>
+<li>estimation: a stock is replaced by stock index by regression</li>
+</ul>
+<h4 id="nav5.2">5.2. Methods of VaR Mapping </h4>
+<h5 id="fixed-income-portfolio">Fixed Income portfolio </h5>
+<p>factor: zero-coupon bonds<br/>
+par value bond: intial price equal to par value</p>
+<h6 id="principal-mapping">Principal Mapping </h6>
+<p>one risk factor is chosen that corresponds to the average portfolio maturity.<br/>
+overstates the true risk, because it ignores intervening coupon payments (shorter maturity, smaller VaR ratio)</p>
+<h6 id="duration-mapping">Duration Mapping </h6>
+<p>one risk factor is chosen that corresponds to the average portfolio duration.</p>
+<h6 id="cash-flow-mapping">Cash-Flow Mapping </h6>
+<p>Undiversified VaR: sum of VaR of PV of all cash flows, assuming perfect correlation<br/>
+Diversified VaR: (if <span class="mathjax-exps">$\mu=0$</span>) <span class="mathjax-exps">$VaR_p=\sqrt{VaR_1^2+VaR_2^2+2\rho VaR_1VaR_2}$</span></p>
+<h6 id="benchmarking">Benchmarking </h6>
+<p>duration mapping<br/>
+tracking error VaR: VaR of the deviation between portfolio and benchmark</p>
+<h5 id="linear-derivative">Linear Derivative </h5>
+<h6 id="forward">Forward </h6>
+<p>long foreign currency forward = long foreign currency spot + long foreign bill + short U.S. bill<br/>
+when calculating dollar PV, use spot exchange rate</p>
+<h6 id="fra">FRA </h6>
+<h6 id="interest-rate-swap">Interest-Rate Swap </h6>
+<p>floating and fixed rate swap</p>
+<h5 id="nonlinear-derivative">Nonlinear Derivative </h5>
+<p>call = long asset - short bill (from BS formula)</p>
+<h3 id="nav6">6.  Correlation Basics: Definitions, Applications and Terminology </h3>
+<h4 id="nav6.1">6.1. Financial Correlation Risk </h4>
+<p>CDS: pay fixed CDS spread and obtain principal in case of default<br/>
+correlation risk occurs when long Spain bond and buy CDS from another bank, the worst case is they both default.</p>
+<h4 id="nav6.2">6.2. Correlation in Trading </h4>
+<ol>
+<li>value of multi-asset option is very sensitive to correlation</li>
+<li>quanto option: options that allow domestic investor to exchange his option payoff in a foreign currency back into home currency at a fixed exchange rate.<br/>
+the more positive the correlation, the lower the price for the quanto option call</li>
+<li>correlation swap</li>
+<li>another way of buying correlation is buy call on index and sell call on individual stocks</li>
+</ol>
+<h4 id="nav6.3">6.3. Correlation in Risk Management </h4>
+<ol>
+<li>Market Risk</li>
+<li>Credit Risk: default correlation within sectors higher than between sectors<br/>
+Investment grade bond default probability increases with maturity, bond in distress shows the opposite. If the company survives the problematic period, default rate will decrease.</li>
+<li>Systemic risk: systemic risk and correlation risk are highly correlated.</li>
+<li>Concentration risk</li>
+</ol>
+<h4 id="nav6.4">6.4. Correlation in the Financial Crisis </h4>
+<p>CDO: collateralized debt obligations<br/>
+equity tranches value increases as correlation increases, but default probability increases and finally decreases in value.<br/>
+correlations between the tranches increased.</p>
+<h3 id="nav7">7.  Empirical Properties of Correlation </h3>
+<h4 id="nav7.1">7.1. Correlation and Correlation Volatility </h4>
+<p>correlation among stocks is highest during recession.<br/>
+correlation volatility is highest in normal economic states<br/>
+positive relationship between correlation level and correlation volatility</p>
+<h4 id="nav7.2">7.2. Mean Reversion </h4>
+<p>mean reversion is presented if there is negative relationship between <span class="mathjax-exps">$S_t-S_{t-1}$</span> and <span class="mathjax-exps">$S_{t-1}$</span><br/>
+<span class="mathjax-exps">$S_t-S_{t-1}=a(\mu_S-S_{t-1})\Delta t+\sigma_S\varepsilon\sqrt{\Delta t}$</span>, where <span class="mathjax-exps">$0\leq a\leq 1$</span> is mean reversion rate.<br/>
+get <span class="mathjax-exps">$a$</span> through regression <span class="mathjax-exps">$S_t-S_{t-1}$</span> on <span class="mathjax-exps">$S_{t-1}$</span></p>
+<h4 id="nav7.3">7.3. Autocorrelation </h4>
+<p><span class="mathjax-exps">$AC(\rho_t,\rho_{t-1})=\frac{Cov(\rho_t,\rho_{t-1})}{\sigma_t,\sigma_{t-1}}$</span><br/>
+AR(1) model: <span class="mathjax-exps">$S_t=a\mu_S+(1-a)S_{t-1}$</span>, therefore <span class="mathjax-exps">$1-a = AC$</span> because of correlation is stationary</p>
+<p>autocorrelation is highest under 2-day lag</p>
+<h4 id="nav7.4">7.4. Best-fit Distributions for Correlations </h4>
+<p>Equity: Jonhnson special bounded distribution<br/>
+Bond: GEV and then normal<br/>
+default probability: Jonhnson special bounded distribution</p>
+<h3 id="nav8">8.  Financial Correlation Modeling </h3>
+<h4 id="nav8.1">8.1. Copula functions </h4>
+<p>A copula is a distribution function with standard uniform marginal distributions.<br/>
+Sklar theorem: given marginal distribution <span class="mathjax-exps">$F$</span> and <span class="mathjax-exps">$G$</span>, joint distribution <span class="mathjax-exps">$H$</span> and copula <span class="mathjax-exps">$C$</span> are one-to-one, <span class="mathjax-exps">$C(u,v)=H(F^{-1}(u),G^{-1}(v))$</span>.</p>
+<h5 id="gaussian-copula">Gaussian Copula </h5>
+<p><span class="mathjax-exps">$C_G(u_1,u_2)=M(F_1^{-1}(u_1),F_2^{-1}(u_2);\rho)$</span>, where <span class="mathjax-exps">$M$</span> is CDF of standard normal.</p>
+<h6 id="cdo-valuation">CDO Valuation </h6>
+<p>cumulative default probabilities <span class="mathjax-exps">$Q$</span> for entity <span class="mathjax-exps">$i$</span> at a fixed time <span class="mathjax-exps">$t$</span>.<br/>
+The Gaussian default time copula <span class="mathjax-exps">$C_{GD}=M(N^{-1}(Q_1(t)),N^{-1}(Q_2(t));\rho)$</span></p>
+<h3 id="nav9">9.  The Science of Term Structure Models </h3>
+<h4 id="nav9.1">9.1. Binomial Interest Rate Tree </h4>
+<p>adjust up probability and down probability such that the current value match the market price.</p>
+<h5 id="arbitrage-free-valuation-of-derivatives">Arbitrage-Free Valuation of Derivatives </h5>
+<p>The law of one price: same good same price</p>
+<h5 id="risk-neutral-pricing">Risk-Neutral Pricing </h5>
+<p>the difference between true probability and risk neutral probability is described in terms of drift in interest rates</p>
+<h4 id="nav9.2">9.2. Issues with Interest Rate Tree Model </h4>
+<h5 id="recombineing-tree-vs-non-recombining-tree">Recombineing Tree vs. Non-Recombining Tree </h5>
+<p>Non-recombining tree has 4 nodes at state 2, which supports state-dependent volatility.</p>
+<h5 id="option-adjusted-spread">Option-Adjusted Spread </h5>
+<p>the spread such that the market price of a security equals its model price when discounted values are computed at risk-neutral rates plus that spread.<br/>
+adding 10 basis points to the discount rates (between every state)</p>
+<h5 id="appropriateness-of-bsm-model">Appropriateness of BSM Model </h5>
+<p>BSM does not apply to bond options</p>
+<ol>
+<li>bond price is not random, it must converge to its face value at maturity, so does volatility.</li>
+<li>BSM assumes interest rate is constant</li>
+</ol>
+<h3 id="nav10">10.  The Evolution of Short Rates and the Shape of the Term Structure </h3>
+<h4 id="nav10.1">10.1. Expectations </h4>
+<p>determines level of interest rate</p>
+<h4 id="nav10.2">10.2. Volatility </h4>
+<p>determines downward-sloping shape of interest rate curve, resulting from the effect of convexity on the spot rate.<br/>
+<span class="mathjax-exps">$E[\frac{1}{1+r}]&gt;\frac{1}{E[1+r]}$</span>, yield is reduced by convexity.</p>
+<h4 id="nav10.3">10.3. Risk Premium </h4>
+<p>determines upward-sloping shape of interest rate curve.<br/>
+In short term, the risk premium effect dominates and the term structure is mildly upward-sloping.</p>
+<h3 id="nav11">11.  The Art of Term Structure Models: Drift </h3>
+<h4 id="nav11.1">11.1. No Drift </h4>
+<p><span class="mathjax-exps">$dr=\sigma dw=\sigma \varepsilon \sqrt{dt}$</span><br/>
+Interest Rate Tree: <span class="mathjax-exps">$u=r+\sigma\sqrt{dt}$</span>, <span class="mathjax-exps">$d=r-\sigma\sqrt{dt}$</span><br/>
+Limitations: flat interest rate term strucutre and flat volatility term structure</p>
+<h4 id="nav11.2">11.2. Constant Drift </h4>
+<p>risk neutral drift is combination of expectation and risk premium<br/>
+<span class="mathjax-exps">$dr=\lambda dt + \sigma dw=\lambda dt + \sigma \varepsilon \sqrt{dt}$</span><br/>
+assumes parallel shift of term structure curve if interest rate changes</p>
+<h4 id="nav11.3">11.3. Ho-Lee Model: Time-Dependent Drift </h4>
+<p><span class="mathjax-exps">$dr=\lambda_t dt + \sigma dw=\lambda_t dt + \sigma \varepsilon \sqrt{dt}$</span><br/>
+Ho-Lee model is arbitrage-free model, the <span class="mathjax-exps">$\lambda_t$</span> is used to match the market prices.<br/>
+Quote the prices of securities that are not actively traded based on the prices of more liquid securities.</p>
+<h5 id="issues">Issues </h5>
+<p>It assumes market prices are fair, but security prices may be distorted due to non interest rate factors.<br/>
+For the purpose of value securities relative to one another, equilibrium models should be used.</p>
+<h4 id="nav11.4">11.4. Vasicek Model: Mean-Reverting Drift </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma dw$</span></p>
+<h5 id="interest-rate-tree">Interest Rate Tree </h5>
+<p>The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability and interest rate with two equations (mean and std).</p>
+<h5 id="half-time">Half Time </h5>
+<p>Expectation of the rate after <span class="mathjax-exps">$T$</span> years: <span class="mathjax-exps">$r_0e^{-kT}+\theta(1-e^{-kT})$</span><br/>
+The time it takes the factor to progress half the distance toward its goal: <span class="mathjax-exps">$\tau=\frac{\ln 2}{k}$</span></p>
+<h5 id="effectiveness">Effectiveness </h5>
+<p>The standard deviation increases with horizon more slowly. The total variance will increase, but the annualized volatility will decrease.<br/>
+It supports nonparallel shift.</p>
+<h3 id="nav12">12.  The Art of Term Structure Models: Volatility and Distribution </h3>
+<h4 id="nav12.1">12.1. Time-Dependent Volatility </h4>
+<p><span class="mathjax-exps">$dr=\lambda(t)dt+\sigma(t)e^{-at}dw$</span>, where <span class="mathjax-exps">$a$</span> is decay rate.</p>
+<h5 id="compared-to-vasicek-model">Compared to Vasicek Model </h5>
+<p>total variance resembles the impact of mean reversion.<br/>
+It is parallel shift model while Vasicek implies nonparallel shift.<br/>
+To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek.</p>
+<h4 id="nav12.2">12.2. Cox-Ingersoll-Ross Model </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma\sqrt{r}dw$</span>, where <span class="mathjax-exps">$\sigma$</span> is yield volatility and <span class="mathjax-exps">$\sigma\sqrt{r}$</span> is annualized basis-point volatility.<br/>
+Interest rates are bounded by 0.</p>
+<h4 id="nav12.3">12.3. The Courtadon Model </h4>
+<p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma rdw$</span></p>
+<h4 id="nav12.4">12.4. Lognormal Model </h4>
+<p><span class="mathjax-exps">$dr=ardt+\sigma rdw$</span></p>
+<h4 id="nav12.5">12.5. Lognormal Model with Deterministic Drift </h4>
+<p><span class="mathjax-exps">$dr=a(t)rdt+\sigma rdw$</span></p>
+<h4 id="nav12.6">12.6. Lognormal Model with Mean Reversion: Black-Karasinski Model </h4>
+<p><span class="mathjax-exps">$dr=k(t)(\ln\widetilde{\theta}(t)-\ln r)+\sigma(t) rdw$</span></p>
+<h3 id="nav13">13.  Messages from the Academic Literature on Risk Management for the Trading Book </h3>
+<h4 id="nav13.1">13.1. Lessons on VaR Implementation </h4>
+<h5 id="time-horizon">Time Horizon </h5>
+<p>Market Risk Amendment sets horizon to be 10 days and allows to use square-root of time scaling of one-day VaR.<br/>
+Appropriate time horizons should be set for different products.<br/>
+Square-root will overestimate VaR if underlying exhibits GARCH(1,1) and underestimate VaR if the process has jumps.</p>
+<h5 id="time-varying-volatility">Time Varying Volatility </h5>
+<p>Volatility forecastability decays quickly with time horizon, so capturing time-varying volatility may not be as important when VaR horizon is long.</p>
+<h5 id="var-backtesting">VaR Backtesting </h5>
+<p>Actual backtesting: use historical data to estimate portfolio return, this is less informative when composition of the portfolio is changed.<br/>
+Hypothetical backtesting: use historical data to estimate mean and std of component, and then estimate the portfolio distribution.<br/>
+Banks backtest 1-day VaR, but 1-day VaR does not necessarily imply 10-day VaR.</p>
+<h5 id="integrating-liquidity-into-var-models">Integrating Liquidity into VaR Models </h5>
+<p>Exogenous liquidity: the transaction cost for trades of average size<br/>
+Endogenous liquidity: the volume of trade is large enough such that the bid ask spread cannot be taken as given, but is affected by the trades themselves.<br/>
+only exogenous liquidity risk is integrated into VaR: <span class="mathjax-exps">$\text{cost of liquidity}=\text{position value}\times\frac{\mu+q_{99\%}\sigma}{2}$</span><br/>
+to integrate endogenous liquidity, estimate average transaction price of optimal liquidation strategy</p>
+<h4 id="nav13.2">13.2. Risk Measurement for the Trading Book </h4>
+<p>coherent risk measure: subadditivity, positive homogeneity, monotonicity, transition property<br/>
+backtesting ES is more complicated</p>
+<h5 id="spectral-risk-measures">Spectral Risk Measures </h5>
+<p>Customized average of the whole distribution.<br/>
+Larger loss, larger weight.</p>
+<h5 id="risk-aggregation">Risk Aggregation </h5>
+<p>compartmentalized approach: the sum of risks measured separately (market, operations, credit), assume <span class="mathjax-exps">$\rho=1$</span><br/>
+unified approach: <span class="mathjax-exps">$\rho&lt;1$</span></p>
+<p>Top-down approach: portfolio divided to market, credit and operational, assume <span class="mathjax-exps">$\rho=1$</span><br/>
+bottom-up: risk factors, <span class="mathjax-exps">$\rho&lt;1$</span></p>
+<h4 id="nav13.3">13.3. Balance Sheet Management </h4>
+<p>leverage is procyclical</p>
+<h3 id="nav14">14.  Fundamental Review of the Trading Book </h3>
+<p>FRTB: a consultative document issued by Basel Committee</p>
+<h4 id="nav14.1">14.1. Background </h4>
+<p>trading book: market risk capital<br/>
+banking book: credit risk capital<br/>
+this has in the past given rise to regulatory arbitrage.</p>
+<h5 id="amendment">Amendment </h5>
+<p>Market risk in Basel I is 10-day 99%<br/>
+FRTB requires stressed 97.5% ES<br/>
+For normal distributions, the two values are similar.</p>
+<h4 id="nav14.2">14.2. Liquidity Horizions </h4>
+<p>Basel I: 10-day<br/>
+Basel II.5: 10, 20, 40, 60, 120</p>
+<h4 id="nav14.3">14.3. Market Risk Capital Charge </h4>
+<p>Basel III: standardized approach and internal model approach</p>
+<h5 id="standardized-approach">Standardized Approach </h5>
+<h6 id="risk-sensitivity-approach">Risk Sensitivity Approach </h6>
+<ol>
+<li>7 risks classes corresponding to trading desks: general interest rate, foreign exchange, commodity, equity, three categories of credit spread risk</li>
+<li>Within each risk class, delta risk charge, vega risk charge and curvature risk charge are calculated.</li>
+</ol>
+<h6 id="default-risk-charge">Default Risk Charge </h6>
+<ol>
+<li>credit spread risk is handled using risk sensitivity approach.</li>
+<li>default risk (jump-to-default) is handled by a separate default risk charge.<br/>
+exposure * LGD * default risk weight</li>
+</ol>
+<h6 id="residual-risk-add-on">Residual Risk Add-on </h6>
+<p>such as exotic options<br/>
+calculation: notional amount * risk weight</p>
+<h5 id="internal-models-approach">Internal Models Approach </h5>
+<p>Historical simulation approcah to estimate stressed ES with 97.5% confidence.</p>
+<h6 id="credit-risk">Credit Risk </h6>
+<ol>
+<li>credit spread risk: handled in a similar way to other market risk</li>
+<li>jump-to-default risk: in banking book based on 1-year 99.9% VaR.</li>
+</ol>
+<h6 id="backtesting">Backtesting </h6>
+<p>FRTB does not backtest stressed ES, it is not possible to backtest stressed measure.<br/>
+1-day 12 months of data<br/>
+99% and 97.5% are to be used, 12 exceptions for 99% or 30 exceptions for 97.5%.</p>
+<h4 id="nav14.4">14.4. Securitization </h4>
+<p>Under FRTB, the standardized approach must be used for securitizations.</p>
+<h3 id="nav15">15.  Empirical Approaches to Risk Metrics and Hedging </h3>
+<h4 id="nav15.1">15.1. DV01-Neutral Hedge </h4>
+<p>DV01: change of bond price in currency when its yield changes by 1 basis point.<br/>
+The changes in yields among components may not be one for one.</p>
+<h4 id="nav15.2">15.2. Single-Variable Regression-Based Hedging </h4>
+<p><span class="mathjax-exps">$\Delta r^{\text{portfolio}}=\alpha+\beta r^{\text{hedge instrument}}$</span><br/>
+Hedge coefficient: <span class="mathjax-exps">$\beta$</span></p>
+<h4 id="nav15.3">15.3. Two-Variable Regression-Based Hedging </h4>
+<h4 id="nav15.4">15.4. Level Regression vs. Change Regression </h4>
+<h4 id="nav15.5">15.5. Principal Components Analysis </h4>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Risk Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/期货法律法规与职业道德.html" rel="prev">< 期货法律法规与职业道德</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
