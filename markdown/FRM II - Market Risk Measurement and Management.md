@@ -1,4 +1,4 @@
-<ndtag category = "FRM II" editdate="2024-10-10" createdate="2024-10-10" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-10-21" createdate="2024-10-10" tag="Risk-Management"></ndtag>
 
 
 
@@ -411,31 +411,40 @@ Under FRTB, the standardized approach must be used for securitizations.
 DV01: change of bond price in currency when its yield changes by 1 basis point.
 The changes in yields among components may not be one for one.
 
-
 #### Single-Variable Regression-Based Hedging
-$\Delta r^{\text{portfolio}}=\alpha+\beta r^{\text{hedge instrument}}$
+$\Delta r^{\text{portfolio}}=\alpha+\beta \Delta r^{\text{hedge instrument}}$
 Hedge coefficient: $\beta$
 
 #### Two-Variable Regression-Based Hedging
 
-
 #### Level Regression vs. Change Regression
-
+regress with rate change to avoid unit root.
 
 #### Principal Components Analysis
+level PC, slope PC and curvature PC
 
 
+### <!-- C15 p205 --> Volatility Smiles
+#### Foreign Currency Options
+For foreign currency options, the implied distribution has heavier tails than lognormal.
+exchange rates frequently exhibit jumps
 
+#### Equity Options
+just skew, the implied distribution presents a heavier left tail and a thinner right tail.
+* leverage effect
+* volatility feedback effect: higher volatility, higher return, lower price
+* crashophobia
 
+#### Ways of Characterizing the Volatility Smile
+#### Volatility Term Structure
+As maturity of option grows, the shape of smile is less pronounced.
 
+#### Impact of Price Jump
+distribution of stock price is mixture of two lognormal distributions.
+volatility frown
 
-
-
-
-
-
-
-
+#### Minimum Variance Delta
+$\Delta_{MV}=\Delta_{BSM}+\mathcal{V}_{BSM}\frac{\partial \sigma}{\partial S}$
 
 
 

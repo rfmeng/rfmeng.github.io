@@ -29,7 +29,7 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p><ndtag category="FRM II" editdate="2024-10-10" createdate="2024-10-10" tag="Risk-Management"></ndtag></p>
+<p><ndtag category="FRM II" editdate="2024-10-21" createdate="2024-10-10" tag="Risk-Management"></ndtag></p>
 <h3 id="--c1-p13---estimating-market-risk-measures"><!-- C1 p13 --> Estimating Market Risk Measures </h3>
 <h4 id="data">Data </h4>
 <p>Geometric return data: <span class="mathjax-exps">$R_t=\ln \frac{P_t+D_t}{P_{t-1}}=\ln(1+r_t)$</span></p>
@@ -359,11 +359,32 @@ calculation: notional amount * risk weight</p>
 <p>DV01: change of bond price in currency when its yield changes by 1 basis point.<br>
 The changes in yields among components may not be one for one.</p>
 <h4 id="single-variable-regression-based-hedging">Single-Variable Regression-Based Hedging </h4>
-<p><span class="mathjax-exps">$\Delta r^{\text{portfolio}}=\alpha+\beta r^{\text{hedge instrument}}$</span><br>
+<p><span class="mathjax-exps">$\Delta r^{\text{portfolio}}=\alpha+\beta \Delta r^{\text{hedge instrument}}$</span><br>
 Hedge coefficient: <span class="mathjax-exps">$\beta$</span></p>
 <h4 id="two-variable-regression-based-hedging">Two-Variable Regression-Based Hedging </h4>
 <h4 id="level-regression-vs-change-regression">Level Regression vs. Change Regression </h4>
+<p>regress with rate change to avoid unit root.</p>
 <h4 id="principal-components-analysis">Principal Components Analysis </h4>
+<p>level PC, slope PC and curvature PC</p>
+<h3 id="--c15-p205---volatility-smiles"><!-- C15 p205 --> Volatility Smiles </h3>
+<h4 id="foreign-currency-options">Foreign Currency Options </h4>
+<p>For foreign currency options, the implied distribution has heavier tails than lognormal.<br>
+exchange rates frequently exhibit jumps</p>
+<h4 id="equity-options">Equity Options </h4>
+<p>just skew, the implied distribution presents a heavier left tail and a thinner right tail.</p>
+<ul>
+<li>leverage effect</li>
+<li>volatility feedback effect: higher volatility, higher return, lower price</li>
+<li>crashophobia</li>
+</ul>
+<h4 id="ways-of-characterizing-the-volatility-smile">Ways of Characterizing the Volatility Smile </h4>
+<h4 id="volatility-term-structure">Volatility Term Structure </h4>
+<p>As maturity of option grows, the shape of smile is less pronounced.</p>
+<h4 id="impact-of-price-jump">Impact of Price Jump </h4>
+<p>distribution of stock price is mixture of two lognormal distributions.<br>
+volatility frown</p>
+<h4 id="minimum-variance-delta">Minimum Variance Delta </h4>
+<p><span class="mathjax-exps">$\Delta_{MV}=\Delta_{BSM}+\mathcal{V}_{BSM}\frac{\partial \sigma}{\partial S}$</span></p>
 
       </div>
       
