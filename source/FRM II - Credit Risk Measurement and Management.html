@@ -1,0 +1,567 @@
+<!DOCTYPE html><html><head>
+      <title>FRM II - Credit Risk Measurement and Management</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="FRM II" editdate="2024-10-21" createdate="2024-10-21" tag="Risk-Management"></ndtag></p>
+<h3 id="--1-c1-p15---fundamentals-of-credit-risk"><!-- 1. C1 p15 --> Fundamentals of Credit Risk </h3>
+<h4 id="what-is-credit-risk">What is Credit Risk </h4>
+<p>Insolvency: asset less than liability</p>
+<h4 id="transactions-and-entities">Transactions and Entities </h4>
+<p>loaned money, lease obligation, receivables, prepayment for goods or services.<br>
+deposits, claim or contingent claim, derivative</p>
+<h5 id="entities-exposed-to-credit-risk">Entities Exposed to Credit Risk </h5>
+<h6 id="financial-institutions">Financial Institutions </h6>
+<p>Banks: extend credit<br>
+Asset managers: debt credit risk<br>
+Hedge Funds: funds view the probability of an entity defaulting as an opportunity to deploy capital.<br>
+Insurance Companies: underwriting activities (for loans), investment portfolio and reinsurance recoverables<br>
+Pension funds: credit risky assets</p>
+<h6 id="corporates">Corporates </h6>
+<p>account receivables<br>
+derivative trading activities<br>
+supply chain</p>
+<h6 id="individuals">Individuals </h6>
+<p>deposit, investment activity</p>
+<h3 id="--2-c2-p25---governance"><!-- 2. C2 p25 --> Governance </h3>
+<h4 id="the-three-lines-of-defense">The Three Lines of Defense </h4>
+<ol>
+<li>business owners: primarily own and manage risk</li>
+<li>risk management, compliance and legal: monitors and oversees risk</li>
+<li>internal audit, external auditors and special audit committees: independent assurance of the risk management</li>
+</ol>
+<h4 id="guidelines">Guidelines </h4>
+<p>also called credit policies or risk management standards<br>
+CRO<br>
+breach of guidelines: immediate termination of employment</p>
+<h4 id="skill">Skill </h4>
+<h5 id="delegation-of-authority">Delegation of Authority </h5>
+<p>Credit committees: highest level approval</p>
+<h6 id="risk-parameters">Risk Parameters </h6>
+<p>exposure, credit quality and tenor</p>
+<h4 id="limit">Limit </h4>
+<p>the maximum loss to withstand</p>
+<h4 id="oversight">Oversight </h4>
+<p>compensation should never be based on profitability of the business<br>
+CRO reports directly to CEO and has pribileged access to risk committee<br>
+near business operation departments</p>
+<h3 id="--3-c5-p57---introduction-to-credit-risk-modeling-and-assessment"><!-- 3. C5 p57 --> Introduction to Credit Risk Modeling and Assessment </h3>
+<h4 id="development">Development </h4>
+<p>regulatory: capital adequacy ratio<br>
+analytical: CAMEL (capital adequacy, asset quality, management, earnings and liquidity)</p>
+<h5 id="regulatory-framework">Regulatory Framework </h5>
+<p>Basel I: simplistic guidelines for credit risk<br>
+Basel II: credit risk, operational and market risk<br>
+Basel III: more strict capital requirement and liquidity</p>
+<h5 id="analytical-methods">Analytical Methods </h5>
+<p>CAMELS (sensitivity): 1-5 points, and 1 is best</p>
+<h4 id="credit-risk-assessment-approaches">Credit Risk Assessment Approaches </h4>
+<h5 id="quantitative-measurement">Quantitative Measurement </h5>
+<p>expected loss (EL): <span class="mathjax-exps">$EL=PD\times EAD\times LGD$</span></p>
+<ul>
+<li>probability of default：  usually set to be one year</li>
+<li>Exposure at default:</li>
+<li>Loss given default: recovery rate = 1 - LGD</li>
+</ul>
+<h5 id="types">Types </h5>
+<h6 id="judgmental-approaches">Judgmental Approaches </h6>
+<p>also called expert systems or qualitative approaches<br>
+5C Analysis: character (personality), capacity (ability to repay the loan), capital, collateral, conditions (business environment)</p>
+<h6 id="data-driven-empirical-models">Data-Driven Empirical Models </h6>
+<p>to find relationship between default and input varaibles</p>
+<h6 id="financial-models">Financial Models </h6>
+<p>structural model: default is endogenous process<br>
+reduced form models: default is exogenous random variable</p>
+<h3 id="--4-c6-p71-c9-p119---credit-rating"><!-- 4. C6 p71, C9 p119 --> Credit Rating </h3>
+<h4 id="external-ratings">External Ratings </h4>
+<h5 id="credit-scoring-system-to-credit-rating-system">Credit Scoring System to Credit Rating System </h5>
+<p>data-driven method<br>
+Credit Scoring: automated analytical numerical score<br>
+Credit rating: combination of analytical and judgemental assessments</p>
+<h6 id="external-models">External Models </h6>
+<p>rating agencies such as Moody's, S&amp;P and Fitch</p>
+<h6 id="through-the-cycle-vs-point-in-time">Through the Cycle vs. Point in Time </h6>
+<ul>
+<li>Through the Cycle: long-term orientation covering at least one business cycle<br>
+less frequency, most agencies use</li>
+<li>Point in Time: timely update for new information</li>
+</ul>
+<h5 id="development-process">Development Process </h5>
+<p>data → model fitting → validation → definition and validation of ratings → implementation, monitoring and review</p>
+<h5 id="credit-rating-agencies">Credit Rating Agencies </h5>
+<p>See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3">here</a>, mostly for long-term credit ratings.<br>
+D is for already defaulted.</p>
+<h6 id="criticism">Criticism </h6>
+<ol>
+<li>lack of transparency and accountability, conflict of interest</li>
+<li>promoting debt explosion</li>
+<li>poor predictive ability</li>
+<li>pro-cyclicality</li>
+</ol>
+<h4 id="internal-ratings">Internal Ratings </h4>
+<h5 id="altman-z-score-model">Altman Z-Score Model </h5>
+<p>linear discriminant analysis<br>
+<span class="mathjax-exps">$Z=1.21x_1+1.4x_2+3.30x_3+0.6x_4+0.999x_5$</span></p>
+<ul>
+<li><span class="mathjax-exps">$x_1$</span>: working capital / total assets</li>
+<li><span class="mathjax-exps">$x_2$</span>: retained earnings / total assets</li>
+<li><span class="mathjax-exps">$x_3$</span>: EBIT / total assets</li>
+<li><span class="mathjax-exps">$x_4$</span>: market value of equity / book value of liability</li>
+<li><span class="mathjax-exps">$x_5$</span>: sales / total assets</li>
+</ul>
+<p>higher than 3 is impossible to default, lower than 1.8 very possible.</p>
+<h4 id="probability-of-default">Probability of Default </h4>
+<h5 id="definitions-related-to-probability-of-default">Definitions Related to Probability of Default </h5>
+<p>Cumulative default probability: P(issuer default in three years)<br>
+Marginal default probability (unconditional/joint): P(issuer default in third year)<br>
+Conditional PD: P(default in third year | survive in the second year)<br>
+<span class="mathjax-exps">$(1-\bar{d})^3=(1-d_1)(1-d_2)(1-d_3)$</span>, where <span class="mathjax-exps">$d$</span> is conditional PD</p>
+<h6 id="survival-effect-and-mean-reversion-effect">Survival Effect and Mean-Reversion Effect </h6>
+<p>For investment-grade bonds, the marginal probability increases with time while speculative-grade bonds' decreases with time.</p>
+<h5 id="migration-matrix">Migration Matrix </h5>
+<p>NR is for not rated.</p>
+<h5 id="recovery-rate-and-default-rate">Recovery Rate and Default Rate </h5>
+<p>LGD = 1 - RR (Recovery rate)<br>
+recovery rate is negatively related to PD</p>
+<h3 id="--5-c9-p119-c12-p157---estimating-default-probabilities-from-credit-spreads"><!-- 5. C9 p119, C12 p157 --> Estimating Default Probabilities from Credit Spreads </h3>
+<h4 id="using-hazard-rate-to-estimate-default-probabilities">Using Hazard Rate to Estimate Default Probabilities </h4>
+<h5 id="default-intensity-model">Default Intensity Model </h5>
+<p>under exponential distribution, no default within <span class="mathjax-exps">$t$</span> is <span class="mathjax-exps">$P(X=0)=e^{-\bar{\lambda}t}$</span>.<br>
+<span class="mathjax-exps">$\lambda$</span> is conditional default probability at <span class="mathjax-exps">$dt$</span> and <span class="mathjax-exps">$\bar{\lambda}$</span> is</p>
+<h4 id="spread-and-hazard-rate">Spread and Hazard Rate </h4>
+<h5 id="using-spread-to-estimate-hazard-rate">Using Spread to Estimate Hazard Rate </h5>
+<p><span class="mathjax-exps">$\bar{\lambda}(T)(1-RR)=s(T)$</span>, expected loss = extra profit</p>
+<ul>
+<li><span class="mathjax-exps">$\bar{\lambda}(T)$</span>: hazard rate in <span class="mathjax-exps">$T$</span></li>
+<li><span class="mathjax-exps">$RR$</span>: recovery rate</li>
+<li><span class="mathjax-exps">$s(T)$</span>: credit spread in <span class="mathjax-exps">$T$</span></li>
+</ul>
+<h5 id="credit-spreads">Credit Spreads </h5>
+<h6 id="cds-spread">CDS Spread </h6>
+<p>pay CDS spread and receive principal insurance</p>
+<h6 id="bond-yield-spread">Bond Yield Spread </h6>
+<p>bond yield spread = YTM - risk free rate<br>
+Bond's liquity is not as good as CDS<br>
+risky bond + CDS = risk-free bond</p>
+<ul>
+<li>CDS-bond basis: CDS spread - bond yield spread<br>
+CDS-bond basis is positive during crisis<br>
+if the bond is cheaper than par, the basis tend to be positive (bond is sold and  CDS s bought)</li>
+</ul>
+<h6 id="asset-swap-spread">Asset Swap Spread </h6>
+<p>pays coupon on the bond, receives floating reference rate plus asset swap spread.<br>
+(?) coupon payer of the swap should pay the opponent the discounted price part: if bond price is 95 for 100 par value, 5 should be payed.</p>
+<h5 id="matching-bond-prices">Matching Bond Prices </h5>
+<p>match expected loss at different time point, recovery part does not need to be discounted at default.</p>
+<h4 id="comparison-of-default-probability-estimates">Comparison of Default Probability Estimates </h4>
+<h5 id="pd-from-historical-data-vs-from-credit-spread">PD from Historical Data vs. from Credit Spread </h5>
+<p>the PD from credit spread is higher, the difference between the two hazard rates tend to grow as credit quality declines<br>
+The nonsystematic risk of bond is difficult to diversify, the bond return is limited upside.</p>
+<h5 id="real-world-and-risk-neutral-default-probabilities">Real-World and Risk-Neutral Default Probabilities </h5>
+<h3 id="--6-c5-p57-c9-p119---estimating-default-probabilities-from-equity-prices"><!-- 6. C5 p57, C9 p119 --> Estimating Default Probabilities from Equity Prices </h3>
+<h4 id="merton-model">Merton Model </h4>
+<h5 id="assumption">Assumption </h5>
+<p>assume firm with simple debt structure, consisting of a zero-coupon bond matured at T.</p>
+<h5 id="credit-risk-as-option">Credit Risk as Option </h5>
+<p>payoff of equity value is <span class="mathjax-exps">$\max\{E_T-F,0\}$</span>, where <span class="mathjax-exps">$F$</span> is repayment required on debt.<br>
+For equity price, <span class="mathjax-exps">$E_0=V_0N(d_1)-Fe^{-rT}N(d_2)$</span>, <span class="mathjax-exps">$PD=1-N(d_2)$</span>.</p>
+<h5 id="distance-to-default">Distance to Default </h5>
+<p><span class="mathjax-exps">$d_2$</span> is called DtD or DD<br>
+asset = equity + debt<br>
+to solve unobserved <span class="mathjax-exps">$V_0$</span> and <span class="mathjax-exps">$\sigma_V$</span>, we could solve BSM and <span class="mathjax-exps">$N(d_1)V_0\sigma_V=E_0\sigma_E$</span></p>
+<h5 id="limitations-of-merton-model">Limitations of Merton Model </h5>
+<p>applicable only to liquid, publicly traded company<br>
+rely on static and simple capital structure</p>
+<h4 id="kmv-model">KMV Model </h4>
+<p>Real-world PD: <span class="mathjax-exps">$d_2=\frac{\ln V_0-\ln F+(\mu-\frac{1}{2}\sigma_V^2)T}{\sigma_V\sqrt{T}}$</span><br>
+Risk-neutral PD is higher than real-world PD</p>
+<h5 id="extension-of-merton-model">Extension of Merton Model </h5>
+<p>Moody's KMV Expected Default Frequency (EDF) model and Kamakura: transform risk-neutral PD to real-world PD, find the map between DtD and real-world PD.<br>
+The default threshold: function of short-term debt and long-term debt.</p>
+<p>If <span class="mathjax-exps">$\mu$</span> is given, use <span class="mathjax-exps">$\mu$</span>.</p>
+<h3 id="--7-c7-83---credit-scoring-and-retail-credit-risk-management"><!-- 7. C7 83 --> Credit Scoring and Retail Credit Risk Management </h3>
+<h4 id="retail-credit-risk">Retail Credit Risk </h4>
+<h5 id="basels-definition-of-retail-exposures">Basel's Definition of Retail Exposures </h5>
+<p>home mortgages: loan to value ratio<br>
+home equity loan (home equity line of credit, HELOC): hybrid between a consumer loan and a mortgage loan, secured by residential properties<br>
+installment loan: revolving loan, such as credit card<br>
+small business line</p>
+<h5 id="retail-credit-risk-vs-corporate-credit-risk">Retail Credit Risk vs. Corporate Credit Risk </h5>
+<ul>
+<li>retail credit risk: default by a single consumer is not expensive, expected loss could be built into price</li>
+<li>Corporate credit risk: concentrations of exposures</li>
+</ul>
+<h5 id="dark-side-of-retail-credit-risk">Dark Side of Retail Credit Risk </h5>
+<ol>
+<li>not all innovative retail credit products have enough historical data</li>
+<li>the security will change under different economic environment</li>
+<li>the tendency to default is complex product of social and legal system</li>
+<li>operational issue affects the credit assessment</li>
+</ol>
+<h5 id="from-default-risk-to-customer-value">From Default Risk to Customer value </h5>
+<p>risk based pricing</p>
+<h4 id="credit-scoring">Credit Scoring </h4>
+<h5 id="types-of-credit-score-model">Types of Credit Score Model </h5>
+<ul>
+<li>Credit Bureau Scores: known as FICO scores, developed by Fair Isaac Corporation</li>
+<li>Pooled models: similar strategy for customers with similar credit portfolio, tailored to industry</li>
+<li>Custom models:</li>
+</ul>
+<h5 id="key-variables-in-mortgage-credit-assessment">Key Variables in Mortgage Credit Assessment </h5>
+<p>debt-to-income ratio, FICO, loan-to-value ratio</p>
+<h4 id="from-cutoff-scores-to-default-rates-and-loss-rates">From Cutoff Scores to Default Rates and Loss Rates </h4>
+<h5 id="measuring-the-performance-of-scorecard">Measuring the Performance of Scorecard </h5>
+<p>cumulative accuracy profile (CAP), consider fraction of default found and ranked scores, <span class="mathjax-exps">$\text{accuracy ratio} = \frac{\text{area under perfect actual model }}{\text{area under perfect Models}}$</span></p>
+<p>diagonal line corresponds to a random model</p>
+<h3 id="--8-c8-97---country-risk"><!-- 8. C8 97 --> Country Risk </h3>
+<h4 id="source-of-country-risk">Source of Country Risk </h4>
+<h5 id="life-cycle">Life Cycle </h5>
+<p>developing country more risk, mature markets have more stable GDP growth.</p>
+<h5 id="economic-structure">Economic Structure </h5>
+<p>dependency on specific area of economics will cause the economy more unstable</p>
+<h5 id="political-risk">Political Risk </h5>
+<p>authoritarian governments create discontinuous risk, democratic governments create continuous risk<br>
+corruption<br>
+physical violence<br>
+nationalization or expropriation risk</p>
+<h5 id="legal-risk">Legal Risk </h5>
+<h5 id="composite-risk-measure">Composite Risk Measure </h5>
+<h4 id="sovereign-country-risk">Sovereign Country Risk </h4>
+<h5 id="sovereign-debt">Sovereign Debt </h5>
+<h6 id="foreign-currency-defaults">Foreign Currency Defaults </h6>
+<p>it is more likely to default on bank debt than official debt<br>
+Latin American accounts for a large part for soverign default<br>
+local currency defaults: the speedier restructure than break the international law<br>
+tradeoff between inflation and default</p>
+<h6 id="consequence-of-sovereign-default-risk">Consequence of Sovereign Default Risk </h6>
+<p>reputation, capital market, real output, political instability, trade retaliation</p>
+<h6 id="factors-determining-sovereign-default-risk">Factors Determining Sovereign Default Risk </h6>
+<ul>
+<li>debt to GDP</li>
+<li>pensions/social service commitment</li>
+<li>revenue (tax)</li>
+<li>political risk</li>
+<li>implicit guarantees: help from rich member countries</li>
+</ul>
+<h5 id="sovereign-credit-rating">Sovereign Credit Rating </h5>
+<p>the ratings are sticky<br>
+to private creditors and not to official creditors<br>
+the difference between foreign and local soverign rating results from the independence of monetary policy</p>
+<h5 id="soverign-default-spread">Soverign Default Spread </h5>
+<p>there has to be a default free security in the currency<br>
+little evidence that CDS spread is superior to market spread</p>
+<h3 id="--9-c4-47---credit-loss-distribution"><!-- 9. C4 47 --> Credit Loss Distribution </h3>
+<p><span class="mathjax-exps">$\text{Credit VaR}=WCL-EL$</span>, where WCL is worst case loss at the given confidence level and EL is expected loss</p>
+<h4 id="expected-loss-and-unexpected-loss">Expected Loss and Unexpected Loss </h4>
+<p><span class="mathjax-exps">$EL=PD\times EAD \times LGD$</span>, where LGD is also called loss rate (LR).</p>
+<h5 id="unexpected-loss">Unexpected Loss </h5>
+<p>! Unexpected is standard deviation of credit loss<br>
+<span class="mathjax-exps">$UL_i=EAD_i\times\sqrt{PD_i\times\sigma_{i,LGD}^2+LGD_i^2\times\sigma_{i,PD}^2}$</span><br>
+<span class="mathjax-exps">$\sigma_{PD}^2=PD\times(1-PD)$</span></p>
+<h5 id="portfolio-el-and-ul">Portfolio EL and UL </h5>
+<p><span class="mathjax-exps">$EL_p=\sum EL_i=\sum EAD_i\times PD_i\times LGD_i$</span><br>
+<span class="mathjax-exps">$UL_p\leq \sum UL_i$</span></p>
+<h6 id="unexpected-loss-contribution">Unexpected Loss Contribution </h6>
+<p><span class="mathjax-exps">$ULC_i=\frac{UL_i\sum_j UL_j\rho_{ij}}{UL_p}$</span></p>
+<p>For large <span class="mathjax-exps">$n$</span>, <span class="mathjax-exps">$ULC_i= UL_i\sqrt{\rho}$</span></p>
+<h4 id="credit-loss-distribution-and-capital">Credit Loss Distribution and Capital </h4>
+<h5 id="derive-economic-capital-for-credit-risk">Derive Economic Capital for Credit Risk </h5>
+<p>confidence level corresponds to bank's target credit rating<br>
+<span class="mathjax-exps">$EC_p=UL_p\times CM$</span>, where EC is economic capital, CM is capital multiplier</p>
+<h5 id="credit-loss-distribution">Credit Loss Distribution </h5>
+<p>highly skewed, upward limited<br>
+beta distribution is recommended</p>
+<h5 id="problems-with-the-quantification-of-credit-risk">Problems with the Quantification of Credit Risk </h5>
+<p>the credits are illiquid assets<br>
+ignoring multi-period nature of credits</p>
+<h3 id="--10-c10-135-c11-145-c12-157---default-correlation-and-credit-var"><!-- 10. C10 135, C11 145, C12 157 --> Default Correlation and Credit VaR </h3>
+<h4 id="default-correlation">Default Correlation </h4>
+<p>joint probability that both firms will default is <span class="mathjax-exps">$\pi_{12}$</span><br>
+<span class="mathjax-exps">$\rho=\frac{\pi_{12}-\pi_1\pi_2}{\sqrt{\pi_1(1-\pi_1)}\sqrt{\pi_2(1-\pi_2)}}$</span></p>
+<h5 id="drawbacks-of-default-correlation">Drawbacks of Default Correlation </h5>
+<p>joint default is relatively rare event<br>
+small correlations have large impact<br>
+computationally intensive</p>
+<h4 id="credit-var">Credit VaR </h4>
+<p>some consider only losses from defaults, others also consider downgrade or credit spread changes</p>
+<h5 id="credit-var-vs-market-var">Credit VaR vs. Market VaR </h5>
+<p>horizon for credit VaR is 1 year, and for market VaR 1 day</p>
+<h5 id="default-correlation-and-credit-var">Default Correlation and Credit VaR </h5>
+<h5 id="the-effect-of-granularity-on-credit-var">The Effect of Granularity on Credit VaR </h5>
+<p>Granular: cotains more independent credits, each of which is a smaller fraction of the portfolio<br>
+For a given default probability, credit VaR decreases as the credit portfilio becomes more granular. (?) The convergence is more drastic with a high default probability.</p>
+<ul>
+<li>(-) Higher PD, higher EL, higher VaR.<br>
+If portfolio contains a very large number of independent small positions, the credit VaR tends to be 0.</li>
+</ul>
+<h3 id="--11-c10-135-c11-145-c12-157---regulatory-capital"><!-- 11. C10 135, C11 145, C12 157 --> Regulatory Capital </h3>
+<h4 id="single-factor-model">Single Factor Model </h4>
+<h5 id="gaussian-copula-model-for-time-to-default">Gaussian Copula Model for Time to Default </h5>
+<p>define <span class="mathjax-exps">$t_1$</span> as the time to default of company 1.<br>
+<span class="mathjax-exps">$a_1=N^{-1}(Q_1(t_1))$</span>, where <span class="mathjax-exps">$Q_1$</span> is cdf of <span class="mathjax-exps">$t_1$</span>.</p>
+<h5 id="model-description">Model Description </h5>
+<p><span class="mathjax-exps">$a_i=\beta_i m +\sqrt{1-\beta_i^2}\varepsilon_i$</span>, where <span class="mathjax-exps">$m$</span> and <span class="mathjax-exps">$\varepsilon_i$</span> are independent standard normal.<br>
+The default behavior <span class="mathjax-exps">$X_i=a_i$</span> is divided into two parts, <span class="mathjax-exps">$\beta_i\in [-1,1]$</span> with market and the residual idiosyncratic risk.<br>
+<span class="mathjax-exps">$\rho_{i,j}=\beta_i\beta_j$</span>, which reduce the number of pairwise correlation from <span class="mathjax-exps">$C_n^2$</span> to <span class="mathjax-exps">$n$</span>.</p>
+<h5 id="unconditional-default-distribution">Unconditional Default Distribution </h5>
+<p>Assume <span class="mathjax-exps">$\beta_i=\beta$</span> for all <span class="mathjax-exps">$i$</span>, which implies PD is same for all companies.</p>
+<h5 id="conditional-default-distribution">Conditional Default Distribution </h5>
+<p>conditional on market situation <span class="mathjax-exps">$\bar{m}$</span>, default happens if <span class="mathjax-exps">$a_i$</span> lower than some threshold <span class="mathjax-exps">$K$</span>.<br>
+<span class="mathjax-exps">$a_i$</span> fllows <span class="mathjax-exps">$N(\beta\bar{m},1-\beta^2)$</span></p>
+<h4 id="vasicek-model">Vasicek Model </h4>
+<p>Basel II internal-ratings-based's (IRB) target: find a conditional PD on the 99.9% worst case market senerio.</p>
+<h5 id="worst-case-default-rate">Worst Case Default Rate </h5>
+<p><span class="mathjax-exps">$a_i=\sqrt{\rho} \bar{m} +\sqrt{1-\rho}\varepsilon_i$</span><br>
+default rate conditional on <span class="mathjax-exps">$\bar{m}$</span>: <span class="mathjax-exps">$N(\frac{N^{-1}(PD)-\sqrt{\rho}\bar{m}}{\sqrt{1-\rho}})$</span><br>
+99.9% percentile worst case PD <span class="mathjax-exps">$WCDR = N(\frac{N^{-1}(PD)-\sqrt{\rho}N^{-1}(0.001)}{\sqrt{1-\rho}})$</span><br>
+capital requriement/credit VaR: <span class="mathjax-exps">$(WCDR-PD)\times EAD \times LGD$</span><br>
+only one 99.9% confidence level participates in the standard, just for market factor <span class="mathjax-exps">$m$</span><br>
+<span class="mathjax-exps">$\rho$</span> is called correlation parameter.</p>
+<h5 id="regulatory-capital">Regulatory Capital </h5>
+<p>if maturity is longer than 1 year, credit quality decrease but not default might happen, this shoudld be multiplied by a maturity adjustment factor (MA).</p>
+<h6 id="basel-ii">Basel II </h6>
+<p><span class="mathjax-exps">$\rho$</span> is given</p>
+<h3 id="--12-c4-47-c5-57-c10-135-c12-157---economic-capital"><!-- 12. C4 47, C5 57, C10 135, C12 157 --> Economic Capital </h3>
+<h4 id="creditmetrics">Creditmetrics </h4>
+<h5 id="rating-transition-matrices">Rating Transition Matrices </h5>
+<p>based on historical data<br>
+ratings momentum: a company downgraded recently is more likely to be downgraded again.<br>
+0.5 year transition matrices is square root</p>
+<h5 id="credit-var-1">Credit VaR </h5>
+<h6 id="sampling-and-correlation-model">Sampling and Correlation Model </h6>
+<p>use correlation of equity return as correlation of transition probability.</p>
+<h5 id="credit-spread-risk">Credit Spread Risk </h5>
+<p>Historical simulation presents survivor bias: if company is alive today, it did not default in the past and no default in future.</p>
+<h6 id="constant-level-of-risk-assumptions">Constant Level of Risk Assumptions </h6>
+<p>reblance: sell the rating changed bond and buy a new BBB bond every month.</p>
+<h4 id="credit-risk-plus">Credit Risk Plus </h4>
+<p><span class="mathjax-exps">$n$</span> loans and <span class="mathjax-exps">$m$</span> will default, the defaults are independent to each other.<br>
+If <span class="mathjax-exps">$q$</span> is small and <span class="mathjax-exps">$n$</span> is large, the distribution converges to Poisson.<br>
+The convergence exists even if the PD are different, an average is converged.<br>
+Assume default number follows Gamma, the default number follows negative binomial.<br>
+If default number has 0 std, there is no default correlation.<br>
+As <span class="mathjax-exps">$\sigma$</span> increases, the probability <span class="mathjax-exps">$q_n$</span> has higher volatility, large number and small number of defaults are more likely to happen, thus higher correlation.</p>
+<h3 id="--13-c12-157-c14-183---derivatives"><!-- 13. C12 157, C14 183 --> Derivatives </h3>
+<h4 id="derivatives-market">Derivatives Market </h4>
+<p>small number of large counterparties</p>
+<h5 id="counterparty-credit-risk">Counterparty Credit Risk </h5>
+<h5 id="clearing">Clearing </h5>
+<p>otc derivatives could be centrally cleared</p>
+<h5 id="market-participants">Market Participants </h5>
+<ul>
+<li>large player: large global banks, called dealer.<br>
+need to be a member to participate in CCP clearing</li>
+<li>End user: corporate, sovereign, financial institutions<br>
+directional position and unwilling to commit to margining or posting collateral</li>
+</ul>
+<h5 id="collateralization">Collateralization </h5>
+<p>most products are OTC traded.</p>
+<ul>
+<li>centrally cleared: daily collateralization in cash</li>
+<li>collateralized: bilateral derivatives</li>
+<li>uncollateralized: one of the parties is end user</li>
+</ul>
+<h6 id="banks-and-end-users">Banks and End Users </h6>
+<p>end user hedge on a one-for-one (order) basis rather than macro basis.</p>
+<h5 id="isda">ISDA </h5>
+<p>The International Swaps and Derivatives Association</p>
+<h6 id="isda-master-agreement">ISDA Master Agreement </h6>
+<p>market standard, to remove legal uncertainties<br>
+all transactions referenced are combined into a single net obligation.<br>
+default events:</p>
+<ul>
+<li>credit support default</li>
+<li>misrepresentation</li>
+<li>bankruptcy</li>
+<li>merger without assumption (new party merge one party and does not follow obligation)</li>
+</ul>
+<p>loss for the party should be net value of derivative and collateral</p>
+<h4 id="ccp-and-modeling-derivatives-risk">CCP and Modeling Derivatives Risk </h4>
+<h5 id="historical-ways">Historical Ways </h5>
+<ul>
+<li>SPV (special purpose vehicle/entity, or SPE)</li>
+<li>derivatives product companies: generally AAA rated<br>
+DPC's fate interacts with parent company</li>
+<li>monolines and CDPCs: extension of DPC, mostly for credit derivative</li>
+</ul>
+<h5 id="central-clearing-of-otc-derivatives">Central Clearing of OTC Derivatives </h5>
+<p>initial margin is above the variation margin<br>
+default fund: from CCP's member to avoid systemic risk<br>
+CCP absorbs the domino effect (as a buffer for systemic risk)</p>
+<h5 id="derivatives-risk-modelling">Derivatives Risk Modelling </h5>
+<p>VaR, ES</p>
+<h3 id="--14-c15-207---counterparty-risk"><!-- 14. C15 207 --> Counterparty Risk </h3>
+<p>only one party takes lending risk while counterparty risk is typically bilateral</p>
+<h4 id="settlement-pre-settlement-and-margin-period-of-risk">Settlement, Pre-Settlement and Margin Period of Risk </h4>
+<p>settlement risk: due to timing difference<br>
+margin period of risk: blank time window between margin call and margin received, there is not enough margin<br>
+pre-settlement risk: so called counterparty risk</p>
+<h4 id="mitigations-of-counterparty-risk">Mitigations of Counterparty Risk </h4>
+<p>netting<br>
+collateral<br>
+hedging: CDS<br>
+other contractual clauses</p>
+<h3 id="--15-c16-221-c17-239---netting-close-out-and-related-aspects"><!-- 15. C16 221, C17 239 --> Netting Close-out and Related Aspects </h3>
+<h4 id="cashflow-netting">Cashflow Netting </h4>
+<p>payment netting: reduce time and cost associated with making payment<br>
+reduce operational risk, counterparty risk and liquidity risk</p>
+<h5 id="currency-netting-and-cls">Currency Netting and CLS </h5>
+<p>Non-deliverable forward (NDF) transaction: currency is cash-settled based on the NDF rate and the prevailing FX rate.</p>
+<h6 id="continuous-linked-settlement-cls">Continuous Linked Settlement (CLS) </h6>
+<p>payent versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.</p>
+<h5 id="multilater-netting">Multilater Netting </h5>
+<h6 id="clearing-rings">Clearing Rings </h6>
+<p>multilateral netting before the development of central clearing<br>
+Portfolio Compression: minimize gross notional of positions in the market</p>
+<h6 id="compression-algorithm">Compression Algorithm </h6>
+<p>participants can specify constraints<br>
+total notional could be choosed as minimized target, alternative choices could be squared notinal or total number of positions</p>
+<h4 id="value-netting">Value Netting </h4>
+<h5 id="close-out-netting">Close-out Netting </h5>
+<p>when a party defaults, close-out netting aims at a timely termination and settlement of the net value of all transactions</p>
+<ul>
+<li>close-out: the right to terminate transactions and cease any contractual payment</li>
+<li>netting: the right to offset value across transactions</li>
+</ul>
+<p>if the survivor party is owed money, it could initiate a bankruptcy claim, jumping to bankruptcy queue for net value</p>
+<h6 id="close-out-netting-and-isda">Close-out Netting and ISDA </h6>
+<p>close-out netting reduces counterparty risk (pre-settlement risk)<br>
+to determine a close-out amount, use value or data offered by third party</p>
+<h5 id="set-off">Set-off </h5>
+<p>netting across product categories (loan and interest rate swap cannot set-off under default)</p>
+<h5 id="impact-of-netting">Impact of Netting </h5>
+<ul>
+<li>(?) netted positions are inherently more volatile</li>
+<li>if credit exposures were driven by gross positions, trading with the troubled counterparty would have strong incentives to attempt to terminate</li>
+<li>netting redistributes value to OTC derivative creditors from other creditors</li>
+</ul>
+<h5 id="multilateral-netting-and-bifurcation">Multilateral Netting and Bifurcation </h5>
+<p>bifurcation: some products are clearable but others are not<br>
+partial central clearing (for only subset of trades) might not compress exposure as CCP</p>
+<h5 id="additional-termination-event">Additional Termination Event </h5>
+<p>credit quality deteriorating<br>
+tricker: rating downgrade, low market capitalization, low net value<br>
+clause: provide a replacement counterparty, provide more margin, offer third-party guarantee<br>
+potential danger:</p>
+<ul>
+<li>cliff-edge effect: single notch rating downgrade might cause a dramatic consequence</li>
+</ul>
+<h3 id="--16-c17-239---margin"><!-- 16. C17 239 --> Margin </h3>
+<h4 id="margin-terms">Margin Terms </h4>
+<h5 id="rationale-for-collateral">Rationale for Collateral </h5>
+<p>reduce counterparty risk<br>
+counterparty risk in theory can be completely neutralized under sufficient amount of margin.</p>
+<h5 id="variation-margin">Variation Margin </h5>
+<p>Margin period of risk (MPoR): effective delay in receiving margin</p>
+<h5 id="initial-margin">Initial Margin </h5>
+<p>called Independent amount in OTC market: extra margin that must be posted independently from the value of derivative<br>
+It reflects potential future exposure. (eg. 99% confidence over 10 days interval)</p>
+<h5 id="otc-derivatives-market">OTC Derivatives Market </h5>
+<p>For bilateral OTC derivatives, initial margin has been quite rare.<br>
+uncleared margin requirement (UMR): regulators have started to impose bilateral margin requirements, which aligning cost to CCP clearing.</p>
+<h5 id="credit-support-annex-csa">Credit Support Annex (CSA) </h5>
+<ul>
+<li>No CSA: end user</li>
+<li>Two-way CSA (mostly): two financial counterparties</li>
+<li>One-way CSA: one party receive collateral</li>
+</ul>
+<h5 id="margin-terms-1">Margin Terms </h5>
+<ul>
+<li>Threshold<br>
+amount below which margin is not required, leading to undercollateralization.<br>
+Threshold less than 0: post initial margin</li>
+<li>Minimum Transfer Amount<br>
+smallest amount of margin that can be transfered</li>
+<li>Rounding<br>
+post more and extract less</li>
+<li>Credit Support Amount: variation margin</li>
+</ul>
+<h5 id="margin-types-and-haiccuts">Margin Types and Haiccuts </h5>
+<p>haircuts: discount to the value of collateral to avoid security sold at a lower price</p>
+<h4 id="impact-of-margin">Impact of Margin </h4>
+<h5 id="valuation-agent">Valuation Agent </h5>
+<p>reconsiliation the dispute</p>
+<h5 id="impact-of-margin-on-exposure">Impact of Margin on Exposure </h5>
+<p>margin does not reduce risk, it merely redistributes it. Other creditors will be more exposed.</p>
+<h5 id="rehypothecation-and-segregation">Rehypothecation and Segregation </h5>
+<p>Rehypothecation: reuse of variation margin by the margin receiver, used as margin for another trade.This reduces the total amount of collateral in the market.<br>
+Segregation: for initial margin</p>
+<h5 id="potential-problems-of-margin">Potential Problems of Margin </h5>
+<ul>
+<li>Liquidity risk<br>
+the non-defaulting party faces transaction costs and market volatility under default</li>
+<li>legal risk<br>
+Rehypothecation and Segregation</li>
+<li>FX risk</li>
+<li>operational risk: non-standardized margin</li>
+<li>funding liquidity risk</li>
+</ul>
+<h3 id="--17-c18-269---central-clearing"><!-- 17. C18 269 --> Central Clearing </h3>
+<h3 id="--18-c19-287---future-value-and-exposure"><!-- 18. C19 287 --> Future Value and Exposure </h3>
+<h4 id="metrics-for-credit-exposure">Metrics for Credit Exposure </h4>
+<h5 id="credit-exposure">Credit Exposure </h5>
+<p><span class="mathjax-exps">$\text{Credit Exposure}=\max\{\text{value},0\}$</span><br>
+shorting options has 0 credit exposure</p>
+<ul>
+<li>Expected Future Value (EFV)</li>
+<li>Potential Future Exposure: equivalent measure to VaR</li>
+<li>Expected Positive Exposure (Expected Exposure): conditional mean on <span class="mathjax-exps">$E&gt;0$</span></li>
+<li>Expected Negative Exposure</li>
+<li>Average EPE (Loan Equivalent): average EPE across all time horizons</li>
+</ul>
+<h4 id="exposure-profile-of-various-securities">Exposure Profile of Various Securities </h4>
+<h5 id="bond-and-loans">Bond and Loans </h5>
+<p>exposure for loan may decline with time because of possibility of prepayment</p>
+<h5 id="forward">Forward </h5>
+<p>square root of time</p>
+<h5 id="interest-rate-swap">Interest Rate Swap </h5>
+<p>peaked shape because of payment</p>
+<h5 id="cross-currency-swap-exposure">Cross-Currency Swap Exposure </h5>
+<p>combination of IRS and FX forward: fixed rate in one currency and floating rate in anther currency<br>
+The contribution of FX forward is larger</p>
+<h5 id="swaption">Swaption </h5>
+<p>forward starting swap: forward<br>
+swaption: option on whether choose to enter a swap contract with strike<br>
+after strike date, EPE for swaption is smaller than forwad starting swap because it does not exercise on some paths.</p>
+<h5 id="credit-derivatives">Credit Derivatives </h5>
+<p>CDS's PFE: has a jump due to default</p>
+<h4 id="the-impacts-on-exposure">The Impacts on Exposure </h4>
+<h3 id="--19-c12-157-c15-207-c20-309----cva"><!-- 19. C12 157, C15 207, C20 309  --> CVA </h3>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
