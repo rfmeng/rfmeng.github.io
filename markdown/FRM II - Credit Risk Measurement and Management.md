@@ -622,24 +622,99 @@ after strike date, EPE for swaption is smaller than forwad starting swap because
 ##### Credit Derivatives
 CDS's PFE: has a jump due to default
 
-
-
-
-
-
-
-
 #### The Impacts on Exposure
+##### Impact of Aggregation on Exposure
+##### Impact of Margin
+when exposure is negative, the margin is also negative (post margin rather than call margin)
+collateralization is not a a perfect form of risk mitigation
 
+##### Funding, Rehypothecation and Segregation
+$\text{Funding}=\text{value}-\text{margin}$
+if funding is positive, it is funding cost
 
+###### Impact of Margin on Exposure and Funding
+$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R\}$, where $IM^R$ is intial margin received
+$\text{Funding}=\max\{\text{value}-VM+IM^P\}$, where $IM^R$ is intial margin payed
 
 
 ### <!-- 19. C12 157, C15 207, C20 309  --> CVA
+#### Credit Valuation Adjustment and xVA
+CVA is expected loss from a default by the counterparty, $\text{Risky Value}=\text{Risk-free Value}-CVA$
+motivation: volatility of credit spread, accounting and capital requirement
 
+##### Credit Limit vs. CVA
+a transaction with low profitability may be accepted because the existing limit credit is small
+CVA: the counterparty risk becomes whether it is profitable, it defines a minimum revenue that should be achieved
+Three levels to assessing the counterparty risk of transaction:
+* trade level: CVA
+* counterparty level: CVA (incorporating the impact of risk mitigants such as netting and margining)
+* portfolio level: creidt limits
 
+CVA encourages minimizing the number of counterparties, while credit limits encourage maximizing that number
 
+##### xVA
+economic costs of a derivative: funding, regulatory capital
+* counterparty risk: CVA/DVA
+* funding: FVA/MVA (initial margin)
+* collateral: ColVA
+* capital: KVA
 
+#### CVA and DVA
+##### Unilateral CVA (UCVA)
+$UCVA\approx -LGD\times\sum d(t_i)\times EPE(t_i)\times PD(t_{i-1},t_i)$
+* $d(t_i)$: discount factor
+* $ PD(t_{i-1},t_i)$: marginal default probability
+* assumes no wrong-way risk: PD and EPE does not affect each other
 
+CVA as a spread, $UCVA\approx -\text{average EPE}\times \text{spread}$
+
+##### Bilateral CVA (BCVA)
+debt valuation adjustment (DVA)
+$BCVA=CVA+DVA$
+$CVA=-LGD_C\times\sum d(t_i)\times EPE(t_i)\times PD_C(t_{i-1},t_i)(1-PD_P(0,t_{i-1}))$
+$DVA=-LGD_P\times\sum d(t_i)\times ENE(t_i)\times PD_P(t_{i-1},t_i)(1-PD_C(0,t_{i-1}))$
+GARP use survival probability at the end of the period $1-PD_P(0,t_{i})$
+$BCVA\approx -\text{average EPE}\times \text{spread}_C-\text{average ENE}\times \text{spread}_P$
+weaker party would pay stronger party based on the difference in credit quality
+
+##### Notice
+when talking about the size of CVA and DVA, it is absolute value
+
+#### CVA Allocation
+##### Netting CVA
+$CVA_{NS}\leq\sum CVA_i$, where $CVA_{NS}$ is the total CVA of all transactions under netting agreement, NS is for netting set
+The netting effect on CVA can be significant
+
+###### Incremental CVA
+$CVA^{NS-NS*}=CVA^{NS*}-CVA^{NS}$
+incremental EPE could be negative
+incremental CVA less than or equal to standalone CVA
+
+###### Marginal CVA
+breakdown CVA
+
+##### Impacts on CVA
+indefault CVA may be 0
+
+###### Spread Curve
+Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping. 
+Upward sloping shows largest CVA. (higher PD, larger EPE)
+
+###### Variation Margin
+MPoR/cure period: typicall 10 or 20 days.
+
+#### Wrong-Way Risk
+##### Definition of WWR and RWR
+WWR: the exposure is high when counterpart is more likely to default and vice versa.
+
+##### Examples of WWR and RWR
+* option: underlying is highly correlated to the counterparty is WWR
+  buying a put faces WWR
+* FX forward: potential weakening of the currency and deterioration in credit quality of the counterparty
+* interest rate swap: when economy is weak, interest rates would be likely to drop down
+  fixed receiver faces WWR
+* commodity swaps
+* CDS: exposure at default will increase if credit spread is widening
 
 
 

@@ -552,7 +552,87 @@ after strike date, EPE for swaption is smaller than forwad starting swap because
 <h5 id="credit-derivatives">Credit Derivatives </h5>
 <p>CDS's PFE: has a jump due to default</p>
 <h4 id="the-impacts-on-exposure">The Impacts on Exposure </h4>
+<h5 id="impact-of-aggregation-on-exposure">Impact of Aggregation on Exposure </h5>
+<h5 id="impact-of-margin-1">Impact of Margin </h5>
+<p>when exposure is negative, the margin is also negative (post margin rather than call margin)<br>
+collateralization is not a a perfect form of risk mitigation</p>
+<h5 id="funding-rehypothecation-and-segregation">Funding, Rehypothecation and Segregation </h5>
+<p><span class="mathjax-exps">$\text{Funding}=\text{value}-\text{margin}$</span><br>
+if funding is positive, it is funding cost</p>
+<h6 id="impact-of-margin-on-exposure-and-funding">Impact of Margin on Exposure and Funding </h6>
+<p><span class="mathjax-exps">$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R\}$</span>, where <span class="mathjax-exps">$IM^R$</span> is intial margin received<br>
+<span class="mathjax-exps">$\text{Funding}=\max\{\text{value}-VM+IM^P\}$</span>, where <span class="mathjax-exps">$IM^R$</span> is intial margin payed</p>
 <h3 id="--19-c12-157-c15-207-c20-309----cva"><!-- 19. C12 157, C15 207, C20 309  --> CVA </h3>
+<h4 id="credit-valuation-adjustment-and-xva">Credit Valuation Adjustment and xVA </h4>
+<p>CVA is expected loss from a default by the counterparty, <span class="mathjax-exps">$\text{Risky Value}=\text{Risk-free Value}-CVA$</span><br>
+motivation: volatility of credit spread, accounting and capital requirement</p>
+<h5 id="credit-limit-vs-cva">Credit Limit vs. CVA </h5>
+<p>a transaction with low profitability may be accepted because the existing limit credit is small<br>
+CVA: the counterparty risk becomes whether it is profitable, it defines a minimum revenue that should be achieved<br>
+Three levels to assessing the counterparty risk of transaction:</p>
+<ul>
+<li>trade level: CVA</li>
+<li>counterparty level: CVA (incorporating the impact of risk mitigants such as netting and margining)</li>
+<li>portfolio level: creidt limits</li>
+</ul>
+<p>CVA encourages minimizing the number of counterparties, while credit limits encourage maximizing that number</p>
+<h5 id="xva">xVA </h5>
+<p>economic costs of a derivative: funding, regulatory capital</p>
+<ul>
+<li>counterparty risk: CVA/DVA</li>
+<li>funding: FVA/MVA (initial margin)</li>
+<li>collateral: ColVA</li>
+<li>capital: KVA</li>
+</ul>
+<h4 id="cva-and-dva">CVA and DVA </h4>
+<h5 id="unilateral-cva-ucva">Unilateral CVA (UCVA) </h5>
+<p><span class="mathjax-exps">$UCVA\approx -LGD\times\sum d(t_i)\times EPE(t_i)\times PD(t_{i-1},t_i)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$d(t_i)$</span>: discount factor</li>
+<li><span class="mathjax-exps">$PD(t_{i-1},t_i)$</span>: marginal default probability</li>
+<li>assumes no wrong-way risk: PD and EPE does not affect each other</li>
+</ul>
+<p>CVA as a spread, <span class="mathjax-exps">$UCVA\approx -\text{average EPE}\times \text{spread}$</span></p>
+<h5 id="bilateral-cva-bcva">Bilateral CVA (BCVA) </h5>
+<p>debt valuation adjustment (DVA)<br>
+<span class="mathjax-exps">$BCVA=CVA+DVA$</span><br>
+<span class="mathjax-exps">$CVA=-LGD_C\times\sum d(t_i)\times EPE(t_i)\times PD_C(t_{i-1},t_i)(1-PD_P(0,t_{i-1}))$</span><br>
+<span class="mathjax-exps">$DVA=-LGD_P\times\sum d(t_i)\times ENE(t_i)\times PD_P(t_{i-1},t_i)(1-PD_C(0,t_{i-1}))$</span><br>
+GARP use survival probability at the end of the period <span class="mathjax-exps">$1-PD_P(0,t_{i})$</span><br>
+<span class="mathjax-exps">$BCVA\approx -\text{average EPE}\times \text{spread}_C-\text{average ENE}\times \text{spread}_P$</span><br>
+weaker party would pay stronger party based on the difference in credit quality</p>
+<h5 id="notice">Notice </h5>
+<p>when talking about the size of CVA and DVA, it is absolute value</p>
+<h4 id="cva-allocation">CVA Allocation </h4>
+<h5 id="netting-cva">Netting CVA </h5>
+<p><span class="mathjax-exps">$CVA_{NS}\leq\sum CVA_i$</span>, where <span class="mathjax-exps">$CVA_{NS}$</span> is the total CVA of all transactions under netting agreement, NS is for netting set<br>
+The netting effect on CVA can be significant</p>
+<h6 id="incremental-cva">Incremental CVA </h6>
+<p><span class="mathjax-exps">$CVA^{NS-NS*}=CVA^{NS*}-CVA^{NS}$</span><br>
+incremental EPE could be negative<br>
+incremental CVA less than or equal to standalone CVA</p>
+<h6 id="marginal-cva">Marginal CVA </h6>
+<p>breakdown CVA</p>
+<h5 id="impacts-on-cva">Impacts on CVA </h5>
+<p>indefault CVA may be 0</p>
+<h6 id="spread-curve">Spread Curve </h6>
+<p>Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping.<br>
+Upward sloping shows largest CVA. (higher PD, larger EPE)</p>
+<h6 id="variation-margin-1">Variation Margin </h6>
+<p>MPoR/cure period: typicall 10 or 20 days.</p>
+<h4 id="wrong-way-risk">Wrong-Way Risk </h4>
+<h5 id="definition-of-wwr-and-rwr">Definition of WWR and RWR </h5>
+<p>WWR: the exposure is high when counterpart is more likely to default and vice versa.</p>
+<h5 id="examples-of-wwr-and-rwr">Examples of WWR and RWR </h5>
+<ul>
+<li>option: underlying is highly correlated to the counterparty is WWR<br>
+buying a put faces WWR</li>
+<li>FX forward: potential weakening of the currency and deterioration in credit quality of the counterparty</li>
+<li>interest rate swap: when economy is weak, interest rates would be likely to drop down<br>
+fixed receiver faces WWR</li>
+<li>commodity swaps</li>
+<li>CDS: exposure at default will increase if credit spread is widening</li>
+</ul>
 
       </div>
       
