@@ -1,4 +1,4 @@
-<ndtag category = "FRM II" editdate="2024-10-21" createdate="2024-10-21" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-10-30" createdate="2024-10-21" tag="Risk-Management"></ndtag>
 
 
 ### <!-- 1. C1 p15 --> Fundamentals of Credit Risk
@@ -100,7 +100,7 @@ rating agencies such as Moody's, S&P and Fitch
 data → model fitting → validation → definition and validation of ratings → implementation, monitoring and review
 
 ##### Credit Rating Agencies
-See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3">here</a>, mostly for long-term credit ratings. 
+See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3" target="_blank">here</a>, mostly for long-term credit ratings. 
 D is for already defaulted.
 
 ###### Criticism
@@ -161,12 +161,13 @@ bond yield spread = YTM - risk free rate
 Bond's liquity is not as good as CDS
 risky bond + CDS = risk-free bond
 * CDS-bond basis: CDS spread - bond yield spread
-  CDS-bond basis is positive during crisis
-  if the bond is cheaper than par, the basis tend to be positive (bond is sold and  CDS s bought)
+  CDS-bond basis is very negative during crisis
+  if the bond is cheaper than par, the basis tend to be positive (bond is sold and  CDS is bought)
 
 ###### Asset Swap Spread
 pays coupon on the bond, receives floating reference rate plus asset swap spread.
-(?) coupon payer of the swap should pay the opponent the discounted price part: if bond price is 95 for 100 par value, 5 should be payed.
+(?) coupon payer of the swap should pay the opponent the discounted price part: if bond price is 95 for 100 par value, 5 should be paid.
+* (-) Suppose risk-free rate is 5% and coupon rate is 5%. If the bond is risk-free, price should be equal to bar. Coupon paid is 5% and swap spread is 0. If the bond has higher yield 10%, namely, has implicit credit risk. Then the trade 5% coupon for 5% risk-free rate plus 5% spread is unfair. Another 5% should be paid at the beginning.
 
 ##### Matching Bond Prices
 match expected loss at different time point, recovery part does not need to be discounted at default.
@@ -191,7 +192,7 @@ For equity price, $E_0=V_0N(d_1)-Fe^{-rT}N(d_2)$, $PD=1-N(d_2)$.
 ##### Distance to Default
 $d_2$ is called DtD or DD
 asset = equity + debt
-to solve unobserved $V_0$ and $\sigma_V$, we could solve BSM and $N(d_1)V_0\sigma_V=E_0\sigma_E$
+(?) To solve unobserved $V_0$ and $\sigma_V$, we could solve BSM and $N(d_1)V_0\sigma_V=E_0\sigma_E$. The equality holds because of $\sigma$ is volatility for return rate and $N(d_1)=\frac{\Delta E}{\Delta V}$.
 
 ##### Limitations of Merton Model
 applicable only to liquid, publicly traded company
@@ -231,7 +232,7 @@ risk based pricing
 ##### Types of Credit Score Model
 * Credit Bureau Scores: known as FICO scores, developed by Fair Isaac Corporation
 * Pooled models: similar strategy for customers with similar credit portfolio, tailored to industry
-* Custom models:
+* Custom models
 
 ##### Key Variables in Mortgage Credit Assessment
 debt-to-income ratio, FICO, loan-to-value ratio
@@ -239,8 +240,8 @@ debt-to-income ratio, FICO, loan-to-value ratio
 #### From Cutoff Scores to Default Rates and Loss Rates
 
 ##### Measuring the Performance of Scorecard
-cumulative accuracy profile (CAP), consider fraction of default found and ranked scores, $\text{accuracy ratio} = \frac{\text{area under perfect actual model }}{\text{area under perfect Models}}$
-
+cumulative accuracy profile (CAP), consider fraction of default found and ranked scores
+$\text{accuracy ratio} = \frac{\text{area under actual model }}{\text{area under perfect model}}$, where the area should deduct the random model triangle area.
 diagonal line corresponds to a random model
 
 
@@ -265,10 +266,9 @@ nationalization or expropriation risk
 #### Sovereign Country Risk
 ##### Sovereign Debt
 ###### Foreign Currency Defaults
-it is more likely to default on bank debt than official debt
-Latin American accounts for a large part for soverign default
-local currency defaults: the speedier restructure than break the international law
-tradeoff between inflation and default
+It is more likely to default on bank debt than official debt, from history. Latin American accounts for a large part for soverign default.
+Countries have shifted more towards local currency defaults, under domestic law, because of the speedier restructure than break the international law.
+Tradeoff between inflation (print more money to pay the debt) and default.
 ###### Consequence of Sovereign Default Risk
 reputation, capital market, real output, political instability, trade retaliation
 
@@ -489,7 +489,7 @@ Non-deliverable forward (NDF) transaction: currency is cash-settled based on the
 ###### Continuous Linked Settlement (CLS)
 payent versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.
 
-##### Multilater Netting
+##### Multilateral Netting
 ###### Clearing Rings
 multilateral netting before the development of central clearing
 Portfolio Compression: minimize gross notional of positions in the market
@@ -587,6 +587,50 @@ Segregation: for initial margin
 * funding liquidity risk
   
 ### <!-- 17. C18 269 --> Central Clearing
+#### Evolution and Mechanics
+##### Evolution of Complete Clearing
+client clearing: client should participate clearing through CCP member
+bilateral trades: CCP is not suitabe for all products
+multiple CCPs: regional and product
+
+##### Novation
+CCP steps in a transaction and acts as an insurer of counter party risk in both directions
+portfolio compression: cashflow netting and acceptance of another party to pay
+CCP compress risk
+
+#### CCP Risk Management
+##### Functions of CCP
+* multilateral offset: netting
+* loss absorbency
+* default management: allocating loss, auctioning the default trade
+
+##### CCP Membership Requirements
+creditworthiness, liquidity, operationality (ability to adhere to CCP rules)
+
+##### Margin and Default Funds
+variation margin on a daily basis and must be cash
+initial margin
+default funds: CCP members all contribute to and loss mutualization
+In general, initial margin is higher than default fund
+If initial margin is lower than default fund, client tends to take use of default funds (moral hazard). The remaining trade's portability (The other side does not default) is low.
+
+##### Default Scenarios and Margin Period of Risk
+macro-hedging
+auction
+fire drills: default exercise
+driving test: test new member
+
+##### The Loss Waterfall
+initial margin of defaulter → default fund of defaulter → (equity contribution from CCP) → default fund of non-defaulting member → rights of assessment / other loss allocation methods → remaining CCP capital → liquidity suport or CCP fails
+
+other methods:
+1. rights of assessment: additional default fund
+2. variation margin gains haircutting
+3. tear-up: break the matched book
+4. forced allocation 
+  
+##### Disadvantages of Central Clearing
+moral hazard, adverse selection, bifurcation, procyclicality (higher margin requirement during crisis)
 
 
 
@@ -598,7 +642,7 @@ shorting options has 0 credit exposure
 
 * Expected Future Value (EFV)
 * Potential Future Exposure: equivalent measure to VaR
-* Expected Positive Exposure (Expected Exposure): conditional mean on $E>0$
+* Expected Positive Exposure (Expected Exposure): $E(\max(0,\text{exposure}))$
 * Expected Negative Exposure
 * Average EPE (Loan Equivalent): average EPE across all time horizons
 
@@ -634,7 +678,7 @@ if funding is positive, it is funding cost
 
 ###### Impact of Margin on Exposure and Funding
 $\text{Positive Exposure}=\max\{\text{value}-VM-IM^R\}$, where $IM^R$ is intial margin received
-$\text{Funding}=\max\{\text{value}-VM+IM^P\}$, where $IM^R$ is intial margin payed
+$\text{Funding}=\max\{\text{value}-VM+IM^P\}$, where $IM^R$ is intial margin paid
 
 
 ### <!-- 19. C12 157, C15 207, C20 309  --> CVA
@@ -694,7 +738,7 @@ incremental CVA less than or equal to standalone CVA
 breakdown CVA
 
 ##### Impacts on CVA
-indefault CVA may be 0
+in default, CVA may be 0
 
 ###### Spread Curve
 Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping. 
@@ -715,6 +759,275 @@ WWR: the exposure is high when counterpart is more likely to default and vice ve
   fixed receiver faces WWR
 * commodity swaps
 * CDS: exposure at default will increase if credit spread is widening
+
+##### WWR Modelling
+hazzard rate approach: correlation between credit spread and EPE
+structural: bivariate distribution
+parametric approach: fit a given function
+jump approaches: default of large corporation will result in FX rate decrease
+
+##### Collateralization and WWR
+WWR may be also present in terms of the relationship between margin and exposure
+example: payer interest rate swap collateralized with a government bond
+
+##### CCP and WWR
+a large dealer reprensents more WWR than a smaller one, because a default from large dealer is more severe
+under pressure, CCP tends to accept a wide range of eligible securities for initial margin, the clearing members has the incentive to post the greatest risk collateral (adverse selection).
+
+
+### <!-- 20. C21 337  --> Stress Tresting
+#### Evolution of CCR Management
+The treatment of CCR as a market risk was developing, largely relegated to pricing in CVA
+The financial institution would replace the trade with another counterparty before the default.
+
+#### Stress Testing for Loan Portfolio
+$EL=\sum PD_i\times LGD_i \times EAD_i$
+$EL^S=\sum PD_i^S\times LGD_i \times EAD_i$, where $EL_S$ is expected loss under stress.
+$\text{stress loss}= EL_S-EL$
+PD is taken to be a function of other variables.
+
+#### Stress Testing for Derivative Portfolio
+$EL=\sum PD_i\times LGD_i \times \alpha \times \text{average EPE}_i$
+$EL^S=\sum PD_i^S\times LGD_i \times \alpha \times \text{average EPE}_i^S$
+
+#### Stress Testing for CVA
+$CVA = \sum LGD_n\times\sum d(t_i)\times EPE_n(t_i)\times PD_n(t_{i-1},t_i)$
+$CVA^S = \sum LGD_n\times\sum d(t_i)\times EPE_n^S(t_i)\times PD_n^S(t_{i-1},t_i)$
+
+#### Pitfalls in Stress Testing CCR
+hard to aggregate, because treatments for loan and derivate are different
+nonlinear
+
+
+### <!-- 21. C3 25  --> Credit Risk Management
+#### Policies and Actions
+##### Regulatory Policies to Limit Credit Risk
+1. large exposure and concentration limits
+   most countries impose single-customer exposure limit of 10-25 percent of capital
+2. related-party financing: parent, shareholders, subsidiaries etc.
+   total credit to related parties cannot exceed certain ratio to capital
+
+##### Traditional Classification Categories
+standard or pass, specially mentioned or watch, substandard, doubtful, loss
+nonperforming loans analysis
+
+#### Loan Loss Provisioning
+bank's capacity to absorb losses:
+1. provisions for possible loan losses
+2. general loss reserves (Tier 2 capital)
+
+##### IFRS 9 Implications
+unexpected loss: VaR concept
+Three stages:
+1. all performing
+   carry provisions calculated on 12-month expected loss
+   interest: based on gross book value 
+2. assets in arrears, or where a significant change in credit environment has occured
+   provisions: based on lifetime expected loss
+   interest: based on gross book value
+3. nonperforming assets
+   provisions: based on lifetime expected loss
+   interest: based on net book value
+
+##### Workout Procedure for Loss Assets
+1. retaining loss assets and make remedy
+2. writing off loss assets 
+
+###### Workout Strategies
+like AMC
+
+##### Credit Risk Management Capacity
+credit risk analysis
+board of directors must ensure benefit for the bank
+
+### <!-- 22. C9, C13, C14, C22 --> Credit Derivatives
+#### Credit Default Swap
+payment is the LGD part
+
+##### CDS Spread
+CDS spread times the notional amount directly
+$\text{PV of expected payments}+\text{PV of accrual payments}=\text{PV of expected payoff}$
+* expected payments: cumulative survival probability
+* accrual payments: unconditional PD
+* expected payoff: unconditional PD
+
+##### Making to Market a CDS
+
+##### CDS Indices
+track credit default swap spreads
+CDX: a portfolio of 125 investment grade companies in North America
+iTraxx: a portfolio of 125 investment grade companies in Europe
+
+##### The Use of Fixed Coupons
+standardization of CDS payment is CDS coupon: 1% for investment grade and 5% for speculative grade
+upfront premium: $(\text{CDS spread}-\text{CDS coupon})\times \text{duration}$, where duration is the total discounted PV part to be timed by CDS spread.
+CDS price: $\text{upfront premium}\times100+\text{CDS price}=100$
+buyer paid coupon for every survived company
+
+##### CDS Forward and Options
+If reference entity default before strike date, the contract expires.
+
+##### Basket Credit Default Swaps
+add-up basket CDS: provides payoff when any of the entity default
+first-to-default CDS: provides payoff only when the first default occurs
+kth-to-default: provides payoff only when the kth default occurs
+
+#### TRS and CDO
+##### Total Return Swap
+exchange total return or any portfolio for a floating rate plus a spread
+total return includes coupon and the gain or loss
+The payer of TRS paid total return and the receiver receives total return.
+The receiver undertakes credit risk of reference entity.
+###### Financing Tool
+It is equivalent to the payer loaned money to the receiver to buy the bond, but with much less counterparty risk.
+
+##### Collateralized Debt Obiligations
+CDO: an ABS where the underlying assets are bonds
+
+###### Synthetic CDO
+short CDS = long bond, with same maturity
+the spread is earned on the undefaulted portion of the principal
+single-tranche trading: an imaginary reference portfolio
+standard synthetic CDO tranches: 
+* 6 standard tranches of iTraxx cover losses in ranges 0-3%, 3-6%, 6-9%, 9-12%, 12-22%, 22-100%
+* $\alpha_L$ is attachment point and $\alpha_H$ is detachment point
+
+###### Valuation of a Synthetic CDO
+$sA+sB=C$
+* $A$: PV of expected payments
+* $B$: PV of accrual payments
+* $C$: PV of expected payoff
+
+###### Implied Correlation
+From structrued credit products to estimate a default correlation.
+compound (tranche) correlation: from a tranche $\{\alpha_{q-1},\alpha_{q}\}$
+base correlation: from expected loss from compound correlation for each tranche, then get base correlation from $\{\alpha_{0},\alpha_{q}\}$
+
+###### Alternative Approaches to Estimate Default Correlation
+from homogeneous model to heterogeneous model
+
+
+
+### <!-- 23. C9, C13, C22, C23 --> Structured Credit Products
+#### The Process of Securitization
+##### Key Participants
+* originator (sponsor, seller): often a bank
+  from "buy and hold" model toward "originated to distribute"
+* issuer (underwriter, arranger, SPV): 
+  warehousing risk of assets
+* rating agencyies: compensated by issuers
+* servicers: collects and disburses principal and interest
+* trustee and custodian
+
+##### SPV Structures
+amortizing structures: MBS, receives principal and interest periodically
+revolving structures: principal collections are used to purchase new receivables
+master trust: allow multiple securitizations to be issued from the same SPV
+
+##### Reasons for Undertaking Securitization
+For bank:
+* SPV will be higher rated and provide a lower cost of funding
+* gain cash flow to manage maturity mismatching
+* balance sheet capital management
+
+For investors: investing diversified loan pool, which they have no access to
+
+#### Asset Pools
+##### Classifications of Asset Pools
+collateral loan
+loan pool: even non-debt assets such as highway fee can be packaged into securitization
+###### By Type of Pools
+static pool: auto loan and residential mortgage
+revolving pool: credit card debt
+managed pool: CDOs
+
+##### Auto Loan
+prepayment speed is extremely stable
+performance measure: cumulative loss and prepayment speed
+
+##### Credit Card
+delinquency ratio: delinquents (overdue for more than 90 days) / outstanding pool balance
+default ratio: default / outstanding pool balance
+monthly payment rate: collections / outstanding pool balance
+outstanding balance is sum of current receivables and overdue receivables
+
+##### Commercial Mortgage
+debt service coverage ratio (DSCR) = net operating income / debt payments
+
+##### Mortgage
+
+#### Structured Products
+```mermaid
+graph LR
+A[ABS] --> B[MBS]
+    B --> RMBS[RMBS]
+    B --> CMBS[CMBS]
+    RMBS[RMBS] --> ARMBS[Agency RMBS]
+    RMBS[RMBS] --> NARMBS[Non-agency RMBS]
+    ARMBS[Agency RMBS] --> MPS[MPS]
+    ARMBS[Agency RMBS] --> CMO[CMO]
+    A --> C[Non-mortgage ABS]
+    C --> C1[Auto loan]
+    C --> C2[Credit card]
+    C --> C3[CDO]
+    
+```
+Agency RMBS rarely has credit risk.
+Mortgage pass-through securities (MPS): simply transfer interest and principal
+Collateralized mortgage obligations (CMO): sequential pay, when a class received all principal repayments, it will be retired.
+CMO has little credit risk, so the tranches are for prepayment risk.
+
+##### Tranching
+equity, mezzanine, senior have 5%, 10%, 85% respectively.
+issuer usually buy the equity tranche
+
+##### Credit Enhancement
+overcollateralization: selling a par amount smaller than the underlying
+excess spread (reserve) must be filled before equity tranche can receive money
+margin step-up: late redeem should be compensated for higher coupon
+
+##### Impact of PD and Default Correlation
+Assume constant low correlation,
+* equity presents positive convexity ($\frac{1}{x}$), and decreasing credit VaR
+* mezzanine presents negative convexity for low PD and positive convexity for high PD ($\cos(x)$), and mixed change VaR
+* senior presents negative convexity ($-x^2$), and increasing credit VaR
+
+Assume constant PD,
+* equity benefits from high correlation
+* mezzanine benefits from high correlation when PD is high
+* senior is hurt by high correlation
+* all tranches credit VaR increases with high correlation
+
+##### Default Sensitivities of the Tranches
+Default 01: the impact of increase in 1 basis point in default probability
+
+##### Risk Factors Impacting the Structured Products
+systemic risk
+tranche thinness
+
+#### Cash Flows in Securitizaion Structure
+##### Cash Waterfall
+senior and mazzenine tranches have coupon and are called bond notes
+
+##### Tracking Annual Cash Flows
+cash inflow: interest + recovery amount
+cash outflow: coupon
+###### Overcollateralization Account
+excess spread is diverted up to OC account anually, the extra part over maximum amount $K$ is distributed to equity tranche. Recovery portion is distributed to OC.
+OC account's balance should gain risk free rate $r$
+terminal available fund is for equity tranche
+
+Example: CDO, with 100 identical loans with par value 1 million each. The loans pays 3.5% over Libor (5%). The maturity is 5 years. Senior tranche coupon is 50 bps over Libor, Mezzanine tranche is 500 bps over LIBOR. PD is 10%
+| Yr | Def | Cum | Srv | Loan int | Exc spr | OC | Recov | OC+Recov | Eq flow | OC a/c |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | 10 | 10 | 90 | 7,650,000 | 1,975,000 | 1,750,000 | 4,000,000 | 5,750,000 | 225,000 | 5,750,000 |
+| 2 | 9 | 19 | 81 | 6,885,000 | 1,210,000 | 1,210,000 | 3,600,000 | 4,810,000 | - | 10,847,500 |
+| 3 | 8 | 27 | 73 | 6,205,000 | 530,000 | 530,000 | 3,200,000 | 3,730,000 | - | 15,119,875 |
+| 4 | 7 | 34 | 66 | 5,610,000 | -65,000 | -65,000 | 2,800,000 | 2,735,000 | - | 18,610,869 |
+| 5 | 7 | 41 | 59 | 64,015,000 |  |  | 2,800,000 | 2,800,000 | - | 19,541,412 |
+
+###### The Negative Excess Spread
+In the extrme cases, the inflow is not enough for outflow, the product pays all the inflow and ignores the insufficient portion.
 
 
 
