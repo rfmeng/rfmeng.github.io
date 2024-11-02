@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Operational Risk and Resilience - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Introduction to Operational Risk and Resilience </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Definition of Operational Risk by BCBS </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic of Operational Risk *** </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Operational Risk Management (ORM) Frameworks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Operational Resilience </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Risk Governance </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">BCBS Principles for the Sound ORM (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Supervisory Expectation on Governance of ORM </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Committee Structure in Risk Governance </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Role of BOD in Risk Governance </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Three Lines of Defense Model (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.6"><span class="nav-number">2.6.</span> <span class="nav-text">Risk Appetite </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.7"><span class="nav-number">2.7.</span> <span class="nav-text">Risk Culture </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Risk Identification </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Scope of Risk Indentification </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Scenario Analysis </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Operational Risk Taxonomy </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Risk Measurement and Assessment </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Incident Database </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Qualitative Risk Assessment </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Quantitative Risk Assessment (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">Operational Risk Modeling and Capital (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.5"><span class="nav-number">4.5.</span> <span class="nav-text">Quantificaion of Operational Resilience </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Risk Mitigation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Risk Response </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Internal Controls: Types and Testing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Risk Mitigation by Process Design </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">New Product Approval Process (NPAP) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.5"><span class="nav-number">5.5.</span> <span class="nav-text">Mitigation Measures to Reduce Impact </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.6"><span class="nav-number">5.6.</span> <span class="nav-text">Risk Transfer </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.7"><span class="nav-number">5.7.</span> <span class="nav-text">Management of Reputational Risk </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Risk Reporting </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Roles and Responsibilities of Committees </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Seven Elements of Internal ORM Report </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">External Risk Reporting </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Integrated Risk Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Enterprice Risk Management Framework </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Risk Capital </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text">Stress Testing (*) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Cyber-Resilience: Range of Practices </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Cyber Resilience Standards and Guidelines </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">Cyber Governance </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.3"><span class="nav-number">8.3.</span> <span class="nav-text">Approaches on Cyber-Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.4"><span class="nav-number">8.4.</span> <span class="nav-text">Communication and Sharing of Information (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.5"><span class="nav-number">8.5.</span> <span class="nav-text">Interconnections with Thrid Parties </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Case Study: Cyberthreats and Information Security Risks </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Information Security Risks (ISR) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">Cyber Risk Management: Frameworks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">Essential of Cybersecurity Protection and Monitoring </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.4"><span class="nav-number">9.4.</span> <span class="nav-text">Equifax Case Study </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> Sound Management of Risks Related to Money Laundering and Financing of Terrorism </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Best Practices </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Operational Risk and Resilience
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-10-31</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-10-31" editdate="2024-10-31" tag="Risk-Management"></ndtag></p>
+<h2 id="a-holistic-overview-of-operational-risk-and-resilience">A. Holistic Overview of Operational Risk and Resilience </h2>
+<h3 id="nav1">1.  Introduction to Operational Risk and Resilience </h3>
+<h4 id="nav1.1">1.1. Definition of Operational Risk by BCBS </h4>
+<p>Basel Committee On Banking Supervision (BCBS)</p>
+<p>Risk of loss resulting from inadequate or failed processes, people and systems or from external events (PPSE).<br/>
+The definition includes legal risk, but excludes strategic and reputational risk.<br/>
+Where approprite, strategic and reputational risk should be considered as operational risk.</p>
+<h5 id="categories-of-operational-risk-events-under-basel-ii">Categories of Operational Risk Events under Basel II </h5>
+<ul>
+<li>Internal fraud (IF)<br/>
+unauthorized activities, theft and fraud, embezzlement, misappropriation of assets, bribe</li>
+<li>External fraud (EF)<br/>
+theft and fraud (check kitting and forgery), systems security (hacker attack)</li>
+<li>Employment practices and workplace safety (EPWS)<br/>
+more prominent in America, there is more a cultrue of litigation against the employers
+<ul>
+<li>employee relations</li>
+<li>safe enviroment</li>
+<li>diversity and discrimination</li>
+</ul>
+</li>
+<li>Clients, products, and business practices (CPBP)<br/>
+disputes with clients, regulatory fines from improper business practices<br/>
+client misinformation, complaints an discounts due to errors, product misspecification</li>
+<li>Damage to physical assets (DPA)<br/>
+natural disaster and terrorism<br/>
+very few firms collect loss on this rick type, as these are usually too small or too large. Senario analysis and insurance</li>
+<li>Business disruption and system failures (BDSF)<br/>
+IT breakdown, outages (electricity)</li>
+<li>Execution, delivery, and process management (EDPM)<br/>
+failed transaction processing: processing errors, missing documentation, vendor disputes</li>
+</ul>
+<h5 id="frequency-and-severity-of-seven-events">Frequency and Severity of Seven Events </h5>
+<p>CPBP consititues more than half of loss from less than one quarter of frequency.<br/>
+EF, EPWS, CPBP, EDPM contributes most of risk events.<br/>
+CPBP and EDPM are to explain most of the loss.<br/>
+just direct financial losses, no reputational damage, market capitalization, the latter far exceeds the former.</p>
+<h4 id="nav1.2">1.2. Characteristic of Operational Risk *** </h4>
+<ul>
+<li>heterogenous: different</li>
+<li>idiosyncratic and diffuse: could not be totally hedged</li>
+<li>heavy tailed: large number of small loss and small number of large loss</li>
+<li>interconnected: share common internal cause (weak internal control etc.)</li>
+<li>dynamic: operational risk exposure evolve with business activities</li>
+</ul>
+<h4 id="nav1.3">1.3. Operational Risk Management (ORM) Frameworks </h4>
+<ul>
+<li>governance (assignment of rols and responsibilities)</li>
+<li>risk identification → risk appetite → risk assessment → risk mitigation → risk monitoring</li>
+<li>conduct and culture<br/>
+ORM cycle: risk identification → risk assessment → risk mitigation → risk monitoring<br/>
+risk appetite is determined by board of directors</li>
+</ul>
+<h4 id="nav1.4">1.4. Operational Resilience </h4>
+<p>ability to recover from operational disruptions</p>
+<h5 id="or-in-uk">OR in UK </h5>
+<p>the ability to prevent, adapt to, respond to, recover from, and learn from operational disruptions<br/>
+impact tolerance level:</p>
+<ul>
+<li>amount of disruption that could be tolerated</li>
+<li>must contain a time-based metric, similar to recovery time</li>
+</ul>
+<h5 id="or-in-usa">OR in USA </h5>
+<p>ORM is central component<br/>
+ORM has 2 specializations: third-party risk management, scenario analysis<br/>
+Operational resilience has 2 critical supporting pillar: business continuity management, IT systems resilience</p>
+<h3 id="nav2">2.  Risk Governance </h3>
+<h4 id="nav2.1">2.1. BCBS Principles for the Sound ORM (***) </h4>
+<ul>
+<li>culture led by board of directors and implemented by senior management</li>
+<li>ORM framewrk</li>
+<li>senior management responsibility
+<ul>
+<li>board review and approval of ORMF</li>
+<li>risk appetite and tolerance statement</li>
+<li>senior management role in ORM</li>
+</ul>
+</li>
+<li>risk mangement process
+<ul>
+<li>identification and assessment of operational risk</li>
+<li>management process</li>
+<li>monitoring</li>
+<li>control environment</li>
+</ul>
+</li>
+<li>robust information and communication technology (ICT) management program</li>
+<li>business continuity plan</li>
+<li>public disclosure</li>
+</ul>
+<h4 id="nav2.2">2.2. Supervisory Expectation on Governance of ORM </h4>
+<p>maintain a library of regulatory documents, operational risk staff should be asked to confirm their awareness</p>
+<h4 id="nav2.3">2.3. Committee Structure in Risk Governance </h4>
+<ol>
+<li>business lines operational risk committee: oversee business activity</li>
+<li>operational risk committee: oversee, monitor and report to higher level</li>
+<li>organization risk committee: oversee, monitor and report to higher level</li>
+<li>risk committee of the board: oversee all operational risk</li>
+</ol>
+<h4 id="nav2.4">2.4. Role of BOD in Risk Governance </h4>
+<p>ultimately responsible</p>
+<h4 id="nav2.5">2.5. Three Lines of Defense Model (***) </h4>
+<ul>
+<li>Line 1: business unit management</li>
+<li>Line 2: independent corporate operational risk management (法律合规部)</li>
+<li>Line 3: internal audit (稽核) report to non-executive directors</li>
+</ul>
+<p>The first line owns the final sign-off on risk assessment and controls. The first line owns the risk and the second line owns the methodology.</p>
+<h4 id="nav2.6">2.6. Risk Appetite </h4>
+<p>nature and extent of significant risks it is willing to take<br/>
+Board of directors delegates the responsibility to own the risk limit to risk committee.</p>
+<h5 id="risk-appetite-governance">Risk Appetite Governance </h5>
+<p>Risk owners are the first line of defense.<br/>
+Risk owners designate control owners and metric owners.</p>
+<h5 id="regulatory-expectations">Regulatory Expectations </h5>
+<h4 id="nav2.7">2.7. Risk Culture </h4>
+<ol>
+<li>codes of conduct and ethics: no-blame culture, tone from top</li>
+<li>compensation structure<br/>
+agrresive compensation strucutre (increase proportion of incentive compensation for traders and investment bankers) not recommended</li>
+<li>training to raise awareness of operatinal risks</li>
+</ol>
+<h5 id="signs-of-good-risk-culture">Signs of Good Risk Culture </h5>
+<p>includes swift escalation of issues</p>
+<h3 id="nav3">3.  Risk Identification </h3>
+<h4 id="nav3.1">3.1. Scope of Risk Indentification </h4>
+<p>reconciliation of top-down and bottom-up</p>
+<h5 id="top-down">Top-down </h5>
+<p>outcome: risk prioritization and risk ranking</p>
+<h6 id="tools">Tools </h6>
+<ul>
+<li>business-specific risk indentification: exposure and vulnerability</li>
+<li>risk wheel<br/>
+domino effect: salary cut down → personal effectivenss → systems disruption</li>
+<li>horizon scanning: for nascent emerging risk<br/>
+political, economic, social, technological, legal, environmental (PESTLE)</li>
+</ul>
+<h5 id="bottom-up">Bottom-up </h5>
+<h6 id="tools-1">Tools </h6>
+<ul>
+<li>Event and loss data analysis
+<ul>
+<li>internal losses</li>
+<li>external losses: consortium data</li>
+<li>near misses: incidents does not result in loss luckily</li>
+</ul>
+</li>
+<li>risk and control self-assessment (RCSA)<br/>
+facilitated by second line, collect information from first line<br/>
+from most experienced employees and recent hires<br/>
+typically annually, and after trigger event<br/>
+if too granular, the output will be small</li>
+<li>process mapping: what can go wrong in each step of a process<br/>
+too granular vs. too high-level</li>
+</ul>
+<h4 id="nav3.2">3.2. Scenario Analysis </h4>
+<p>brainstorming techniques for extreme events</p>
+<ul>
+<li>preparation phase: minimize subjective biase<br/>
+participants: senior managers from different business functions<br/>
+external experts</li>
+<li>generation phase</li>
+<li>intermediary phase: consolidate and eliminate<br/>
+some scenarios can be eliminated if maximum loss is moderate to be absorbed by operating margin</li>
+</ul>
+<h4 id="nav3.3">3.3. Operational Risk Taxonomy </h4>
+<h5 id="basel-taxonomy-">Basel Taxonomy (***) </h5>
+<ul>
+<li>level 1: 7 categories</li>
+<li>level 2: definition (detailed version of level 1)</li>
+<li>level 3: examples</li>
+</ul>
+<p>leve 1 and level 2 are regulatory categories</p>
+<h5 id="operatioanl-risk-data-exchange-orx">Operatioanl Risk Data Exchange (ORX) </h5>
+<p>revises Basel</p>
+<h5 id="structure-of-taxonomies">Structure of Taxonomies </h5>
+<p>cause and control are prime objects<br/>
+Eliminate the downside of a risk while preserving its upside makes sense. (find cause and control)</p>
+<h6 id="cause-taxonomy">Cause Taxonomy </h6>
+<p>PPSE</p>
+<h6 id="impact-taxonomy">Impact Taxonomy </h6>
+<p>direct financial impact, indirect financial impact, non-financial impact</p>
+<h6 id="control-taxonomy">Control Taxonomy </h6>
+<p>preventative, detective, corrective, directive</p>
+<h3 id="nav4">4.  Risk Measurement and Assessment </h3>
+<p>ORM framework: OR incident database → RCSA → KRI → Lessons learned</p>
+<h4 id="nav4.1">4.1. Incident Database </h4>
+<h5 id="comprehensiveness-of-data">Comprehensiveness of Data </h5>
+<p>Basel committee does not difine material exposuresm, but set minimum threshold for loss reporting<br/>
+"cherry-picking": biased selection</p>
+<p>regulatory perspective: report financial loss only<br/>
+management perspective: also record non-financial loss, which will result in financial loss</p>
+<p>grouped loss: OR events connected through a common cause</p>
+<h5 id="dates-of-incidents">Dates of Incidents </h5>
+<p>occurrence, discovery, reporting, accounting (when financial impact enters General Ledger, GL)<br/>
+risk-based approach: material incidents must be reported sooner, minor incidents can be included in periodic summary reporting</p>
+<h5 id="data-quality-requirement">Data Quality Requirement </h5>
+<p>reconsiling the loss data<br/>
+GL is no substitue for incident database because it only records direct financial loss</p>
+<h4 id="nav4.2">4.2. Qualitative Risk Assessment </h4>
+<h5 id="risk-and-control-self-assessment-rcsa">Risk and Control Self-Assessment (RCSA) </h5>
+<p>inherent risks, residual risks (risk remained after control)<br/>
+workshop-style discussions, questionaire</p>
+<ul>
+<li>Severity Assessment: Impact Scales<br/>
+financial, regulatory, customer, reputation</li>
+<li>Likelihood Assessment Scales<br/>
+likelihood or frequency1</li>
+<li>heatmap to link likelihood and severity</li>
+</ul>
+<h6 id="outcome-of-rcsa">Outcome of RCSA </h6>
+<p>results should be documented, submitted for approval and sign-off</p>
+<h6 id="challenge-of-rcsa">Challenge of RCSA </h6>
+<p>difficult to be comparable</p>
+<h5 id="kpis-kris-and-kcis-">KPIs, KRIs and KCIs (***) </h5>
+<h6 id="key-performance-indicators-kpis">Key Performance Indicators (KPIs) </h6>
+<p>error rates on retail transactions</p>
+<h6 id="key-risk-indicators-kris">Key Risk Indicators (KRIs) </h6>
+<p>examples of KRIs measuring likelihood:</p>
+<ul>
+<li>increase in number of trasactions per staff</li>
+<li>drop in customer satisfaction scores (client attrition)</li>
+<li>increase in level of sales required to achieve a performance objective (fraud)</li>
+</ul>
+<p>examples of KRIs measuring impact:</p>
+<ul>
+<li>increase in level of proprietary company knowledge held by a key employee</li>
+<li>increase in sensitivity of data held on a given server</li>
+<li>increase in value generated by top-10 clients</li>
+</ul>
+<h6 id="key-control-indicators-kcis">Key Control Indicators (KCIs) </h6>
+<ul>
+<li>missed due diligence items</li>
+<li>lack of segregation of duties</li>
+<li>overlooked errors in four-eye checks (reviews by two competent individuals)</li>
+</ul>
+<p>Three indicators overlap, the failure of a control function is jointly KPI, KRI, KCI.</p>
+<h4 id="nav4.3">4.3. Quantitative Risk Assessment (***) </h4>
+<h5 id="causal-analysis-of-scenarios">Causal Analysis of Scenarios </h5>
+<p>forward-looking</p>
+<h5 id="fault-tree-analysis-fta">Fault Tree Analysis (FTA) </h5>
+<p>decompose failure into a series of external conditions and internal conditions.<br/>
+calculate likelihood based on logic tree.</p>
+<h5 id="fair-methodology">FAIR Methodology </h5>
+<p>factor analysis of information risk</p>
+<h5 id="root-cause-analysis-and-bowtie-tool">Root-Cause Analysis and Bowtie Tool </h5>
+<p>5 why analysis, "why did this happen"<br/>
+cause → event → impact, it looks like a bowtie</p>
+<h5 id="swiss-cheese-control-layering">Swiss Cheese: Control Layering </h5>
+<p>cumulative act model, each defensive layer is like a slice of Swiss cheeses.<br/>
+The presence of one hole causes bad outcomes when holes in many layers momentarily line up.<br/>
+assessing independence of controls is at least important as assessing reliability of each individual control.</p>
+<h4 id="nav4.4">4.4. Operational Risk Modeling and Capital (***) </h4>
+<p>loss distribution approach (LDA): Advanced Measurement Approach (AMA)</p>
+<ul>
+<li>frequency: modeled with Poisson and negative binomial (probability of k failures before r sucesses)</li>
+<li>severity: lognormal, Weibull and Generalized Pareto (GPD, more heavy tailed)</li>
+</ul>
+<p>Severity and frequency are assumed to be independent, and convoluted into an aggregated loss distribution by Monte Carlo.<br/>
+mix internal and external data: scale, cut-off mix (threshold), filter<br/>
+losses in each risk classes are not iid.</p>
+<h4 id="nav4.5">4.5. Quantificaion of Operational Resilience </h4>
+<p>OR focuses on the continuity and recovery of important business service, while business continuity management focuses on each business.<br/>
+single points of failure (SPOF): back-up and redundancy for key employees with unique knowledge and skill.</p>
+<h3 id="nav5">5.  Risk Mitigation </h3>
+<p>External OR cannot be prevented, but they can be reduced.<br/>
+Internal OR are more preventable through internal control.</p>
+<h4 id="nav5.1">5.1. Risk Response </h4>
+<ul>
+<li>tolerate: accpet risk</li>
+<li>treat: risk migitation</li>
+<li>transfer: move to another party (insurance)</li>
+<li>terminate: cease operation</li>
+</ul>
+<h4 id="nav5.2">5.2. Internal Controls: Types and Testing </h4>
+<h5 id="internal-control-types-">Internal Control Types (***) </h5>
+<ul>
+<li>preventive controls: reduce likelihood of an incident
+<ul>
+<li>segregation of duties</li>
+<li>access controls</li>
+<li>levels of authorization</li>
+<li>process automation</li>
+</ul>
+</li>
+<li>detective controls:
+<ul>
+<li>exception report</li>
+<li>file reconciliation</li>
+<li>smoke detector</li>
+<li>intrusion detection system</li>
+</ul>
+</li>
+<li>corrective controls:
+<ul>
+<li>data back-ups</li>
+<li>IT systems patch management</li>
+<li>continuity planning</li>
+<li>systems redundancy</li>
+</ul>
+</li>
+<li>directive controls: rules and prescriptions
+<ul>
+<li>procedures and guidance manuals</li>
+<li>internal training</li>
+<li>team supervision</li>
+<li>work handover procedures</li>
+</ul>
+</li>
+</ul>
+<h5 id="control-design">Control Design </h5>
+<p>weakly designed control:</p>
+<ul>
+<li>optimistic: sign-off for large volume of documents before a deadline</li>
+<li>collective: "four-eyes check" diluting accountability</li>
+<li>more of the same: responding to a failure of collective controls by adding more controllers</li>
+</ul>
+<h5 id="control-testing-">Control Testing (***) </h5>
+<ul>
+<li>self-certification or inquiry<br/>
+limited to secondary controls related to low risk environments</li>
+<li>examination: supporting evidence and documentation<br/>
+moderate assurance and suited for automated controls and sampling of manual controls</li>
+<li>observation: oversight</li>
+<li>reperformance (穿行测试)<br/>
+strongest form of testing</li>
+</ul>
+<h4 id="nav5.3">5.3. Risk Mitigation by Process Design </h4>
+<p>prevention through design, examples are checklists, standardization, optimized environments or system design</p>
+<h5 id="typology-and-mitigation-of-human-error-">Typology and Mitigation of Human Error (***) </h5>
+<ul>
+<li>skilled-based: slip<br/>
+inattention, distraction, environment, tiredness<br/>
+controls: adjust pace, improve environment, re-engineer process</li>
+<li>rule-based: flawed rules<br/>
+flawed products, misleading instruction, wrong incentives</li>
+<li>knowledge-based:<br/>
+controls: training, documented procedures, help file, escalation rules</li>
+<li>violation: voluntary misdeed<br/>
+controls: supervisory control, improve culture which reward adherence to rules</li>
+</ul>
+<h5 id="lean-six-sigma">Lean Six Sigma </h5>
+<p>extremely low error rate<br/>
+DMAIC cycle: define, measure, analyse, improve, control</p>
+<h5 id="pdsa-cycle">PDSA Cycle </h5>
+<p>quality improvement: plan, do, study, act (what changes are to be made in next cycle)</p>
+<h4 id="nav5.4">5.4. New Product Approval Process (NPAP) </h4>
+<p>Its generation is New Initiative Risk Assessment Process (NIRAP).<br/>
+A proper business case would cover at a minimum five topics:</p>
+<ol>
+<li>objective</li>
+<li>alternative: reason for making this choise among alternatives</li>
+<li>expected benefits</li>
+<li>commercial aspects: cost, investment, funding</li>
+<li>risks</li>
+</ol>
+<p>Risk function during a project life:</p>
+<ul>
+<li>initial stage: mitigation and monitoring plans</li>
+<li>project life: update risk</li>
+<li>project closure: evaluation of project deliverables,</li>
+</ul>
+<h4 id="nav5.5">5.5. Mitigation Measures to Reduce Impact </h4>
+<h5 id="contingency-planing">Contingency Planing </h5>
+<p>emergency plan B, must have a key owner.<br/>
+Business Continuity Management (BCM)<br/>
+Disaster Recovery Plan (DRP)</p>
+<h5 id="crisis-management-and-communication">Crisis Management and Communication </h5>
+<p>3 essential qualities: speed, competence, transparency<br/>
+In crisis mode: firms should also have communication team, which deals with media, stakeholders, including employees.<br/>
+Four typical phases:</p>
+<ul>
+<li>crisis</li>
+<li>emergency response</li>
+<li>recovery: recovery point objective (RPO) and recovery time objective (RTO)</li>
+<li>restoration (back-to-normal)</li>
+</ul>
+<h4 id="nav5.6">5.6. Risk Transfer </h4>
+<h5 id="external-insurance">External Insurance </h5>
+<p>small losses: captive subsidiary or just absorb the volatility<br/>
+large losses: cyber risks, major class action lawsuits</p>
+<h5 id="outsourcing">Outsourcing </h5>
+<p>data center, cloud computing, IT server management</p>
+<ul>
+<li>For traditional banks: outsourcing ICT (information, computation, technology)</li>
+<li>For FinTech banks: outsourcing credit risk decisions</li>
+</ul>
+<p>Outsourcing can increase or decrease risk, called third-party risk.<br/>
+Outsourcing is a risk sharing activity.</p>
+<h4 id="nav5.7">5.7. Management of Reputational Risk </h4>
+<p>cannot be outsourced or compensated through insurance</p>
+<ul>
+<li>preventive: customer confidence</li>
+<li>detective: complaint on social media, tracking trend of refund</li>
+<li>corrective</li>
+</ul>
+<h3 id="nav6">6.  Risk Reporting </h3>
+<h4 id="nav6.1">6.1. Roles and Responsibilities of Committees </h4>
+<ul>
+<li>Risk Committee: authorized by board</li>
+<li>Executive Committee: board members and senior executives</li>
+<li>Audit Comittee: third defense line</li>
+<li>Operational Risk Committee: second defense line</li>
+</ul>
+<h5 id="considerations-of-operational-reporting">Considerations of Operational Reporting </h5>
+<p>Forward-looking reporting is more mature.</p>
+<h4 id="nav6.2">6.2. Seven Elements of Internal ORM Report </h4>
+<ul>
+<li>top-10 risks and risk outlook in risk inventory</li>
+<li>heatmap and risk register</li>
+<li>risk appetite metrics<br/>
+eg. VaR</li>
+<li>KRIs and issue monitoring<br/>
+granular and forward looking</li>
+<li>incidents and near misses<br/>
+potential impact</li>
+<li>action plans and follow-up<br/>
+zero objective: zero overdue actions and zero overdue audit recommendations</li>
+<li>emerging risks and horizon scan finding</li>
+</ul>
+<h5 id="characterisktics-and-challenges-of-operational-risk-data">Characterisktics and Challenges of Operational Risk Data </h5>
+<p>A proper allocation of risk management is to focus on large incidents and not to be dispersed by daily volatility.<br/>
+Wyas to overcome chanllenges:</p>
+<ul>
+<li>Benchmarking operational losses: report as percentage of gross income / total budget.</li>
+<li>Averages hide the heterogeneity. Better alternatives are median and the first and third quartiles of the distribution.</li>
+</ul>
+<h5 id="aggregating-qualitative-risk-data">Aggregating Qualitative Risk Data </h5>
+<p>solution:</p>
+<ul>
+<li>conversion and addition: convert into monetary unit</li>
+<li>categorization: group by color or score</li>
+<li>worst-case reporting: potentially over-alarming</li>
+</ul>
+<h4 id="nav6.3">6.3. External Risk Reporting </h4>
+<p>reporting to regulator: Pillar 3, Basel regulation<br/>
+reporting to market and investors<br/>
+reporting on operational resilience</p>
+<h5 id="to-regulators">To Regulators </h5>
+<p>Operation risk disclosure concludes:</p>
+<ul>
+<li>qualitative information</li>
+<li>historical losses, aggregate operational losses over past 10 years</li>
+<li>business indicator and subcomponents</li>
+</ul>
+<p>Absence of evidence is not evidence of absence: risk manager's verbal assertion as confirmation.<br/>
+Incident reporting: significant operational risk or breach of conduct</p>
+<h5 id="on-operational-resilience">On Operational Resilience </h5>
+<p>UK requirement<br/>
+Mapping and testing for each business service so that they can remain with in impact tolerance.</p>
+<h3 id="nav7">7.  Integrated Risk Management </h3>
+<h4 id="nav7.1">7.1. Enterprice Risk Management Framework </h4>
+<p>RMC (identification, assessment, mitigation, monitoring) and 4 elements:</p>
+<ul>
+<li>Risk governance</li>
+<li>risk appetite</li>
+<li>risk culture: key driver of ERM framework effectiveness</li>
+<li>risk capital and stress testing</li>
+</ul>
+<h4 id="nav7.2">7.2. Risk Capital </h4>
+<p>The objective of BCBS prudential regulation is threefold:</p>
+<ol>
+<li>To ensure the solvency and soundness of all financial intermediaries</li>
+<li>To provide customers protection from undue risks (failure, fraud, opportunistic behavior)</li>
+<li>To promote the efficient and competitive performance of financial instituions</li>
+</ol>
+<p>Objective 1 is primary objective, addressed through regulatory capital requirements<br/>
+Objective 2 and 3 are attained through senior management's competence</p>
+<p>In U.S., the focus shifted from capital estimation to stress testing.<br/>
+Capital is through-the-cycle concept, while stress testing is point-in-time.</p>
+<p>Economic Capital: linked to credit rating, influencing cost of funds.</p>
+<h5 id="risk-aggregation-for-capital-assessment-">Risk Aggregation for Capital Assessment (*) </h5>
+<p>intra-risk diversification: diversification within each risk class<br/>
+operational risk can bring important diversification benefits to capital, because it has low correlation to other financial risks.</p>
+<h4 id="nav7.3">7.3. Stress Testing (*) </h4>
+<h5 id="taxonomy">Taxonomy </h5>
+<ul>
+<li>dimension 1
+<ul>
+<li>quantitative: sensitivity model to parameter shocks</li>
+<li>qualitative: scenario analysis such as macro stress testing (multiple parameters), reverse stress testing</li>
+</ul>
+</li>
+<li>dimension 2
+<ul>
+<li>measurable: probabilistic</li>
+<li>immeasurable: possibilistic</li>
+</ul>
+</li>
+</ul>
+<p>Globally systemically important banks (G-SIBs) are provided a list of macro shock to assess the solvency level.</p>
+<h5 id="reverse-stress-testing">Reverse Stress Testing </h5>
+<p>Find how bad an adverse scenario would need to be to achieve a pre-defined outcome, analyze immeasurable risks.<br/>
+apt for assessing operational resilience</p>
+<h5 id="operational-risk-stress-testing-models">Operational Risk Stress Testing Models </h5>
+<p>severity can be more complex to model than frequency because of being highly impacted by tail events.</p>
+<h2 id="b-cyber-threats-and-information-security-risks">B. Cyber Threats and Information Security Risks </h2>
+<h3 id="nav8">8.  Cyber-Resilience: Range of Practices </h3>
+<h4 id="nav8.1">8.1. Cyber Resilience Standards and Guidelines </h4>
+<p>through IT and operational risk standards<br/>
+business continuity planning and outsourcing have relevance to cyber risk<br/>
+no international standard</p>
+<h4 id="nav8.2">8.2. Cyber Governance </h4>
+<ol>
+<li>Cyber-Security Strategy<br/>
+expected but not required<br/>
+sector-specific or across multiple industires</li>
+<li>Management Roles and Responsibilities</li>
+<li>Cyber risk awareness culture</li>
+<li>architecture and standard</li>
+<li>cyber security workforce</li>
+</ol>
+<h4 id="nav8.3">8.3. Approaches on Cyber-Risk Management </h4>
+<p>supervision of cyber-resilience<br/>
+information security controls<br/>
+incident response and recovery<br/>
+cybersecurity and resilience metrics</p>
+<h4 id="nav8.4">8.4. Communication and Sharing of Information (***) </h4>
+<ul>
+<li>sharing among banks:<br/>
+no common standard<br/>
+regulators not involved<br/>
+financial industry's culture</li>
+<li>sharing from banks to regulators<br/>
+mandatory<br/>
+informal flowback</li>
+<li>sharing among regulators<br/>
+least frequent<br/>
+mandatory or voluntory</li>
+<li>sharing from regulators to banks<br/>
+publicly available</li>
+<li>sharing with security agencies<br/>
+mandatory or voluntory</li>
+</ul>
+<h4 id="nav8.5">8.5. Interconnections with Thrid Parties </h4>
+<p>difficult gaining assurance of cyber-resilience<br/>
+Third parties is in a broad sense:</p>
+<ul>
+<li>outsourcing</li>
+<li>service and product not considered outsourcing (power, telecommunication)</li>
+<li>interconnected counterparties such as Financial Market Infrastructure (FMI)</li>
+</ul>
+<h5 id="analysis-areas">Analysis Areas </h5>
+<ul>
+<li>governance of third-party interconnections<br/>
+contractual framework</li>
+<li>business continuity and availability<br/>
+backup provider</li>
+<li>information confidentiality and integrity</li>
+<li>specific practices regarding visibility of third party interconnections<br/>
+regulators informed about the material outsourcing agreements</li>
+<li>audit and testing<br/>
+guarantee "rights to inspect and audit" providers<br/>
+compliance testing: red teaming exercises</li>
+<li>resources and skills</li>
+</ul>
+<p>intrusive on-site inspections and off-site supervison are widespread</p>
+<h3 id="nav9">9.  Case Study: Cyberthreats and Information Security Risks </h3>
+<h4 id="nav9.1">9.1. Information Security Risks (ISR) </h4>
+<p>taxonomy of IRS:</p>
+<ul>
+<li>internal causes versus external causes</li>
+<li>data theft versus data loss</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data Incidents</th>
+<th style="text-align:center">Theft or corruption</th>
+<th style="text-align:center">Loss or unvoluntary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">External or third parties</td>
+<td style="text-align:center">digital: hacking, virus infection, phishing <br/> physical: theft, social engineering</td>
+<td style="text-align:center">disaster, system disruption, third party failure</td>
+</tr>
+<tr>
+<td style="text-align:center">Internal</td>
+<td style="text-align:center">theft<br/>departing employees take proprietary information</td>
+<td style="text-align:center">digital: database loss, backup loss, device loss, error when sending documents <br/> physical: loss of documents, loss of archives, accidental mentions of confidential information when communicating</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav9.2">9.2. Cyber Risk Management: Frameworks </h4>
+<p>ISO standards do not provide implementable guidance, but act as evaluation grids for those who want to achieve certification</p>
+<h4 id="nav9.3">9.3. Essential of Cybersecurity Protection and Monitoring </h4>
+<p>Information security protection: confidentiality, integrity, availability (CIA)<br/>
+information control:</p>
+<ul>
+<li>behavioral<br/>
+training, awareness, rules of conduct, password, supervision, sanctions</li>
+<li>technical<br/>
+preventative, detective</li>
+</ul>
+<h4 id="nav9.4">9.4. Equifax Case Study </h4>
+<p>hackers access databases and extract consumers' personal information through dipute portal</p>
+<h5 id="lessons">Lessons </h5>
+<ul>
+<li>lack of comprehensive inventory of IT assets</li>
+<li>failure of risk management policy enforement and enfore the patch management policy</li>
+<li>inconsistent communication among employees on remediation</li>
+<li>expired SSL certificate</li>
+<li>poor external communication during crisis (after 6 months)</li>
+</ul>
+<h3 id="nav10">10.  Sound Management of Risks Related to Money Laundering and Financing of Terrorism </h3>
+<h4 id="nav10.1">10.1. Best Practices </h4>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Risk Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Market Risk Measurement and Management.html" rel="prev">< FRM II - Market Risk Measurement and Management</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
