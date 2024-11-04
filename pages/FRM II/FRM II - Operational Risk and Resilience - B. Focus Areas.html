@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Operational Risk and Resilience - B. Focus Areas - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Cyber-Resilience: Range of Practices </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Cyber Resilience Standards and Guidelines </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Cyber Governance </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Approaches on Cyber-Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Communication and Sharing of Information (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Interconnections with Thrid Parties </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Case Study: Cyberthreats and Information Security Risks </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Information Security Risks (ISR) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Cyber Risk Management: Frameworks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Essential of Cybersecurity Protection and Monitoring </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Equifax Case Study </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Sound Management of Risks Related to Money Laundering and Financing of Terrorism </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Best Practices (***) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Case Study: Financial Crime and Fraud </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Financial Fraud Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">AML Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Case Study: USAA </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Guidance on Managing Outsourcing Risk </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Risks from the Use of Service Providers </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Service Provider Risk Management Programs </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Case Study: Third-Party Risk Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Third-Party Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Case Study: Capital One Data Breach </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Case Study: OCC Fines Morgan Stanley </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Case Study: Investor Protection and Compliance Risks in Investment Activities </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Markets in Financial Instruments Directive (MIFID) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Dodd-Frank </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.3"><span class="nav-number">7.3.</span> <span class="nav-text">Fine Cases </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Supervisory Guidance on Model Risk Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">Model Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.3"><span class="nav-number">8.3.</span> <span class="nav-text">Model Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.4"><span class="nav-number">8.4.</span> <span class="nav-text">Challenges to Effective Validation Process </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Case Study: Model Risk and Model Validation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Model Risk Management Function </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">Case Study: Gaussian Copula and CDO Pricing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">Case Study: Barclays' Acquisition of Lehman Brothers and the Excel Spreadsheet Error </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.4"><span class="nav-number">9.4.</span> <span class="nav-text">Case Study: NASA Mars Orbiter </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> Risk Capital Attribution and Risk-Adjusted Performance Measurement </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Risk-Adjusted Return on Capital (RAROC) (***) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav11"><span class="nav-number">11.</span> <span class="nav-text"> Range of Practices and Issues in Economic Capital Frameworks </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.1"><span class="nav-number">11.1.</span> <span class="nav-text">Economical Capital Framework </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.2"><span class="nav-number">11.2.</span> <span class="nav-text">Benefits and Impacts of EC (***) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav12"><span class="nav-number">12.</span> <span class="nav-text"> Capital Planning at Large Bank Holding Companies </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.1"><span class="nav-number">12.1.</span> <span class="nav-text">Foundational Risk Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.2"><span class="nav-number">12.2.</span> <span class="nav-text">Loss-Estimation Methodologies (***) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.3"><span class="nav-number">12.3.</span> <span class="nav-text">Resource-Estimation Methodologies </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.4"><span class="nav-number">12.4.</span> <span class="nav-text">Capital Adequacy Impact assessment </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.5"><span class="nav-number">12.5.</span> <span class="nav-text">Capital Policy and Capital Planning </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.6"><span class="nav-number">12.6.</span> <span class="nav-text">Internal Controls </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.7"><span class="nav-number">12.7.</span> <span class="nav-text">Governance </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav13"><span class="nav-number">13.</span> <span class="nav-text"> Stress Testing Banks </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.1"><span class="nav-number">13.1.</span> <span class="nav-text">Historical Evolution </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.2"><span class="nav-number">13.2.</span> <span class="nav-text">Chanllenges </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Operational Risk and Resilience - B. Focus Areas
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-11-04</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-10-31" editdate="2024-11-04" tag="Risk-Management"></ndtag></p>
+<h2 id="ba-cyber-threats-and-information-security-risks">B.a. Cyber Threats and Information Security Risks </h2>
+<h3 id="nav1">1.  Cyber-Resilience: Range of Practices </h3>
+<h4 id="nav1.1">1.1. Cyber Resilience Standards and Guidelines </h4>
+<p>through IT and operational risk standards<br/>
+business continuity planning and outsourcing have relevance to cyber risk<br/>
+no international standard</p>
+<h4 id="nav1.2">1.2. Cyber Governance </h4>
+<ol>
+<li>Cyber-Security Strategy<br/>
+expected but not required<br/>
+sector-specific or across multiple industires</li>
+<li>Management Roles and Responsibilities</li>
+<li>Cyber risk awareness culture</li>
+<li>architecture and standard</li>
+<li>cyber security workforce</li>
+</ol>
+<h4 id="nav1.3">1.3. Approaches on Cyber-Risk Management </h4>
+<p>supervision of cyber-resilience<br/>
+information security controls<br/>
+incident response and recovery<br/>
+cybersecurity and resilience metrics</p>
+<h4 id="nav1.4">1.4. Communication and Sharing of Information (***) </h4>
+<ul>
+<li>sharing among banks:<br/>
+no common standard<br/>
+regulators not involved<br/>
+financial industry's culture</li>
+<li>sharing from banks to regulators<br/>
+mandatory<br/>
+informal flowback</li>
+<li>sharing among regulators<br/>
+least frequent<br/>
+mandatory or voluntory</li>
+<li>sharing from regulators to banks<br/>
+publicly available</li>
+<li>sharing with security agencies<br/>
+mandatory or voluntory</li>
+</ul>
+<h4 id="nav1.5">1.5. Interconnections with Thrid Parties </h4>
+<p>difficult gaining assurance of cyber-resilience<br/>
+Third parties is in a broad sense:</p>
+<ul>
+<li>outsourcing</li>
+<li>service and product not considered outsourcing (power, telecommunication)</li>
+<li>interconnected counterparties such as Financial Market Infrastructure (FMI)</li>
+</ul>
+<h5 id="analysis-areas">Analysis Areas </h5>
+<ul>
+<li>governance of third-party interconnections<br/>
+contractual framework</li>
+<li>business continuity and availability<br/>
+backup provider</li>
+<li>information confidentiality and integrity</li>
+<li>specific practices regarding visibility of third party interconnections<br/>
+regulators informed about the material outsourcing agreements</li>
+<li>audit and testing<br/>
+guarantee "rights to inspect and audit" providers<br/>
+compliance testing: red teaming exercises</li>
+<li>resources and skills</li>
+</ul>
+<p>intrusive on-site inspections and off-site supervison are widespread</p>
+<h3 id="nav2">2.  Case Study: Cyberthreats and Information Security Risks </h3>
+<h4 id="nav2.1">2.1. Information Security Risks (ISR) </h4>
+<p>taxonomy of IRS:</p>
+<ul>
+<li>internal causes versus external causes</li>
+<li>data theft versus data loss</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Data Incidents</th>
+<th style="text-align:center">Theft or corruption</th>
+<th style="text-align:center">Loss or unvoluntary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">External or third parties</td>
+<td style="text-align:center">digital: hacking, virus infection, phishing <br/> physical: theft, social engineering</td>
+<td style="text-align:center">disaster, system disruption, third party failure</td>
+</tr>
+<tr>
+<td style="text-align:center">Internal</td>
+<td style="text-align:center">theft<br/>departing employees take proprietary information</td>
+<td style="text-align:center">digital: database loss, backup loss, device loss, error when sending documents <br/> physical: loss of documents, loss of archives, accidental mentions of confidential information when communicating</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav2.2">2.2. Cyber Risk Management: Frameworks </h4>
+<p>ISO standards do not provide implementable guidance, but act as evaluation grids for those who want to achieve certification</p>
+<h4 id="nav2.3">2.3. Essential of Cybersecurity Protection and Monitoring </h4>
+<p>Information security protection: confidentiality, integrity, availability (CIA)<br/>
+information control:</p>
+<ul>
+<li>behavioral<br/>
+training, awareness, rules of conduct, password, supervision, sanctions</li>
+<li>technical<br/>
+preventative, detective</li>
+</ul>
+<h4 id="nav2.4">2.4. Equifax Case Study </h4>
+<p>hackers access databases and extract consumers' personal information through dipute portal</p>
+<h5 id="lessons">Lessons </h5>
+<ul>
+<li>lack of comprehensive inventory of IT assets</li>
+<li>failure of risk management policy enforement and enfore the patch management policy</li>
+<li>inconsistent communication among employees on remediation</li>
+<li>expired SSL certificate</li>
+<li>poor external communication during crisis (after 6 months)</li>
+</ul>
+<h2 id="bb-financial-crime-and-fraud">B.b. Financial Crime and Fraud </h2>
+<h3 id="nav3">3.  Sound Management of Risks Related to Money Laundering and Financing of Terrorism </h3>
+<h4 id="nav3.1">3.1. Best Practices (***) </h4>
+<p>Banks should not establish a threshold transaction value and reveiw all transactions above the threshold.<br/>
+Terrorist screening is not risk-sensitive and should be carried out irrespective of the risk profile.<br/>
+Bank should freeze fund without delay and without prior notice.</p>
+<p>Three defense lines, second line is s chief AML/CFT officer who should have direct reporting to board.</p>
+<p>Enhanced due diligence:</p>
+<ul>
+<li>annoymous account with large balance</li>
+<li>large size of cross-border transaction account</li>
+<li>foreign politically exposed person</li>
+</ul>
+<p>Bank should not open an anonymity account, while confidential numbered accounts are not annoymous.<br/>
+Even if a customer has opened a bank account at a reputable bank, he cannot be categorized as low risk.<br/>
+A bank should conduct its own due diligence even if the customer's name in anther bank is subject to the same CDD standard.<br/>
+An applicant refused by another bank should be considered higher-risk and apply enhanced due diligence.</p>
+<h5 id="technology">Technology </h5>
+<p>automated processes should be employed<br/>
+regulators encourage advanced analytics like machine learning<br/>
+The bank providing correspondent banking services tends to increase its ML/FT risk.</p>
+<h5 id="abroad-business">Abroad Business </h5>
+<p>appoint a chief AML/CFT officer for the whole group<br/>
+apply stricter standard of the home and host countries<br/>
+integrate information lf customer and his beneficial owner</p>
+<h3 id="nav4">4.  Case Study: Financial Crime and Fraud </h3>
+<h4 id="nav4.1">4.1. Financial Fraud Risk Management </h4>
+<h5 id="internal-fraud">Internal Fraud </h5>
+<ul>
+<li>selection: about recuitment</li>
+<li>prevention: seggregation of duties, authorizations</li>
+<li>detection: reconciliations, whistleblowing</li>
+<li>deterrents: forensic analysis</li>
+</ul>
+<h4 id="nav4.2">4.2. AML Risk Management </h4>
+<ul>
+<li>selection: know your client (KYC)</li>
+<li>prevention:</li>
+<li>detection:</li>
+<li>deterrents: escalation to financial intelligence unit (FIU), closure of accounts</li>
+</ul>
+<h5 id="money-laundering">Money Laundering </h5>
+<ul>
+<li>placement: money enters bank</li>
+<li>layering</li>
+<li>intergation or extraction</li>
+</ul>
+<h4 id="nav4.3">4.3. Case Study: USAA </h4>
+<p>AML mangement failure: deliberately late submit of suspicious activity report<br/>
+AML remediation (lookback)<br/>
+COVID-19 makes it more difficult to identify anomalies</p>
+<h2 id="bc-third-party-risk-management">B.c. Third-Party Risk Management </h2>
+<h3 id="nav5">5.  Guidance on Managing Outsourcing Risk </h3>
+<p>vendor/contractor</p>
+<h4 id="nav5.1">5.1. Risks from the Use of Service Providers </h4>
+<ul>
+<li>compliance: service provider violates regulations</li>
+<li>concentration: limited service providers</li>
+<li>reputational</li>
+<li>country: foreign service provider</li>
+<li>operational:</li>
+<li>legal</li>
+</ul>
+<h4 id="nav5.2">5.2. Service Provider Risk Management Programs </h4>
+<h5 id="due-diligence">Due Diligence </h5>
+<p>prior to engaging the vendor<br/>
+business background, financial performance, operations and internal control</p>
+<h5 id="contract-provision-">Contract Provision (**) </h5>
+<ul>
+<li>scope: rights and responsibilities</li>
+<li>cost and compensation</li>
+<li>right to audit: optionally included</li>
+<li>performance standards</li>
+<li>information confidentiality and security</li>
+<li>ownership and license</li>
+<li>indemnification: claim from the service provider's negligence</li>
+<li>default and termination</li>
+<li>dispute resolution</li>
+<li>limits on liability: for service providers</li>
+<li>insurance: service provider buy insurance</li>
+<li>customer complaint: specify responsibility of both parties</li>
+<li>business resumption and contingency plan of the service provider: developed by the service provider</li>
+<li>foreign-based service providers: different standards for local and foreign vendor</li>
+<li>subcontracting: same contractual provisions should apply to subcontractor<br/>
+service providers have overall accountability for all services</li>
+</ul>
+<h3 id="nav6">6.  Case Study: Third-Party Risk Management </h3>
+<h4 id="nav6.1">6.1. Third-Party Risk </h4>
+<p>cost-saving, competitive advantage</p>
+<h5 id="third-party-risk-management-framework">Third-Party Risk Management Framework </h5>
+<ul>
+<li>business model decision</li>
+<li>evaluation, risk rating</li>
+<li>requests for proposal (RFP) and contracts</li>
+<li>monitoring</li>
+<li>remediation or termination</li>
+</ul>
+<h4 id="nav6.2">6.2. Case Study: Capital One Data Breach </h4>
+<p>AWS's employee steal SSN and bank account numbers<br/>
+Lessons: security hygiene</p>
+<h4 id="nav6.3">6.3. Case Study: OCC Fines Morgan Stanley </h4>
+<p>MS decommission 2 wealth management business data servers. MS did not exercise due diligence.</p>
+<h2 id="bd-investor-protection-and-compliance-risks-in-investment-activities">B.d. Investor Protection and Compliance Risks in Investment Activities </h2>
+<h3 id="nav7">7.  Case Study: Investor Protection and Compliance Risks in Investment Activities </h3>
+<h4 id="nav7.1">7.1. Markets in Financial Instruments Directive (MIFID) </h4>
+<p>MIFID: trade transparency obligation to prevent market abuse<br/>
+MIFID II: data on trading activity</p>
+<h4 id="nav7.2">7.2. Dodd-Frank </h4>
+<ul>
+<li>whistleblowers are granted protections</li>
+<li>CCP</li>
+<li>financial stability</li>
+<li>Volcker Rule: prevent commercial banks from engaging in speculative and proprietary trading</li>
+</ul>
+<h4 id="nav7.3">7.3. Fine Cases </h4>
+<p>UBS misrepresneted auction rate securites to investors as safe, cash equivalent products, which is liquidity risk. Refine 10 billion.<br/>
+JP Morgan spoofing in precious metals<br/>
+Deutsche bank routing customer order through smart order router, which creates delays of execution and causes lower fill rate.</p>
+<h5 id="lessons-1">Lessons </h5>
+<p>fines should be more than benefits accumulated</p>
+<h2 id="be-model-risk-and-model-validation">B.e. Model Risk and Model Validation </h2>
+<h3 id="nav8">8.  Supervisory Guidance on Model Risk Management </h3>
+<h4 id="nav8.1">8.1. Model </h4>
+<h4 id="nav8.2">8.2. Model Risk </h4>
+<ul>
+<li>incorrect model</li>
+<li>misused</li>
+</ul>
+<h4 id="nav8.3">8.3. Model Risk Management </h4>
+<h5 id="1-development-implementation">1. Development, Implementation </h5>
+<p>documentation, testing</p>
+<h5 id="2-validation">2. Validation </h5>
+<ul>
+<li>evaluation<br/>
+sensitivity analysis and scenario analysis</li>
+<li>ongoing monitoring
+<ul>
+<li>process verification: data and procedure</li>
+<li>benchmarking</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-outcome-analysis-backtesting">3. Outcome Analysis (Backtesting) </h5>
+<p>parallel outcomes analysis: dynamically revised</p>
+<h4 id="nav8.4">8.4. Challenges to Effective Validation Process </h4>
+<p>system integration: data from different sources<br/>
+widespread use of vendor products: modeling expertise is external</p>
+<h3 id="nav9">9.  Case Study: Model Risk and Model Validation </h3>
+<h4 id="nav9.1">9.1. Model Risk Management Function </h4>
+<p>MRM function sits in second line and independent of model development<br/>
+Tradeoff between cost of validation and model risk:</p>
+<ul>
+<li>highest-tier: reviewed in detail</li>
+<li>high-tier: validated every 2 to 3 years</li>
+<li>lowe-tier: tailored validation</li>
+</ul>
+<p>All models undergo annual review of environment.</p>
+<h4 id="nav9.2">9.2. Case Study: Gaussian Copula and CDO Pricing </h4>
+<p>constant correlation assumption</p>
+<h4 id="nav9.3">9.3. Case Study: Barclays' Acquisition of Lehman Brothers and the Excel Spreadsheet Error </h4>
+<p>trading contracts were hidden Barclay did not want to buy<br/>
+seemingly simplistic tools or models need the right review</p>
+<h4 id="nav9.4">9.4. Case Study: NASA Mars Orbiter </h4>
+<p>Lockheed Martin engineering team used English units of measurement (imperial)</p>
+<h2 id="c-capital-planning">C. Capital Planning </h2>
+<h3 id="nav10">10.  Risk Capital Attribution and Risk-Adjusted Performance Measurement </h3>
+<p>Risk capital (economic capital): cushion that provides protection against unexpeted loss<br/>
+Regulatory capital: protect interests of investors</p>
+<p>traditional use of economic capital</p>
+<ul>
+<li>funding and absorb risk</li>
+<li>target solvency</li>
+<li>highly opaque, high risk</li>
+</ul>
+<p>new use of economic capital:</p>
+<ul>
+<li>performance measurement and incentive compensation</li>
+<li>active portflio management</li>
+<li>pricing transactions</li>
+</ul>
+<h4 id="nav10.1">10.1. Risk-Adjusted Return on Capital (RAROC) (***) </h4>
+<p><span class="mathjax-exps">$RAROC=\frac{\text{after-tax expected risk-adjusted net income}}{\text{economic capital}}$</span><br/>
+after-tax expected risk-adjusted net income = expected revenue - costs - expected loss - taxes + return on risk capital +- transfers</p>
+<ul>
+<li>expecte loss (PD amount)</li>
+<li>return on risk capital: risk free securities</li>
+<li>transfers: correspond to transfer pricing mechanisms, it happens for a bank department</li>
+<li>tax: apply for all income and loss</li>
+</ul>
+<p>economical captial = risk capital + strategic captial<br/>
+strategic captials = goodwill + burned-out capital</p>
+<ul>
+<li>strategic captial: investment</li>
+<li>burned-out capital: investment on initial stages of start up</li>
+<li>goodwill: amount paid above the replacement value of net asset when acquiring a firm</li>
+</ul>
+<h5 id="raroc-calculation-issues">RAROC Calculation Issues </h5>
+<ul>
+<li>time horizon: mostly 1 year</li>
+<li>PD:
+<ul>
+<li>point-in-time: individual financial instrument</li>
+<li>through-the-cycle: for economic capital, current profitability and strategic decision</li>
+</ul>
+</li>
+<li>confidence level:<br/>
+lower confidence level, higher RAROC, this affects the risk capital allocation<br/>
+business units tend to set lower confidence level than firmwide</li>
+</ul>
+<h5 id="raroc-for-capital-budgeting-decision">RAROC for Capital Budgeting Decision </h5>
+<p>hurdle rate is after-tax weighted average cost of equity: <span class="mathjax-exps">$h_{AT}=\frac{CE}{CE+PE}\times R_{CE}+\frac{PE}{CE+PE}\times R_{PE}$</span></p>
+<ul>
+<li>CE/PE is market value of common/prefered equity</li>
+</ul>
+<p>Adjusted RAROC (ARAROC): <span class="mathjax-exps">$ARAROC = RAROC-\beta_{CE}(R_M-r_f)$</span><br/>
+accept projects if <span class="mathjax-exps">$ARAROC&gt;r_f$</span></p>
+<ul>
+<li>stand-alone capital</li>
+<li>fully diversifed capital</li>
+<li>marginal capital: additional capital considering diversification</li>
+</ul>
+<h3 id="nav11">11.  Range of Practices and Issues in Economic Capital Frameworks </h3>
+<h4 id="nav11.1">11.1. Economical Capital Framework </h4>
+<h5 id="governance">Governance </h5>
+<p>senior management</p>
+<h5 id="risk-measure">Risk Measure </h5>
+<h5 id="risk-aggregation-">Risk Aggregation (***) </h5>
+<p>less sophisticated than methodologies used in individual risk components<br/>
+underestimate overall risk because individual risk components are estimated without consideration of interactions between risks (market and credit), even with "no diversification" assumptions.<br/>
+5 methodologies:</p>
+<ul>
+<li>simple summation (<span class="mathjax-exps">$\rho =1$</span>)</li>
+<li>constant diversification: fixed diversification percentage</li>
+<li>variance-covariance matrix: not capture nonlinearities and skewness, leading to underestimate of risk</li>
+<li>copulas: better approximation but very difficult building a joint distribution</li>
+<li>full modeling/simulation: most accurate, Monte Carlo<br/>
+simulates the impact of common risk drivers</li>
+</ul>
+<h5 id="validation">Validation </h5>
+<p>preliminary stages, no uniform validation</p>
+<h5 id="dependency-modeliing">Dependency Modeliing </h5>
+<h5 id="counterparty-credit-risk">Counterparty Credit Risk </h5>
+<p>unique market risk and operational risk</p>
+<h5 id="interest-rate-risk-">Interest Rate Risk (**) </h5>
+<p>challenges: long holding period, embedded optionality</p>
+<h4 id="nav11.2">11.2. Benefits and Impacts of EC (***) </h4>
+<p>EC is often parameterized as an amount of capital given a time horizon and confidence level<br/>
+expected loss are accounted in the pricing of bank's product and loan loss provisioning, only unexpected losses require EC.</p>
+<h5 id="credit-portfolio-management">Credit Portfolio Management </h5>
+<p>measurement of level of concentration: from incremental risk contribution</p>
+<h5 id="risk-based-pricing">Risk-Based Pricing </h5>
+<p>RAROC pricing<br/>
+exceptions (specific customer relationship) should be monitored</p>
+<h5 id="customer-and-product-profitability-analysis">Customer and Product Profitability Analysis </h5>
+<p>RAROC on customer level or product level</p>
+<h5 id="management-incentives">Management Incentives </h5>
+<h3 id="nav12">12.  Capital Planning at Large Bank Holding Companies </h3>
+<p>capital adequacy process</p>
+<h4 id="nav12.1">12.1. Foundational Risk Management </h4>
+<p>lagging practice (bad): not account for reputational/strategic/compliance risk</p>
+<h4 id="nav12.2">12.2. Loss-Estimation Methodologies (***) </h4>
+<p>conservative approaches<br/>
+clear narrative scenario<br/>
+leading practice: estimate loss model at granular level (to trading desk level)</p>
+<ul>
+<li>lagging practice: weighted average LGD for portfolio</li>
+<li>leading practice: model LGD to underlying risk drivers</li>
+</ul>
+<p>automation is better<br/>
+Combination of roll-rate model (use past to predict future) and net charge-off model (default debt net value) is weak.</p>
+<h4 id="nav12.3">12.3. Resource-Estimation Methodologies </h4>
+<p>capital resource</p>
+<h4 id="nav12.4">12.4. Capital Adequacy Impact assessment </h4>
+<p>risk-weight asset (RWA)<br/>
+projections of size and compostion of balance sheet and RWA<br/>
+use a full-revaluation approach to model bank's nonlinear postions (past 100 days, 99 days,..., to)</p>
+<h4 id="nav12.5">12.5. Capital Policy and Capital Planning </h4>
+<p>capital target (execution) above capital goal (finally goal)<br/>
+lagging practice: triggers based on actual result or minimum regulatory capital ratio<br/>
+leading practice: based on projected results</p>
+<h4 id="nav12.6">12.6. Internal Controls </h4>
+<p>management overlay (management attention)</p>
+<h4 id="nav12.7">12.7. Governance </h4>
+<h3 id="nav13">13.  Stress Testing Banks </h3>
+<h4 id="nav13.1">13.1. Historical Evolution </h4>
+<h5 id="usa">USA </h5>
+<p>supervisory capital assessment program (SCAP)<br/>
+macro scenarios: GDP growth, unemployment rate, house price index<br/>
+post-SCAP (**):</p>
+<ul>
+<li>from single shock to broad macro scenario</li>
+<li>from product or business unit level to firmwide</li>
+<li>from static to dynamic</li>
+<li>common equity threshold (capital adequacy)</li>
+<li>from loss to loss, revenues and costs</li>
+</ul>
+<p>Comprehensive Capital Analysis and Review (CCAR)<br/>
+includes banks' own stress scenarios<br/>
+2011 CCAR require disclosure of macro scenario, while 2012 CCAR also require bank-level<br/>
+disclosure was an important trait of SCAP, especially projected losses</p>
+<h5 id="europe">Europe </h5>
+<p>European Banking Authority (EBA)<br/>
+by asset and geography</p>
+<h4 id="nav13.2">13.2. Chanllenges </h4>
+<h5 id="chanllenges-in-designing-scenarios">Chanllenges in Designing Scenarios </h5>
+<p>coherence (inherently multi risk factors setting)</p>
+<h5 id="chanllenges-in-modeling-losses-and-revenues">Chanllenges in Modeling Losses and Revenues </h5>
+<p>from macro scenario to micro scenario, finding intermediate risk factors is important<br/>
+in a stress model, use balance sheet to predict profit and loss quarterly for 2 years. The assumption is bank maintain its capital and liquidity ratios.</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Risk Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Operational Risk and Resilience - A. Holistic Overview.html" rel="prev">< FRM II - Operational Risk and Resilience - A. Holistic Overview</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

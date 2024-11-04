@@ -1,0 +1,540 @@
+<!DOCTYPE html><html><head>
+      <title>FRM II - Operational Risk and Resilience - A. Holistic Overview</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="FRM II" editdate="2024-11-04" createdate="2024-10-31" tag="Risk-Management"></ndtag></p>
+<h2 id="a-holistic-overview-of-operational-risk-and-resilience">A. Holistic Overview of Operational Risk and Resilience </h2>
+<h3 id="--c1-p19---introduction-to-operational-risk-and-resilience"><!-- C1 p19 --> Introduction to Operational Risk and Resilience </h3>
+<h4 id="definition-of-operational-risk-by-bcbs">Definition of Operational Risk by BCBS </h4>
+<p>Basel Committee On Banking Supervision (BCBS)</p>
+<p>Risk of loss resulting from inadequate or failed processes, people and systems or from external events (PPSE).<br>
+The definition includes legal risk, but excludes strategic and reputational risk.<br>
+Where approprite, strategic and reputational risk should be considered as operational risk.</p>
+<h5 id="categories-of-operational-risk-events-under-basel-ii">Categories of Operational Risk Events under Basel II </h5>
+<ul>
+<li>Internal fraud (IF)<br>
+unauthorized activities, theft and fraud, embezzlement, misappropriation of assets, bribe</li>
+<li>External fraud (EF)<br>
+theft and fraud (check kitting and forgery), systems security (hacker attack)</li>
+<li>Employment practices and workplace safety (EPWS)<br>
+more prominent in America, there is more a cultrue of litigation against the employers
+<ul>
+<li>employee relations</li>
+<li>safe enviroment</li>
+<li>diversity and discrimination</li>
+</ul>
+</li>
+<li>Clients, products, and business practices (CPBP)<br>
+disputes with clients, regulatory fines from improper business practices<br>
+client misinformation, complaints an discounts due to errors, product misspecification</li>
+<li>Damage to physical assets (DPA)<br>
+natural disaster and terrorism<br>
+very few firms collect loss on this rick type, as these are usually too small or too large. Senario analysis and insurance</li>
+<li>Business disruption and system failures (BDSF)<br>
+IT breakdown, outages (electricity)</li>
+<li>Execution, delivery, and process management (EDPM)<br>
+failed transaction processing: processing errors, missing documentation, vendor disputes</li>
+</ul>
+<h5 id="frequency-and-severity-of-seven-events">Frequency and Severity of Seven Events </h5>
+<p>CPBP consititues more than half of loss from less than one quarter of frequency.<br>
+EF, EPWS, CPBP, EDPM contributes most of risk events.<br>
+CPBP and EDPM are to explain most of the loss.<br>
+just direct financial losses, no reputational damage, market capitalization, the latter far exceeds the former.</p>
+<h4 id="characteristic-of-operational-risk-">Characteristic of Operational Risk (***) </h4>
+<ul>
+<li>heterogenous: different</li>
+<li>idiosyncratic and diffuse: could not be totally hedged</li>
+<li>heavy tailed: large number of small loss and small number of large loss</li>
+<li>interconnected: share common internal cause (weak internal control etc.)</li>
+<li>dynamic: operational risk exposure evolve with business activities</li>
+</ul>
+<h4 id="operational-risk-management-orm-frameworks">Operational Risk Management (ORM) Frameworks </h4>
+<ul>
+<li>governance (assignment of rols and responsibilities)</li>
+<li>risk identification → risk appetite → risk assessment → risk mitigation → risk monitoring</li>
+<li>conduct and culture<br>
+ORM cycle: risk identification → risk assessment → risk mitigation → risk monitoring<br>
+risk appetite is determined by board of directors</li>
+</ul>
+<h4 id="operational-resilience">Operational Resilience </h4>
+<p>ability to recover from operational disruptions</p>
+<h5 id="or-in-uk">OR in UK </h5>
+<p>the ability to prevent, adapt to, respond to, recover from, and learn from operational disruptions<br>
+impact tolerance level:</p>
+<ul>
+<li>amount of disruption that could be tolerated</li>
+<li>must contain a time-based metric, similar to recovery time</li>
+</ul>
+<h5 id="or-in-usa">OR in USA </h5>
+<p>ORM is central component<br>
+ORM has 2 specializations: third-party risk management, scenario analysis<br>
+Operational resilience has 2 critical supporting pillar: business continuity management, IT systems resilience</p>
+<h3 id="--c2-p31---risk-governance"><!-- C2 p31 --> Risk Governance </h3>
+<h4 id="bcbs-principles-for-the-sound-orm-">BCBS Principles for the Sound ORM (***) </h4>
+<ul>
+<li>culture led by board of directors and implemented by senior management</li>
+<li>ORM framewrk</li>
+<li>senior management responsibility
+<ul>
+<li>board review and approval of ORMF</li>
+<li>risk appetite and tolerance statement</li>
+<li>senior management role in ORM</li>
+</ul>
+</li>
+<li>risk mangement process
+<ul>
+<li>identification and assessment of operational risk</li>
+<li>management process</li>
+<li>monitoring</li>
+<li>control environment</li>
+</ul>
+</li>
+<li>robust information and communication technology (ICT) management program</li>
+<li>business continuity plan</li>
+<li>public disclosure</li>
+</ul>
+<h4 id="supervisory-expectation-on-governance-of-orm">Supervisory Expectation on Governance of ORM </h4>
+<p>maintain a library of regulatory documents, operational risk staff should be asked to confirm their awareness</p>
+<h4 id="committee-structure-in-risk-governance">Committee Structure in Risk Governance </h4>
+<ol>
+<li>business lines operational risk committee: oversee business activity</li>
+<li>operational risk committee: oversee, monitor and report to higher level</li>
+<li>organization risk committee: oversee, monitor and report to higher level</li>
+<li>risk committee of the board: oversee all operational risk</li>
+</ol>
+<h4 id="role-of-bod-in-risk-governance">Role of BOD in Risk Governance </h4>
+<p>ultimately responsible</p>
+<h4 id="three-lines-of-defense-model-">Three Lines of Defense Model (***) </h4>
+<ul>
+<li>Line 1: business unit management</li>
+<li>Line 2: independent corporate operational risk management (法律合规部)</li>
+<li>Line 3: internal audit (稽核) report to non-executive directors</li>
+</ul>
+<p>The first line owns the final sign-off on risk assessment and controls. The first line owns the risk and the second line owns the methodology.</p>
+<h4 id="risk-appetite">Risk Appetite </h4>
+<p>nature and extent of significant risks it is willing to take<br>
+Board of directors delegates the responsibility to own the risk limit to risk committee.</p>
+<h5 id="risk-appetite-governance">Risk Appetite Governance </h5>
+<p>Risk owners are the first line of defense.<br>
+Risk owners designate control owners and metric owners.</p>
+<h5 id="regulatory-expectations">Regulatory Expectations </h5>
+<h4 id="risk-culture">Risk Culture </h4>
+<ol>
+<li>codes of conduct and ethics: no-blame culture, tone from top</li>
+<li>compensation structure<br>
+agrresive compensation strucutre (increase proportion of incentive compensation for traders and investment bankers) not recommended</li>
+<li>training to raise awareness of operatinal risks</li>
+</ol>
+<h5 id="signs-of-good-risk-culture">Signs of Good Risk Culture </h5>
+<p>includes swift escalation of issues</p>
+<h3 id="--c3-p49---risk-identification"><!-- C3 p49 --> Risk Identification </h3>
+<h4 id="scope-of-risk-indentification">Scope of Risk Indentification </h4>
+<p>reconciliation of top-down and bottom-up</p>
+<h5 id="top-down">Top-down </h5>
+<p>outcome: risk prioritization and risk ranking</p>
+<h6 id="tools">Tools </h6>
+<ul>
+<li>business-specific risk indentification: exposure and vulnerability</li>
+<li>risk wheel<br>
+domino effect: salary cut down → personal effectivenss → systems disruption</li>
+<li>horizon scanning: for nascent emerging risk<br>
+political, economic, social, technological, legal, environmental (PESTLE)</li>
+</ul>
+<h5 id="bottom-up">Bottom-up </h5>
+<h6 id="tools-1">Tools </h6>
+<ul>
+<li>Event and loss data analysis
+<ul>
+<li>internal losses</li>
+<li>external losses: consortium data</li>
+<li>near misses: incidents does not result in loss luckily</li>
+</ul>
+</li>
+<li>risk and control self-assessment (RCSA)<br>
+facilitated by second line, collect information from first line<br>
+from most experienced employees and recent hires<br>
+typically annually, and after trigger event<br>
+if too granular, the output will be small</li>
+<li>process mapping: what can go wrong in each step of a process<br>
+too granular vs. too high-level</li>
+</ul>
+<h4 id="scenario-analysis">Scenario Analysis </h4>
+<p>brainstorming techniques for extreme events</p>
+<ul>
+<li>preparation phase: minimize subjective biase<br>
+participants: senior managers from different business functions<br>
+external experts</li>
+<li>generation phase</li>
+<li>intermediary phase: consolidate and eliminate<br>
+some scenarios can be eliminated if maximum loss is moderate to be absorbed by operating margin</li>
+</ul>
+<h4 id="operational-risk-taxonomy">Operational Risk Taxonomy </h4>
+<h5 id="basel-taxonomy-">Basel Taxonomy (***) </h5>
+<ul>
+<li>level 1: 7 categories</li>
+<li>level 2: definition (detailed version of level 1)</li>
+<li>level 3: examples</li>
+</ul>
+<p>leve 1 and level 2 are regulatory categories</p>
+<h5 id="operatioanl-risk-data-exchange-orx">Operatioanl Risk Data Exchange (ORX) </h5>
+<p>revises Basel</p>
+<h5 id="structure-of-taxonomies">Structure of Taxonomies </h5>
+<p>cause and control are prime objects<br>
+Eliminate the downside of a risk while preserving its upside makes sense. (find cause and control)</p>
+<h6 id="cause-taxonomy">Cause Taxonomy </h6>
+<p>PPSE</p>
+<h6 id="impact-taxonomy">Impact Taxonomy </h6>
+<p>direct financial impact, indirect financial impact, non-financial impact</p>
+<h6 id="control-taxonomy">Control Taxonomy </h6>
+<p>preventative, detective, corrective, directive</p>
+<h3 id="--c4-p69---risk-measurement-and-assessment"><!-- C4 p69 --> Risk Measurement and Assessment </h3>
+<p>ORM framework: OR incident database → RCSA → KRI → Lessons learned</p>
+<h4 id="incident-database">Incident Database </h4>
+<h5 id="comprehensiveness-of-data">Comprehensiveness of Data </h5>
+<p>Basel committee does not difine material exposuresm, but set minimum threshold for loss reporting<br>
+"cherry-picking": biased selection</p>
+<p>regulatory perspective: report financial loss only<br>
+management perspective: also record non-financial loss, which will result in financial loss</p>
+<p>grouped loss: OR events connected through a common cause</p>
+<h5 id="dates-of-incidents">Dates of Incidents </h5>
+<p>occurrence, discovery, reporting, accounting (when financial impact enters General Ledger, GL)<br>
+risk-based approach: material incidents must be reported sooner, minor incidents can be included in periodic summary reporting</p>
+<h5 id="data-quality-requirement">Data Quality Requirement </h5>
+<p>reconsiling the loss data<br>
+GL is no substitue for incident database because it only records direct financial loss</p>
+<h4 id="qualitative-risk-assessment">Qualitative Risk Assessment </h4>
+<h5 id="risk-and-control-self-assessment-rcsa">Risk and Control Self-Assessment (RCSA) </h5>
+<p>inherent risks, residual risks (risk remained after control)<br>
+workshop-style discussions, questionaire</p>
+<ul>
+<li>Severity Assessment: Impact Scales<br>
+financial, regulatory, customer, reputation</li>
+<li>Likelihood Assessment Scales<br>
+likelihood or frequency1</li>
+<li>heatmap to link likelihood and severity</li>
+</ul>
+<h6 id="outcome-of-rcsa">Outcome of RCSA </h6>
+<p>results should be documented, submitted for approval and sign-off</p>
+<h6 id="challenge-of-rcsa">Challenge of RCSA </h6>
+<p>difficult to be comparable</p>
+<h5 id="kpis-kris-and-kcis-">KPIs, KRIs and KCIs (***) </h5>
+<h6 id="key-performance-indicators-kpis">Key Performance Indicators (KPIs) </h6>
+<p>error rates on retail transactions</p>
+<h6 id="key-risk-indicators-kris">Key Risk Indicators (KRIs) </h6>
+<p>examples of KRIs measuring likelihood:</p>
+<ul>
+<li>increase in number of trasactions per staff</li>
+<li>drop in customer satisfaction scores (client attrition)</li>
+<li>increase in level of sales required to achieve a performance objective (fraud)</li>
+</ul>
+<p>examples of KRIs measuring impact:</p>
+<ul>
+<li>increase in level of proprietary company knowledge held by a key employee</li>
+<li>increase in sensitivity of data held on a given server</li>
+<li>increase in value generated by top-10 clients</li>
+</ul>
+<h6 id="key-control-indicators-kcis">Key Control Indicators (KCIs) </h6>
+<ul>
+<li>missed due diligence items</li>
+<li>lack of segregation of duties</li>
+<li>overlooked errors in four-eye checks (reviews by two competent individuals)</li>
+</ul>
+<p>Three indicators overlap, the failure of a control function is jointly KPI, KRI, KCI.</p>
+<h4 id="quantitative-risk-assessment-">Quantitative Risk Assessment (***) </h4>
+<h5 id="causal-analysis-of-scenarios">Causal Analysis of Scenarios </h5>
+<p>forward-looking</p>
+<h5 id="fault-tree-analysis-fta">Fault Tree Analysis (FTA) </h5>
+<p>decompose failure into a series of external conditions and internal conditions.<br>
+calculate likelihood based on logic tree.</p>
+<h5 id="fair-methodology">FAIR Methodology </h5>
+<p>factor analysis of information risk</p>
+<h5 id="root-cause-analysis-and-bowtie-tool">Root-Cause Analysis and Bowtie Tool </h5>
+<p>5 why analysis, "why did this happen"<br>
+cause → event → impact, it looks like a bowtie</p>
+<h5 id="swiss-cheese-control-layering">Swiss Cheese: Control Layering </h5>
+<p>cumulative act model, each defensive layer is like a slice of Swiss cheeses.<br>
+The presence of one hole causes bad outcomes when holes in many layers momentarily line up.<br>
+assessing independence of controls is at least important as assessing reliability of each individual control.</p>
+<h4 id="operational-risk-modeling-and-capital-">Operational Risk Modeling and Capital (***) </h4>
+<p>loss distribution approach (LDA): Advanced Measurement Approach (AMA)</p>
+<ul>
+<li>frequency: modeled with Poisson and negative binomial (probability of k failures before r sucesses)</li>
+<li>severity: lognormal, Weibull and Generalized Pareto (GPD, more heavy tailed)</li>
+</ul>
+<p>Severity and frequency are assumed to be independent, and convoluted into an aggregated loss distribution by Monte Carlo.<br>
+mix internal and external data: scale, cut-off mix (threshold), filter<br>
+losses in each risk classes are not iid.</p>
+<h4 id="quantificaion-of-operational-resilience">Quantificaion of Operational Resilience </h4>
+<p>OR focuses on the continuity and recovery of important business service, while business continuity management focuses on each business.<br>
+single points of failure (SPOF): back-up and redundancy for key employees with unique knowledge and skill.</p>
+<h3 id="--c5-p93---risk-mitigation"><!-- C5 p93 --> Risk Mitigation </h3>
+<p>External OR cannot be prevented, but they can be reduced.<br>
+Internal OR are more preventable through internal control.</p>
+<h4 id="risk-response">Risk Response </h4>
+<ul>
+<li>tolerate: accpet risk</li>
+<li>treat: risk migitation</li>
+<li>transfer: move to another party (insurance)</li>
+<li>terminate: cease operation</li>
+</ul>
+<h4 id="internal-controls-types-and-testing">Internal Controls: Types and Testing </h4>
+<h5 id="internal-control-types-">Internal Control Types (***) </h5>
+<ul>
+<li>preventive controls: reduce likelihood of an incident
+<ul>
+<li>segregation of duties</li>
+<li>access controls</li>
+<li>levels of authorization</li>
+<li>process automation</li>
+</ul>
+</li>
+<li>detective controls:
+<ul>
+<li>exception report</li>
+<li>file reconciliation</li>
+<li>smoke detector</li>
+<li>intrusion detection system</li>
+</ul>
+</li>
+<li>corrective controls:
+<ul>
+<li>data back-ups</li>
+<li>IT systems patch management</li>
+<li>continuity planning</li>
+<li>systems redundancy</li>
+</ul>
+</li>
+<li>directive controls: rules and prescriptions
+<ul>
+<li>procedures and guidance manuals</li>
+<li>internal training</li>
+<li>team supervision</li>
+<li>work handover procedures</li>
+</ul>
+</li>
+</ul>
+<h5 id="control-design">Control Design </h5>
+<p>weakly designed control:</p>
+<ul>
+<li>optimistic: sign-off for large volume of documents before a deadline</li>
+<li>collective: "four-eyes check" diluting accountability</li>
+<li>more of the same: responding to a failure of collective controls by adding more controllers</li>
+</ul>
+<h5 id="control-testing-">Control Testing (***) </h5>
+<ul>
+<li>self-certification or inquiry<br>
+limited to secondary controls related to low risk environments</li>
+<li>examination: supporting evidence and documentation<br>
+moderate assurance and suited for automated controls and sampling of manual controls</li>
+<li>observation: oversight</li>
+<li>reperformance (穿行测试)<br>
+strongest form of testing</li>
+</ul>
+<h4 id="risk-mitigation-by-process-design">Risk Mitigation by Process Design </h4>
+<p>prevention through design, examples are checklists, standardization, optimized environments or system design</p>
+<h5 id="typology-and-mitigation-of-human-error-">Typology and Mitigation of Human Error (***) </h5>
+<ul>
+<li>skilled-based: slip<br>
+inattention, distraction, environment, tiredness<br>
+controls: adjust pace, improve environment, re-engineer process</li>
+<li>rule-based: flawed rules<br>
+flawed products, misleading instruction, wrong incentives</li>
+<li>knowledge-based:<br>
+controls: training, documented procedures, help file, escalation rules</li>
+<li>violation: voluntary misdeed<br>
+controls: supervisory control, improve culture which reward adherence to rules</li>
+</ul>
+<h5 id="lean-six-sigma">Lean Six Sigma </h5>
+<p>extremely low error rate<br>
+DMAIC cycle: define, measure, analyse, improve, control</p>
+<h5 id="pdsa-cycle">PDSA Cycle </h5>
+<p>quality improvement: plan, do, study, act (what changes are to be made in next cycle)</p>
+<h4 id="new-product-approval-process-npap">New Product Approval Process (NPAP) </h4>
+<p>Its generation is New Initiative Risk Assessment Process (NIRAP).<br>
+A proper business case would cover at a minimum five topics:</p>
+<ol>
+<li>objective</li>
+<li>alternative: reason for making this choise among alternatives</li>
+<li>expected benefits</li>
+<li>commercial aspects: cost, investment, funding</li>
+<li>risks</li>
+</ol>
+<p>Risk function during a project life:</p>
+<ul>
+<li>initial stage: mitigation and monitoring plans</li>
+<li>project life: update risk</li>
+<li>project closure: evaluation of project deliverables,</li>
+</ul>
+<h4 id="mitigation-measures-to-reduce-impact">Mitigation Measures to Reduce Impact </h4>
+<h5 id="contingency-planing">Contingency Planing </h5>
+<p>emergency plan B, must have a key owner.<br>
+Business Continuity Management (BCM)<br>
+Disaster Recovery Plan (DRP)</p>
+<h5 id="crisis-management-and-communication">Crisis Management and Communication </h5>
+<p>3 essential qualities: speed, competence, transparency<br>
+In crisis mode: firms should also have communication team, which deals with media, stakeholders, including employees.<br>
+Four typical phases:</p>
+<ul>
+<li>crisis</li>
+<li>emergency response</li>
+<li>recovery: recovery point objective (RPO) and recovery time objective (RTO)</li>
+<li>restoration (back-to-normal)</li>
+</ul>
+<h4 id="risk-transfer">Risk Transfer </h4>
+<h5 id="external-insurance">External Insurance </h5>
+<p>small losses: captive subsidiary or just absorb the volatility<br>
+large losses: cyber risks, major class action lawsuits</p>
+<h5 id="outsourcing">Outsourcing </h5>
+<p>data center, cloud computing, IT server management</p>
+<ul>
+<li>For traditional banks: outsourcing ICT (information, computation, technology)</li>
+<li>For FinTech banks: outsourcing credit risk decisions</li>
+</ul>
+<p>Outsourcing can increase or decrease risk, called third-party risk.<br>
+Outsourcing is a risk sharing activity.</p>
+<h4 id="management-of-reputational-risk">Management of Reputational Risk </h4>
+<p>cannot be outsourced or compensated through insurance</p>
+<ul>
+<li>preventive: customer confidence</li>
+<li>detective: complaint on social media, tracking trend of refund</li>
+<li>corrective</li>
+</ul>
+<h3 id="--c6-p111---risk-reporting"><!-- C6 p111 --> Risk Reporting </h3>
+<h4 id="roles-and-responsibilities-of-committees">Roles and Responsibilities of Committees </h4>
+<ul>
+<li>Risk Committee: authorized by board</li>
+<li>Executive Committee: board members and senior executives</li>
+<li>Audit Comittee: third defense line</li>
+<li>Operational Risk Committee: second defense line</li>
+</ul>
+<h5 id="considerations-of-operational-reporting">Considerations of Operational Reporting </h5>
+<p>Forward-looking reporting is more mature.</p>
+<h4 id="seven-elements-of-internal-orm-report">Seven Elements of Internal ORM Report </h4>
+<ul>
+<li>top-10 risks and risk outlook in risk inventory</li>
+<li>heatmap and risk register</li>
+<li>risk appetite metrics<br>
+eg. VaR</li>
+<li>KRIs and issue monitoring<br>
+granular and forward looking</li>
+<li>incidents and near misses<br>
+potential impact</li>
+<li>action plans and follow-up<br>
+zero objective: zero overdue actions and zero overdue audit recommendations</li>
+<li>emerging risks and horizon scan finding</li>
+</ul>
+<h5 id="characterisktics-and-challenges-of-operational-risk-data">Characterisktics and Challenges of Operational Risk Data </h5>
+<p>A proper allocation of risk management is to focus on large incidents and not to be dispersed by daily volatility.<br>
+Wyas to overcome chanllenges:</p>
+<ul>
+<li>Benchmarking operational losses: report as percentage of gross income / total budget.</li>
+<li>Averages hide the heterogeneity. Better alternatives are median and the first and third quartiles of the distribution.</li>
+</ul>
+<h5 id="aggregating-qualitative-risk-data">Aggregating Qualitative Risk Data </h5>
+<p>solution:</p>
+<ul>
+<li>conversion and addition: convert into monetary unit</li>
+<li>categorization: group by color or score</li>
+<li>worst-case reporting: potentially over-alarming</li>
+</ul>
+<h4 id="external-risk-reporting">External Risk Reporting </h4>
+<p>reporting to regulator: Pillar 3, Basel regulation<br>
+reporting to market and investors<br>
+reporting on operational resilience</p>
+<h5 id="to-regulators">To Regulators </h5>
+<p>Operation risk disclosure concludes:</p>
+<ul>
+<li>qualitative information</li>
+<li>historical losses, aggregate operational losses over past 10 years</li>
+<li>business indicator and subcomponents</li>
+</ul>
+<p>Absence of evidence is not evidence of absence: risk manager's verbal assertion as confirmation.<br>
+Incident reporting: significant operational risk or breach of conduct</p>
+<h5 id="on-operational-resilience">On Operational Resilience </h5>
+<p>UK requirement<br>
+Mapping and testing for each business service so that they can remain with in impact tolerance.</p>
+<h3 id="--c7-p129---integrated-risk-management"><!-- C7 p129 --> Integrated Risk Management </h3>
+<h4 id="enterprice-risk-management-framework">Enterprice Risk Management Framework </h4>
+<p>RMC (identification, assessment, mitigation, monitoring) and 4 elements:</p>
+<ul>
+<li>Risk governance</li>
+<li>risk appetite</li>
+<li>risk culture: key driver of ERM framework effectiveness</li>
+<li>risk capital and stress testing</li>
+</ul>
+<h4 id="risk-capital">Risk Capital </h4>
+<p>The objective of BCBS prudential regulation is threefold:</p>
+<ol>
+<li>To ensure the solvency and soundness of all financial intermediaries</li>
+<li>To provide customers protection from undue risks (failure, fraud, opportunistic behavior)</li>
+<li>To promote the efficient and competitive performance of financial instituions</li>
+</ol>
+<p>Objective 1 is primary objective, addressed through regulatory capital requirements<br>
+Objective 2 and 3 are attained through senior management's competence</p>
+<p>In U.S., the focus shifted from capital estimation to stress testing.<br>
+Capital is through-the-cycle concept, while stress testing is point-in-time.</p>
+<p>Economic Capital: linked to credit rating, influencing cost of funds.</p>
+<h5 id="risk-aggregation-for-capital-assessment-">Risk Aggregation for Capital Assessment (*) </h5>
+<p>intra-risk diversification: diversification within each risk class<br>
+operational risk can bring important diversification benefits to capital, because it has low correlation to other financial risks.</p>
+<h4 id="stress-testing-">Stress Testing (*) </h4>
+<h5 id="taxonomy">Taxonomy </h5>
+<ul>
+<li>dimension 1
+<ul>
+<li>quantitative: sensitivity model to parameter shocks</li>
+<li>qualitative: scenario analysis such as macro stress testing (multiple parameters), reverse stress testing</li>
+</ul>
+</li>
+<li>dimension 2
+<ul>
+<li>measurable: probabilistic</li>
+<li>immeasurable: possibilistic</li>
+</ul>
+</li>
+</ul>
+<p>Globally systemically important banks (G-SIBs) are provided a list of macro shock to assess the solvency level.</p>
+<h5 id="reverse-stress-testing">Reverse Stress Testing </h5>
+<p>Find how bad an adverse scenario would need to be to achieve a pre-defined outcome, analyze immeasurable risks.<br>
+apt for assessing operational resilience</p>
+<h5 id="operational-risk-stress-testing-models">Operational Risk Stress Testing Models </h5>
+<p>severity can be more complex to model than frequency because of being highly impacted by tail events.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
