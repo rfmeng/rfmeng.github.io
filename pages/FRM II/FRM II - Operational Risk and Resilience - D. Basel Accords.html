@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Operational Risk and Resilience - D. Basel Accords - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text">Basel I </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Motivations </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Content </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Credit Risk: Standardized Approach </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text">Basel I Amendments </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Credit Risk: Adjustment for Derivatives </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Market Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Capital Requirements </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Others </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text">Basel II </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Three Pillars </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Credit Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Operational Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Solvency II </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text">Basel II.5 </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Stressed VaR </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Incremental Risk Charge (IRC) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Comprehensive Risk Capital (CRC) </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text">Basel III </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Capital Requirements </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Operational Risk and Resilience - D. Basel Accords
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-11-04</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-10-31" editdate="2024-11-04" tag="Risk-Management"></ndtag></p>
+<h2 id="d-basel-accords">D. Basel Accords </h2>
+<p>Basel tower, more details</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">I</th>
+<th style="text-align:center">II</th>
+<th style="text-align:center">II.5</th>
+<th style="text-align:center">III</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1988</td>
+<td style="text-align:center">1999</td>
+<td style="text-align:center">2009</td>
+<td style="text-align:center">2014</td>
+</tr>
+</tbody>
+</table>
+<h2 id="--c21-p339---capital-regulation-before-the-global-financial-crisis"><!-- C21 p339 --> Capital Regulation Before the Global Financial Crisis </h2>
+<p>Basel I, Basel I Amendment, Basel II</p>
+<h3 id="nav1">1. Basel I </h3>
+<h4 id="nav1.1">1.1. Motivations </h4>
+<p>G10's common interest that banks have enough equity to absorb large losses.<br/>
+A global minimum standard to "level to playing field".</p>
+<h4 id="nav1.2">1.2. Content </h4>
+<p>it includes credit risk and capital requirements</p>
+<h4 id="nav1.3">1.3. Credit Risk: Standardized Approach </h4>
+<p><span class="mathjax-exps">$\frac{\text{Tier 1 capital}}{RWA} &gt; 4\%$</span> and <span class="mathjax-exps">$\frac{\text{total capital}}{RWA} &gt; 8\%$</span>, where total capital is regulatory capital</p>
+<h5 id="risk-weighted-assets-rwa">Risk-Weighted Assets (RWA): </h5>
+<ul>
+<li>on-balance sheet: <span class="mathjax-exps">$\sum w_iL_i$</span><br/>
+higher risk, higher weight, where weight is determined by asset type and asset country</li>
+<li>off-balance sheet<br/>
+credit equivalent amount (CEA) is calculated by applying a conversion factor to the principal amount</li>
+<li>derivatives
+<ul>
+<li>current exposure method: <span class="mathjax-exps">$CEA = \max(V,0)+D$</span><br/>
+where <span class="mathjax-exps">$V$</span> is current market value, <span class="mathjax-exps">$D$</span> is add-on amount, determined by <span class="mathjax-exps">$a$</span> (add-on factor) and <span class="mathjax-exps">$L$</span> (principal amount)<br/>
+<span class="mathjax-exps">$D$</span> accounts for changes of future market value</li>
+<li>original exposure method (only for interest rate and foreign exchange contracts)<br/>
+<span class="mathjax-exps">$CEA=D$</span>, where <span class="mathjax-exps">$D$</span> is add-on amount</li>
+</ul>
+</li>
+</ul>
+<h5 id="capital-requirement-ignore-finance-term">Capital Requirement (Ignore Finance Term) </h5>
+<ul>
+<li>Tier 1 capital (core capital for solvency)
+<ul>
+<li>common equity + disclosed reserves (retained earnings) - goodwill</li>
+<li>noncumulative perpetual preferred stock (not compensate past's dividend with current year's profit)</li>
+</ul>
+</li>
+<li>Tier 2 capital (recapitalization of entity in resolution / reduce the impact on depositors)
+<ul>
+<li>loan loss reserves not allocated to impairment of certain assets</li>
+<li>undisclosed reserves</li>
+<li>hybrid instruments (convertible bond)</li>
+</ul>
+</li>
+</ul>
+<h3 id="nav2">2. Basel I Amendments </h3>
+<ul>
+<li>credit risk: adjustment for derivatives</li>
+<li>market risk</li>
+<li>capital requirement</li>
+<li>others</li>
+</ul>
+<h4 id="nav2.1">2.1. Credit Risk: Adjustment for Derivatives </h4>
+<p>netting from ISDA, default on all transactions at the same time<br/>
+Net Replacement Ratio (NRR)： <span class="mathjax-exps">$NRR=\frac{\max\{\sum V_i,0\}}{\sum\max\{V_i,0\}}$</span><br/>
+CEA: <span class="mathjax-exps">$CEA=\max\{\sum V_i,0\}+(0.4+0.6\times NRR)\sum D_i$</span></p>
+<h4 id="nav2.2">2.2. Market Risk </h4>
+<p>market risk capital charge for trading book</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Book</th>
+<th style="text-align:center">Trading Book</th>
+<th style="text-align:center">Banking Book</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Purpose</td>
+<td style="text-align:center">Held for trading</td>
+<td style="text-align:center">Held to maturity</td>
+</tr>
+<tr>
+<td style="text-align:center">Time horizon</td>
+<td style="text-align:center">short</td>
+<td style="text-align:center">long</td>
+</tr>
+<tr>
+<td style="text-align:center">Risk type</td>
+<td style="text-align:center">Market</td>
+<td style="text-align:center">Credit</td>
+</tr>
+<tr>
+<td style="text-align:center">Confidence level</td>
+<td style="text-align:center">99%</td>
+<td style="text-align:center">99.9%</td>
+</tr>
+<tr>
+<td style="text-align:center">Var time horizon</td>
+<td style="text-align:center">10 day</td>
+<td style="text-align:center">1 year</td>
+</tr>
+<tr>
+<td style="text-align:center">Examples</td>
+<td style="text-align:center">securities, derivatives</td>
+<td style="text-align:center">loan and some debt</td>
+</tr>
+</tbody>
+</table>
+<p>Market risk:</p>
+<ul>
+<li>MR (general Market Risk): systemic risk such as interest rate risk</li>
+<li>SR (Specific Risk): idiosyncratic (credit spread)</li>
+</ul>
+<p>corporate bonds exposed to interest rate risk (MR) and credit risk (SR)</p>
+<h5 id="1-market-risk-capital-standardized-approach">1. Market Risk Capital: Standardized Approach </h5>
+<p>assigns capital separately to each item and sum ignoring correlation</p>
+<ul>
+<li>Fixed income securities and interest rate derivatives, except options</li>
+<li>equity securities and equity derivatives other than options</li>
+<li>foreign exchange</li>
+<li>commodities</li>
+<li>options</li>
+</ul>
+<h5 id="2-market-risk-capital-internal-model-based-approach">2. Market Risk Capital: Internal Model Based Approach </h5>
+<p>total capital for trading assets: <span class="mathjax-exps">$0.08*12.5*(MR+SR)=MR+SR$</span><br/>
+<span class="mathjax-exps">$MR=\max\{VaR_{t-1},m_c\times VaR_{avg}\}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$t-1$</span> is for yesterday</li>
+<li><span class="mathjax-exps">$VaR_{avg}$</span> is for past 60 days</li>
+<li><span class="mathjax-exps">$m_c$</span> is a multiplicative factor with minimal value 3 from backtesting</li>
+</ul>
+<p>SR:</p>
+<ul>
+<li>standardized approach</li>
+<li>internal model:
+<ul>
+<li>10 day 99% VaR</li>
+<li>multiplier 4 and capital for specific risk could not be less than half of that from standardized approach</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav2.3">2.3. Capital Requirements </h4>
+<p>Tier 3 capital: composed of unsecured subordinated debt with original maturity of at least 2 years to meet market risk capital requirement</p>
+<h4 id="nav2.4">2.4. Others </h4>
+<p>backtesting 1 day, 99% VaR over the past 250 days<br/>
+4 exceptions corresponds to <span class="mathjax-exps">$m_c=3$</span>. More exceptions, higher multiplier.</p>
+<h3 id="nav3">3. Basel II </h3>
+<ul>
+<li>three pillars</li>
+<li>credit risk</li>
+<li>operation risk</li>
+</ul>
+<h4 id="nav3.1">3.1. Three Pillars </h4>
+<ul>
+<li>regulatory capital</li>
+<li>supervisory preview proces: additional capital requirements</li>
+<li>market discipline: disclose qualitative and quantitative information</li>
+</ul>
+<h4 id="nav3.2">3.2. Credit Risk </h4>
+<h5 id="1-standardized-approach">1. Standardized Approach </h5>
+<p>used by banks not sufficiently sophisticated<br/>
+weight depend on obligor type, rating and nation.</p>
+<p>Mitigants:</p>
+<ul>
+<li>simple approach<br/>
+exposure covered by collateral, use weight of collateral<br/>
+minimum risk weight is 20% except for sovereign debt</li>
+<li>comprehensive approach<br/>
+adjust the size of exposure upward and adjust the collateral downward<br/>
+new exposure = adjusted exposure - adjusted collateral</li>
+</ul>
+<h5 id="2-foundation-internal-ratings-based-approach">2. Foundation Internal Ratings Based Approach </h5>
+<p>1 year 99.9% VaR<br/>
+EL is covered by financial products pricing<br/>
+<span class="mathjax-exps">$\text{capital} = UL = VaR - EL$</span><br/>
+<span class="mathjax-exps">$\text{capital} =(WCDR-PD)\times EAD \times LGD\times MA$</span></p>
+<ul>
+<li>MA is maturity adjustment: <span class="mathjax-exps">$1+\frac{(M-2.5)\times b}{1-1.5\times b}$</span>, needless to remember</li>
+<li>M is maturity of exposure</li>
+</ul>
+<p>WCDR increases if correlation increases or PD increases.<br/>
+PD has inverse relationship with correlation.<br/>
+As a company becomes less creditworthy, PD increases and becomes idiosyncratic and less affected by overall market conditions.</p>
+<ul>
+<li>Foundation IRB approach: PD is given by bank, while LGD, EAD, M are supervisory values
+<ul>
+<li>netting CEA (like Basel I Amendment)</li>
+<li>MA is 2.5 at most cases</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-advanced-internal-ratings-based-approach">3. Advanced Internal Ratings Based Approach </h5>
+<p>PD, LGD, EAD, M for corporate, sovereign and bank exposures are given by bank<br/>
+retail exposure use advanced IRB approach:</p>
+<ul>
+<li>no maturity adjustment</li>
+<li>retail exposure have lower correlation</li>
+</ul>
+<h4 id="nav3.3">3.3. Operational Risk </h4>
+<h5 id="1-basic-indicator-approach">1. Basic Indicator Approach </h5>
+<p><span class="mathjax-exps">$K_{BIA}=\frac{1}{n}\alpha \sum GI_i$</span></p>
+<ul>
+<li><span class="mathjax-exps">$GI_i$</span> annual positive gross income</li>
+<li>number of years in which gross income is positive</li>
+<li><span class="mathjax-exps">$\alpha=15%$</span></li>
+</ul>
+<h5 id="2-standardized-approach">2. Standardized Approach </h5>
+<p>beta factors</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Business Lines</th>
+<th style="text-align:center">Beta Factors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Corporate Finance (Investment Bank)</td>
+<td style="text-align:center">18%</td>
+</tr>
+<tr>
+<td style="text-align:center">Sales and Trading (Investment Bank)</td>
+<td style="text-align:center">18%</td>
+</tr>
+<tr>
+<td style="text-align:center">Payment and Settlement</td>
+<td style="text-align:center">18%</td>
+</tr>
+<tr>
+<td style="text-align:center">Commercial Banking (Loan and deposit)</td>
+<td style="text-align:center">15%</td>
+</tr>
+<tr>
+<td style="text-align:center">Agency &amp; Custody Service</td>
+<td style="text-align:center">15%</td>
+</tr>
+<tr>
+<td style="text-align:center">Retail Banking</td>
+<td style="text-align:center">12%</td>
+</tr>
+<tr>
+<td style="text-align:center">Retail Brokerage</td>
+<td style="text-align:center">12%</td>
+</tr>
+<tr>
+<td style="text-align:center">Asset Management</td>
+<td style="text-align:center">12%</td>
+</tr>
+</tbody>
+</table>
+<p><span class="mathjax-exps">$K_{TSA}$</span> is positive average for beta adjusted gross income, like <span class="mathjax-exps">$K_{BIA}$</span>.</p>
+<h5 id="3-advanced-measurement-approach">3. Advanced Measurement Approach </h5>
+<p>frequency (incidence) on loss (severity)<br/>
+Loss Distribution Approach (LDA):</p>
+<ul>
+<li>parametric and Monte Carlo:<br/>
+combine incidence and severity</li>
+<li>scenario analysis</li>
+</ul>
+<p>1 year 99.9% VaR<br/>
+4 elemnts should be considered:</p>
+<ul>
+<li>internal loss data</li>
+<li>external loss data</li>
+<li>scenario analysis (expertise)</li>
+<li>business environment &amp; control</li>
+</ul>
+<p>Bank must defend correlation assumptions in AMA.<br/>
+Bank may offset at most 20% operational risk capital with insurance compensation or claim instead of insurance premium.</p>
+<h4 id="nav3.4">3.4. Solvency II </h4>
+<p>For insurance companies</p>
+<p>Three pillars:</p>
+<ul>
+<li>quantitative requirement</li>
+<li>internal governance and official supervision</li>
+<li>disclosure and transparency</li>
+</ul>
+<p>Risks:</p>
+<ul>
+<li>credit</li>
+<li>market</li>
+<li>operational</li>
+<li>underwriting (life, health, property &amp; casualty insuracne)</li>
+</ul>
+<p>Minimum Capital Requirement (MCR) and Solvency Capital Requirement (SCR), SCR &gt; MCR</p>
+<ul>
+<li>below SCR: restore capital plan<br/>
+1 year 99.5% confidence</li>
+<li>below MCR: prevent new business and resolution, transfering its policies (insurance sold) to another company</li>
+</ul>
+<p>Capital structure:</p>
+<ul>
+<li>Tier 1 capital: equity, retained earnings</li>
+<li>Tier 2 capital: liabilities is subordinated to policyholders</li>
+<li>Tier 3 capital: debt is subordinated to policyholders</li>
+</ul>
+<h2 id="--c22-353--solvency-liquidity-and-other-regulation-after-the-global-financial-crisis"><!-- C22 353--> Solvency, Liquidity, and Other Regulation After the Global Financial Crisis </h2>
+<h3 id="nav4">4. Basel II.5 </h3>
+<p>2008 crisis, BCBS recognize minimum capital for market risk is inadequate for the trading book.<br/>
+Updations:</p>
+<ul>
+<li>Stressed VaR</li>
+<li>Incremental Risk Charge</li>
+<li>Comprehensive Risk Capital</li>
+</ul>
+<h4 id="nav4.1">4.1. Stressed VaR </h4>
+<p>Basel II.5 requires banks to calculate two VaRs, both are 10 days 99% VaR.<br/>
+Data range:</p>
+<ul>
+<li>usual VaR: 1 to 4 years historical daily movement (and times <span class="mathjax-exps">$\sqrt{10}$</span>)</li>
+<li>stressed VaR: the most stressful year (250 days) in the most recent 7 years</li>
+</ul>
+<p>capital: <span class="mathjax-exps">$MR = \max\{VaR_{t-1},m_c\times VaR_{avg}\}+\max\{sVaR_{t-1},m_s\times sVaR_{avg}\}$</span></p>
+<ul>
+<li>same as Basel I Amendment</li>
+</ul>
+<p>Stressed VaR is an extra pretty large amount.</p>
+<h4 id="nav4.2">4.2. Incremental Risk Charge (IRC) </h4>
+<p>The specific risk charge is to capture default, a reaction to regulatory arbitrage, which is named Incremental Default Risk Charge (IDRC).<br/>
+Besides default risk, credit risk also includes credit spread and credit rating change. As a result, IDRC is widened to IRC.</p>
+<h4 id="nav4.3">4.3. Comprehensive Risk Capital (CRC) </h4>
+<p>Basel II assumes constant correlation.<br/>
+For correlation book (securitizations/re-securitizations/relating derivatives), it is nonsystemic risk.<br/>
+Replace other indicators with CRC for the correlation book.</p>
+<h5 id="1-standardized-approach-1">1. Standardized Approach </h5>
+<p>capital ratio is determined by instrument type and credit ranking</p>
+<h5 id="2-internal-model-approach">2. Internal Model Approach </h5>
+<p>routinely rigorous stress tests</p>
+<h3 id="nav5">5. Basel III </h3>
+<ul>
+<li>Capital Requirements</li>
+<li>Liquidity Risk</li>
+<li>Counterparty Credit Risk</li>
+</ul>
+<h4 id="nav5.1">5.1. Capital Requirements </h4>
+<p>Tier 1 capital:</p>
+<ul>
+<li>Tier 1 equity capital</li>
+<li>additional tier 1 capital</li>
+</ul>
+<p>Tier 1 capital excludes, goodwill, intangibles, deferred tax assets, shortfall of reserves related to IRB EL. (no need to remember)</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Risk Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Operational Risk and Resilience - C. Capital Planning.html" rel="prev">< FRM II - Operational Risk and Resilience - C. Capital Planning</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
