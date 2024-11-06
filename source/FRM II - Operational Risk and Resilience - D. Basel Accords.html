@@ -38,6 +38,7 @@
 <th style="text-align:center">I</th>
 <th style="text-align:center">II</th>
 <th style="text-align:center">II.5</th>
+<th style="text-align:center">FRTB</th>
 <th style="text-align:center">III</th>
 </tr>
 </thead>
@@ -46,6 +47,7 @@
 <td style="text-align:center">1988</td>
 <td style="text-align:center">1999</td>
 <td style="text-align:center">2009</td>
+<td style="text-align:center">2012</td>
 <td style="text-align:center">2014</td>
 </tr>
 </tbody>
@@ -193,7 +195,7 @@ CEA: <span class="mathjax-exps">$CEA=\max\{\sum V_i,0\}+(0.4+0.6\times NRR)\sum 
 <h4 id="three-pillars">Three Pillars </h4>
 <ul>
 <li>regulatory capital</li>
-<li>supervisory preview proces: additional capital requirements</li>
+<li>supervisory preview process: additional capital requirements</li>
 <li>market discipline: disclose qualitative and quantitative information</li>
 </ul>
 <h4 id="credit-risk">Credit Risk </h4>
@@ -242,7 +244,7 @@ retail exposure use advanced IRB approach:</p>
 <ul>
 <li><span class="mathjax-exps">$GI_i$</span> annual positive gross income</li>
 <li>number of years in which gross income is positive</li>
-<li><span class="mathjax-exps">$\alpha=15%$</span></li>
+<li><span class="mathjax-exps">$\alpha=15\%$</span></li>
 </ul>
 <h5 id="2-standardized-approach">2. Standardized Approach </h5>
 <p>beta factors</p>
@@ -350,7 +352,8 @@ Data range:</p>
 <li>usual VaR: 1 to 4 years historical daily movement (and times <span class="mathjax-exps">$\sqrt{10}$</span>)</li>
 <li>stressed VaR: the most stressful year (250 days) in the most recent 7 years</li>
 </ul>
-<p>capital: <span class="mathjax-exps">$MR = \max\{VaR_{t-1},m_c\times VaR_{avg}\}+\max\{sVaR_{t-1},m_s\times sVaR_{avg}\}$</span></p>
+<p>capital: <span class="mathjax-exps">$MR = \max\{VaR_{t-1},m_c\times VaR_{avg}\}+sMR$</span><br>
+<span class="mathjax-exps">$sMR=\max\{sVaR_{t-1},m_s\times sVaR_{avg}\}$</span></p>
 <ul>
 <li>same as Basel I Amendment</li>
 </ul>
@@ -373,12 +376,217 @@ Replace other indicators with CRC for the correlation book.</p>
 <li>Counterparty Credit Risk</li>
 </ul>
 <h4 id="capital-requirements-1">Capital Requirements </h4>
-<p>Tier 1 capital:</p>
+<h5 id="capital-structure">Capital Structure </h5>
+<p>Tier 1 capital (going-concern capital):</p>
 <ul>
-<li>Tier 1 equity capital</li>
-<li>additional tier 1 capital</li>
+<li>Tier 1 equity capital<br>
+common equity / retained earnings / a limited amount of minority interest / unrealized gains and losses</li>
+<li>additional tier 1 capital<br>
+non-cumulative perpetual perfered equity (subordinated to depositors) / subordinated debt (callable after 5 years) / convertible debt / minority interest not in core tier 1</li>
 </ul>
 <p>Tier 1 capital excludes, goodwill, intangibles, deferred tax assets, shortfall of reserves related to IRB EL. (no need to remember)</p>
+<p>Tier 2 capital (gone concern capital) protects depositors and creditors after failure:</p>
+<ul>
+<li>unsecured, unguaranteed debt / instruments subordinated to depositor and subordinated debt (with 5 years maturity and callable after 5 years)</li>
+</ul>
+<p>(?) total capital includes general loan loss reserves (for UL), at most 1.25% standardized approach RWA or 0.6% of IRB RWA could be included in capital.</p>
+<h5 id="capital-ratio">Capital Ratio </h5>
+<p>Minimum capital requirement (at all times):</p>
+<ul>
+<li>Tier 1 equity capital must be at least 4.5% of RWA</li>
+<li>Total Tier 1 capital must be at least 6% of RWA</li>
+<li>Total capital (total Tier 1 + tier 2) must be at least 8% of RWA</li>
+</ul>
+<p>Capital Conservation Buffer (CCB):<br>
+in normal times (against stressed time) core Tier 1 equity capital equal 20 2.5% of RWA<br>
+(?) core Tier 1 equity capital</p>
+<ul>
+<li>(-) temporarily understood as tier 1 equity capital</li>
+</ul>
+<p>Countercyclical Capital Buffer (CCB):<br>
+vary at the discretion of national supervisors and between 0 and 2.5% of RWA, must be met with core Tier 1 equity capital</p>
+<ul>
+<li>to prevent the incentive of decreasing loan during recession (less loan, lower RWA)</li>
+<li>to provide for macroprudential restraint of overheating</li>
+</ul>
+<p>G-SIBs Buffer: higher loss absorption requirment<br>
+extra equity equal 1%, 1.5%, 2%, 2.5%, 3.5% of RWA<br>
+Living wills: when distressed, how to recapitalize and operate as a going concern<br>
+(G-SII for insure, D-SIB for domestic banks)</p>
+<p>Leverage ratio: Tier 1 capital to leverage exposure (LE)</p>
+<ul>
+<li>minimum leverage ratio of 3%</li>
+<li>leverage exposure includes on-balance-sheet assets and fractions of off-balance-sheet assets</li>
+<li>LE does not set risk adjusted weight for on-balance-sheet asset, compared to RWA</li>
+</ul>
+<p>Contingent Convertible Bonds (CoCos):<br>
+increase equity automatically when distress occurs<br>
+common trigger is ratio of core tier 1 capital to RWA falls below a threshold<br>
+CoCos may (in some countries) be included in Additional Tier 1 or Tier 2</p>
+<ul>
+<li>as bond, it cost less than equity</li>
+<li>higher ROE in normal time</li>
+</ul>
+<h4 id="liquidity-risk">Liquidity Risk </h4>
+<p>banks need to survive liquidity pressures<br>
+liquidity ratio higher than 100%</p>
+<h5 id="1-liquidity-coverage-ratio-lcr">1. Liquidity Coverage Ratio (LCR) </h5>
+<p><span class="mathjax-exps">$LCR = \frac{\text{high quality liquid assets}}{\text{net cash outflow in 30 days period}}$</span><br>
+acute stress examples:</p>
+<ul>
+<li>downgrade of bank's debt by 3 notchs</li>
+<li>partial loss of deposit</li>
+<li>increased haircut on secured funding</li>
+</ul>
+<h5 id="2-net-stable-funding-ratio-nsfr">2. Net Stable Funding Ratio (NSFR) </h5>
+<p><span class="mathjax-exps">$NSFR=\frac{\text{available amount of stable funding}}{\text{required amount of stable funding}}$</span></p>
+<ul>
+<li>numerator: each category of funding (liability and equity) multiplied by ASF factor</li>
+<li>denominator: each category of funding (asset) multiplied by RSF factor<br>
+RSF factor reflect the permanence of the funding required<br>
+lower liquidity, higher RSF</li>
+</ul>
+<h4 id="counterparty-credit-risk">Counterparty Credit Risk </h4>
+<p>CVA risk: standardized approach and basic approach</p>
+<h4 id="legislation-and-regulations-after-crisis">Legislation and Regulations after Crisis </h4>
+<p>macroprudential<br>
+compensation for staff should be dependent on risk<br>
+derivatives trade must be through CCP<br>
+Office of Credit Rating<br>
+risk committee<br>
+issuers of securitizations required to retain at least 5% of each tranche</p>
+<h3 id="--c23-363---high-level-summary-of-basel-iii-reforms"><!-- C23 363 --> High-Level Summary of Basel III Reforms </h3>
+<p>Motivations: lessons from crisis</p>
+<h5 id="motivations-for-revising-the-basel-iii-framework">Motivations for Revising the Basel III Framework </h5>
+<h6 id="initial-phase">Initial Phase </h6>
+<ul>
+<li>tier 1 equity capital: a greater focus on going-concern loss-absorbing capacity</li>
+<li>higher capital level for stressed time</li>
+<li>RWA acutely miscalibrated (credit rating in standardized approach)</li>
+<li>macroprudential elements (G-SIB)</li>
+</ul>
+<h6 id="revise-in-2017">Revise in 2017 </h6>
+<p>restore credibility of RWA and improve the comparability of banks' capital ratio (encourage standardized approach)</p>
+<ul>
+<li>enhancing robustness and risk sensitivity of standardized approach for credit risk, CVA risk and operational risk</li>
+<li>constraining use of internal model approaches by limits on inputs, remove internal model for CVA and operational risk</li>
+<li>leverage ratio buffer for G-SIB</li>
+<li>replace Basel II output floor</li>
+</ul>
+<h4 id="standardized-approach-to-credit-risk">Standardized Approach to Credit Risk </h4>
+<ul>
+<li>improving granularity and risk sensitivity</li>
+<li>reducing reliance on credit rating</li>
+<li>output floor and enchance comparability</li>
+</ul>
+<h5 id="not-to-remember">Not to Remember </h5>
+<ul>
+<li>for residential real estate exposure, risk weights vary by LTV instead of single weight</li>
+<li>a standalone treatment for covered bond is introduced</li>
+<li>a standalone treatment for project finance, object finance (large asset), commodities finance</li>
+</ul>
+<h4 id="internal-ratings-based-approaches-for-credit-risk">Internal Ratings-Based Approaches for Credit Risk </h4>
+<p>Basel II IRB approach 3 shortcomings:</p>
+<ul>
+<li>excessive complexity</li>
+<li>lack of comparability</li>
+<li>lack of robustness for certain asset classes (equity)</li>
+</ul>
+<p>3 revisions:</p>
+<ul>
+<li>removing the option for advanced IRB approach for exposure to large and mid-sized corporates, exposures to banks and other financial institutions (***)<br>
+no IRB for equity asset</li>
+<li>input floor for conservativism</li>
+<li>providing greater specification of parameter estimation to reduce RWA variability</li>
+</ul>
+<h4 id="cva-risk-framework">CVA Risk Framework </h4>
+<p>revise CVA framework:</p>
+<ul>
+<li>risk sensitivity</li>
+<li>robustness</li>
+<li>consistency</li>
+</ul>
+<h4 id="operational-risk-framework">Operational Risk Framework </h4>
+<p>Standardized Measurement Approach (SMA) replace the approaches before</p>
+<h4 id="leverage-ratio-framework">Leverage Ratio Framework </h4>
+<p>additional 50% of G-SIB's risk weighted higher-loss absorbency requirment<br>
+leverage ratio G-SIB buffer: additional tier 1 capital<br>
+capital conservation ratio is constrained by tier 1 capital ratio and tier 1 leverage ratio</p>
+<h4 id="output-floor-整体底线">Output Floor (整体底线) </h4>
+<p>RWA must be calculated as the higher of:</p>
+<ul>
+<li>total RWA using any approach combination</li>
+<li>72.5% of RWA using only standardized approach</li>
+</ul>
+<h3 id="--c24-373---basel-iii-finalizing-post-crisis-reforms"><!-- C24 373 --> Basel III: Finalizing Post-Crisis Reforms </h3>
+<h4 id="standardized-measurement-approach-operation-risk-capital-charge">Standardized Measurement Approach: Operation Risk Capital Charge </h4>
+<ul>
+<li>business indicator</li>
+<li>business indicator component</li>
+<li>internal loss multiplier</li>
+</ul>
+<p>minimal operational risk capital: <span class="mathjax-exps">$ORC=BIC\times ILM$</span><br>
+for banks in bucket 1 (BI less than 1 billion Euros), <span class="mathjax-exps">$ILM=1$</span><br>
+national supervisors may set <span class="mathjax-exps">$ILM=1$</span><br>
+banks which do not meet loss data standards should be set <span class="mathjax-exps">$ILM\geq 1$</span></p>
+<ul>
+<li>SMA is a single, non-model-based method</li>
+<li>AMA is able to use a range of alternative models</li>
+</ul>
+<h5 id="business-indicator-bi">Business Indicator (BI) </h5>
+<p>derived from average data from 3 years.<br>
+<span class="mathjax-exps">$BI=ILDC_{avg}+SC_{avg}+FC_{avg}$</span></p>
+<ul>
+<li>ILDC: interest, lease, dividend component</li>
+<li>SC: service component</li>
+<li>FC: financial component</li>
+</ul>
+<h5 id="business-indicator-component-bic">Business Indicator Component (BIC) </h5>
+<p><span class="mathjax-exps">$BIC = BI\times \text{marginal BI coefficients}$</span><br>
+calculation is like individual income tax</p>
+<h5 id="internal-loss-multiplier-ilm">Internal Loss Multiplier (ILM) </h5>
+<p><span class="mathjax-exps">$ILM=f(LC,BIC)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$LC$</span>: 15 times average annual operational risk losses incurred over previous 10 years<br>
+5 years is OK<br>
+if age less than 5 years, set <span class="mathjax-exps">$ILM=1$</span></li>
+<li>when <span class="mathjax-exps">$LC=BIC$</span>, <span class="mathjax-exps">$ILM=1$</span></li>
+</ul>
+<h4 id="loss-data-identification-collection-and-treatment">Loss Data Identification, Collection and Treatment </h4>
+<h5 id="general-criteria">General Criteria </h5>
+<ul>
+<li>internal loss data must be based on 10 years period</li>
+<li>map loss into 7 categories</li>
+<li>operational loss events related to credit risk that are accounted for in credit RWA should not be included in the loss data set<br>
+like loan fraud (external fraud)</li>
+<li>operational loss related to market risk are treated as operational risk<br>
+fat finger</li>
+</ul>
+<h5 id="specific-criteria">Specific Criteria </h5>
+<p>loss data set<br>
+gross loss, net loss and recovery definitions:</p>
+<ul>
+<li>direct charges<br>
+settlement to P&amp;L account, write-downs, impairment</li>
+<li>external expenses direct link to operational risk event and cost of repair to restore<br>
+legal cost</li>
+<li>provisions or reserves accounted for in P&amp;L against potential operational loss impact</li>
+<li>definitive material financial impact temporarily booked in transitory and not reflected in P&amp;L</li>
+<li>timing loss should be amortized</li>
+</ul>
+<p>gross loss, net loss and recovery excludes:</p>
+<ul>
+<li>cost of general maintenance contracts on PP&amp;E (property plant and equipment)</li>
+<li>upgrade or improvement expenditures</li>
+<li>insurance premium</li>
+</ul>
+<h3 id="frtb">FRTB </h3>
+<p>issued 2012. Final version is Minimum Capital Requirement for Market Risk in 2016.</p>
+<ul>
+<li>liquidity horizon</li>
+<li>market risk capital charge</li>
+</ul>
+<p>See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3" target="_blank">FRTB in Market Risk</a>.</p>
 
       </div>
       
