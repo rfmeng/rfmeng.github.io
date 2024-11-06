@@ -168,7 +168,7 @@ brainstorming techniques for extreme events
 * level 2: definition (detailed version of level 1)
 * level 3: examples
 
-leve 1 and level 2 are regulatory categories
+level 1 and level 2 are regulatory categories
 
 ##### Operatioanl Risk Data Exchange (ORX)
 revises Basel
@@ -192,7 +192,7 @@ ORM framework: OR incident database → RCSA → KRI → Lessons learned
 
 #### Incident Database
 ##### Comprehensiveness of Data
-Basel committee does not difine material exposuresm, but set minimum threshold for loss reporting
+Basel committee does not difine material exposures, but set minimum threshold for loss reporting
 "cherry-picking": biased selection 
 
 regulatory perspective: report financial loss only
@@ -216,7 +216,7 @@ workshop-style discussions, questionaire
 * Severity Assessment: Impact Scales
   financial, regulatory, customer, reputation
 * Likelihood Assessment Scales
-  likelihood or frequency1
+  likelihood or frequency
 * heatmap to link likelihood and severity
 
 ###### Outcome of RCSA
@@ -277,7 +277,8 @@ losses in each risk classes are not iid.
 
 #### Quantificaion of Operational Resilience
 OR focuses on the continuity and recovery of important business service, while business continuity management focuses on each business.
-single points of failure (SPOF): back-up and redundancy for key employees with unique knowledge and skill.
+single points of failure (SPOF): 
+* to avoid this risk, set back-up and redundancy for key employees with unique knowledge and skill.
 
 
 
@@ -498,20 +499,4 @@ apt for assessing operational resilience
 
 ##### Operational Risk Stress Testing Models
 severity can be more complex to model than frequency because of being highly impacted by tail events.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

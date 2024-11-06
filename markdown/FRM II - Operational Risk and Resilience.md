@@ -1382,5 +1382,8 @@ issued 2012. Final version is Minimum Capital Requirement for Market Risk in 201
 * liquidity horizon
 * market risk capital charge
 
-See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3" target="_blank">FRTB in Market Risk</a>.
+See <a href="https://rfmeng.github.io/pages/FRM%20II/FRM%20II%20-%20Market%20Risk%20Measurement%20and%20Management.html#nav14" target="_blank">FRTB in Market Risk</a>.
+#### Lquidity Horizons
+#### Market Risk Capital Charge
+#### Securitization
 
