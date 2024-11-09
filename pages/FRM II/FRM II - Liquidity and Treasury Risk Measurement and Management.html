@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Liquidity and Treasury Risk Measurement and Management - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Liquidity Risk and Leverage </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction of Liquidity Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Liquidity Challenges </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Collateral and Leverage </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Managing Deposit Services and Nondeposit Liabilities </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Deposit Services Introduction </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Deposits Pricing Methods </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Nondeposit Liabilities Sources </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Nondeposit Funding Choice </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.5"><span class="nav-number">2.5.</span> <span class="nav-text">Overall Cost of Fund </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Managing Deposit Services and Nondeposit Liabilities </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Repo Transaction Basis </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Special Collateral in Repo </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> The Investment and Dealer Function in Financial Services Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Investment Instruments </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Maturity Strategies and Management Tools </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Failure of Dealer Banks </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Illiquid Asset </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Illiquid Market </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Illiquid Asset Bias </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Risk Management for Changing Interest Rates </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Asset Liability Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Interest-Sensitive Gap Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Duration Gap Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Liquidity and Reserves Management: Strategies and Policies </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Liquidity Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">Legal Reserve Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Monitoring Liquidity </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Liquidity Options </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">Term Structures for Monitoring Liquidity </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Liquidity Transfer Pricing: A Guide to Better Practice </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Liquidity Transfer Pricing Practice </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">LTP Approaches and Contingent Liquidity Pricing </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> US Dollar Shortage and Covered Interest Parity Lost </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Cross-Currency Basis </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.2"><span class="nav-number">10.2.</span> <span class="nav-text">Causes of CIP Violation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.3"><span class="nav-number">10.3.</span> <span class="nav-text">US Dollar Shortage </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav11"><span class="nav-number">11.</span> <span class="nav-text"> Early Warning Indicators </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.1"><span class="nav-number">11.1.</span> <span class="nav-text">Guidelines of EWI </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav12"><span class="nav-number">12.</span> <span class="nav-text"> Intraday Liquidity Risk Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.1"><span class="nav-number">12.1.</span> <span class="nav-text">Basics of Intraday Liquidity </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav12.2"><span class="nav-number">12.2.</span> <span class="nav-text">Intraday Liquidity Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav13"><span class="nav-number">13.</span> <span class="nav-text"> Liquidity Risk Reporting </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.1"><span class="nav-number">13.1.</span> <span class="nav-text">Introduction </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav13.2"><span class="nav-number">13.2.</span> <span class="nav-text">Different Types of Liquidity Risk Reports </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav14"><span class="nav-number">14.</span> <span class="nav-text"> Liquidity Stress Testing </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.1"><span class="nav-number">14.1.</span> <span class="nav-text">Four Categories of Funding Liquidity </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.2"><span class="nav-number">14.2.</span> <span class="nav-text">Design of the Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav14.3"><span class="nav-number">14.3.</span> <span class="nav-text">Liquidity Stress Test Report </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav15"><span class="nav-number">15.</span> <span class="nav-text"> Contingency Funding Planning </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.1"><span class="nav-number">15.1.</span> <span class="nav-text">Considerations of CFP </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav15.2"><span class="nav-number">15.2.</span> <span class="nav-text">Framework of CFP </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Liquidity and Treasury Risk Measurement and Management
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-11-10</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-11-06" editdate="2024-11-10" tag="Risk-Management"></ndtag></p>
+<h2 id="a-introduction-of-liquidity-risk">A. Introduction of Liquidity Risk </h2>
+<h3 id="nav1">1.  Liquidity Risk and Leverage </h3>
+<h4 id="nav1.1">1.1. Introduction of Liquidity Risk </h4>
+<p>solvency (偿付) vs. liquidity</p>
+<h5 id="source-of-liquidity-risk">Source of Liquidity Risk </h5>
+<p>Three types of liquidity risk interact.</p>
+<ul>
+<li>transaction liqudity (market liquidity)</li>
+<li>funding liquidity (balance sheet risk): finance assets at acceptable borrowing rate</li>
+<li>systemic risk</li>
+</ul>
+<h5 id="measuring-market-liquidity">Measuring Market Liquidity </h5>
+<p>Market maker is also called dealer. It tends to increase bid ask spread above a certain size.<br/>
+Expected transactions cost is half spread.</p>
+<ul>
+<li>Dollar amount: offer-bid</li>
+<li>proportional spread: <span class="mathjax-exps">$\frac{\text{offer}-\text{bid}}{\text{mid price}}$</span></li>
+</ul>
+<p>Cost of liquidation:</p>
+<ul>
+<li>Normal market condition: <span class="mathjax-exps">$\sum\frac{1}{2}s_iP_iQ_i$</span>
+<ul>
+<li><span class="mathjax-exps">$P_i$</span> mid price</li>
+<li><span class="mathjax-exps">$Q_i$</span> liquidation volume</li>
+<li><span class="mathjax-exps">$P_iQ_i$</span> called market value</li>
+</ul>
+</li>
+<li>Stressed market condition: <span class="mathjax-exps">$\sum\frac{1}{2}(\mu_i+\lambda\sigma_i)P_iQ_i$</span>
+<ul>
+<li><span class="mathjax-exps">$\lambda$</span> is one side <span class="mathjax-exps">$z$</span> value for some confidence level</li>
+<li><span class="mathjax-exps">$\frac{1}{2}(\mu_i+\lambda\sigma_i)$</span> is called spread risk factor</li>
+</ul>
+</li>
+</ul>
+<p>Liquidity-adjusted VaR: regular VaR + cost of liquidation<br/>
+VaR translation considering market liquidity:</p>
+<ul>
+<li>to avoid adverse price impact, the portfolio postion equally decreasing every day</li>
+<li>adjusted T day VaR: <span class="mathjax-exps">$\frac{(2T+1)(T+1)}{6T}VaR_{1-day}$</span></li>
+</ul>
+<h5 id="funding-liquidity-risk">Funding Liquidity Risk </h5>
+<p>Maturity mismatch leads to funding liquidity risk. To manage this, bank uses asset liability management.</p>
+<ul>
+<li>Case of Northern Rock<br/>
+Mortgage and selling short-term debt, hard to roll over during subprime crisis even solvent.</li>
+<li>Case of Ashanti Goldfields<br/>
+sell gold forward to hedge and unable to meet margin call</li>
+<li>Case of Metallgesellschaft<br/>
+sell gasoline and long futures</li>
+</ul>
+<h4 id="nav1.2">1.2. Liquidity Challenges </h4>
+<ul>
+<li>commercial banks<br/>
+bank run: fractional-reserve</li>
+<li>security firms (investment bank)<br/>
+lenders withdraw credit<br/>
+brokerage and clearing customers withdrawing deposits</li>
+<li>money market mutual funds (MMMF)<br/>
+huge redemption<br/>
+break the buck phenomenon (price lower than 1 dollar)</li>
+<li>hedge fund<br/>
+redemption<br/>
+no access to wholesale funding</li>
+</ul>
+<h5 id="sources-of-liquidity">Sources of Liquidity </h5>
+<ul>
+<li>cash and treasury securities</li>
+<li>liquidate trading book</li>
+<li>borrow money</li>
+<li>attract retail and wholesale deposit</li>
+<li>securitize assets</li>
+<li>borrow from central bank</li>
+</ul>
+<h5 id="regualtions">Regualtions </h5>
+<p>Liquidity Coverage Ratio (LCR) and Net Stable Funding Ratio (NSFR). See Basel III.<br/>
+<span class="mathjax-exps">$LCR = \frac{\text{high quality liquid assets}}{\text{net cash outflow in 30 days period}}\geq 100\%$</span><br/>
+<span class="mathjax-exps">$NSFR=\frac{\text{available amount of stable funding}}{\text{required amount of stable funding}}\geq 100\%$</span><br/>
+BIS issued</p>
+<h5 id="liquidity-black-holes">Liquidity Black Holes </h5>
+<p>When positive feedback traders dominate trading, there may be crowded exit.<br/>
+Positive feedback traders: sell when prices fall and buy when prices rise<br/>
+Reasons of positive feedback trading:</p>
+<ul>
+<li>trend trading</li>
+<li>stop-loss rules</li>
+<li>dynamic hedging</li>
+<li>creating options synthetically<br/>
+long stock and short futures</li>
+<li>margin</li>
+<li>predatory trading: predict price and trade before other participants</li>
+<li>relative value fixed income trade (LTCM)</li>
+</ul>
+<h4 id="nav1.3">1.3. Collateral and Leverage </h4>
+<h5 id="collateral-market">Collateral Market </h5>
+<p>collateral is needed when:</p>
+<ul>
+<li>margin loan</li>
+<li>repurchase agreement</li>
+<li>securities lending (short stocks)</li>
+<li>total return swaps</li>
+</ul>
+<h5 id="leverage">Leverage </h5>
+<p>leverage ratio: <span class="mathjax-exps">$L=\frac{A}{E}=1+\frac{D}{E}$</span><br/>
+ROE: <span class="mathjax-exps">$r_E=\frac{\Delta E}{E}=\frac{Ar_A-Dr_D}{E}$</span><br/>
+effect of increasing leverage: <span class="mathjax-exps">$\frac{\partial r_E}{\partial L}=r_A-r_D$</span></p>
+<p>leverage in loans, options and derivatives：</p>
+<ul>
+<li>margin loan: haircut of <span class="mathjax-exps">$h$</span> percent: <span class="mathjax-exps">$h$</span> is collateral and <span class="mathjax-exps">$1-h$</span> is lent</li>
+<li>short positions: equity is margin</li>
+<li>derivatives</li>
+<li>securitization: equity tranche has leverage</li>
+</ul>
+<h2 id="b-asset-liability-management">B. Asset Liability Management </h2>
+<h3 id="nav2">2.  Managing Deposit Services and Nondeposit Liabilities </h3>
+<h4 id="nav2.1">2.1. Deposit Services Introduction </h4>
+<p>deposit types:</p>
+<ul>
+<li>transaction (payment or demand) deposits
+<ul>
+<li>noninterest-bearing: only payment service</li>
+<li>interest-bearing
+<ul>
+<li>negotiable order of withdrawal (NOW) accounts: hybrid checking-saving</li>
+<li>money market deposit accounts (MMDA)</li>
+<li>super now: lower interest rate than MMDA</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>non-transaction (saving or thrift) deposits
+<ul>
+<li>passbook saving deposits: unlimited withdrawal privileges</li>
+<li>time deposits: minimum maturity 7 days</li>
+<li>retirement saving deposits: most stable</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav2.2">2.2. Deposits Pricing Methods </h4>
+<h5 id="1-marginal-cost-no-consideration-of-service-cost">1. Marginal Cost (No Consideration of Service Cost) </h5>
+<p>marginal cost rate: <span class="mathjax-exps">$\frac{\text{change in total cost}}{\text{addtional funds raised}}$</span></p>
+<h5 id="2-cost-plus-profit-margin">2. Cost plus Profit Margin </h5>
+<h5 id="3-conditional-pricing">3. Conditional Pricing </h5>
+<p>low fee if the deposit balance remains above some level</p>
+<ul>
+<li>flat-rate pricing: per check, per time or both</li>
+<li>free pricing: no fee</li>
+<li>conditionally free pricing</li>
+</ul>
+<h5 id="4-relationship-pricing">4. Relationship Pricing </h5>
+<h5 id="other-issues">Other Issues </h5>
+<ul>
+<li>Deposit Insurance<br/>
+exclude securities, mutual fund, safe deposit boxes</li>
+<li>Disclosure of Deposit Service</li>
+<li>Overdraft Protection<br/>
+when not sufficient fund, there is fee, which is predatory lending and presents high actual interest rate</li>
+<li>Basic (Lifeline) Banking: electricity, water, gas<br/>
+low-price service controversial issue</li>
+</ul>
+<h4 id="nav2.3">2.3. Nondeposit Liabilities Sources </h4>
+<ul>
+<li>Federal fund market: fast interbank market (Fed Wire)
+<ul>
+<li>overnight: normally no collateral</li>
+<li>term loan: longer-term</li>
+<li>continuing contract: aotumatically renewed each day</li>
+</ul>
+</li>
+<li>Federal Reserve Banks: collateral
+<ul>
+<li>primary credit: short term, high credit</li>
+<li>secondary credit:</li>
+<li>seasonal credit: longer period than primary credit</li>
+</ul>
+</li>
+<li>Advances from Federal Home Loan Banks (FHLB)<br/>
+home mortgage as collateral<br/>
+below-market interest rate</li>
+<li>Large Negotiable CD<br/>
+IOU, actually a debt</li>
+<li>Eurocurrency Deposit Market: unregulated offshore money market</li>
+<li>commercial paper market
+<ul>
+<li>industrial paper: finance the purchase of raw material</li>
+<li>financial paper: purchase off-book loan</li>
+</ul>
+</li>
+<li>repurchase agreement</li>
+<li>long-term non-deposit funds</li>
+</ul>
+<h4 id="nav2.4">2.4. Nondeposit Funding Choice </h4>
+<p>Available Fund Gap (AFG): expected loan - expexted deposit<br/>
+small amount add to AFG to cover unexpected events</p>
+<h5 id="factors-of-choosing-alternative-nondeposit-sources">Factors of Choosing Alternative Nondeposit Sources </h5>
+<ul>
+<li>effective cost rate: fee / net investable fund<br/>
+deposit insurance fee should be deducted from investable fund</li>
+<li>risk (credit availability risk)</li>
+<li>speed</li>
+<li>size</li>
+</ul>
+<h4 id="nav2.5">2.5. Overall Cost of Fund </h4>
+<h5 id="historical-average-cost-approach">Historical Average Cost Approach </h5>
+<p>(?) weighted average overall cost of capital = <span class="mathjax-exps">$\frac{WACC}{1-t}\frac{D+E}{D}$</span></p>
+<h5 id="pooled-funds-approach">Pooled Funds Approach </h5>
+<h3 id="nav3">3.  Managing Deposit Services and Nondeposit Liabilities </h3>
+<h4 id="nav3.1">3.1. Repo Transaction Basis </h4>
+<p>A sells bond to B, and A purchase bond back later.</p>
+<ul>
+<li>repo rate: actual/360, simple rate</li>
+<li>haircut: difference between collateral value and cash gained</li>
+<li>amount borrowed = collateral price * (1 - haircut)</li>
+</ul>
+<p>See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(1).html#nav3.2" target="_blank">clean price (quote price) and dirty price (true price, full price, invoice price)</a> in CFA I.<br/>
+Traders quote clean price, which is continuous.</p>
+<p>Reverse Repo: buy the repo, invest in repo</p>
+<ul>
+<li>Lender of cash in repo market gets a bond to short.</li>
+<li>cash management for money market mutual fund / municipality</li>
+</ul>
+<p>sell the repo / enter into repo<br/>
+open repo: 1 day repo that renews itself until cancelled.</p>
+<h5 id="repos-and-liquidity-management">Repos and Liquidity Management </h5>
+<ul>
+<li>repo borrowing rate relatively low</li>
+<li>short maturities and less stable</li>
+</ul>
+<h5 id="risk-for-entering-repo">Risk for Entering Repo </h5>
+<p>couterparty risk: borrower defaults and collateral's value decrease<br/>
+liquidity risk: collateral</p>
+<h5 id="repo-financing-cases">Repo Financing Cases </h5>
+<h6 id="collapse-of-bear-stearns">Collapse of Bear Stearns </h6>
+<p>lenders shortening Repo maturity</p>
+<ul>
+<li>prime brokerage clients withdraw increase</li>
+<li>stop renewing Repo</li>
+<li>capital flight to stable firm</li>
+</ul>
+<h6 id="lehman-brothers">Lehman Brothers </h6>
+<p>JPM increase its haircut.</p>
+<ul>
+<li>Lehman Brothers relied heavily on short-term repo.</li>
+</ul>
+<h4 id="nav3.2">3.2. Special Collateral in Repo </h4>
+<h5 id="general-and-special-repo-rates">General and Special Repo Rates </h5>
+<p>special spread = GC rate - special rates</p>
+<ul>
+<li>GC rates are for overnight repo where any U.S. Treasury collateral is acceptable</li>
+<li>special rates are for repo with special securities as collateral</li>
+</ul>
+<h5 id="special-spreads-and-auction-cycle">Special Spreads and Auction Cycle </h5>
+<p>On-the-run (OTR) or current issue: the most recently issued bond of a given maturity.<br/>
+OTR tend to be the most liquid (because of self-fulfilling phenomenon), easier to short.<br/>
+4 characteristics of special spread:</p>
+<ul>
+<li>quite volatile</li>
+<li>quite large</li>
+<li>higher level over some period</li>
+<li>small immediately after auctions and to peak before auctions</li>
+</ul>
+<h5 id="financing-value-of-a-bond-trading-special-in-repo">Financing Value of a Bond Trading Special in Repo </h5>
+<p>financing value: special spread * amount * days/360</p>
+<h3 id="nav4">4.  The Investment and Dealer Function in Financial Services Management </h3>
+<h4 id="nav4.1">4.1. Investment Instruments </h4>
+<p>investment is crossroads account among loans and deposits</p>
+<ul>
+<li>money market instruments (taxable income in 4 examples)
+<ul>
+<li>T-bill</li>
+<li>T-note</li>
+<li>Federal Agency Securities</li>
+<li>Certificate of Deposits (CDs)<br/>
+at least $100,000</li>
+<li>International Eurocurrency Deposits</li>
+<li>Banker's Acceptances (汇票)</li>
+<li>commercial paper (商票)</li>
+<li>short-term municipal obligation (bond): tax-exempt interest income</li>
+</ul>
+</li>
+<li>capital market instruments: longer than 1 year
+<ul>
+<li>T-bond</li>
+<li>municipal notes and bonds: tax-exempt interest income</li>
+<li>corporate notes and bonds</li>
+<li>ABS</li>
+</ul>
+</li>
+</ul>
+<h5 id="choice-of-investment-securities">Choice of Investment Securities </h5>
+<p>YTM and holding period yield (HPY)<br/>
+tax exposure: after-tax return</p>
+<ul>
+<li>tax swap tool: lending instituion sells lower-yielding securities at a loss and purchase new higher-yielding asset</li>
+<li>portfolio shifting tool: sell securities at a loss, shift to substitute new higher yielding securities</li>
+</ul>
+<p>pledging requirement</p>
+<h4 id="nav4.2">4.2. Maturity Strategies and Management Tools </h4>
+<h5 id="maturity-strategies">Maturity Strategies </h5>
+<ul>
+<li>ladder or spaced-maturity: equally among all maturities</li>
+<li>front-end load maturity: short-term investment</li>
+<li>back-end load maturity</li>
+<li>barbell investoment portfiolio strategy</li>
+<li>rate-expectations approach: dynamic investment</li>
+</ul>
+<h5 id="maturity-management-tools">Maturity Management Tools </h5>
+<p>yield curve:</p>
+<ul>
+<li>pursuing the carry trade: borrow short term and invest in long term</li>
+<li>riding the yield curve: buy long term bond and sell after some time (upsloping curve)</li>
+</ul>
+<p>duration:<br/>
+See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav1.2" target="_blank">duration</a> in CFA I.<br/>
+portfolio immunizationL interest rate risk and reinvestment risk offset each other</p>
+<h4 id="nav4.3">4.3. Failure of Dealer Banks </h4>
+<h5 id="major-lines-of-business-of-dealer-banks">Major Lines of Business of Dealer Banks </h5>
+<ul>
+<li>intermediate in securities dealing, underwriting, trading</li>
+<li>trade in over-the-counter derivatives: running the matched book</li>
+<li>prime brokerage to hedge funds and other large investors<br/>
+securities holding, cash-management, financing</li>
+<li>asset-management: investment need</li>
+</ul>
+<p>dealer bank could use asset and cash in the asset pool, there comes liquidity risk</p>
+<h5 id="failure-mechanisms">Failure Mechanisms </h5>
+<ul>
+<li>flight of short-term creditors<br/>
+laddering the maturities of its liabilities</li>
+<li>departure of prime-brokerage client</li>
+<li>cash-draining actions by derivatives counterparties<br/>
+CCP to mitigate risk</li>
+<li>loss of cash settlement privileges<br/>
+daylight overdraft privileges</li>
+</ul>
+<h5 id="policy-responses-to-alleviate-dealers-risk">Policy Responses to Alleviate Dealer's Risk </h5>
+<p>capital injections<br/>
+higher capital requirment<br/>
+central bank insurance for tri-party repo<br/>
+central clearing<br/>
+pre-failure resolution: distress-contingent convertible debt</p>
+<h3 id="nav5">5.  Illiquid Asset </h3>
+<h4 id="nav5.1">5.1. Illiquid Market </h4>
+<h5 id="characteristics">Characteristics </h5>
+<p>most asset classes are illiquid:</p>
+<ul>
+<li>equity (OTC)</li>
+<li>municipal bond</li>
+<li>real estate</li>
+<li>institutional infrastructure: 50 years</li>
+<li>works of art</li>
+</ul>
+<p>markets for illiquid assets are large<br/>
+for individual investors, 90% total wealth is illiquid asset (human capital)</p>
+<h5 id="source-of-illiquidity">Source of Illiquidity </h5>
+<p>participation cost: necessary skill<br/>
+transaction cost<br/>
+search frictions<br/>
+asymmetric information<br/>
+price impact: large trades impact<br/>
+funding constraints</p>
+<h4 id="nav5.2">5.2. Illiquid Asset Bias </h4>
+<h5 id="biases-on-report-returns">Biases on Report Returns </h5>
+<ul>
+<li>survivorship bias</li>
+<li>reporting bias: do not start to stop without sufficient return</li>
+<li>infrequent trading
+<ul>
+<li>smoothing volatility and return, underestimating correlation and beta</li>
+<li>overestimate return autocorrelation</li>
+</ul>
+</li>
+<li>selection bias: asset values tend to be reported when they are high (sell building until property values recover)</li>
+</ul>
+<h5 id="illiquidity-risk-premiums">Illiquidity Risk Premiums </h5>
+<p>to acquire illiquidity risk premium:</p>
+<ul>
+<li>allocation across asset classes: ignoring risk</li>
+<li>allocation within asset class: evidence of large illiquidity risk</li>
+<li>rebalancing is counter-cyclical and suppies liquidity</li>
+</ul>
+<p>why illiquidity risk premium manifest within but not across asset classes: limited integration</p>
+<h5 id="portfolio-choice-with-illiquid-assets">Portfolio Choice with Illiquid Assets </h5>
+<h3 id="nav6">6.  Risk Management for Changing Interest Rates </h3>
+<h4 id="nav6.1">6.1. Asset Liability Management </h4>
+<p>also called fund management strategy</p>
+<h5 id="impact-of-interest-rate-risk">Impact of Interest Rate Risk </h5>
+<p>balance sheet and statement of income and loss</p>
+<div class="mermaid">graph LR
+  A[Interest Rate change] --&gt; B["Net Interest Margin (NIM)"]
+  A --&gt; C["Net Worth (equity)"]
+  B --&gt; D[Interest-Sensitive Gap Management]
+  C --&gt; E[Duration Gap Management]
+</div><h4 id="nav6.2">6.2. Interest-Sensitive Gap Management </h4>
+<h5 id="net-interest-margin">Net Interest Margin </h5>
+<p><span class="mathjax-exps">$NIM=\frac{\text{interest income - interest expense}}{\text{total earning asset}}$</span></p>
+<ul>
+<li>repriceable assets/liabilities: variable-rate loan and security</li>
+<li>nonrepriceable assets/liabilities</li>
+</ul>
+<p>only interest sensitive asset/liability exposed to interest rate</p>
+<h5 id="interst-sensitive-gap">Interst-Sensitive Gap </h5>
+<p>IS Gap = interest-sensitive assets (ISA) - interest-sensitive liabilities (ISL)</p>
+<ul>
+<li>agreesive GAP management: postive gap with rising interest rates and negative gap otherwise</li>
+<li>defensive gap management: close to 0</li>
+</ul>
+<h6 id="limitations">Limitations </h6>
+<ul>
+<li>changes inconsistent: interest rates on liability tend to move faster than that on assets</li>
+<li>basis risk: interest rate attached to assets move at different amounts and speeds compared to liability</li>
+</ul>
+<h4 id="nav6.3">6.3. Duration Gap Management </h4>
+<p>Net worth: <span class="mathjax-exps">$NW=\text{Assets}-\text{Liabilities}$</span><br/>
+<span class="mathjax-exps">$\frac{\Delta P}{P}=-D_{mod}\frac{\Delta i}{1+i}$</span><br/>
+<span class="mathjax-exps">$\Delta NW=\Delta A- \Delta L=-(D_A-D_L\frac{L}{A})\frac{\Delta i}{1+i}A$</span></p>
+<ul>
+<li>
+<p><span class="mathjax-exps">$D_A-D_L$</span>: duration gap</p>
+</li>
+<li>
+<p><span class="mathjax-exps">$D_A-D_L\frac{L}{A}$</span>: leverage-adjusted duration gap</p>
+</li>
+<li>
+<p>portfolio immunization strategy: leverage-adjusted duration gap close to 0</p>
+</li>
+<li>
+<p>take chance to maximize shareholder's position</p>
+</li>
+</ul>
+<h5 id="limitations-1">Limitations </h5>
+<ul>
+<li>hard to match the duration</li>
+<li>neglect convexity impact</li>
+</ul>
+<h2 id="c-liquidity-management-and-global-banking-issue">C. Liquidity Management and Global Banking Issue </h2>
+<h3 id="nav7">7.  Liquidity and Reserves Management: Strategies and Policies </h3>
+<h4 id="nav7.1">7.1. Liquidity Management </h4>
+<h5 id="demand-supply-framework">Demand Supply Framework </h5>
+<p>demand (the first 2 are the most pressing):</p>
+<ul>
+<li>customer withdraw money</li>
+<li>credit requsts from customers</li>
+<li>repayment of borrowing</li>
+<li>operating expenses</li>
+<li>dividend payment</li>
+</ul>
+<p>supply:</p>
+<ul>
+<li>deposit</li>
+<li>repaying loan</li>
+<li>sales of asset</li>
+<li>selling nondeposit service</li>
+<li>borrowing in the money market</li>
+</ul>
+<p>Net liquidity position: <span class="mathjax-exps">$L_t=\text{supply}-\text{demand}$</span></p>
+<h5 id="strategies-for-liquidity-management">Strategies for Liquidity Management </h5>
+<h6 id="1-asset-liquidity-management-strategies">1. Asset Liquidity Management Strategies </h6>
+<p>store liquidity in asset, forgoing higher returns (opportunity cost).<br/>
+suitable for small institutions</p>
+<h6 id="2-borrowed-liquidity-management-strategies">2. Borrowed Liquidity Management Strategies </h6>
+<p>also called liability management strategies or purchased liquidity strategies: borrow fund<br/>
+suitable for largest banks</p>
+<h6 id="3-balanced-liquidity-management-strategies">3. Balanced Liquidity Management Strategies </h6>
+<p>expected liquidity demand are stored in assets<br/>
+unexpected cash needs met by near-term borrowings<br/>
+balance between risk and opportunity cost</p>
+<h5 id="estimating-liquidity-need">Estimating Liquidity Need </h5>
+<h6 id="1-time-series">1. Time Series </h6>
+<p>estimated net liquidity: estimated change in deposits - estimated change in loans<br/>
+forecast of deposit and loan:</p>
+<ul>
+<li>trend</li>
+<li>seasonal</li>
+<li>cyclical</li>
+</ul>
+<h6 id="2-structure-of-funds-approach">2. Structure of Funds Approach </h6>
+<ul>
+<li>deposit and nondeposit<br/>
+liability liquidity reserve = net (against legal reserve) value adjusted by weight
+<ul>
+<li>hot money liability</li>
+<li>vulnerable fund</li>
+<li>stable fund</li>
+</ul>
+</li>
+<li>loan liquidity</li>
+</ul>
+<p>refined version: considering probability and expectation</p>
+<h6 id="3-liquidity-indicator-approach">3. Liquidity Indicator Approach </h6>
+<p>industry averages or expertise</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Liquidity Indicator</th>
+<th style="text-align:center">Description</th>
+<th style="text-align:center">Liquidity Impact (chance of liquidity crisis)</th>
+<th style="text-align:center">Exp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Cash Position Indicator</td>
+<td style="text-align:center">cash/total assets</td>
+<td style="text-align:center">smaller</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Core Deposit Ratio</td>
+<td style="text-align:center">core deposit/total assets</td>
+<td style="text-align:center">smaller</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Deposit Composition Ratio</td>
+<td style="text-align:center">demand deposit/time deposit</td>
+<td style="text-align:center">greater</td>
+<td style="text-align:center">time deposit is stable deposit</td>
+</tr>
+<tr>
+<td style="text-align:center">Deposit Brokerage Index</td>
+<td style="text-align:center">brokered deposit/total deposit</td>
+<td style="text-align:center">greater</td>
+<td style="text-align:center">brokered deposit (higher interest sensitivity)</td>
+</tr>
+<tr>
+<td style="text-align:center">Liquid Securities Index</td>
+<td style="text-align:center">securities/total assets</td>
+<td style="text-align:center">smaller</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Pledged Securities Ratio</td>
+<td style="text-align:center">pledged securities/total securities</td>
+<td style="text-align:center">greater</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Hot Money Ratio</td>
+<td style="text-align:center">money market asset/volatile liability</td>
+<td style="text-align:center">smaller</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Capacity Ratio</td>
+<td style="text-align:center">loan/asset</td>
+<td style="text-align:center">greater</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Loan Commitments Ratio</td>
+<td style="text-align:center">unused loan commitment/asset</td>
+<td style="text-align:center">greater</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Net Federal Funds and Repo Position</td>
+<td style="text-align:center">(fund sold - fund purchased-Repo)/asset</td>
+<td style="text-align:center">smaller</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav7.2">7.2. Legal Reserve Management </h4>
+<h5 id="legal-reserves">Legal Reserves </h5>
+<p>Lagged reserve accounting (LRA)</p>
+<ul>
+<li>reserve compuatation period (14 days)</li>
+<li>reserve funding period (14 days)</li>
+<li>reserve maintainence period (14 days)</li>
+</ul>
+<p>total required legal reserves = requirment on transaction deposits * daily average amount + requirment on nontransaction liabilities * daily average amount</p>
+<h5 id="alternative-sources-of-reserves">Alternative Sources of Reserves </h5>
+<ul>
+<li>Federal fund market</li>
+<li>selling liquid security</li>
+<li>etc.</li>
+</ul>
+<h3 id="nav8">8.  Monitoring Liquidity </h3>
+<h4 id="nav8.1">8.1. Liquidity Options </h4>
+<p>liquidity option: right to receive cash or give cash</p>
+<ul>
+<li>credit line sells to customer: right to withdraw</li>
+<li>sight (活期) and saving deposit</li>
+<li>prepayment of fixed rate mortgages</li>
+</ul>
+<h4 id="nav8.2">8.2. Term Structures for Monitoring Liquidity </h4>
+<h5 id="a-taxonomy-of-cash-flows">A Taxonomy of Cash Flows </h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Amount</th>
+<th style="text-align:center">Deterministic Time</th>
+<th style="text-align:center">Stochastic Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Deterministic</td>
+<td style="text-align:center">bond counpon</td>
+<td style="text-align:center">withdraw of credit line</td>
+</tr>
+<tr>
+<td style="text-align:center">Stochastic</td>
+<td style="text-align:center">floating rate coupon</td>
+<td style="text-align:center">deposit &amp;loan</td>
+</tr>
+</tbody>
+</table>
+<h5 id="term-structure-of-expected-cash-flow">Term Structure of Expected Cash Flow </h5>
+<p>Term Structure of Expected Cumulative Cash Flow<br/>
+negative value in TSECCF means insolvent and bankruptcy</p>
+<h5 id="liquidity-generation-capacity">Liquidity Generation Capacity </h5>
+<p>Term Structure of LGC</p>
+<h5 id="term-structures-for-expected-liquidity">Term Structures for Expected Liquidity </h5>
+<p><span class="mathjax-exps">$TSL_e=TSCLGC-TSECCF$</span></p>
+<h5 id="term-structures-of-available-asset">Term Structures of Available Asset </h5>
+<p>TSAA<br/>
+repo does not change TSECF or TSECCF</p>
+<h5 id="cashflow-at-risk-cfar">Cashflow at Risk (CFaR) </h5>
+<p>concept like unexpected loss</p>
+<h3 id="nav9">9.  Liquidity Transfer Pricing: A Guide to Better Practice </h3>
+<p>a paper in 2011</p>
+<h4 id="nav9.1">9.1. Liquidity Transfer Pricing Practice </h4>
+<h5 id="introduction-of-ltp">Introduction of LTP </h5>
+<p>attribute cost, benefit and risk of liquidity to business unit</p>
+<h5 id="best-practice-of-ltp-process">Best Practice of LTP Process </h5>
+<ul>
+<li>centralized funding center</li>
+<li>trading book policy and funding requirement</li>
+<li>effective oversight by risk and control personnel</li>
+<li>risk adjusted profit and liquidity cost</li>
+</ul>
+<h6 id="challenges">Challenges </h6>
+<ul>
+<li>difficult to maintain proper oversight</li>
+</ul>
+<h4 id="nav9.2">9.2. LTP Approaches and Contingent Liquidity Pricing </h4>
+<h5 id="approaches-of-ltp">Approaches of LTP </h5>
+<h6 id="1-zero-cost-of-funds">1. Zero Cost of Funds </h6>
+<p>view liquidity as free and no liquidity risk (under easy funding condition), 0 spread over swap curve<br/>
+worst practice because of over maturity mismatch</p>
+<h6 id="2-average-cost-of-funds">2. Average Cost of Funds </h6>
+<ul>
+<li>Pooled average: charge the same rate for liquidty, average rate calculated are based on all liquidity source.<br/>
+no PnL for treasury department, liquidity cost is transfered to liquidity provider from liquidity user.</li>
+<li>Separate average rates for cost and benefit of fund.</li>
+</ul>
+<p>limits:</p>
+<ul>
+<li>single charge for all maturity</li>
+<li>lag change in actual market cost, distort profit assessment</li>
+</ul>
+<h6 id="3-matched-maturity-marginal-cost-of-funds">3. Matched-Maturity Marginal Cost of Funds </h6>
+<p>transfer term liquidity premium to fixed rate</p>
+<ul>
+<li>assign higher rate to longer maturity liquidity</li>
+<li>reflect actual market cost</li>
+</ul>
+<h5 id="contingent-liquidity-risk-pricing">Contingent Liquidity Risk Pricing </h5>
+<p>contingent commitment<br/>
+liquidity cushion, from result of stress test</p>
+<h6 id="method-for-pricing-contingent-liquidity-risk-in-credit-lines">Method for Pricing Contingent Liquidity Risk in Credit Lines </h6>
+<p>rate charge: expected cost / credit line limit</p>
+<h3 id="nav10">10.  US Dollar Shortage and Covered Interest Parity Lost </h3>
+<h4 id="nav10.1">10.1. Cross-Currency Basis </h4>
+<h5 id="covered-interest-parity">Covered Interest Parity </h5>
+<p><span class="mathjax-exps">$1+r_d=(1+r_f)\frac{F}{S}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$r_d$</span>: dollar interest rate</li>
+<li><span class="mathjax-exps">$r_f$</span>: foreign currency interest rate</li>
+<li><span class="mathjax-exps">$S$</span> and <span class="mathjax-exps">$F$</span>: units of US dollar per foreign currency</li>
+</ul>
+<h5 id="fx-swap-vs-cross-currency-swap">FX Swap vs. Cross-Currency Swap </h5>
+<p>FX swap:</p>
+<ul>
+<li>A gives <span class="mathjax-exps">$x$</span> EUR and receives <span class="mathjax-exps">$xS$</span> USD</li>
+<li>A gives <span class="mathjax-exps">$xF$</span> USD and recives <span class="mathjax-exps">$x$</span> EUR</li>
+</ul>
+<p><span class="mathjax-exps">$\frac{F}{S}=\frac{1+r_d+b}{1+r_f}$</span></p>
+<p>Cross-Currency swap:</p>
+<ul>
+<li>A gives <span class="mathjax-exps">$x$</span> EUR and receives <span class="mathjax-exps">$xS$</span> USD</li>
+<li>A gives USD interest and receives EUR interest</li>
+<li>A gives <span class="mathjax-exps">$xS$</span> USD and receives <span class="mathjax-exps">$x$</span> EUR</li>
+</ul>
+<p>cross-currency swap basis:</p>
+<ul>
+<li>market liquidity</li>
+<li>counterparty risk</li>
+</ul>
+<p><span class="mathjax-exps">$\alpha$</span> negative spread on EUR interest</p>
+<h4 id="nav10.2">10.2. Causes of CIP Violation </h4>
+<p>negative basis period (lending dollar): since 2007, borrowing dollar becomes more expensive</p>
+<ul>
+<li>demand from bank: Europe bank have EUR liability, which should be transfered to USD Liability</li>
+</ul>
+<p>new constraints on arbitrage:</p>
+<ul>
+<li>arbitrage enlarges balance sheet and increasing risk</li>
+<li>CVA</li>
+<li>US leverage ratio</li>
+</ul>
+<h4 id="nav10.3">10.3. US Dollar Shortage </h4>
+<h5 id="maturitycurrency-transformation">Maturity/Currency Transformation </h5>
+<p>During 2000-2007, banks's borrow short term dollar and appetite for US dollar loan and structrual products.</p>
+<h5 id="causes-of-shortage">Causes of Shortage </h5>
+<p>hard to borrow short term dollar<br/>
+hard to sell MBS to gain liquidity</p>
+<h5 id="international-policy-response">International Policy Response </h5>
+<p>reciprocal currency arrangement (swap lines between central banks)</p>
+<ul>
+<li>no information asymmetry, no moral hazard</li>
+</ul>
+<h2 id="d-liquidity-risk-management-tools">D. Liquidity Risk Management Tools </h2>
+<h3 id="nav11">11.  Early Warning Indicators </h3>
+<h4 id="nav11.1">11.1. Guidelines of EWI </h4>
+<h5 id="occ">OCC </h5>
+<h5 id="bcbs">BCBS </h5>
+<ul>
+<li>rapid asset growth, especially potentially volatile liabilities</li>
+<li>currency mismatch</li>
+<li>decrease of maturity liabilities (lower credit)</li>
+<li>negative publicity</li>
+</ul>
+<p>intraday liquidity</p>
+<h5 id="federal-reserve">Federal Reserve </h5>
+<h3 id="nav12">12.  Intraday Liquidity Risk Management </h3>
+<h4 id="nav12.1">12.1. Basics of Intraday Liquidity </h4>
+<p>use of liquidity</p>
+<ul>
+<li>outgoing wire transfer (largest use of intraday liquidity)<br/>
+client activity more difficult to predict</li>
+<li>settlement at PCS (Payment Clearing Settlement) system</li>
+<li>funding Nostro (correspondent bank) Account</li>
+<li>collateral pledging</li>
+<li>asset purchases/funding</li>
+</ul>
+<p>source of intraday liquidity fund</p>
+<ul>
+<li>cash balance</li>
+<li>incoming fund flow</li>
+<li>intraday credit</li>
+<li>liquid asset
+<ul>
+<li>impacted by client (source of liquidity)</li>
+</ul>
+</li>
+<li>overnight borrowing
+<ul>
+<li>impacted by client (overnight deposit)</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav12.2">12.2. Intraday Liquidity Management </h4>
+<h5 id="governance-of-intraday-lrm">Governance of Intraday LRM </h5>
+<p>Active Risk Management: classify settlement and systemic risk into risk taxonomy<br/>
+First defense line: treasury</p>
+<h5 id="measures-for-understanding-intraday-flows">Measures for Understanding Intraday Flows </h5>
+<ul>
+<li>total payment</li>
+<li>other cash transactions (Financial market utilities, FMU)</li>
+<li>settlement positions</li>
+<li>time sensitive obligations</li>
+<li>intraday credit line for client</li>
+<li>intraday credit line available</li>
+</ul>
+<h5 id="measures-for-quantifying-risk-levels">Measures for Quantifying Risk Levels </h5>
+<ul>
+<li>daily maximum intraday liquidity usage<br/>
+largest nagative balance / committed or uncommitted credit line</li>
+<li>intraday credit relative to tier 1 capital</li>
+<li>client intraday credit usage<br/>
+peak overdraft / credit line</li>
+<li>payment throughput<br/>
+percentage of outgoing payment relative to time of day</li>
+</ul>
+<h3 id="nav13">13.  Liquidity Risk Reporting </h3>
+<h4 id="nav13.1">13.1. Introduction </h4>
+<p>1 page summary with key metrics and also qualitative</p>
+<h4 id="nav13.2">13.2. Different Types of Liquidity Risk Reports </h4>
+<ul>
+<li>deposit tracker report<br/>
+current and forecast, loan to deposit ratio</li>
+<li>daily liquidity report<br/>
+liquidity gap</li>
+<li>funding maturity gap report</li>
+<li>funding concentration report<br/>
+5%<br/>
+increase liability rather than ask depositor remove fund</li>
+<li>undrawn commitment report<br/>
+off balance sheet product (letters of credit)</li>
+<li>Liability profile</li>
+<li>wholesale pricing and volume<br/>
+funding cost</li>
+</ul>
+<h3 id="nav14">14.  Liquidity Stress Testing </h3>
+<h4 id="nav14.1">14.1. Four Categories of Funding Liquidity </h4>
+<ul>
+<li>operational liquidity: fund business<br/>
+quite volatile</li>
+<li>restricted liquidity: liquid assets only for specific purpose rather than sale</li>
+<li>strategic liquidity: Merge and acquisition (M&amp;A)</li>
+<li>contingent liquidity</li>
+</ul>
+<p>stressed liquidity asset buffer: normal liquidity buffer - stressed cash outflow + stressed cash inflow</p>
+<h4 id="nav14.2">14.2. Design of the Model </h4>
+<ul>
+<li>organizational scope
+<ul>
+<li>liquidity transfer restrictions</li>
+<li>currency</li>
+</ul>
+</li>
+<li>scenario development<br/>
+historical and forward-looking</li>
+<li>development of assumptions
+<ul>
+<li>investment portfolio haircut</li>
+<li>deposit outflow</li>
+<li>collateral requirement</li>
+<li>contingent liabilities</li>
+</ul>
+</li>
+<li>output</li>
+<li>governance and controls<br/>
+Asset-Liability Committee (ALCO)</li>
+<li>integration with other risk models<br/>
+capital, asset liability</li>
+</ul>
+<h4 id="nav14.3">14.3. Liquidity Stress Test Report </h4>
+<ul>
+<li>cash flow survival report (primary)</li>
+<li>stressed cumulative cash flow forecast</li>
+<li>line-by-line stress test result report (individual shock)
+<ul>
+<li>reduction in liquid asset</li>
+<li>FX mismatch</li>
+</ul>
+</li>
+</ul>
+<h3 id="nav15">15.  Contingency Funding Planning </h3>
+<h4 id="nav15.1">15.1. Considerations of CFP </h4>
+<p>high-impact low-probability event, compared to business as usual funding (BAU)</p>
+<ul>
+<li>aligned to business and risk profiles</li>
+<li>integrated with risk management framework</li>
+<li>communication plan</li>
+</ul>
+<h4 id="nav15.2">15.2. Framework of CFP </h4>
+<ul>
+<li>governance and oversight<br/>
+liquidity crisis team design CFP</li>
+<li>scenarios and liquidity gap analysis</li>
+<li>contingent actions
+<ul>
+<li>reducing lending</li>
+<li>securitization</li>
+</ul>
+</li>
+<li>monitoring and escalation<br/>
+early warning indicators</li>
+<li>data and reporting</li>
+</ul>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Risk Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Credit Risk Measurement and Management.html" rel="prev">< FRM II - Credit Risk Measurement and Management</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Market Risk Measurement and Management.html" rel="next">FRM II - Market Risk Measurement and Management ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
