@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRM II - Risk Management and Investment Management - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Factor Theory </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">The 2008-2009 Financial Crisis </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Factor Theory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">CAPM </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Multifactor Models </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Failures of the CAPM </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">The Fall of Efficient Market Theory </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Factors </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Value Investing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Macro Factors </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Dynamic Factors </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Value Factor </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Alpha (and the Low-Risk Anomaly) </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Active Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Factor Benchmarks </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Low Risk Anomaly </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Portfolio Construction </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Inputs for Portfolio Construction </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Portfolio Construction Techniques </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Dispersion </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Portfolio Risk: Analyticla Methods </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Portfolio VaR </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">VaR Tools </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Using VaR for Risk Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> VaR and Risk Budgeting in Investment Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Specific Risks in Investment Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Risk Budgeting </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Risk Monitoring and Performance Measurement </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.1"><span class="nav-number">7.1.</span> <span class="nav-text">Three-Legged Risk Management Stool </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav7.2"><span class="nav-number">7.2.</span> <span class="nav-text">RMU & Performance Measurement </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav8"><span class="nav-number">8.</span> <span class="nav-text"> Portfolio Performance Evaluation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.1"><span class="nav-number">8.1.</span> <span class="nav-text">Conventional Theory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.2"><span class="nav-number">8.2.</span> <span class="nav-text">Market Timing </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav8.3"><span class="nav-number">8.3.</span> <span class="nav-text">Performance Attribution </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav9"><span class="nav-number">9.</span> <span class="nav-text"> Hedge Funds </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.1"><span class="nav-number">9.1.</span> <span class="nav-text">Characteristics of Hedge Funds </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.2"><span class="nav-number">9.2.</span> <span class="nav-text">Hedge Funds Strategy </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav9.3"><span class="nav-number">9.3.</span> <span class="nav-text">Risks in Hedge Funds </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav10"><span class="nav-number">10.</span> <span class="nav-text"> Performing Due Diligence on Specific Managers and Funds </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav10.1"><span class="nav-number">10.1.</span> <span class="nav-text">Due Diligence Basics </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav11"><span class="nav-number">11.</span> <span class="nav-text"> Finding Bernie Madoff: Detecting Fraud by Investment Managers </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.1"><span class="nav-number">11.1.</span> <span class="nav-text">Fraud by Investment Managers </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.2"><span class="nav-number">11.2.</span> <span class="nav-text">Information Disclosure </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.3"><span class="nav-number">11.3.</span> <span class="nav-text">Predicting Fraud </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav11.4"><span class="nav-number">11.4.</span> <span class="nav-text">Compensated for Fraud Risk </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          FRM II - Risk Management and Investment Management
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-11-10</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">FRM II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="FRM II" createdate="2024-09-11" editdate="2024-11-10" tag="Portfolio-Management"></ndtag></p>
+<h2 id="a-factor-investing">A. Factor Investing </h2>
+<h3 id="nav1">1.  Factor Theory </h3>
+<h4 id="nav1.1">1.1. The 2008-2009 Financial Crisis </h4>
+<p>Many asset classes crash all at once (fixed income, equity, hedge fund, commodity).<br/>
+The concept of diversification seems dead.</p>
+<h4 id="nav1.2">1.2. Factor Theory </h4>
+<p>Factors are to assets what nutrients are to food.</p>
+<ol>
+<li>Factors matter, not assets</li>
+<li>Different investors need different risk factors.</li>
+<li>Assets are bundles of factors</li>
+</ol>
+<h4 id="nav1.3">1.3. CAPM </h4>
+<p>Utility is <span class="mathjax-exps">$U=E(R)-\frac{1}{2}\gamma\sigma^2$</span>, we can get <span class="mathjax-exps">$E(R_M)-r_f=\bar{\gamma}\sigma_M^2$</span>, where <span class="mathjax-exps">$\bar{\gamma}$</span> is the risk aversion of the average investor.<br/>
+As the market becomes more volatile, the expected return of the market increases and equity prices contemporaneously fall. This happens in 2008 crisis and the realized return is indeed high.</p>
+<p>? Higher beta means low diversification benefits.<br/>
+If the payoff of an asset tends to be high in bad times, this is a valuable asset to hold and its risk premium is low.</p>
+<h4 id="nav1.4">1.4. Multifactor Models </h4>
+<p>? arbitrage pricing theory<br/>
+? pricing kernel</p>
+<h4 id="nav1.5">1.5. Failures of the CAPM </h4>
+<p>Mean-variance utility: asymmetric treatment of risk<br/>
+single period investment<br/>
+homogeneous expectations<br/>
+inidividual investors are price takers<br/>
+information is costless and available to all investors</p>
+<h4 id="nav1.6">1.6. The Fall of Efficient Market Theory </h4>
+<p>Weak form, semi-strong form and strong form</p>
+<p>The explanations of deviations from efficiency have two froms:</p>
+<ol>
+<li>Rational explanation: we have not found all factors</li>
+<li>Behavioral explanation: people underreact or overreact to events; there are structural barriers</li>
+</ol>
+<h3 id="nav2">2.  Factors </h3>
+<h4 id="nav2.1">2.1. Value Investing </h4>
+<ul>
+<li>Macro, fundamental-based facotrs</li>
+<li>Investment factors
+<ul>
+<li>static factors</li>
+<li>dynamic factors (hedge fund)</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav2.2">2.2. Macro Factors </h4>
+<p>Macro factors affect all investors and the prices of assets.<br/>
+A shock to a factor matters more than the level of a factor.</p>
+<h5 id="economic-growth">Economic Growth </h5>
+<p>Volatility tends to be high during bad times.</p>
+<h5 id="inflation">Inflation </h5>
+<p>High inflation tends to be bad for both stocks and bonds.</p>
+<h5 id="volatility">Volatility </h5>
+<p>Volatility and stock returns have negative relations (leverage effect).<br/>
+Bonds offer some respite during high volatility.<br/>
+Manage Volatility: long put, volatility swap</p>
+<h5 id="other-macro-factors">Other Macro Factors </h5>
+<p>productivity, demographic, political (less need to pay attention to because it changes at longer time window, like decades)</p>
+<h4 id="nav2.3">2.3. Dynamic Factors </h4>
+<p>style factor, smart beta: Fama-French value factor and size factor and momentum factor<br/>
+Since the mid-1980s there has not been any significant size effect, because rational investors bid up the price.</p>
+<h4 id="nav2.4">2.4. Value Factor </h4>
+<p>Value investing: long value stocks (high book-to-market ratio) and short growth stocks.<br/>
+book-to-market ratio: net asset / market value<br/>
+Rational theory: value firms are riskier because that cannot shift their frim activities to more profitable activities in bad times.<br/>
+Behavioral theory: investors tend to overextrapolate past growth rates in to the future.</p>
+<h5 id="momentum-factor">Momentum Factor </h5>
+<p>Four-factor model.<br/>
+WML or UMD, winner minus losser<br/>
+Behavioral theory: delayed overration and underreaction</p>
+<h3 id="nav3">3.  Alpha (and the Low-Risk Anomaly) </h3>
+<h4 id="nav3.1">3.1. Active Management </h4>
+<h5 id="definition-of-alpha">Definition of Alpha </h5>
+<p>Alpha is average return in excess of a benchmark.<br/>
+Tracking error is the standard deviation of alpha.<br/>
+Information ratio: <span class="mathjax-exps">$IR=\frac{\text{active return}}{\text{tracking error}}=\frac{\alpha}{\bar{\sigma}}$</span>. IR is sharpe Ratio when the benchmark is risk-free rate.</p>
+<h5 id="creating-alpha">Creating Alpha </h5>
+<h6 id="grinolds-fundamental-law">Grinold's fundamental law </h6>
+<p><span class="mathjax-exps">$IR\approx IC\times \sqrt{BR}$</span>, where <span class="mathjax-exps">$IC$</span> is correlation of the manager's forecast with the actual returns and <span class="mathjax-exps">$BR$</span> is how many bets are taken.<br/>
+Limitations:</p>
+<ul>
+<li>IC are assumed to be constant across BR, actually it drops with scaling</li>
+<li>Difficult to have truly independent forecasts in BR, long 10 value stocks and short 10 growth stocks does not mean making 20 bets.</li>
+</ul>
+<h4 id="nav3.2">3.2. Factor Benchmarks </h4>
+<p>Ideal benchmark:</p>
+<ul>
+<li>well defined</li>
+<li>tradable</li>
+<li>replicable</li>
+<li>adjusted for risk</li>
+</ul>
+<h5 id="factor-regressions">Factor Regressions </h5>
+<p>(? why include rf) Risk adjusted regression <span class="mathjax-exps">$r_t-r_{ft}=\alpha+\beta(R_t-r_{ft})+\varepsilon_t$</span><br/>
+t-test statistic for two sided test is 1.96 for 95% and 2.58 for 99%.</p>
+<h5 id="time-varying-factor-exposures">Time-Varying Factor Exposures </h5>
+<p>Style analysis seeks to rectify two potential shortcomings of factor regression:</p>
+<ul>
+<li>Fama-French portfolios are not tradable</li>
+<li>factor loadings may vary over time</li>
+</ul>
+<p>Regression based on a shorter but rolling time window with index fund, and get a seires of beta.</p>
+<h5 id="non-linear-payoffs">Non-Linear Payoffs </h5>
+<p>buying and selling options changes the distribution of returns and spell masquerade alpha.</p>
+<h4 id="nav3.3">3.3. Low Risk Anomaly </h4>
+<p>Stocks with low betas and low volatilites have high returns.<br/>
+Minimum variance portfolios do better than the market portfolio.<br/>
+Explanation:</p>
+<ul>
+<li>Leverage constraints: investors are unabe to take on more leverage</li>
+<li>Agency problems: fund managers long stocks only and thus cannot short negative alpha stocks.</li>
+<li>Investors prefer high-volatility stocks and bid up stocks.</li>
+</ul>
+<h2 id="b-portfolio-risk-management">B. Portfolio Risk Management </h2>
+<h3 id="nav4">4.  Portfolio Construction </h3>
+<ul>
+<li>This chapter proceeds as GD video, not as textbook.</li>
+</ul>
+<h4 id="nav4.1">4.1. Inputs for Portfolio Construction </h4>
+<h5 id="5-inputs">5 Inputs </h5>
+<ol>
+<li>current portfolio</li>
+<li>alpha</li>
+<li>covariances</li>
+<li>active risk aversion</li>
+<li>transactions costs</li>
+</ol>
+<h5 id="refining-alphas">Refining Alphas </h5>
+<p>From naive forecast to raw forecast, and finally refining alpha. Naive forecast refers to naive factor regression, and raw forecast refers to some investment view.<br/>
+Refining alphas are adjusted so that they are in line with investor's desires for risk contral and various constraints.</p>
+<h6 id="scale-the-alphas">Scale the Alphas </h6>
+<p>(?) <span class="mathjax-exps">$\alpha = \sigma\times IC\times \text{score}$</span>, where score follows <span class="mathjax-exps">$\mathcal{N}(0,1)$</span>.</p>
+<ul>
+<li>(-) This should be interpreted as we get a score <span class="mathjax-exps">$\frac{\alpha}{\sigma\times IC}$</span> which follows normal.</li>
+</ul>
+<h6 id="trim-alpha-outliers">Trim Alpha Outliers </h6>
+<p>remove 3 std outliers.</p>
+<h6 id="neutralization">Neutralization </h6>
+<p>Benchmark might have alpha itself, which should be removed.<br/>
+Benchmark-neutral and cash-neutral alphas:</p>
+<ul>
+<li>stock's alpha should be adjusted with <span class="mathjax-exps">$\beta\times \Delta\alpha$</span></li>
+</ul>
+<h5 id="active-risk-aversion">Active Risk Aversion </h5>
+<p>Utility of alpha is of form <span class="mathjax-exps">$\alpha_p-\lambda_A\sigma_\alpha^2$</span>, with fixed IR, we have optimal point <span class="mathjax-exps">$\lambda_A=\frac{IR}{2\sigma_\alpha}$</span>.</p>
+<h5 id="transaction-costs">Transaction Costs </h5>
+<p>Transaction costs should be amortized over the investment horizon.<br/>
+If the manager is not sure of his alpha, less revision may be a safeguard.<br/>
+Rebalancing for very short horizons would involve frequent reactions to noise not signal.</p>
+<p><span class="mathjax-exps">$MCVA_n=\alpha_n-2\lambda_A\sigma_\alpha MCAR_n$</span></p>
+<ul>
+<li>marginal contribution to value added</li>
+<li>marginal contribution to active risk: change of <span class="mathjax-exps">$\sigma_\alpha$</span> as more of stock <span class="mathjax-exps">$n$</span> added.</li>
+</ul>
+<h4 id="nav4.2">4.2. Portfolio Construction Techniques </h4>
+<h5 id="screen">Screen </h5>
+<p>Rank assets by alpha, select top to buy and bottom to sell<br/>
+Screen is robust, it depends only on ranking.</p>
+<h5 id="stratificaion">Stratificaion </h5>
+<p>split assets into mutually exclusive categories and do screen for each category</p>
+<h5 id="linear-programming">Linear Programming </h5>
+<p>objective of linear programming: maximize the portfolio's alpha less traction costs while remaining in the risk control dimensions.</p>
+<h5 id="quadratic-programming">Quadratic Programming </h5>
+<p>More inputs mean more noise.</p>
+<h4 id="nav4.3">4.3. Dispersion </h4>
+<p>Difference between maximum return and minimum return among all the separate account portfolios.</p>
+<h3 id="nav5">5.  Portfolio Risk: Analyticla Methods </h3>
+<p>Two assumptions:</p>
+<ol>
+<li>delta-normal model: normally distributed</li>
+<li>traditional portfolio analysis: convariance matrix</li>
+</ol>
+<p>(95% z score: 1.645, 99% z score: 2.326)</p>
+<h4 id="nav5.1">5.1. Portfolio VaR </h4>
+<h5 id="diversified-var">Diversified VaR </h5>
+<p><span class="mathjax-exps">$\sigma_p = \sqrt{w_1^2\sigma_1^2+w_2^2\sigma_2^2+2w_1w_2 \rho \sigma_1\sigma_2}$</span><br/>
+<span class="mathjax-exps">$VaR_p=z_\alpha\sigma_p V_p=\sqrt{VaR_1^2+VaR_2^2+2VaR_1VaR_2\rho}$</span></p>
+<h5 id="undiversified-var">Undiversified VaR </h5>
+<p>sum of individual VaRs<br/>
+diversification benefit: difference between diversifed VaR and undiversified VaR</p>
+<h5 id="correlation">Correlation </h5>
+<p>Under assumtption of same <span class="mathjax-exps">$\rho$</span> and <span class="mathjax-exps">$\sigma$</span> and <span class="mathjax-exps">$w$</span> across the portfolio, we can get <span class="mathjax-exps">$\sigma_p = \sigma_i\sqrt{\rho}$</span></p>
+<h4 id="nav5.2">5.2. VaR Tools </h4>
+<h5 id="marginal-var">Marginal VaR </h5>
+<p><span class="mathjax-exps">$MVaR_i=\frac{\partial VaR}{\partial \text{investment}}=\frac{\partial zV_p\sigma_p}{\partial V_pw_i}=z\frac{\partial \sigma_p}{\partial w_i}=z\frac{Cov(R_i,R_p)}{\sigma_p}=\frac{VaR_p\beta_i}{V_p}$</span></p>
+<h5 id="incremental-var">Incremental VaR </h5>
+<p>the change in VaR owing to a new position<br/>
+<span class="mathjax-exps">$\text{Full Incremental VaR}=VaR_{p+a}-VaR_p$</span><br/>
+<span class="mathjax-exps">$\text{Incremental VaR}\approx MVaR_iV_i$</span></p>
+<h5 id="component-var">Component VaR </h5>
+<p><span class="mathjax-exps">$CVaR_i=MVaR_iV_i$</span><br/>
+Percentage contibution to VaR of component: <span class="mathjax-exps">$\frac{CVaR_i}{VaR_p}=w_i\beta_i$</span></p>
+<h4 id="nav5.3">5.3. Using VaR for Risk Management </h4>
+<ol>
+<li>Global minimum VaR<br/>
+Lowering position with the highest MVaR and adding position with the lowest MVaR.<br/>
+When reaching global minium VaR, all MVaR and beta must be equal.</li>
+<li>Taking return and risk into consideration<br/>
+maximize Sharpe ratio <span class="mathjax-exps">$\frac{R_p-R_f}{VaR_p}$</span>, so add allocation to the postion with the highest excess expected return to marginal VaR</li>
+</ol>
+<h3 id="nav6">6.  VaR and Risk Budgeting in Investment Management </h3>
+<h4 id="nav6.1">6.1. Specific Risks in Investment Management </h4>
+<h5 id="types-of-risks">Types of Risks </h5>
+<ol>
+<li>abolute risk is about dollar loss<br/>
+relative risk is about loss relative to its benchmark</li>
+<li>policy-mix risk is about passive strategy<br/>
+active-management risk is the opposite</li>
+</ol>
+<h5 id="funding-risk">Funding Risk </h5>
+<p>funding risk: asset less than liability<br/>
+It is for defined benefits plan: employer takes responsibility of investment; as opposed to defined contribution plan, employee takes responsibility<br/>
+Funding risk: the assets will not be sufficient to cover the liabilities of the fund.</p>
+<h6 id="surplus">Surplus </h6>
+<p><span class="mathjax-exps">$\text{Surplus} = \text{Assets} - \text{Liabilities}$</span><br/>
+<span class="mathjax-exps">$R_\text{surplus}=\frac{\Delta \text{Surplus}}{\text{Asset}}=R_\text{asset}-\frac{L}{A}R_\text{liability}$</span><br/>
+<span class="mathjax-exps">$SaR=|E(\Delta surplus)-zc\sigma_{surplus}|$</span><br/>
+confidence interval</p>
+<h6 id="sponsor-risk">Sponsor Risk </h6>
+<p>cash-flow risk: fluctuation in contributions<br/>
+Economic risk: violation in business</p>
+<ul>
+<li>if the firm enjoys greater profit, surplus risk may be less of a concern</li>
+</ul>
+<h4 id="nav6.2">6.2. Risk Budgeting </h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Characteristic</th>
+<th style="text-align:center">Sell Side</th>
+<th style="text-align:center">Buy Side</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Horizon</td>
+<td style="text-align:center">short (1 day)</td>
+<td style="text-align:center">long</td>
+</tr>
+<tr>
+<td style="text-align:center">Turnover</td>
+<td style="text-align:center">rapid</td>
+<td style="text-align:center">slow</td>
+</tr>
+<tr>
+<td style="text-align:center">Leverage</td>
+<td style="text-align:center">high</td>
+<td style="text-align:center">low</td>
+</tr>
+<tr>
+<td style="text-align:center">Risk Measures</td>
+<td style="text-align:center">VaR</td>
+<td style="text-align:center">tracking error</td>
+</tr>
+<tr>
+<td style="text-align:center">Risk contemporaneously</td>
+<td style="text-align:center">position limits</td>
+<td style="text-align:center">diversification</td>
+</tr>
+</tbody>
+</table>
+<p>investment process of large investors:</p>
+<ul>
+<li>strategic, long term asset allocation study</li>
+<li>delegate fund managers</li>
+</ul>
+<h5 id="var-applications-to-investment-management">VaR Applications to Investment Management </h5>
+<p>instituions exposed to diversity of risk<br/>
+using VaR to monitor and control risk:</p>
+<ul>
+<li>check complicance: unauthorized investment</li>
+<li>monitor risk: reverse engineered to understand where risk comes from</li>
+</ul>
+<h5 id="risk-budgeting-1">Risk Budgeting </h5>
+<p>decomposing the aggregate risk of a portfolio into its constituents<br/>
+risk budget for specific asset class and active manager</p>
+<ul>
+<li>across asset classes: confirm portfolio VaR does not exceed limit</li>
+<li>across active managers:<br/>
+(?) weight of portfolio managed by manager: <span class="mathjax-exps">$w_i=\frac{\frac{IR_i}{TE_i}}{\frac{IR_p}{TE_p}}$</span><br/>
+residual weight is allocated to index<br/>
+relative risk budget: tracking error VaR
+<ul>
+<li>(-) maximize portfolio IR</li>
+</ul>
+</li>
+</ul>
+<h3 id="nav7">7.  Risk Monitoring and Performance Measurement </h3>
+<p>VaR vs. Tracking error</p>
+<h4 id="nav7.1">7.1. Three-Legged Risk Management Stool </h4>
+<ul>
+<li>risk plan</li>
+<li>risk budget</li>
+<li>risk monitoring</li>
+</ul>
+<h4 id="nav7.2">7.2. RMU &amp; Performance Measurement </h4>
+<h5 id="risk-management-unit-rmu">Risk Management Unit (RMU) </h5>
+<p>measure risk but not manage risk</p>
+<h5 id="liquidity-consideration">Liquidity Consideration </h5>
+<p>liquidity duration: <span class="mathjax-exps">$LD_i=\frac{Q_i}{0.15\times V_i}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$Q_i$</span>: number of shares held in security</li>
+<li><span class="mathjax-exps">$V_i$</span>: daily volume of security</li>
+<li>15%: do not exceed 15% if daily volume</li>
+</ul>
+<h5 id="performance-measurement">Performance Measurement </h5>
+<p>risk adjusted performance<br/>
+green zone: actual outcomes compared to target, green / yellow / red zone</p>
+<h3 id="nav8">8.  Portfolio Performance Evaluation </h3>
+<h4 id="nav8.1">8.1. Conventional Theory </h4>
+<h5 id="return-calculation">Return Calculation </h5>
+<ul>
+<li>time weighted return: geometric average<br/>
+ability to select investment underly, suited for mutual fund manager</li>
+<li>dollar weighted return: IRR<br/>
+investment time choosing<br/>
+suited for hedge fund manager<br/>
+calculator</li>
+</ul>
+<h5 id="risk-adjusted-performance-measures">Risk Adjusted Performance Measures </h5>
+<p>Sharpe ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\sigma_p}$</span><br/>
+Treynor ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\beta_p}$</span></p>
+<ul>
+<li>well-diversifed portfolio: Sharpe ratio and Treynor ratio give the same ranking</li>
+<li>not well-diversifed portfolio: Treynor ratio may be ranked higher</li>
+</ul>
+<p>Jensen's alpha: <span class="mathjax-exps">$R_p-[R_f+\beta_p(R_M-R_f)]$</span><br/>
+information ratio: <span class="mathjax-exps">$\frac{\alpha_p}{\sigma (\alpha_p)}$</span><br/>
+Modigliani-squared Measure (<span class="mathjax-exps">$M^2$</span>): <span class="mathjax-exps">$M^2=\frac{\sigma_M}{\sigma_p}(R_p-R_f)-(R_M-R_f)$</span>, same ranking as Sharpe ratio</p>
+<h4 id="nav8.2">8.2. Market Timing </h4>
+<p>shifting fund between market index and safe asset</p>
+<h5 id="regression">Regression </h5>
+<ul>
+<li>no market timing (<span class="mathjax-exps">$b$</span> is constant): <span class="mathjax-exps">$R_p-R_f=a+b(R_M-R_f)+e_p$</span></li>
+<li>Treynor and Mazuy: <span class="mathjax-exps">$R_p-R_f=a+b(R_M-R_f)+c(R_M-R_f)^2+e_p$</span><br/>
+<span class="mathjax-exps">$c&gt;0$</span> means there exists market timing</li>
+<li>Henriksson and Merton: <span class="mathjax-exps">$R_p-R_f=a+b(R_M-R_f)+c(R_M-R_f)D+e_p$</span><br/>
+<span class="mathjax-exps">$D$</span> is a dummy variable with 1 for <span class="mathjax-exps">$R_M&gt;R_f$</span><br/>
+<span class="mathjax-exps">$c&gt;0$</span> means there exists market timing</li>
+</ul>
+<h5 id="call-option-models">Call Option Models </h5>
+<p><span class="mathjax-exps">$K=S_0(1+R_f)$</span><br/>
+hold a safe security and a call option, we will get <span class="mathjax-exps">$S_0(1+R_f)$</span> if <span class="mathjax-exps">$S_T&lt;K$</span> and <span class="mathjax-exps">$S_T$</span> if <span class="mathjax-exps">$S_T&gt;K$</span><br/>
+the management fee should be the value of call option (perfect timing)</p>
+<h4 id="nav8.3">8.3. Performance Attribution </h4>
+<p>Attribution for alpha.<br/>
+bogey: benchmark</p>
+<h5 id="attribution-system">Attribution System </h5>
+<ul>
+<li>asset allocation: broad asset market allocation choices across equity, fixed income</li>
+<li>selection: sector choice with in each market and security choice within each sector</li>
+</ul>
+<p>Calculation:</p>
+<ul>
+<li>total contribution from asset class <span class="mathjax-exps">$i$</span>: <span class="mathjax-exps">$w_{Pi}R_{Pi}-w_{Bi}R_{Bi}$</span></li>
+<li>contribution from asset allocation:  <span class="mathjax-exps">$(w_{Pi}-w_{Bi})R_{Bi}$</span></li>
+<li>contribution from security selection:  <span class="mathjax-exps">$(R_{Pi}-R_{Bi})w_{Pi}$</span></li>
+</ul>
+<h2 id="c-hedge-fund">C. Hedge Fund </h2>
+<h3 id="nav9">9.  Hedge Funds </h3>
+<h4 id="nav9.1">9.1. Characteristics of Hedge Funds </h4>
+<h5 id="databases-of-hedge-funds">Databases of Hedge Funds </h5>
+<ul>
+<li>selection bias: select better product to report</li>
+<li>backfill bias: when a new fund replaces a deleted fund in an index, the past performance of the new fund is inserted</li>
+</ul>
+<p>Issues from Illiquid Assets:</p>
+<ul>
+<li>lower correlation<br/>
+regression with additional lag of the market factors and sum the coefficient</li>
+<li>lower volatility<br/>
+taking autocorrelation into account when extrapolating to longer horizons</li>
+<li>higher autocorrelation</li>
+</ul>
+<h5 id="evolution-of-hedge-fund-industry">Evolution of Hedge Fund Industry </h5>
+<p>fall of LTCM<br/>
+burst of dot-com bubble<br/>
+instituion investors enter hedge fund</p>
+<h4 id="nav9.2">9.2. Hedge Funds Strategy </h4>
+<ul>
+<li>Directional style: trending following
+<ul>
+<li>commodity trading advisors (CTA)</li>
+<li>global macro: anticipate price movement, a top-down approach<br/>
+flexible, any market with any instrument</li>
+</ul>
+</li>
+<li>event-driven strategy<br/>
+extreme tails
+<ul>
+<li>merger arbitrage: capture spreads in M&amp;A transactions after announcement<br/>
+in a fixed exchange ratio stock merger, one could long and short according to merger ratio</li>
+<li>distressed securities: trade at discount<br/>
+buy and improve its operation</li>
+</ul>
+</li>
+<li>relatvie value and arbitrage like strategy
+<ul>
+<li>fixed income: statistic or economic
+<ul>
+<li>swap spread trade: enter swap and repo, difference between Libor and repo</li>
+<li>yield-curve spread trade: yield curve reversion</li>
+<li>mortgage spread trade: prepayment rate</li>
+<li>fixed income volatility trade</li>
+<li>capital structure or credit arbitrage trade: misprice among equity and debt</li>
+</ul>
+</li>
+<li>convertible arbitrage: convertible bond = bond + call on stock<br/>
+misprice or vega trading</li>
+<li>pair trading</li>
+</ul>
+</li>
+<li>Niche strategy
+<ul>
+<li>dedicated short: net short</li>
+<li>emerging market: transitional countries</li>
+<li>equity market neutral: 0 beta</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav9.3">9.3. Risks in Hedge Funds </h4>
+<h5 id="hedge-fund-performance">Hedge Fund Performance </h5>
+<p>risk profile change rapidly, hard to evaluate</p>
+<h5 id="covergence-of-risk-factors">Covergence of Risk Factors </h5>
+<p>under stress, all strategies will lose<br/>
+risk cannot be mitigated by spreading to different hedge fund</p>
+<h5 id="agency-problem">Agency Problem </h5>
+<p>asymmetry in risk sharing between principal and agent</p>
+<ul>
+<li>high water mark: avoid incentive double counting</li>
+<li>lower incentive fee</li>
+<li>high fund closure cost</li>
+<li>force a fund manager invest in his fund</li>
+</ul>
+<h3 id="nav10">10.  Performing Due Diligence on Specific Managers and Funds </h3>
+<p>view of FoF manager<br/>
+《对冲基金分析——FoF基金投资尽职调查指引》</p>
+<h4 id="nav10.1">10.1. Due Diligence Basics </h4>
+<h5 id="reasons-for-failures">Reasons for Failures </h5>
+<ul>
+<li>bad investment</li>
+<li>fraud</li>
+<li>extreme event: leverage</li>
+<li>lack of liquidity</li>
+<li>poor control: insider trading</li>
+</ul>
+<h5 id="due-diligence-process">Due Diligence Process </h5>
+<p>due diligence questionnaire for hedge fund to complete</p>
+<ul>
+<li>Investment Management
+<ul>
+<li>Strategy
+<ul>
+<li>stop loss</li>
+</ul>
+</li>
+<li>equity ownership</li>
+<li>track record reliable</li>
+<li>managers</li>
+</ul>
+</li>
+<li>Risk Management
+<ul>
+<li>security valuation</li>
+<li>leverage and liquidity</li>
+<li>consistency of fund term with the investment strategy</li>
+</ul>
+</li>
+<li>operational environment
+<ul>
+<li>interncal control</li>
+<li>documents and disclosure</li>
+<li>service provider</li>
+</ul>
+</li>
+<li>business model assessment
+<ul>
+<li>adequate cash</li>
+<li>working capital come from</li>
+<li>succession plan</li>
+<li>break-even AUM</li>
+<li>fraud risk</li>
+</ul>
+</li>
+</ul>
+<h3 id="nav11">11.  Finding Bernie Madoff: Detecting Fraud by Investment Managers </h3>
+<p>a paper</p>
+<h4 id="nav11.1">11.1. Fraud by Investment Managers </h4>
+<p>Bernard Madoff: Ponzi scheme<br/>
+mandatory disclosure</p>
+<h4 id="nav11.2">11.2. Information Disclosure </h4>
+<p>investment advisers: asset management or advisors<br/>
+Form ADV could be used to anticipate fraud risk</p>
+<h4 id="nav11.3">11.3. Predicting Fraud </h4>
+<ul>
+<li>disciplinary history:
+<ul>
+<li>past fraud/past affiliated fraud: no</li>
+<li>past regulatory/past civil or criminal: yes</li>
+</ul>
+</li>
+<li>conflicts of interest
+<ul>
+<li>referal fee: yes</li>
+<li>interest in transaction (interest related): yes</li>
+<li>soft dollars (other services): no</li>
+</ul>
+</li>
+<li>monitoring:
+<ul>
+<li>broker in group: yes</li>
+<li>Investment Company Act: yes</li>
+<li>custody: no</li>
+<li>dedicated CCO (chief compliance officer): no</li>
+</ul>
+</li>
+<li>client type:
+<ul>
+<li>hedge fund clients: no</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav11.4">11.4. Compensated for Fraud Risk </h4>
+<p>no evidence that investors receive compensation for fraud risk</p>
+<h5 id="barrier-and-costs">Barrier and Costs </h5>
+<p>lack of compensation does not mean investors are irrational because of cost of information</p>
+<ul>
+<li>barriers to access Form ADV</li>
+</ul>
+<h5 id="improving-ways">Improving Ways </h5>
+<p>allowing historical Form ADV</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Portfolio Management</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/FRM II/FRM II - Operational Risk and Resilience - D. Basel Accords.html" rel="prev">< FRM II - Operational Risk and Resilience - D. Basel Accords</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Proof/Moore Penrose pseudo inverse.html" rel="next">Moore Penrose pseudo inverse ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
