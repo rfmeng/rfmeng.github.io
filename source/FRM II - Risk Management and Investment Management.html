@@ -170,6 +170,7 @@ Refining alphas are adjusted so that they are in line with investor's desires fo
 <p>Benchmark might have alpha itself, which should be removed.<br>
 Benchmark-neutral and cash-neutral alphas:</p>
 <ul>
+<li>if benchmark has alpha <span class="mathjax-exps">$\Delta\alpha$</span></li>
 <li>stock's alpha should be adjusted with <span class="mathjax-exps">$\beta\times \Delta\alpha$</span></li>
 </ul>
 <h5 id="active-risk-aversion">Active Risk Aversion </h5>
@@ -235,7 +236,7 @@ maximize Sharpe ratio <span class="mathjax-exps">$\frac{R_p-R_f}{VaR_p}$</span>,
 <ol>
 <li>abolute risk is about dollar loss<br>
 relative risk is about loss relative to its benchmark</li>
-<li>policy-mix risk is about passive strategy<br>
+<li>policy-mix risk is about passive strategy (risk of tracking error when benchmark is mix of index)<br>
 active-management risk is the opposite</li>
 </ol>
 <h5 id="funding-risk">Funding Risk </h5>

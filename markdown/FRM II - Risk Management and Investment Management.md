@@ -138,6 +138,7 @@ remove 3 std outliers.
 ###### Neutralization
 Benchmark might have alpha itself, which should be removed. 
 Benchmark-neutral and cash-neutral alphas:
+* if benchmark has alpha $\Delta\alpha$
 * stock's alpha should be adjusted with $\beta\times \Delta\alpha$
 
 
@@ -213,7 +214,7 @@ maximize Sharpe ratio $\frac{R_p-R_f}{VaR_p}$, so add allocation to the postion 
 ##### Types of Risks
 1. abolute risk is about dollar loss 
    relative risk is about loss relative to its benchmark
-2. policy-mix risk is about passive strategy
+2. policy-mix risk is about passive strategy (risk of tracking error when benchmark is mix of index)
    active-management risk is the opposite
 
 ##### Funding Risk 
