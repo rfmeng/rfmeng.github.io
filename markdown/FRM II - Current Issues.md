@@ -1,6 +1,6 @@
-<ndtag category = "FRM II" editdate="2024-10-30" createdate="2024-10-30" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-11-12" createdate="2024-10-30" tag="Risk-Management"></ndtag>
 
-
+## A. 2023 Bank Failures
 ### Review of the Federal Reserve's Supervision and Regulation of Silicon Valley Bank
 SVB Financial Group (SVBFG)
 #### Framework of the Article
@@ -119,8 +119,7 @@ Credit Suisse
 * of all too-big-to-fail tools, CoCos play intended role
 * regulator need to review the design
 
-
-
+## B. Artificial Intelligence
 ### Artificial Intelligence and Bank Supervision
 #### Historical Revolution
 AI's role in banking has been growing
@@ -212,6 +211,8 @@ TEVV-specific expertise (test, evaluation, verification and validation)
 * measure
 * manage
 
+
+## C. Climate Risk
 ### Climate-Related Risk Drivers and Their Transmission Channels
 paper in 2021
 #### Climate-Related Risk Drivers
@@ -248,30 +249,183 @@ macroeconomic
   * transition: negative impact for government revenue / higher corporate production cost
 
 #### Amplifiers and Mitigants
+Amplifier:
+* Interactions and interdependencies between climate risk drivers
+  * extreme weather → low carbon policy
+* Financial risk amplifier
+  * climate change → higher insurance premium → more risk become uninsurable → amplify climate risk
+* Risk drivers transmitted through multiple channels
+  * individual wealth → bank credit risk → macroeconomy deteriorate → individual wealth decline
+  
+Mitigants:
+* Proactive actions
+  * diversification
+* Reactive actions
+  * hedging
+
+Mitigants:
+* bank behavior and business model
+  * reduce climate related exposure
+  * calibrate credit model to capture climate risk
+  * securitization of climate related exposure
+  * support disaster affected areas
+* availability and pricing of insurance
+  * insurance-linked security (implicit insurance bond)
+* depth and maturity of capital markets and opportunities for securitization
+  * sell mortgage
+* hedging opportunities
+  * derivatives
 
 
 
+### Climate-Related Financial Risks - Measurement Methodologies
+#### Conceptual Consideration
+* physical risk measurement: 
+  * damage function: impact of specific hazard on real asset and activities
+* transition risk measurement: model link transition risk drivers to economic factor
+* considered jointly: increase physical risk tends to put pressure on transition risk
+
+exposure granularity:
+* computational complexity
+* data
+* business requirement
+
+top-down and bottom-up approaches to measure risk
+incorporating risk mitigation and risk reduction: net exposure and gross exposure
+heterogeneities (of corporate) play a key role in selecting measurement approaches
+uncertainty may lead to misestimation of risks
+
+#### Data Needs
+* data describing physical and transition risk drivers
+  * commercial, academic, governmental
+* data describing the vulnerability of expusures
+  linking climate-adjusted economic risk factors to exposures
+  * geospatical data for corporates
+  * location data for mortgage
+  * couterparty's sensitivity on climate
+* financial exposure data
+  translate climate-adjusted economic risk factor to financial risk
+  * data used to project cash flows or prices
+
+#### Measurement Approaches
+* Integrated Assessment Model (IAM)
+  combine approaches with economic growth modeling
+  lack resiliency to unforseen endogenous events
+  IAM does not model money, finance, or banking
+* Input-Output Model
+  static linkage, upstream and downstream impact of shocks to a given industry
+* Computable General Equilibrium (CGE)
+  structural policy studies
+* Dynamic Stochastic General Equilibrium (DSGE)
+  computationally intensive
+* Overlapping Generation Model (OLG)
+  long-term macroeconomic evolutions
+  assumes individuals have perfect foresight
+* Agent-Based Model (ABM)
+  micro level, agent interactions
+
+Broad risk measurement approaches:
+* climate risk scores or ratings
+* scenario analysis
+* stress testing
+* sensitivity analysis
+* natural capital analysis: posits nature as a capital stock
+* climate value at risk
+
+#### Methods for Exposure Mapping and Measurement
+banks: 
+* physical risk: measure risk at portfolio level
+* client or project ratings and scores
+
+supervisors:
+* for real estate exposures, transition risk analyses are fewer
+* assess risk in financial system, vulnerability of bank's business model
+
+#### Gaps and Challenges in Future Exploration
+exposure mapping
+* identification criteria not granular enough
+* comparability reduce risk differentiation
+
+design modeling framework:
+* uncertainty
+* time horizon related challenge: up to 2050
 
 
+### Principles for the Effective Management and Supervision of Climate-Related Financial Risks
+#### Banks
+* corporate governance
+  * climate-related risk drivers, incorporate these into business strategy
+  * responsibility for board and senior management
+  * policy, procedure and control
+* internal control
+  * framework
+* incorporate climate risk into capital and liquidity adequacy
+* risk management
+  * risk appetite includes climate risk
+* management monitoring and reporting
+* credit risk
+* market, liquidity, operational and other risks
+* scenario analysis
 
+#### Supervisors
+* incorporation of material
+* risk management framework
+* market, liquidity, operational and other risks
+* utilize a range of techniques, tools and measures
+* resource and capacity to assess bank's management
+* scenario analysis
 
+## D. Blockchain, Cryptocurrency, and Decentralized Finance
+### The Crypto Ecosystem: Key Elements and Risks
+#### Key Elements of Crypto Ecosystem
+* Unbacked cryptocurrencies: not tied to commodity or fiat currency
+  Bitcoin, Ethereum
+* stablecoins: pegging their value to fiat currency
+  USDT
+* smart contract: automatically enforce and execute
+* DeFi (Decentralized Finance): borrow and lend assets without financial intermediary
 
+#### Structural Flaws in the Crypto Ecosystem
+* price volatility
+* smart contract risks: code bug, security
+* DeFi risks: systemic risk, lack of regulation
 
+potential policy actions to mitigate crypto risks:
+* regulation
+* improving legislation
+* enhancing regulatory cooperation
+* promoting industry self-regulation
+* enhancing investor protection
 
+## E. Digital Resilience
+### Digital Resilience And Financial Stability. The Quest For Policy Tools In The Financial Sector
+#### Digital Resilience
+* cyber risk: cyber security, CIA (confidentialilty, integrity, accessability)
+* ICT (Information and Communication Technology) risk: operational disruptions
 
+Evolution Features of Cyber Attacks
+* smart latency: time between system breaches and identification, materialization and neutralization
+* percolation: cyber risk propagation
 
+interplay between cyber risks and financial stability (liquidity, leverage and trust)
 
+#### Macroprudential Tools
+* cyber free rider (concentration of cyber service)
+* cyber epidemics and confidence breakdowns
+* short-sighted view of risks to cyber shocks
+* cloud contagion 
 
-
-
-
-
-
-
-
-
-
-
+Singular nature of cyber and ICT risks rules out most ordinary macroprudential tools.
+* ordinary
+  * countercyclical capital buffer
+  * exposure limit to digital risk factors
+* new
+  * circuit breaker: temporary break
+  * cooperative arrangement:
+    prisoner's dilemma: selfish competition, the balance resorts to public authorities
+    collective ICT buffers (public computing resources for emergency)
+  * systemic technology provider and perimeter of macroprudential policy
+    penalize concentrated use of same software
 
 
 
