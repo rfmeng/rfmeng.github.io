@@ -29,7 +29,7 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p><ndtag category="FRM II" editdate="2024-10-21" createdate="2024-10-10" tag="Risk-Management"></ndtag></p>
+<p><ndtag category="FRM II" editdate="2024-11-12" createdate="2024-10-10" tag="Risk-Management"></ndtag></p>
 <h3 id="--c1-p13---estimating-market-risk-measures"><!-- C1 p13 --> Estimating Market Risk Measures </h3>
 <h4 id="data">Data </h4>
 <p>Geometric return data: <span class="mathjax-exps">$R_t=\ln \frac{P_t+D_t}{P_{t-1}}=\ln(1+r_t)$</span></p>
@@ -61,7 +61,7 @@ Draw lines through mid-points on the edges of the bars of histogram to gain empi
 <p>equal-weight structure makes risk estimates unresponsive to major events: rare large loss in the tail could not be reflected into VaR.<br>
 ghost effects: a VaR that unduely highly because of small cluster of high loss observations and the measured VaR will continue to be high until n days.</p>
 <h5 id="age-weighted">Age-Weighted </h5>
-<p>exponential weighted<br>
+<p>exponential weighted (1 to <span class="mathjax-exps">$\lambda^{n-1}$</span>)<br>
 it gives us the option of letting our sample size grow over time.</p>
 <h5 id="volatility-weighted">Volatility-Weighted </h5>
 <p><span class="mathjax-exps">$r_{t,i}^*=\frac{\sigma_{T,i}}{\sigma_{t,i}}r_{t,i}$</span>, where <span class="mathjax-exps">$r_{t,i}$</span> is actual return for asset <span class="mathjax-exps">$i$</span> on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{t,i}$</span> is volatility forecast on day <span class="mathjax-exps">$t$</span>, <span class="mathjax-exps">$\sigma_{T,i}$</span> is current forecast of volatility.</p>
@@ -256,7 +256,7 @@ For the purpose of value securities relative to one another, equilibrium models 
 <h4 id="vasicek-model-mean-reverting-drift">Vasicek Model: Mean-Reverting Drift </h4>
 <p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma dw$</span></p>
 <h5 id="interest-rate-tree">Interest Rate Tree </h5>
-<p>The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability and interest rate with two equations (mean and std).</p>
+<p>The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability (<span class="mathjax-exps">$p$</span>) and interest rate (<span class="mathjax-exps">$r_{uu}$</span>) with 2 equations (mean and std).</p>
 <h5 id="half-time">Half Time </h5>
 <p>Expectation of the rate after <span class="mathjax-exps">$T$</span> years: <span class="mathjax-exps">$r_0e^{-kT}+\theta(1-e^{-kT})$</span><br>
 The time it takes the factor to progress half the distance toward its goal: <span class="mathjax-exps">$\tau=\frac{\ln 2}{k}$</span></p>
@@ -269,7 +269,7 @@ It supports nonparallel shift.</p>
 <h5 id="compared-to-vasicek-model">Compared to Vasicek Model </h5>
 <p>total variance resembles the impact of mean reversion.<br>
 It is parallel shift model while Vasicek implies nonparallel shift.<br>
-To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek.</p>
+To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek because mean-reversion fits better.</p>
 <h4 id="cox-ingersoll-ross-model">Cox-Ingersoll-Ross Model </h4>
 <p><span class="mathjax-exps">$dr=k(\theta-r)dt+\sigma\sqrt{r}dw$</span>, where <span class="mathjax-exps">$\sigma$</span> is yield volatility and <span class="mathjax-exps">$\sigma\sqrt{r}$</span> is annualized basis-point volatility.<br>
 Interest rates are bounded by 0.</p>
@@ -280,7 +280,8 @@ Interest rates are bounded by 0.</p>
 <h4 id="lognormal-model-with-deterministic-drift">Lognormal Model with Deterministic Drift </h4>
 <p><span class="mathjax-exps">$dr=a(t)rdt+\sigma rdw$</span></p>
 <h4 id="lognormal-model-with-mean-reversion-black-karasinski-model">Lognormal Model with Mean Reversion: Black-Karasinski Model </h4>
-<p><span class="mathjax-exps">$dr=k(t)(\ln\widetilde{\theta}(t)-\ln r)+\sigma(t) rdw$</span></p>
+<p><span class="mathjax-exps">$d r=k(t)(\ln{\widetilde{\theta}}(t)-\ln r)rdt+\sigma(t) rdw$</span><br>
+<span class="mathjax-exps">$d\ln r=k(t)(\ln{\theta}(t)-\ln r)dt+\sigma(t) rdw$</span></p>
 <h3 id="--c6-p85---messages-from-the-academic-literature-on-risk-management-for-the-trading-book"><!-- C6 p85 --> Messages from the Academic Literature on Risk Management for the Trading Book </h3>
 <h4 id="lessons-on-var-implementation">Lessons on VaR Implementation </h4>
 <h5 id="time-horizon">Time Horizon </h5>
@@ -327,18 +328,19 @@ Basel II.5: 10, 20, 40, 60, 120</p>
 <h4 id="market-risk-capital-charge">Market Risk Capital Charge </h4>
 <p>Basel III: standardized approach and internal model approach</p>
 <h5 id="standardized-approach">Standardized Approach </h5>
-<h6 id="risk-sensitivity-approach">Risk Sensitivity Approach </h6>
+<h6 id="1-risk-sensitivity-approach">1. Risk Sensitivity Approach </h6>
 <ol>
 <li>7 risks classes corresponding to trading desks: general interest rate, foreign exchange, commodity, equity, three categories of credit spread risk</li>
-<li>Within each risk class, delta risk charge, vega risk charge and curvature risk charge are calculated.</li>
+<li>Within each risk class, delta risk charge, vega risk charge and curvature (gamma) risk charge are calculated.</li>
 </ol>
-<h6 id="default-risk-charge">Default Risk Charge </h6>
+<h6 id="2-default-risk-charge">2. Default Risk Charge </h6>
+<p>It is for regulatory arbitrage, by add credit risk part to market risk component.</p>
 <ol>
 <li>credit spread risk is handled using risk sensitivity approach.</li>
 <li>default risk (jump-to-default) is handled by a separate default risk charge.<br>
 exposure * LGD * default risk weight</li>
 </ol>
-<h6 id="residual-risk-add-on">Residual Risk Add-on </h6>
+<h6 id="3-residual-risk-add-on">3. Residual Risk Add-on </h6>
 <p>such as exotic options<br>
 calculation: notional amount * risk weight</p>
 <h5 id="internal-models-approach">Internal Models Approach </h5>
@@ -351,7 +353,8 @@ calculation: notional amount * risk weight</p>
 <h6 id="backtesting">Backtesting </h6>
 <p>FRTB does not backtest stressed ES, it is not possible to backtest stressed measure.<br>
 1-day 12 months of data<br>
-99% and 97.5% are to be used, 12 exceptions for 99% or 30 exceptions for 97.5%.</p>
+99% and 97.5% are to be used, 12 exceptions for 99% or 30 exceptions for 97.5%.<br>
+Trading desk is required to use standardized approach until neither of two conditions continue to exist.</p>
 <h4 id="securitization">Securitization </h4>
 <p>Under FRTB, the standardized approach must be used for securitizations.</p>
 <h3 id="--c10-p151---empirical-approaches-to-risk-metrics-and-hedging"><!-- C10 p151 --> Empirical Approaches to Risk Metrics and Hedging </h3>

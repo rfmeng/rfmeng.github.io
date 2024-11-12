@@ -1,4 +1,4 @@
-<ndtag category = "FRM II" editdate="2024-10-21" createdate="2024-10-10" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-11-12" createdate="2024-10-10" tag="Risk-Management"></ndtag>
 
 
 
@@ -39,7 +39,7 @@ equal-weight structure makes risk estimates unresponsive to major events: rare l
 ghost effects: a VaR that unduely highly because of small cluster of high loss observations and the measured VaR will continue to be high until n days.
 
 ##### Age-Weighted
-exponential weighted
+exponential weighted (1 to $\lambda^{n-1}$)
 it gives us the option of letting our sample size grow over time.
 
 ##### Volatility-Weighted
@@ -280,7 +280,7 @@ For the purpose of value securities relative to one another, equilibrium models 
 #### Vasicek Model: Mean-Reverting Drift
 $dr=k(\theta-r)dt+\sigma dw$
 ##### Interest Rate Tree
-The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability and interest rate with two equations (mean and std).
+The tree does not recombine. To recombine it, take average of the two nodes and adjust the related risk neutral probability ($p$) and interest rate ($r_{uu}$) with 2 equations (mean and std).
 
 ##### Half Time
 Expectation of the rate after $T$ years: $r_0e^{-kT}+\theta(1-e^{-kT})$
@@ -299,7 +299,7 @@ $dr=\lambda(t)dt+\sigma(t)e^{-at}dw$, where $a$ is decay rate.
 ##### Compared to Vasicek Model
 total variance resembles the impact of mean reversion.
 It is parallel shift model while Vasicek implies nonparallel shift.
-To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek.
+To quote fixed income option prices (that are not easily observable), use time-dependent volatility model; to value and hedge fixed income securities, use Vasicek because mean-reversion fits better.
 
 #### Cox-Ingersoll-Ross Model
 $dr=k(\theta-r)dt+\sigma\sqrt{r}dw$, where $\sigma$ is yield volatility and $\sigma\sqrt{r}$ is annualized basis-point volatility.
@@ -315,7 +315,8 @@ $dr=ardt+\sigma rdw$
 $dr=a(t)rdt+\sigma rdw$
 
 #### Lognormal Model with Mean Reversion: Black-Karasinski Model
-$dr=k(t)(\ln\widetilde{\theta}(t)-\ln r)+\sigma(t) rdw$
+$d r=k(t)(\ln{\widetilde{\theta}}(t)-\ln r)rdt+\sigma(t) rdw$
+$d\ln r=k(t)(\ln{\theta}(t)-\ln r)dt+\sigma(t) rdw$
 
 
 ### <!-- C6 p85 --> Messages from the Academic Literature on Risk Management for the Trading Book
@@ -378,16 +379,17 @@ Basel II.5: 10, 20, 40, 60, 120
 Basel III: standardized approach and internal model approach
 
 ##### Standardized Approach
-###### Risk Sensitivity Approach
+###### 1. Risk Sensitivity Approach
 1. 7 risks classes corresponding to trading desks: general interest rate, foreign exchange, commodity, equity, three categories of credit spread risk
-2. Within each risk class, delta risk charge, vega risk charge and curvature risk charge are calculated.
+2. Within each risk class, delta risk charge, vega risk charge and curvature (gamma) risk charge are calculated.
 
-###### Default Risk Charge
+###### 2. Default Risk Charge
+It is for regulatory arbitrage, by add credit risk part to market risk component.
 1. credit spread risk is handled using risk sensitivity approach.
 2. default risk (jump-to-default) is handled by a separate default risk charge.
    exposure \* LGD \* default risk weight
 
-###### Residual Risk Add-on
+###### 3. Residual Risk Add-on
 such as exotic options
 calculation: notional amount \* risk weight
 
@@ -401,6 +403,7 @@ Historical simulation approcah to estimate stressed ES with 97.5% confidence.
 FRTB does not backtest stressed ES, it is not possible to backtest stressed measure.
 1-day 12 months of data
 99% and 97.5% are to be used, 12 exceptions for 99% or 30 exceptions for 97.5%.
+Trading desk is required to use standardized approach until neither of two conditions continue to exist.
 
 #### Securitization
 Under FRTB, the standardized approach must be used for securitizations.
