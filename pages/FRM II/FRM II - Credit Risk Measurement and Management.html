@@ -100,7 +100,7 @@
 						        <i class="far fa-calendar"></i>
 						      </span>
 						      <span class="post-meta-item-text">Modified</span>
-						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-10-30</time>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2024-11-13</time>
 						    </span>
 						    <span class="post-meta-item">
 						      <span class="post-meta-item-icon">
@@ -115,7 +115,7 @@
 		        </div>
 		      </header>
 					<div class="crossnote markdown-preview post-body" for="html-export">
-<p><ndtag category="FRM II" createdate="2024-10-21" editdate="2024-10-30" tag="Risk-Management"></ndtag></p>
+<p><ndtag category="FRM II" createdate="2024-10-21" editdate="2024-11-13" tag="Risk-Management"></ndtag></p>
 <h3 id="nav1">1.  Fundamentals of Credit Risk </h3>
 <h4 id="nav1.1">1.1. What is Credit Risk </h4>
 <p>Insolvency: asset less than liability</p>
@@ -313,7 +313,7 @@ small business line</p>
 <li>the tendency to default is complex product of social and legal system</li>
 <li>operational issue affects the credit assessment</li>
 </ol>
-<h5 id="from-default-risk-to-customer-value">From Default Risk to Customer value </h5>
+<h5 id="from-default-risk-to-customer-value">From Default Risk to Customer Value </h5>
 <p>risk based pricing</p>
 <h4 id="nav7.2">7.2. Credit Scoring </h4>
 <h5 id="types-of-credit-score-model">Types of Credit Score Model </h5>
@@ -453,8 +453,8 @@ ratings momentum: a company downgraded recently is more likely to be downgraded 
 <p><span class="mathjax-exps">$n$</span> loans and <span class="mathjax-exps">$m$</span> will default, the defaults are independent to each other.<br/>
 If <span class="mathjax-exps">$q$</span> is small and <span class="mathjax-exps">$n$</span> is large, the distribution converges to Poisson.<br/>
 The convergence exists even if the PD are different, an average is converged.<br/>
-Assume default number follows Gamma, the default number follows negative binomial.<br/>
-If default number has 0 std, there is no default correlation.<br/>
+Assume <span class="mathjax-exps">$q$</span> follows Gamma, the default number follows negative binomial.<br/>
+If <span class="mathjax-exps">$q$</span> has 0 std, there is no default correlation.<br/>
 As <span class="mathjax-exps">$\sigma$</span> increases, the probability <span class="mathjax-exps">$q_n$</span> has higher volatility, large number and small number of defaults are more likely to happen, thus higher correlation.</p>
 <h3 id="nav13">13.  Derivatives </h3>
 <h4 id="nav13.1">13.1. Derivatives Market </h4>
@@ -523,7 +523,7 @@ reduce operational risk, counterparty risk and liquidity risk</p>
 <h5 id="currency-netting-and-cls">Currency Netting and CLS </h5>
 <p>Non-deliverable forward (NDF) transaction: currency is cash-settled based on the NDF rate and the prevailing FX rate.</p>
 <h6 id="continuous-linked-settlement-cls">Continuous Linked Settlement (CLS) </h6>
-<p>payent versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.</p>
+<p>payment versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.</p>
 <h5 id="multilateral-netting">Multilateral Netting </h5>
 <h6 id="clearing-rings">Clearing Rings </h6>
 <p>multilateral netting before the development of central clearing<br/>
@@ -591,7 +591,7 @@ smallest amount of margin that can be transfered</li>
 post more and extract less</li>
 <li>Credit Support Amount: variation margin</li>
 </ul>
-<h5 id="margin-types-and-haiccuts">Margin Types and Haiccuts </h5>
+<h5 id="margin-types-and-haircuts">Margin Types and Haircuts </h5>
 <p>haircuts: discount to the value of collateral to avoid security sold at a lower price</p>
 <h4 id="nav16.2">16.2. Impact of Margin </h4>
 <h5 id="valuation-agent">Valuation Agent </h5>
@@ -618,7 +618,7 @@ Rehypothecation and Segregation</li>
 bilateral trades: CCP is not suitabe for all products<br/>
 multiple CCPs: regional and product</p>
 <h5 id="novation">Novation </h5>
-<p>CCP steps in a transaction and acts as an insurer of counter party risk in both directions<br/>
+<p>CCP steps in a transaction and acts as an insurer of counterparty risk in both directions<br/>
 portfolio compression: cashflow netting and acceptance of another party to pay<br/>
 CCP compress risk</p>
 <h4 id="nav17.2">17.2. CCP Risk Management </h4>
@@ -689,8 +689,8 @@ collateralization is not a a perfect form of risk mitigation</p>
 <p><span class="mathjax-exps">$\text{Funding}=\text{value}-\text{margin}$</span><br/>
 if funding is positive, it is funding cost</p>
 <h6 id="impact-of-margin-on-exposure-and-funding">Impact of Margin on Exposure and Funding </h6>
-<p><span class="mathjax-exps">$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R\}$</span>, where <span class="mathjax-exps">$IM^R$</span> is intial margin received<br/>
-<span class="mathjax-exps">$\text{Funding}=\max\{\text{value}-VM+IM^P\}$</span>, where <span class="mathjax-exps">$IM^R$</span> is intial margin paid</p>
+<p><span class="mathjax-exps">$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R,0\}$</span>, where <span class="mathjax-exps">$IM^R$</span> is intial margin received<br/>
+<span class="mathjax-exps">$\text{Funding}=\max\{\text{value}-VM+IM^P,0\}$</span>, where <span class="mathjax-exps">$IM^P$</span> is intial margin paid</p>
 <h3 id="nav19">19.  CVA </h3>
 <h4 id="nav19.1">19.1. Credit Valuation Adjustment and xVA </h4>
 <p>CVA is expected loss from a default by the counterparty, <span class="mathjax-exps">$\text{Risky Value}=\text{Risk-free Value}-CVA$</span><br/>
@@ -702,7 +702,7 @@ Three levels to assessing the counterparty risk of transaction:</p>
 <ul>
 <li>trade level: CVA</li>
 <li>counterparty level: CVA (incorporating the impact of risk mitigants such as netting and margining)</li>
-<li>portfolio level: creidt limits</li>
+<li>portfolio level: credit limits</li>
 </ul>
 <p>CVA encourages minimizing the number of counterparties, while credit limits encourage maximizing that number</p>
 <h5 id="xva">xVA </h5>
@@ -745,7 +745,8 @@ incremental CVA less than or equal to standalone CVA</p>
 <h5 id="impacts-on-cva">Impacts on CVA </h5>
 <p>in default, CVA may be 0</p>
 <h6 id="spread-curve">Spread Curve </h6>
-<p>Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping.<br/>
+<p>Spread curve is term structure of credit spread.<br/>
+Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping.<br/>
 Upward sloping shows largest CVA. (higher PD, larger EPE)</p>
 <h6 id="variation-margin-1">Variation Margin </h6>
 <p>MPoR/cure period: typicall 10 or 20 days.</p>
@@ -838,7 +839,8 @@ board of directors must ensure benefit for the bank</p>
 <p>payment is the LGD part</p>
 <h5 id="cds-spread-1">CDS Spread </h5>
 <p>CDS spread times the notional amount directly<br/>
-<span class="mathjax-exps">$\text{PV of expected payments}+\text{PV of accrual payments}=\text{PV of expected payoff}$</span></p>
+<span class="mathjax-exps">$\text{PV of expected payments}+\text{PV of accrual payments}=\text{PV of expected payoff}$</span><br/>
+accrual payments is for nondefault time in default year, assuming</p>
 <ul>
 <li>expected payments: cumulative survival probability</li>
 <li>accrual payments: unconditional PD</li>
@@ -989,7 +991,7 @@ cash outflow: coupon</p>
 <p>excess spread is diverted up to OC account anually, the extra part over maximum amount <span class="mathjax-exps">$K$</span> is distributed to equity tranche. Recovery portion is distributed to OC.<br/>
 OC account's balance should gain risk free rate <span class="mathjax-exps">$r$</span><br/>
 terminal available fund is for equity tranche</p>
-<p>Example: CDO, with 100 identical loans with par value 1 million each. The loans pays 3.5% over Libor (5%). The maturity is 5 years. Senior tranche coupon is 50 bps over Libor, Mezzanine tranche is 500 bps over LIBOR. PD is 10%</p>
+<p>Example: CDO, with 100 identical loans with par value 1 million each. The loans pays 3.5% over Libor (5%). The maturity is 5 years. Senior tranche coupon is 50 bps over Libor, Mezzanine tranche is 500 bps over LIBOR. PD is 10%, RR is 40%. K=$1.75 million.</p>
 <table>
 <thead>
 <tr>
@@ -1086,7 +1088,7 @@ terminal available fund is for equity tranche</p>
                 <a href="/pages/Derivatives/期货法律法规与职业道德.html" rel="prev">< 期货法律法规与职业道德</a>
 	            </div>
 	            <div class="post-nav-item">
-                <a href="/pages/FRM II/FRM II - Market Risk Measurement and Management.html" rel="next">FRM II - Market Risk Measurement and Management ></a>
+                <a href="/pages/FRM II/FRM II - Current Issues.html" rel="next">FRM II - Current Issues ></a>
 	            </div>
 	          </div>
 					</footer>

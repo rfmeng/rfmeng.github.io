@@ -1,4 +1,4 @@
-<ndtag category = "FRM II" editdate="2024-10-30" createdate="2024-10-21" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-11-13" createdate="2024-10-21" tag="Risk-Management"></ndtag>
 
 
 ### <!-- 1. C1 p15 --> Fundamentals of Credit Risk
@@ -70,7 +70,6 @@ expected loss (EL): $EL=PD\times EAD\times LGD$
 * probability of default：  usually set to be one year
 * Exposure at default:
 * Loss given default: recovery rate = 1 - LGD
-
 ##### Types
 ###### Judgmental Approaches
 also called expert systems or qualitative approaches
@@ -225,7 +224,7 @@ small business line
 3. the tendency to default is complex product of social and legal system
 4. operational issue affects the credit assessment
 
-##### From Default Risk to Customer value
+##### From Default Risk to Customer Value
 risk based pricing
 
 #### Credit Scoring
@@ -404,8 +403,8 @@ reblance: sell the rating changed bond and buy a new BBB bond every month.
 $n$ loans and $m$ will default, the defaults are independent to each other.
 If $q$ is small and $n$ is large, the distribution converges to Poisson.
 The convergence exists even if the PD are different, an average is converged.
-Assume default number follows Gamma, the default number follows negative binomial.
-If default number has 0 std, there is no default correlation.
+Assume $q$ follows Gamma, the default number follows negative binomial.
+If $q$ has 0 std, there is no default correlation.
 As $\sigma$ increases, the probability $q_n$ has higher volatility, large number and small number of defaults are more likely to happen, thus higher correlation.
 
 
@@ -487,7 +486,7 @@ reduce operational risk, counterparty risk and liquidity risk
 Non-deliverable forward (NDF) transaction: currency is cash-settled based on the NDF rate and the prevailing FX rate.
 
 ###### Continuous Linked Settlement (CLS)
-payent versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.
+payment versus payment: only after both currencies have arrived does CLS Bank make the outgoing payment to both parties.
 
 ##### Multilateral Netting
 ###### Clearing Rings
@@ -563,7 +562,7 @@ Threshold less than 0: post initial margin
   post more and extract less
 * Credit Support Amount: variation margin
 
-##### Margin Types and Haiccuts
+##### Margin Types and Haircuts
 haircuts: discount to the value of collateral to avoid security sold at a lower price
 
 #### Impact of Margin
@@ -594,7 +593,7 @@ bilateral trades: CCP is not suitabe for all products
 multiple CCPs: regional and product
 
 ##### Novation
-CCP steps in a transaction and acts as an insurer of counter party risk in both directions
+CCP steps in a transaction and acts as an insurer of counterparty risk in both directions
 portfolio compression: cashflow netting and acceptance of another party to pay
 CCP compress risk
 
@@ -677,8 +676,8 @@ $\text{Funding}=\text{value}-\text{margin}$
 if funding is positive, it is funding cost
 
 ###### Impact of Margin on Exposure and Funding
-$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R\}$, where $IM^R$ is intial margin received
-$\text{Funding}=\max\{\text{value}-VM+IM^P\}$, where $IM^R$ is intial margin paid
+$\text{Positive Exposure}=\max\{\text{value}-VM-IM^R,0\}$, where $IM^R$ is intial margin received
+$\text{Funding}=\max\{\text{value}-VM+IM^P,0\}$, where $IM^P$ is intial margin paid
 
 
 ### <!-- 19. C12 157, C15 207, C20 309  --> CVA
@@ -692,7 +691,7 @@ CVA: the counterparty risk becomes whether it is profitable, it defines a minimu
 Three levels to assessing the counterparty risk of transaction:
 * trade level: CVA
 * counterparty level: CVA (incorporating the impact of risk mitigants such as netting and margining)
-* portfolio level: creidt limits
+* portfolio level: credit limits
 
 CVA encourages minimizing the number of counterparties, while credit limits encourage maximizing that number
 
@@ -741,6 +740,7 @@ breakdown CVA
 in default, CVA may be 0
 
 ###### Spread Curve
+Spread curve is term structure of credit spread. 
 Asumming same cumulative PD at the mid point, the marginal PD differs with spread curve sloping. 
 Upward sloping shows largest CVA. (higher PD, larger EPE)
 
@@ -847,6 +847,7 @@ payment is the LGD part
 ##### CDS Spread
 CDS spread times the notional amount directly
 $\text{PV of expected payments}+\text{PV of accrual payments}=\text{PV of expected payoff}$
+accrual payments is for nondefault time in default year, assuming
 * expected payments: cumulative survival probability
 * accrual payments: unconditional PD
 * expected payoff: unconditional PD
@@ -1017,7 +1018,7 @@ excess spread is diverted up to OC account anually, the extra part over maximum 
 OC account's balance should gain risk free rate $r$
 terminal available fund is for equity tranche
 
-Example: CDO, with 100 identical loans with par value 1 million each. The loans pays 3.5% over Libor (5%). The maturity is 5 years. Senior tranche coupon is 50 bps over Libor, Mezzanine tranche is 500 bps over LIBOR. PD is 10%
+Example: CDO, with 100 identical loans with par value 1 million each. The loans pays 3.5% over Libor (5%). The maturity is 5 years. Senior tranche coupon is 50 bps over Libor, Mezzanine tranche is 500 bps over LIBOR. PD is 10%, RR is 40%. K=$1.75 million.
 | Yr | Def | Cum | Srv | Loan int | Exc spr | OC | Recov | OC+Recov | Eq flow | OC a/c |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1 | 10 | 10 | 90 | 7,650,000 | 1,975,000 | 1,750,000 | 4,000,000 | 5,750,000 | 225,000 | 5,750,000 |
