@@ -1,4 +1,4 @@
-<ndtag category = "FRM II" editdate="2024-11-10" createdate="2024-11-06" tag="Risk-Management"></ndtag>
+<ndtag category = "FRM II" editdate="2024-11-14" createdate="2024-11-06" tag="Risk-Management"></ndtag>
 
 ## A. Introduction of Liquidity Risk
 ### <!-- 1. C1 p15, C2 p31 --> Liquidity Risk and Leverage
@@ -274,7 +274,7 @@ yield curve:
 
 duration:
 See <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav1.2" target="_blank">duration</a> in CFA I.
-portfolio immunizationL interest rate risk and reinvestment risk offset each other
+portfolio immunization: interest rate risk and reinvestment risk offset each other
 
 #### Failure of Dealer Banks
 ##### Major Lines of Business of Dealer Banks
@@ -334,8 +334,8 @@ funding constraints
 
 ##### Illiquidity Risk Premiums
 to acquire illiquidity risk premium:
-* allocation across asset classes: ignoring risk
-* allocation within asset class: evidence of large illiquidity risk
+* allocation across asset classes: no liquidity risk premium (due to bias on return)
+* allocation within asset class: evidence of large illiquidity risk premium (T-bond and T-bill)
 * rebalancing is counter-cyclical and suppies liquidity
 
 why illiquidity risk premium manifest within but not across asset classes: limited integration
@@ -433,6 +433,7 @@ forecast of deposit and loan:
 ###### 2. Structure of Funds Approach
 * deposit and nondeposit
   liability liquidity reserve = net (against legal reserve) value adjusted by weight
+  the netting is because of reserve provide protection
   * hot money liability
   * vulnerable fund 
   * stable fund 
@@ -452,13 +453,13 @@ industry averages or expertise
 |Pledged Securities Ratio|pledged securities/total securities|greater |
 |Hot Money Ratio|money market asset/volatile liability|smaller|
 |Capacity Ratio|loan/asset|greater |
-|Loan Commitments Ratio|unused loan commitment/asset|greater |
+|Loan Commitments Ratio|unused loan commitment/asset|greater|client can withdraw more money|
 |Net Federal Funds and Repo Position|(fund sold - fund purchased-Repo)/asset|smaller |
 
 #### Legal Reserve Management
 ##### Legal Reserves
 Lagged reserve accounting (LRA)
-* reserve compuatation period (14 days)
+* reserve computation period (14 days)
 * reserve funding period (14 days)
 * reserve maintainence period (14 days)
 
@@ -495,7 +496,7 @@ $TSL_e=TSCLGC-TSECCF$
 
 ##### Term Structures of Available Asset
 TSAA
-repo does not change TSECF or TSECCF
+repo does not change TSECF or TSAA
 
 ##### Cashflow at Risk (CFaR)
 concept like unexpected loss
