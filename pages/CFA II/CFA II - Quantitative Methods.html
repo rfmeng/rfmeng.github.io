@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Quantitative Methods - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Introduction to the Instruments </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Basics of Multiple Regression and Underlying Assumptions </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Evaluating Regression Model Fit and Interpreting Model Results </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Model Misspecification </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Quantitative Methods
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-07-20</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-07-20" editdate="2025-07-20" tag="Regression"></ndtag></p>
+<h3 id="nav1">1.  Introduction to the Instruments </h3>
+<h5 id="simple-linear-regression">Simple Linear Regression </h5>
+<p>t-statistic (for simple linear regression): <span class="mathjax-exps">$t=\frac{\widehat{b}_1}{s_{\widehat{b}_1}}$</span>, where <span class="mathjax-exps">$\text{df} = n-k-1$</span> and <span class="mathjax-exps">$s_{\widehat{b_1}}=\frac{s_e}{\sqrt{\sum(x_i-\overline{x})^2}}$</span></p>
+<h4 id="nav1.1">1.1. Basics of Multiple Regression and Underlying Assumptions </h4>
+<p>Assumptions:  (1) linearity, (2) homoskedasticity, (3) independence of errors, (4) normality, and (5) independence of independent variables</p>
+<h5 id="hypothesis-testing-for-independent-variables">Hypothesis Testing for Independent Variables </h5>
+<p>Hypothesis:</p>
+<ul>
+<li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_j=b_{jH}$</span>; <span class="mathjax-exps">$H_a$</span>: <span class="mathjax-exps">$b_j\neq b_{jH}$</span></li>
+<li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_j\geq b_{jH}$</span>; <span class="mathjax-exps">$H_a$</span>: <span class="mathjax-exps">$b_j&lt; b_{jH}$</span></li>
+<li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_j\leq b_{jH}$</span>; <span class="mathjax-exps">$H_a$</span>: <span class="mathjax-exps">$b_j&gt; b_{jH}$</span></li>
+</ul>
+<p>t-statistic: <span class="mathjax-exps">$t=\frac{\widehat{b}_j-b_{jH}}{s_{\widehat{b}_j}}$</span>, where <span class="mathjax-exps">$\text{df} = n-k-1$</span>  and <span class="mathjax-exps">$s_{\widehat{b}_j}=s_e[(X^TX)^{-1}]_{jj}$</span><br/>
+confidence interval: <span class="mathjax-exps">$\widehat{b}_j\pm t_cs_{\widehat{b}_j}$</span></p>
+<h4 id="nav1.2">1.2. Evaluating Regression Model Fit and Interpreting Model Results </h4>
+<h5 id="anova-analysis">Anova Analysis </h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">df</th>
+<th style="text-align:center">SS</th>
+<th style="text-align:center">MS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Regression</td>
+<td style="text-align:center">k</td>
+<td style="text-align:center">SSR</td>
+<td style="text-align:center">MSR=SSR/k</td>
+</tr>
+<tr>
+<td style="text-align:center">Error</td>
+<td style="text-align:center">n-k-1</td>
+<td style="text-align:center">SSE</td>
+<td style="text-align:center">MSE=SSE/(n-k-1)</td>
+</tr>
+<tr>
+<td style="text-align:center">Total</td>
+<td style="text-align:center">n-1</td>
+<td style="text-align:center">SST</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<p><span class="mathjax-exps">$\text{SST}=\text{SSR}+\text{SSE}$</span><br/>
+<span class="mathjax-exps">$\text{SST}=\sum(Y_i-\overline{Y})^2$</span><br/>
+<span class="mathjax-exps">$\text{SSE}=\sum(Y_i-\widehat{Y}_i)^2$</span><br/>
+<span class="mathjax-exps">$\text{SSR}=\sum(\widehat{Y}_i-\overline{Y})^2$</span><br/>
+standard error of esitmates (<span class="mathjax-exps">$s_e$</span>): <span class="mathjax-exps">$\text{SEE}=\sqrt{\frac{\text{SSE}}{n-k-1}}=\sqrt{\text{MSE}}$</span></p>
+<p>F-statistic: <span class="mathjax-exps">$F=\frac{\text{MSR}}{\text{MSE}}=\frac{\text{SSR}/k}{\text{SSE}/(n-k-1)}$</span>, reject <span class="mathjax-exps">$H_0$</span> if <span class="mathjax-exps">$F&gt;F_c$</span>, always a one tailed test</p>
+<h5 id="goodness-of-fit">Goodness of Fit </h5>
+<p>coefficient of determination: <span class="mathjax-exps">$R^2=\frac{\text{SSR}}{\text{SST}}$</span>, where <span class="mathjax-exps">$R^2=r^2$</span> for simple linear regression<br/>
+adjusted <span class="mathjax-exps">$R^2$</span>: <span class="mathjax-exps">$\overline{R}^2=1-\frac{\text{SSE}/(n-k-1)}{\text{SST}/(n-1)}=1-\frac{n-1}{n-k-1}(1-R^2)$</span><br/>
+Akaike’s information criterion(AIC): <span class="mathjax-exps">$\text{AIC}=n\ln\frac{\text{SSE}}{n}+2(k+1)$</span></p>
+<ul>
+<li>measure of model parsimony</li>
+</ul>
+<p>Schwarz’s Bayesian information criterion (BIC or SBC): <span class="mathjax-exps">$\text{BIC}=n\ln\frac{\text{SSE}}{n}+(k+1)\ln n$</span></p>
+<ul>
+<li>AIC is preferred for prediction while BIC is more likely to be used for seeking best fitness</li>
+</ul>
+<h5 id="testing-joint-hypotheses-for-coefficients">Testing Joint Hypotheses for Coefficients </h5>
+<p>Unrestricted model: <span class="mathjax-exps">$Y_i=b_0+b_1X_1i+\dots b_kX_ki+\epsilon_i$</span><br/>
+Restricted model: <span class="mathjax-exps">$Y_i=b_0+b_1X_1i+\dots b_{k-q}X_{(k-q)i}+\epsilon_i$</span><br/>
+<span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_1=\dots =b_q=0$</span><br/>
+<span class="mathjax-exps">$H_1$</span>: at least one <span class="mathjax-exps">$b_j\neq 0$</span><br/>
+F-statistic: <span class="mathjax-exps">$F=\frac{(SSE_R-SSE_U)/q}{SSE_U/(n-k-1)}$</span></p>
+<h4 id="nav1.3">1.3. Model Misspecification </h4>
+<h5 id="misspecified-functional-form">Misspecified Functional Form </h5>
+<ul>
+<li>important variabels omitted</li>
+<li>variables need to be transformed</li>
+<li>inappropriate scaling of variables</li>
+<li>pools data incorrectly</li>
+</ul>
+<p>might lead to heteroskedasticity, serial correlation or multicollinearity:</p>
+<h5 id="violations-of-regression-assumptions-heteroskedasticity">Violations of Regression Assumptions: Heteroskedasticity </h5>
+<p>unconditional heteroskedasticity: error variance not correlated with independent variables, no major problems<br/>
+conditional heteroskedasticity: error variance correlated with independent variables, creating significant problems for statistical inference</p>
+<h6 id="effects">Effects </h6>
+<ul>
+<li><span class="mathjax-exps">$\widehat{b}_j$</span> not affected</li>
+<li><span class="mathjax-exps">$s_{\widehat{b}_j}$</span> are most likely underestimated, t-statistics will be inflated</li>
+<li>F-test also unreliable</li>
+</ul>
+<h6 id="testing-for-conditional-heteroskedasticity">Testing for Conditional Heteroskedasticity </h6>
+<p>Breusch-Pagen <span class="mathjax-exps">$\chi^2$</span> test, <span class="mathjax-exps">$H_0$</span>: no heteroskedasticity<br/>
+Residual regression: <span class="mathjax-exps">$\varepsilon_i=a_0+\dots+a_kX_k+\epsilon_k$</span><br/>
+BP statistic: <span class="mathjax-exps">$\chi^2=nR^2_{\text{resid}}$</span> with df=k, one tailed test</p>
+<h6 id="correcting-for-heteroskedasticity">Correcting for Heteroskedasticity </h6>
+<ul>
+<li>robust standard errors: White-corrected standard errors</li>
+<li>generalized least squares model</li>
+</ul>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Regression</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA I/CFA I - Quantitative Methods.html" rel="prev">< CFA I - Quantitative Methods</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/Derivatives/Dynamic Hedging 1 - Markets, Instruments, People.html" rel="next">Dynamic Hedging 1 - Markets, Instruments, People ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
