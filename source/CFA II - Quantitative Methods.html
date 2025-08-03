@@ -29,13 +29,12 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p><ndtag category="CFA II" createdate="2025-07-20" editdate="2025-07-20" tag="Regression"></ndtag></p>
-<h3 id="--c1-p13---introduction-to-the-instruments"><!-- C1 p13 --> Introduction to the Instruments </h3>
+<p><ndtag category="CFA II" createdate="2025-07-20" editdate="2025-08-03" tag="Time-Series"></ndtag></p>
 <h5 id="simple-linear-regression">Simple Linear Regression </h5>
 <p>t-statistic (for simple linear regression): <span class="mathjax-exps">$t=\frac{\widehat{b}_1}{s_{\widehat{b}_1}}$</span>, where <span class="mathjax-exps">$\text{df} = n-k-1$</span> and <span class="mathjax-exps">$s_{\widehat{b_1}}=\frac{s_e}{\sqrt{\sum(x_i-\overline{x})^2}}$</span></p>
-<h4 id="basics-of-multiple-regression-and-underlying-assumptions">Basics of Multiple Regression and Underlying Assumptions </h4>
+<h3 id="--c1-p13---basics-of-multiple-regression-and-underlying-assumptions"><!-- C1 p13 --> Basics of Multiple Regression and Underlying Assumptions </h3>
 <p>Assumptions:  (1) linearity, (2) homoskedasticity, (3) independence of errors, (4) normality, and (5) independence of independent variables</p>
-<h5 id="hypothesis-testing-for-independent-variables">Hypothesis Testing for Independent Variables </h5>
+<h4 id="hypothesis-testing-for-independent-variables">Hypothesis Testing for Independent Variables </h4>
 <p>Hypothesis:</p>
 <ul>
 <li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_j=b_{jH}$</span>; <span class="mathjax-exps">$H_a$</span>: <span class="mathjax-exps">$b_j\neq b_{jH}$</span></li>
@@ -44,8 +43,8 @@
 </ul>
 <p>t-statistic: <span class="mathjax-exps">$t=\frac{\widehat{b}_j-b_{jH}}{s_{\widehat{b}_j}}$</span>, where <span class="mathjax-exps">$\text{df} = n-k-1$</span>  and <span class="mathjax-exps">$s_{\widehat{b}_j}=s_e[(X^TX)^{-1}]_{jj}$</span><br>
 confidence interval: <span class="mathjax-exps">$\widehat{b}_j\pm t_cs_{\widehat{b}_j}$</span></p>
-<h4 id="evaluating-regression-model-fit-and-interpreting-model-results">Evaluating Regression Model Fit and Interpreting Model Results </h4>
-<h5 id="anova-analysis">Anova Analysis </h5>
+<h3 id="--c2-p35---evaluating-regression-model-fit-and-interpreting-model-results"><!-- C2 p35 --> Evaluating Regression Model Fit and Interpreting Model Results </h3>
+<h4 id="anova-analysis">Anova Analysis </h4>
 <table>
 <thead>
 <tr>
@@ -82,7 +81,7 @@ confidence interval: <span class="mathjax-exps">$\widehat{b}_j\pm t_cs_{\widehat
 <span class="mathjax-exps">$\text{SSR}=\sum(\widehat{Y}_i-\overline{Y})^2$</span><br>
 standard error of esitmates (<span class="mathjax-exps">$s_e$</span>): <span class="mathjax-exps">$\text{SEE}=\sqrt{\frac{\text{SSE}}{n-k-1}}=\sqrt{\text{MSE}}$</span></p>
 <p>F-statistic: <span class="mathjax-exps">$F=\frac{\text{MSR}}{\text{MSE}}=\frac{\text{SSR}/k}{\text{SSE}/(n-k-1)}$</span>, reject <span class="mathjax-exps">$H_0$</span> if <span class="mathjax-exps">$F&gt;F_c$</span>, always a one tailed test</p>
-<h5 id="goodness-of-fit">Goodness of Fit </h5>
+<h4 id="goodness-of-fit">Goodness of Fit </h4>
 <p>coefficient of determination: <span class="mathjax-exps">$R^2=\frac{\text{SSR}}{\text{SST}}$</span>, where <span class="mathjax-exps">$R^2=r^2$</span> for simple linear regression<br>
 adjusted <span class="mathjax-exps">$R^2$</span>: <span class="mathjax-exps">$\overline{R}^2=1-\frac{\text{SSE}/(n-k-1)}{\text{SST}/(n-1)}=1-\frac{n-1}{n-k-1}(1-R^2)$</span><br>
 Akaike’s information criterion(AIC): <span class="mathjax-exps">$\text{AIC}=n\ln\frac{\text{SSE}}{n}+2(k+1)$</span></p>
@@ -93,38 +92,257 @@ Akaike’s information criterion(AIC): <span class="mathjax-exps">$\text{AIC}=n\
 <ul>
 <li>AIC is preferred for prediction while BIC is more likely to be used for seeking best fitness</li>
 </ul>
-<h5 id="testing-joint-hypotheses-for-coefficients">Testing Joint Hypotheses for Coefficients </h5>
+<h4 id="testing-joint-hypotheses-for-coefficients">Testing Joint Hypotheses for Coefficients </h4>
 <p>Unrestricted model: <span class="mathjax-exps">$Y_i=b_0+b_1X_1i+\dots b_kX_ki+\epsilon_i$</span><br>
 Restricted model: <span class="mathjax-exps">$Y_i=b_0+b_1X_1i+\dots b_{k-q}X_{(k-q)i}+\epsilon_i$</span><br>
 <span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$b_1=\dots =b_q=0$</span><br>
 <span class="mathjax-exps">$H_1$</span>: at least one <span class="mathjax-exps">$b_j\neq 0$</span><br>
 F-statistic: <span class="mathjax-exps">$F=\frac{(SSE_R-SSE_U)/q}{SSE_U/(n-k-1)}$</span></p>
-<h4 id="model-misspecification">Model Misspecification </h4>
-<h5 id="misspecified-functional-form">Misspecified Functional Form </h5>
+<h3 id="--c3-p59---model-misspecification"><!-- C3 p59 --> Model Misspecification </h3>
+<h4 id="misspecified-functional-form">Misspecified Functional Form </h4>
 <ul>
 <li>important variabels omitted</li>
 <li>variables need to be transformed</li>
 <li>inappropriate scaling of variables</li>
 <li>pools data incorrectly</li>
 </ul>
-<p>might lead to heteroskedasticity, serial correlation or multicollinearity:</p>
-<h5 id="violations-of-regression-assumptions-heteroskedasticity">Violations of Regression Assumptions: Heteroskedasticity </h5>
+<p>might lead to heteroskedasticity, serial correlation or multicollinearity</p>
+<h4 id="violations-of-regression-assumptions-heteroskedasticity">Violations of Regression Assumptions: Heteroskedasticity </h4>
 <p>unconditional heteroskedasticity: error variance not correlated with independent variables, no major problems<br>
 conditional heteroskedasticity: error variance correlated with independent variables, creating significant problems for statistical inference</p>
-<h6 id="effects">Effects </h6>
+<h5 id="consequences">Consequences </h5>
 <ul>
 <li><span class="mathjax-exps">$\widehat{b}_j$</span> not affected</li>
 <li><span class="mathjax-exps">$s_{\widehat{b}_j}$</span> are most likely underestimated, t-statistics will be inflated</li>
 <li>F-test also unreliable</li>
 </ul>
-<h6 id="testing-for-conditional-heteroskedasticity">Testing for Conditional Heteroskedasticity </h6>
+<h5 id="testing-for-conditional-heteroskedasticity">Testing for Conditional Heteroskedasticity </h5>
 <p>Breusch-Pagen <span class="mathjax-exps">$\chi^2$</span> test, <span class="mathjax-exps">$H_0$</span>: no heteroskedasticity<br>
 Residual regression: <span class="mathjax-exps">$\varepsilon_i=a_0+\dots+a_kX_k+\epsilon_k$</span><br>
 BP statistic: <span class="mathjax-exps">$\chi^2=nR^2_{\text{resid}}$</span> with df=k, one tailed test</p>
-<h6 id="correcting-for-heteroskedasticity">Correcting for Heteroskedasticity </h6>
+<h5 id="correcting-for-heteroskedasticity">Correcting for Heteroskedasticity </h5>
 <ul>
-<li>robust standard errors: White-corrected standard errors</li>
-<li>generalized least squares model</li>
+<li>(?) robust standard errors: White-corrected standard errors</li>
+<li>(?) generalized least squares model</li>
+</ul>
+<h4 id="violations-of-regression-assumptions-serial-correlation">Violations of Regression Assumptions: Serial Correlation </h4>
+<p>error terms are correlated with one another</p>
+<h5 id="consequences-1">Consequences </h5>
+<p>coefficient estimates not affected<br>
+if one independent variable is lag of denpendent variable, the cofficient estimates will be affected<br>
+positive serial correlation: underestimate standard errors<br>
+negative serial correlation: overestimate standard erros</p>
+<h5 id="testing-for-serial-correlation">Testing for Serial Correlation </h5>
+<p>Durbin-Watson (DW) test limited for detecting first-order serial correlation<br>
+Breusch-Godfrey (BG) test:</p>
+<ul>
+<li><span class="mathjax-exps">$\widehat{\varepsilon}_t=a_0+\dots+a_kX_{tk}+p_1\widehat{\varepsilon}_{t-1}+e_t$</span></li>
+<li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$p_1=0$</span></li>
+<li>F-distributed with <span class="mathjax-exps">$n-p-k-1$</span> and <span class="mathjax-exps">$p$</span> degrees of freedom, where <span class="mathjax-exps">$p$</span> is number of lags</li>
+</ul>
+<h5 id="correcting-for-serial-correlation">Correcting for Serial Correlation </h5>
+<ul>
+<li>serial correlation consistent standard error (also called robust standard error)</li>
+<li>modify the regression</li>
+</ul>
+<h4 id="violations-of-regression-assumptions-multicollinearity">Violations of Regression Assumptions: Multicollinearity </h4>
+<h5 id="consequences-2">Consequences </h5>
+<p>estimates of regression coefficients extremely imprecise and unreliable<br>
+standard errors of coefficient inflated</p>
+<h5 id="testing-for-multicollinearity">Testing for Multicollinearity </h5>
+<p>classic method: t-tests indicate no significance while <span class="mathjax-exps">$R^2$</span> is high and F-test indicates overall significance<br>
+Variance inflation factor (VIF):</p>
+<ul>
+<li><span class="mathjax-exps">$\text{VIF}_j=\frac{1}{1-R_j^2}$</span>, where <span class="mathjax-exps">$R_j^2$</span> is <span class="mathjax-exps">$R^2$</span> of regression <span class="mathjax-exps">$X_j$</span> on other <span class="mathjax-exps">$X_i$</span></li>
+<li><span class="mathjax-exps">$\text{VIF}_j&gt;10$</span>, multicollinearity</li>
+</ul>
+<h5 id="correcting-for-multicollinearity">Correcting for Multicollinearity </h5>
+<ul>
+<li>excluding independent variables</li>
+<li>using a different proxy</li>
+<li>increasing the sample size</li>
+</ul>
+<h3 id="--c4-p85---extensions-of-multiple-regression"><!-- C4 p85 --> Extensions of Multiple Regression </h3>
+<h4 id="influence-analysis">Influence Analysis </h4>
+<p>regression results can be biased by a small number of observations<br>
+influential observation: whose inclusion may significantly alter regression results<br>
+high-leverage poiont: extrem value of independent variable</p>
+<ul>
+<li>(? calculation) leverage (<span class="mathjax-exps">$h_{ii}=x_i^T(X^TX)^{-1}x_i$</span>) measures distance between the value of <span class="mathjax-exps">$i$</span> observation and mean of all obervations</li>
+<li><span class="mathjax-exps">$0\leq h_{ii}\leq 1$</span>, higher value, more influence</li>
+<li>rule of thumb: <span class="mathjax-exps">$3\frac{k+1}{n}$</span></li>
+</ul>
+<p>outlier: extreme value of dependent variables</p>
+<ul>
+<li>studentized residual (<span class="mathjax-exps">$t_{i*}=\frac{e_i^*}{s_{e^*}}$</span>, where <span class="mathjax-exps">$e_i^*=Y_i-\widehat{Y}_{i*}$</span>)</li>
+</ul>
+<p>Cook's Distance (Cook's D): <span class="mathjax-exps">$D_i=\frac{e_i^2}{(k+1)MSE}\frac{h_{ii}}{(1-h_{ii})^2}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$2\sqrt{\frac{k}{n}}$</span> is critical value</li>
+<li>decides whether an observation is influential</li>
+</ul>
+<h4 id="dummy-variables">Dummy Variables </h4>
+<p>qualitative variables: nominal type and ordinal type<br>
+intercept (<span class="mathjax-exps">$b_0$</span>): average value of dependent variable for the omitted category<br>
+intercept dummy: <span class="mathjax-exps">$Y=b_0+d_0D+b_1X+\varepsilon$</span><br>
+slope dummy: <span class="mathjax-exps">$Y=b_0+d_1DX+b_1X+\varepsilon$</span></p>
+<h4 id="multiple-linear-regression-with-qualitative-dependent-variables">Multiple Linear Regression with Qualitative Dependent Variables </h4>
+<p>logistic model: <span class="mathjax-exps">$\ln\frac{p}{1-p}=b_0+bX+\varepsilon$</span>, where <span class="mathjax-exps">$\frac{p}{1-p}$</span> is odds</p>
+<h3 id="--c5-p121---time-series-analysis"><!-- C5 p121 --> Time Series Analysis </h3>
+<h4 id="linear-trend-models">Linear Trend Models </h4>
+<p><span class="mathjax-exps">$Y_t=b_0+b_1t+\varepsilon_t$</span>, constant change amount with time</p>
+<h4 id="log-linear-trend-models">Log-Linear Trend Models </h4>
+<p><span class="mathjax-exps">$\ln Y_t=b_0+b_1t+\varepsilon_t$</span>, constant growth rate with time (exponential growth)</p>
+<h4 id="trend-models-and-testing-for-correlated-errors">Trend Models and Testing for Correlated Errors </h4>
+<p>trend model not apprropriate with serial correlation</p>
+<h4 id="ar-time-series-models-and-covariance-stationary-series">AR Time-Series Models and Covariance-Stationary Series </h4>
+<p>AR(p), p-order autoregressive model: <span class="mathjax-exps">$y_t=b_0+b_1y_{t-1}+\dots+b_py_{t-p}+\varepsilon_t$</span><br>
+Covariance stationary, a key assumption for AR model variables to be valid:</p>
+<ul>
+<li><span class="mathjax-exps">$E(X_t)=\mu$</span></li>
+<li><span class="mathjax-exps">$Var(X_t)=\sigma^2$</span></li>
+<li>constant and finite covariance with itself for a fixed number of periods in the past or future in all periods <span class="mathjax-exps">$Cov(y_t,y_{t-s})=\lambda_s$</span></li>
+</ul>
+<h4 id="comparing-forecasting-model-performance">Comparing Forecasting Model Performance </h4>
+<ul>
+<li>In-sample forecasts errors</li>
+<li>out-of-sample forecasts errors</li>
+<li>Root mean squared error criterion: smallest RMSE for the out-of-sample data is best</li>
+</ul>
+<h4 id="instability-of-regression-coefficients">Instability of Regression Coefficients </h4>
+<p>models estimated with shorter time series are usually more stable (financial relationships are inherently dynamic) but less reliable</p>
+<h4 id="violations-of-assumption">Violations of Assumption </h4>
+<h5 id="autoregressive-heteroskedasticity-arch">Autoregressive Heteroskedasticity (ARCH) </h5>
+<p>error variance is correlated with independent variables<br>
+<span class="mathjax-exps">$\widehat{\varepsilon}_t^2=a_0+a_1\widehat{\varepsilon}_{t-1}^2+u_t$</span><br>
+if <span class="mathjax-exps">$a_1$</span> is statistically significant, generalized least squares must be used<br>
+ARCH model can predict the variance of the residuals</p>
+<h5 id="serial-correlation">Serial Correlation </h5>
+<p>autocorrelation: <span class="mathjax-exps">$\rho(\varepsilon_t,\varepsilon_{t-k})$</span><br>
+usually because of seasonality<br>
+correcting of seasonality: include a seasonal lag in AR model <span class="mathjax-exps">$y_t=b_0+b_1y_{t-1}+b_2y_{t-4}+\varepsilon_t$</span> for quarterly data and <span class="mathjax-exps">$b_2y_{t-12}$</span> for monthly data</p>
+<h5 id="mean-reversion">Mean Reversion </h5>
+<p>mean-reverting level for AR(1): <span class="mathjax-exps">$x=\frac{b_0}{1-b_1}$</span><br>
+covariance stationary → finite mean-reverting model<br>
+<span class="mathjax-exps">$|b_1|&lt;1$</span> in AR(1) model → finite mean-reverting model</p>
+<h6 id="random-walk">Random Walk </h6>
+<p><span class="mathjax-exps">$x_t=x_{t-1}+\epsilon_t$</span>, best predictor is <span class="mathjax-exps">$x_{t-1}$</span><br>
+random walk with a drift <span class="mathjax-exps">$x_t=b_0+x_{t-1}+\varepsilon_t$</span><br>
+random walk will not exhibit covariance stationary (variance grows with <span class="mathjax-exps">$t$</span>)<br>
+a time series must have a finite mean reverting level to be convariance stationary<br>
+least squares regression method does not work for AR(1) model on random walk</p>
+<h6 id="unit-root">Unit Root </h6>
+<p>unit root: <span class="mathjax-exps">$b_1=1$</span><br>
+t-test for <span class="mathjax-exps">$b_1=1$</span> in AR model is invalid to test unit root<br>
+Dickey-Fuller test <span class="mathjax-exps">$x_t-x_{t-1}=b_0+g_1x_{t-1}+\varepsilon_t$</span></p>
+<ul>
+<li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$g_1=0$</span>; <span class="mathjax-exps">$H_1$</span>: <span class="mathjax-exps">$g_1&lt;0$</span></li>
+<li>t-statistic and use revised critical values</li>
+</ul>
+<p>correcting: first differencing <span class="mathjax-exps">$y_t=x_t-x_{t-1}$</span></p>
+<h4 id="regressions-with-multiple-time-series">Regressions with Multiple Time Series </h4>
+<p>DF test should be used to detect unit root<br>
+if both timeseries have a unit root, but they have cointegration, linear regression can be used.<br>
+cointegration: linear combination of them is stationary</p>
+<h3 id="--c6-p209---machine-learning"><!-- C6 p209 --> Machine Learning </h3>
+<h4 id="definition">Definition </h4>
+<p>Supervised learning:</p>
+<ul>
+<li>regression problems</li>
+<li>classification problems</li>
+</ul>
+<p>Unsupervised learning:</p>
+<ul>
+<li>dimension reduction</li>
+<li>clustering</li>
+</ul>
+<p>artificial intelligence (AI)<br>
+deep learning and reinforcement learning</p>
+<h4 id="evaluating-ml-algorithm-performance">Evaluating ML Algorithm Performance </h4>
+<p>Division of Dataset:</p>
+<ul>
+<li>training set</li>
+<li>validation set</li>
+<li>test set (out-of-sample)</li>
+</ul>
+<p>total out-of-sample errors based on trading set <span class="mathjax-exps">$S$</span>:</p><div class="mathjax-exps">$$\mathbb{E}_{S,y}(y-\hat{f}_S(x))^2=(\bar{f}(x)-\mathbb{E}(y|x))^2+\mathbb{E}_S(\bar{f}_S(x)-\bar{f}(x))^2+Var(y|x)$$</div><p></p>
+<ul>
+<li><span class="mathjax-exps">$(\bar{f}(x)-\mathbb{E}(y|x))^2$</span>: bias error (high bias implies underfitting)</li>
+<li><span class="mathjax-exps">$\mathbb{E}_S(\bar{f}_S(x)-\bar{f}(x))^2$</span>: variance error</li>
+<li>Var(y|x): base error, due to randomness in the data</li>
+</ul>
+<h5 id="prevent-overfitting">Prevent Overfitting </h5>
+<p>complexity reduction and cross-validation (k-fold)</p>
+<h4 id="supervised-machine-learning-algorithms">Supervised Machine Learning Algorithms </h4>
+<h5 id="penalized-regression">Penalized Regression </h5>
+<p>LASSO (Least Absolute Shrinkage and Selection Operator), <span class="mathjax-exps">$\text{penalty}=\lambda\sum |b_k|$</span></p>
+<ul>
+<li>data should be standardized so the features have 0 mean and 1 variance</li>
+</ul>
+<h5 id="support-vector-machine">Support Vector Machine </h5>
+<h5 id="k-nearest-neighbor">K-Nearest Neighbor </h5>
+<h5 id="classification-and-regression-tree">Classification and Regression Tree </h5>
+<h5 id="ensemble-learning">Ensemble Learning </h5>
+<p>bootstrap aggregating (or bagging): <span class="mathjax-exps">$n$</span> new training datasets from random sampling with replacement<br>
+random forest: CART via bagging method</p>
+<h4 id="unsupervised-machine-learning-algorithms">Unsupervised Machine Learning Algorithms </h4>
+<h5 id="dimension-reduction">Dimension Reduction </h5>
+<p>Principal component analysis</p>
+<h5 id="clustering">Clustering </h5>
+<p>K-means clustering<br>
+hierarchical clustering (agglomerative and divisive)</p>
+<ul>
+<li>dendrogram: hierachical tree</li>
+</ul>
+<h3 id="--c7-p287---big-data-projects"><!-- C7 p287 --> Big Data Projects </h3>
+<p>structured data and unstructured data (text, image, audio)</p>
+<h4 id="characteristics">Characteristics </h4>
+<p>volume, variety and velocity<br>
+fourth V: veracity (credibility and reliability of data sources)</p>
+<h4 id="data-preparation-and-wrangling">Data Preparation and Wrangling </h4>
+<p>data preparation: cleansing</p>
+<ul>
+<li>incompleteness</li>
+<li>invalidity error</li>
+<li>inaccuracy error</li>
+<li>inconsistent</li>
+<li>duplicate</li>
+</ul>
+<p>data wrangling: preprocessing</p>
+<ul>
+<li>transformation: extraction, aggregation (multiple variables into one), filtration, selection and conversion</li>
+<li>scaling</li>
+</ul>
+<p>text preparation:</p>
+<ul>
+<li>remove html tags</li>
+<li>remove punctuations</li>
+<li>remove numbers</li>
+<li>remove white spaces</li>
+</ul>
+<p>text wrangling</p>
+<ul>
+<li>text normalization (lowercasing, stop words, stemming and lemmatization)</li>
+<li>bag of words</li>
+<li>document term matrix</li>
+</ul>
+<h4 id="data-exploration">Data Exploration </h4>
+<p>exploratory data analysis (EDA): heat maps and word clouds<br>
+feature selection<br>
+feature engineering: creating new features</p>
+<p>EDA on text:</p>
+<ul>
+<li>text classification</li>
+<li>topic modeling</li>
+<li>sentiment analysis</li>
+</ul>
+<p>feature selection on text: selecting a subset of terms or tokens</p>
+<p>feature engineering on text:</p>
+<ul>
+<li>numbers coverted into a token</li>
+<li>N-grams</li>
+<li>name entity recognition</li>
+<li>part of speech: tag every token in text with a corresponding part of speech (verb, nounce)</li>
 </ul>
 
       </div>
