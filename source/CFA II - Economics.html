@@ -1,0 +1,399 @@
+<!DOCTYPE html><html><head>
+      <title>CFA II - Economics</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="CFA II" tag="Economics" createdate="2025-08-03" editdate="2025-08-09"></ndtag></p>
+<h3 id="--c1-p389---currency-exchange-rates-understanding-equilibrium-value"><!-- C1 p389 --> Currency Exchange Rates: Understanding Equilibrium Value </h3>
+<h4 id="exchange-rate-calculation">Exchange Rate Calculation </h4>
+<p>Price currency/Base currency: 7 CNY/USD<br>
+bid-ask spread: often stated as pips, except for yen (0.01)</p>
+<ul>
+<li>USD/EUR could be quoted as $1.4124~$1.4128, the spread is $0.0004 (4 pips)</li>
+</ul>
+<p>interbank spread depends on</p>
+<ul>
+<li>currency pair involved</li>
+<li>time of day (trading time of New York and London)</li>
+<li>market volatility</li>
+</ul>
+<h5 id="basic-concepts-of-fx-market">Basic Concepts of FX Market </h5>
+<h5 id="cross-rate-calculation">Cross Rate Calculation </h5>
+<p><span class="mathjax-exps">$(\frac{A}{B})_{\text{bid}}=(\frac{A}{C})_{\text{bid}}(\frac{C}{B})_{\text{bid}}$</span><br>
+<span class="mathjax-exps">$(\frac{A}{B})_{\text{bid}}=1/(\frac{B}{A})_{\text{bid}}$</span><br>
+A dealer is quoting the AUD/GBP spot rate as 1.5060-67, which means bid 1.5060 and ask 1.5067.</p>
+<h5 id="triangular-arbitrage">Triangular Arbitrage </h5>
+<p>Compare the dealer quote and the interbank cross rate quote.</p>
+<h5 id="forward-exchange-rate">Forward Exchange Rate </h5>
+<p>If forward quote is higher than spot price, we say</p>
+<ul>
+<li>base currency is trading at a forward premium</li>
+<li>price currency is trading at a forward discount</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Maturity</th>
+<th style="text-align:center">Rates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Spot</td>
+<td style="text-align:center">1.0511/1.0519</td>
+</tr>
+<tr>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">+3.9/+4.1</td>
+</tr>
+</tbody>
+</table>
+<p>This means forward bid/ask is 1.0511+3.9/10000 and 1.0519+4.1/10000. The base currency is trading at forward premium</p>
+<h6 id="mark-to-market-value">Mark-to-Market Value </h6>
+<p>A existing forward contract's net present value.</p>
+<h4 id="international-parity-condition">International Parity Condition </h4>
+<h5 id="interest-rate-parity">Interest Rate Parity </h5>
+<h6 id="covered-interest-rate-parity">Covered Interest Rate Parity </h6>
+<p><span class="mathjax-exps">$F_{f/d}(1+i_d)=S_{f/d}(1+i_f)$</span><br>
+<span class="mathjax-exps">$\frac{F_{f/d}-S_{f/d}}{S_{f/d}}=\frac{i_f-i_d}{1+i_d}\approx i_f-i_d$</span><br>
+The domestic currency will trade at a forward premium if the foreign risk-free interest rate is higher.</p>
+<h6 id="uncovered-interest-rate-parity">Uncovered Interest Rate Parity </h6>
+<p>无抛补利率平价<br>
+<span class="mathjax-exps">$S_{f/d}^e(1+i_d)=S_{f/d}(1+i_f)$</span><br>
+Interest rate parity when investors do not use forward contract to arbitrage.<br>
+The change in spot rate over the investment horizon should, on average (expectation), equal the differential in interest rates between two countries.<br>
+The parity is of long term equilibrium sense. The idea that higher interest rate will result in appreciation of currency is short term behavior.</p>
+<p>Assumptions:</p>
+<ul>
+<li>investors risk-neutral</li>
+<li>expected appreciation/depreciation of the exchange rate offsets the yield difference</li>
+</ul>
+<p>In domestic currency terms, the investment return on an uncovered foreign-currency-denominated investment is equal to <span class="mathjax-exps">$(1+i_f)(1-\%\Delta S_{f/d}^e)$</span></p>
+<h6 id="fx-carry-trade">FX Carry Trade </h6>
+<p>When UIRP does not hold, investor invests in a higher yielding currency using funds borrowed in a lower yielding currency (funding currency), during periods of low volatility (high volatility will spell huge cash risk).</p>
+<ul>
+<li>Example: exchange rate for USD/GBP is 1.50 today and 1.49 one year later. Interest rate is 3% for U.K. and 1% for U.S. The profit to borrow in the U.S. and invest in the U.K. is:
+<ul>
+<li>Gross return = <span class="mathjax-exps">$(1+i_f)(1-\%\Delta S_{f/d}^e)=(1+3\%)(1-0.67\%)-1=2.31\%$</span></li>
+<li>Net return = 2.31% - 1% = 1.31%</li>
+</ul>
+</li>
+</ul>
+<h6 id="forward-rate-parity">Forward Rate Parity </h6>
+<p>If both covered interest rate parity and uncovered interest rate parity hold, we have <span class="mathjax-exps">$F_{f/d}=S_{f/d}^e$</span>, which means the forward exchange rate will be an unbiased predictor of the future spot exchange rate.<br>
+CIRP must hold because of lack of arbitrage. The question of whether FRP holds is dependent upon whether UIRP holds.</p>
+<h5 id="purchasing-power-parity">Purchasing Power Parity </h5>
+<p>Absolute PPP: <span class="mathjax-exps">$S_{f/d}=\frac{P_f}{P_d}$</span><br>
+Relative PPP: <span class="mathjax-exps">$\%\Delta S_{f/d}\approx\pi_f-\pi_d$</span><br>
+Ex-ante PPP: <span class="mathjax-exps">$\%\Delta S_{f/d}^e\approx\pi_f^e-\pi_d^e$</span><br>
+high inflation will cause currency depreciate</p>
+<h5 id="international-fisher-effect">International Fisher Effect </h5>
+<p>Fisher effect: <span class="mathjax-exps">$i=r+\pi^e$</span>, where <span class="mathjax-exps">$i$</span> is nominal interest rate and <span class="mathjax-exps">$\pi^e$</span> is expected inflation rate.<br>
+If UIRP and Ex-ante PPP hold, we have <span class="mathjax-exps">$r_f=r_d$</span> (Real Interest Rate Parity).<br>
+International Fisher effect: If RIRP holds, <span class="mathjax-exps">$i_f-i_d\approx\pi_f^e-\pi_d^e$</span>.</p>
+<h4 id="balance-of-payment">Balance of Payment </h4>
+<p>capital account includes financial account in CFA I</p>
+<ul>
+<li>current account: goods and service</li>
+<li>capital account: money</li>
+</ul>
+<p>current account affects the FX rate in the long term<br>
+capital account affects FX rate in the short term:</p>
+<ul>
+<li>money inflow will cause appreciation</li>
+</ul>
+<h5 id="current-account">Current Account </h5>
+<h6 id="1-flow-supplydemand-channel">1. Flow Supply/Demand Channel </h6>
+<p>export &gt; import → trade surplus (persistent current account surplus) → sell foreign currency → appreciation of domestic currency → affect export<br>
+amount by which exchange rates must adjust to restore current accounts to balanced positions depends on:</p>
+<ul>
+<li>reponse of import and export prices to changes in the exchange rate</li>
+<li>reponse of import and export demand to changes in the exchange rate</li>
+</ul>
+<h6 id="2-portfolio-balance-channel">2. Portfolio Balance Channel </h6>
+<p>current account imbalances shift financial wealth from deficit nations to surplus nations<br>
+trade surplus → foreign currency asset increases → reduce foreign currency holding</p>
+<h6 id="3-debt-sustainability-channel">3. Debt Sustainability Channel </h6>
+<p>a large and persistent current account deficit will experience untenable rise in debt, will cause depreciation through investors' lack of confidence.</p>
+<h5 id="capital-account">Capital Account </h5>
+<p>excessive emerging market capital inflows often plant seeds of crisis by contributing to:</p>
+<ul>
+<li>unwarranted appreciation of currency</li>
+<li>huge buildup in external indebtedness</li>
+<li>asset bubble</li>
+<li>consumption binge  thus current account deficit</li>
+<li>overinvestment in risky projects</li>
+</ul>
+<p>increasing equity prices can attract foreign capital</p>
+<h4 id="monetary-and-fiscal-policy">Monetary and Fiscal Policy </h4>
+<h5 id="1-mundell-fleming-model">1. Mundell-Fleming Model </h5>
+<p>Consider in short term and assume inflation plays no role<br>
+high capital mobility:</p>
+<ul>
+<li>expansionary monetary policy → interest rate decrease → capital flows to high yielding countries → depreciation pressure</li>
+<li>expansionary fiscal policy → spending increase or tax decrease → (?) interest rate increase (- government borrows more money) → capital flows being attracted from low yielding countries → appreciation pressure</li>
+</ul>
+<p>low capital mobility:</p>
+<ul>
+<li>expansionary monetary policy → boost spending and import → worsen trade balance → depreciate pressure</li>
+<li>expansionary fiscal policy → increase import → create trade deficit → depreciate pressure</li>
+</ul>
+<h5 id="2-monetary-approach">2. Monetary Approach </h5>
+<h6 id="pure-monetary-model">Pure Monetary Model </h6>
+<p><span class="mathjax-exps">$MV=PY$</span>, where <span class="mathjax-exps">$M$</span> is money supply, <span class="mathjax-exps">$V$</span> is money flow volecity, <span class="mathjax-exps">$P$</span> is price level and <span class="mathjax-exps">$Y$</span> is output<br>
+assume purchase power parity holds, money supply induces increase domestic price levels, leading to a depreciation</p>
+<h6 id="dornbusch-overshooting-model">Dornbusch Overshooting Model </h6>
+<p>Assume prices have limited flexibility in the short run but flexible in the long run.<br>
+Expansionary monetary policy will lead to lower interest rate, and thus depreciation. In the short term, exchange rates overshoot (超调, higher level of depreciation) the long-run PPP implied values. The depreciation of currency is greater than depreciation implied by PPP.</p>
+<h5 id="3-portfolio-balance-approach">3. Portfolio Balance Approach </h5>
+<p>Portfolio balance approach focus on long term implications.<br>
+In the long run, expansive fiscal policy will cause central bank monetize debt and fiscal stance more restrictive, leading to currency depreciation.</p>
+<h4 id="currency-crisis">Currency Crisis </h4>
+<p>Capital flows can be a blessing and a curse. Governments resist excessive inflow through capital control and direct intervention.<br>
+Policymaker should enable monetary authority to pursue independent monetary policies.<br>
+Definition:</p>
+<ul>
+<li>Narrow sense: fixed exchange rate to floating exchange rate</li>
+<li>Broad sense: volatile exchange rate</li>
+</ul>
+<p>Swiss Franc crisis: central bank cannot maintain the fixed exchange rate due to appreciation pressure.</p>
+<p>Warning signs:</p>
+<ul>
+<li>liberalized free capital markets</li>
+<li>large inflow of foreign capital</li>
+<li>banking crises</li>
+<li>fixed or partially fixed exchange rates are more susceptible</li>
+<li>ratio of exports to imports (terms of trade)</li>
+<li>aprreciation against historical mean</li>
+<li>higher inflation</li>
+<li>foreign exchange reserve tends to decline</li>
+</ul>
+<h3 id="--c2-p467----economic-growth"><!-- C2 p467 -->  Economic Growth </h3>
+<h4 id="importance-of-economic-growth">Importance of Economic Growth </h4>
+<p>Relationship between economic growth and equity return<br>
+E(Re):</p>
+<ul>
+<li>dividend yield + expected capital gain (<span class="mathjax-exps">$\%\Delta P$</span>)</li>
+<li>(<span class="mathjax-exps">$P=\text{EPS}\frac{P}{E}$</span>) dividend yield + expected repricing (<span class="mathjax-exps">$\%\Delta\frac{P}{E}$</span>) + earning growth per share (<span class="mathjax-exps">$\%\Delta\text{EPS}$</span>)</li>
+<li>dividend yield + expected repricing + inflation rate + real economic growth + change in shares outstanding</li>
+</ul>
+<p><span class="mathjax-exps">$E(R_e)=dy+\Delta\frac{P}{E}+i+g+\Delta S$</span></p>
+<ul>
+<li><span class="mathjax-exps">$dy$</span>: dividend yield, fairly stable</li>
+<li><span class="mathjax-exps">$\Delta\frac{P}{E}$</span> different level over market cycles</li>
+</ul>
+<p>(?) <span class="mathjax-exps">$\Delta S=\text{Net buybacks}+\text{Relative dynamism}$</span>, where relative dynamism is number of nonlisted companies.</p>
+<ul>
+<li>More nonlisted companies, lower correlation bewteen GDP and equity return.</li>
+</ul>
+<p>Difference of equity return bewteen China and U.S. can be explained by <span class="mathjax-exps">$\Delta S$</span>, China has lower net buybacks and higher relative dynamism.</p>
+<h4 id="production-function">Production Function </h4>
+<h5 id="formula-introduction">Formula Introduction </h5>
+<p><span class="mathjax-exps">$Y=Af(K,L)=AK^\alpha L^{1-\alpha}$</span><br>
+<span class="mathjax-exps">$y=\frac{Y}{L}=Ak^\alpha$</span><br>
+<span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta y}{y}+\frac{\Delta L}{L}$</span><br>
+<span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta A}{A}+\alpha\frac{\Delta K}{K}+(1-\alpha)\frac{\Delta L}{L}$</span></p>
+<h5 id="cobb-douglas-production-function">Cobb-Douglas Production Function </h5>
+<p><span class="mathjax-exps">$Y=Af(K,L)=AK^\alpha L^{1-\alpha}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$A$</span>: total factor productivity (technology)</li>
+<li><span class="mathjax-exps">$\alpha$</span>: share of GDP paid out to the suppliers of capital</li>
+</ul>
+<p>To compute <span class="mathjax-exps">$\alpha$</span>, let marginal product of capital equat to rental price of capital <span class="mathjax-exps">$r$</span>, <span class="mathjax-exps">$MPK=\frac{\Delta Y}{\Delta K}=r$</span>, we have <span class="mathjax-exps">$\alpha=r\frac{K}{Y}$</span>.</p>
+<p>Properties:</p>
+<ul>
+<li>constant return to scale <span class="mathjax-exps">$f(tK,tL)=tf(K,L)$</span>: increasing all inputs by a fixed percentage leads to the same percentage increase in output</li>
+<li>diminishing marginal productivity (keeping the other input unchanged)</li>
+</ul>
+<p>Consider <span class="mathjax-exps">$y=\frac{Y}{L}=Ak^\alpha$</span>, lower <span class="mathjax-exps">$\alpha$</span>, diminishing marginal productivity more significant</p>
+<h6 id="capital-deepening-vs-technological-progress">Capital Deepening vs. Technological Progress </h6>
+<p>When economy reaches steady state, where the marginal product of capitals equals its marginal cost, capital deepening is useless.</p>
+<h5 id="solows-growth-accounting-equation">Solow's Growth Accounting Equation </h5>
+<p><span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta A}{A}+\alpha\frac{\Delta K}{K}+(1-\alpha)\frac{\Delta L}{L}$</span></p>
+<ul>
+<li>growth rate in potential GDP = long term growth rate of technology + <span class="mathjax-exps">$\alpha$</span> long term growth rate of capital + <span class="mathjax-exps">$(1-\alpha)$</span> long term growth rate of labor</li>
+<li><span class="mathjax-exps">$\alpha$</span>: elasticity of output with respect to capital (<span class="mathjax-exps">$\frac{\partial \frac{\Delta Y}{Y}}{\partial \frac{\Delta K}{K}}$</span>)</li>
+<li>rate of technological change is not directly measured and must be estimated</li>
+</ul>
+<p><span class="mathjax-exps">$Y=yL$</span>, <span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta y}{y}+\frac{\Delta L}{L}$</span></p>
+<h5 id="extending-the-production-function">Extending the Production Function </h5>
+<p>Including more input into production function:</p>
+<ul>
+<li>natural resources
+<ul>
+<li>Dutch disease: currency appreciation driven by strong export demand for resources makes other segements of economy less uncompetitive globally.</li>
+</ul>
+</li>
+<li>labor supply
+<ul>
+<li>population growth, labor force participation, net immigration and average hours worked</li>
+</ul>
+</li>
+<li>human capital: knowledge and skills workers acquire</li>
+<li>ICT (Information, Computer and Technology) and Non-ICT capital</li>
+<li>technology</li>
+<li>public infrastructure</li>
+</ul>
+<h4 id="theories-of-growth">Theories of Growth </h4>
+<h5 id="classical-growth-theory">Classical Growth Theory </h5>
+<p>by Thomas Malthus, also known as 马尔萨斯人口论<br>
+population growth accelerates when level of per capita income rises above the subsistence income (minimum income needed to maintain life)<br>
+technology advances → <span class="mathjax-exps">$Y$</span> ↑ →  higher population growth ↑ → diminishing marginal return of labor → lower per capita income<br>
+The classical model predicts that in the long run, the adoption of new technology results in a larger but not richer population. There is no economic growth.<br>
+This is doubted because when GDP is high, birth rate will decrease.</p>
+<h5 id="neoclassical-grwoth-theory">Neoclassical Grwoth Theory </h5>
+<p>by Robert Solow<br>
+(?) steady-state rate of growth when output to capital ratio <span class="mathjax-exps">$\frac{Y}{K}$</span> is constant, so we have <span class="mathjax-exps">$\frac{\Delta y}{y}=\frac{\Delta k}{k}$</span>.</p>
+<ul>
+<li>(-) Here we start from result to gain a proper form of per "effective" capita production/capital <span class="mathjax-exps">$y$</span> and <span class="mathjax-exps">$k$</span>.
+<ul>
+<li>Divide both sides of production function <span class="mathjax-exps">$A^tL$</span>, we gain <span class="mathjax-exps">$\frac{Y}{A^tL}=(\frac{K}{A^{\frac{t-1}{\alpha}}L})^\alpha$</span>. The objective is to eliminate existence of <span class="mathjax-exps">$A$</span> in the per "effective" capita production function <span class="mathjax-exps">$y=f(k)$</span>. Let <span class="mathjax-exps">$t=\frac{t-1}{\alpha}$</span>, we have <span class="mathjax-exps">$t=\frac{1}{1-\alpha}$</span>.</li>
+<li>So the per "effective" capita production/capital is <span class="mathjax-exps">$y=\frac{Y}{A^{\frac{1}{1-\alpha}}L}$</span> and <span class="mathjax-exps">$k=\frac{K}{A^{\frac{1}{1-\alpha}}L}$</span> and we have <span class="mathjax-exps">$y=k^\alpha$</span>.</li>
+<li><span class="mathjax-exps">$d\ln k=d\ln K-\frac{1}{1-\alpha}d\ln A-d\ln L=\frac{dK}{K}-\frac{1}{1-\alpha}\theta-n$</span>, <span class="mathjax-exps">$\frac{dk}{k}=\frac{sY}{K}-\delta-\frac{1}{1-\alpha}\theta-n=\frac{sy}{k}-\delta-\frac{1}{1-\alpha}\theta-n$</span></li>
+<li><span class="mathjax-exps">$dk=sy-(\delta+\frac{1}{1-\alpha}\theta+n)k$</span></li>
+<li><span class="mathjax-exps">$dk=0$</span> in steady state → <span class="mathjax-exps">$\frac{Y}{K}=\frac{y}{k}=\psi$</span></li>
+</ul>
+</li>
+</ul>
+<p>With <span class="mathjax-exps">$\frac{\Delta y}{y}=\frac{\Delta A}{A}+\alpha\frac{\Delta k}{k}$</span>, we have <span class="mathjax-exps">$g^*=\frac{\Delta y}{y}=\frac{1}{1-\alpha}\frac{\Delta A}{A}=\frac{\theta}{1-\alpha}$</span> and <span class="mathjax-exps">$G^*=\frac{\Delta Y}{Y}=\frac{\theta}{1-\alpha}+\frac{\Delta L}{L}=\frac{\theta}{1-\alpha}+n$</span>.</p>
+<p>In closed economy, investment must be funded by domestic saving <span class="mathjax-exps">$I=sY$</span>.</p>
+<ul>
+<li><span class="mathjax-exps">$s$</span> is saving faction of income</li>
+<li>physical capital depreciates at a constant rate <span class="mathjax-exps">$\delta$</span>.</li>
+<li><span class="mathjax-exps">$\Delta K=sY-\delta K$</span></li>
+</ul>
+<p>steady-state rate of growth when output to capital ratio <span class="mathjax-exps">$\frac{Y}{K}$</span> is constant: <span class="mathjax-exps">$\frac{\theta}{1-\alpha}=s\frac{Y}{K}-\delta-n$</span> and <span class="mathjax-exps">$\frac{Y}{K}=\frac{1}{s}(\frac{\theta}{1-\alpha}+\delta+n)\equiv\psi$</span>.<br>
+MPK (marginal product of capital) <span class="mathjax-exps">$\alpha\frac{Y}{K}$</span> is also constant.</p>
+<p>Steady state equilibtrium <span class="mathjax-exps">$sy=(\frac{\theta}{1-\alpha}+\delta+n)k$</span> occurs at the point where savings and actual gross investment per worker are suffiicient to:</p>
+<ul>
+<li>provide capital for new workers entering the workforce at rate <span class="mathjax-exps">$n$</span></li>
+<li>replace plant and equipment wearing out at rate <span class="mathjax-exps">$\sigma$</span></li>
+<li>deepen the physical capital stock at rate <span class="mathjax-exps">$\frac{\theta}{1-\alpha}$</span></li>
+</ul>
+<h5 id="endogenous-grwoth-theory">Endogenous Grwoth Theory </h5>
+<p>It is regarded Endogenous because technology growth in Solow model in exogenous. Modificaition conclude:</p>
+<ul>
+<li><span class="mathjax-exps">$Y=AfK^\alpha(EL)^{1-\alpha}$</span>, where <span class="mathjax-exps">$E$</span> implies labor gain experience in production process.</li>
+</ul>
+<p>No diminishing marginal returns to capital.<br>
+capital accumulation is main factor accouting in the long run.<br>
+R&amp;D expenditures have large postivie externalities.<br>
+In the endogenous growth model, the economy does not reach a steady growth rate.<br>
+Saving and investment can generate self-sustaining growth at a permanently higher rate.<br>
+Higher saving rates implies a permanently higher growth rate.</p>
+<h5 id="convergence-debate">Convergence Debate </h5>
+<ul>
+<li>Absolute convergence
+<ul>
+<li>developing countries will eventually catch up with developed countries in per capita output.</li>
+<li>The neoclassical model does not imply absolute convergence.</li>
+</ul>
+</li>
+<li>Conditional convergence
+<ul>
+<li>conditional on same <span class="mathjax-exps">$s$</span>, <span class="mathjax-exps">$n$</span> and <span class="mathjax-exps">$f(K,L)$</span></li>
+<li>same level or per capita output and steady state growth rate.</li>
+</ul>
+</li>
+<li>Club convergence
+<ul>
+<li>Rich and middle income countries that are members of the club are converging to the income level.</li>
+<li>Poor countries can join the club with appropriate institutional changes.</li>
+</ul>
+</li>
+</ul>
+<p>Endogenous growth model makes no prediction that convergence should occur.</p>
+<h5 id="growth-in-an-open-economy">Growth in an Open Economy </h5>
+<p>Opening up the economy can affect growth rate:</p>
+<ul>
+<li>countries can shift resources into industries where they have comparative advantage</li>
+<li>fund from global markets</li>
+<li>technology from global markets</li>
+<li>increases competition in demestic market</li>
+</ul>
+<p>For neoclassical model, convergence should occur more quickly.<br>
+For endogenous model, a more open trade policy will permanently raise the rate of economic growth.</p>
+<h3 id="--c3-p553---economics-of-regulation"><!-- C3 p553 --> Economics of Regulation </h3>
+<h4 id="economic-rationale-for-regulation">Economic Rationale for Regulation </h4>
+<p>Regulation for economy</p>
+<ul>
+<li>informational frictions</li>
+<li>externalities</li>
+<li>weak competition (monopoly or oligopoly)</li>
+<li>social objectives</li>
+</ul>
+<p>Regulation for financial markets:</p>
+<ul>
+<li>protect investors</li>
+<li>integrity of markets</li>
+<li>disclosure</li>
+<li>mitigate agency problems</li>
+<li>prudential supervision of financial institutions</li>
+</ul>
+<p>Antitrust regulation</p>
+<h4 id="regulators-and-regulatory-tools">Regulators and Regulatory ToolS </h4>
+<p>Legislative body, court and regulatory body.<br>
+Industry self-regulatory bodies.<br>
+Regulatory interdpendencies:</p>
+<ul>
+<li>regulatory capture theory (规制俘虏): regulatory body will be influnced or controlled by the industry</li>
+<li>regulatory competition: regulators compete with each other</li>
+<li>regulatroy arbitrage: business shop for the most suitable regulation</li>
+</ul>
+<p>Regulatory tools:</p>
+<ul>
+<li>price mechanisms</li>
+<li>restrict/mandate some activities</li>
+<li>provide public goods</li>
+<li>finance private projects</li>
+</ul>
+<h4 id="analysis-of-regulation">Analysis of Regulation </h4>
+<p>Cost-benefit analysis:</p>
+<ul>
+<li>regulatory burden: cost of regulation</li>
+<li>net regulatory burden: cost less benefits</li>
+<li>approach: natural experiments and trial, regulatory sandboxes (经济特区)</li>
+</ul>
+<p>Analysts need to understand how regulation affects companies and industries:</p>
+<ul>
+<li>likelihood of regulatory change</li>
+<li>impact of regulatory change</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

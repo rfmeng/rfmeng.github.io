@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Economics - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Currency Exchange Rates: Understanding Equilibrium Value </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Exchange Rate Calculation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">International Parity Condition </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Balance of Payment </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Monetary and Fiscal Policy </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Currency Crisis </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text">  Economic Growth </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Importance of Economic Growth </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Production Function </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Theories of Growth </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Economics of Regulation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Economic Rationale for Regulation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Regulators and Regulatory ToolS </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Analysis of Regulation </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Economics
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-08-09</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-08-03" editdate="2025-08-09" tag="Economics"></ndtag></p>
+<h3 id="nav1">1.  Currency Exchange Rates: Understanding Equilibrium Value </h3>
+<h4 id="nav1.1">1.1. Exchange Rate Calculation </h4>
+<p>Price currency/Base currency: 7 CNY/USD<br/>
+bid-ask spread: often stated as pips, except for yen (0.01)</p>
+<ul>
+<li>USD/EUR could be quoted as $1.4124~$1.4128, the spread is $0.0004 (4 pips)</li>
+</ul>
+<p>interbank spread depends on</p>
+<ul>
+<li>currency pair involved</li>
+<li>time of day (trading time of New York and London)</li>
+<li>market volatility</li>
+</ul>
+<h5 id="basic-concepts-of-fx-market">Basic Concepts of FX Market </h5>
+<h5 id="cross-rate-calculation">Cross Rate Calculation </h5>
+<p><span class="mathjax-exps">$(\frac{A}{B})_{\text{bid}}=(\frac{A}{C})_{\text{bid}}(\frac{C}{B})_{\text{bid}}$</span><br/>
+<span class="mathjax-exps">$(\frac{A}{B})_{\text{bid}}=1/(\frac{B}{A})_{\text{bid}}$</span><br/>
+A dealer is quoting the AUD/GBP spot rate as 1.5060-67, which means bid 1.5060 and ask 1.5067.</p>
+<h5 id="triangular-arbitrage">Triangular Arbitrage </h5>
+<p>Compare the dealer quote and the interbank cross rate quote.</p>
+<h5 id="forward-exchange-rate">Forward Exchange Rate </h5>
+<p>If forward quote is higher than spot price, we say</p>
+<ul>
+<li>base currency is trading at a forward premium</li>
+<li>price currency is trading at a forward discount</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Maturity</th>
+<th style="text-align:center">Rates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Spot</td>
+<td style="text-align:center">1.0511/1.0519</td>
+</tr>
+<tr>
+<td style="text-align:center">30 days</td>
+<td style="text-align:center">+3.9/+4.1</td>
+</tr>
+</tbody>
+</table>
+<p>This means forward bid/ask is 1.0511+3.9/10000 and 1.0519+4.1/10000. The base currency is trading at forward premium</p>
+<h6 id="mark-to-market-value">Mark-to-Market Value </h6>
+<p>A existing forward contract's net present value.</p>
+<h4 id="nav1.2">1.2. International Parity Condition </h4>
+<h5 id="interest-rate-parity">Interest Rate Parity </h5>
+<h6 id="covered-interest-rate-parity">Covered Interest Rate Parity </h6>
+<p><span class="mathjax-exps">$F_{f/d}(1+i_d)=S_{f/d}(1+i_f)$</span><br/>
+<span class="mathjax-exps">$\frac{F_{f/d}-S_{f/d}}{S_{f/d}}=\frac{i_f-i_d}{1+i_d}\approx i_f-i_d$</span><br/>
+The domestic currency will trade at a forward premium if the foreign risk-free interest rate is higher.</p>
+<h6 id="uncovered-interest-rate-parity">Uncovered Interest Rate Parity </h6>
+<p>无抛补利率平价<br/>
+<span class="mathjax-exps">$S_{f/d}^e(1+i_d)=S_{f/d}(1+i_f)$</span><br/>
+Interest rate parity when investors do not use forward contract to arbitrage.<br/>
+The change in spot rate over the investment horizon should, on average (expectation), equal the differential in interest rates between two countries.<br/>
+The parity is of long term equilibrium sense. The idea that higher interest rate will result in appreciation of currency is short term behavior.</p>
+<p>Assumptions:</p>
+<ul>
+<li>investors risk-neutral</li>
+<li>expected appreciation/depreciation of the exchange rate offsets the yield difference</li>
+</ul>
+<p>In domestic currency terms, the investment return on an uncovered foreign-currency-denominated investment is equal to <span class="mathjax-exps">$(1+i_f)(1-\%\Delta S_{f/d}^e)$</span></p>
+<h6 id="fx-carry-trade">FX Carry Trade </h6>
+<p>When UIRP does not hold, investor invests in a higher yielding currency using funds borrowed in a lower yielding currency (funding currency), during periods of low volatility (high volatility will spell huge cash risk).</p>
+<ul>
+<li>Example: exchange rate for USD/GBP is 1.50 today and 1.49 one year later. Interest rate is 3% for U.K. and 1% for U.S. The profit to borrow in the U.S. and invest in the U.K. is:
+<ul>
+<li>Gross return = <span class="mathjax-exps">$(1+i_f)(1-\%\Delta S_{f/d}^e)=(1+3\%)(1-0.67\%)-1=2.31\%$</span></li>
+<li>Net return = 2.31% - 1% = 1.31%</li>
+</ul>
+</li>
+</ul>
+<h6 id="forward-rate-parity">Forward Rate Parity </h6>
+<p>If both covered interest rate parity and uncovered interest rate parity hold, we have <span class="mathjax-exps">$F_{f/d}=S_{f/d}^e$</span>, which means the forward exchange rate will be an unbiased predictor of the future spot exchange rate.<br/>
+CIRP must hold because of lack of arbitrage. The question of whether FRP holds is dependent upon whether UIRP holds.</p>
+<h5 id="purchasing-power-parity">Purchasing Power Parity </h5>
+<p>Absolute PPP: <span class="mathjax-exps">$S_{f/d}=\frac{P_f}{P_d}$</span><br/>
+Relative PPP: <span class="mathjax-exps">$\%\Delta S_{f/d}\approx\pi_f-\pi_d$</span><br/>
+Ex-ante PPP: <span class="mathjax-exps">$\%\Delta S_{f/d}^e\approx\pi_f^e-\pi_d^e$</span><br/>
+high inflation will cause currency depreciate</p>
+<h5 id="international-fisher-effect">International Fisher Effect </h5>
+<p>Fisher effect: <span class="mathjax-exps">$i=r+\pi^e$</span>, where <span class="mathjax-exps">$i$</span> is nominal interest rate and <span class="mathjax-exps">$\pi^e$</span> is expected inflation rate.<br/>
+If UIRP and Ex-ante PPP hold, we have <span class="mathjax-exps">$r_f=r_d$</span> (Real Interest Rate Parity).<br/>
+International Fisher effect: If RIRP holds, <span class="mathjax-exps">$i_f-i_d\approx\pi_f^e-\pi_d^e$</span>.</p>
+<h4 id="nav1.3">1.3. Balance of Payment </h4>
+<p>capital account includes financial account in CFA I</p>
+<ul>
+<li>current account: goods and service</li>
+<li>capital account: money</li>
+</ul>
+<p>current account affects the FX rate in the long term<br/>
+capital account affects FX rate in the short term:</p>
+<ul>
+<li>money inflow will cause appreciation</li>
+</ul>
+<h5 id="current-account">Current Account </h5>
+<h6 id="1-flow-supplydemand-channel">1. Flow Supply/Demand Channel </h6>
+<p>export &gt; import → trade surplus (persistent current account surplus) → sell foreign currency → appreciation of domestic currency → affect export<br/>
+amount by which exchange rates must adjust to restore current accounts to balanced positions depends on:</p>
+<ul>
+<li>reponse of import and export prices to changes in the exchange rate</li>
+<li>reponse of import and export demand to changes in the exchange rate</li>
+</ul>
+<h6 id="2-portfolio-balance-channel">2. Portfolio Balance Channel </h6>
+<p>current account imbalances shift financial wealth from deficit nations to surplus nations<br/>
+trade surplus → foreign currency asset increases → reduce foreign currency holding</p>
+<h6 id="3-debt-sustainability-channel">3. Debt Sustainability Channel </h6>
+<p>a large and persistent current account deficit will experience untenable rise in debt, will cause depreciation through investors' lack of confidence.</p>
+<h5 id="capital-account">Capital Account </h5>
+<p>excessive emerging market capital inflows often plant seeds of crisis by contributing to:</p>
+<ul>
+<li>unwarranted appreciation of currency</li>
+<li>huge buildup in external indebtedness</li>
+<li>asset bubble</li>
+<li>consumption binge  thus current account deficit</li>
+<li>overinvestment in risky projects</li>
+</ul>
+<p>increasing equity prices can attract foreign capital</p>
+<h4 id="nav1.4">1.4. Monetary and Fiscal Policy </h4>
+<h5 id="1-mundell-fleming-model">1. Mundell-Fleming Model </h5>
+<p>Consider in short term and assume inflation plays no role<br/>
+high capital mobility:</p>
+<ul>
+<li>expansionary monetary policy → interest rate decrease → capital flows to high yielding countries → depreciation pressure</li>
+<li>expansionary fiscal policy → spending increase or tax decrease → (?) interest rate increase (- government borrows more money) → capital flows being attracted from low yielding countries → appreciation pressure</li>
+</ul>
+<p>low capital mobility:</p>
+<ul>
+<li>expansionary monetary policy → boost spending and import → worsen trade balance → depreciate pressure</li>
+<li>expansionary fiscal policy → increase import → create trade deficit → depreciate pressure</li>
+</ul>
+<h5 id="2-monetary-approach">2. Monetary Approach </h5>
+<h6 id="pure-monetary-model">Pure Monetary Model </h6>
+<p><span class="mathjax-exps">$MV=PY$</span>, where <span class="mathjax-exps">$M$</span> is money supply, <span class="mathjax-exps">$V$</span> is money flow volecity, <span class="mathjax-exps">$P$</span> is price level and <span class="mathjax-exps">$Y$</span> is output<br/>
+assume purchase power parity holds, money supply induces increase domestic price levels, leading to a depreciation</p>
+<h6 id="dornbusch-overshooting-model">Dornbusch Overshooting Model </h6>
+<p>Assume prices have limited flexibility in the short run but flexible in the long run.<br/>
+Expansionary monetary policy will lead to lower interest rate, and thus depreciation. In the short term, exchange rates overshoot (超调, higher level of depreciation) the long-run PPP implied values. The depreciation of currency is greater than depreciation implied by PPP.</p>
+<h5 id="3-portfolio-balance-approach">3. Portfolio Balance Approach </h5>
+<p>Portfolio balance approach focus on long term implications.<br/>
+In the long run, expansive fiscal policy will cause central bank monetize debt and fiscal stance more restrictive, leading to currency depreciation.</p>
+<h4 id="nav1.5">1.5. Currency Crisis </h4>
+<p>Capital flows can be a blessing and a curse. Governments resist excessive inflow through capital control and direct intervention.<br/>
+Policymaker should enable monetary authority to pursue independent monetary policies.<br/>
+Definition:</p>
+<ul>
+<li>Narrow sense: fixed exchange rate to floating exchange rate</li>
+<li>Broad sense: volatile exchange rate</li>
+</ul>
+<p>Swiss Franc crisis: central bank cannot maintain the fixed exchange rate due to appreciation pressure.</p>
+<p>Warning signs:</p>
+<ul>
+<li>liberalized free capital markets</li>
+<li>large inflow of foreign capital</li>
+<li>banking crises</li>
+<li>fixed or partially fixed exchange rates are more susceptible</li>
+<li>ratio of exports to imports (terms of trade)</li>
+<li>aprreciation against historical mean</li>
+<li>higher inflation</li>
+<li>foreign exchange reserve tends to decline</li>
+</ul>
+<h3 id="nav2">2.   Economic Growth </h3>
+<h4 id="nav2.1">2.1. Importance of Economic Growth </h4>
+<p>Relationship between economic growth and equity return<br/>
+E(Re):</p>
+<ul>
+<li>dividend yield + expected capital gain (<span class="mathjax-exps">$\%\Delta P$</span>)</li>
+<li>(<span class="mathjax-exps">$P=\text{EPS}\frac{P}{E}$</span>) dividend yield + expected repricing (<span class="mathjax-exps">$\%\Delta\frac{P}{E}$</span>) + earning growth per share (<span class="mathjax-exps">$\%\Delta\text{EPS}$</span>)</li>
+<li>dividend yield + expected repricing + inflation rate + real economic growth + change in shares outstanding</li>
+</ul>
+<p><span class="mathjax-exps">$E(R_e)=dy+\Delta\frac{P}{E}+i+g+\Delta S$</span></p>
+<ul>
+<li><span class="mathjax-exps">$dy$</span>: dividend yield, fairly stable</li>
+<li><span class="mathjax-exps">$\Delta\frac{P}{E}$</span> different level over market cycles</li>
+</ul>
+<p>(?) <span class="mathjax-exps">$\Delta S=\text{Net buybacks}+\text{Relative dynamism}$</span>, where relative dynamism is number of nonlisted companies.</p>
+<ul>
+<li>More nonlisted companies, lower correlation bewteen GDP and equity return.</li>
+</ul>
+<p>Difference of equity return bewteen China and U.S. can be explained by <span class="mathjax-exps">$\Delta S$</span>, China has lower net buybacks and higher relative dynamism.</p>
+<h4 id="nav2.2">2.2. Production Function </h4>
+<h5 id="formula-introduction">Formula Introduction </h5>
+<p><span class="mathjax-exps">$Y=Af(K,L)=AK^\alpha L^{1-\alpha}$</span><br/>
+<span class="mathjax-exps">$y=\frac{Y}{L}=Ak^\alpha$</span><br/>
+<span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta y}{y}+\frac{\Delta L}{L}$</span><br/>
+<span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta A}{A}+\alpha\frac{\Delta K}{K}+(1-\alpha)\frac{\Delta L}{L}$</span></p>
+<h5 id="cobb-douglas-production-function">Cobb-Douglas Production Function </h5>
+<p><span class="mathjax-exps">$Y=Af(K,L)=AK^\alpha L^{1-\alpha}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$A$</span>: total factor productivity (technology)</li>
+<li><span class="mathjax-exps">$\alpha$</span>: share of GDP paid out to the suppliers of capital</li>
+</ul>
+<p>To compute <span class="mathjax-exps">$\alpha$</span>, let marginal product of capital equat to rental price of capital <span class="mathjax-exps">$r$</span>, <span class="mathjax-exps">$MPK=\frac{\Delta Y}{\Delta K}=r$</span>, we have <span class="mathjax-exps">$\alpha=r\frac{K}{Y}$</span>.</p>
+<p>Properties:</p>
+<ul>
+<li>constant return to scale <span class="mathjax-exps">$f(tK,tL)=tf(K,L)$</span>: increasing all inputs by a fixed percentage leads to the same percentage increase in output</li>
+<li>diminishing marginal productivity (keeping the other input unchanged)</li>
+</ul>
+<p>Consider <span class="mathjax-exps">$y=\frac{Y}{L}=Ak^\alpha$</span>, lower <span class="mathjax-exps">$\alpha$</span>, diminishing marginal productivity more significant</p>
+<h6 id="capital-deepening-vs-technological-progress">Capital Deepening vs. Technological Progress </h6>
+<p>When economy reaches steady state, where the marginal product of capitals equals its marginal cost, capital deepening is useless.</p>
+<h5 id="solows-growth-accounting-equation">Solow's Growth Accounting Equation </h5>
+<p><span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta A}{A}+\alpha\frac{\Delta K}{K}+(1-\alpha)\frac{\Delta L}{L}$</span></p>
+<ul>
+<li>growth rate in potential GDP = long term growth rate of technology + <span class="mathjax-exps">$\alpha$</span> long term growth rate of capital + <span class="mathjax-exps">$(1-\alpha)$</span> long term growth rate of labor</li>
+<li><span class="mathjax-exps">$\alpha$</span>: elasticity of output with respect to capital (<span class="mathjax-exps">$\frac{\partial \frac{\Delta Y}{Y}}{\partial \frac{\Delta K}{K}}$</span>)</li>
+<li>rate of technological change is not directly measured and must be estimated</li>
+</ul>
+<p><span class="mathjax-exps">$Y=yL$</span>, <span class="mathjax-exps">$\frac{\Delta Y}{Y}=\frac{\Delta y}{y}+\frac{\Delta L}{L}$</span></p>
+<h5 id="extending-the-production-function">Extending the Production Function </h5>
+<p>Including more input into production function:</p>
+<ul>
+<li>natural resources
+<ul>
+<li>Dutch disease: currency appreciation driven by strong export demand for resources makes other segements of economy less uncompetitive globally.</li>
+</ul>
+</li>
+<li>labor supply
+<ul>
+<li>population growth, labor force participation, net immigration and average hours worked</li>
+</ul>
+</li>
+<li>human capital: knowledge and skills workers acquire</li>
+<li>ICT (Information, Computer and Technology) and Non-ICT capital</li>
+<li>technology</li>
+<li>public infrastructure</li>
+</ul>
+<h4 id="nav2.3">2.3. Theories of Growth </h4>
+<h5 id="classical-growth-theory">Classical Growth Theory </h5>
+<p>by Thomas Malthus, also known as 马尔萨斯人口论<br/>
+population growth accelerates when level of per capita income rises above the subsistence income (minimum income needed to maintain life)<br/>
+technology advances → <span class="mathjax-exps">$Y$</span> ↑ →  higher population growth ↑ → diminishing marginal return of labor → lower per capita income<br/>
+The classical model predicts that in the long run, the adoption of new technology results in a larger but not richer population. There is no economic growth.<br/>
+This is doubted because when GDP is high, birth rate will decrease.</p>
+<h5 id="neoclassical-grwoth-theory">Neoclassical Grwoth Theory </h5>
+<p>by Robert Solow<br/>
+(?) steady-state rate of growth when output to capital ratio <span class="mathjax-exps">$\frac{Y}{K}$</span> is constant, so we have <span class="mathjax-exps">$\frac{\Delta y}{y}=\frac{\Delta k}{k}$</span>.</p>
+<ul>
+<li>(-) Here we start from result to gain a proper form of per "effective" capita production/capital <span class="mathjax-exps">$y$</span> and <span class="mathjax-exps">$k$</span>.
+<ul>
+<li>Divide both sides of production function <span class="mathjax-exps">$A^tL$</span>, we gain <span class="mathjax-exps">$\frac{Y}{A^tL}=(\frac{K}{A^{\frac{t-1}{\alpha}}L})^\alpha$</span>. The objective is to eliminate existence of <span class="mathjax-exps">$A$</span> in the per "effective" capita production function <span class="mathjax-exps">$y=f(k)$</span>. Let <span class="mathjax-exps">$t=\frac{t-1}{\alpha}$</span>, we have <span class="mathjax-exps">$t=\frac{1}{1-\alpha}$</span>.</li>
+<li>So the per "effective" capita production/capital is <span class="mathjax-exps">$y=\frac{Y}{A^{\frac{1}{1-\alpha}}L}$</span> and <span class="mathjax-exps">$k=\frac{K}{A^{\frac{1}{1-\alpha}}L}$</span> and we have <span class="mathjax-exps">$y=k^\alpha$</span>.</li>
+<li><span class="mathjax-exps">$d\ln k=d\ln K-\frac{1}{1-\alpha}d\ln A-d\ln L=\frac{dK}{K}-\frac{1}{1-\alpha}\theta-n$</span>, <span class="mathjax-exps">$\frac{dk}{k}=\frac{sY}{K}-\delta-\frac{1}{1-\alpha}\theta-n=\frac{sy}{k}-\delta-\frac{1}{1-\alpha}\theta-n$</span></li>
+<li><span class="mathjax-exps">$dk=sy-(\delta+\frac{1}{1-\alpha}\theta+n)k$</span></li>
+<li><span class="mathjax-exps">$dk=0$</span> in steady state → <span class="mathjax-exps">$\frac{Y}{K}=\frac{y}{k}=\psi$</span></li>
+</ul>
+</li>
+</ul>
+<p>With <span class="mathjax-exps">$\frac{\Delta y}{y}=\frac{\Delta A}{A}+\alpha\frac{\Delta k}{k}$</span>, we have <span class="mathjax-exps">$g^*=\frac{\Delta y}{y}=\frac{1}{1-\alpha}\frac{\Delta A}{A}=\frac{\theta}{1-\alpha}$</span> and <span class="mathjax-exps">$G^*=\frac{\Delta Y}{Y}=\frac{\theta}{1-\alpha}+\frac{\Delta L}{L}=\frac{\theta}{1-\alpha}+n$</span>.</p>
+<p>In closed economy, investment must be funded by domestic saving <span class="mathjax-exps">$I=sY$</span>.</p>
+<ul>
+<li><span class="mathjax-exps">$s$</span> is saving faction of income</li>
+<li>physical capital depreciates at a constant rate <span class="mathjax-exps">$\delta$</span>.</li>
+<li><span class="mathjax-exps">$\Delta K=sY-\delta K$</span></li>
+</ul>
+<p>steady-state rate of growth when output to capital ratio <span class="mathjax-exps">$\frac{Y}{K}$</span> is constant: <span class="mathjax-exps">$\frac{\theta}{1-\alpha}=s\frac{Y}{K}-\delta-n$</span> and <span class="mathjax-exps">$\frac{Y}{K}=\frac{1}{s}(\frac{\theta}{1-\alpha}+\delta+n)\equiv\psi$</span>.<br/>
+MPK (marginal product of capital) <span class="mathjax-exps">$\alpha\frac{Y}{K}$</span> is also constant.</p>
+<p>Steady state equilibtrium <span class="mathjax-exps">$sy=(\frac{\theta}{1-\alpha}+\delta+n)k$</span> occurs at the point where savings and actual gross investment per worker are suffiicient to:</p>
+<ul>
+<li>provide capital for new workers entering the workforce at rate <span class="mathjax-exps">$n$</span></li>
+<li>replace plant and equipment wearing out at rate <span class="mathjax-exps">$\sigma$</span></li>
+<li>deepen the physical capital stock at rate <span class="mathjax-exps">$\frac{\theta}{1-\alpha}$</span></li>
+</ul>
+<h5 id="endogenous-grwoth-theory">Endogenous Grwoth Theory </h5>
+<p>It is regarded Endogenous because technology growth in Solow model in exogenous. Modificaition conclude:</p>
+<ul>
+<li><span class="mathjax-exps">$Y=AfK^\alpha(EL)^{1-\alpha}$</span>, where <span class="mathjax-exps">$E$</span> implies labor gain experience in production process.</li>
+</ul>
+<p>No diminishing marginal returns to capital.<br/>
+capital accumulation is main factor accouting in the long run.<br/>
+R&amp;D expenditures have large postivie externalities.<br/>
+In the endogenous growth model, the economy does not reach a steady growth rate.<br/>
+Saving and investment can generate self-sustaining growth at a permanently higher rate.<br/>
+Higher saving rates implies a permanently higher growth rate.</p>
+<h5 id="convergence-debate">Convergence Debate </h5>
+<ul>
+<li>Absolute convergence
+<ul>
+<li>developing countries will eventually catch up with developed countries in per capita output.</li>
+<li>The neoclassical model does not imply absolute convergence.</li>
+</ul>
+</li>
+<li>Conditional convergence
+<ul>
+<li>conditional on same <span class="mathjax-exps">$s$</span>, <span class="mathjax-exps">$n$</span> and <span class="mathjax-exps">$f(K,L)$</span></li>
+<li>same level or per capita output and steady state growth rate.</li>
+</ul>
+</li>
+<li>Club convergence
+<ul>
+<li>Rich and middle income countries that are members of the club are converging to the income level.</li>
+<li>Poor countries can join the club with appropriate institutional changes.</li>
+</ul>
+</li>
+</ul>
+<p>Endogenous growth model makes no prediction that convergence should occur.</p>
+<h5 id="growth-in-an-open-economy">Growth in an Open Economy </h5>
+<p>Opening up the economy can affect growth rate:</p>
+<ul>
+<li>countries can shift resources into industries where they have comparative advantage</li>
+<li>fund from global markets</li>
+<li>technology from global markets</li>
+<li>increases competition in demestic market</li>
+</ul>
+<p>For neoclassical model, convergence should occur more quickly.<br/>
+For endogenous model, a more open trade policy will permanently raise the rate of economic growth.</p>
+<h3 id="nav3">3.  Economics of Regulation </h3>
+<h4 id="nav3.1">3.1. Economic Rationale for Regulation </h4>
+<p>Regulation for economy</p>
+<ul>
+<li>informational frictions</li>
+<li>externalities</li>
+<li>weak competition (monopoly or oligopoly)</li>
+<li>social objectives</li>
+</ul>
+<p>Regulation for financial markets:</p>
+<ul>
+<li>protect investors</li>
+<li>integrity of markets</li>
+<li>disclosure</li>
+<li>mitigate agency problems</li>
+<li>prudential supervision of financial institutions</li>
+</ul>
+<p>Antitrust regulation</p>
+<h4 id="nav3.2">3.2. Regulators and Regulatory ToolS </h4>
+<p>Legislative body, court and regulatory body.<br/>
+Industry self-regulatory bodies.<br/>
+Regulatory interdpendencies:</p>
+<ul>
+<li>regulatory capture theory (规制俘虏): regulatory body will be influnced or controlled by the industry</li>
+<li>regulatory competition: regulators compete with each other</li>
+<li>regulatroy arbitrage: business shop for the most suitable regulation</li>
+</ul>
+<p>Regulatory tools:</p>
+<ul>
+<li>price mechanisms</li>
+<li>restrict/mandate some activities</li>
+<li>provide public goods</li>
+<li>finance private projects</li>
+</ul>
+<h4 id="nav3.3">3.3. Analysis of Regulation </h4>
+<p>Cost-benefit analysis:</p>
+<ul>
+<li>regulatory burden: cost of regulation</li>
+<li>net regulatory burden: cost less benefits</li>
+<li>approach: natural experiments and trial, regulatory sandboxes (经济特区)</li>
+</ul>
+<p>Analysts need to understand how regulation affects companies and industries:</p>
+<ul>
+<li>likelihood of regulatory change</li>
+<li>impact of regulatory change</li>
+</ul>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Economics</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA I/CFA I - Quantitative Methods.html" rel="prev">< CFA I - Quantitative Methods</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Quantitative Methods.html" rel="next">CFA II - Quantitative Methods ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
