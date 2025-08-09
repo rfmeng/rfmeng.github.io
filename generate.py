@@ -25,13 +25,20 @@ def article_generate(soup,templatehtml):
     # article nav
     def nav(soup):
         menu = []
+        # here hidd_menu and hidden_idl is for h5, which will be taged with bullet points but not shown on menu
+        hidden_menu = []
         for i in list(soup.find('div',class_='markdown-preview').descendants):
             if i.name=='h3':
                 menu.append([i.get_text(),[]])
+                hidden_menu.append([i.get_text(),[]])
             if i.name=='h4':
                 menu[-1][-1].append(i.get_text())
+                hidden_menu[-1][-1].append([i.get_text(),[]])
+            if i.name=='h5':
+                hidden_menu[-1][-1][-1][-1].append(i.get_text())
         result='<ol class="nav">'
         idl = []
+        hidden_idl = []
         for x,i in enumerate(menu):
             temp = '<li class="nav-item nav-level-1"><a class="nav-link" href="{}"><span class="nav-number">{}.</span> <span class="nav-text">{}</span></a>'.format('#nav'+str(x+1),x+1,i[0])
             idl.append('nav'+str(x+1))
@@ -44,12 +51,21 @@ def article_generate(soup,templatehtml):
                 temp+=subtemp
             temp += '</li>'
             result += temp
+        for x,i in enumerate(hidden_menu):
+            hidden_idl.append('nav'+str(x+1))
+            if i[1]:
+                for y,j in enumerate(i[1]):
+                    hidden_idl.append('nav'+str(x+1)+'.'+str(y+1))
+                    if j[1]:
+                        for z,k in enumerate(j[1]):
+                            hidden_idl.append('nav'+str(x+1)+'.'+str(y+1)+'.'+str(z+1))
         result+='</ol>'
+
         x=0
         for i in soup.find('div',class_='markdown-preview').descendants:
-            if i.name=='h3' or i.name=='h4':
-                i['id'] = idl[x]
-                i.string = idl[x][3:] +'. '+ i.text
+            if i.name=='h3' or i.name=='h4' or i.name=='h5':
+                i['id'] = hidden_idl[x]
+                i.string = hidden_idl[x][3:] +'. '+ i.text
                 x+=1
         return result
     navhtml = nav(soup)

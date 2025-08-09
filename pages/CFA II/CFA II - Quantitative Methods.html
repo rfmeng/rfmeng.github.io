@@ -116,7 +116,7 @@
 		      </header>
 					<div class="crossnote markdown-preview post-body" for="html-export">
 <p><ndtag category="CFA II" createdate="2025-07-20" editdate="2025-08-03" tag="Time-Series"></ndtag></p>
-<h5 id="simple-linear-regression">Simple Linear Regression </h5>
+<h6 id="simple-linear-regression">Simple Linear Regression </h6>
 <p>t-statistic (for simple linear regression): <span class="mathjax-exps">$t=\frac{\widehat{b}_1}{s_{\widehat{b}_1}}$</span>, where <span class="mathjax-exps">$\text{df} = n-k-1$</span> and <span class="mathjax-exps">$s_{\widehat{b_1}}=\frac{s_e}{\sqrt{\sum(x_i-\overline{x})^2}}$</span></p>
 <h3 id="nav1">1.  Basics of Multiple Regression and Underlying Assumptions </h3>
 <p>Assumptions:  (1) linearity, (2) homoskedasticity, (3) independence of errors, (4) normality, and (5) independence of independent variables</p>
@@ -196,29 +196,29 @@ F-statistic: <span class="mathjax-exps">$F=\frac{(SSE_R-SSE_U)/q}{SSE_U/(n-k-1)}
 <h4 id="nav3.2">3.2. Violations of Regression Assumptions: Heteroskedasticity </h4>
 <p>unconditional heteroskedasticity: error variance not correlated with independent variables, no major problems<br/>
 conditional heteroskedasticity: error variance correlated with independent variables, creating significant problems for statistical inference</p>
-<h5 id="consequences">Consequences </h5>
+<h5 id="nav3.2.1">3.2.1. Consequences </h5>
 <ul>
 <li><span class="mathjax-exps">$\widehat{b}_j$</span> not affected</li>
 <li><span class="mathjax-exps">$s_{\widehat{b}_j}$</span> are most likely underestimated, t-statistics will be inflated</li>
 <li>F-test also unreliable</li>
 </ul>
-<h5 id="testing-for-conditional-heteroskedasticity">Testing for Conditional Heteroskedasticity </h5>
+<h5 id="nav3.2.2">3.2.2. Testing for Conditional Heteroskedasticity </h5>
 <p>Breusch-Pagen <span class="mathjax-exps">$\chi^2$</span> test, <span class="mathjax-exps">$H_0$</span>: no heteroskedasticity<br/>
 Residual regression: <span class="mathjax-exps">$\varepsilon_i=a_0+\dots+a_kX_k+\epsilon_k$</span><br/>
 BP statistic: <span class="mathjax-exps">$\chi^2=nR^2_{\text{resid}}$</span> with df=k, one tailed test</p>
-<h5 id="correcting-for-heteroskedasticity">Correcting for Heteroskedasticity </h5>
+<h5 id="nav3.2.3">3.2.3. Correcting for Heteroskedasticity </h5>
 <ul>
 <li>(?) robust standard errors: White-corrected standard errors</li>
 <li>(?) generalized least squares model</li>
 </ul>
 <h4 id="nav3.3">3.3. Violations of Regression Assumptions: Serial Correlation </h4>
 <p>error terms are correlated with one another</p>
-<h5 id="consequences-1">Consequences </h5>
+<h5 id="nav3.3.1">3.3.1. Consequences </h5>
 <p>coefficient estimates not affected<br/>
 if one independent variable is lag of denpendent variable, the cofficient estimates will be affected<br/>
 positive serial correlation: underestimate standard errors<br/>
 negative serial correlation: overestimate standard erros</p>
-<h5 id="testing-for-serial-correlation">Testing for Serial Correlation </h5>
+<h5 id="nav3.3.2">3.3.2. Testing for Serial Correlation </h5>
 <p>Durbin-Watson (DW) test limited for detecting first-order serial correlation<br/>
 Breusch-Godfrey (BG) test:</p>
 <ul>
@@ -226,23 +226,23 @@ Breusch-Godfrey (BG) test:</p>
 <li><span class="mathjax-exps">$H_0$</span>: <span class="mathjax-exps">$p_1=0$</span></li>
 <li>F-distributed with <span class="mathjax-exps">$n-p-k-1$</span> and <span class="mathjax-exps">$p$</span> degrees of freedom, where <span class="mathjax-exps">$p$</span> is number of lags</li>
 </ul>
-<h5 id="correcting-for-serial-correlation">Correcting for Serial Correlation </h5>
+<h5 id="nav3.3.3">3.3.3. Correcting for Serial Correlation </h5>
 <ul>
 <li>serial correlation consistent standard error (also called robust standard error)</li>
 <li>modify the regression</li>
 </ul>
 <h4 id="nav3.4">3.4. Violations of Regression Assumptions: Multicollinearity </h4>
-<h5 id="consequences-2">Consequences </h5>
+<h5 id="nav3.4.1">3.4.1. Consequences </h5>
 <p>estimates of regression coefficients extremely imprecise and unreliable<br/>
 standard errors of coefficient inflated</p>
-<h5 id="testing-for-multicollinearity">Testing for Multicollinearity </h5>
+<h5 id="nav3.4.2">3.4.2. Testing for Multicollinearity </h5>
 <p>classic method: t-tests indicate no significance while <span class="mathjax-exps">$R^2$</span> is high and F-test indicates overall significance<br/>
 Variance inflation factor (VIF):</p>
 <ul>
 <li><span class="mathjax-exps">$\text{VIF}_j=\frac{1}{1-R_j^2}$</span>, where <span class="mathjax-exps">$R_j^2$</span> is <span class="mathjax-exps">$R^2$</span> of regression <span class="mathjax-exps">$X_j$</span> on other <span class="mathjax-exps">$X_i$</span></li>
 <li><span class="mathjax-exps">$\text{VIF}_j&gt;10$</span>, multicollinearity</li>
 </ul>
-<h5 id="correcting-for-multicollinearity">Correcting for Multicollinearity </h5>
+<h5 id="nav3.4.3">3.4.3. Correcting for Multicollinearity </h5>
 <ul>
 <li>excluding independent variables</li>
 <li>using a different proxy</li>
@@ -298,16 +298,16 @@ Covariance stationary, a key assumption for AR model variables to be valid:</p>
 <h4 id="nav5.6">5.6. Instability of Regression Coefficients </h4>
 <p>models estimated with shorter time series are usually more stable (financial relationships are inherently dynamic) but less reliable</p>
 <h4 id="nav5.7">5.7. Violations of Assumption </h4>
-<h5 id="autoregressive-heteroskedasticity-arch">Autoregressive Heteroskedasticity (ARCH) </h5>
+<h5 id="nav5.7.1">5.7.1. Autoregressive Heteroskedasticity (ARCH) </h5>
 <p>error variance is correlated with independent variables<br/>
 <span class="mathjax-exps">$\widehat{\varepsilon}_t^2=a_0+a_1\widehat{\varepsilon}_{t-1}^2+u_t$</span><br/>
 if <span class="mathjax-exps">$a_1$</span> is statistically significant, generalized least squares must be used<br/>
 ARCH model can predict the variance of the residuals</p>
-<h5 id="serial-correlation">Serial Correlation </h5>
+<h5 id="nav5.7.2">5.7.2. Serial Correlation </h5>
 <p>autocorrelation: <span class="mathjax-exps">$\rho(\varepsilon_t,\varepsilon_{t-k})$</span><br/>
 usually because of seasonality<br/>
 correcting of seasonality: include a seasonal lag in AR model <span class="mathjax-exps">$y_t=b_0+b_1y_{t-1}+b_2y_{t-4}+\varepsilon_t$</span> for quarterly data and <span class="mathjax-exps">$b_2y_{t-12}$</span> for monthly data</p>
-<h5 id="mean-reversion">Mean Reversion </h5>
+<h5 id="nav5.7.3">5.7.3. Mean Reversion </h5>
 <p>mean-reverting level for AR(1): <span class="mathjax-exps">$x=\frac{b_0}{1-b_1}$</span><br/>
 covariance stationary → finite mean-reverting model<br/>
 <span class="mathjax-exps">$|b_1|&lt;1$</span> in AR(1) model → finite mean-reverting model</p>
@@ -357,24 +357,24 @@ deep learning and reinforcement learning</p>
 <li><span class="mathjax-exps">$\mathbb{E}_S(\bar{f}_S(x)-\bar{f}(x))^2$</span>: variance error</li>
 <li>Var(y|x): base error, due to randomness in the data</li>
 </ul>
-<h5 id="prevent-overfitting">Prevent Overfitting </h5>
+<h5 id="nav6.2.1">6.2.1. Prevent Overfitting </h5>
 <p>complexity reduction and cross-validation (k-fold)</p>
 <h4 id="nav6.3">6.3. Supervised Machine Learning Algorithms </h4>
-<h5 id="penalized-regression">Penalized Regression </h5>
+<h5 id="nav6.3.1">6.3.1. Penalized Regression </h5>
 <p>LASSO (Least Absolute Shrinkage and Selection Operator), <span class="mathjax-exps">$\text{penalty}=\lambda\sum |b_k|$</span></p>
 <ul>
 <li>data should be standardized so the features have 0 mean and 1 variance</li>
 </ul>
-<h5 id="support-vector-machine">Support Vector Machine </h5>
-<h5 id="k-nearest-neighbor">K-Nearest Neighbor </h5>
-<h5 id="classification-and-regression-tree">Classification and Regression Tree </h5>
-<h5 id="ensemble-learning">Ensemble Learning </h5>
+<h5 id="nav6.3.2">6.3.2. Support Vector Machine </h5>
+<h5 id="nav6.3.3">6.3.3. K-Nearest Neighbor </h5>
+<h5 id="nav6.3.4">6.3.4. Classification and Regression Tree </h5>
+<h5 id="nav6.3.5">6.3.5. Ensemble Learning </h5>
 <p>bootstrap aggregating (or bagging): <span class="mathjax-exps">$n$</span> new training datasets from random sampling with replacement<br/>
 random forest: CART via bagging method</p>
 <h4 id="nav6.4">6.4. Unsupervised Machine Learning Algorithms </h4>
-<h5 id="dimension-reduction">Dimension Reduction </h5>
+<h5 id="nav6.4.1">6.4.1. Dimension Reduction </h5>
 <p>Principal component analysis</p>
-<h5 id="clustering">Clustering </h5>
+<h5 id="nav6.4.2">6.4.2. Clustering </h5>
 <p>K-means clustering<br/>
 hierarchical clustering (agglomerative and divisive)</p>
 <ul>
@@ -437,7 +437,7 @@ feature engineering: creating new features</p>
 	          </div>
 	          <div class="post-nav">
 	            <div class="post-nav-item">
-                <a href="/pages/CFA I/CFA I - Quantitative Methods.html" rel="prev">< CFA I - Quantitative Methods</a>
+                <a href="/pages/CFA II/CFA II - Economics.html" rel="prev">< CFA II - Economics</a>
 	            </div>
 	            <div class="post-nav-item">
                 <a href="/pages/Derivatives/Dynamic Hedging 1 - Markets, Instruments, People.html" rel="next">Dynamic Hedging 1 - Markets, Instruments, People ></a>

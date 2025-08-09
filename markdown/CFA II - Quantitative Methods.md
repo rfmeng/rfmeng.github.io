@@ -1,7 +1,7 @@
 <ndtag category="CFA II" createdate="2025-07-20" editdate="2025-08-03" tag="Time-Series"></ndtag>
 
 
-##### Simple Linear Regression
+###### Simple Linear Regression
 t-statistic (for simple linear regression): $t=\frac{\widehat{b}_1}{s_{\widehat{b}_1}}$, where $\text{df} = n-k-1$ and $s_{\widehat{b_1}}=\frac{s_e}{\sqrt{\sum(x_i-\overline{x})^2}}$
 
 ### <!-- C1 p13 --> Basics of Multiple Regression and Underlying Assumptions
