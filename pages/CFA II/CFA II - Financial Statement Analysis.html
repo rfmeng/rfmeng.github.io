@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Financial Statement Analysis - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Intercorporate Investments </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Corporate Investment Categories </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Investments in Financial Assets </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Investments in Associates </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Business Combinations </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Joint Venture and Spes/Vies </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">Analysis Issues </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Employee Compensation: Post-Employment and Share-Based </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Multinational Operations </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Analysis of Financial Institutions </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Evaluating Quality of Financial Reports </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Integration of Financial Statement Analysis Techniques </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav7"><span class="nav-number">7.</span> <span class="nav-text"> Financial Statement Modeling </span></a></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Financial Statement Analysis
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-08-09</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-08-09" editdate="2025-08-09" tag="Financial-Statement-Analysis"></ndtag></p>
+<p>Key points: C1, C2 and C3</p>
+<h3 id="nav1">1.  Intercorporate Investments </h3>
+<h4 id="nav1.1">1.1. Basic Corporate Investment Categories </h4>
+<div class="mermaid">graph LR
+    A[投资] --&gt; B[债权]
+    B[债权] --&gt; B1[金融资产]
+    B1[金融资产] --&gt; B11(AMC&lt;br&gt;债权投资)
+    B1[金融资产] --&gt; B12(FVOCI&lt;br&gt;其他债权投资)
+    B1[金融资产] --&gt; B13(FVPL&lt;br&gt;交易性金融资产)
+    A[投资] --&gt; C[股权]
+    C[股权] --&gt; D[金融资产]
+    D[金融资产] --&gt; D1(FVPL&lt;br&gt;交易性金融资产)
+    D[金融资产] --&gt; D2(FVOCI&lt;br&gt;其他权益工具投资)
+    C[股权] --&gt; E(会计科目&lt;br&gt;长期股权投资)
+    E --&gt; E1(对联营投资&lt;br&gt;equity method)
+    E --&gt; E2(对合营投资&lt;br&gt;equity method)
+    E --&gt; E3(对子公司投资&lt;br&gt;acquisition method)
+</div><p>FVPL: fair value measured and in Profit and Loss<br/>
+FVOIC: fair value measured and in Other Comprehensive Income<br/>
+AMC: amortized cost</p>
+<p>Investments in securities can be categorized as:</p>
+<ul>
+<li>Investment in financial assets: investor has no significant influence and control</li>
+<li>investment in associates: exert sigificant influence but not control</li>
+<li>Joint ventures: control is shared</li>
+<li>Business combinations: investments in subsidiaries</li>
+</ul>
+<p>Percentage of ownership to determine significance of influence (only a guideline)<br/>
+The final decision is based on degree of influence and control</p>
+<ul>
+<li>lack of influence: less than 20%</li>
+<li>significant influence: between 20% and 50%</li>
+<li>control: more than 50%</li>
+</ul>
+<h4 id="nav1.2">1.2. Investments in Financial Assets </h4>
+<p>Key points: Classification</p>
+<h5 id="nav1.2.1">1.2.1. Classification of Financial Assets </h5>
+<p>CFA II focuses on new standards, old standards in CFA I should be deserted.<br/>
+Two criterial:</p>
+<ul>
+<li>cashflow characteristic test (objective): whether contractual cashflow are solely payments of principal and interest on principal</li>
+<li>business model test (subjective): how to generate cashflow
+<ul>
+<li>by collecting contractual cash flows</li>
+<li>by selling financial assets</li>
+<li>both</li>
+</ul>
+</li>
+</ul>
+<h6 id="basic-principles">Basic Principles </h6>
+<ol>
+<li>measured at AMortized Cost (AMC): accord with cash flow characteristic test and held to collect contractual cashflows
+<ul>
+<li>account receivable</li>
+</ul>
+</li>
+<li>measured at Fair Value through Other Comprehensive Income (FVOCI): accord with cash flow characteristic may be sold (hold to collect and sell)</li>
+<li>measured at Fair Value through Profit or Loss (FVPL): other remaining financial assets</li>
+</ol>
+<h6 id="supplement">*Supplement </h6>
+<ul>
+<li>derivative are measured at FVPL (except for hedging)</li>
+<li>embedded derivatives are not separated from hybrid contract, the asset as a whole is measured at FVPL</li>
+<li>management could designate assets as FVPL to avoid account mismatch (e.g., to match a FVPL financial liablility)</li>
+<li>management could designate nontradable equity investment as FVOCI
+<ul>
+<li>only dividend income is recognized in PL</li>
+</ul>
+</li>
+</ul>
+<p>The designation choice is irrevocable.</p>
+<h5 id="nav1.2.2">1.2.2. Measurement </h5>
+<p>all financial assets are measured at fair value when initially acquired</p>
+<ul>
+<li>equity example: T=0, buy 10 stocks@10; T=1, receive dividend 1 per share; T=2 sell 4@12
+<ul>
+<li>FVPL:
+<ul>
+<li>T=0, <code>cash -100, FVPL +100</code></li>
+<li>T=1, <code>cash +10</code> | <code>RE (retained earnings) +10</code></li>
+<li>T=2, <code>FVPL +20</code> | <code>RE +20</code></li>
+<li>T=2 sell, <code>cash +48,  FVPL -48</code></li>
+</ul>
+</li>
+<li>*FVOCI:
+<ul>
+<li>T=0, <code>cash -100, FVOCI +100</code></li>
+<li>T=1, <code>cash +10</code> | <code>RE (retained earnings) +10 (through PL)</code></li>
+<li>T=2, <code>FVOCI +20</code> | <code>AOCI (accumulated OCI) +20 (through OCI)</code></li>
+<li>T=2 sell, <code>cash +48, FVOCI -48</code> | <code>AOCI -8 and RE +8 (not through PL)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>debt example: T=0, buy a bond@951.96, 3 year 10% coupon rate, par value 1000, YTM=12%<br/>
+Fair value (exogenously given): T=0, 951.96; T=1 980; T=2, 999; T=3 1000<br/>
+Amotized costs: T=0, 951.96; T=1 966.2; T=2, 982.14; T=3 1000
+<ul>
+<li>AMC:
+<ul>
+<li>T=0, cash -951.96, AMC +951.96</li>
+<li>T=1, <code>cash +100, AMC +14.24</code> | <code>RE +951.96*12%=114.24</code></li>
+<li>T=2, <code>cash +100, AMC +15.94</code> | <code>RE +966.2*12%=115.94</code></li>
+<li>T=3, <code>cash +100, AMC +17.86</code> | <code>RE +982.14*12%=117.86</code></li>
+<li>T=3 expired, <code>cash +1000 AMC -1000</code></li>
+</ul>
+</li>
+<li>FVOCI:
+<ul>
+<li>T=0, <code>cash -951.96, FVOCI +951.96</code></li>
+<li>T=1, <code>cash +100, FVOCI +28.04</code> | <code>RE +114.24, AOCI +13.8</code></li>
+<li>T=2, <code>cash +100, FVOCI +19</code> | <code>RE +115.94, AOCI +3.06</code></li>
+<li>T=3, <code>cash +100, FVOCI +1</code> | <code>RE +117.86, AOCI -16.86</code></li>
+<li>T=3 expired, <code>cash +1000, FVOCI -1000</code></li>
+</ul>
+</li>
+<li>FVPL:
+<ul>
+<li>T=0, <code>cash -951.96, FVPC +951.96</code></li>
+<li>T=1,  <code>cash +100, FVOCI +28.04</code> | <code>RE +128.04</code></li>
+<li>T=2,  <code>cash +100, FVOCI +19</code> | <code>RE +119</code></li>
+<li>T=3,  <code>cash +100, FVOCI +1</code> | <code>RE +101</code></li>
+<li>T=3 expired, <code>cash +1000, FVOCI -1000</code></li>
+</ul>
+</li>
+<li>same influence on PL</li>
+</ul>
+</li>
+</ul>
+<h6 id="impairment-of-financial-assets">Impairment of Financial Assets </h6>
+<p>expected loss model:</p>
+<ul>
+<li>12 month expected loss for performing asset</li>
+<li>life time expected loss for nonperforming asset (siginificant credit risk)</li>
+</ul>
+<h5 id="nav1.2.3">1.2.3. Reclassification </h5>
+<p>Under IFRS 9, reclassification of equity instruments is not permitted.</p>
+<ul>
+<li>designation of FVPL and FVOIC is irrevocable</li>
+</ul>
+<p>Reclassification of debt instruments permitted if business model change. (infrequent)<br/>
+There is no restatement on actual reclassification date, but on the first day of next accounting period.</p>
+<h4 id="nav1.3">1.3. Investments in Associates </h4>
+<h5 id="nav1.3.1">1.3.1. Equity Method of Accounting </h5>
+<p>IFRS also includes currently exercisable (in 1 year) call options and etc. in determination of significant influence; GAAP only consideres outstanding shares.<br/>
+Significant influence evidence:</p>
+<ul>
+<li>representation on board of directors</li>
+<li>material transactions between investor and investee</li>
+<li>interchange of managerial personnel</li>
+<li>technological dependency</li>
+</ul>
+<p>Equity method:</p>
+<ul>
+<li>balance sheet: one-line concolidation (单项合并, against line by line) <code>equity investment in associate</code>, noncurrent asset
+<ul>
+<li>proportionate ownership interest in net assets of the investee</li>
+</ul>
+</li>
+<li>income statement: single line item <code>equity income in associate</code>
+<ul>
+<li>equity income is separated from operating income</li>
+</ul>
+</li>
+</ul>
+<h6 id="basic-principles-1">Basic Principles </h6>
+<p>Carrying amount of the investment is adjusted to recognize the investor's proportionate share of the investee's earnings or loss, and these earnings or losses are reported in income.</p>
+<ul>
+<li>dividend treated as return of capital and not in PL
+<ul>
+<li>example: B invests 30% in S, S realize $80 and dividend $20 (big and small)
+<ul>
+<li>dividend to B: <code>cash +6, investment +24-6</code> | <code>RE +24</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>cost method is more prudential against equity method</p>
+<ul>
+<li>dvidend to B: <code>cash+24</code> | <code>RE+24</code></li>
+</ul>
+<p>If the investment value is reduced to 0, the equity method is discontinued to record, but further loss should be recorded in another book and regarded as provision.</p>
+<h6 id="excess-purchase-price">Excess Purchase Price </h6>
+<p>In general, Purchase Price (PP) &gt; % fair value &gt; % book value (of net identifiable assets, not including goodwill).</p>
+<ul>
+<li>Excess PP = PP - % book value</li>
+<li>% fair value appreciation = % fair value - % book value
+<ul>
+<li>amortized to the investee's profit over economic life of asset</li>
+</ul>
+</li>
+<li>goodwill = PP - % fair value
+<ul>
+<li>not amortized and review for impairment</li>
+</ul>
+</li>
+</ul>
+<p>Goodwill is included in carrying amount of the investment instead of being separately recognized.</p>
+<p>Amortization of Fair Value Appreciation:</p>
+<ul>
+<li>excess PP is expensed (inventory) or amortized in a way consistent with the specific asset<br/>
+investor must record these adjustment effects by reducing the carrying amount on its balance sheet and reducing investee's profit recognized on its income statement<br/>
+over time, the balace in the investment account will come closer to owner's percentage of book value of net assets of associate
+<ul>
+<li>example: B invests 30% in S with 2000, S has PPE BV=110 FV=120 (10 years life), S report 1000 net income and pays dividend 500
+<ul>
+<li>S: NI = 1011 - 110/10</li>
+<li>B: equity income = (1011 - 120/10)*30%</li>
+<li>B: equity investment = 2000 + 999*30% - 500*30%</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="transactions-with-associates">Transactions with Associates </h6>
+<ul>
+<li>Profits from such transactions cannot be realized until confirmed through sale to third parties or use (regardless to sale price)</li>
+<li>investor company's share of any unrealized profit must be defered by reducing the amount recorded under the equity method</li>
+<li>downstream transactions (顺流交易, goods from investor to investee) and upstream transactions</li>
+</ul>
+<p>upstream transaction:</p>
+<ul>
+<li>example: D invests 20% in E, E sell good (cost 600) to D at 900 at T=0, D use it as PPE, expected life 10 years, net residual value 0, T=1 E has net profit 1600
+<ul>
+<li>E: adjusted net profit = 1600 - (900 - 600) + (900 - 600)/10</li>
+<li>D: investment profit = 1330*20%</li>
+</ul>
+</li>
+</ul>
+<p>downstream transaction:</p>
+<ul>
+<li>same adjustment to upstream transaction, although profit is of investor.</li>
+<li>offest as much as possible</li>
+</ul>
+<h5 id="nav1.3.2">1.3.2. Other Issues </h5>
+<h6 id="1-impairment">1. Impairment </h6>
+<p>Impairment is other than temporary.<br/>
+Impairment loss is recorded on the income statement, the carrying amount of investment is reduced or through the use of an allowance account<br/>
+Both IFRS and US GAAP prohibit the reversal of impairment loss.<br/>
+Goodwill is included in carrying amount of the investment, not separately recognized and not separately tested.</p>
+<h6 id="2-fair-value-option">2. Fair Value Option </h6>
+<p>Option that whether to use fair value method to measure long term investment at initial recognition.<br/>
+It is measured like FVPL, excess PP is not amortized and no goodwill.<br/>
+Under IFRS, the use is restricted to venture capital, mutual funds and etc.</p>
+<h4 id="nav1.4">1.4. Business Combinations </h4>
+<p>control and variable interest (debt is not variable interest)</p>
+<h5 id="nav1.4.1">1.4.1. Basic Concepts about Combinations </h5>
+<p>*under US GAAP:</p>
+<ul>
+<li>acquisition (控股): A + B = A + B (buyer prepares consolidated financial statement)</li>
+<li>merger (吸收合并): A + B = A (B's entity canceled)</li>
+<li>consolidation (新设): A + B = C</li>
+</ul>
+<p>acquisition method (A and B have different control party)</p>
+<h5 id="nav1.4.2">1.4.2. Consolidation Process </h5>
+<p>Balance sheet process:</p>
+<ol>
+<li>adjust subsidary based on fair value</li>
+<li>add parent company book value and child company's all fair value, calculate minority interest</li>
+<li>offset carrying amount of investment and % child company's equity, calculate goodwill and non-controling (minority) interest</li>
+</ol>
+<p>Income statement process:</p>
+<ol>
+<li>add revenue and cost</li>
+<li>offset business bewteen parent company and child company, adjust child company's fair value</li>
+<li>calculate adjusted non-controling (minority) interest (same as equity method of investment in associates) and net income attribute to owners of the parent</li>
+</ol>
+<p>direct costs are expensed as incurred, not counted as acquisition cost</p>
+<h5 id="nav1.4.3">1.4.3. Accounting Treatment of Goodwill </h5>
+<h4 id="nav1.5">1.5. Joint Venture and Spes/Vies </h4>
+<h4 id="nav1.6">1.6. Analysis Issues </h4>
+<h5 id="nav1.6.1">1.6.1. Net Income and Shareholder's Equity </h5>
+<h5 id="nav1.6.2">1.6.2. Two Common Analysis Frameworks </h5>
+<h5 id="nav1.6.3">1.6.3. Issue for Equity Method </h5>
+<h3 id="nav2">2.  Employee Compensation: Post-Employment and Share-Based </h3>
+<h3 id="nav3">3.  Multinational Operations </h3>
+<h3 id="nav4">4.  Analysis of Financial Institutions </h3>
+<h3 id="nav5">5.  Evaluating Quality of Financial Reports </h3>
+<h3 id="nav6">6.  Integration of Financial Statement Analysis Techniques </h3>
+<h3 id="nav7">7.  Financial Statement Modeling </h3>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Financial Statement Analysis</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Economics.html" rel="prev">< CFA II - Economics</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Quantitative Methods.html" rel="next">CFA II - Quantitative Methods ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
