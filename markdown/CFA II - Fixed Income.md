@@ -199,8 +199,8 @@ OAS = Z-spread - option value (%), actually option value (%) = Z-spread - OAS
 If the market price of callable bond is 102.71, the OAS will be 50 bps
 ```mermaid
 graph LR
-  N0[t=0<br>3.5%<br>value 102.71] --> N1[8.5%<br>value 98.62]
-  N0 --> N2[5.5%<br>value 101.42<br>call value 100]
+  N0[t=0<br>0.035<br>value 102.71] --> N1[0.085<br>value 98.62]
+  N0 --> N2[0.055<br>value 101.42<br>call value 100]
   N1 --> N21[value 107]
   N1 --> N22[value 107]
   N2 --> N22[value 107]
