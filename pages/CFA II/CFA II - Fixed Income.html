@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Fixed Income - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> The Term Structure and Interest Rate Dynamics </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Rates and Curves </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Spread </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Traditional Term Structure Theories </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.4"><span class="nav-number">1.4.</span> <span class="nav-text">Yield Curve Factor Models </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.5"><span class="nav-number">1.5.</span> <span class="nav-text">Active Bond Portfolio Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.6"><span class="nav-number">1.6.</span> <span class="nav-text">Developing Interest Rate Views Using Macroeconomic Variables </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> The Arbitrage-Free Valuation Framework </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Arbitrage-Free Valuation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Term Structure Models </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Binomial Tree Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.4"><span class="nav-number">2.4.</span> <span class="nav-text">Monte Carlo Method </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Valuation and Analysis of Bonds with Embedded Options </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Callable and Putable Bond </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Capped or Floored Floating-Rate Bond </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Convertible Bond </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Credit Analysis Models </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Modeling Credit Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Valuing Risky Bonds </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Credit Spreads </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">Credit Analysis for Securitized Debt </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.5"><span class="nav-number">4.5.</span> <span class="nav-text">Credit Models </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Credit Default Swaps </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Structure and Features of CDS </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Types of CDS </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Pricing of CDS </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.4"><span class="nav-number">5.4.</span> <span class="nav-text">Application of CDS </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Fixed Income
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-08-17</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-08-16" editdate="2025-08-17" tag="Fixed-Income"></ndtag></p>
+<p>keypoints:</p>
+<ul>
+<li>C1 Rates and Curves</li>
+<li>C3 Traditional Term Structure Theories</li>
+</ul>
+<h3 id="nav1">1.  The Term Structure and Interest Rate Dynamics </h3>
+<p>lender/creditor vs. borrower/debter</p>
+<h4 id="nav1.1">1.1. Rates and Curves </h4>
+<ul>
+<li>Spot Rate (Zero Rate): rate of default-free zero-coupon bond
+<ul>
+<li>discount factor: <span class="mathjax-exps">$P(j)=\frac{1}{[1+s(j)]^j}$</span></li>
+</ul>
+</li>
+<li>Forward Rate <span class="mathjax-exps">$f(j,k)$</span>: from <span class="mathjax-exps">$j$</span> to <span class="mathjax-exps">$j+k$</span>
+<ul>
+<li>discount factor <span class="mathjax-exps">$F(j,K)=\frac{1}{[1+f(j,k)]^k}$</span></li>
+<li>forward curve: relationship bewteen <span class="mathjax-exps">$f(m,n)$</span> and <span class="mathjax-exps">$n$</span> when <span class="mathjax-exps">$m$</span> fixed as a time point in the future</li>
+<li>forward rate model: <span class="mathjax-exps">$[1+s(j+k)]^{j+k}=[1+s(j)]^j[1+f(j,k)]^k$</span></li>
+<li>Relationship between Curves
+<ul>
+<li>spot curve upward sloping, forward curve lies above spot curve <span class="mathjax-exps">$f(i,j)&gt;s(i+j)&gt;s(i)$</span></li>
+<li>in developed markets, yield curves are like <span class="mathjax-exps">$\ln x$</span> shape</li>
+<li>humped yield curve: midterm rates are higher than short term and long term</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Par Rate: the coupon rate that price of the bond equal to par value
+<ul>
+<li>par curve: par rate corresponded to spot curve</li>
+<li>recently issued (on the run) treasury bonds are typically priced close to par value</li>
+<li>bootstrapping: obtain spot curve from par curve</li>
+</ul>
+</li>
+<li>YTM
+<ul>
+<li>a weighted average of spot rate</li>
+</ul>
+</li>
+<li>Swap Rate: interest rate for the fixed-rate leg of an interest rate swap
+<ul>
+<li><span class="mathjax-exps">$\sum\frac{s(T)}{[1+r(t)]^t}+\frac{1}{[1+r(T)]^T}=1$</span>, equivalent to par rate</li>
+<li>swap curve is a type of a par curve</li>
+<li>swap rate curve is prefered because:
+<ul>
+<li>it has more maturities and liquidity</li>
+<li>reflect credit risk</li>
+<li>swap market is unregulated (not controlled by governments), so comparable across different countries</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.2">1.2. Spread </h4>
+<ul>
+<li>Swap spread = swap rate - government security rate (on the run)</li>
+<li>I-Spread = bond rate (YTM) - swap rate
+<ul>
+<li>I is for interpolated swap rate</li>
+</ul>
+</li>
+<li>TED Spread = LIBOR - T-bill rate
+<ul>
+<li>T is for treasury bill and ED is for Eurodollar</li>
+<li>indicator of perceived credit risk in the general economy</li>
+</ul>
+</li>
+<li>Libor-OIS Spread = LIBOR - overnight indexed swap rate
+<ul>
+<li>OIS is interest rate swap where floating rate is geometric average of an overnight index rate over every day</li>
+<li>indicator of risk and liquidity of money market securities</li>
+</ul>
+</li>
+<li>G-Spread (nominal spread) = I-Spread + Swap spread</li>
+<li>Z-Spread: <span class="mathjax-exps">$P=\sum\frac{CF_t}{[1+s(t)+z]^t}$</span>
+<ul>
+<li>not appropriate for bonds with embedded options</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.3">1.3. Traditional Term Structure Theories </h4>
+<ul>
+<li>Pure/Unbiased Expectation Theory
+<ul>
+<li>Forward rate is an unbiased predictor of the future spot rate, <span class="mathjax-exps">$f(j,k)=\mathbb {E}[s(k)|\mathcal{F}(j)]$</span>.</li>
+<li>Assume risk neutrality, but investors are risk averse.</li>
+</ul>
+</li>
+<li>Local Expectations Theory
+<ul>
+<li>Assume risk neutrality only in the short term, expected return for every bond is the same.</li>
+<li>But short holding period return on long-dated bonds do exceed those on short-dated bonds.</li>
+</ul>
+</li>
+<li>Liquidity Preference Theory
+<ul>
+<li>forward rate = expected spot rates + liquidity premium</li>
+<li>liquidity premium increases with maturity</li>
+</ul>
+</li>
+<li>Segmented Market Theory
+<ul>
+<li>each maturity sector is a segmented market, and independent from each other.</li>
+</ul>
+</li>
+<li>Prefered Habitat Theory
+<ul>
+<li>Make investor deviate from their preferred maturities or habitats with enough permium</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.4">1.4. Yield Curve Factor Models </h4>
+<h5 id="nav1.4.1">1.4.1. Yield Curve Movement </h5>
+<p>yield curve movements = parallel movements <span class="mathjax-exps">$\Delta X_L$</span> + steepness movements <span class="mathjax-exps">$\Delta X_S$</span> + urvature movements <span class="mathjax-exps">$\Delta X_c$</span></p>
+<ul>
+<li>parallel shift → effective duration</li>
+<li>non-parallel shift → key rate duration</li>
+</ul>
+<p>Duration:</p>
+<ul>
+<li>Macaulay duration: <span class="mathjax-exps">$\text{MacDur}=\sum\frac{PV(CF_i)i}{\sum PV(CF_i)}$</span></li>
+<li>Modified duration: <span class="mathjax-exps">$\text{ModDur}=\frac{\text{MacDur}}{1+r}$</span>, <span class="mathjax-exps">$r$</span> is YTM per period
+<ul>
+<li><span class="mathjax-exps">$\frac{\Delta p}{p}=-\text{ModDur}\Delta y+\frac{1}{2}C\Delta y^2$</span></li>
+</ul>
+</li>
+<li>Effective duration: <span class="mathjax-exps">$\text{EffDur}=\frac{PV_+-PV_-}{2PV_0\Delta y}$</span></li>
+<li>Key rate duration: small change of yield in a specific maturity segment <span class="mathjax-exps">$\text{KeyRateDur}^k=\frac{PV_+-PV_0}{2PV_0\Delta r^k}$</span></li>
+<li>PVBP (DV01)</li>
+</ul>
+<h5 id="nav1.4.2">1.4.2. Key Rate Duration </h5>
+<p>for the portfolio composed by zero-coupon bonds:</p>
+<ul>
+<li>Key Rate Duration: <span class="mathjax-exps">$w_iD_i$</span></li>
+<li>Effective Duration: <span class="mathjax-exps">$\sum \text{KeyDur}_i$</span></li>
+</ul>
+<h5 id="nav1.4.3">1.4.3. Managing Yield Curve Risks </h5>
+<p><span class="mathjax-exps">$\frac{\Delta p}{p}=-D_L\Delta X_L-D_S\Delta X_S-D_C\Delta X_C$</span></p>
+<ul>
+<li><span class="mathjax-exps">$\Delta X_L$</span>, <span class="mathjax-exps">$\Delta X_S$</span>, <span class="mathjax-exps">$\Delta X_C$</span> is sensitivities (principal component) of portfolio value to small changes of three factors</li>
+</ul>
+<h5 id="nav1.4.4">1.4.4. Interest Rate Volatilities </h5>
+<p>short-term rates are more volatile than long-term rates (downward volatility structure)</p>
+<ul>
+<li>short-term volatility linked to monetary policy</li>
+<li>long-term volatility linked to real economy and inflation</li>
+</ul>
+<p>interest rate follows lognormal model, <span class="mathjax-exps">$\sigma_\text{annual}=\sigma_\text{month}\sqrt{12}$</span></p>
+<h4 id="nav1.5">1.5. Active Bond Portfolio Management </h4>
+<ul>
+<li>Strategy of Forward Contract: forward of a bond
+<ul>
+<li>If trader expects the future spot rate will be lower than predicted by the prevailing forward rate, the forward contract value is expected to increase. The trader should long the contract.</li>
+</ul>
+</li>
+<li>Strategy of Riding the Yield Curve
+<ul>
+<li>Yield curve is upward sloping and yield curve will not change its level and shape.</li>
+<li>buy bonds with a maturity longer than investment horizon</li>
+<li>as bond approaches maturity or "rolls down the yield curve", it is valued at lower yields</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.6">1.6. Developing Interest Rate Views Using Macroeconomic Variables </h4>
+<p>Bond Risk Premium: term premium<br/>
+Macroeconomic factors influence bond:</p>
+<ul>
+<li>inflation: short and intermediate term bond yield variation</li>
+<li>monetary policy: long term yield variation
+<ul>
+<li>during expansions, government makes action that increases short term yield more than long term, called bearish flattening</li>
+<li>during recessions, government makes action that decreases short term yield more than long term, called bullish steepening</li>
+</ul>
+</li>
+<li>fiscal policy: budget deficits increase, interest rate will increase</li>
+</ul>
+<p>Investor strategies:</p>
+<ul>
+<li>during highly uncertain market periods, flight to quality (long term bond) happens.
+<ul>
+<li>long term rate falls by more than short term rates, bullish flattening</li>
+<li>investor may seek to capitalize the bullish flattening with barbell position (equal portion of short term and long term)</li>
+</ul>
+</li>
+</ul>
+<h3 id="nav2">2.  The Arbitrage-Free Valuation Framework </h3>
+<p>keypoints:</p>
+<ul>
+<li>Binomial Tree Model</li>
+</ul>
+<h4 id="nav2.1">2.1. Arbitrage-Free Valuation </h4>
+<p>Result of law of one price.<br/>
+Types of arbitrage opportunities:</p>
+<ul>
+<li>value additivity
+<ul>
+<li>stripping: separate the security's individual cashflow</li>
+<li>reconstitution: combine the individual securities to reproduce</li>
+</ul>
+</li>
+<li>domnance: risk-free pay off</li>
+</ul>
+<p>Bonds with embedded options: cashflow depend on the change of interest rate.</p>
+<h4 id="nav2.2">2.2. Term Structure Models </h4>
+<ul>
+<li>Equilibrium Term Structure Models
+<ul>
+<li>Vascicek Model: <span class="mathjax-exps">$dr_t=k(\theta-r_t)dt+\sigma dZ$</span></li>
+<li>Cox-Ingersoll-Ross (CIR) Model: <span class="mathjax-exps">$dr_t=k(\theta-r_t)dt+\sigma\sqrt{r_t}dZ$</span>
+<ul>
+<li>individuals determine optimal trade-off between consumption and investment, interest rate will reach a market equilibrium</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Arbitrage Free Models
+<ul>
+<li>Ho-Lee Model: <span class="mathjax-exps">$dr_t=\theta_t dt+\sigma dZ$</span>
+<ul>
+<li>calibrate <span class="mathjax-exps">$\theta_t$</span> to fit the market price</li>
+</ul>
+</li>
+<li>Kalotay-Williams-Fabozzi (KWF) Model: <span class="mathjax-exps">$d\ln r_t=\theta_t dt+\sigma dZ$</span>
+<ul>
+<li>prevent negative rates</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav2.3">2.3. Binomial Tree Model </h4>
+<h5 id="nav2.3.1">2.3.1. Binomial Interest Rate Tree </h5>
+<ul>
+<li>lognormal interest rate</li>
+<li><span class="mathjax-exps">$u=e^{\sigma}$</span> and <span class="mathjax-exps">$d=e^{-\sigma}$</span></li>
+<li>Assumes equal probability of up or down</li>
+</ul>
+<h5 id="nav2.3.2">2.3.2. Valuing Option-Free Bonds </h5>
+<p>An example.</p>
+<h5 id="nav2.3.3">2.3.3. Construct Binomial Interest Rate Tree </h5>
+<p>Let implied <span class="mathjax-exps">$f(1,1)$</span> be kind of mean of <span class="mathjax-exps">$r_u$</span> and <span class="mathjax-exps">$r_d$</span> subjected to constraints <span class="mathjax-exps">$r_u=r_de^{2\sigma}$</span>.</p>
+<h5 id="nav2.3.4">2.3.4. Pathwise Valuation </h5>
+<h4 id="nav2.4">2.4. Monte Carlo Method </h4>
+<p>Monte Carlo supports path dependent models.</p>
+<h3 id="nav3">3.  Valuation and Analysis of Bonds with Embedded Options </h3>
+<h4 id="nav3.1">3.1. Callable and Putable Bond </h4>
+<h5 id="nav3.1.1">3.1.1. Bonds with Embedded Option </h5>
+<h6 id="basic-concepts">Basic Concepts </h6>
+<ul>
+<li>callable bond: issuer has the option to call back the bond
+<ul>
+<li><span class="mathjax-exps">$V_{\text{callable}}=V_{\text{straight}}-V_{\text{call}}$</span>, investor is long bond and short call</li>
+<li>sinking fund bond (no embedded option): issuer set aside fund to retire the bond, reducing credit risk</li>
+</ul>
+</li>
+<li>putable bond: investor has the option to put back the bond
+<ul>
+<li><span class="mathjax-exps">$V_{\text{putable}}=V_{\text{straight}}+V_{\text{put}}$</span>, investor is long bond and long put</li>
+</ul>
+</li>
+<li>extendible bond: holder has the right to keep the bond after maturity, with another coupon
+<ul>
+<li>equivalent to putable bond
+<ul>
+<li>3 years putable bond with 2 years locking period</li>
+<li>2 year extendible bond having the option extending to 3 years</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>convertible bond: bondholder has  the option to convert bond into common stock</li>
+<li>bonds with estate put: heirs of an investor to put he bond back to the issuer upon death of the investor</li>
+</ul>
+<h6 id="valuation-by-binomial-interest-rate-tree">Valuation by Binomial Interest Rate Tree </h6>
+<p>example of callable bond:</p>
+<ul>
+<li>2-year 7% annual-pay bond, par value of 100 and callable at 100 at the end of year 1</li>
+<li>interest rate is 3% for year 1, and 8% or 5% for year 2</li>
+</ul>
+<div class="mermaid">graph LR
+  N0[t=0&lt;br&gt;3%&lt;br&gt;value 103.43] --&gt; N1[8%&lt;br&gt;value 99.07]
+  N0 --&gt; N2[5%&lt;br&gt;value 101.9&lt;br&gt;call value 100]
+  N1 --&gt; N21[value 107]
+  N1 --&gt; N22[value 107]
+  N2 --&gt; N22[value 107]
+  N2 --&gt; N23[value 107]
+</div><h6 id="effects-of-interest-rate-volatility">Effects of Interest Rate Volatility </h6>
+<p><span class="mathjax-exps">$R_u=R_de^{2\sigma\sqrt{t}}$</span></p>
+<h5 id="nav3.1.2">3.1.2. Option Adjusted Spread </h5>
+<h6 id="calculation">Calculation </h6>
+<p>yield spread that remove the influence of embedded option<br/>
+OAS = Z-spread - option value (%), actually option value (%) = Z-spread - OAS</p>
+<ul>
+<li>(?) callable bond: OAS &lt; Z-spread
+<ul>
+<li>(-) some nodes of the tree will have higher value, a higher yield must be used to fit the market price</li>
+</ul>
+</li>
+</ul>
+<p>If the market price of callable bond is 102.71, the OAS will be 50 bps</p>
+<div class="mermaid">graph LR
+  N0[t=0&lt;br&gt;3.5%&lt;br&gt;value 102.71] --&gt; N1[8.5%&lt;br&gt;value 98.62]
+  N0 --&gt; N2[5.5%&lt;br&gt;value 101.42&lt;br&gt;call value 100]
+  N1 --&gt; N21[value 107]
+  N1 --&gt; N22[value 107]
+  N2 --&gt; N22[value 107]
+  N2 --&gt; N23[value 107]
+</div><h6 id="application">Application </h6>
+<p>OAS does not reflect option risk, because option value (%) = Z-spread - OAS.<br/>
+When use issuer-specific as benchmark and assume little liquidity risk, actual OAS should be 0.</p>
+<h5 id="nav3.1.3">3.1.3. Interest Rate Risk </h5>
+<h6 id="effects-of-changes-in-the-shape-of-yield-curve">Effects of Changes in the Shape Of Yield Curve </h6>
+<p>embedded call option value increase as interest rate decline</p>
+<h6 id="effectvie-duration">Effectvie Duration </h6>
+<ul>
+<li>effective duration of both callable and putable bond</li>
+<li><span class="mathjax-exps">$r$</span> decrease, effective duration of callable bond will decrease</li>
+<li>effective duration of floating-rate bond <span class="mathjax-exps">$\approx$</span> time to next reset
+<ul>
+<li>at time to reset, par = price</li>
+</ul>
+</li>
+</ul>
+<h6 id="effective-convexity">Effective Convexity </h6>
+<p><span class="mathjax-exps">$\text{Effective Convexity}=\frac{PV_++PV_--2PV_0}{PV_0(\Delta \text{curve})^2}$</span><br/>
+straight bond exhibiits low positive convexity<br/>
+relation ship between bond price and interest rate is like <span class="mathjax-exps">$\frac{1}{1+x}$</span></p>
+<ul>
+<li>callable bond:
+<ul>
+<li>when call is in the money, the effective convexity turns negative</li>
+</ul>
+</li>
+<li>putable bond:
+<ul>
+<li>(?) when put is in the money, the effective convexity is higher than the straight bond</li>
+</ul>
+</li>
+</ul>
+<h6 id="one-sided-duration">One-Sided Duration </h6>
+<p><span class="mathjax-exps">$\text{up dur}=\frac{PV_+-PV_0}{PV_0\Delta y}$</span><br/>
+one-sided durations are better at capturing the interest rate sensitivity of callable bond or putable bond when ATM</p>
+<h6 id="key-rate-duration-1">Key Rate Duration </h6>
+<p>In the text book, key rate duration of this section refers to par duration.<br/>
+for option-free bond traded at par, maturity matched rate is the only rate affects the bond's value</p>
+<h4 id="nav3.2">3.2. Capped or Floored Floating-Rate Bond </h4>
+<p>Floating Rate Bonds: coupon rate = reference rate + quoted margin<br/>
+coupon payments are in arrears: based on previous period's reference rate</p>
+<h5 id="nav3.2.1">3.2.1. Definition and Application </h5>
+<p>capped floater: coupon rate would not exceed the cap<br/>
+value of capped floater = value of straight floater - value of embedded cap</p>
+<h5 id="nav3.2.2">3.2.2. Calculation of Floater with Cap or Floor </h5>
+<p>Binomial Interest Rate Tree</p>
+<h5 id="nav3.2.3">3.2.3. Ratchet Bond </h5>
+<p>棘轮债券\单边转动债券<br/>
+At the time of reset, the coupon can only decline; whenever a coupon is reset, the investor has the right to put the bonds back to the issuer at par.</p>
+<h4 id="nav3.3">3.3. Convertible Bond </h4>
+<p>Convertible Bond: bondholder has the right to exchange the bond for a specified number of common shares during conversion period (predetermined) and conversion price (predetermined).</p>
+<h5 id="nav3.3.1">3.3.1. Basic Concepts </h5>
+<ul>
+<li>conversion ratio: number of common shares</li>
+<li>conversion price = issue price / conversion ratio
+<ul>
+<li>typically conversion bonds are issued at par value</li>
+</ul>
+</li>
+<li>market conversion price: current convertible bond price / conversion ratio</li>
+<li>market conversion premium per share = market conversion price - market share price</li>
+<li>conversion value = market share price × conversion ratio</li>
+<li>straight value: value of bond if not convertible</li>
+<li>minimum value = max(conversion value, straight value)</li>
+</ul>
+<h5 id="nav3.3.2">3.3.2. Analysis </h5>
+<p>premium over straight value = convertible bond price / straight price - 1<br/>
+When stock price increases, convertible bond will underperform than buy the stock<br/>
+convertible bond = straight bond + call option on stock<br/>
+convertible bond = straight bond + put option on bond</p>
+<h3 id="nav4">4.  Credit Analysis Models </h3>
+<h4 id="nav4.1">4.1. Modeling Credit Risk </h4>
+<h5 id="nav4.1.1">4.1.1. Expected Loss </h5>
+<p>Expected loss = probability of default × loss given default<br/>
+loss given default + recovery rate = 1<br/>
+loss given default is compared to face value<br/>
+probability of default:</p>
+<ul>
+<li>actual PD</li>
+<li>risk-neutral PD</li>
+</ul>
+<p>risk-neutral PD is higher than actual PD because the observed spread also includes liquidity and tax considerations.<br/>
+hazard rate: default rate conditional on that no default happens before</p>
+<ul>
+<li>example: hazard rate = 10%
+<ul>
+<li>probability of default at the end of year 1, 2, 3: 10%, 9%, 8.1%</li>
+<li>probability of survivorship at the end of year 1, 2, 3: 90%, 81%, 72.9%</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav4.1.2">4.1.2. Credit Valuation Adjustment </h5>
+<p>Value of corporate bond = VND - CVA</p>
+<ul>
+<li>VND: value of bond assuming no default</li>
+<li>CVA: PV of expected loss</li>
+</ul>
+<h4 id="nav4.2">4.2. Valuing Risky Bonds </h4>
+<p>3-year 5% coupon bond trading at 104 per 100 face value:</p>
+<ul>
+<li>flat government bond yield curve 2.5%</li>
+<li>initial POD is 1.25%, called hazard rate</li>
+<li>default only occurs at year end</li>
+<li>par value is 100</li>
+<li>recovery rate is 40%</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Year</th>
+<th style="text-align:center">Exposure</th>
+<th style="text-align:center">Recovery</th>
+<th style="text-align:center">LGD</th>
+<th style="text-align:center">POD</th>
+<th style="text-align:center">POS</th>
+<th style="text-align:center">EL</th>
+<th style="text-align:center">DF</th>
+<th style="text-align:center">PVEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">109.819</td>
+<td style="text-align:center">43.9274</td>
+<td style="text-align:center">65.89</td>
+<td style="text-align:center">1.5%</td>
+<td style="text-align:center">98.50%</td>
+<td style="text-align:center">0.983</td>
+<td style="text-align:center">0.976</td>
+<td style="text-align:center">0.964</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">107.439</td>
+<td style="text-align:center">42.9756</td>
+<td style="text-align:center">64.46</td>
+<td style="text-align:center">1.48%</td>
+<td style="text-align:center">97.02%</td>
+<td style="text-align:center">0.952</td>
+<td style="text-align:center">0.952</td>
+<td style="text-align:center">0.907</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">105</td>
+<td style="text-align:center">42</td>
+<td style="text-align:center">63</td>
+<td style="text-align:center">1.46%</td>
+<td style="text-align:center">95.57%</td>
+<td style="text-align:center">0.917</td>
+<td style="text-align:center">0.929</td>
+<td style="text-align:center">0.851</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav4.3">4.3. Credit Spreads </h4>
+<p>corporate bond yield = benchmark yield (macroeconomic factors) + spread (liquidity taxation)<br/>
+credit term structure</p>
+<ul>
+<li>highly rated securities: flat or slightly upward sloping</li>
+<li>low credit quality: steeper upward sloping or downward-sloping curve.</li>
+</ul>
+<h4 id="nav4.4">4.4. Credit Analysis for Securitized Debt </h4>
+<p>ABS does not default, but they can lose value.</p>
+<ul>
+<li>Granularity of the portfolio: based on portfolio summary statistics</li>
+</ul>
+<p>Covered bond: a predetermined underlying collateral pool</p>
+<ul>
+<li>dual recourse: both the unsecured security and the collateral pool</li>
+</ul>
+<h4 id="nav4.5">4.5. Credit Models </h4>
+<h5 id="nav4.5.1">4.5.1. Credit Scores and Credit Ratings </h5>
+<ul>
+<li>credit scoring:
+<ul>
+<li>small business and individuals</li>
+<li>ordinal ranking, do not tell difference among different banks</li>
+<li>FICO (Fair Isaac Corporation)</li>
+</ul>
+</li>
+<li>credit ratings:
+<ul>
+<li>company, government (sovereign), ABS</li>
+</ul>
+</li>
+</ul>
+<p>BBB and above is investment grade, see <a href="https://rfmeng.github.io/pages/CFA%20I/CFA%20I%20-%20Fixed%20Income%20(2).html#nav2.3">credit ratings</a>.<br/>
+Issuer-pays model for compensating credit-rating agencies has a potential conflict of interest.<br/>
+Credit transition matrix: probability of rating transition</p>
+<h5 id="nav4.5.2">4.5.2. Structural Model </h5>
+<ul>
+<li>Option Analogy for Equity and Debt
+<ul>
+<li>company's equity equivalent to own a European call.</li>
+<li>company's debt equivalent to owning the company asset and sell a call.</li>
+<li>company's debt equivalent to owning the riskless bond and sell a put.</li>
+</ul>
+</li>
+<li>Features of Structural Model
+<ul>
+<li>PD is endogenous to this model, and not affected by the environment</li>
+<li>do not consider business cycle</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav4.5.3">4.5.3. Reduced Form Model </h5>
+<p><span class="mathjax-exps">$D_t = \mathbb{E}\frac{K}{\prod(1+r_t)}$</span></p>
+<ul>
+<li>risk-free interest rate is stochastic</li>
+<li>PD varies with the economy</li>
+<li>Recovery rate is stochastic</li>
+<li>default is exogenous</li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>model inputs could be historical estimation</li>
+<li>do not explain reason for default</li>
+</ul>
+<h3 id="nav5">5.  Credit Default Swaps </h3>
+<h4 id="nav5.1">5.1. Structure and Features of CDS </h4>
+<p>types of credit derivative:</p>
+<ul>
+<li>total return swap</li>
+<li>credit spread option</li>
+<li>credit-linked notes</li>
+<li>CDS</li>
+</ul>
+<p>CDS: credit protection buyer make cash payments to receive compensation from the default.</p>
+<ul>
+<li>protection/CDS buyer: short CDS (risk)</li>
+<li>trigger event
+<ul>
+<li>bankruptcy</li>
+<li>failure to pay even after a grace period</li>
+<li>restructure: creditor gives up some profit</li>
+</ul>
+</li>
+<li>physical settlement: delivery of the debt in exchagne for payment of notional amount</li>
+</ul>
+<h4 id="nav5.2">5.2. Types of CDS </h4>
+<ul>
+<li>Single-name CDS
+<ul>
+<li>one reference entity and one reference obligation</li>
+<li>designated instrument being covered: same or higher rank</li>
+<li>cheapest to deliver: if physical settlement, CDS buyer could buy the cheapest bond to deliver, this is equivalent to CDS seller compensated for the maximum amount</li>
+</ul>
+</li>
+<li>Index CDS (CDX)
+<ul>
+<li>notional principle: sum of protection on all borrowers</li>
+<li>higher correlation, higher CDS spread</li>
+</ul>
+</li>
+<li>Tranche CDS: buyer gets compensation only if cumulative default hits that layer</li>
+</ul>
+<h4 id="nav5.3">5.3. Pricing of CDS </h4>
+<p>CDS spread:</p>
+<ul>
+<li>standardization: fixed coupon 1% for investment grade and 5% for high yield company</li>
+<li>credit spread ≈ upfront premium / duration + fixed coupon</li>
+<li>profit ≈ change in spread (%) × duration of CDS</li>
+</ul>
+<p>CDS price in currency per 100 par ≈ 100 - upfront premium (%)</p>
+<ul>
+<li>upfront premium's direction is for protection buyer</li>
+<li>upfront premium could be negative if credit risk is low and the seller pays to the buyer</li>
+</ul>
+<h4 id="nav5.4">5.4. Application of CDS </h4>
+<ul>
+<li>managing credit exposure
+<ul>
+<li>adjustment of credit exposure</li>
+<li>naked CDS</li>
+<li>long/short trade: long CDS on one entity and short CDS on another one</li>
+<li>curve trade: long CDS of one maturity and short CDS on another one</li>
+</ul>
+</li>
+<li>valuation disparity
+<ul>
+<li>basis trades: borrow money, buy bond and CDS to arbitrage</li>
+<li>synthetic CDO (collateralized debt obligation): buy default-free securities and sell CDS</li>
+</ul>
+</li>
+</ul>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Fixed Income</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Financial Statement Analysis.html" rel="prev">< CFA II - Financial Statement Analysis</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Quantitative Methods.html" rel="next">CFA II - Quantitative Methods ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
