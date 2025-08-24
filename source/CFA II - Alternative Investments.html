@@ -1,0 +1,632 @@
+<!DOCTYPE html><html><head>
+      <title>CFA II - Alternative Investments</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="CFA II" tag="Alternative-Investments" createdate="2025-08-22" editdate="2025-08-24"></ndtag></p>
+<h3 id="--c1-p171---introduction-to-commodities-and-commodity-derivatives"><!-- C1 p171 --> Introduction to Commodities and Commodity Derivatives </h3>
+<h4 id="physical-commodity-markets">Physical Commodity Markets </h4>
+<h5 id="commodity-sectors">Commodity Sectors </h5>
+<p>considerations in fundamental analysis:</p>
+<ul>
+<li>production and inventory</li>
+<li>stock and flow method (存量和流量)</li>
+<li>timing: seasonality, shape of commodity futures curve</li>
+</ul>
+<p>Sectors:</p>
+<ul>
+<li>energy</li>
+<li>grains: corn, soy, wheat and rice</li>
+<li>metals: aluminum, nickel, zinc, lead, tin and iron</li>
+<li>precious metal: gold, silver and platinum</li>
+<li>softs (cash crops): cotton, cocoa, sugar and coffee</li>
+</ul>
+<h5 id="life-cycle-of-commodities">Life Cycle of Commodities </h5>
+<p>a short life cycle allows for rapid adjustment to outside events</p>
+<ul>
+<li>industrial/previous metals
+<ul>
+<li>most flexible life cycle</li>
+<li>difficult for suppliers to halt production</li>
+</ul>
+</li>
+<li>softs
+<ul>
+<li>robusta and arabica coffee</li>
+</ul>
+</li>
+</ul>
+<h5 id="valuation-of-commodities">Valuation of Commodities </h5>
+<ul>
+<li>tangible items has intrinsic economic value</li>
+<li>transportation and storage costs</li>
+<li>roll return (展期)</li>
+<li>physical delivery and cash settlement
+<ul>
+<li>some participants do not have the ability to physical delivery, so the price difference may exist</li>
+</ul>
+</li>
+</ul>
+<h4 id="commodities-futures-markets">Commodities Futures Markets </h4>
+<h5 id="futures-market-participants">Futures Market Participants </h5>
+<ul>
+<li>hedger</li>
+<li>informed investors</li>
+<li>liquidity providers</li>
+<li>arbitrageurs</li>
+<li>commodity exchanges</li>
+<li>commodity market analysts</li>
+<li>commodity regulators
+<ul>
+<li>International Organization of Securities Commissions (IOSCO)</li>
+</ul>
+</li>
+</ul>
+<h5 id="spot-and-futures-pricing">Spot and Futures Pricing </h5>
+<p>contango: future price higher</p>
+<ul>
+<li>word of contango comes from the continuation, the buyer pays contango fee to make delivery<br>
+backwardation: spot price higher<br>
+calendar spread (basis, 基差): spot price - futures price</li>
+</ul>
+<h5 id="theories-of-future-returns">Theories of Future Returns </h5>
+<ul>
+<li>Insurance theory
+<ul>
+<li>commodity producer short futures to remove price volatility, resulting in backwardation</li>
+<li>does not explain existence of contango</li>
+</ul>
+</li>
+<li>Hedging pressure hypothesis
+<ul>
+<li>both producers and consumers have hedging pressure</li>
+</ul>
+</li>
+<li>Theory of storage
+<ul>
+<li>future price = spot price + storage cost - convenience yield</li>
+<li>convenience yield: holding commodities acts as a supply buffer</li>
+</ul>
+</li>
+</ul>
+<h5 id="component-of-future-returns">Component of Future Returns </h5>
+<ul>
+<li>price return (spot yield)</li>
+<li>collateral return
+<ul>
+<li>yield from the margin (bond or cash equivalents)</li>
+</ul>
+</li>
+<li>roll return: (near price - far price) / near price * roll portion
+<ul>
+<li>eg. accounting caculation for commodity index</li>
+</ul>
+</li>
+<li>rebalance return: for commodity index</li>
+</ul>
+<h4 id="commodity-swaps">Commodity Swaps </h4>
+<h5 id="characteristics">Characteristics </h5>
+<ul>
+<li>risk management without the need to set up futures contract</li>
+<li>customization</li>
+</ul>
+<h5 id="classification">Classification </h5>
+<ul>
+<li>excess return swap: net change in prices of futures, actually a series of European options</li>
+<li>total return swap: all return</li>
+<li>basis swap: swap on spread</li>
+<li>variance swap</li>
+<li>volatility swap</li>
+</ul>
+<h4 id="commodity-indexes">Commodity Indexes </h4>
+<h5 id="primary-roles">Primary Roles </h5>
+<h5 id="characteristics-1">Characteristics </h5>
+<ul>
+<li>breadth of coverage (commodity sectors)</li>
+<li>weightings</li>
+<li>rolling methodology</li>
+<li>rebalancing</li>
+</ul>
+<h5 id="major-commodity-indexes">Major Commodity indexes </h5>
+<ul>
+<li>S&amp;P GSCI (S&amp;P Goldman Sachs Commodity Index): production value weighting</li>
+<li>Thomson Reuters/CoreCommodity CRB Index: fixed weights</li>
+</ul>
+<h5 id="rebalancing-frequency">Rebalancing Frequency </h5>
+<p>Frequent rebalancing can lead to underperformance in a trending market.<br>
+CRB and RICI is monthly rebalanced while others are annually rebalanced</p>
+<h3 id="--c2-p231---overview-of-types-of-real-estate-investment"><!-- C2 p231 --> Overview of Types of Real Estate Investment </h3>
+<h4 id="introduction">Introduction </h4>
+<h5 id="market-size">Market Size </h5>
+<p>Higher than total debt and equity securities</p>
+<h5 id="basic-forms">Basic Forms </h5>
+<p>core property: office building, shopping centers, industrial facilities, and for-rent residential (not excluding hotel because of greater importance of property operations)</p>
+<ul>
+<li>core real estate investment style: high quality, well leased (租约长) and low leverage</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Public</th>
+<th style="text-align:center">Private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Equity</td>
+<td style="text-align:center">REOCs (Real Estate Operating Companies, 地产公司), REITs, ETFs and index funds</td>
+<td style="text-align:center">direct investments ownership <br> indirect ownership (LP and commingled funds)</td>
+</tr>
+<tr>
+<td style="text-align:center">Debt</td>
+<td style="text-align:center">Mortgage REITs, MBS</td>
+<td style="text-align:center">Mortgages, private debt, bank debt</td>
+</tr>
+</tbody>
+</table>
+<h5 id="characteristics-2">Characteristics </h5>
+<ul>
+<li>unique asset and fixed location: heterogeneity</li>
+<li>management intensive</li>
+<li>high transaction costs</li>
+<li>less effeicient market</li>
+<li>depreciation</li>
+</ul>
+<h5 id="risk-factors">Risk Factors </h5>
+<ul>
+<li>business conditions</li>
+<li>obsolescence</li>
+<li>lease provisions: longer lease, more difficult to anticipate rising costs</li>
+</ul>
+<h4 id="economic-value-drivers">Economic Value Drivers </h4>
+<h5 id="economic-drivers">Economic Drivers </h5>
+<h5 id="role-of-real-estate">Role of Real Estate </h5>
+<ul>
+<li>inflation hedge: rents and prices tend to rise</li>
+<li>diversification</li>
+<li>tax benefits</li>
+<li>rent</li>
+</ul>
+<h5 id="risk-and-return">Risk and Return </h5>
+<p>bond &lt; core private real estate &lt; stock</p>
+<h5 id="classifications">Classifications </h5>
+<h5 id="investment-characteristic-by-property-type">Investment Characteristic by Property Type </h5>
+<p>types of leases:</p>
+<ul>
+<li>net lease: tenant pay operating expenses</li>
+<li>gross lease: owner pay operating expenses</li>
+<li>Triple-net leases (NNN leases): tenant pay expenses, property taxes and insurance costs</li>
+</ul>
+<p>sale-lease back<br>
+contractual increases in rents for long term leases<br>
+expense reimbursement: owner responsible for the operating expense for the first year, any increase in expenses above that amount is passed to tenant</p>
+<ul>
+<li>office:
+<ul>
+<li>upward-only rent review</li>
+</ul>
+</li>
+<li>industrial
+<ul>
+<li>demand depends on overall strength of the ecnomoy</li>
+<li>often net leases</li>
+</ul>
+</li>
+<li>retail
+<ul>
+<li>additional rent once sales reach a certain level</li>
+</ul>
+</li>
+<li>multi-family</li>
+</ul>
+<h4 id="considerations-and-due-diligence">Considerations and Due Diligence </h4>
+<h4 id="indexes">Indexes </h4>
+<ul>
+<li>Appraisal-Based Indices
+<ul>
+<li>lag transaction</li>
+<li>NCREIF Property Index (NPI), quarterly</li>
+<li>return = operating income - expenses + price change</li>
+</ul>
+</li>
+<li>Transaction-Based Indices
+<ul>
+<li>repeat sales index: repeat sales of the same property and regression</li>
+<li>hedonic (特征) index: regression on size, age, quatlity and construction</li>
+</ul>
+</li>
+<li>Real estate security indices
+<ul>
+<li>equity REITs or REOCs</li>
+</ul>
+</li>
+</ul>
+<h3 id="--c3-p275---investments-in-real-estate-through-publicly-traded-securities"><!-- C3 p275 --> Investments in Real Estate through Publicly Traded Securities </h3>
+<h4 id="types-of-publicly-traded-real-estate-securities">Types of Publicly Traded Real Estate Securities </h4>
+<h5 id="types">Types </h5>
+<ul>
+<li>REITs: tax-advantaged entities operate real estate property
+<ul>
+<li>usually with premium</li>
+</ul>
+</li>
+<li>MBS</li>
+<li>REOCs</li>
+</ul>
+<h5 id="-reit-structures">! REIT Structures </h5>
+<ul>
+<li>distribute 90%-100% of taxable earnings</li>
+<li>invest at least 75% of their assets in real estate</li>
+<li>derive at least 75% of income from rental or interest mortgages</li>
+<li>at least 100 shareholders and no fewer than 5 can own more than 50% of the shares (the five-or-fewer rule, 6 is allowed)</li>
+</ul>
+<p>fully integrated REITs have fewer conflicts than REITs that are externally advised or managed<br>
+shareholder of REIT dividends:</p>
+<ul>
+<li>portion of rent is classified as ordinary income</li>
+<li>REIT distributions of capital gains taxed at capital gain tax rate</li>
+<li>foreign invesotrs are subject to the host country's withholding (预缴税款) tax</li>
+</ul>
+<h5 id="market-size-1">Market Size </h5>
+<p>In north America, REITs takes 95% of total market, against Non-REITs and REOCs.</p>
+<h5 id="benefits-and-disadvantages">Benefits and Disadvantages </h5>
+<p>disadvantages:</p>
+<ul>
+<li>lack of retained earnings</li>
+<li>constrained in the types of assets they own</li>
+</ul>
+<h4 id="net-asset-value-approach">Net Asset Value Approach </h4>
+<h5 id="accounting-for-investment-properties">Accounting for Investment Properties </h5>
+<p>IFRS: cost model or fair value model<br>
+GAAP: cost model</p>
+<h5 id="net-asset-value-per-share">Net Asset Value per Share </h5>
+<p>capitalizing the rental streams (NOI) should be adjusted to reflect a full year's rent<br>
+estimated operating value = NOI / cap rate<br>
+intangible assets (goodwill, deferred tax asset and liabilities) are excluded<br>
+application:</p>
+<ul>
+<li>discount rate used by private owner could be different from cap rate</li>
+<li>ignoring intangible assets</li>
+<li>NAV estimates could be subjective when market is illiquid or when REITs own hundreds of properties (hard to find true cap rate)</li>
+<li>if REIT is performing well, REITs and REOCs should trade at premiums</li>
+<li>stock has liquidity and thus has lower return</li>
+</ul>
+<h4 id="relative-value-approach">Relative Value Approach </h4>
+<h5 id="relative-value-approach-to-value-reit-stocks">Relative Value Approach to Value REIT Stocks </h5>
+<p>P/FFO, P/AFFO, EV/EBITDA</p>
+<h5 id="ffo-and-affo">FFO and AFFO </h5>
+<ul>
+<li>Funds from Operations (FFO):
+<ul>
+<li>FFO = net income - net gain from sales of properties + depreciation and amortization</li>
+</ul>
+</li>
+<li>Adjusted Funds from Operations (AFFO):
+<ul>
+<li>AFFO = FFO - noncash rent adjustment - recurring maintainance capital expenditures</li>
+<li>also Funds Available for Distribution (FAD) or Cash Available for Distribution (CAD)</li>
+</ul>
+</li>
+</ul>
+<h5 id="pffo-and-paffo">P/FFO and P/AFFO </h5>
+<p>drawbacks:</p>
+<ul>
+<li>land parcels and empty buildings may not have FFO but have value</li>
+</ul>
+<h4 id="reit-mini-case-study">REIT Mini Case Study </h4>
+<h4 id="private-vs-public">Private vs. Public </h4>
+<ul>
+<li>private real estate (direct ownership):
+<ul>
+<li>potential inflation hedge</li>
+<li>illiquidity premium</li>
+<li>tax benefits (accelerated depreciation)</li>
+</ul>
+</li>
+<li>public real estate:
+<ul>
+<li>track real estate fundamentals over the long term</li>
+<li>potential infaltion hedge</li>
+<li>equity market correlation is high in short term</li>
+</ul>
+</li>
+</ul>
+<h3 id="--c4-p319---hedge-fund-strategies"><!-- C4 p319 --> Hedge Fund Strategies </h3>
+<h4 id="introduction-and-classification">Introduction and Classification </h4>
+<h5 id="introduction-1">Introduction </h5>
+<ul>
+<li>Pros:
+<ul>
+<li>a key way to access the best investment talent</li>
+<li>alpha</li>
+</ul>
+</li>
+<li>Cons:
+<ul>
+<li>high fees</li>
+<li>complex memorandum documentation</li>
+<li>lack of transparency</li>
+</ul>
+</li>
+</ul>
+<p>liquid alternatives: mutual fund, closed-end fund (封闭式基金), ETF</p>
+<ul>
+<li>liquid altternatives significantly underperform similar strategy hedge funds</li>
+</ul>
+<h5 id="classification-1">Classification </h5>
+<ul>
+<li>Equity Strategies
+<ul>
+<li>long/short equity: mostly long</li>
+<li>dedicated short and short-biased: mostly short</li>
+<li>equity market neutral</li>
+</ul>
+</li>
+<li>Event-Driven Strategies
+<ul>
+<li>merger arbitrage</li>
+<li>distressed securities</li>
+</ul>
+</li>
+<li>Relative Value Strategies: contains all long and short strategy
+<ul>
+<li>fixed income arbitrage</li>
+<li>convertible bond arbitrage</li>
+</ul>
+</li>
+<li>Opportunistic Strategies: top-down approach, macro-oriented
+<ul>
+<li>global macro</li>
+<li>managed futures</li>
+</ul>
+</li>
+<li>Specialist Strategies
+<ul>
+<li>volatility strategies</li>
+<li>reinsurance strategies</li>
+</ul>
+</li>
+<li>Multi-Manager Strategies
+<ul>
+<li>multi-strategy</li>
+<li>fund-of-fund</li>
+</ul>
+</li>
+</ul>
+<h4 id="strategies">Strategies </h4>
+<h5 id="longshort-strategies">Long/Short Strategies </h5>
+<p>long the undervalued and short the overvalued, also relative value strategy<br>
+goal is to find more sources of idiosyncratic alpha<br>
+return profile: roughly long-only approach return but with much lower std<br>
+leverage usage: more market-neutral, more levered</p>
+<ul>
+<li>lever: gross exposure / principal</li>
+</ul>
+<p>types of fund managers:</p>
+<ul>
+<li>Specialist L/S: fundamental analysis, focus on specific sectors</li>
+<li>Generalist L/S: less sufficient alpha relative to their fees</li>
+</ul>
+<h5 id="dedicated-short-selling-and-short-biased">Dedicated Short Selling and Short-Biased </h5>
+<p>dedicated short selling: short only<br>
+short-biased: short stock and long index<br>
+uptick rule: when a stock decreaes by 10%, a short order can only be filled at a price higher than the last price.<br>
+risk profile:</p>
+<ul>
+<li>typically handled in a limited partnership</li>
+<li>low leverage</li>
+</ul>
+<p>implementation:</p>
+<ul>
+<li>monitoring CDS spread, put options</li>
+<li>protective put: holding stock and long put</li>
+</ul>
+<h5 id="equity-market-neutral">Equity Market Neutral </h5>
+<p>examples:</p>
+<ul>
+<li>pairs trading</li>
+<li>stub trading
+<ul>
+<li>A owns 90% and 70% of B and C, A overvalued, B and C undervalued, thus short 1 A long 0.9 B and 0.7 C</li>
+</ul>
+</li>
+<li>multi-class trading: buy A share sell B share (non-voting)</li>
+</ul>
+<p>risk profile:</p>
+<ul>
+<li>prefered replacements for fixed income managers</li>
+<li>more useful during non-tranding or declining markets</li>
+<li>modest return and high level of diversification</li>
+<li>often seek for high leverage because of beta risks are hedged away</li>
+</ul>
+<h5 id="merger-arbitrager">Merger Arbitrager </h5>
+<p>types:</p>
+<ul>
+<li>soft-catalyst: anticipation of an event to occur</li>
+<li>hard-catalyst: in reaction to announced event where security prices have not fully converged</li>
+</ul>
+<p>investment characteristics:</p>
+<ul>
+<li>for cash-for-stock acquisition, buy the target company</li>
+<li>for stock-for-stock acquisition, buy the target and sell the acquiring company</li>
+<li>usually target company stock price increases and acquirer stock price decreases</li>
+<li>riskless bond and a short put (on acquisition)</li>
+<li>owning an additional call if another acquirer makes a higher bid</li>
+</ul>
+<p>risk profile:</p>
+<ul>
+<li>deals more like to fail in market stress periods</li>
+<li>cross-border merger and acquisition have higher risk</li>
+<li>low return and mid std</li>
+<li>high leverage</li>
+<li>CDS could be sold on the target company (if acquirer has superior credit), or bought on target company as hedge</li>
+</ul>
+<h5 id="distressed-securities">Distressed Securities </h5>
+<p>capital structure arbitrage: long securities expecting to receive acceptable recoveries<br>
+risk profile:</p>
+<ul>
+<li>higher return and more variability</li>
+<li>distressed securities are illiquid, pricing may mark to model with return smoothing</li>
+<li>return tend to be lumpy</li>
+<li>moderate or low leverage because of higher volatility</li>
+</ul>
+<p>Implementation:</p>
+<ul>
+<li>liquidation situation
+<ul>
+<li>buy bond at a discount and short stock: expecting fully payment of principal</li>
+</ul>
+</li>
+<li>reorganization situation</li>
+<li>fulcrum (支点) securities: manager buy debt and swap for new shares (existing debt and equity are cancelled) if the company's operating prospects are still good</li>
+</ul>
+<h5 id="fixed-income-arbitrage">Fixed-Income Arbitrage </h5>
+<p>immunize interest rate risk by taking duration-neutral positions<br>
+risk profile:</p>
+<ul>
+<li>high leverage</li>
+</ul>
+<p>implementation:</p>
+<ul>
+<li>yield curve trade: long and short at different points on the yield curve</li>
+<li>carry trade: long a higher yielding security and short a lower yielding</li>
+</ul>
+<h5 id="convertible-bond-arbitrage">Convertible Bond Arbitrage </h5>
+<p>the embedded options tend to trade at low volatility, the key is to extract cheap embedded optionality<br>
+risk profile:</p>
+<ul>
+<li>high leverage</li>
+<li>Convertible Arbitrage Indices</li>
+</ul>
+<h5 id="global-macro">Global Macro </h5>
+<p>multiple asset classes and derivatives, to predict the trend<br>
+top-down and fundamental analysis</p>
+<h5 id="managed-futures">Managed Futures </h5>
+<p>natural positive skewness: profit time low but high profit each time<br>
+implementation:</p>
+<ul>
+<li>time-series momentum: net long or net short</li>
+<li>cross-sectional momentum: market-neutral position</li>
+</ul>
+<h5 id="volatility-trading">Volatility Trading </h5>
+<p>most liquid volatility contracts: short-term VIX<br>
+risk profile:</p>
+<ul>
+<li>source of alpha</li>
+<li>OTC is structured under ISDA documentation</li>
+</ul>
+<h5 id="reinsurancelife-settlements">Reinsurance/Life Settlements </h5>
+<p>life settlements:</p>
+<ul>
+<li>view of life expectancy, uncorrelated alpha</li>
+<li>designated insured persion is likely to die earlier</li>
+<li>buy the insurance from the policyholder, pay the premium and expect to receive death benefit</li>
+</ul>
+<p>reinsurance:</p>
+<ul>
+<li>buy from secondary market</li>
+<li>diversity in terms of geographic exposure</li>
+<li>sufficient buffer in terms of loan loss reserve (insurance company's reserve to make a payment firstly and then hedge fund)</li>
+<li>high premium</li>
+</ul>
+<h5 id="fund-of-funds">Fund-of-Funds </h5>
+<ul>
+<li>pros:
+<ul>
+<li>currency hedging capabilities</li>
+<li>economies of sacle</li>
+</ul>
+</li>
+<li>cons:
+<ul>
+<li>double layer of fees</li>
+<li>inability to net performance fees on individual managers</li>
+<li>additional principal agent relationship</li>
+<li>lack of transparency into individual hedge fund</li>
+</ul>
+</li>
+</ul>
+<p>characteristics:</p>
+<ul>
+<li>lower investment threshold</li>
+<li>endowments, foundations and pension plans turn to FOFs because of regulation</li>
+<li>commercial bank loans</li>
+<li>extract fee break, liquidity term, added transparency provisions from the underlying hedge fund</li>
+</ul>
+<h5 id="multi-strategy-hedge-funds">Multi-Strategy Hedge Funds </h5>
+<ul>
+<li>due on the total performance after netting</li>
+<li>"Pass-through" fee model: costs of paying individual teams (compared to FoFs) and incentive fee</li>
+<li>outperformed FoFs, more volatile</li>
+<li>higher leverage</li>
+</ul>
+<p>example:</p>
+<ul>
+<li>A charges 1% management fee and 10% incentive fee, invests 50% and 50% into two funds B and C, each charging a 2% management fee and a 20% incentive fee (net of management fee)<br>
+B earns gross return 20% and C loses 5%
+<ul>
+<li>for B: incentive fee = 20% × (20%-2%) = 3.6%, net of fees return = 14.4%</li>
+<li>for C: net of fees return = -7%</li>
+<li>for A: gross return = 50% × 14.4% - 50% × 7% = 3.7%, management fee = 10% × (3.7% - 1%) = 0.27%, net of fees return = 2.43%</li>
+</ul>
+</li>
+</ul>
+<h4 id="-analysis-and-portfolio-construction">! Analysis and Portfolio Construction </h4>
+<h5 id="-analysis">! Analysis </h5>
+<h6 id="conditional-factor-risk-model">Conditional Factor Risk Model </h6>
+<p>multi-factor model, using a conditional linear factor model<br>
+return = alpha + beta × factor + D × beta × factor</p>
+<ul>
+<li>D: dummy variable that equals 1 during financial crisis periods</li>
+</ul>
+<p>risk factors:</p>
+<ul>
+<li>equity risk: S&amp;P 500</li>
+<li>Interest rate risk</li>
+<li>currency risk</li>
+<li>commodity risk</li>
+<li>credit risk</li>
+<li>volatility risk: VIX</li>
+</ul>
+<p>for highly correlated risk factors, keep the one with higher adjusted <span class="mathjax-exps">$R^2$</span></p>
+<h5 id="portfolio-construction">Portfolio Construction </h5>
+<p>When added to a traditional 60%/40% (60% equity and 40% bond), a 20% allocation to the US small cap L/S equity strategy generates the highest mean return and decreases standard deviation.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
