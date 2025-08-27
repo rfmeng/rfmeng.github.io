@@ -1,0 +1,417 @@
+<!DOCTYPE html><html><head>
+      <title>CFA II - Portfolio Management</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\rfmen\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="CFA II" tag="Portfolio" createdate="2025-08-24" editdate="2025-08-27"></ndtag></p>
+<h3 id="--c1-p423---exchange-traded-funds-mechanics-and-applications"><!-- C1 p423 --> Exchange-Traded Funds: Mechanics and Applications </h3>
+<h4 id="mechanics-of-etfs">Mechanics of ETFs </h4>
+<ul>
+<li>open-end fund: flexible fund shares</li>
+<li>closed-end fund: fixed fund shares</li>
+</ul>
+<p>ETF is an open-end fund</p>
+<ul>
+<li>primary market: created or redeemed in kind (实物申购赎回), in a shares-for-shares swap
+<ul>
+<li>between authorized participants (APs) and ETF issuer</li>
+<li>AP: brokers/dealers</li>
+<li>creation units: usually 50,000 shares</li>
+</ul>
+</li>
+<li>secondary market: AP as broker or dealer
+<ul>
+<li>US: central settlement</li>
+<li>European: fragmented settlement and wider spread</li>
+</ul>
+</li>
+</ul>
+<p>Net Asset Value (NAV) ≈ price</p>
+<h4 id="costs-and-risks-of-etfs">Costs and Risks of ETFs </h4>
+<h5 id="trading-costs">Trading Costs </h5>
+<ul>
+<li>bid ask spread</li>
+<li>ETF premium: (price - NAV) / NAV
+<ul>
+<li>iNAV (indicated NAV, intraday fair value)</li>
+<li>time differences, NAV calculated on underlying securities' last price</li>
+<li>liquidity difference between ETF and underlying securities</li>
+</ul>
+</li>
+</ul>
+<h5 id="tracking-error">Tracking Error </h5>
+<p>index tracking ETFs dominate ETF markets<br>
+tracking error: standard deviation of differences of return<br>
+sources:</p>
+<ul>
+<li>fees and expenses</li>
+<li>representative sampling and optimization: some underlying is illiquid</li>
+<li>depositary receipts and other ETFs: depositary receipts may have better liquidity and thus difference of price</li>
+<li>index change</li>
+<li>fund accounting practices: different valuation between index and ETF (such as suspended stock)</li>
+<li>regulatory and tax</li>
+<li>asset manager operations
+<ul>
+<li>security lending or foreign dividend recapture could enchance ETFs income, but not accounted in the index</li>
+</ul>
+</li>
+</ul>
+<h5 id="tax-issues">Tax Issues </h5>
+<p>tax fairness:</p>
+<ul>
+<li>mutual fund: capital gain charge is distributed to remaining shareholders, if someone sells</li>
+<li>ETFs does not occur tax on redemption in kind</li>
+</ul>
+<p>tax efficiency: ETF manager choose shares with the largest unrealized capital gains for redemption, reducing potential capital in the fund<br>
+some ETFs may have share classes that reinvest dividends</p>
+<h5 id="other-costs-and-risks-of-owning-etfs">Other Costs and Risks of Owning ETFs </h5>
+<p>ETFs charge lower fees than mutual fund:</p>
+<ul>
+<li>less research cost</li>
+<li>less sales cost</li>
+</ul>
+<p>round-trip trading cost = 2 × (one-way commission + 0.5 × bid ask spread)<br>
+Risk of ETFs:</p>
+<ul>
+<li>settlement risk: underlying derivatives</li>
+<li>security lending: low counterparty default risk</li>
+</ul>
+<h4 id="etfs-in-portfolio-management">ETFs in Portfolio Management </h4>
+<ul>
+<li>portfolio liquidity management: ETFs can be used to invest excess cash quickly</li>
+<li>portfolio rebalancing</li>
+<li>portfolio completion strategies</li>
+<li>transition management: maintain exposure in the absence of manager</li>
+<li>active and factor investing</li>
+</ul>
+<p>for large asset owners:</p>
+<ul>
+<li>separately managed account (SMA): lower fees</li>
+<li>ETF holdings is disclosed</li>
+</ul>
+<h3 id="--c2-p471---using-multifactor-models"><!-- C2 p471 --> Using Multifactor Models </h3>
+<h4 id="arbitrage-pricing-theory">Arbitrage Pricing Theory </h4>
+<h5 id="capm">CAPM </h5>
+<p>SML (security market line): relationship between return and beta</p>
+<h5 id="arbitrage-pricing-model">Arbitrage Pricing Model </h5>
+<p><span class="mathjax-exps">$E(R_p)=R_f+\sum \beta_i\lambda_i$</span></p>
+<ul>
+<li><span class="mathjax-exps">$\beta_i$</span>: sensitity of portfolio to factor i</li>
+<li><span class="mathjax-exps">$\lambda_i$</span>: expected/factor risk premium</li>
+<li>pure factor portfolio: portfolio only contains one factor</li>
+<li>lambda is also risk premium for a pure factor portfolio</li>
+</ul>
+<p>assumptions:</p>
+<ul>
+<li>a factor model describes asset return</li>
+<li>investors can diversify and eliminate asset-specific risk</li>
+<li>no arbitrage opportunities exist among well-diversified portfolios</li>
+</ul>
+<h5 id="arbitrage-opportunity">Arbitrage Opportunity </h5>
+<p>Jensen's alpha: <span class="mathjax-exps">$R_p-E(R_p)=R_p-[R_f+\beta(R_M-R_f)]$</span></p>
+<h4 id="multifactor-models">Multifactor Models </h4>
+<h5 id="structure-of-multifactor-models">Structure of Multifactor Models </h5>
+<ul>
+<li>Macroeconomic Factor Model: <span class="mathjax-exps">$R_p=E(R_p)+\sum\beta_iF_i+\varepsilon_p$</span>
+<ul>
+<li><span class="mathjax-exps">$F_i$</span>: surprise (unexpected change) in macro variables</li>
+</ul>
+</li>
+<li>Fundamental Factor Model: <span class="mathjax-exps">$R_p=a_p+\sum\beta_iF_i+\varepsilon_p$</span>
+<ul>
+<li><span class="mathjax-exps">$F_i$</span>: return associated with factor i</li>
+<li><span class="mathjax-exps">$\beta_i=\frac{X_{ki}-\overline{X_{k}}}{\sigma(X_k)}$</span>: standardized beta of attributes k of the asset i</li>
+<li>fundamental factor: P/B ratio, P/E ratio, explaining cross-sectional differences</li>
+</ul>
+</li>
+<li>Statistical Factor Model
+<ul>
+<li>less assumptions, lower interpretability</li>
+</ul>
+</li>
+</ul>
+<h5 id="comparison-between-models">Comparison between Models </h5>
+<h5 id="applications-of-multifactor-models">Applications of Multifactor Models </h5>
+<h6 id="return-attribution">Return Attribution </h6>
+<p>active return relative to benchmark: <span class="mathjax-exps">$R_P-R_B$</span><br>
+active return = factor return + security selection return</p>
+<ul>
+<li>return from factor tilts: reflect skill in asset class selection</li>
+<li>return from security selection: reflect skill in individual asset selection</li>
+</ul>
+<p>factor return = <span class="mathjax-exps">$\sum(\beta_i^P-\beta_i^B)F_i$</span></p>
+<h6 id="risk-attribution">Risk Attribution </h6>
+<p>active risk: <span class="mathjax-exps">$\sigma(R_P-R_B)$</span><br>
+information ratio: <span class="mathjax-exps">$\frac{R_P-R_B}{\sigma(R_P-R_B)}$</span><br>
+active risk squared = active factor risk + active specific risk</p>
+<h6 id="portfolio-construction-and-decisions">Portfolio Construction and Decisions </h6>
+<p>Carhar Model: <span class="mathjax-exps">$E(R_p)=R_f+\beta_1RMRF+\beta_2SMB+\beta_3HML+\beta_4WML$</span></p>
+<ul>
+<li>WML: winner minus loser, momentum factor</li>
+</ul>
+<h3 id="--c3-p519---measuring-and-managing-market-risk"><!-- C3 p519 --> Measuring and Managing Market Risk </h3>
+<h4 id="-value-at-risk">! Value at Risk </h4>
+<h5 id="definition">Definition </h5>
+<p>A traditional stock and bond portfolio focus on monthly or quarterly VaR</p>
+<h5 id="methods-to-estimate-var">Methods to Estimate VaR </h5>
+<ul>
+<li>Parametric (Variance-Covariance Method)
+<ul>
+<li><span class="mathjax-exps">$VaR=E(R)-z_\alpha\sigma$</span></li>
+</ul>
+</li>
+<li>Historical Simulation Method
+<ul>
+<li>if data in the lookback period is more volatile, VaR will be over-estimate</li>
+</ul>
+</li>
+<li>Monte Carlo Simulation Method</li>
+</ul>
+<h5 id="extensions-of-var">Extensions of VaR </h5>
+<ul>
+<li>Conditional VaR (CVaR)</li>
+<li>Incremental VaR (IVaR): VaR change if portfolio size change</li>
+<li>Marginal VaR (MVaR): change of VaR with small change of a security position</li>
+<li>relative VaR: ex ante tracking estimate on active return</li>
+</ul>
+<h4 id="other-risk-measures">Other Risk Measures </h4>
+<ul>
+<li>Sensitivity Risk Measures: partial derivative</li>
+<li>Scenario Risk Measures: scenario analysis
+<ul>
+<li>historical/hypothetical</li>
+</ul>
+</li>
+</ul>
+<h4 id="choices-of-risk-measures">Choices of Risk Measures </h4>
+<ul>
+<li>banks:
+<ul>
+<li>liquidity gap</li>
+<li>economic capital</li>
+<li>VaR</li>
+<li>leverage risk measures</li>
+</ul>
+</li>
+<li>asset manager
+<ul>
+<li>redemption risk</li>
+</ul>
+</li>
+<li>hedge fund
+<ul>
+<li>drawdown</li>
+</ul>
+</li>
+<li>pension fund
+<ul>
+<li>interest rate risk</li>
+<li>surplus at risk</li>
+</ul>
+</li>
+</ul>
+<h4 id="managing-market-risk">Managing Market Risk </h4>
+<ul>
+<li>risk budgeting</li>
+<li>capital allocation</li>
+<li>position limits</li>
+<li>scenario limits</li>
+<li>stop-loss limits</li>
+</ul>
+<h3 id="--c4-p589---backtesting-and-simulation"><!-- C4 p589 --> Backtesting and Simulation </h3>
+<h4 id="backtesting">Backtesting </h4>
+<p>sortino ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\sigma_-}$</span><br>
+survivorship bias is actually a type of look-ahead bias.<br>
+data snooping: selects data until a significant result is found, also called "p-hacking"</p>
+<h4 id="simulation">Simulation </h4>
+<p>historical simulation: select returns at random from history without time order</p>
+<h3 id="--c5-p17---economics-and-investment-markets"><!-- C5 p17 --> Economics and Investment Markets </h3>
+<h4 id="framework-for-analysis">Framework for Analysis </h4>
+<p>discounted cash flow model with suitable discount rate</p>
+<h4 id="discount-rate">Discount Rate </h4>
+<h5 id="real-default-free-rate-of-return">Real Default-Free Rate of Return </h5>
+<p>Inter-temporal rate of substituion (ITRS): <span class="mathjax-exps">$m_t=\frac{U_t}{U_0}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$U_t$</span>: marginal utility of future consumption</li>
+<li><span class="mathjax-exps">$U_0$</span>: marginal utility of current consumption</li>
+<li><span class="mathjax-exps">$m_t&lt;1$</span>, <span class="mathjax-exps">$m_t$</span> is lower if economy state is better</li>
+<li>zero coupon, inflation indexed, risk free bond with par 1, the price should be <span class="mathjax-exps">$m_t$</span>.</li>
+<li><span class="mathjax-exps">$l=\frac{1}{m_t}-1$</span><br>
+real risk free rate is positively related to GDP.<br>
+real risk free rate is positively related to volatility of growth rate (marginal utility of expected payoff is lower with higher uncertainty).</li>
+</ul>
+<h5 id="infaltion-premium">Infaltion Premium </h5>
+<p>short-term nominal default ree interest rate (T-bills): <span class="mathjax-exps">$1+l+\theta$</span>, <span class="mathjax-exps">$\theta$</span> is expected inflation rate<br>
+for long term: <span class="mathjax-exps">$1+l+\theta+\pi$</span>, <span class="mathjax-exps">$\pi$</span> is risk premium for uncertainty about actual inflation<br>
+Break-even Inflation Rate (BEI): <span class="mathjax-exps">$\text{BEI}=\theta+\pi$</span></p>
+<p>Taylor Rule: targeted short term rate: <span class="mathjax-exps">$R=(R_\text{neutral}+\theta)+\frac{1}{2}(\theta-\theta^*)+\frac{1}{2}(Y-Y^*)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$R_\text{neutral}+\theta$</span>: neutral nominal rate</li>
+<li><span class="mathjax-exps">$\theta$</span> current inflation and <span class="mathjax-exps">$\theta^*$</span> target inflation</li>
+<li><span class="mathjax-exps">$Y$</span> current growth of real GDP and <span class="mathjax-exps">$Y^*$</span> growth of real GDP</li>
+</ul>
+<p>slope of yield curve:</p>
+<ul>
+<li>during recession, slope of yield curve will increase
+<ul>
+<li>investor expect higher future GDP grwoth and higher long-term rates</li>
+<li>central bank tends to lower the policy rate</li>
+</ul>
+</li>
+</ul>
+<h5 id="credit-premium">Credit Premium </h5>
+<p>credit spread: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma$</span></p>
+<h5 id="equity-risk-premium">Equity Risk Premium </h5>
+<p>equity risk premium: <span class="mathjax-exps">$1+l+\theta+\pi+\lambda$</span><br>
+equity risk premium relative to credit risky bonds: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma+\kappa$</span><br>
+consumption-hedging property: high payoff during economic downturns</p>
+<ul>
+<li>consumption-hedging property for equities are poor, thus demanding high risk premium</li>
+</ul>
+<p>investment strategy:</p>
+<ul>
+<li>value strategy performs well during recession</li>
+<li>growth stategy performs well during expansion</li>
+<li>small capital size stock tends to underperform large-cap stocks</li>
+<li>rotation strategy</li>
+</ul>
+<h5 id="liquidity-premium">Liquidity Premium </h5>
+<p>liquidity premium: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma+\kappa+\phi$</span></p>
+<h3 id="--c6-p103---analysis-of-active-portfolio-management"><!-- C6 p103 --> Analysis of Active Portfolio Management </h3>
+<h4 id="value-added-by-active-management">Value Added by Active Management </h4>
+<p>value added (active return): <span class="mathjax-exps">$R_A = R_P-R_B$</span></p>
+<h5 id="active-weights">Active Weights </h5>
+<p><span class="mathjax-exps">$R_A = \sum \Delta w_iR_i=\sum w_i(R_i-R_B)$</span></p>
+<h5 id="decomposition-of-value-added">Decomposition of Value Added </h5>
+<p><span class="mathjax-exps">$R_A = \sum w_i^PR_i^P - \sum w_i^BR_i^B=\sum(w_i^P-w_i^B)R_i^B+\sum w_i^P(R_i^P-R_i^B)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$\sum(w_i^P-w_i^B)R_i^B$</span>: active asset allocation</li>
+<li><span class="mathjax-exps">$\sum w_i^P(R_i^P-R_i^B)$</span>: security selection</li>
+</ul>
+<h4 id="information-ratio">Information Ratio </h4>
+<h5 id="sharpe-ratio-and-information-ratio">Sharpe Ratio and Information Ratio </h5>
+<p>Treynor Ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\beta_p}$</span><br>
+<span class="mathjax-exps">$IR_P=\frac{R_A}{\sigma_A}$</span></p>
+<ul>
+<li>not affected by taking positions in benchmark portfolio [ <span class="mathjax-exps">$tR_p+(1-t)R_B$</span> ]</li>
+<li>not affected by active weight [ <span class="mathjax-exps">$t(w_i^P-w_i^B)+w_i^B$</span> ]</li>
+<li>affected by cash or use of leverage</li>
+</ul>
+<h5 id="construct-optimal-portfolio">Construct Optimal Portfolio </h5>
+<p>The optimal portfolio will be contructed if <span class="mathjax-exps">$SR_p^2=SR_B^2+IR^2$</span></p>
+<ul>
+<li>higher IR, higher SR</li>
+</ul>
+<p>for unconstrained portfolios, the level of active risk that leads to the optimal result <span class="mathjax-exps">$\sigma_A^*=\frac{IR}{SR_B}\sigma_B$</span></p>
+<h4 id="the-fundamental-law">The Fundamental Law </h4>
+<h5 id="the-correlation-triangle">The Correlation Triangle </h5>
+<div class="mermaid">graph
+    A[Forcasted Active Return] &lt;--&gt;|Signal Quality IC| B[Realized Active Return]
+    A &lt;--&gt;|Transfer Coefficient| C[Active Weights ]
+    B&lt;--&gt;|Value Added| C
+</div><p>Signal quality is measured by forecasted active return <span class="mathjax-exps">$\mu_i$</span> and realized active return <span class="mathjax-exps">$R_i^A$</span>: <span class="mathjax-exps">$IC$</span><br>
+correlation between active weights and forecasted active return called TC</p>
+<ul>
+<li>measures the degree to which investor's forecasts are translated into active weights</li>
+</ul>
+<h5 id="basic-and-full-fundamental-law">Basic and Full Fundamental Law </h5>
+<p>Breadth (BR): number of independent active decisions per year</p>
+<ul>
+<li>
+<p>indicator of how much efforts the manager has put into</p>
+</li>
+<li>
+<p>transaction number = f(TC,BR)</p>
+</li>
+<li>
+<p>basic fundamental law: <span class="mathjax-exps">$IR = IC \times\sqrt{BR}$</span></p>
+</li>
+<li>
+<p>full fundamental law: <span class="mathjax-exps">$IR = TC\times IC \times\sqrt{BR}$</span></p>
+</li>
+</ul>
+<p>The optimal portfolio will be contructed if <span class="mathjax-exps">$SR_p^2=SR_B^2+(TC\times IR)^2$</span><br>
+for unconstrained portfolios, the level of active risk that leads to the optimal result <span class="mathjax-exps">$\sigma_A^*=\frac{TC\times IR}{SR_B}\sigma_B$</span></p>
+<h5 id="application-of-the-fundamental-law">Application of the Fundamental Law </h5>
+<p>IC = 2 × (correct rate) - 1<br>
+<span class="mathjax-exps">$E(R_A|IC_{\text{realized}})=TC\times IC_{\text{realized}}\times\sqrt{BR}\times \sigma_A$</span><br>
+<span class="mathjax-exps">$R_A =E(R_A|IC_{\text{realized}})+\varepsilon$</span><br>
+active return variance could be decomposited into two parts:</p>
+<ul>
+<li>varaition due to realized IC (TC^2)</li>
+<li>variation due to constraint-included noise (1 - TC^2)</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Portfolio Management - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Exchange-Traded Funds: Mechanics and Applications </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Mechanics of ETFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Costs and Risks of ETFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">ETFs in Portfolio Management </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Using Multifactor Models </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Arbitrage Pricing Theory </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Multifactor Models </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Measuring and Managing Market Risk </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">! Value at Risk </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Other Risk Measures </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Choices of Risk Measures </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Managing Market Risk </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Backtesting and Simulation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Backtesting </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Simulation </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Economics and Investment Markets </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">Framework for Analysis </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">Discount Rate </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Analysis of Active Portfolio Management </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Value Added by Active Management </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Information Ratio </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">The Fundamental Law </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Portfolio Management
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-08-27</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-08-24" editdate="2025-08-27" tag="Portfolio"></ndtag></p>
+<h3 id="nav1">1.  Exchange-Traded Funds: Mechanics and Applications </h3>
+<h4 id="nav1.1">1.1. Mechanics of ETFs </h4>
+<ul>
+<li>open-end fund: flexible fund shares</li>
+<li>closed-end fund: fixed fund shares</li>
+</ul>
+<p>ETF is an open-end fund</p>
+<ul>
+<li>primary market: created or redeemed in kind (实物申购赎回), in a shares-for-shares swap
+<ul>
+<li>between authorized participants (APs) and ETF issuer</li>
+<li>AP: brokers/dealers</li>
+<li>creation units: usually 50,000 shares</li>
+</ul>
+</li>
+<li>secondary market: AP as broker or dealer
+<ul>
+<li>US: central settlement</li>
+<li>European: fragmented settlement and wider spread</li>
+</ul>
+</li>
+</ul>
+<p>Net Asset Value (NAV) ≈ price</p>
+<h4 id="nav1.2">1.2. Costs and Risks of ETFs </h4>
+<h5 id="nav1.2.1">1.2.1. Trading Costs </h5>
+<ul>
+<li>bid ask spread</li>
+<li>ETF premium: (price - NAV) / NAV
+<ul>
+<li>iNAV (indicated NAV, intraday fair value)</li>
+<li>time differences, NAV calculated on underlying securities' last price</li>
+<li>liquidity difference between ETF and underlying securities</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav1.2.2">1.2.2. Tracking Error </h5>
+<p>index tracking ETFs dominate ETF markets<br/>
+tracking error: standard deviation of differences of return<br/>
+sources:</p>
+<ul>
+<li>fees and expenses</li>
+<li>representative sampling and optimization: some underlying is illiquid</li>
+<li>depositary receipts and other ETFs: depositary receipts may have better liquidity and thus difference of price</li>
+<li>index change</li>
+<li>fund accounting practices: different valuation between index and ETF (such as suspended stock)</li>
+<li>regulatory and tax</li>
+<li>asset manager operations
+<ul>
+<li>security lending or foreign dividend recapture could enchance ETFs income, but not accounted in the index</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav1.2.3">1.2.3. Tax Issues </h5>
+<p>tax fairness:</p>
+<ul>
+<li>mutual fund: capital gain charge is distributed to remaining shareholders, if someone sells</li>
+<li>ETFs does not occur tax on redemption in kind</li>
+</ul>
+<p>tax efficiency: ETF manager choose shares with the largest unrealized capital gains for redemption, reducing potential capital in the fund<br/>
+some ETFs may have share classes that reinvest dividends</p>
+<h5 id="nav1.2.4">1.2.4. Other Costs and Risks of Owning ETFs </h5>
+<p>ETFs charge lower fees than mutual fund:</p>
+<ul>
+<li>less research cost</li>
+<li>less sales cost</li>
+</ul>
+<p>round-trip trading cost = 2 × (one-way commission + 0.5 × bid ask spread)<br/>
+Risk of ETFs:</p>
+<ul>
+<li>settlement risk: underlying derivatives</li>
+<li>security lending: low counterparty default risk</li>
+</ul>
+<h4 id="nav1.3">1.3. ETFs in Portfolio Management </h4>
+<ul>
+<li>portfolio liquidity management: ETFs can be used to invest excess cash quickly</li>
+<li>portfolio rebalancing</li>
+<li>portfolio completion strategies</li>
+<li>transition management: maintain exposure in the absence of manager</li>
+<li>active and factor investing</li>
+</ul>
+<p>for large asset owners:</p>
+<ul>
+<li>separately managed account (SMA): lower fees</li>
+<li>ETF holdings is disclosed</li>
+</ul>
+<h3 id="nav2">2.  Using Multifactor Models </h3>
+<h4 id="nav2.1">2.1. Arbitrage Pricing Theory </h4>
+<h5 id="nav2.1.1">2.1.1. CAPM </h5>
+<p>SML (security market line): relationship between return and beta</p>
+<h5 id="nav2.1.2">2.1.2. Arbitrage Pricing Model </h5>
+<p><span class="mathjax-exps">$E(R_p)=R_f+\sum \beta_i\lambda_i$</span></p>
+<ul>
+<li><span class="mathjax-exps">$\beta_i$</span>: sensitity of portfolio to factor i</li>
+<li><span class="mathjax-exps">$\lambda_i$</span>: expected/factor risk premium</li>
+<li>pure factor portfolio: portfolio only contains one factor</li>
+<li>lambda is also risk premium for a pure factor portfolio</li>
+</ul>
+<p>assumptions:</p>
+<ul>
+<li>a factor model describes asset return</li>
+<li>investors can diversify and eliminate asset-specific risk</li>
+<li>no arbitrage opportunities exist among well-diversified portfolios</li>
+</ul>
+<h5 id="nav2.1.3">2.1.3. Arbitrage Opportunity </h5>
+<p>Jensen's alpha: <span class="mathjax-exps">$R_p-E(R_p)=R_p-[R_f+\beta(R_M-R_f)]$</span></p>
+<h4 id="nav2.2">2.2. Multifactor Models </h4>
+<h5 id="nav2.2.1">2.2.1. Structure of Multifactor Models </h5>
+<ul>
+<li>Macroeconomic Factor Model: <span class="mathjax-exps">$R_p=E(R_p)+\sum\beta_iF_i+\varepsilon_p$</span>
+<ul>
+<li><span class="mathjax-exps">$F_i$</span>: surprise (unexpected change) in macro variables</li>
+</ul>
+</li>
+<li>Fundamental Factor Model: <span class="mathjax-exps">$R_p=a_p+\sum\beta_iF_i+\varepsilon_p$</span>
+<ul>
+<li><span class="mathjax-exps">$F_i$</span>: return associated with factor i</li>
+<li><span class="mathjax-exps">$\beta_i=\frac{X_{ki}-\overline{X_{k}}}{\sigma(X_k)}$</span>: standardized beta of attributes k of the asset i</li>
+<li>fundamental factor: P/B ratio, P/E ratio, explaining cross-sectional differences</li>
+</ul>
+</li>
+<li>Statistical Factor Model
+<ul>
+<li>less assumptions, lower interpretability</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav2.2.2">2.2.2. Comparison between Models </h5>
+<h5 id="nav2.2.3">2.2.3. Applications of Multifactor Models </h5>
+<h6 id="return-attribution">Return Attribution </h6>
+<p>active return relative to benchmark: <span class="mathjax-exps">$R_P-R_B$</span><br/>
+active return = factor return + security selection return</p>
+<ul>
+<li>return from factor tilts: reflect skill in asset class selection</li>
+<li>return from security selection: reflect skill in individual asset selection</li>
+</ul>
+<p>factor return = <span class="mathjax-exps">$\sum(\beta_i^P-\beta_i^B)F_i$</span></p>
+<h6 id="risk-attribution">Risk Attribution </h6>
+<p>active risk: <span class="mathjax-exps">$\sigma(R_P-R_B)$</span><br/>
+information ratio: <span class="mathjax-exps">$\frac{R_P-R_B}{\sigma(R_P-R_B)}$</span><br/>
+active risk squared = active factor risk + active specific risk</p>
+<h6 id="portfolio-construction-and-decisions">Portfolio Construction and Decisions </h6>
+<p>Carhar Model: <span class="mathjax-exps">$E(R_p)=R_f+\beta_1RMRF+\beta_2SMB+\beta_3HML+\beta_4WML$</span></p>
+<ul>
+<li>WML: winner minus loser, momentum factor</li>
+</ul>
+<h3 id="nav3">3.  Measuring and Managing Market Risk </h3>
+<h4 id="nav3.1">3.1. ! Value at Risk </h4>
+<h5 id="nav3.1.1">3.1.1. Definition </h5>
+<p>A traditional stock and bond portfolio focus on monthly or quarterly VaR</p>
+<h5 id="nav3.1.2">3.1.2. Methods to Estimate VaR </h5>
+<ul>
+<li>Parametric (Variance-Covariance Method)
+<ul>
+<li><span class="mathjax-exps">$VaR=E(R)-z_\alpha\sigma$</span></li>
+</ul>
+</li>
+<li>Historical Simulation Method
+<ul>
+<li>if data in the lookback period is more volatile, VaR will be over-estimate</li>
+</ul>
+</li>
+<li>Monte Carlo Simulation Method</li>
+</ul>
+<h5 id="nav3.1.3">3.1.3. Extensions of VaR </h5>
+<ul>
+<li>Conditional VaR (CVaR)</li>
+<li>Incremental VaR (IVaR): VaR change if portfolio size change</li>
+<li>Marginal VaR (MVaR): change of VaR with small change of a security position</li>
+<li>relative VaR: ex ante tracking estimate on active return</li>
+</ul>
+<h4 id="nav3.2">3.2. Other Risk Measures </h4>
+<ul>
+<li>Sensitivity Risk Measures: partial derivative</li>
+<li>Scenario Risk Measures: scenario analysis
+<ul>
+<li>historical/hypothetical</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav3.3">3.3. Choices of Risk Measures </h4>
+<ul>
+<li>banks:
+<ul>
+<li>liquidity gap</li>
+<li>economic capital</li>
+<li>VaR</li>
+<li>leverage risk measures</li>
+</ul>
+</li>
+<li>asset manager
+<ul>
+<li>redemption risk</li>
+</ul>
+</li>
+<li>hedge fund
+<ul>
+<li>drawdown</li>
+</ul>
+</li>
+<li>pension fund
+<ul>
+<li>interest rate risk</li>
+<li>surplus at risk</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav3.4">3.4. Managing Market Risk </h4>
+<ul>
+<li>risk budgeting</li>
+<li>capital allocation</li>
+<li>position limits</li>
+<li>scenario limits</li>
+<li>stop-loss limits</li>
+</ul>
+<h3 id="nav4">4.  Backtesting and Simulation </h3>
+<h4 id="nav4.1">4.1. Backtesting </h4>
+<p>sortino ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\sigma_-}$</span><br/>
+survivorship bias is actually a type of look-ahead bias.<br/>
+data snooping: selects data until a significant result is found, also called "p-hacking"</p>
+<h4 id="nav4.2">4.2. Simulation </h4>
+<p>historical simulation: select returns at random from history without time order</p>
+<h3 id="nav5">5.  Economics and Investment Markets </h3>
+<h4 id="nav5.1">5.1. Framework for Analysis </h4>
+<p>discounted cash flow model with suitable discount rate</p>
+<h4 id="nav5.2">5.2. Discount Rate </h4>
+<h5 id="nav5.2.1">5.2.1. Real Default-Free Rate of Return </h5>
+<p>Inter-temporal rate of substituion (ITRS): <span class="mathjax-exps">$m_t=\frac{U_t}{U_0}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$U_t$</span>: marginal utility of future consumption</li>
+<li><span class="mathjax-exps">$U_0$</span>: marginal utility of current consumption</li>
+<li><span class="mathjax-exps">$m_t&lt;1$</span>, <span class="mathjax-exps">$m_t$</span> is lower if economy state is better</li>
+<li>zero coupon, inflation indexed, risk free bond with par 1, the price should be <span class="mathjax-exps">$m_t$</span>.</li>
+<li><span class="mathjax-exps">$l=\frac{1}{m_t}-1$</span><br/>
+real risk free rate is positively related to GDP.<br/>
+real risk free rate is positively related to volatility of growth rate (marginal utility of expected payoff is lower with higher uncertainty).</li>
+</ul>
+<h5 id="nav5.2.2">5.2.2. Infaltion Premium </h5>
+<p>short-term nominal default ree interest rate (T-bills): <span class="mathjax-exps">$1+l+\theta$</span>, <span class="mathjax-exps">$\theta$</span> is expected inflation rate<br/>
+for long term: <span class="mathjax-exps">$1+l+\theta+\pi$</span>, <span class="mathjax-exps">$\pi$</span> is risk premium for uncertainty about actual inflation<br/>
+Break-even Inflation Rate (BEI): <span class="mathjax-exps">$\text{BEI}=\theta+\pi$</span></p>
+<p>Taylor Rule: targeted short term rate: <span class="mathjax-exps">$R=(R_\text{neutral}+\theta)+\frac{1}{2}(\theta-\theta^*)+\frac{1}{2}(Y-Y^*)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$R_\text{neutral}+\theta$</span>: neutral nominal rate</li>
+<li><span class="mathjax-exps">$\theta$</span> current inflation and <span class="mathjax-exps">$\theta^*$</span> target inflation</li>
+<li><span class="mathjax-exps">$Y$</span> current growth of real GDP and <span class="mathjax-exps">$Y^*$</span> growth of real GDP</li>
+</ul>
+<p>slope of yield curve:</p>
+<ul>
+<li>during recession, slope of yield curve will increase
+<ul>
+<li>investor expect higher future GDP grwoth and higher long-term rates</li>
+<li>central bank tends to lower the policy rate</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav5.2.3">5.2.3. Credit Premium </h5>
+<p>credit spread: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma$</span></p>
+<h5 id="nav5.2.4">5.2.4. Equity Risk Premium </h5>
+<p>equity risk premium: <span class="mathjax-exps">$1+l+\theta+\pi+\lambda$</span><br/>
+equity risk premium relative to credit risky bonds: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma+\kappa$</span><br/>
+consumption-hedging property: high payoff during economic downturns</p>
+<ul>
+<li>consumption-hedging property for equities are poor, thus demanding high risk premium</li>
+</ul>
+<p>investment strategy:</p>
+<ul>
+<li>value strategy performs well during recession</li>
+<li>growth stategy performs well during expansion</li>
+<li>small capital size stock tends to underperform large-cap stocks</li>
+<li>rotation strategy</li>
+</ul>
+<h5 id="nav5.2.5">5.2.5. Liquidity Premium </h5>
+<p>liquidity premium: <span class="mathjax-exps">$1+l+\theta+\pi+\gamma+\kappa+\phi$</span></p>
+<h3 id="nav6">6.  Analysis of Active Portfolio Management </h3>
+<h4 id="nav6.1">6.1. Value Added by Active Management </h4>
+<p>value added (active return): <span class="mathjax-exps">$R_A = R_P-R_B$</span></p>
+<h5 id="nav6.1.1">6.1.1. Active Weights </h5>
+<p><span class="mathjax-exps">$R_A = \sum \Delta w_iR_i=\sum w_i(R_i-R_B)$</span></p>
+<h5 id="nav6.1.2">6.1.2. Decomposition of Value Added </h5>
+<p><span class="mathjax-exps">$R_A = \sum w_i^PR_i^P - \sum w_i^BR_i^B=\sum(w_i^P-w_i^B)R_i^B+\sum w_i^P(R_i^P-R_i^B)$</span></p>
+<ul>
+<li><span class="mathjax-exps">$\sum(w_i^P-w_i^B)R_i^B$</span>: active asset allocation</li>
+<li><span class="mathjax-exps">$\sum w_i^P(R_i^P-R_i^B)$</span>: security selection</li>
+</ul>
+<h4 id="nav6.2">6.2. Information Ratio </h4>
+<h5 id="nav6.2.1">6.2.1. Sharpe Ratio and Information Ratio </h5>
+<p>Treynor Ratio: <span class="mathjax-exps">$\frac{R_p-R_f}{\beta_p}$</span><br/>
+<span class="mathjax-exps">$IR_P=\frac{R_A}{\sigma_A}$</span></p>
+<ul>
+<li>not affected by taking positions in benchmark portfolio [ <span class="mathjax-exps">$tR_p+(1-t)R_B$</span> ]</li>
+<li>not affected by active weight [ <span class="mathjax-exps">$t(w_i^P-w_i^B)+w_i^B$</span> ]</li>
+<li>affected by cash or use of leverage</li>
+</ul>
+<h5 id="nav6.2.2">6.2.2. Construct Optimal Portfolio </h5>
+<p>The optimal portfolio will be contructed if <span class="mathjax-exps">$SR_p^2=SR_B^2+IR^2$</span></p>
+<ul>
+<li>higher IR, higher SR</li>
+</ul>
+<p>for unconstrained portfolios, the level of active risk that leads to the optimal result <span class="mathjax-exps">$\sigma_A^*=\frac{IR}{SR_B}\sigma_B$</span></p>
+<h4 id="nav6.3">6.3. The Fundamental Law </h4>
+<h5 id="nav6.3.1">6.3.1. The Correlation Triangle </h5>
+<div class="mermaid">graph
+    A[Forcasted Active Return] &lt;--&gt;|Signal Quality IC| B[Realized Active Return]
+    A &lt;--&gt;|Transfer Coefficient| C[Active Weights ]
+    B&lt;--&gt;|Value Added| C
+</div><p>Signal quality is measured by forecasted active return <span class="mathjax-exps">$\mu_i$</span> and realized active return <span class="mathjax-exps">$R_i^A$</span>: <span class="mathjax-exps">$IC$</span><br/>
+correlation between active weights and forecasted active return called TC</p>
+<ul>
+<li>measures the degree to which investor's forecasts are translated into active weights</li>
+</ul>
+<h5 id="nav6.3.2">6.3.2. Basic and Full Fundamental Law </h5>
+<p>Breadth (BR): number of independent active decisions per year</p>
+<ul>
+<li>
+<p>indicator of how much efforts the manager has put into</p>
+</li>
+<li>
+<p>transaction number = f(TC,BR)</p>
+</li>
+<li>
+<p>basic fundamental law: <span class="mathjax-exps">$IR = IC \times\sqrt{BR}$</span></p>
+</li>
+<li>
+<p>full fundamental law: <span class="mathjax-exps">$IR = TC\times IC \times\sqrt{BR}$</span></p>
+</li>
+</ul>
+<p>The optimal portfolio will be contructed if <span class="mathjax-exps">$SR_p^2=SR_B^2+(TC\times IR)^2$</span><br/>
+for unconstrained portfolios, the level of active risk that leads to the optimal result <span class="mathjax-exps">$\sigma_A^*=\frac{TC\times IR}{SR_B}\sigma_B$</span></p>
+<h5 id="nav6.3.3">6.3.3. Application of the Fundamental Law </h5>
+<p>IC = 2 × (correct rate) - 1<br/>
+<span class="mathjax-exps">$E(R_A|IC_{\text{realized}})=TC\times IC_{\text{realized}}\times\sqrt{BR}\times \sigma_A$</span><br/>
+<span class="mathjax-exps">$R_A =E(R_A|IC_{\text{realized}})+\varepsilon$</span><br/>
+active return variance could be decomposited into two parts:</p>
+<ul>
+<li>varaition due to realized IC (TC^2)</li>
+<li>variation due to constraint-included noise (1 - TC^2)</li>
+</ul>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Portfolio</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Fixed Income.html" rel="prev">< CFA II - Fixed Income</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Quantitative Methods.html" rel="next">CFA II - Quantitative Methods ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>
