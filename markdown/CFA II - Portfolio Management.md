@@ -193,7 +193,7 @@ for long term: $1+l+\theta+\pi$, $\pi$ is risk premium for uncertainty about act
 Break-even Inflation Rate (BEI): $\text{BEI}=\theta+\pi$
 
 Taylor Rule: targeted short term rate: $R=(R_\text{neutral}+\theta)+\frac{1}{2}(\theta-\theta^*)+\frac{1}{2}(Y-Y^*)$
-* $R_\text{neutral}+\theta$: neutral nominal rate
+* $R_\text{neutral}+\theta$: neutral real rate
 * $\theta$ current inflation and $\theta^*$ target inflation
 * $Y$ current growth of real GDP and $Y^*$ growth of real GDP
 

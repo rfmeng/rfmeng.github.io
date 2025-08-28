@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CFA II - Equity Valuation - ND Notes</title>
+	<!-- from vscode markdown preview: begin -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"extensions":["tex2jax.js"],"jax":["input/TeX","output/HTML-CSS"],"messageStyle":"none","tex2jax":{"processEnvironments":false,"processEscapes":true,"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"TeX":{"extensions":["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]},"HTML-CSS":{"availableFonts":["TeX"]}});
+  </script>
+  <script type="text/javascript" async src="/lib/mathjax/MathJax.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="/lib/mermaid/mermaid.min.js" charset="UTF-8"></script>
+  <!-- end -->
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/book.jpg">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/book.jpg">
+	<link rel="apple-touch-icon" href="/icon/book.jpg">
+
+
+	<link type="text/css" rel="styleSheet"  href="/css/index.css" />
+	<link type="text/css" rel="styleSheet"  href="/css/markdown render.css" />
+</head>
+<body itemscope class="use-motion">
+	<div class="headband">
+		<div class="headband-title">
+			<a href="https://rfmeng.github.io/" class="headband-brand" rel="start">
+	      <p class="headband-site-title" style="opacity: 1; top: 0px;">ND Notes</p>
+	    </a>
+		</div>
+	  <div class="headband-search-box">
+		  <div id="simpleSearch" class="headband-search-box-inner" data-search-loc="header-navigation">
+				<input class="headband-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+				<!-- <input type="hidden" name="title" value="Special:Search"> -->
+				<input id="searchButton" class="headband-searchButton" type="submit" name="go" title="Search for content" value="Go">
+			</div>
+		</div>
+	</div>
+	<main class="main">
+		<header class="header" style="opacity: 1; top: 0px;">
+			<div class="header-inner">
+				<div class="site-brand-container">
+					<div class="site-meta">
+				    <a href="https://rfmeng.github.io/" class="brand" rel="start">
+				      <p class="site-title" style="opacity: 1; top: 0px;">Nowhere Dense</p>
+				    </a>
+				      <p class="site-subtitle" itemprop="description" style="opacity: 1; top: 0px;">Notes for lifelong learning</p>
+				  </div>
+				</div>
+				<nav class="site-nav">
+				  <ul class="main-menu menu">
+				  	<li class="menu-item menu-item-home animated fadeInDown"><a href="/index.html" rel="section"><i class="fa fa-home fa-fw"></i>Main page</a>
+				  	</li>
+				  	<li class="menu-item menu-item-home animated fadeInDown">
+				  		<div class="vector-search-box">
+					  <div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+							<input class="vector-search-box-input" type="search" name="search" placeholder="Search for the forgotten" aria-label="Search for the forgotten" autocapitalize="sentences" title="Search for the forgotten [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+							<!-- <input type="hidden" name="title" value="Special:Search"> -->
+							<input id="searchButton" class="searchButton" type="submit" name="go" title="Search for content" value="Go">
+						</div>
+					</div>
+				  	</li>
+
+				  </ul>
+				  
+				  <!-- search from wikipedia -->
+
+				</nav>
+			</div>
+			<aside class="sidebar animated fadeInUp">
+				<div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+					<ul class="sidebar-nav">
+		        <li class="sidebar-nav-toc">
+		          <a href="#top">Contents</a>
+		        </li>
+	      	</ul>
+	      	<div class="sidebar-panel-container">
+	        	<div class="post-toc-wrap sidebar-panel">
+	            <div class="post-toc animated">
+	            	<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nav1"><span class="nav-number">1.</span> <span class="nav-text"> Equity Valuation: Applications and Processes </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.1"><span class="nav-number">1.1.</span> <span class="nav-text">Value and Price </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.2"><span class="nav-number">1.2.</span> <span class="nav-text">Selecting the Appropriate Valuation Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav1.3"><span class="nav-number">1.3.</span> <span class="nav-text">Process of Valuation </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav2"><span class="nav-number">2.</span> <span class="nav-text"> Discounted Dividend Valuation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.1"><span class="nav-number">2.1.</span> <span class="nav-text">Framework of Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.2"><span class="nav-number">2.2.</span> <span class="nav-text">Gordon Growth Model </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav2.3"><span class="nav-number">2.3.</span> <span class="nav-text">Multi-Stage DDM </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav3"><span class="nav-number">3.</span> <span class="nav-text"> Free Cash Flow Valuation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.1"><span class="nav-number">3.1.</span> <span class="nav-text">Basic Concepts of FCFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.2"><span class="nav-number">3.2.</span> <span class="nav-text">Calculation of FCFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.3"><span class="nav-number">3.3.</span> <span class="nav-text">Usages of FCFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.4"><span class="nav-number">3.4.</span> <span class="nav-text">Estimation of FCFs </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav3.5"><span class="nav-number">3.5.</span> <span class="nav-text">Applications of FCFs in Valuation Models </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav4"><span class="nav-number">4.</span> <span class="nav-text"> Market-Based Valuation: Price and Enterprise Value Multiples </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.1"><span class="nav-number">4.1.</span> <span class="nav-text">Basic Concepts of Multiples </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.2"><span class="nav-number">4.2.</span> <span class="nav-text">Price Multiples </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.3"><span class="nav-number">4.3.</span> <span class="nav-text">Enterprise Value Multiples </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.4"><span class="nav-number">4.4.</span> <span class="nav-text">Momentum Valuation Indicators </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav4.5"><span class="nav-number">4.5.</span> <span class="nav-text">Central Tendency </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav5"><span class="nav-number">5.</span> <span class="nav-text"> Residual Income Valuation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.1"><span class="nav-number">5.1.</span> <span class="nav-text">! Concepts of Residual Income </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.2"><span class="nav-number">5.2.</span> <span class="nav-text">! Valuation Models </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav5.3"><span class="nav-number">5.3.</span> <span class="nav-text">Model Comparisons </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nav6"><span class="nav-number">6.</span> <span class="nav-text"> Private Company Valuation </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.1"><span class="nav-number">6.1.</span> <span class="nav-text">Public vs. Private Company Valuation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.2"><span class="nav-number">6.2.</span> <span class="nav-text">Private Company Valuation Uses and Areas of Focus </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.3"><span class="nav-number">6.3.</span> <span class="nav-text">Earnings Normalization and Cash Flow Estimation </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.4"><span class="nav-number">6.4.</span> <span class="nav-text">Private Company Discount Rates and Required Rate of Return </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.5"><span class="nav-number">6.5.</span> <span class="nav-text">Valuation Discounts and Premiums </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nav6.6"><span class="nav-number">6.6.</span> <span class="nav-text">! Private Company Valuation Approaches </span></a></li></ol></li></ol>
+	            </div>
+	        	</div>
+	      	</div>
+	      </div>
+			</aside>
+		</header>
+
+		<div class="main-inner post posts-expand">
+			<div class="post-block animated fadeIn">
+				<article itemscope class="post-content" lang="zh-CN">
+					<header class="post-header animated fadeInDown">
+		        <h1 class="post-title" itemprop="name headline">
+		          CFA II - Equity Valuation
+		        </h1>
+		        <div class="post-meta-container">
+		          <div class="post-meta">
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-calendar"></i>
+						      </span>
+						      <span class="post-meta-item-text">Modified</span>
+						      <time title="创建时间：2022-01-12 11:10:01" itemprop="dateCreated datePublished" datetime="2022-01-12T11:10:01+00:00">2025-08-28</time>
+						    </span>
+						    <span class="post-meta-item">
+						      <span class="post-meta-item-icon">
+						        <i class="far fa-folder"></i>
+						      </span>
+						      <span class="post-meta-item-text">Categorized</span>
+					        <span itemprop="about" itemscope="">
+					          <a href="" itemprop="url" rel="index"><span itemprop="name">CFA II</span></a>
+					        </span>
+						    </span>
+							</div>
+		        </div>
+		      </header>
+					<div class="crossnote markdown-preview post-body" for="html-export">
+<p><ndtag category="CFA II" createdate="2025-08-17" editdate="2025-08-28" tag="Equity"></ndtag></p>
+<h3 id="nav1">1.  Equity Valuation: Applications and Processes </h3>
+<h4 id="nav1.1">1.1. Value and Price </h4>
+<h5 id="nav1.1.1">1.1.1. Intrinsic Value </h5>
+<h5 id="nav1.1.2">1.1.2. Sources of Perceived Mispricing </h5>
+<p><span class="mathjax-exps">$\mathbb{E}(IV)-P=(IV-P)+[\mathbb {E}(IV)-IV]$</span></p>
+<ul>
+<li>perceived mispricing = true mispricing + estimation error</li>
+<li>alpha (abnormal return): IV - P</li>
+</ul>
+<h5 id="nav1.1.3">1.1.3. Going-Concern Value and Liquidation Value </h5>
+<p>going-concern value &gt; liquidation value</p>
+<ul>
+<li>Going-Concern value: going-concern assumption</li>
+<li>liquidation value: value of company if liquidation
+<ul>
+<li>orderly liquidation value: adequate time to realize liquidation value</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav1.2">1.2. Selecting the Appropriate Valuation Model </h4>
+<ul>
+<li>Absolute valuation models: intrinsic value compared to market price
+<ul>
+<li>discounted cashflow model (DCF) or present value model
+<ul>
+<li>Dividend discount model (DDM)</li>
+<li>Free cashflow model (FCF)</li>
+<li>Risidual income model (RI)</li>
+</ul>
+</li>
+<li>asset-based model
+<ul>
+<li>natural resources</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Relative valuation models: relative comparison to similar assets
+<ul>
+<li>typically using price multiples</li>
+</ul>
+</li>
+</ul>
+<p>Common Adjustments for Valuation:</p>
+<ul>
+<li>investor has controlling position: control premium</li>
+<li>price could be realized for block of shares: blockage factor</li>
+</ul>
+<p>Sum-of-the-Parts Value (breakup value, private market value):</p>
+<ul>
+<li>company with segments having different valuation characteristics</li>
+</ul>
+<p>Conglomerate Discount: discount to the company operating in multiple unrelated business compared to company with narrower focuses</p>
+<ul>
+<li>inefficiency of internal capital marktes</li>
+<li>endogenous factors: poorly performing companies tend to expand in unrelated business</li>
+</ul>
+<h4 id="nav1.3">1.3. Process of Valuation </h4>
+<p>Porter's five forces:</p>
+<ul>
+<li>intra-industry rivalry</li>
+<li>threat oif new entrants</li>
+<li>threat of substitutes</li>
+<li>bargaining power of suppliers</li>
+<li>bargaining power of buyers</li>
+</ul>
+<p>Porter's 3 competitive strategies:</p>
+<ul>
+<li>cost leadership</li>
+<li>differentiation</li>
+<li>focus</li>
+</ul>
+<h3 id="nav2">2.  Discounted Dividend Valuation </h3>
+<h4 id="nav2.1">2.1. Framework of Model </h4>
+<h5 id="nav2.1.1">2.1.1. DCF Model </h5>
+<p>intrinsic value <span class="mathjax-exps">$V_0=\sum\frac{CF_i}{(1+r)^i}$</span><br/>
+cashflow could be:</p>
+<ul>
+<li>dividends</li>
+<li>free cash flow
+<ul>
+<li>Free Cash Flow to Equity (FCFE)
+<ul>
+<li>use <span class="mathjax-exps">$r_e$</span></li>
+</ul>
+</li>
+<li>Free Cash Flow to the Firm (FCFF): 实体现金流
+<ul>
+<li>use WACC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>residual income: earnings in excess of the investors' required return</li>
+</ul>
+<h5 id="nav2.1.2">2.1.2. Basic Concepts of DDM </h5>
+<p>DDM is from the perspective of non-controlling interest investors<br/>
+suitable for using DDM:</p>
+<ul>
+<li>mature firms, profitable but not fast growth</li>
+</ul>
+<h5 id="nav2.1.3">2.1.3. Estimation of Infinite Stream </h5>
+<ol>
+<li><span class="mathjax-exps">$V_0 = \sum\frac{D_t}{(1+r_e)^t}+\frac{P_t}{(1+r_e)^t}$</span></li>
+<li>future dividends have stylized growth patterns</li>
+<li>a finite number of dividends and a terminal value</li>
+</ol>
+<p>example: company have <span class="mathjax-exps">$D_0=1$</span>, payout ratio is 40%, <span class="mathjax-exps">$g_s=9%$</span> for the first four years, <span class="mathjax-exps">$r_e=10%$</span>, trailing P/E for t = 4 is 15</p>
+<ul>
+<li>EPS for year 4 is <span class="mathjax-exps">$E_4=1.09^4/40\%=3.52$</span></li>
+<li>terminal value in year 4 is 15*3.52 = 52.93<br/>
+(?) dynamic P/E ratio</li>
+</ul>
+<h4 id="nav2.2">2.2. Gordon Growth Model </h4>
+<h5 id="nav2.2.1">2.2.1. Basic Concepts </h5>
+<p><span class="mathjax-exps">$V_0=\frac{D_1}{r_e-g}$</span>, <span class="mathjax-exps">$V_0=\sum\frac{D_1(1+g)^{t-1}}{(1+r_e)^t}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g$</span> is growth rate for dividend</li>
+<li><span class="mathjax-exps">$r_e\leq \text{ROE}$</span></li>
+</ul>
+<p>GGM should consider GDP growth, industry life cycle stages and Porter's five force model<br/>
+GGM can accurately value companies repurchasing shares after adjusting dividend growth rate</p>
+<p>sustainable growth rate is for earnings and dividends if we assume</p>
+<ul>
+<li>growth from internally generated sources (no new equity issued)</li>
+<li>some key financial ratios remain unchanged</li>
+<li><span class="mathjax-exps">$g=\text{ROE}\times b$</span>, where <span class="mathjax-exps">$b$</span> is rentention rate</li>
+<li><span class="mathjax-exps">$g=\frac{\Delta \text{RE}}{\text{Equity}}=\frac{b\times \text{NI}}{\text{Equity}}$</span></li>
+</ul>
+<p><span class="mathjax-exps">$\text{ROE} =\frac{\text{Net Income}}{\text{Sales Revenue}}\times\frac{\text{Sales Revenue}}{\text{Asset}}\times\frac{\text{Asset}}{\text{Equity}}$</span></p>
+<ul>
+<li>ROE = Net Profit Margin × Asset Turnover × Financial Leverage</li>
+<li>equity at the beginning of the period should be used</li>
+</ul>
+<h5 id="nav2.2.2">2.2.2. Applications </h5>
+<h6 id="valuation-of-preferred-stock">Valuation of Preferred Stock </h6>
+<p><span class="mathjax-exps">$V_0=\frac{D}{r}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$r$</span>: discount rate or capitalization rate, higher than junior ranking debt yield</li>
+</ul>
+<h6 id="justified-pe-ratio">Justified P/E Ratio </h6>
+<p>Justified Leading P/E (动态市盈率): <span class="mathjax-exps">$\frac{V_0}{E_1}=\frac{D_1}{E_1 (r-g)}=\frac{1-b}{r-g}$</span><br/>
+Justified Trailing P/E (静态市盈率): <span class="mathjax-exps">$\frac{V_0}{E_0}=\frac{D_1}{E_0 (r-g)}=\frac{(1-b)(1+g)}{r-g}$</span></p>
+<h6 id="implied-rate-of-return-and-growth-rate">Implied Rate of Return and Growth Rate </h6>
+<p><span class="mathjax-exps">$r=\frac{D_1}{P_0}+g$</span></p>
+<ul>
+<li>if implied growth rate is higher than sustainable growth rate, the stock is overvalued</li>
+</ul>
+<h6 id="present-value-of-growth-opportunities">Present Value of Growth Opportunities </h6>
+<p>(?) ROE &gt; r or ROIC &gt; WACC<br/>
+Companies without positive NPV projects should distribute all earnings in dividends.<br/>
+<span class="mathjax-exps">$V_0=\frac{E_1}{r}+\text{PVGO}$</span>, where <span class="mathjax-exps">$E_1$</span> is dividend of no growth.</p>
+<h4 id="nav2.3">2.3. Multi-Stage DDM </h4>
+<h5 id="nav2.3.1">2.3.1. Two-Stage Model: Distinct Phases </h5>
+<p>growth cann fall into three stages:</p>
+<ol>
+<li>high growth phase
+<ul>
+<li>rapid EPS growth, negative FCF</li>
+<li>ROE&gt;r, low dividend payout</li>
+</ul>
+</li>
+<li>transition phase
+<ul>
+<li>sales and EPS growth slow, postive FCF</li>
+<li>ROE approaches r, dividend increases</li>
+</ul>
+</li>
+<li>mature and sustainable growth phase
+<ul>
+<li>growth at economy-wide rate</li>
+<li>ROE = r, high competition</li>
+</ul>
+</li>
+</ol>
+<p><span class="mathjax-exps">$V_0=\sum_{t=1}^n\frac{D_0(1+g_S)^t}{(1+r)^t}+\frac{D_0(1+g_S)^n(1+g_L)}{(1+r)^n(r-g_L)}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g_S$</span> is for short term and <span class="mathjax-exps">$g_L$</span> is for long term</li>
+</ul>
+<h5 id="nav2.3.2">2.3.2. Two-Stage Model: H-Model </h5>
+<p>Growth rate declines linearly from an abnormal high rate to the mature growth rate during stage 1.<br/>
+<span class="mathjax-exps">$V_0=\frac{D_0(1+g_L)}{r-g_L}+\frac{D_0H(g_S-g_L)}{r-g_L}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g_S$</span>: high growth rate at the beginning of stage 1</li>
+<li><span class="mathjax-exps">$H$</span>: half life in years of the stage 1</li>
+</ul>
+<h5 id="nav2.3.3">2.3.3. Three-Stage Model </h5>
+<p>Combination of H-model and two stage model</p>
+<h3 id="nav3">3.  Free Cash Flow Valuation </h3>
+<h4 id="nav3.1">3.1. Basic Concepts of FCFs </h4>
+<p>Free cash flows are the cashflow after:</p>
+<ul>
+<li>fulfilling all obligations (expenses and taxes)</li>
+<li>without impacting on the future growth growth of the company</li>
+<li>FCFF: available to the company's suppliers of capital
+<ul>
+<li>if FCFE negative</li>
+<li>if capital structure is changing</li>
+</ul>
+</li>
+<li>FCFE: available to the common equity
+<ul>
+<li>if the company's capital structure is stable</li>
+</ul>
+</li>
+</ul>
+<p>FCFE could be greater or less than dividends<br/>
+FCFE model takes a control perspective</p>
+<h4 id="nav3.2">3.2. Calculation of FCFs </h4>
+<h5 id="nav3.2.1">3.2.1. Basic Formula </h5>
+<p><span class="mathjax-exps">$\text{FCFF}=\text{EBIT}\times(1-t)+\text{NCC}-\text{WCInv}-\text{FCInv}$</span></p>
+<ul>
+<li>NCC: Non-Cash Charges, depreciation or amortization</li>
+<li>WCInv: working capital investment excluding cash and short-term debt (notes payable and current portion of long-term debt)
+<ul>
+<li>working capital = current asset - current liability</li>
+<li>excluding cash and short-term debt: this portion of cash is for financing activity, not for operating activity</li>
+</ul>
+</li>
+<li>FCInv: net fixed capital investment</li>
+</ul>
+<p>Other formula:</p>
+<ul>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{NI}+\text{NCC}+\text{Int}\times(1-t)-\text{WCInv}-\text{FCInv}$</span>
+<ul>
+<li>EBIT - Interest - Tax = Net income</li>
+</ul>
+</li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{EBIT}\times(1-t)+\text{NCC}-\text{WCInv}-\text{FCInv}$</span><br/>
+EBIT = EBITDA - NCC</li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{EBITDA}\times(1-t)+\text{NCC}\times t-\text{WCInv}-\text{FCInv}$</span></li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{CFO}+\text{Int}\times (1-t)-\text{FCInv}$</span>
+<ul>
+<li>NI - (CFI and CFF) + NCC - WCInv = CFO</li>
+<li>assume CFI and CFF have little effect</li>
+</ul>
+</li>
+</ul>
+<p>FCFE:</p>
+<ul>
+<li><span class="mathjax-exps">$\text{FCFE}=\text{FCFF}-\text{Int}\times(1-t)+\text{NB}$</span>
+<ul>
+<li>NB: net borrowings
+<ul>
+<li>increase in notes payable/current portion of long-term debt/long-term debt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav3.2.2">3.2.2. More Details about the Parameters </h5>
+<p>FCInv (fixed capital investment):</p>
+<ul>
+<li>use gross value not book value, because depreciation is considered in NCC</li>
+</ul>
+<p>If the company has preferred stock, <span class="mathjax-exps">$NI_\text{total}=NI_\text{common}+D_\text{preferred}$</span>.</p>
+<h4 id="nav3.3">3.3. Usages of FCFs </h4>
+<p>the company paying dividend does not change FCFF/FCFE, because dividend/repurchase is attribution of free cashflow.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Statement of Cashflows</th>
+<th style="text-align:center">Free Cashflows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Net income</td>
+<td style="text-align:center">Net income</td>
+</tr>
+<tr>
+<td style="text-align:center">+ NCC</td>
+<td style="text-align:center">+ NCC</td>
+</tr>
+<tr>
+<td style="text-align:center">- WCInv</td>
+<td style="text-align:center">- WCInv</td>
+</tr>
+<tr>
+<td style="text-align:center">= CFO</td>
+<td style="text-align:center">= CFO</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">+ Int × (1-t)</td>
+</tr>
+<tr>
+<td style="text-align:center">- FCInv</td>
+<td style="text-align:center">- FCInv</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">= FCFF</td>
+</tr>
+<tr>
+<td style="text-align:center">+ Net borrowing</td>
+<td style="text-align:center">+ Net borrowing</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">- Int × (1-t)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">= FCFE</td>
+</tr>
+<tr>
+<td style="text-align:center">- Dividend</td>
+<td style="text-align:center">- Dividend</td>
+</tr>
+<tr>
+<td style="text-align:center">+- stock issues or repurchases</td>
+<td style="text-align:center">+- stock issues or repurchases</td>
+</tr>
+<tr>
+<td style="text-align:center">= Net change in cash</td>
+<td style="text-align:center">= Net change in cash</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nav3.4">3.4. Estimation of FCFs </h4>
+<ul>
+<li>forecast overall growth rate of FCFs, usually <span class="mathjax-exps">$g_\text{FCFF}\neq g_\text{FCFE}$</span></li>
+<li>forecast components of FCFs</li>
+<li>sales-based forecasting method
+<ul>
+<li>assume <span class="mathjax-exps">$\frac{\text{FCInv}-\text{Dep}}{\Delta \text{Sales}}$</span> and <span class="mathjax-exps">$\frac{\text{WCInv}}{\Delta \text{Sales}}$</span> will keep constant</li>
+<li>debt ratio (DR) <span class="mathjax-exps">$\frac{D}{D+E}$</span> will keep constant</li>
+<li><span class="mathjax-exps">$\text{NB}=\text{DR}\times(\text{FCInv}-\text{Dep}+\text{WCInv})$</span></li>
+<li><span class="mathjax-exps">$\text{FCFE}=\text{NI}-(1-\text{DR})\times(\text{FCInv}-\text{Dep}+\text{WCInv})$</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="nav3.5">3.5. Applications of FCFs in Valuation Models </h4>
+<ul>
+<li>Firm value: FCFFs discounted at WACC</li>
+<li>Equity value: FCFEs discounted at return on equity</li>
+<li>Equity value: firm value - market value of debt</li>
+</ul>
+<p>choice of FCFF or FCFE:</p>
+<ul>
+<li>FCFE: stable capital structure</li>
+<li>FCFF: varying capital structure, negative FCFE</li>
+</ul>
+<p>If company has significant non-operating assets, such as excess cash/securities/land held for investment, value of the firm should conclude the non-operating assets part.</p>
+<h3 id="nav4">4.  Market-Based Valuation: Price and Enterprise Value Multiples </h3>
+<h4 id="nav4.1">4.1. Basic Concepts of Multiples </h4>
+<p>justifed/warranted/intrinsic price multiples: fair value multiples</p>
+<h4 id="nav4.2">4.2. Price Multiples </h4>
+<h5 id="nav4.2.1">4.2.1. P/E Ratio </h5>
+<p>rationale: earnings power is a chief driver of investment value<br/>
+problems related to trailing EPS:</p>
+<ul>
+<li>underlying/persistent/continuing/core earnings: earnings remove gain or loss on asset/loss provisions/accounting estimates change</li>
+<li>Molodovsky Effect: buy if high P/E ratio
+<ul>
+<li>company in cyclical industry will have low earnings during recessions</li>
+<li>normalized EPS: remove cyclical component
+<ol>
+<li>average EPS</li>
+<li>average ROE × Book Value Per Share (BVPS)<br/>
+average considers size effect</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>P/E-to-Growth (PEG): P/E divided by expected growth rate of earnings</p>
+<ul>
+<li>in default, use forward P/E</li>
+<li>assumes linear relationship between P/E and growth rate</li>
+</ul>
+<h5 id="nav4.2.2">4.2.2. Earnings Yield and Dividend Yield </h5>
+<p>P/E ratio could be negatvie and could not be used to rank<br/>
+earnings yield: <span class="mathjax-exps">$\frac{E_1}{P_0}$</span> (leading)<br/>
+high D/P strategy: value investing strategy</p>
+<ul>
+<li>justified leading dividend yield: r-g</li>
+<li>value investing is against growth investing</li>
+</ul>
+<h5 id="nav4.2.3">4.2.3. P/B Ratio </h5>
+<p>Book Value per Share (BVPS): investment for common shareholders<br/>
+appropriate for valuing companies with liquid assets<br/>
+misleading if significant difference in asset size<br/>
+justified P/B ratio: <span class="mathjax-exps">$\frac{ROE-g}{r-g}$</span> (ROE = NI / BVPS)</p>
+<h5 id="nav4.2.4">4.2.4. P/S Ratio </h5>
+<p>P/S Ratio: price / sales</p>
+<ul>
+<li>suitable for distressed firms</li>
+<li>sales more stable and robust than EPS</li>
+</ul>
+<h5 id="nav4.2.5">4.2.5. P/CF Ratio </h5>
+<p>difficult to manipulate<br/>
+operating cashflows under IFRS and GAAP may not be comparable</p>
+<h4 id="nav4.3">4.3. Enterprise Value Multiples </h4>
+<p>EV/EBITDA<br/>
+EV = MV of common stock + MV of preferred stock + MV of debt - cash - short-term investments</p>
+<ul>
+<li>EV is to measure the net price an acquirer would pay</li>
+</ul>
+<p>other multiples:</p>
+<ul>
+<li>EV/FCFF</li>
+<li>EV/EBITDAR: rent expense, for airline industry</li>
+<li>EV/S: P/S does not consider sales revenue to pay debt</li>
+</ul>
+<h4 id="nav4.4">4.4. Momentum Valuation Indicators </h4>
+<p>momentum investment vs. contrary investment (buy loser sell winner)<br/>
+unexpected earnings: reported EPS - expected EPS<br/>
+standardized unexptected earnings: (reported EPS - expected EPS) / std of difference<br/>
+relative strength indicator: stock return / index return</p>
+<h4 id="nav4.5">4.5. Central Tendency </h4>
+<p>weighted harmonic mean</p>
+<h3 id="nav5">5.  Residual Income Valuation </h3>
+<h4 id="nav5.1">5.1. ! Concepts of Residual Income </h4>
+<h5 id="nav5.1.1">5.1.1. Basic Concepts </h5>
+<p>Residual Income (RI): net income - cost of equity</p>
+<ul>
+<li>also called economic profit</li>
+<li>cost of equity is marginal cost of equity (additional cost equity)</li>
+<li>also refered as abnormal earnings</li>
+</ul>
+<p>in the long term, companies earn equal to the cost of capital should sell at book value</p>
+<h5 id="nav5.1.2">5.1.2. Calculations of Residual Income </h5>
+<p><span class="mathjax-exps">$RI_t = NI_t-BV(E_{t-1})\times r_e$</span><br/>
+<span class="mathjax-exps">$RI_t = BV(E_{t-1})\times (ROE-r_e)$</span><br/>
+<span class="mathjax-exps">$RI_t = NOPAT_t - \text{total capital charge}$</span></p>
+<ul>
+<li>Net Operating Profit After Tax (NOPAT): <span class="mathjax-exps">$EBIT_t\times (1-t)$</span></li>
+<li><span class="mathjax-exps">$RI_t = EBIT_t\times (1-t)-\text{cost of debt} - \text{cost of equity}$</span></li>
+<li><span class="mathjax-exps">$RI_t = EBIT_t\times (1-t)-WACC\times\text{total capital}$</span>
+<ul>
+<li>weights should use book value</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav5.1.3">5.1.3. Residual Income Forecasts </h5>
+<p>clean surplus relationship: book value of equity ending = book value of equity beginning + net income - dividend</p>
+<ul>
+<li>satisfied if only RE change affect book value of equity</li>
+</ul>
+<p>accounting issues:</p>
+<ul>
+<li>clean surplus relationship: violated if items bypass the income statement and direct adjustments to equity are made
+<ul>
+<li>unrealized value of some financial instruments (FVOCI)</li>
+<li>foreign currency translation</li>
+<li>certain pension adjustments</li>
+</ul>
+</li>
+<li>balance sheet adjustment
+<ul>
+<li>significant off-balance-sheet items</li>
+<li>significant difference between BV and MV</li>
+</ul>
+</li>
+<li>intangible items:
+<ul>
+<li>goodwill considered acquisition</li>
+<li>R&amp;D</li>
+</ul>
+</li>
+<li>nonrecurring items</li>
+<li>cookie jar reserves (excess loss or expenses)</li>
+</ul>
+<h5 id="nav5.1.4">5.1.4. Commercial Implementations </h5>
+<p>economic value added (EVA): NOPAT - WACC × total capital</p>
+<ul>
+<li>NOPAT and TC are adjusted</li>
+</ul>
+<p>market value added (MVA): market value of company - book value of total capital<br/>
+EVA and MVA are measuring internal corporate performance and determining executive compensation</p>
+<p>Tobin's q = market value of debt and equity / replacement cost of total assets</p>
+<h4 id="nav5.2">5.2. ! Valuation Models </h4>
+<h5 id="nav5.2.1">5.2.1. Single Stage Model </h5>
+<p><span class="mathjax-exps">$V_0=B_0+\sum\frac{RI_t}{(1+r_e)^t}$</span><br/>
+assume constant growth rate for residual income: <span class="mathjax-exps">$V_0=B_0+\frac{RI_1}{r_e-g}=B_0\frac{ROE-g}{r_e-g}$</span></p>
+<h5 id="nav5.2.2">5.2.2. Multi-Stage Model </h5>
+<p>V0= B0 + PV (interim high-growth RI) + PV (continuing RI)</p>
+<ul>
+<li>using P/B ratio: <span class="mathjax-exps">$V_0=B_0+\sum_{t=1}^T\frac{NI_t-rB_{t-1}}{(1+r)^t}+\frac{P_T^*-P_T}{(1+r)^T}$</span></li>
+<li>using persistence factor: RI will decline to 0 over time after year T
+<ul>
+<li><span class="mathjax-exps">$PV_{T}(\text{continuing RI})=\frac{RI_{T+1}}{1+r_e-w}$</span></li>
+<li><span class="mathjax-exps">$w$</span>: persistence factor, between 0 and 1</li>
+<li><span class="mathjax-exps">$PV_{0}(\text{continuing RI})=\frac{PV_T}{(1+r_e)^T}$</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="nav5.3">5.3. Model Comparisons </h4>
+<h3 id="nav6">6.  Private Company Valuation </h3>
+<h4 id="nav6.1">6.1. Public vs. Private Company Valuation </h4>
+<h4 id="nav6.2">6.2. Private Company Valuation Uses and Areas of Focus </h4>
+<ul>
+<li>transaction related valuations</li>
+<li>compliance related valuations
+<ul>
+<li>finance reporting</li>
+<li>tax reporting</li>
+</ul>
+</li>
+<li>litigation related
+<ul>
+<li>shareholder disputes</li>
+</ul>
+</li>
+</ul>
+<h4 id="nav6.3">6.3. Earnings Normalization and Cash Flow Estimation </h4>
+<h5 id="nav6.3.1">6.3.1. ! Earnings Normalization </h5>
+<ul>
+<li>public companies
+<ul>
+<li>audited financial statements</li>
+</ul>
+</li>
+<li>private
+<ul>
+<li>reviewed (审阅): opinion letter, limited assurance</li>
+<li>compiled (汇编): no opinion letter</li>
+</ul>
+</li>
+</ul>
+<p>related party transaction:</p>
+<ul>
+<li>arm's length transaction: normal transaction</li>
+</ul>
+<h5 id="nav6.3.2">6.3.2. Cashflow Estimation </h5>
+<h4 id="nav6.4">6.4. Private Company Discount Rates and Required Rate of Return </h4>
+<h5 id="nav6.4.1">6.4.1. Factors Affecting Private Company Discount Rates </h5>
+<ul>
+<li>size premiums</li>
+<li>less debt availability, relying more on equity and higher WACC</li>
+<li>in an acquisition context, use target company's discount rate, not the acquirer's (otherwise premium)</li>
+<li>projection risk: specific adjustment</li>
+</ul>
+<h5 id="nav6.4.2">6.4.2. Required Rate of Return Models </h5>
+<ul>
+<li>CAPM</li>
+<li>expanded CAPM: small-cap premium + company specific stock premium</li>
+<li>build-up approach: rf + equity risk + small-cap + industry risk + company-specific</li>
+</ul>
+<h4 id="nav6.5">6.5. Valuation Discounts and Premiums </h4>
+<h5 id="nav6.5.1">6.5.1. Strategic Buyer/Financial Buyer </h5>
+<ul>
+<li>strategic buyer: buy the company and realize a strategy</li>
+<li>financial buyer: unwill to take advantage of strategic operation</li>
+</ul>
+<h5 id="nav6.5.2">6.5.2. Discount for Lack of Control </h5>
+<p>DLOC = 1 - 1 / (1 + control premium)</p>
+<h5 id="nav6.5.3">6.5.3. Discount for Lack of Marketability </h5>
+<p>total discount = 1 - (1 - DLOC) × (1 - DLOM)<br/>
+estimates:</p>
+<ul>
+<li>common stock price - restricted stock price</li>
+<li>price differences before and after IPO</li>
+<li>at the money put option premium</li>
+</ul>
+<h4 id="nav6.6">6.6. ! Private Company Valuation Approaches </h4>
+<h5 id="nav6.6.1">6.6.1. Income Approach </h5>
+<ul>
+<li>Free cashflow:</li>
+<li>capitalized cashflow: <span class="mathjax-exps">$\frac{FCFF_t}{WACC-g}$</span>
+<ul>
+<li>Reinvestment Rate (RIR): <span class="mathjax-exps">$\frac{g}{WACC}$</span></li>
+<li><span class="mathjax-exps">$FCFF_{t+1}=EBIT_{t+1}(1-t)(1-RIR)$</span></li>
+<li><span class="mathjax-exps">$IV=\frac{FCFF_{t+1}}{r_e-g}$</span> excluding payments to debtholders</li>
+</ul>
+</li>
+<li>excess earnings:
+<ul>
+<li>RI = normalized income - working capital × return on wc - fixed assets × return on fa</li>
+</ul>
+</li>
+</ul>
+<h5 id="nav6.6.2">6.6.2. Market Based Approach </h5>
+<ul>
+<li>Guideline Public Company Method (GPCM)
+<ul>
+<li>? <span class="mathjax-exps">$\beta_\text{unlevered}=\frac{\beta_\text{levered}}{1+(1-t)\frac{D}{E}}$</span></li>
+<li>find unlevered beta of comparable listed companies</li>
+<li>calculate levered beta use private company's capital structure</li>
+<li>price volatility is magnified because of debt (lever)</li>
+</ul>
+</li>
+<li>Guideline Transactions Method (GTM)</li>
+<li>Prior Transaction Method (PTM)</li>
+</ul>
+<h5 id="nav6.6.3">6.6.3. Asset Based Approach </h5>
+<p>not used for going concerns<br/>
+usually the lowest valuation</p>
+</div>
+	      	<footer class="post-footer">
+	          <div class="post-tags">
+	          	<a href="" rel="tag"># Equity</a>
+	          </div>
+	          <div class="post-nav">
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Economics.html" rel="prev">< CFA II - Economics</a>
+	            </div>
+	            <div class="post-nav-item">
+                <a href="/pages/CFA II/CFA II - Financial Statement Analysis.html" rel="next">CFA II - Financial Statement Analysis ></a>
+	            </div>
+	          </div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</main>
+	<footer class="footer" style="opacity: 1;">
+    <div class="footer-inner" unselectable="on"; onselectstart="return false;" >
+    	<div class="powered-by">怀旧空吟闻笛赋，到乡翻似烂柯人</div>
+			<div class="copyright" >
+			  ©<span itemprop="copyrightYear">2022</span>
+			  <span class="with-love">
+			    <i class="fa fa-heart"></i>
+			  </span>
+			  <span class="author" itemprop="copyrightHolder">Nowhere Dense</span>
+			</div>
+    	</div>
+  	</footer>
+  	<!-- algolia search -->
+	<script src="/lib/algoliasearch.js"></script>
+	<script src="/lib/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    var client = algoliasearch("FDSVDWTFJT", 'a20f9e8e755004dfdc239b75dab95035');
+	    var index = client.initIndex("article");
+
+	    $("input.searchButton").click(function(){
+	    	$("body").css("cursor", "progress");
+	    	var inputStr = $("input.vector-search-box-input").val();
+	    	var result = index.search(inputStr).then(({hits})=>{
+	    		$("h1.post-title").text("Search Results");
+	    		$(".post-meta-container").remove();
+	    		$("aside.sidebar").remove();
+	    		var mume = $(".mume");
+	    		mume.empty();
+
+	    		// console.log(hits);
+	    		if (hits.length==0){
+	    			mume.append("<p>No results found</p>");
+	    		}
+	    		else {
+	    			var content = ""
+		    		for (var i=0;i<Math.min(hits.length,10);i++){
+		    			content += '<h3><a class="algolia-searched" href="'+hits[i].path+'">'+hits[i].title+"</a></h3>";
+		    			content += "<p>"+hits[i].content.substring(0,330)+"</p>";
+		    		}
+		    		mume.append(content);
+	    		}
+	    		$("body").css("cursor", "auto");
+	    	});
+	    });
+	  });
+	</script>
+</body>
+</html>

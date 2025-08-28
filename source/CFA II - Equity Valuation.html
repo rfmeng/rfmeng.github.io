@@ -1,0 +1,634 @@
+<!DOCTYPE html><html><head>
+      <title>CFA II - Equity Valuation</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><ndtag category="CFA II" tag="Equity" createdate="2025-08-17" editdate="2025-08-28"></ndtag></p>
+<h3 id="--c1-p237---equity-valuation-applications-and-processes"><!-- C1 p237 --> Equity Valuation: Applications and Processes </h3>
+<h4 id="value-and-price">Value and Price </h4>
+<h5 id="intrinsic-value">Intrinsic Value </h5>
+<h5 id="sources-of-perceived-mispricing">Sources of Perceived Mispricing </h5>
+<p><span class="mathjax-exps">$\mathbb{E}(IV)-P=(IV-P)+[\mathbb {E}(IV)-IV]$</span></p>
+<ul>
+<li>perceived mispricing = true mispricing + estimation error</li>
+<li>alpha (abnormal return): IV - P</li>
+</ul>
+<h5 id="going-concern-value-and-liquidation-value">Going-Concern Value and Liquidation Value </h5>
+<p>going-concern value &gt; liquidation value</p>
+<ul>
+<li>Going-Concern value: going-concern assumption</li>
+<li>liquidation value: value of company if liquidation
+<ul>
+<li>orderly liquidation value: adequate time to realize liquidation value</li>
+</ul>
+</li>
+</ul>
+<h4 id="selecting-the-appropriate-valuation-model">Selecting the Appropriate Valuation Model </h4>
+<ul>
+<li>Absolute valuation models: intrinsic value compared to market price
+<ul>
+<li>discounted cashflow model (DCF) or present value model
+<ul>
+<li>Dividend discount model (DDM)</li>
+<li>Free cashflow model (FCF)</li>
+<li>Risidual income model (RI)</li>
+</ul>
+</li>
+<li>asset-based model
+<ul>
+<li>natural resources</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Relative valuation models: relative comparison to similar assets
+<ul>
+<li>typically using price multiples</li>
+</ul>
+</li>
+</ul>
+<p>Common Adjustments for Valuation:</p>
+<ul>
+<li>investor has controlling position: control premium</li>
+<li>price could be realized for block of shares: blockage factor</li>
+</ul>
+<p>Sum-of-the-Parts Value (breakup value, private market value):</p>
+<ul>
+<li>company with segments having different valuation characteristics</li>
+</ul>
+<p>Conglomerate Discount: discount to the company operating in multiple unrelated business compared to company with narrower focuses</p>
+<ul>
+<li>inefficiency of internal capital marktes</li>
+<li>endogenous factors: poorly performing companies tend to expand in unrelated business</li>
+</ul>
+<h4 id="process-of-valuation">Process of Valuation </h4>
+<p>Porter's five forces:</p>
+<ul>
+<li>intra-industry rivalry</li>
+<li>threat oif new entrants</li>
+<li>threat of substitutes</li>
+<li>bargaining power of suppliers</li>
+<li>bargaining power of buyers</li>
+</ul>
+<p>Porter's 3 competitive strategies:</p>
+<ul>
+<li>cost leadership</li>
+<li>differentiation</li>
+<li>focus</li>
+</ul>
+<h3 id="--c2-p283---discounted-dividend-valuation"><!-- C2 p283 --> Discounted Dividend Valuation </h3>
+<h4 id="framework-of-model">Framework of Model </h4>
+<h5 id="dcf-model">DCF Model </h5>
+<p>intrinsic value <span class="mathjax-exps">$V_0=\sum\frac{CF_i}{(1+r)^i}$</span><br>
+cashflow could be:</p>
+<ul>
+<li>dividends</li>
+<li>free cash flow
+<ul>
+<li>Free Cash Flow to Equity (FCFE)
+<ul>
+<li>use <span class="mathjax-exps">$r_e$</span></li>
+</ul>
+</li>
+<li>Free Cash Flow to the Firm (FCFF): 实体现金流
+<ul>
+<li>use WACC</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>residual income: earnings in excess of the investors' required return</li>
+</ul>
+<h5 id="basic-concepts-of-ddm">Basic Concepts of DDM </h5>
+<p>DDM is from the perspective of non-controlling interest investors<br>
+suitable for using DDM:</p>
+<ul>
+<li>mature firms, profitable but not fast growth</li>
+</ul>
+<h5 id="estimation-of-infinite-stream">Estimation of Infinite Stream </h5>
+<ol>
+<li><span class="mathjax-exps">$V_0 = \sum\frac{D_t}{(1+r_e)^t}+\frac{P_t}{(1+r_e)^t}$</span></li>
+<li>future dividends have stylized growth patterns</li>
+<li>a finite number of dividends and a terminal value</li>
+</ol>
+<p>example: company have <span class="mathjax-exps">$D_0=1$</span>, payout ratio is 40%, <span class="mathjax-exps">$g_s=9%$</span> for the first four years, <span class="mathjax-exps">$r_e=10%$</span>, trailing P/E for t = 4 is 15</p>
+<ul>
+<li>EPS for year 4 is <span class="mathjax-exps">$E_4=1.09^4/40\%=3.52$</span></li>
+<li>terminal value in year 4 is 15*3.52 = 52.93<br>
+(?) dynamic P/E ratio</li>
+</ul>
+<h4 id="gordon-growth-model">Gordon Growth Model </h4>
+<h5 id="basic-concepts">Basic Concepts </h5>
+<p><span class="mathjax-exps">$V_0=\frac{D_1}{r_e-g}$</span>, <span class="mathjax-exps">$V_0=\sum\frac{D_1(1+g)^{t-1}}{(1+r_e)^t}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g$</span> is growth rate for dividend</li>
+<li><span class="mathjax-exps">$r_e\leq \text{ROE}$</span></li>
+</ul>
+<p>GGM should consider GDP growth, industry life cycle stages and Porter's five force model<br>
+GGM can accurately value companies repurchasing shares after adjusting dividend growth rate</p>
+<p>sustainable growth rate is for earnings and dividends if we assume</p>
+<ul>
+<li>growth from internally generated sources (no new equity issued)</li>
+<li>some key financial ratios remain unchanged</li>
+<li><span class="mathjax-exps">$g=\text{ROE}\times b$</span>, where <span class="mathjax-exps">$b$</span> is rentention rate</li>
+<li><span class="mathjax-exps">$g=\frac{\Delta \text{RE}}{\text{Equity}}=\frac{b\times \text{NI}}{\text{Equity}}$</span></li>
+</ul>
+<p><span class="mathjax-exps">$\text{ROE} =\frac{\text{Net Income}}{\text{Sales Revenue}}\times\frac{\text{Sales Revenue}}{\text{Asset}}\times\frac{\text{Asset}}{\text{Equity}}$</span></p>
+<ul>
+<li>ROE = Net Profit Margin × Asset Turnover × Financial Leverage</li>
+<li>equity at the beginning of the period should be used</li>
+</ul>
+<h5 id="applications">Applications </h5>
+<h6 id="valuation-of-preferred-stock">Valuation of Preferred Stock </h6>
+<p><span class="mathjax-exps">$V_0=\frac{D}{r}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$r$</span>: discount rate or capitalization rate, higher than junior ranking debt yield</li>
+</ul>
+<h6 id="justified-pe-ratio">Justified P/E Ratio </h6>
+<p>Justified Leading P/E (动态市盈率): <span class="mathjax-exps">$\frac{V_0}{E_1}=\frac{D_1}{E_1 (r-g)}=\frac{1-b}{r-g}$</span><br>
+Justified Trailing P/E (静态市盈率): <span class="mathjax-exps">$\frac{V_0}{E_0}=\frac{D_1}{E_0 (r-g)}=\frac{(1-b)(1+g)}{r-g}$</span></p>
+<h6 id="implied-rate-of-return-and-growth-rate">Implied Rate of Return and Growth Rate </h6>
+<p><span class="mathjax-exps">$r=\frac{D_1}{P_0}+g$</span></p>
+<ul>
+<li>if implied growth rate is higher than sustainable growth rate, the stock is overvalued</li>
+</ul>
+<h6 id="present-value-of-growth-opportunities">Present Value of Growth Opportunities </h6>
+<p>(?) ROE &gt; r or ROIC &gt; WACC<br>
+Companies without positive NPV projects should distribute all earnings in dividends.<br>
+<span class="mathjax-exps">$V_0=\frac{E_1}{r}+\text{PVGO}$</span>, where <span class="mathjax-exps">$E_1$</span> is dividend of no growth.</p>
+<h4 id="multi-stage-ddm">Multi-Stage DDM </h4>
+<h5 id="two-stage-model-distinct-phases">Two-Stage Model: Distinct Phases </h5>
+<p>growth cann fall into three stages:</p>
+<ol>
+<li>high growth phase
+<ul>
+<li>rapid EPS growth, negative FCF</li>
+<li>ROE&gt;r, low dividend payout</li>
+</ul>
+</li>
+<li>transition phase
+<ul>
+<li>sales and EPS growth slow, postive FCF</li>
+<li>ROE approaches r, dividend increases</li>
+</ul>
+</li>
+<li>mature and sustainable growth phase
+<ul>
+<li>growth at economy-wide rate</li>
+<li>ROE = r, high competition</li>
+</ul>
+</li>
+</ol>
+<p><span class="mathjax-exps">$V_0=\sum_{t=1}^n\frac{D_0(1+g_S)^t}{(1+r)^t}+\frac{D_0(1+g_S)^n(1+g_L)}{(1+r)^n(r-g_L)}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g_S$</span> is for short term and <span class="mathjax-exps">$g_L$</span> is for long term</li>
+</ul>
+<h5 id="two-stage-model-h-model">Two-Stage Model: H-Model </h5>
+<p>Growth rate declines linearly from an abnormal high rate to the mature growth rate during stage 1.<br>
+<span class="mathjax-exps">$V_0=\frac{D_0(1+g_L)}{r-g_L}+\frac{D_0H(g_S-g_L)}{r-g_L}$</span></p>
+<ul>
+<li><span class="mathjax-exps">$g_S$</span>: high growth rate at the beginning of stage 1</li>
+<li><span class="mathjax-exps">$H$</span>: half life in years of the stage 1</li>
+</ul>
+<h5 id="three-stage-model">Three-Stage Model </h5>
+<p>Combination of H-model and two stage model</p>
+<h3 id="--c3-p13---free-cash-flow-valuation"><!-- C3 p13 --> Free Cash Flow Valuation </h3>
+<h4 id="basic-concepts-of-fcfs">Basic Concepts of FCFs </h4>
+<p>Free cash flows are the cashflow after:</p>
+<ul>
+<li>fulfilling all obligations (expenses and taxes)</li>
+<li>without impacting on the future growth growth of the company</li>
+<li>FCFF: available to the company's suppliers of capital
+<ul>
+<li>if FCFE negative</li>
+<li>if capital structure is changing</li>
+</ul>
+</li>
+<li>FCFE: available to the common equity
+<ul>
+<li>if the company's capital structure is stable</li>
+</ul>
+</li>
+</ul>
+<p>FCFE could be greater or less than dividends<br>
+FCFE model takes a control perspective</p>
+<h4 id="calculation-of-fcfs">Calculation of FCFs </h4>
+<h5 id="basic-formula">Basic Formula </h5>
+<p><span class="mathjax-exps">$\text{FCFF}=\text{EBIT}\times(1-t)+\text{NCC}-\text{WCInv}-\text{FCInv}$</span></p>
+<ul>
+<li>NCC: Non-Cash Charges, depreciation or amortization</li>
+<li>WCInv: working capital investment excluding cash and short-term debt (notes payable and current portion of long-term debt)
+<ul>
+<li>working capital = current asset - current liability</li>
+<li>excluding cash and short-term debt: this portion of cash is for financing activity, not for operating activity</li>
+</ul>
+</li>
+<li>FCInv: net fixed capital investment</li>
+</ul>
+<p>Other formula:</p>
+<ul>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{NI}+\text{NCC}+\text{Int}\times(1-t)-\text{WCInv}-\text{FCInv}$</span>
+<ul>
+<li>EBIT - Interest - Tax = Net income</li>
+</ul>
+</li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{EBIT}\times(1-t)+\text{NCC}-\text{WCInv}-\text{FCInv}$</span><br>
+EBIT = EBITDA - NCC</li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{EBITDA}\times(1-t)+\text{NCC}\times t-\text{WCInv}-\text{FCInv}$</span></li>
+<li><span class="mathjax-exps">$\text{FCFF}=\text{CFO}+\text{Int}\times (1-t)-\text{FCInv}$</span>
+<ul>
+<li>NI - (CFI and CFF) + NCC - WCInv = CFO</li>
+<li>assume CFI and CFF have little effect</li>
+</ul>
+</li>
+</ul>
+<p>FCFE:</p>
+<ul>
+<li><span class="mathjax-exps">$\text{FCFE}=\text{FCFF}-\text{Int}\times(1-t)+\text{NB}$</span>
+<ul>
+<li>NB: net borrowings
+<ul>
+<li>increase in notes payable/current portion of long-term debt/long-term debt</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="more-details-about-the-parameters">More Details about the Parameters </h5>
+<p>FCInv (fixed capital investment):</p>
+<ul>
+<li>use gross value not book value, because depreciation is considered in NCC</li>
+</ul>
+<p>If the company has preferred stock, <span class="mathjax-exps">$NI_\text{total}=NI_\text{common}+D_\text{preferred}$</span>.</p>
+<h4 id="usages-of-fcfs">Usages of FCFs </h4>
+<p>the company paying dividend does not change FCFF/FCFE, because dividend/repurchase is attribution of free cashflow.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Statement of Cashflows</th>
+<th style="text-align:center">Free Cashflows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Net income</td>
+<td style="text-align:center">Net income</td>
+</tr>
+<tr>
+<td style="text-align:center">+ NCC</td>
+<td style="text-align:center">+ NCC</td>
+</tr>
+<tr>
+<td style="text-align:center">- WCInv</td>
+<td style="text-align:center">- WCInv</td>
+</tr>
+<tr>
+<td style="text-align:center">= CFO</td>
+<td style="text-align:center">= CFO</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">+ Int × (1-t)</td>
+</tr>
+<tr>
+<td style="text-align:center">- FCInv</td>
+<td style="text-align:center">- FCInv</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">= FCFF</td>
+</tr>
+<tr>
+<td style="text-align:center">+ Net borrowing</td>
+<td style="text-align:center">+ Net borrowing</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">- Int × (1-t)</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">= FCFE</td>
+</tr>
+<tr>
+<td style="text-align:center">- Dividend</td>
+<td style="text-align:center">- Dividend</td>
+</tr>
+<tr>
+<td style="text-align:center">+- stock issues or repurchases</td>
+<td style="text-align:center">+- stock issues or repurchases</td>
+</tr>
+<tr>
+<td style="text-align:center">= Net change in cash</td>
+<td style="text-align:center">= Net change in cash</td>
+</tr>
+</tbody>
+</table>
+<h4 id="estimation-of-fcfs">Estimation of FCFs </h4>
+<ul>
+<li>forecast overall growth rate of FCFs, usually <span class="mathjax-exps">$g_\text{FCFF}\neq g_\text{FCFE}$</span></li>
+<li>forecast components of FCFs</li>
+<li>sales-based forecasting method
+<ul>
+<li>assume <span class="mathjax-exps">$\frac{\text{FCInv}-\text{Dep}}{\Delta \text{Sales}}$</span> and <span class="mathjax-exps">$\frac{\text{WCInv}}{\Delta \text{Sales}}$</span> will keep constant</li>
+<li>debt ratio (DR) <span class="mathjax-exps">$\frac{D}{D+E}$</span> will keep constant</li>
+<li><span class="mathjax-exps">$\text{NB}=\text{DR}\times(\text{FCInv}-\text{Dep}+\text{WCInv})$</span></li>
+<li><span class="mathjax-exps">$\text{FCFE}=\text{NI}-(1-\text{DR})\times(\text{FCInv}-\text{Dep}+\text{WCInv})$</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="applications-of-fcfs-in-valuation-models">Applications of FCFs in Valuation Models </h4>
+<ul>
+<li>Firm value: FCFFs discounted at WACC</li>
+<li>Equity value: FCFEs discounted at return on equity</li>
+<li>Equity value: firm value - market value of debt</li>
+</ul>
+<p>choice of FCFF or FCFE:</p>
+<ul>
+<li>FCFE: stable capital structure</li>
+<li>FCFF: varying capital structure, negative FCFE</li>
+</ul>
+<p>If company has significant non-operating assets, such as excess cash/securities/land held for investment, value of the firm should conclude the non-operating assets part.</p>
+<h3 id="--c4-p109---market-based-valuation-price-and-enterprise-value-multiples"><!-- C4 p109 --> Market-Based Valuation: Price and Enterprise Value Multiples </h3>
+<h4 id="basic-concepts-of-multiples">Basic Concepts of Multiples </h4>
+<p>justifed/warranted/intrinsic price multiples: fair value multiples</p>
+<h4 id="price-multiples">Price Multiples </h4>
+<h5 id="pe-ratio">P/E Ratio </h5>
+<p>rationale: earnings power is a chief driver of investment value<br>
+problems related to trailing EPS:</p>
+<ul>
+<li>underlying/persistent/continuing/core earnings: earnings remove gain or loss on asset/loss provisions/accounting estimates change</li>
+<li>Molodovsky Effect: buy if high P/E ratio
+<ul>
+<li>company in cyclical industry will have low earnings during recessions</li>
+<li>normalized EPS: remove cyclical component
+<ol>
+<li>average EPS</li>
+<li>average ROE × Book Value Per Share (BVPS)<br>
+average considers size effect</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>P/E-to-Growth (PEG): P/E divided by expected growth rate of earnings</p>
+<ul>
+<li>in default, use forward P/E</li>
+<li>assumes linear relationship between P/E and growth rate</li>
+</ul>
+<h5 id="earnings-yield-and-dividend-yield">Earnings Yield and Dividend Yield </h5>
+<p>P/E ratio could be negatvie and could not be used to rank<br>
+earnings yield: <span class="mathjax-exps">$\frac{E_1}{P_0}$</span> (leading)<br>
+high D/P strategy: value investing strategy</p>
+<ul>
+<li>justified leading dividend yield: r-g</li>
+<li>value investing is against growth investing</li>
+</ul>
+<h5 id="pb-ratio">P/B Ratio </h5>
+<p>Book Value per Share (BVPS): investment for common shareholders<br>
+appropriate for valuing companies with liquid assets<br>
+misleading if significant difference in asset size<br>
+justified P/B ratio: <span class="mathjax-exps">$\frac{ROE-g}{r-g}$</span> (ROE = NI / BVPS)</p>
+<h5 id="ps-ratio">P/S Ratio </h5>
+<p>P/S Ratio: price / sales</p>
+<ul>
+<li>suitable for distressed firms</li>
+<li>sales more stable and robust than EPS</li>
+</ul>
+<h5 id="pcf-ratio">P/CF Ratio </h5>
+<p>difficult to manipulate<br>
+operating cashflows under IFRS and GAAP may not be comparable</p>
+<h4 id="enterprise-value-multiples">Enterprise Value Multiples </h4>
+<p>EV/EBITDA<br>
+EV = MV of common stock + MV of preferred stock + MV of debt - cash - short-term investments</p>
+<ul>
+<li>EV is to measure the net price an acquirer would pay</li>
+</ul>
+<p>other multiples:</p>
+<ul>
+<li>EV/FCFF</li>
+<li>EV/EBITDAR: rent expense, for airline industry</li>
+<li>EV/S: P/S does not consider sales revenue to pay debt</li>
+</ul>
+<h4 id="momentum-valuation-indicators">Momentum Valuation Indicators </h4>
+<p>momentum investment vs. contrary investment (buy loser sell winner)<br>
+unexpected earnings: reported EPS - expected EPS<br>
+standardized unexptected earnings: (reported EPS - expected EPS) / std of difference<br>
+relative strength indicator: stock return / index return</p>
+<h4 id="central-tendency">Central Tendency </h4>
+<p>weighted harmonic mean</p>
+<h3 id="--c5-p225---residual-income-valuation"><!-- C5 p225 --> Residual Income Valuation </h3>
+<h4 id="-concepts-of-residual-income">! Concepts of Residual Income </h4>
+<h5 id="basic-concepts-1">Basic Concepts </h5>
+<p>Residual Income (RI): net income - cost of equity</p>
+<ul>
+<li>also called economic profit</li>
+<li>cost of equity is marginal cost of equity (additional cost equity)</li>
+<li>also refered as abnormal earnings</li>
+</ul>
+<p>in the long term, companies earn equal to the cost of capital should sell at book value</p>
+<h5 id="calculations-of-residual-income">Calculations of Residual Income </h5>
+<p><span class="mathjax-exps">$RI_t = NI_t-BV(E_{t-1})\times r_e$</span><br>
+<span class="mathjax-exps">$RI_t = BV(E_{t-1})\times (ROE-r_e)$</span><br>
+<span class="mathjax-exps">$RI_t = NOPAT_t - \text{total capital charge}$</span></p>
+<ul>
+<li>Net Operating Profit After Tax (NOPAT): <span class="mathjax-exps">$EBIT_t\times (1-t)$</span></li>
+<li><span class="mathjax-exps">$RI_t = EBIT_t\times (1-t)-\text{cost of debt} - \text{cost of equity}$</span></li>
+<li><span class="mathjax-exps">$RI_t = EBIT_t\times (1-t)-WACC\times\text{total capital}$</span>
+<ul>
+<li>weights should use book value</li>
+</ul>
+</li>
+</ul>
+<h5 id="residual-income-forecasts">Residual Income Forecasts </h5>
+<p>clean surplus relationship: book value of equity ending = book value of equity beginning + net income - dividend</p>
+<ul>
+<li>satisfied if only RE change affect book value of equity</li>
+</ul>
+<p>accounting issues:</p>
+<ul>
+<li>clean surplus relationship: violated if items bypass the income statement and direct adjustments to equity are made
+<ul>
+<li>unrealized value of some financial instruments (FVOCI)</li>
+<li>foreign currency translation</li>
+<li>certain pension adjustments</li>
+</ul>
+</li>
+<li>balance sheet adjustment
+<ul>
+<li>significant off-balance-sheet items</li>
+<li>significant difference between BV and MV</li>
+</ul>
+</li>
+<li>intangible items:
+<ul>
+<li>goodwill considered acquisition</li>
+<li>R&amp;D</li>
+</ul>
+</li>
+<li>nonrecurring items</li>
+<li>cookie jar reserves (excess loss or expenses)</li>
+</ul>
+<h5 id="commercial-implementations">Commercial Implementations </h5>
+<p>economic value added (EVA): NOPAT - WACC × total capital</p>
+<ul>
+<li>NOPAT and TC are adjusted</li>
+</ul>
+<p>market value added (MVA): market value of company - book value of total capital<br>
+EVA and MVA are measuring internal corporate performance and determining executive compensation</p>
+<p>Tobin's q = market value of debt and equity / replacement cost of total assets</p>
+<h4 id="-valuation-models">! Valuation Models </h4>
+<h5 id="single-stage-model">Single Stage Model </h5>
+<p><span class="mathjax-exps">$V_0=B_0+\sum\frac{RI_t}{(1+r_e)^t}$</span><br>
+assume constant growth rate for residual income: <span class="mathjax-exps">$V_0=B_0+\frac{RI_1}{r_e-g}=B_0\frac{ROE-g}{r_e-g}$</span></p>
+<h5 id="multi-stage-model">Multi-Stage Model </h5>
+<p>V0= B0 + PV (interim high-growth RI) + PV (continuing RI)</p>
+<ul>
+<li>using P/B ratio: <span class="mathjax-exps">$V_0=B_0+\sum_{t=1}^T\frac{NI_t-rB_{t-1}}{(1+r)^t}+\frac{P_T^*-P_T}{(1+r)^T}$</span></li>
+<li>using persistence factor: RI will decline to 0 over time after year T
+<ul>
+<li><span class="mathjax-exps">$PV_{T}(\text{continuing RI})=\frac{RI_{T+1}}{1+r_e-w}$</span></li>
+<li><span class="mathjax-exps">$w$</span>: persistence factor, between 0 and 1</li>
+<li><span class="mathjax-exps">$PV_{0}(\text{continuing RI})=\frac{PV_T}{(1+r_e)^T}$</span></li>
+</ul>
+</li>
+</ul>
+<h4 id="model-comparisons">Model Comparisons </h4>
+<h3 id="--c6-p293---private-company-valuation"><!-- C6 p293 --> Private Company Valuation </h3>
+<h4 id="public-vs-private-company-valuation">Public vs. Private Company Valuation </h4>
+<h4 id="private-company-valuation-uses-and-areas-of-focus">Private Company Valuation Uses and Areas of Focus </h4>
+<ul>
+<li>transaction related valuations</li>
+<li>compliance related valuations
+<ul>
+<li>finance reporting</li>
+<li>tax reporting</li>
+</ul>
+</li>
+<li>litigation related
+<ul>
+<li>shareholder disputes</li>
+</ul>
+</li>
+</ul>
+<h4 id="earnings-normalization-and-cash-flow-estimation">Earnings Normalization and Cash Flow Estimation </h4>
+<h5 id="-earnings-normalization">! Earnings Normalization </h5>
+<ul>
+<li>public companies
+<ul>
+<li>audited financial statements</li>
+</ul>
+</li>
+<li>private
+<ul>
+<li>reviewed (审阅): opinion letter, limited assurance</li>
+<li>compiled (汇编): no opinion letter</li>
+</ul>
+</li>
+</ul>
+<p>related party transaction:</p>
+<ul>
+<li>arm's length transaction: normal transaction</li>
+</ul>
+<h5 id="cashflow-estimation">Cashflow Estimation </h5>
+<h4 id="private-company-discount-rates-and-required-rate-of-return">Private Company Discount Rates and Required Rate of Return </h4>
+<h5 id="factors-affecting-private-company-discount-rates">Factors Affecting Private Company Discount Rates </h5>
+<ul>
+<li>size premiums</li>
+<li>less debt availability, relying more on equity and higher WACC</li>
+<li>in an acquisition context, use target company's discount rate, not the acquirer's (otherwise premium)</li>
+<li>projection risk: specific adjustment</li>
+</ul>
+<h5 id="required-rate-of-return-models">Required Rate of Return Models </h5>
+<ul>
+<li>CAPM</li>
+<li>expanded CAPM: small-cap premium + company specific stock premium</li>
+<li>build-up approach: rf + equity risk + small-cap + industry risk + company-specific</li>
+</ul>
+<h4 id="valuation-discounts-and-premiums">Valuation Discounts and Premiums </h4>
+<h5 id="strategic-buyerfinancial-buyer">Strategic Buyer/Financial Buyer </h5>
+<ul>
+<li>strategic buyer: buy the company and realize a strategy</li>
+<li>financial buyer: unwill to take advantage of strategic operation</li>
+</ul>
+<h5 id="discount-for-lack-of-control">Discount for Lack of Control </h5>
+<p>DLOC = 1 - 1 / (1 + control premium)</p>
+<h5 id="discount-for-lack-of-marketability">Discount for Lack of Marketability </h5>
+<p>total discount = 1 - (1 - DLOC) × (1 - DLOM)<br>
+estimates:</p>
+<ul>
+<li>common stock price - restricted stock price</li>
+<li>price differences before and after IPO</li>
+<li>at the money put option premium</li>
+</ul>
+<h4 id="-private-company-valuation-approaches">! Private Company Valuation Approaches </h4>
+<h5 id="income-approach">Income Approach </h5>
+<ul>
+<li>Free cashflow:</li>
+<li>capitalized cashflow: <span class="mathjax-exps">$\frac{FCFF_t}{WACC-g}$</span>
+<ul>
+<li>Reinvestment Rate (RIR): <span class="mathjax-exps">$\frac{g}{WACC}$</span></li>
+<li><span class="mathjax-exps">$FCFF_{t+1}=EBIT_{t+1}(1-t)(1-RIR)$</span></li>
+<li><span class="mathjax-exps">$IV=\frac{FCFF_{t+1}}{r_e-g}$</span> excluding payments to debtholders</li>
+</ul>
+</li>
+<li>excess earnings:
+<ul>
+<li>RI = normalized income - working capital × return on wc - fixed assets × return on fa</li>
+</ul>
+</li>
+</ul>
+<h5 id="market-based-approach">Market Based Approach </h5>
+<ul>
+<li>Guideline Public Company Method (GPCM)
+<ul>
+<li>? <span class="mathjax-exps">$\beta_\text{unlevered}=\frac{\beta_\text{levered}}{1+(1-t)\frac{D}{E}}$</span></li>
+<li>find unlevered beta of comparable listed companies</li>
+<li>calculate levered beta use private company's capital structure</li>
+<li>price volatility is magnified because of debt (lever)</li>
+</ul>
+</li>
+<li>Guideline Transactions Method (GTM)</li>
+<li>Prior Transaction Method (PTM)</li>
+</ul>
+<h5 id="asset-based-approach">Asset Based Approach </h5>
+<p>not used for going concerns<br>
+usually the lowest valuation</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
