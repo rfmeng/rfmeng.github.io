@@ -1,4 +1,4 @@
-<ndtag category="CFA II" tag="Financial-Statement-Analysis" createdate="2025-08-09" editdate="2025-08-09"></ndtag>
+<ndtag category="CFA II" tag="Financial-Statement-Analysis" createdate="2025-08-09" editdate="2025-08-29"></ndtag>
 
 
 Key points: C1, C2 and C3
@@ -21,7 +21,7 @@ graph LR
     E --> E3(对子公司投资<br>acquisition method)
 ```
 FVPL: fair value measured and in Profit and Loss
-FVOIC: fair value measured and in Other Comprehensive Income
+FVOCI: fair value measured and in Other Comprehensive Income
 AMC: amortized cost
 
 Investments in securities can be categorized as:
@@ -201,6 +201,9 @@ Balance sheet process:
 2. add parent company book value and child company's all fair value, calculate minority interest
 3. offset carrying amount of investment and % child company's equity, calculate goodwill and non-controling (minority) interest
 
+<p class="wrapper" style="text-align:center;">
+<img src="images\CFA II\CFA II-finanncial statement analysis-interorporate investments-acquisition BS.png" width="450px" max-width="100%" align="center"></p>
+
 Income statement process:
 1. add revenue and cost
 2. offset business bewteen parent company and child company, adjust child company's fair value
@@ -209,27 +212,163 @@ Income statement process:
 direct costs are expensed as incurred, not counted as acquisition cost
 
 ##### Accounting Treatment of Goodwill
+* partial goodwill: price - acquirer's share of fair value of all indentifiable assets
+* full goodwill: partial goodwill / acquirer's share portion
 
+accounting method:
+* IFRS: two options transaction by transaction
+* GAAP: full goodwill method
 
+under full goodwill: full minority interest increase by the same amount of (full goodwill - partial goodwill)
 
+bargain purchase acquisition: recognized immediately as a gain `cash -60, investment +80 | nonoperating income +20`
 
-
+goodwill impairment:
+* at least annually test
+* once written down, goodwill cannot be restored
+* IFRS: one-step approach (simple adjustment)
+  * impairment loss: carrying value - recoverable amount
+* GAAP: two-step approach
+  * compare carrying amount of the unit and its fair value
+  * measure implied fair value of goodwill (goodwill if acquire today) and goodwill's carrying amount
+  * once goodwill reduced to 0, no other adjustments
 
 #### Joint Venture and Spes/Vies
+* joint ventures: equity method and single line item 
+  * under rate circumstances: proportionate consolidation method, combine venture's share portion line by line
+* special purpose entities (SPE): required to be consolidated
+* Variable interest entity (VIE): broader than SPE, to be consolidated
+
 #### Analysis Issues
 ##### Net Income and Shareholder's Equity
+net income is the same for equity method, proportionate consolidation, acquisition method. (Net income attributed to the acquirer)
+
 ##### Two Common Analysis Frameworks
+one-line consolidation vs. line-by-line consolidation
+
 ##### Issue for Equity Method
-
-
-
-
-
-
+* whether equity method is appropriate
+* whether net income of the investee company could be received by th investor
 
 
 ### <!-- C2 p73 --> Employee Compensation: Post-Employment and Share-Based
 ### <!-- C3 p125 --> Multinational Operations
+#### Foreign Currency Transaction
+reflect changes in value for foreign currency payables and receivables
+
+##### Transaction Exposure
+foreign currency transaction exposure:
+* import purchase: exposure from the purchase date until the payment date
+* export sale: exposure from the purchase date until the payment date
+
+##### Accounting Issues
+* spot rate on the transaction date
+* change of the exchange rate treated as gain or loss reported on the income statement
+* on balance sheet date, the unrealized gain or loss is recognized
+
+example:
+* C sells good to U for $10000 on 2000.10.15, with payment to be received in dollars one month later
+* exchange rate changes from 6 to 5.6
+* C recognizes CNY 4000 loss
+
+##### Analytical Issues
+Neither standard indicates where to put forex gain or loss, distort the direct comparison
+
+#### Foreign Currency Translation
+##### Translation Conceptual Issues
+classification of currency:
+* presentation (reporting) currency
+* functional currency: currency in which an entity generates and expends cash
+* local currency: financial statement currency of the entity
+
+current translation method (现时汇率法): foreign local currency = functional currency ≠ parent's presentation currency
+temporal method (时态法): parent's presentation currency = functional currency ≠ foreign local currency
+CR + T method: parent's presentation currency ≠ functional currency ≠ foreign local currency
+* local currency T to functional currency
+* functional currency CR to presentation currency
+
+##### ! Translation Methods
+###### Current Rate Method
+steps:
+* all assets and liabilities: current exchange rate
+* stockholder equity account: historical exchange rate
+* revenues and expenses: use average exchange rate as proxy of exchange rate when transaction takes place
+* Cumulative Translation Adjustment (CTA): 
+  * RE ending = RE beginning × historical rate + RE change
+  * RE change = NI × average rate - Dividend × historical rate
+  * CTA (equity item, change reflected in OCI) to make the balance sheet balanced
+
+###### Temporal Method
+monetary items: cash and receivables, to be received in a fixed number of currency units
+* monetary assets: cash and receivables
+* non-monetary assets: 
+  * marketable securities: measured at current value
+  * inventory, PPE, intangible assets: measured at historical cost
+* monetary liabilities: accounts payable, accrued expense, long-term debt, defered income taxes
+* non-monetary liabilities: defered revenue
+
+steps:
+* assets and liabilities:
+  * monetary items: current exchange rate
+  * nonmonetary items: 
+    * measured at historical cost: historical exchange rates
+    * measured at current value: exchange rate at the date when the current value was determined
+* stockholder's equity account: historical exchange rate
+* revenues and expenses:
+  * other than expenses related to non-monetary assets: average rate
+  * expenses related to non-monetary asset: exchange rate used to transalte the related assets
+    * cost of goods sold (inventory), depreciation, amortization
+* translation adjustment is reported as a gain or loss in net income
+  * GAAP: remeasurement gains and losses
+  * adjust retained earning directly
+
+Inventory and cost of goods sold:
+* FIFO: relatively recent exchange rate
+* LIFO: relativley older exchange rate
+* weighted-average cost: weighted average exchange rate
+
+other issues: 
+* if both current rate method and temporal method are used (for consolidated statement),  CTA and translation adjustment in income statement might appear at the same time
+* disclosure:
+  * amount of exchange of differences in net income (transaction and translation)
+  * CTA
+
+###### Balance Sheet Exposure
+balance sheet exposure: items revalued at current exchange rate
+net asset balance sheet exposure
+* current rate method: net asset balance sheet exposure
+  * foreign currency increases in value: CTA increases
+* temporal method: to be determined, usually net liability balance sheet exposure
+
+
+##### Under Hyper-Inflationary Economies
+highly inflationary: cumulative 3 year inflation rate exceeds 100% (26% per year)
+account policy:
+* IFRS:
+  * restated for local inflation
+  * translated into parent's presentation currency using the current exchange rate
+* GAAP:
+  * temporal method
+
+###### Restated for Inflation
+balance sheet:
+* non-monetary items restated: historical cost × change of price index
+* equity item except for retained earning: historical cost × change of price index
+* retained earning: balance the sheet
+
+income statement:
+* all items restate by change of price
+* net gain or loss in purchasing power arises from holding monetary assets and monetary liabilities
+
+risk exposure: net monetary asset
+* carrying amount at the begining and change amount should use different price factor
+
+##### ! Analytical Issues
+higher portion of profit allocated to lower tax rate juristictions
+
+
+
+
 ### <!-- C4 p211 --> Analysis of Financial Institutions 
 ### <!-- C5 p295 --> Evaluating Quality of Financial Reports
 ### <!-- C6 p379 --> Integration of Financial Statement Analysis Techniques

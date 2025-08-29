@@ -11,7 +11,7 @@
         
       
       
-      <script type="text/javascript" src="file:///c:\Users\rfmen\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="file:///c:\Users\rfmen\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
       
       
       <style>
@@ -29,7 +29,7 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p><ndtag category="CFA II" tag="Financial-Statement-Analysis" createdate="2025-08-09" editdate="2025-08-09"></ndtag></p>
+<p><ndtag category="CFA II" tag="Financial-Statement-Analysis" createdate="2025-08-09" editdate="2025-08-29"></ndtag></p>
 <p>Key points: C1, C2 and C3</p>
 <h3 id="--c1-p13---intercorporate-investments"><!-- C1 p13 --> Intercorporate Investments </h3>
 <h4 id="basic-corporate-investment-categories">Basic Corporate Investment Categories </h4>
@@ -48,7 +48,7 @@
     E --&gt; E2(对合营投资&lt;br&gt;equity method)
     E --&gt; E3(对子公司投资&lt;br&gt;acquisition method)
 </div><p>FVPL: fair value measured and in Profit and Loss<br>
-FVOIC: fair value measured and in Other Comprehensive Income<br>
+FVOCI: fair value measured and in Other Comprehensive Income<br>
 AMC: amortized cost</p>
 <p>Investments in securities can be categorized as:</p>
 <ul>
@@ -292,6 +292,8 @@ Under IFRS, the use is restricted to venture capital, mutual funds and etc.</p>
 <li>add parent company book value and child company's all fair value, calculate minority interest</li>
 <li>offset carrying amount of investment and % child company's equity, calculate goodwill and non-controling (minority) interest</li>
 </ol>
+<p class="wrapper" style="text-align:center;">
+<img src="images\CFA II\CFA II-finanncial statement analysis-interorporate investments-acquisition BS.png" width="450px" max-width="100%" align="center"></p>
 <p>Income statement process:</p>
 <ol>
 <li>add revenue and cost</li>
@@ -300,13 +302,213 @@ Under IFRS, the use is restricted to venture capital, mutual funds and etc.</p>
 </ol>
 <p>direct costs are expensed as incurred, not counted as acquisition cost</p>
 <h5 id="accounting-treatment-of-goodwill">Accounting Treatment of Goodwill </h5>
+<ul>
+<li>partial goodwill: price - acquirer's share of fair value of all indentifiable assets</li>
+<li>full goodwill: partial goodwill / acquirer's share portion</li>
+</ul>
+<p>accounting method:</p>
+<ul>
+<li>IFRS: two options transaction by transaction</li>
+<li>GAAP: full goodwill method</li>
+</ul>
+<p>under full goodwill: full minority interest increase by the same amount of (full goodwill - partial goodwill)</p>
+<p>bargain purchase acquisition: recognized immediately as a gain <code>cash -60, investment +80 | nonoperating income +20</code></p>
+<p>goodwill impairment:</p>
+<ul>
+<li>at least annually test</li>
+<li>once written down, goodwill cannot be restored</li>
+<li>IFRS: one-step approach (simple adjustment)
+<ul>
+<li>impairment loss: carrying value - recoverable amount</li>
+</ul>
+</li>
+<li>GAAP: two-step approach
+<ul>
+<li>compare carrying amount of the unit and its fair value</li>
+<li>measure implied fair value of goodwill (goodwill if acquire today) and goodwill's carrying amount</li>
+<li>once goodwill reduced to 0, no other adjustments</li>
+</ul>
+</li>
+</ul>
 <h4 id="joint-venture-and-spesvies">Joint Venture and Spes/Vies </h4>
+<ul>
+<li>joint ventures: equity method and single line item
+<ul>
+<li>under rate circumstances: proportionate consolidation method, combine venture's share portion line by line</li>
+</ul>
+</li>
+<li>special purpose entities (SPE): required to be consolidated</li>
+<li>Variable interest entity (VIE): broader than SPE, to be consolidated</li>
+</ul>
 <h4 id="analysis-issues">Analysis Issues </h4>
 <h5 id="net-income-and-shareholders-equity">Net Income and Shareholder's Equity </h5>
+<p>net income is the same for equity method, proportionate consolidation, acquisition method. (Net income attributed to the acquirer)</p>
 <h5 id="two-common-analysis-frameworks">Two Common Analysis Frameworks </h5>
+<p>one-line consolidation vs. line-by-line consolidation</p>
 <h5 id="issue-for-equity-method">Issue for Equity Method </h5>
+<ul>
+<li>whether equity method is appropriate</li>
+<li>whether net income of the investee company could be received by th investor</li>
+</ul>
 <h3 id="--c2-p73---employee-compensation-post-employment-and-share-based"><!-- C2 p73 --> Employee Compensation: Post-Employment and Share-Based </h3>
 <h3 id="--c3-p125---multinational-operations"><!-- C3 p125 --> Multinational Operations </h3>
+<h4 id="foreign-currency-transaction">Foreign Currency Transaction </h4>
+<p>reflect changes in value for foreign currency payables and receivables</p>
+<h5 id="transaction-exposure">Transaction Exposure </h5>
+<p>foreign currency transaction exposure:</p>
+<ul>
+<li>import purchase: exposure from the purchase date until the payment date</li>
+<li>export sale: exposure from the purchase date until the payment date</li>
+</ul>
+<h5 id="accounting-issues">Accounting Issues </h5>
+<ul>
+<li>spot rate on the transaction date</li>
+<li>change of the exchange rate treated as gain or loss reported on the income statement</li>
+<li>on balance sheet date, the unrealized gain or loss is recognized</li>
+</ul>
+<p>example:</p>
+<ul>
+<li>C sells good to U for $10000 on 2000.10.15, with payment to be received in dollars one month later</li>
+<li>exchange rate changes from 6 to 5.6</li>
+<li>C recognizes CNY 4000 loss</li>
+</ul>
+<h5 id="analytical-issues">Analytical Issues </h5>
+<p>Neither standard indicates where to put forex gain or loss, distort the direct comparison</p>
+<h4 id="foreign-currency-translation">Foreign Currency Translation </h4>
+<h5 id="translation-conceptual-issues">Translation Conceptual Issues </h5>
+<p>classification of currency:</p>
+<ul>
+<li>presentation (reporting) currency</li>
+<li>functional currency: currency in which an entity generates and expends cash</li>
+<li>local currency: financial statement currency of the entity</li>
+</ul>
+<p>current translation method (现时汇率法): foreign local currency = functional currency ≠ parent's presentation currency<br>
+temporal method (时态法): parent's presentation currency = functional currency ≠ foreign local currency<br>
+CR + T method: parent's presentation currency ≠ functional currency ≠ foreign local currency</p>
+<ul>
+<li>local currency T to functional currency</li>
+<li>functional currency CR to presentation currency</li>
+</ul>
+<h5 id="-translation-methods">! Translation Methods </h5>
+<h6 id="current-rate-method">Current Rate Method </h6>
+<p>steps:</p>
+<ul>
+<li>all assets and liabilities: current exchange rate</li>
+<li>stockholder equity account: historical exchange rate</li>
+<li>revenues and expenses: use average exchange rate as proxy of exchange rate when transaction takes place</li>
+<li>Cumulative Translation Adjustment (CTA):
+<ul>
+<li>RE ending = RE beginning × historical rate + RE change</li>
+<li>RE change = NI × average rate - Dividend × historical rate</li>
+<li>CTA (equity item, change reflected in OCI) to make the balance sheet balanced</li>
+</ul>
+</li>
+</ul>
+<h6 id="temporal-method">Temporal Method </h6>
+<p>monetary items: cash and receivables, to be received in a fixed number of currency units</p>
+<ul>
+<li>monetary assets: cash and receivables</li>
+<li>non-monetary assets:
+<ul>
+<li>marketable securities: measured at current value</li>
+<li>inventory, PPE, intangible assets: measured at historical cost</li>
+</ul>
+</li>
+<li>monetary liabilities: accounts payable, accrued expense, long-term debt, defered income taxes</li>
+<li>non-monetary liabilities: defered revenue</li>
+</ul>
+<p>steps:</p>
+<ul>
+<li>assets and liabilities:
+<ul>
+<li>monetary items: current exchange rate</li>
+<li>nonmonetary items:
+<ul>
+<li>measured at historical cost: historical exchange rates</li>
+<li>measured at current value: exchange rate at the date when the current value was determined</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>stockholder's equity account: historical exchange rate</li>
+<li>revenues and expenses:
+<ul>
+<li>other than expenses related to non-monetary assets: average rate</li>
+<li>expenses related to non-monetary asset: exchange rate used to transalte the related assets
+<ul>
+<li>cost of goods sold (inventory), depreciation, amortization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>translation adjustment is reported as a gain or loss in net income
+<ul>
+<li>GAAP: remeasurement gains and losses</li>
+<li>adjust retained earning directly</li>
+</ul>
+</li>
+</ul>
+<p>Inventory and cost of goods sold:</p>
+<ul>
+<li>FIFO: relatively recent exchange rate</li>
+<li>LIFO: relativley older exchange rate</li>
+<li>weighted-average cost: weighted average exchange rate</li>
+</ul>
+<p>other issues:</p>
+<ul>
+<li>if both current rate method and temporal method are used (for consolidated statement),  CTA and translation adjustment in income statement might appear at the same time</li>
+<li>disclosure:
+<ul>
+<li>amount of exchange of differences in net income (transaction and translation)</li>
+<li>CTA</li>
+</ul>
+</li>
+</ul>
+<h6 id="balance-sheet-exposure">Balance Sheet Exposure </h6>
+<p>balance sheet exposure: items revalued at current exchange rate<br>
+net asset balance sheet exposure</p>
+<ul>
+<li>current rate method: net asset balance sheet exposure
+<ul>
+<li>foreign currency increases in value: CTA increases</li>
+</ul>
+</li>
+<li>temporal method: to be determined, usually net liability balance sheet exposure</li>
+</ul>
+<h5 id="under-hyper-inflationary-economies">Under Hyper-Inflationary Economies </h5>
+<p>highly inflationary: cumulative 3 year inflation rate exceeds 100% (26% per year)<br>
+account policy:</p>
+<ul>
+<li>IFRS:
+<ul>
+<li>restated for local inflation</li>
+<li>translated into parent's presentation currency using the current exchange rate</li>
+</ul>
+</li>
+<li>GAAP:
+<ul>
+<li>temporal method</li>
+</ul>
+</li>
+</ul>
+<h6 id="restated-for-inflation">Restated for Inflation </h6>
+<p>balance sheet:</p>
+<ul>
+<li>non-monetary items restated: historical cost × change of price index</li>
+<li>equity item except for retained earning: historical cost × change of price index</li>
+<li>retained earning: balance the sheet</li>
+</ul>
+<p>income statement:</p>
+<ul>
+<li>all items restate by change of price</li>
+<li>net gain or loss in purchasing power arises from holding monetary assets and monetary liabilities</li>
+</ul>
+<p>risk exposure: net monetary asset</p>
+<ul>
+<li>carrying amount at the begining and change amount should use different price factor</li>
+</ul>
+<h5 id="-analytical-issues">! Analytical Issues </h5>
+<p>higher portion of profit allocated to lower tax rate juristictions</p>
 <h3 id="--c4-p211---analysis-of-financial-institutions"><!-- C4 p211 --> Analysis of Financial Institutions </h3>
 <h3 id="--c5-p295---evaluating-quality-of-financial-reports"><!-- C5 p295 --> Evaluating Quality of Financial Reports </h3>
 <h3 id="--c6-p379---integration-of-financial-statement-analysis-techniques"><!-- C6 p379 --> Integration of Financial Statement Analysis Techniques </h3>
