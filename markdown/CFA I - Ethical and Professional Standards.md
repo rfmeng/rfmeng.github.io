@@ -1,5 +1,5 @@
 For researcher (level I) and fund manager (level III)
-<ndtag category="CFA I" tag="Ethics" createdate="2022-12-11" editdate="2022-12-11"></ndtag>
+<ndtag category="CFA I" tag="Ethics" createdate="2022-12-11" editdate="2025-08-30"></ndtag>
 <h3>Ethics and trust in the investment profession</h3>
 <h4>Ethics</h4>
 <!-- <img src="images/CFA-derivative-arbitrage opportunity.png" width="100%"/> -->
@@ -116,8 +116,10 @@ AMC was constructed for asset management firm and asset manager
 <h5>II(A) Material nonpublic information</h5>
 <!--  -->
 material nonpublic information: reliable source, clearly material impact and non-public
-Mosaic theory: public material and nonpublic nonmaterial
-when proprietary trading activity, market maker best not to stop but remain passive to market, and record document for risk-arbitrage trading
+Mosaic theory: public material and nonpublic nonmaterial information could be used
+for proprietary trading activity:
+* market maker: best not to stop but remain passive to market
+* risk-arbitrage trading: best to stop; if not stop, record document for 
 
 <h5>II(B) Market manipulation</h5>
 <!--  -->
@@ -144,7 +146,7 @@ a framework, concludes all III standards followed, the different points from tho
 not to discriminate discimination
 * fairly is not equally, allow order when reaching clients
 * premium level service is okay, if not disadvantage or negatively affect other clients; the availability condition should be disclosed to all clients
-* pro rata on order size, round-lot is allowed
+* time order first; for order arriving at the same time, pro rata on order size, round-lot is allowed
 * material changes in prior recommendations should be communicated to all clients
 
 <h5>III(C) Suitability</h5>
@@ -159,7 +161,7 @@ actually included in I(C) Misrepresentation
 * include terminated portfolio in performance history
 * detailed information
 * Apply GIPS standards, should encourage to comply with GIPS
-* full disclosure: whether simulated, when the performance record is that of a prior entity
+* full disclosure: whether the performance result is simulated, when the performance record is that of a prior entity
 
 <h5>III(E) Preservation of confidentiality</h5>
 <!--  --> 
@@ -174,7 +176,7 @@ not deprive employer
   * personal life allowed, except for affecting work
   * work time belongs to employer
   * competitive business not allowed (called independent practice)
-  * legal procedure allowed before employment terminated if it has not started yet
+  * legal procedure of own competitive business allowed before employment terminated if own buisness has not started yet
 * off service
   * customer list could not be taken away; only public information could be used
   * confidential information
@@ -198,7 +200,7 @@ compensation from client, if disclosed but have not got consent, this violates I
 * using secondary or third-party report: check whether it is sound
 * using quantitative oriented research: must understand assumptions and limitations, test output
 * selecting external and subadvisor
-* group research and decision making: when applying majority rule, he can accept the majority opinion
+* group research and decision making: when applying majority rule, he can accept the majority opinion if the procedure is reasonable
 
 <h5>V(B) Communication with clients</h5>
 <!--  -->
@@ -207,8 +209,8 @@ included in I(C) Misrepresentation
 * significant limitations and risks
 * distinguish between fact and opinion
 
-capsule form recommendation is allowed but availability of more information should be disclosed
-liquidity and capacity (investment ability, like small-cap strategy is not for large size fund)
+capsule form recommendation (stock list) is allowed but availability of more information should be disclosed
+investment's limitation: liquidity and capacity (investment ability, like small-cap strategy is not for large size fund)
 
 <h5>V(C) Record retention</h5>
 <!--  -->
@@ -221,24 +223,27 @@ records are property of the firm, could not be copied
 violation of VI(A) implies violation of I(B)
 IV(B) also implies conflict of interest
 * conflict between research department and IBD
-* no requirement for pension fund
+* (?) no requirement for pension fund
 
 <h5>VI(B) Priority of transactions</h5>
 <!--  -->
 client > employer > himself
-must leave enough time for clients to make actions
+must leave enough time for clients to make actions (buy the recommended stock after a reasonable time)
 only spouse's account is seen as his account among all relatives
 
 
 <h5>VI(C) Referral fees</h5>
 <!--  -->
-should be disclosed to clients and employers before referral, for clients' price determination
+referral fee: 介绍费
+should be disclosed to clients and employers before transanction, for clients' price determination (let the clients know their true cost)
 
 <h4>Responsibility as members</h4>
 <h5>VII(A) Conduct as members and candidates</h5>
 <!--  -->
 providing confidential program is prohibited
-improperly using an association with CFA
+improperly using an association with CFA:
+* use the CFA volunteer's indentity to make some beneficiary arrangement
+
 misrepresentation about CFA
 expressing opinion towards CFA is okay
 
